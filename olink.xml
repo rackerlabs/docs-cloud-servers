@@ -1,0 +1,5 @@
+<books xmlns="http://docs.rackspace.com/olink">
+  <book path="src/docbkx/PREFIX-devguide.xml"/>
+  <book path="src/docbkx/PREFIX-gettingstarted.xml"/>
+  <book path="src/docbkx/PREFIX-releasenotes.xml"/>
+</books>
