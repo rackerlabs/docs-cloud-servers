@@ -50,8 +50,10 @@ g.add( scriptdir + '/src/docbkx/' + PREFIX + '-releasenotes.xml' )
 g.add( scriptdir + '/src/docbkx/' + PREFIX + '-devguide.xml')
 
 print "============================"
-print "Now run:"
-print "git init ."
+print "Now set up your git repo by running:"
+print "git init"
+print "git add ."
+print "git commit -m\"Initial check-in\""
 print "git remote add origin git@github.com/rackerlabs/docs-cloud-" + PREFIX + ".git"
 print "git push origin master"
 print "Be sure to create the corresponding repo first."
