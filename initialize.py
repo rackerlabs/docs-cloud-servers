@@ -19,6 +19,19 @@ PREFIX = raw_input(prompt)
 print "Enter the product version (for example \"v1.0\"): "
 VERSION = raw_input(prompt)
 
+print "\nYou entered:\n"
+print "Product name: " + PRODUCTNAME
+print "PREFIX: " + PREFIX
+print "VERSION: " + VERSION +"\n"
+print "Is this correct? (y/n)"
+CORRECT = raw_input(prompt)
+
+if CORRECT.lower() in ['y', 'yes']:
+    print("\nPreparing project.\n")
+else:
+    print("\nExiting. Re-run script to try again.\n")
+    exit()
+
 def findReplace(directory, find, replace, filePattern):
     for path, dirs, files in os.walk(os.path.abspath(directory)):
         for filename in fnmatch.filter(files, filePattern):
