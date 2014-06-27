@@ -40,7 +40,7 @@ os.rename( scriptdir + '/src/docbkx/PREFIX-releasenotes.xml', scriptdir + '/src/
 os.rename( scriptdir + '/src/docbkx/PREFIX-devguide.xml', scriptdir + '/src/docbkx/' + PREFIX + '-devguide.xml')
 
 README = open( scriptdir + '/README.md', "w")
-README.write( PRODUCTNAME + " README") 
+README.write( PRODUCTNAME + " README\n") 
 README.write( "======================") 
 README.close
 
