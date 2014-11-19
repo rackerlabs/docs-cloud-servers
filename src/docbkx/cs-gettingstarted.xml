@@ -5,32 +5,31 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" 
     xmlns:svg="http://www.w3.org/2000/svg"
     version="5.0" 
-    xml:id="PREFIX-releasenotes" 
+    xml:id="cs-gettingstarted" 
     status="DRAFT">
-  <title>Rackspace PRODUCTNAME Release Notes</title>
-  <?rax canonical.url.base="http://docs.rackspace.com/PREFIX/api/v1.0/PREFIX-releasenotes/content"?>
+  <title>Rackspace Cloud Servers Getting Started Guide</title>
+  <?rax canonical.url.base="http://docs.rackspace.com/cs/api/v1.0/cs-gettingstarted/content"?>
   <info>
     <copyright>
       <year>2013</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
-    <productname>Rackspace PRODUCTNAME</productname>
-    <!--Note that the <productname> text matches the first few words of the title. The build system splits the title into productname + rest of title on the pdf cover.-->
+    <productname>Rackspace Cloud Servers</productname><!--Note that the <productname> text matches the first few words of the title. The build system splits the title into productname + rest of title on the pdf cover.-->
     <pubdate><!--If you leave the <pubdate> element empty, the build system inserts today's date automatically. --></pubdate>
     <revhistory>
       <revision>
         <date>2011-03-01</date>
         <revdescription>
           <para>This is the revision history section. The technical
-          writer updates this section when major changes are made to
-          the doc to indicate what changed. Typically this will
-          include links into the body of the document. From this
-          element we generate the list in <xref
-          linkend="change_history"/> as well as the atom feed for
-          the document an <link xlink:href="../atom.xml">atom feed</link> for the document.
-          <itemizedlist spacing="compact">
-            <listitem>
+            writer updates this section when major changes are made to
+            the doc to indicate what changed. Typically this will
+            include links into the body of the document. From this
+            element we generate the list in <xref
+              linkend="change_history"/> as well as the atom feed for
+            the document an <link xlink:href="../atom.xml">atom feed</link> for the document.
+              <itemizedlist spacing="compact">
+              <listitem>
                 <para>Itemized lists are useful constructs for improving the readability of documents.</para>
               </listitem>
               <listitem>
@@ -69,9 +68,9 @@
        values without first consulting with the CDT team.
     -->
       <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-        <raxm:displayname>Release Notes</raxm:displayname>
-        <raxm:product version="v1.0">PREFIX</raxm:product>
-        <raxm:priority>30</raxm:priority>
+        <raxm:displayname>Getting Started Guide</raxm:displayname>
+        <raxm:product version="v1.0">cs</raxm:product>
+        <raxm:priority>10</raxm:priority>
       </raxm:metadata>
   </info>
   <preface xml:id="preface">
@@ -451,13 +450,4 @@ contains foo-feature in your pom.xml file.&lt;/para></programlisting>In
         </listitem>
       </itemizedlist></para>
   </chapter>
-    <chapter xml:id="somesection" role="api-reference">
-      <title>API Reference</title>
-      <para>For more information on how this section works, see <link
-        xlink:href="http://docs-internal.rackspace.com/writers-guide/content/ch_wadl.html"
-        >Generating an API reference from a WADL file</link>. </para>
-
-      <resources xmlns="http://wadl.dev.java.net/2009/02" href="../wadl/example.wadl"/>
-      
-    </chapter>
 </book>

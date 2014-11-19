@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (C) 2012 OpenStack LLC., All Rights Reserved -->
+<!DOCTYPE application [<!ENTITY % common  SYSTEM "../common/common.ent">
+%common;]>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+	xmlns:db="http://docbook.org/ns/docbook" xmlns:common="http://docs.openstack.org/common/api/v1.0"
+	xmlns:csapi="http://docs.openstack.org/compute/api/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<resources>
+		<resource id="Versions" path="/">
+			<method href="#getVersions"/>
+			<resource id="Version_id" path="{version_id}">
+				<param name="version_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The ID for the version.</para>
+					</wadl:doc>
+				</param>
+				<method href="#getVersionDetails"/>
+				<!--<resource id="Flavors" path="flavors"
+					<method href="#getFlavors"/>
+					<resource id="Flavor_detail" path="details">
+						<method href="#getFlavorsDetail"/>
+					</resource>
+					<resource id="Flavor_id" path="{flavor_id}">
+						<param name="flavor_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Server metadata item key">
+								<para>A string. Maximum length is ?? characters.</para>
+							</wadl:doc>
+						</param>
+						<method href="#getFlavorDetail"/>
+					</resource>
+				</resource>-->
+			</resource>
+		</resource>
+	</resources>
+
+	<method name="POST" id="getVersions">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="List versions">
+			<para role="shortdesc">Retrieves list of versions.</para>
+			<para>This operation lists the available versions of Next Generation Cloud Servers. Since we have only one
+				version at this time, <emphasis role="bold">v2</emphasis>, the operation may return an empty list.</para>
+		</wadl:doc>
+
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/version-list-resp.json"/>-->
+				</wadl:doc>
+				<!--				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<para>Anything special about response goes here.</para>
+				</wadl:doc>-->
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/version-list-resp.xml"/>-->
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<method name="POST" id="getVersionDetails">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Get version details">
+			<para role="shortdesc">Retrieves details for specified versions.</para>
+			<para>This operation retrieve details for the specified version of Next Generation Cloud Servers. Since we have
+				only one version at this time, <emphasis role="bold">v2</emphasis>, the operation may return an empty
+				response body.</para>
+		</wadl:doc>
+
+		<response status="204">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/version-detail-resp.json"/>-->
+				</wadl:doc>
+				<!--				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<para>Anything special about response goes here.</para>
+				</wadl:doc>-->
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/version-detail-resp.xml"/>-->
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+</application>

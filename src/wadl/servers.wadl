@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (C) 2012 OpenStack LLC., All Rights Reserved -->
+<!DOCTYPE application [<!ENTITY % common  SYSTEM "../common/common.ent">
+%common;]>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+	xmlns:db="http://docbook.org/ns/docbook" xmlns:common="http://docs.openstack.org/common/api/v1.0"
+	xmlns:csapi="http://docs.openstack.org/compute/api/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<resources>
+		<resource id="Servers" path="servers">
+			<!--<method href="#createServer"/>
+			<resource id="server_detail" path="detail"/>-->
+			<resource id="Server_id" path="{server_id}">
+				<param xmlns="http://wadl.dev.java.net/2009/02" name="server_id" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The UUID for the server.</para>
+					</wadl:doc>
+				</param>
+				<!--<method href="#getServer"/>
+			    <method href="#updateServer"/>-->
+				<method href="#deleteServer"/>
+				<!--<resource id="Metadata" path="metadata">
+					<resource id="MetadataKey" path="{key}">
+						<param xmlns="http://wadl.dev.java.net/2009/02" name="key" style="template" type="csapi:MetadataKey">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Server metadata item key">
+								<para>A string. Maximum length is 255 characters.</para>
+							</wadl:doc>
+						</param>
+						<method href="#getMetadataItem"/>
+						<method href="#setMetadataItem"/>
+						<method href="#deleteMetadataItem"/>
+					</resource>
+				</resource>-->
+				<!--<resource id="IPs" path="ips">
+					<method href="#getServerAddresses"/>
+					<resource id="network_label" path="{network_label}">
+						<param xmlns="http://wadl.dev.java.net/2009/02" name="network_label" style="template"
+							type="xsd:string">
+							<wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook" title="network_label">
+								<para>The network label, such as <literal>public</literal> or
+									<literal>private</literal>.</para>
+							</wadl:doc>
+						</param>
+					</resource>
+				</resource>-->
+				<!--<resource id="Action" path="action">
+					<method href="#changePassword"/>
+					<method href="#rebootServer"/>
+					<method href="#rebuildServer"/>
+					<method href="#resizeServer"/>
+					<method href="#confirmServer"/>
+					<method href="#revertServer"/>
+					<method href="#createImage"/>
+				</resource>-->
+			</resource>
+		</resource>
+	</resources>
+
+	<!--<method name="POST" id="createServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create Volume">
+			<para role="shortdesc">Creates a server.</para>
+			<para>The full URL to the newly created server is returned through the <code>Location</code> header and is
+				available as a <code>self</code> and <code>bookmark</code> link in the server
+				representation.<!-\- See
+				<link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/LinksReferences.html">Links and
+                    References</link>.-\-></para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<!-\-<xsdxt:code href="../common/samples/server-post-req.json"/>-\->
+				</wadl:doc>
+				<!-\-&serverCreateRequestParameters;-\->
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<!-\-<xsdxt:code href="../common/samples/server-post-req.xml"/>-\->
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<!-\-<xsdxt:code href="../common/samples/server-create-resp.json"/>-\->
+				</wadl:doc>
+				<!-\-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<para>Anything special about response goes here.</para>
+				</wadl:doc>-\->
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<!-\-<xsdxt:code href="../common/samples/server-create-resp.xml"/>-\->
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>-->
+
+	<method name="DELETE" id="deleteServer">
+		<wadl:doc title="Delete Server" xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+			<para role="shortdesc">Deletes the specified server.</para>
+			<para>This operation deletes the server. If the operation succeeds, it returns an <errorcode>HTTP
+				202</errorcode> status code with no response body.</para>
+		</wadl:doc>
+		<response status="202">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json"/>
+		</response> <!--&commonFaults;-->
+	</method>
+</application>
