@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server status="ACTIVE" updated="2014-12-04T20:00:19Z" hostId="0dbe7228c60750a17655cad2705ac96675fc00f33964a91b5cbd8ab5" name="new-server-xml-test" created="2014-12-04T18:59:16Z" userId="346289" tenantId="820712" accessIPv4="166.78.139.6" accessIPv6="2001:4800:7812:514:be76:4eff:fe05:d396" progress="100" id="8a54a054-501e-4999-a8f0-9b8aae5de1b3" OS-DCF:diskConfig="AUTO">
+    <image id="3afe97b2-26dc-49c5-a2cc-a2fc8d80c001">
+        <atom:link href= "https://dfw.servers.api.rackspacecloud.com/820712/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" rel="bookmark"/>
+    </image>
+    <flavor id="2">
+        <atom:link href= "https://dfw.servers.api.rackspacecloud.com/820712/flavors/2" rel="bookmark"/>
+    </flavor>
+    <metadata>
+        <meta key="My Server Name">API Test Server XML</meta>
+    </metadata>
+    <addresses>
+        <network id="public">
+            <ip version="6" addr="2001:4800:7812:514:be76:4eff:fe05:d396"/>
+            <ip version="4" addr="166.78.139.6"/>
+        </network>
+        <network id="private">
+            <ip version="4" addr="10.182.9.139"/>
+        </network>
+    </addresses>
+    <atom:link href= "https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/8a54a054-501e-4999-a8f0-9b8aae5de1b3" rel="self"/>
+    <atom:link href= "https://dfw.servers.api.rackspacecloud.com/820712/servers/8a54a054-501e-4999-a8f0-9b8aae5de1b3" rel="bookmark"/>
+</server>

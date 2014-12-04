@@ -1,0 +1,8 @@
+    Status Code: 202 Accepted
+    Content-Length: 582
+    Content-Type: application/xml
+    Date: Thu, 04 Dec 2014 18:59:16 GMT
+    Location: https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/8a54a054-501e-4999-a8f0-9b8aae5de1b3
+    Server: Jetty(8.0.y.z-SNAPSHOT)
+    Via: 1.1 Repose (Repose/2.12)
+    x-compute-request-id: req-05d85a51-ee00-4d31-808f-28b3b3034780

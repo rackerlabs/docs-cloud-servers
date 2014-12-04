@@ -1,0 +1,65 @@
+{
+  "server": {
+    "status": "ACTIVE",
+    "updated": "2014-12-04T19:41:58Z",
+    "hostId": "d535dcad0d51c97d20910a3c2a8264f0be8b847b8982e305bee27389",
+    "addresses": {
+      "public": [
+        {
+          "version": 6,
+          "addr": "2001:4800:7812:514:be76:4eff:fe05:aaed"
+        },
+        {
+          "version": 4,
+          "addr": "166.78.149.149"
+        }
+      ],
+      "private": [
+        {
+          "version": 4,
+          "addr": "10.182.16.182"
+        }
+      ]
+    },
+    "links": [
+      {
+        "href": "https://dfw.servers.api.rackspacecloud.com/v2/123456/servers/4b963871-f591-4b7d-b05f-7c0286e3c50f",
+        "rel": "self"
+      },
+      {
+        "href": "https://dfw.servers.api.rackspacecloud.com/123456/servers/4b963871-f591-4b7d-b05f-7c0286e3c50f",
+        "rel": "bookmark"
+      }
+    ],
+    "image": {
+      "id": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
+      "links": [
+        {
+          "href": "https://dfw.servers.api.rackspacecloud.com/123456/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
+          "rel": "bookmark"
+        }
+      ]
+    },
+    "flavor": {
+      "id": "2",
+      "links": [
+        {
+          "href": "https://dfw.servers.api.rackspacecloud.com/123456/flavors/2",
+          "rel": "bookmark"
+        }
+      ]
+    },
+    "id": "4b963871-f591-4b7d-b05f-7c0286e3c50f",
+    "user_id": "346762",
+    "name": "new-testserver-1",
+    "created": "2014-12-04T18:47:30Z",
+    "tenant_id": "123456",
+    "OS-DCF:diskConfig": "AUTO",
+    "accessIPv4": "166.78.149.149",
+    "accessIPv6": "2001:4800:7812:514:be76:4eff:fe05:aaed",
+    "progress": 100,
+    "metadata": {
+      "My Server Name": "API Test Server 1"
+    }
+  }
+}
