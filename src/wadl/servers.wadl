@@ -16,7 +16,7 @@
 			<resource id="Server_id" path="{server_id}">
 				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						<para>The UUID for the server.</para>
+						<para>The UUID for the server. </para>
 					</wadl:doc>
 				</param>
 				<method href="#getServer"/>
@@ -61,10 +61,9 @@
 
 	<method name="POST" id="createServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create Server">
-			<para role="shortdesc">Creates a server.</para>
-			<para>This operation asynchronously provisions a new server. The full URL to the newly created server is returned
-				through the <code>Location</code> header and is available as a <code>self</code> and <code>bookmark</code>
-				link in the server representation.
+			<para role="shortdesc">Provisions a server asynchronously.</para>
+			<para>The full URL to the newly created server is returned through the <code>Location</code> header and is
+				available as a <code>self</code> and <code>bookmark</code> link in the server representation.
 				<!--See
 				<link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/LinksReferences.html">Links and
                     References</link>.--></para>
@@ -118,8 +117,6 @@
 	<method name="GET" id="listServers">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List servers">
 			<para role="shortdesc">Retrieve list of all servers (only IDs, names, and links).</para>
-			<para>This operation retrieves a list the servers in the tenant's account with minimal information (id, name, and
-				URL links).</para>
 			<para>Servers contain a status attribute that indicates the current server state. You can filter on the server
 				status when you complete a list servers request. The server status is returned in the response body. For a
 				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
@@ -144,8 +141,7 @@
 
 	<method name="GET" id="listServersDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List servers with details">
-			<para role="shortdesc">Retrieves list of all servers.</para>
-			<para>This operation retrieves list of the servers in the tenant's account with all available information.</para>
+			<para role="shortdesc">Retrieves a detailed list of all servers in the tenant's account.</para>
 			<para>Servers contain a status attribute that indicates the current server state. You can filter on the server
 				status when you complete a list servers request. The server status is returned in the response body. For a
 				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
@@ -177,8 +173,7 @@
 
 	<method name="POST" id="getServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve Server Details">
-			<para role="shortdesc">Retrieves detailed information for a server.</para>
-			<para>This operation retrieves all the information about a specified server.</para>
+			<para role="shortdesc">Retrieves detailed information for a specified server.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
 			<itemizedlist>
 				<listitem><para>Config Drive inserthere</para></listitem>
@@ -205,8 +200,7 @@
 
 	<method name="PUT" id="updateServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update Server">
-			<para role="shortdesc">Updates a server.</para>
-			<para>This operation updates one or more editable attributes for a specified server.</para>
+			<para role="shortdesc">Updates one or more editable attributes for a specified server.</para>
 			<para>The attributes that can be edited are: name, accessIPv4, and accessIPv6. You can update any or all of the
 				attributes in a single request.</para>
 			<note><para>If you try to update a server by using the server bookmark link, the response code is 300, unless you
@@ -241,8 +235,8 @@
 	<method name="DELETE" id="deleteServer">
 		<wadl:doc title="Delete Server" xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 			<para role="shortdesc">Deletes the specified server.</para>
-			<para>This operation deletes the server. If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode>
-				status code with no response body.</para>
+			<para>If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode> status code with no response
+				body.</para>
 		</wadl:doc>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
