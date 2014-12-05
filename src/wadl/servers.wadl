@@ -8,16 +8,19 @@
 	xmlns:csapi="http://docs.openstack.org/compute/api/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<resources>
 		<resource id="Servers" path="servers">
-			<!--<method href="#createServer"/>
-			<resource id="server_detail" path="detail"/>-->
+			<method href="#createServer"/>
+			<method href="#listServers"/>
+			<resource id="ServersDet" path="detail">
+				<method href="#listServersDetails"/>
+			</resource>
 			<resource id="Server_id" path="{server_id}">
-				<param xmlns="http://wadl.dev.java.net/2009/02" name="server_id" style="template" type="csapi:UUID">
+				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						<para>The UUID for the server.</para>
+						<para>The UUID for the server. </para>
 					</wadl:doc>
 				</param>
-				<!--<method href="#getServer"/>
-			    <method href="#updateServer"/>-->
+				<method href="#getServer"/>
+				<method href="#updateServer"/>
 				<method href="#deleteServer"/>
 				<!--<resource id="Metadata" path="metadata">
 					<resource id="MetadataKey" path="{key}">
@@ -56,25 +59,39 @@
 		</resource>
 	</resources>
 
-	<!--<method name="POST" id="createServer">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create Volume">
-			<para role="shortdesc">Creates a server.</para>
+	<method name="POST" id="createServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create Server">
+			<para role="shortdesc">Provisions a server asynchronously.</para>
 			<para>The full URL to the newly created server is returned through the <code>Location</code> header and is
-				available as a <code>self</code> and <code>bookmark</code> link in the server
-				representation.<!-\- See
+				available as a <code>self</code> and <code>bookmark</code> link in the server representation.
+				<!--See
 				<link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/LinksReferences.html">Links and
-                    References</link>.-\-></para>
+                    References</link>.--></para>
+			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
+				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
+				retrieve the details of the server (see inserthere). Once the build is complete, the server's
+					<parameter>status</parameter> is <code>ACTIVE</code>.</para>
+			<para>For OnMetal server builds, even after the <parameter>status</parameter> is ACTIVE, wait a few additional
+				moments for the network configuration to complete. Once the new OnMetal server pings successfully, you can
+				begin to use it.</para>
+			<important><para>OnMetal servers must be created using an ssh key pair. Thus you should ignore the administrator
+					password returned by a Create Server operation because it does not allow access to the OnMetal server.
+					See inserthere for more information about key pairs.</para></important>
+			<para>The following extensions allow you to use other options when creating a new server:</para>
+			<itemizedlist>
+				<listitem><para>Config Drive inserthere</para></listitem>
+				<listitem><para>Boot from volume inserthere</para></listitem>
+				<listitem><para>Networks inserthere for nova and for neutron</para></listitem>
+			</itemizedlist>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
-					<!-\-<xsdxt:code href="../common/samples/server-post-req.json"/>-\->
-				</wadl:doc>
-				<!-\-&serverCreateRequestParameters;-\->
-			</representation>
+					<xsdxt:code href="../common/samples/server-create-req.json"/>
+				</wadl:doc>&serverCreateReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
-					<!-\-<xsdxt:code href="../common/samples/server-post-req.xml"/>-\->
+					<xsdxt:code href="../common/samples/server-create-req.xml"/>
 				</wadl:doc>
 			</representation>
 		</request>
@@ -82,29 +99,156 @@
 		<response status="200">
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
-					<!-\-<xsdxt:code href="../common/samples/server-create-resp.json"/>-\->
-				</wadl:doc>
-				<!-\-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code href="../common/samples/server-create-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/server-create-rsp.json"/>
+				</wadl:doc>&serverCreateRspParameters;
+				<!--<wadl:doc xmlns="http://docbook.org/ns/docbook">
 					<para>Anything special about response goes here.</para>
-				</wadl:doc>-\->
+				</wadl:doc>-->
 			</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
-					<!-\-<xsdxt:code href="../common/samples/server-create-resp.xml"/>-\->
+					<xsdxt:code href="../common/samples/server-create-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/server-create-rsp.xml"/>
 				</wadl:doc>
 			</representation>
-		</response>
-	</method>-->
+		</response>&commonFaults; </method>
+
+	<method name="GET" id="listServers">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List servers">
+			<para role="shortdesc">Retrieve list of all servers (only IDs, names, and links).</para>
+			<para>Servers contain a status attribute that indicates the current server state. You can filter on the server
+				status when you complete a list servers request. The server status is returned in the response body. For a
+				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
+		</request>
+
+		<response status="200 203">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-list-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-rsp.json"/>
+				</wadl:doc> &serverListRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-list-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="GET" id="listServersDetails">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List servers with details">
+			<para role="shortdesc">Retrieves a detailed list of all servers in the tenant's account.</para>
+			<para>Servers contain a status attribute that indicates the current server state. You can filter on the server
+				status when you complete a list servers request. The server status is returned in the response body. For a
+				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
+			<para>The following extensions provide additional information when viewing server details:</para>
+			<itemizedlist>
+				<listitem><para>Config Drive inserthere</para></listitem>
+				<listitem><para>Scheduled Images inserthere</para></listitem>
+				<listitem><para>Extended Status inserthere</para></listitem>
+			</itemizedlist>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
+		</request>
+		<response status="200 203">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>The following example show only one server in the list for brevity.</para>
+					<xsdxt:code href="../common/samples/servers-list-det-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-det-rsp.json"/>
+				</wadl:doc>&serverListDetRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>The following example show only one server in the list for brevity.</para>
+					<xsdxt:code href="../common/samples/servers-list-det-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-det-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="POST" id="getServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve Server Details">
+			<para role="shortdesc">Retrieves detailed information for a specified server.</para>
+			<para>The following extensions provide additional information when viewing server details:</para>
+			<itemizedlist>
+				<listitem><para>Config Drive inserthere</para></listitem>
+				<listitem><para>Scheduled Images inserthere</para></listitem>
+				<listitem><para>Extended Status inserthere</para></listitem>
+			</itemizedlist>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json"/>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/server-det-rsp-json-http.txt"/>-->
+					<!--<xsdxt:code href="../common/samples/server-det-rsp.json"/>-->
+				</wadl:doc>&serverDetRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/server-det-rsp-xml-http.txt"/>-->
+					<!--<xsdxt:code href="../common/samples/server-det-rsp.xml"/>-->
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<method name="PUT" id="updateServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update Server">
+			<para role="shortdesc">Updates one or more editable attributes for a specified server.</para>
+			<para>The attributes that can be edited are: name, accessIPv4, and accessIPv6. You can update any or all of the
+				attributes in a single request.</para>
+			<note><para>If you try to update a server by using the server bookmark link, the response code is 300, unless you
+					use the Accept: application/json;version=1.1 header with the request.</para></note>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-update-req.json"/>
+				</wadl:doc>&serverUpdateReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-update-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-update-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/server-update-rsp.json"/>
+				</wadl:doc>&serverDetRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-update-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/server-update-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteServer">
 		<wadl:doc title="Delete Server" xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 			<para role="shortdesc">Deletes the specified server.</para>
-			<para>This operation deletes the server. If the operation succeeds, it returns an <errorcode>HTTP
-				202</errorcode> status code with no response body.</para>
+			<para>If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode> status code with no response
+				body.</para>
 		</wadl:doc>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
-			<representation mediaType="application/json"/>
-		</response> <!--&commonFaults;-->
-	</method>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
 </application>
