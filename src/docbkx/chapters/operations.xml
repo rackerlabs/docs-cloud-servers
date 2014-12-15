@@ -133,16 +133,51 @@
         <para>This section describes the API operations for supporting functions of servers.</para>
         <!--- this section comes from these WADLs: supporting.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <!-- list versions -->
-            <wadl:resource href="../../wadl/supporting.wadl#Versions">
-                <wadl:method href="getVersions"/>
+            
+            <!-- retrieve list limits -->
+            <wadl:resource href="../../wadl/supporting.wadl#Limits">
+                <wadl:method href="retrieveListLimits"/>
             </wadl:resource>
-            <!-- list version details -->
-            <wadl:resource href="../../wadl/supporting.wadl#Version_id">
-                <wadl:method href="getVersionDetails"/>
+            
+            <!-- retrieve list flavors -->
+          <wadl:resource href="../../wadl/supporting.wadl#Flavors">
+                <wadl:method href="retrieveListFlavors"/>
             </wadl:resource>
+          
+          
+            <!-- retrieve flavor details -->
+            <wadl:resource href="../../wadl/supporting.wadl#Flavors">
+                <wadl:method href="retrieveFlavorDetails"/>
+            </wadl:resource>
+          
+            <!-- retrieve list images -->
+            <wadl:resource href="../../wadl/supporting.wadl#Images">
+                <wadl:method href="retrieveListImages"/>
+            </wadl:resource>
+
+            <!-- retrieve list images with details -->
+            <wadl:resource href="../../wadl/supporting.wadl#Images">
+                <wadl:method href="retrieveListImagesWithDetails"/>
+            </wadl:resource>
+
+            <!-- retrieve image details -->
+  
+            <wadl:resource href="../../wadl/supporting.wadl#Images">
+                <wadl:method href="retrieveImageDetails"/>
+            </wadl:resource>
+
+            
+            <!-- delete image -->
+            <wadl:resource href="../../wadl/supporting.wadl#Images">
+                <wadl:method href="deleteImage"/>
+            </wadl:resource>
+
         </wadl:resources>
     </section>
+    
+    
+    
+    
     <!--<section xml:id="api_extensions">
         <!-\-\- this section comes from these WADLs: extensions.wadl -\->
         <title>Extensions</title>
