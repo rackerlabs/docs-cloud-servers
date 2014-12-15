@@ -131,6 +131,11 @@
     <section xml:id="api_supporting">
         <title>Supporting Operations</title>
         <para>This section describes the API operations for supporting functions of servers.</para>
+        
+        <section xml:id="Limits">
+            <title>Limits</title>
+            <para>Limits words here.</para>
+        
         <!--- this section comes from these WADLs: supporting.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             
@@ -138,18 +143,34 @@
             <wadl:resource href="../../wadl/supporting.wadl#Limits">
                 <wadl:method href="retrieveListLimits"/>
             </wadl:resource>
+        </wadl:resources>
+        </section>
             
+            <section xml:id="Flavors">
+                <title>Flavors</title>
+                <para>Flavors words here.</para>
+                <!--- this section comes from these WADLs: supporting.wadl -->
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                
             <!-- retrieve list flavors -->
           <wadl:resource href="../../wadl/supporting.wadl#Flavors">
                 <wadl:method href="retrieveListFlavors"/>
             </wadl:resource>
-          
+            
           
             <!-- retrieve flavor details -->
             <wadl:resource href="../../wadl/supporting.wadl#Flavors">
                 <wadl:method href="retrieveFlavorDetails"/>
             </wadl:resource>
-          
+                </wadl:resources>
+            </section>
+        
+        <section xml:id="Images">
+            <title>Images</title>
+            <para>Images words here.</para>
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                
             <!-- retrieve list images -->
             <wadl:resource href="../../wadl/supporting.wadl#Images">
                 <wadl:method href="retrieveListImages"/>
@@ -171,8 +192,9 @@
             <wadl:resource href="../../wadl/supporting.wadl#Images">
                 <wadl:method href="deleteImage"/>
             </wadl:resource>
-
-        </wadl:resources>
+            </wadl:resources>
+        
+        </section>
     </section>
     
     
