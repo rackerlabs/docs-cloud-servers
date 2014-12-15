@@ -17,27 +17,12 @@
         <!--           ALL  RESOURCES                   -->
 		<!-- *******************************************-->
 		
-		<!--*********-->
-		<!--Versions -->
-		<!--*********-->
-		
-		<resource id="Versions" path="/">
-			
-			<resource id="Version_id" path="{version_id}">
-				<param name="version_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
-					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						<para>The ID for the version.</para>
-					</wadl:doc>
-				</param>
-				
-				<method href="#getVersions"/>
-				<method href="#getVersionDetails"/>
 				
 				
 		<!--******-->
 		<!--Limits-->
 		<!--******-->
-				<resource id="limits" path="{limits}">
+				<resource id="Limits" path="{limits}">
 					<param name="limits" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
 						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 							<para>Some LIMITS words here.</para>
@@ -46,12 +31,12 @@
 					</param>
 					
 					<method href="#retrieveListLimits"/>
-					
+				</resource>
 					
 		<!--*******-->
 		<!--Flavors-->
 		<!--*******-->
-					<resource id="flavors" path="{flavors}">	
+					<resource id="Flavors" path="{flavors}">	
 						<param name="flavors" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
 							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 								<para>Some FLAVORS words here.</para>
@@ -60,12 +45,12 @@
 						
 						<method href="#retrieveListFlavors"/>
 						<method href="#retrieveFlavorDetails"/>
-						
+					</resource>
 						
 		<!--********-->
 		<!-- Images -->
 		<!--********-->
-					<resource id="images" path="{imagess}">	
+					<resource id="Images" path="{images}">	
 						<param name="images" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
 							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 								<para>Some IMAGES words here.</para>
@@ -76,7 +61,7 @@
 						<method href="#retrieveListImagesWithDetails"/>
 						<method href="#retrieveImageDetails"/>
 						<method href="#deleteImage"/>
-						
+					</resource>
 						
 		<!--*************-->
 		<!--Metadata-->
@@ -96,12 +81,7 @@
 							<method href="#setMetadataItem"/>
 							<method href="#deleteMetadata"/>
 				
-			    </resource>
-		      </resource>
-		    </resource>
 		  </resource>
-		</resource>
-	  </resource>
 	</resources>
 	
 	
@@ -109,66 +89,6 @@
 	<!--             ALL METHODS            -->
 	<!--************************************-->
 	
-	
-	<!--Versions Methods-->
-	
-	<!--*******************-->
-	<!--Get Versions method-->
-	<!--*******************-->
-	
-	
-	<method name="GET" id="getVersions">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="List versions">
-			<para role="shortdesc">Retrieves list of versions.</para>
-			<para>This operation lists the available versions of Next Generation Cloud Servers. Since we have only one
-				version at this time, <emphasis role="bold">v2</emphasis>, the operation may return an empty list.</para>
-		</wadl:doc>
-
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/version-list-resp.json"/>-->
-				</wadl:doc>
-				<!--				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<para>Anything special about response goes here.</para>
-				</wadl:doc>-->
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/version-list-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
-	<!--***************************-->
-	<!--Get Version Details method -->
-	<!--***************************-->
-	
-	<method name="GET" id="getVersionDetails">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Get version details">
-			<para role="shortdesc">Retrieves details for specified versions.</para>
-			<para>This operation retrieves details for the specified version of Next Generation Cloud Servers. Since we have
-				only one version at this time, <emphasis role="bold">v2</emphasis>, the operation may return an empty
-				response body.</para>
-		</wadl:doc>
-
-		<response status="204">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/version-detail-resp.json"/>-->
-				</wadl:doc>
-				<!--				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<para>Anything special about response goes here.</para>
-				</wadl:doc>-->
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/version-detail-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
 	
 	<!--Limits Methods-->
 	
@@ -355,7 +275,7 @@
 	<!--Retrieve Image Details method-->
 	<!--*****************************-->
 	
-	<method name="GET" id="retrieveImagesDetails">
+	<method name="GET" id="retrieveImageDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve Image Details">
 			<para role="shortdesc">Retrieves details of a specified image.</para>
 			<para>Specify the image ID as id in the URI.</para>
@@ -363,8 +283,8 @@
 			<para>This operation returns details of the specified image in the response body.
 				The image_type field in the response indicates whether the image is built-in
 				<code>(base)</code> or custom <code>(snapshot)</code>.</para>
-			<para><note>The response body does not include the serverId field. To retrieve the serverId field, get details for all images. 
-				See (insert link here)</note></para>
+			<para><note><para>The response body does not include the serverId field. To retrieve the serverId field, get details for all images. 
+				See (insert link here) </para></note></para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
