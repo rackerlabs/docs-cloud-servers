@@ -69,7 +69,7 @@
                     References</link>.--></para>
 			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
-				retrieve the details of the server (see inserthere). Once the build is complete, the server's
+				retrieve the details of the server (see insert here). Once the build is complete, the server's
 					<parameter>status</parameter> is <code>ACTIVE</code>.</para>
 			<para>For OnMetal server builds, even after the <parameter>status</parameter> is ACTIVE, wait a few additional
 				moments for the network configuration to complete. Once the new OnMetal server pings successfully, you can
