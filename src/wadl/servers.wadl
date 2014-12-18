@@ -34,9 +34,9 @@
 						<method href="#deleteMetadataItem"/>
 					</resource>
 				</resource>-->
-				<!--<resource id="IPs" path="ips">
-					<method href="#getServerAddresses"/>
-					<resource id="network_label" path="{network_label}">
+				<resource id="IPs" path="ips">
+					<method href="#listServerAddresses"/>
+					<resource id="Network_label" path="{network_label}">
 						<param xmlns="http://wadl.dev.java.net/2009/02" name="network_label" style="template"
 							type="xsd:string">
 							<wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook" title="network_label">
@@ -44,8 +44,9 @@
 									<literal>private</literal>.</para>
 							</wadl:doc>
 						</param>
+						<method href="#listServerAddressesbyNetwork"/>
 					</resource>
-				</resource>-->
+				</resource>
 				<!--<resource id="Action" path="action">
 					<method href="#changePassword"/>
 					<method href="#rebootServer"/>
@@ -59,6 +60,7 @@
 		</resource>
 	</resources>
 
+	<!-- Basic Server operations -->
 	<method name="POST" id="createServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create Server">
 			<para role="shortdesc">Provisions a server asynchronously.</para>
@@ -69,19 +71,19 @@
                     References</link>.--></para>
 			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
-				retrieve the details of the server (see insert here). Once the build is complete, the server's
+				retrieve the details of the server <!--(see inserthere)-->. Once the build is complete, the server's
 					<parameter>status</parameter> is <code>ACTIVE</code>.</para>
 			<para>For OnMetal server builds, even after the <parameter>status</parameter> is ACTIVE, wait a few additional
 				moments for the network configuration to complete. Once the new OnMetal server pings successfully, you can
 				begin to use it.</para>
 			<important><para>OnMetal servers must be created using an ssh key pair. Thus you should ignore the administrator
 					password returned by a Create Server operation because it does not allow access to the OnMetal server.
-					See inserthere for more information about key pairs.</para></important>
+					<!--See inserthere for more information about key pairs.--></para></important>
 			<para>The following extensions allow you to use other options when creating a new server:</para>
 			<itemizedlist>
-				<listitem><para>Config Drive inserthere</para></listitem>
-				<listitem><para>Boot from volume inserthere</para></listitem>
-				<listitem><para>Networks inserthere for nova and for neutron</para></listitem>
+				<listitem><para>Config Drive <!--inserthere--></para></listitem>
+				<listitem><para>Boot from volume <!--inserthere--></para></listitem>
+				<listitem><para>Networks <!--inserthere--> for nova and for neutron</para></listitem>
 			</itemizedlist>
 		</wadl:doc>
 		<request>
@@ -147,9 +149,9 @@
 				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
 			<itemizedlist>
-				<listitem><para>Config Drive inserthere</para></listitem>
-				<listitem><para>Scheduled Images inserthere</para></listitem>
-				<listitem><para>Extended Status inserthere</para></listitem>
+				<listitem><para>Config Drive <!--inserthere--></para></listitem>
+				<listitem><para>Scheduled Images <!--inserthere--></para></listitem>
+				<listitem><para>Extended Status <!--inserthere--></para></listitem>
 			</itemizedlist>
 		</wadl:doc>
 		<request>
@@ -176,9 +178,9 @@
 			<para role="shortdesc">Retrieves detailed information for a specified server.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
 			<itemizedlist>
-				<listitem><para>Config Drive inserthere</para></listitem>
-				<listitem><para>Scheduled Images inserthere</para></listitem>
-				<listitem><para>Extended Status inserthere</para></listitem>
+				<listitem><para>Config Drive <!--inserthere--></para></listitem>
+				<listitem><para>Scheduled Images <!--inserthere--></para></listitem>
+				<listitem><para>Extended Status <!--inserthere--></para></listitem>
 			</itemizedlist>
 		</wadl:doc>
 		<request>
@@ -251,4 +253,55 @@
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
+
+	<!-- Server Addresses operations -->
+	<method name="GET" id="listServerAddresses">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of server addresses">
+			<para role="shortdesc">Retrieve list of all server and network addresses associated with the specified
+				server.</para>
+			<para>Specify the target server ID in the URI.</para>
+		</wadl:doc>
+
+		<response status="200 203">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-list-addresses-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-addresses-rsp.json"/>
+				</wadl:doc> &serverIPListRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-list-addresses-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-addresses-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="GET" id="listServerAddressesbyNetwork">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+			title="Retrieve list of network addresses for server and network">
+			<para role="shortdesc">Retrieve list of all server and network addresses associated with the specified server and
+				network.</para>
+			<para>Specify the target server ID and target network type (<literal>public</literal> or <literal>private
+				</literal>) in the URI.</para>
+		</wadl:doc>
+
+		<response status="200 203">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp.json"/>
+				</wadl:doc> &serverIPListByNetRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<!-- Server Actions operations -->
+
+
+	<!-- Metadata operations -->
+
 </application>
