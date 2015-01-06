@@ -169,11 +169,16 @@
         <!--- this section comes from these WADLs: supporting.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             
-            <!-- retrieve list limits -->
+            <!-- retrieve list of rate limits -->
             <wadl:resource href="../../wadl/supporting.wadl#Limits">
-                <wadl:method href="retrieveListLimits"/>
+                <wadl:method href="retrieveListRateLimits"/>
             </wadl:resource>
-        </wadl:resources>
+        
+            
+            <wadl:resource href="../../wadl/supporting.wadl#Limits">
+                <wadl:method href="retrieveListAbsoluteLimits"/>
+            </wadl:resource>
+            </wadl:resources>
         </section>
             
             <section xml:id="Flavors">
@@ -200,8 +205,8 @@
             <para>An image is a collection of files for a specific operating system (OS) that you use to create or rebuild a server. Rackspace provides prebuilt images.</para>
             <para>You can also create custom images from servers that you have launched, by using server action (INSERT LINK HERE). You can use custom images for 
                 data backups or as "gold" images for provisioning additional servers.</para>
-            <para><important><para>n addition to creating images manually, you can also schedule images of your server automatically. 
-                See (INSERT LINK HERE.) for more information about this extension, including enabling and 
+            <para><important><para>In addition to creating images manually, you can also schedule images of your server automatically. 
+                See (INSERT LINK HERE) for more information about this extension, including enabling and 
                 disabling scheduled images and showing scheduled images.</para></important></para>
             <para>With standard servers, the entire disk (O/S and data) is captured in the image. With Compute, Memory, and IO servers, 
                 only the system disk is captured in the image. The data disks should be backed up using Cloud Backup or Cloud Block Storage 
