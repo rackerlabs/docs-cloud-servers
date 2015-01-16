@@ -146,103 +146,157 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="api_servers_actions">
+            <title>Server Actions Operations</title>
+            <para>This section describes the API operations for server actions.</para>
+            <para><note>
+                    <para>The base URI is the same for all server actions. The request body identifies which action to
+                        take.</para>
+            </note></para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- change password-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="changePassword"/>
+                </wadl:resource>
+                <!-- reboot server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="rebootServer"/>
+                </wadl:resource>
+                <!-- rebuild server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="rebuildServer"/>
+                </wadl:resource>
+                <!-- resize server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="resizeServer"/>
+                </wadl:resource>
+                <!-- confirm server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="confirmResizeServer"/>
+                </wadl:resource>
+                <!-- revert server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="revertResizeServer"/>
+                </wadl:resource>
+                <!-- rescue server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="rescueServer"/>
+                </wadl:resource>
+                <!-- unrescue server-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="unrescueServer"/>
+                </wadl:resource>
+                <!-- create image-->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="createImage"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
     </section>
     <section xml:id="api_supporting">
         <title>Supporting Operations</title>
         <para>This section describes the API operations for supporting functions of servers.</para>
-        
+
         <section xml:id="Limits">
             <title>Limits</title>
-            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the system.</para>
-            <para>The system recognizes the following types of limits:
-                <itemizedlist xml:id="limit_list">
-                <listitem>
-                    <para>rate limits. Control the frequency at which the user can issue specific API requests. See (INSERT LINK HERE).</para>
-                </listitem>
-                <listitem>
-                    <para>absolute limits. Control the total number of specific objects that the user can process simultaneously. See (INSERT LINK HERE). </para>
-                </listitem>
-            </itemizedlist>
+            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
+                system.</para>
+            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
+                    <listitem>
+                        <para>rate limits. Control the frequency at which the user can issue specific API requests. See
+                            (INSERT LINK HERE).</para>
+                    </listitem>
+                    <listitem>
+                        <para>absolute limits. Control the total number of specific objects that the user can process
+                            simultaneously. See (INSERT LINK HERE). </para>
+                    </listitem>
+                </itemizedlist>
             </para>
             <para>To query the limits programmatically, see (INSERT LINK HERE).</para>
-        
-        <!--- this section comes from these WADLs: supporting.wadl -->
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            
-            <!-- retrieve list of rate limits -->
-            <wadl:resource href="../../wadl/supporting.wadl#Limits">
-                <wadl:method href="retrieveListRateLimits"/>
-            </wadl:resource>
-        
-            
-            <wadl:resource href="../../wadl/supporting.wadl#Limits">
-                <wadl:method href="retrieveListAbsoluteLimits"/>
-            </wadl:resource>
-            </wadl:resources>
-        </section>
-            
-            <section xml:id="Flavors">
-                <title>Flavors</title>
-                <para>A flavor is a resource configuration for a server. Each flavor is a unique combination of disk, memory, vCPUs, and network bandwidth.</para>
-                <!--- this section comes from these WADLs: supporting.wadl -->
-                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                
-            <!-- retrieve list flavors -->
-          <wadl:resource href="../../wadl/supporting.wadl#Flavors">
-                <wadl:method href="retrieveListFlavors"/>
-            </wadl:resource>
-            
-          
-            <!-- retrieve flavor details -->
-            <wadl:resource href="../../wadl/supporting.wadl#Flavors">
-                <wadl:method href="retrieveFlavorDetails"/>
-            </wadl:resource>
-                </wadl:resources>
-            </section>
-        
-        <section xml:id="Images">
-            <title>Images</title>
-            <para>An image is a collection of files for a specific operating system (OS) that you use to create or rebuild a server. Rackspace provides prebuilt images.</para>
-            <para>You can also create custom images from servers that you have launched, by using server action (INSERT LINK HERE). You can use custom images for 
-                data backups or as "gold" images for provisioning additional servers.</para>
-            <para><important><para>In addition to creating images manually, you can also schedule images of your server automatically. 
-                See (INSERT LINK HERE) for more information about this extension, including enabling and 
-                disabling scheduled images and showing scheduled images.</para></important></para>
-            <para>With standard servers, the entire disk (O/S and data) is captured in the image. With Compute, Memory, and IO servers, 
-                only the system disk is captured in the image. The data disks should be backed up using Cloud Backup or Cloud Block Storage 
-                to ensure availability in case you need to rebuild or restore a server.</para>
+
             <!--- this section comes from these WADLs: supporting.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                
-            <!-- retrieve list images -->
-            <wadl:resource href="../../wadl/supporting.wadl#Images">
-                <wadl:method href="retrieveListImages"/>
-            </wadl:resource>
 
-            <!-- retrieve list images with details -->
-            <wadl:resource href="../../wadl/supporting.wadl#Images">
-                <wadl:method href="retrieveListImagesWithDetails"/>
-            </wadl:resource>
+                <!-- retrieve list of rate limits -->
+                <wadl:resource href="../../wadl/supporting.wadl#Limits">
+                    <wadl:method href="retrieveListRateLimits"/>
+                </wadl:resource>
 
-            <!-- retrieve image details -->
-  
-            <wadl:resource href="../../wadl/supporting.wadl#Images">
-                <wadl:method href="retrieveImageDetails"/>
-            </wadl:resource>
 
-            
-            <!-- delete image -->
-            <wadl:resource href="../../wadl/supporting.wadl#Images">
-                <wadl:method href="deleteImage"/>
-            </wadl:resource>
+                <wadl:resource href="../../wadl/supporting.wadl#Limits">
+                    <wadl:method href="retrieveListAbsoluteLimits"/>
+                </wadl:resource>
             </wadl:resources>
-        
+        </section>
+
+        <section xml:id="Flavors">
+            <title>Flavors</title>
+            <para>A flavor is a resource configuration for a server. Each flavor is a unique combination of disk, memory,
+                vCPUs, and network bandwidth.</para>
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+                <!-- retrieve list flavors -->
+                <wadl:resource href="../../wadl/supporting.wadl#Flavors">
+                    <wadl:method href="retrieveListFlavors"/>
+                </wadl:resource>
+
+
+                <!-- retrieve flavor details -->
+                <wadl:resource href="../../wadl/supporting.wadl#Flavors">
+                    <wadl:method href="retrieveFlavorDetails"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+
+        <section xml:id="Images">
+            <title>Images</title>
+            <para>An image is a collection of files for a specific operating system (OS) that you use to create or rebuild a
+                server. Rackspace provides prebuilt images.</para>
+            <para>You can also create custom images from servers that you have launched, by using server action (INSERT LINK
+                HERE). You can use custom images for data backups or as "gold" images for provisioning additional
+                servers.</para>
+            <para><important>
+                    <para>In addition to creating images manually, you can also schedule images of your server automatically.
+                        See (INSERT LINK HERE) for more information about this extension, including enabling and disabling
+                        scheduled images and showing scheduled images.</para>
+                </important></para>
+            <para>With standard servers, the entire disk (O/S and data) is captured in the image. With Compute, Memory, and
+                IO servers, only the system disk is captured in the image. The data disks should be backed up using Cloud
+                Backup or Cloud Block Storage to ensure availability in case you need to rebuild or restore a server.</para>
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+                <!-- retrieve list images -->
+                <wadl:resource href="../../wadl/supporting.wadl#Images">
+                    <wadl:method href="retrieveListImages"/>
+                </wadl:resource>
+
+                <!-- retrieve list images with details -->
+                <wadl:resource href="../../wadl/supporting.wadl#Images">
+                    <wadl:method href="retrieveListImagesWithDetails"/>
+                </wadl:resource>
+
+                <!-- retrieve image details -->
+
+                <wadl:resource href="../../wadl/supporting.wadl#Images">
+                    <wadl:method href="retrieveImageDetails"/>
+                </wadl:resource>
+
+
+                <!-- delete image -->
+                <wadl:resource href="../../wadl/supporting.wadl#Images">
+                    <wadl:method href="deleteImage"/>
+                </wadl:resource>
+            </wadl:resources>
+
         </section>
     </section>
-    
-    
-    
-    
+
+
+
+
     <!--<section xml:id="api_extensions">
         <!-\-\- this section comes from these WADLs: extensions.wadl -\->
         <title>Extensions</title>

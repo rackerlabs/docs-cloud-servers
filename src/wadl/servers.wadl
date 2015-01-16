@@ -47,15 +47,17 @@
 						<method href="#listServerAddressesbyNetwork"/>
 					</resource>
 				</resource>
-				<!--<resource id="Action" path="action">
+				<resource id="Actions" path="actions">
 					<method href="#changePassword"/>
 					<method href="#rebootServer"/>
 					<method href="#rebuildServer"/>
 					<method href="#resizeServer"/>
-					<method href="#confirmServer"/>
-					<method href="#revertServer"/>
+					<method href="#confirmResizeServer"/>
+					<method href="#revertResizeServer"/>
+					<method href="#rescueServer"/>
+					<method href="#unrescueServer"/>
 					<method href="#createImage"/>
-				</resource>-->
+				</resource>
 			</resource>
 		</resource>
 	</resources>
@@ -68,7 +70,7 @@
 				available as a <code>self</code> and <code>bookmark</code> link in the server representation.
 				<!--See
 				<link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/LinksReferences.html">Links and
-                    References</link>.--></para>
+                    References</link> inserthere.--></para>
 			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
 				retrieve the details of the server <!--(see inserthere)-->. Once the build is complete, the server's
@@ -98,7 +100,8 @@
 			</representation>
 		</request>
 
-		<response status="200">
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/server-create-rsp-json-http.txt"/>
@@ -127,7 +130,8 @@
 			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
 		</request>
 
-		<response status="200 203">
+		<response status="200 203 300">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/servers-list-rsp-json-http.txt"/>
@@ -158,6 +162,7 @@
 			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
 		</request>
 		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<para>The following example show only one server in the list for brevity.</para>
@@ -186,16 +191,17 @@
 		<request>
 			<representation mediaType="application/json"/>
 		</request>
-		<response status="200">
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/server-det-rsp-json-http.txt"/>-->
-					<!--<xsdxt:code href="../common/samples/server-det-rsp.json"/>-->
+					<xsdxt:code href="../common/samples/server-det-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/server-det-rsp.json"/>
 				</wadl:doc>&serverDetRspParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/server-det-rsp-xml-http.txt"/>-->
-					<!--<xsdxt:code href="../common/samples/server-det-rsp.xml"/>-->
+					<xsdxt:code href="../common/samples/server-det-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/server-det-rsp.xml"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
@@ -221,6 +227,7 @@
 		</request>
 
 		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/server-update-rsp-json-http.txt"/>
@@ -240,7 +247,7 @@
 			<para>If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode> status code with no response
 				body.</para>
 		</wadl:doc>
-		<response status="202">
+		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
@@ -263,6 +270,7 @@
 		</wadl:doc>
 
 		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/servers-list-addresses-rsp-json-http.txt"/>
@@ -286,6 +294,7 @@
 		</wadl:doc>
 
 		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp-json-http.txt"/>
@@ -300,7 +309,334 @@
 		</response> &commonFaults; </method>
 
 	<!-- Server Actions operations -->
+	<method name="POST" id="changePassword">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Change password for specified server">
+			<para role="shortdesc">Change the admin password, or root password, for the specified server.</para>
+			<note><para>OnMetal servers must be created using ssh key pairs. You should neither use nor modify the
+					administrator password generated by the server build operation.</para></note>
+			<para>In the URI, specify the target server ID.</para>
+			<para>In the request body, specify the action <literal>changePassword</literal>, followed by the
+					<literal>adminPass</literal> attribute with the new password.</para>
+		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-chgpwd-req.json"/>
+				</wadl:doc> &serverActionChangePwdReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-chgpwd-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+		</response>&commonFaults; </method>
+
+	<method name="POST" id="rebootServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Reboot specified server">
+			<para role="shortdesc">Reboot the specified server.</para>
+			<para>This operation performs a soft or hard reboot of the specified server. A soft reboot is a graceful shutdown
+				and restart of your server's operating system. A hard reboot power cycles your server, which performs an
+				immediate shutdown and restart.</para>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the action <literal>reboot</literal>, optionally followed by the
+					<literal>type</literal> attribute, either <literal>HARD</literal> or <literal>SOFT</literal>.</para>
+			<para>If you do not include the type attribute, a soft reboot is performed by default.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-reboot-req.json"/>
+				</wadl:doc> &serverActionRebootReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-reboot-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+		</response>&commonFaults;</method>
+
+	<method name="POST" id="rebuildServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Rebuild specified server">
+			<para role="shortdesc">Rebuild the specified server.</para>
+			<para>The rebuild operation removes all data on the server and replaces it with the specified image. The serverID
+				and all IP addresses remain the same. If you specify name, metadata, accessIPv4, or accessIPv6 in the rebuild
+				request, new values replace existing values. Otherwise, these values do not change. You can inject data into
+				the file system during the rebuild.</para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the rebuild action followed by various attributes, listed in the following
+				parameters section.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-action-rebuild-req.json"/>
+				</wadl:doc> &serverActionRebuildReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-action-rebuild-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp.json"/>
+				</wadl:doc> &serverCreateRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="POST" id="resizeServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Resize specified server">
+			<para role="shortdesc">Resize the specified server.</para>
+			<para>This operation converts an existing Standard server to a different flavor, which scales the server up or
+				down. The original server is saved for a period of time to allow roll back if a problem occurs. You should
+				test and explicitly confirm all resizes. When you do so, the original server is removed. All resizes are
+				automatically confirmed after 24 hours if you do not explicitly confirm or revert the resize. </para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<warning>
+				<para> Resize is only available for Standard flavors. If you have a Compute, Memory, or IO flavor server, and
+					you need to change the size of your data disk(s), you will need to: <orderedlist>
+						<listitem>
+							<para>Image your system disk.</para>
+						</listitem>
+						<listitem>
+							<para>Back-up your data disk(s), using Cloud Backup or Cloud Block Storage.</para>
+						</listitem>
+						<listitem>
+							<para>Create a new server with the desired size and flavor class, using your image.</para>
+						</listitem>
+						<listitem>
+							<para>Add your backed-up data to the new data disk(s).</para>
+						</listitem>
+						<listitem>
+							<para>Delete the old server, once you are satisfied with the new server.</para>
+						</listitem>
+					</orderedlist>
+				</para>
+				<para>For General Purpose servers, use steps 1, 3, and 5 from the preceding list.</para>
+			</warning>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the <literal>resize</literal> action followed by attributes.</para>
+		</wadl:doc>
+
+		<request>
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-resize-req.json"/>
+				</wadl:doc> &serverActionResizeReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-resize-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request> &commonFaults; </method>
+
+	<method name="POST" id="confirmResizeServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Confirm server resize for specified server">
+			<para role="shortdesc">Confirm the server resize for the specified server.</para>
+			<para>During a resize operation, the original server is saved for a period of time to allow roll back if a
+				problem occurs. After you verify that the newly resized server works properly, use this operation to confirm
+				the resize. After you confirm the resize, the original server is removed, and you cannot roll back to that
+				server. All resizes are automatically confirmed after 24 hours, if you do not explicitly confirm, or revert,
+				the resize.</para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the <literal>confirmResize</literal> action.</para>
+		</wadl:doc>
+
+		<request>
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-confresize-req.json"/>
+				</wadl:doc> &serverActionConfResizeReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-confresize-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="204">
+			<doc title="Success">Request succeeded.</doc>
+		</response>&commonFaults; </method>
+
+	<method name="POST" id="revertResizeServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Revert server resize for specified server">
+			<para role="shortdesc">Revert the server resize for the specified server.</para>
+			<para>During a resize operation, the original server is saved for a period of time to allow for roll back if a
+				problem occurs. If you determine that a problem exists with a newly resized server, use this operation to
+				revert the resize and roll back to the original server. All resizes are automatically confirmed after 24
+				hours if you do not explicitly confirm or revert the resize. </para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the <literal>revertResize</literal> action.</para>
+		</wadl:doc>
+
+		<request>
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-rvrtresize-req.json"/>
+				</wadl:doc> &serverActionRvrtResizeReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actions-rvrtresize-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+		</response>&commonFaults; </method>
+
+	<method name="POST" id="rescueServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Rescue specified server">
+			<para role="shortdesc">Enter rescue mode to reboot a virtual machine (VM) in rescue mode so that you can access
+				the VM with a new root password and fix any file system and configuration errors.</para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<para>Enter rescue mode to debug system issues that prevent you from booting a server to a usable state.</para>
+			<para>When you place a server in rescue mode, the following events occur: </para>
+			<orderedlist>
+				<listitem>
+					<para>The VM is shut down.</para>
+				</listitem>
+				<listitem>
+					<para>A new VM is created with the following images attached:</para>
+					<variablelist>
+						<varlistentry>
+							<term>Primary image</term>
+							<listitem><para>Cleanly running VM based on the image from which the original server was created,
+									with a random password. This password is returned to you in a response to issuing the
+									rescue mode API call. Use this clean image to boot the server and fix any
+									problems.</para></listitem>
+						</varlistentry>
+					</variablelist>
+					<variablelist>
+						<varlistentry>
+							<term>Secondary disk</term>
+							<listitem><para>Image of the VM that needs to be rescued.</para></listitem>
+						</varlistentry>
+					</variablelist>
+				</listitem>
+			</orderedlist>
+			<para>When you put a server into rescue mode, you cannot use it until its status goes from
+					<literal>ACTIVE</literal> to <literal>RESCUE</literal>. This does not happen immediately.</para>
+			<para>For a full list of possible server status values, see <xref linkend="Server_stati"/></para>
+			<note><para>The SSH server key will be different on the rescue image than on the original server.</para></note>.
+				<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the <literal>rescue</literal> action.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-rescue-req.json"/>
+				</wadl:doc> &serverActionRescueReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-rescue-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp.json"/>
+				</wadl:doc> &serverActionRescueRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; &commonFaults; </method>
+
+	<method name="POST" id="unrescueServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Revert server action  for specified server">
+			<para role="shortdesc">Takes the specified server out of rescue mode.</para>
+			<para>After you resolve any problems and reboot a rescued server, you can unrescue the server. Specify the
+					<literal>unrescue</literal> action in the request body. When you unrescue the server, the repaired image
+				is restored to its running state with your original password.</para>
+			<para>You can exit rescue mode at any time.</para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the <literal>unrescue</literal> action.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-unrescue-req.json"/>
+				</wadl:doc> &serverActionUnrescueReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-unrescue-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request> &commonFaults; </method>
+
+	<method name="POST" id="createImage">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create image of specified server">
+			<para role="shortdesc">Create an image of the specified server.</para>
+			<para>This operation creates a new image for a specified server. Once complete, you can use your new image to
+				rebuild or create servers. The full URL to the newly created image is returned through the
+					<code>Location</code> header. You can retrieve additional attributes for the image including its creation
+				status by issuing a subsequent &GET; on that URL.
+				<!--See inserthere <xref linkend="Get_Image_Details-d1e4848"/> for details.--></para>
+			<para>Image creation is an asynchronous operation, so coordinating the creation with data quiescence, and so on,
+				is currently not possible. </para>
+			<note>
+				<para>This operation is not available for OnMetal servers.</para>
+			</note>
+			<para> In addition to creating images manually, you may also schedule images of your server automatically.
+				<!--See inserthere
+				<xref linkend="scheduled_images"/> for more information on this extension, including enabling and disabling
+				scheduled images and showing scheduled images.-->
+			</para>
+			<para>Specify the target server ID in the URI.</para>
+			<para>In the request body, specify the <literal>createImage</literal> action, followed by attributes.</para>
+		</wadl:doc>
+
+		<request>
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-createImage-req.json"/>
+				</wadl:doc> &serverActionCreateImageReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/servers-actons-createImage-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request> &commonFaults; </method>
 
 	<!-- Metadata operations -->
 

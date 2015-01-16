@@ -1,0 +1,6 @@
+{
+    "reboot" : 
+    {
+        "type" : "HARD"
+    }
+}

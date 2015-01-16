@@ -21,10 +21,10 @@
                                 <para>Cloud Servers service</para>
                         </listitem>
                         <listitem>
-                                <para><glossterm>RESTful</glossterm> web services</para>
+                                <para>RESTful web services</para>
                         </listitem>
                         <listitem>
-                                <para><glossterm>HTTP</glossterm>/1.1</para>
+                                <para>HTTP/1.1</para>
                         </listitem>
                         <listitem>
                                 <para>JSON data serialization formats</para>
