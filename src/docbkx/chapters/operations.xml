@@ -152,7 +152,7 @@
             <para><note>
                     <para>The base URI is the same for all server actions. The request body identifies which action to
                         take.</para>
-            </note></para>
+                </note></para>
             <!--- this section comes from these WADLs: servers.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <!-- change password-->
@@ -193,7 +193,123 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="api_servers_metadata">
+            <title>Server Metadata Operations</title>
+            <para>This section describes the metadata API operations for servers.</para>
+            <note>
+                <para>You can also add metadata to images<!--, see inserthere-->.</para>
+            </note>
+            <para> Metadata provides additional information about your provisioned resources. It follows the format of
+                '"metadata key":"metadata value"' (for example, <literal>"Label" : "Web"</literal>). Metadata API operations
+                allow you to add, delete, and manipulate metadata for servers and images. Metadata can be configured by the
+                provider or by the user to provide extra functionality or labeling, or to provide information for 3rd party
+                applications to use. </para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show server metadata -->
+                <wadl:resource href="../../wadl/servers.wadl#Metadata">
+                    <wadl:method href="listMetadata"/>
+                </wadl:resource>
+                <!-- create server metadata-->
+                <wadl:resource href="../../wadl/servers.wadl#Metadata">
+                    <wadl:method href="setMetadata"/>
+                </wadl:resource>
+                <!-- update server metadata details-->
+                <wadl:resource href="../../wadl/servers.wadl#Metadata">
+                    <wadl:method href="updateMetadata"/>
+                </wadl:resource>
+                <!-- show server metadata item-->
+                <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
+                    <wadl:method href="showMetadataItem"/>
+                </wadl:resource>
+                <!-- create server metadata item-->
+                <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
+                    <wadl:method href="setMetadataItem"/>
+                </wadl:resource>
+                <!-- delete server metadata item-->
+                <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
+                    <wadl:method href="deleteMetadataItem"/>
+                </wadl:resource>
+            </wadl:resources>
+            <section xml:id="Image_metadata">
+                <title>Using auto_disk_config image metadata key</title>
+                <para> When added as metadata to an image, the metadata auto_disk_config key determines how the cloud
+                    server's root disk partition is handled when the server is started or resized. It has the following
+                    possible values: </para>
+                <variablelist>
+                    <varlistentry>
+                        <term>TRUE</term>
+                        <listitem>
+                            <para> The root partition is expanded to encompass all of the available virtual disk.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>FALSE</term>
+                        <listitem>
+                            <para> The root partition remains the same size as the original image, currently 20 KB. Extra
+                                virtual disk is seen as unformatted free space by the OS.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>DISABLED (preferred setting for Windows and Free-BSD images)</term>
+                        <listitem>
+                            <para> In this case, the action taken is the same as for the value FALSE. In addition, this
+                                action cannot be overridden by use of the
+                                <!--<link linkend="diskconfig_attribute">Disk Configuration</link> inserthere-->
+                                Extension.</para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+                <para> The image metadata auto_disk_config key is related to, and can actually control, the available
+                    <!--<link linkend="diskconfig_attribute">Disk Configuration</link> inserthere--> Extension v2 API
+                    attribute: <parameter>OS-DCF:diskConfig</parameter>. It does this in two ways.</para>
+                <orderedlist>
+                    <listitem>
+                        <para>The image metadata auto_disk_config value sets the default value of
+                                <parameter>OS-DCF:diskConfig</parameter>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>When the image’s auto_disk_config value is DISABLED, automatic disk configuration cannot be
+                            enabled when the server is booted or rebuilt.</para>
+                    </listitem>
+                </orderedlist>
+                <para> The following table shows the effect of setting the image metadata auto_disk_config key on the server
+                    attribute <parameter>OS-DCF:diskConfig</parameter> and whether the image-specified value may be
+                    overridden when starting or resizing a server.</para>
+                <informaltable rules="all" width="85%">
+                    <thead>
+                        <tr>
+                            <td colspan="1">auto_disk_config</td>
+                            <td colspan="2">Resulting OS-DCF:diskConfig value</td>
+                            <td colspan="3">User Selectable at Start or Resize?</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">TRUE</td>
+                            <td colspan="2">AUTO</td>
+                            <td colspan="3">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">FALSE</td>
+                            <td colspan="2">MANUAL</td>
+                            <td colspan="3">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">DISABLED</td>
+                            <td colspan="2">MANUAL</td>
+                            <td colspan="3">No</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <warning>
+                    <para> We do not advise changing auto_disk_config during resizes, even when allowed, since it can have
+                        unintended consequences.</para>
+                </warning>
+            </section>
+        </section>
     </section>
+
     <section xml:id="api_supporting">
         <title>Supporting Operations</title>
         <para>This section describes the API operations for supporting functions of servers.</para>
@@ -293,9 +409,6 @@
 
         </section>
     </section>
-
-
-
 
     <!--<section xml:id="api_extensions">
         <!-\-\- this section comes from these WADLs: extensions.wadl -\->
