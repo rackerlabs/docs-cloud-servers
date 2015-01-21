@@ -22,18 +22,6 @@
 				<method href="#getServer"/>
 				<method href="#updateServer"/>
 				<method href="#deleteServer"/>
-				<!--<resource id="Metadata" path="metadata">
-					<resource id="MetadataKey" path="{key}">
-						<param xmlns="http://wadl.dev.java.net/2009/02" name="key" style="template" type="csapi:MetadataKey">
-							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Server metadata item key">
-								<para>A string. Maximum length is 255 characters.</para>
-							</wadl:doc>
-						</param>
-						<method href="#getMetadataItem"/>
-						<method href="#setMetadataItem"/>
-						<method href="#deleteMetadataItem"/>
-					</resource>
-				</resource>-->
 				<resource id="IPs" path="ips">
 					<method href="#listServerAddresses"/>
 					<resource id="Network_label" path="{network_label}">
@@ -58,13 +46,29 @@
 					<method href="#unrescueServer"/>
 					<method href="#createImage"/>
 				</resource>
+				<resource id="Metadata" path="metadata">
+					<method href="#listMetadata"/>
+					<method href="#setMetadata"/>
+					<method href="#updateMetadata"/>
+					<resource id="MetadataKey" path="{key}">
+						<param xmlns="http://wadl.dev.java.net/2009/02" name="key" style="template" type="csapi:MetadataKey">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Server metadata item key">
+								<para>The name of the target key in a metadata key pair. A string with maximum length of 255
+									characters.</para>
+							</wadl:doc>
+						</param>
+						<method href="#showMetadataItem"/>
+						<method href="#setMetadataItem"/>
+						<method href="#deleteMetadataItem"/>
+					</resource>
+				</resource>
 			</resource>
 		</resource>
 	</resources>
 
 	<!-- Basic Server operations -->
 	<method name="POST" id="createServer">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create Server">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create server">
 			<para role="shortdesc">Provisions a server asynchronously.</para>
 			<para>The full URL to the newly created server is returned through the <code>Location</code> header and is
 				available as a <code>self</code> and <code>bookmark</code> link in the server representation.
@@ -157,6 +161,7 @@
 				<listitem><para>Scheduled Images <!--inserthere--></para></listitem>
 				<listitem><para>Extended Status <!--inserthere--></para></listitem>
 			</itemizedlist>
+			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
@@ -179,7 +184,7 @@
 		</response> &commonFaults; </method>
 
 	<method name="POST" id="getServer">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve Server Details">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve server details">
 			<para role="shortdesc">Retrieves detailed information for a specified server.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
 			<itemizedlist>
@@ -187,6 +192,7 @@
 				<listitem><para>Scheduled Images <!--inserthere--></para></listitem>
 				<listitem><para>Extended Status <!--inserthere--></para></listitem>
 			</itemizedlist>
+			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json"/>
@@ -207,12 +213,16 @@
 		</response>&commonFaults; </method>
 
 	<method name="PUT" id="updateServer">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update Server">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update server">
 			<para role="shortdesc">Updates one or more editable attributes for a specified server.</para>
 			<para>The attributes that can be edited are: name, accessIPv4, and accessIPv6. You can update any or all of the
 				attributes in a single request.</para>
 			<note><para>If you try to update a server by using the server bookmark link, the response code is 300, unless you
 					use the Accept: application/json;version=1.1 header with the request.</para></note>
+			<para>In the URI, specify the target server ID.</para>
+			<para>In the request body, specify the element <literal>server</literal>, followed by the attribute, for example
+					<literal>name</literal>, with the new value for that attribute. You can include one or more attributes in
+				the server element.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
@@ -242,10 +252,11 @@
 		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteServer">
-		<wadl:doc title="Delete Server" xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete server">
 			<para role="shortdesc">Deletes the specified server.</para>
 			<para>If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode> status code with no response
 				body.</para>
+			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
@@ -266,7 +277,7 @@
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of server addresses">
 			<para role="shortdesc">Retrieve list of all server and network addresses associated with the specified
 				server.</para>
-			<para>Specify the target server ID in the URI.</para>
+			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 
 		<response status="200 203">
@@ -289,8 +300,8 @@
 			title="Retrieve list of network addresses for server and network">
 			<para role="shortdesc">Retrieve list of all server and network addresses associated with the specified server and
 				network.</para>
-			<para>Specify the target server ID and target network type (<literal>public</literal> or <literal>private
-				</literal>) in the URI.</para>
+			<para>In the URI, specify the target server ID and target network type (<literal>public</literal> or
+					<literal>private </literal>).</para>
 		</wadl:doc>
 
 		<response status="200 203">
@@ -639,5 +650,184 @@
 		</request> &commonFaults; </method>
 
 	<!-- Metadata operations -->
+	<method name="GET" id="listMetadata">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List server metadata">
+			<para role="shortdesc">Retrieve list of all metadata for a specified server.</para>
+			<para>In the URI, specify the target server ID.</para>
+		</wadl:doc>
 
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/meta-list-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/meta-list-rsp.json"/>
+				</wadl:doc> &metaListRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/meta-list-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/meta-list-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="PUT" id="setMetadata">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata">
+			<para role="shortdesc">Create or replace metadata items for a specified server</para>
+			<para>You can add one or more new metadata items in a single request.</para>
+			<important><para>Existing metadata items are replaced with the ones provided in the request regardless of the
+					names of the original metadata items.</para></important>
+			<para>If you exceed the maximum number of metadata items in the request, the call throws an <literal>overLimit
+				(413)</literal> fault. To find the maximum number of key-value pairs that can be supplied for each
+				server, use the maxServerMeta absolute limit query
+				<!--found in Section 1.9.3, “Get Limits” inserthere-->.</para>
+			<para>In the URI, specify the target server ID.</para>
+			<para>In the request body, specify the <literal>metadata</literal> element, followed by the new metadata key, for
+				example <literal>version</literal>, with the value for that key.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-set-req.json"/>
+				</wadl:doc>&metaListRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-set-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-set-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/meta-set-rsp.json"/>
+				</wadl:doc>&metaListRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-set-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/meta-set-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<method name="POST" id="updateMetadata">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update server metadata">
+			<para role="shortdesc">Update metadata items by key for a specified server</para>
+			<para>You can update one or more metadata items that you previously added in a single request, but you should
+				avoid changing metadata items that you did not add. The operation replaces existing metadata items with the
+				same key. Items that are not explicitly mentioned in the request are not modified. </para>
+			<para>If you exceed the maximum number of metadata items in the request, the call throws an <literal>overLimit
+					(413)</literal> fault. To find the maximum number of key-value pairs that can be supplied for each
+				server, use the maxServerMeta absolute limit query
+				<!--found in Section 1.9.3, “Get Limits” inserthere-->.</para>
+			<para>In the URI, specify the target server ID.</para>
+			<para>In the request body, specify the <literal>metadata</literal> element, followed by the metadata key, for
+				example <literal>version</literal>, with the new value for that key.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-update-req.json"/>
+				</wadl:doc>&metaListRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-update-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-update-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/meta-update-rsp.json"/>
+				</wadl:doc>&metaListRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/meta-update-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/meta-update-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<method name="GET" id="showMetadataItem">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show server metadata item details">
+			<para role="shortdesc">Retrieve metadata item by key for a specified server.</para>
+			<para>In the URI, specify the target server ID and the target metadata key.</para>
+		</wadl:doc>
+
+		<response status="200 203 300">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/metaitem-update-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/metaitem-update-rsp.json"/>
+				</wadl:doc> &metaListRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/metaitem-update-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/metaitem-update-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="PUT" id="setMetadataItem">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata item">
+			<para role="shortdesc">Create or replace metadata item by key for a specified server</para>
+			<para></para>
+			<para>In the URI, specify the target server ID and the target metadata key.</para>
+			<para>In the request body, specify the <literal>meta</literal> element, followed by the metadata key, for
+				example <literal>version</literal>, with the new value for that key.</para>
+			<note><para>The key specified in the request body must match the key specified in the URI request.</para></note>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/metaitem-set-req.json"/>
+				</wadl:doc>&metaListRspParameters;</representation>
+			<representation mediaType="application/xml">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/metaitem-set-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/metaitem-set-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/metaitem-set-rsp.json"/>
+				</wadl:doc>&metaListRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/metaitem-set-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/metaitem-set-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<method name="DELETE" id="deleteMetadataItem">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete server metadata item">
+			<para role="shortdesc">Deletes a metadata item by key from the specified server.</para>
+			<para>If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode> status code with no response
+				body.</para>
+			<para>In the URI, specify the target server ID and the target metadata key.</para>
+		</wadl:doc>
+		<response status="204">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/metaitem-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/metaitem-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
 </application>
