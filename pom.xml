@@ -6,27 +6,24 @@
 	<version>1.1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Cloud Servers v2 API Docs</name>
+
+	<parent>
+		<groupId>com.rackspace.cloud.api</groupId>
+		<artifactId>rackspace-docs-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
 	<build>
 		<plugins>
 			<!--Olink Maven Plugin-->
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
 				<artifactId>olink-maven-plugin</artifactId>
-				<version>1.2.6</version>
-				<executions>
-					<execution>
-						<phase>initialize</phase>
-						<goals>
-							<goal>olink</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<!--Clouddocs Maven Plugin-->
 			<plugin>
 				<groupId>com.rackspace.cloud.api</groupId>
-				<artifactId>clouddocs-maven-plugin</artifactId>
-				<version>2.1.3</version>
+				<artifactId>rackspace-docs-maven-plugin</artifactId>
 				<executions>
 					<execution>
 						<goals>
