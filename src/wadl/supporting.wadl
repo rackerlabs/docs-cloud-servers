@@ -51,40 +51,33 @@
 		<!--********-->
 		<!-- Images -->
 		<!--********-->
-					<resource id="Images" path="{images}">	
-						<param name="images" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
-							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-								<para>Some IMAGES words here.</para>
-							</wadl:doc>
-						</param>
-						
-						<method href="#retrieveListImages"/>
-						<method href="#retrieveListImagesWithDetails"/>
-						<method href="#retrieveImageDetails"/>
-						<method href="#deleteImage"/>
-					</resource>
-						
-		<!--*************-->
-		<!--Metadata-->
-		<!--*************-->
-						<resource id="metadata" path="{metadata}">
-							<param name="metadata" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
-								<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-									<para>Some METADATA words here.</para>
-									<para>Some METADATA words here.</para>
-								</wadl:doc>
-							</param>
-							
-							<method href="#setMetadata"/>
-							<method href="#retrieveMetadata"/>
-							<method href="#updateMetadata"/>
-							<method href="#retrieveMetadataItem"/>
-							<method href="#setMetadataItem"/>
-							<method href="#deleteMetadata"/>
+		<resource id="Images" path="images">
+			<param name="images" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>Image stuff here.</para>
+				</wadl:doc>
+			</param>
+			<method href="#retrieveListImages"/>
+			<resource id="ImagesDet" path="detail">
+				<method href="#retrieveListImagesWithDetails"/>
+			</resource>
+			
+			
+			<resource id="Image_id" path="{image_id}">
+				<param name="image_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>Image stuff here.</para>
+					</wadl:doc>
+				</param>
+				<method href="#retrieveImageDetails"/>
+				<method href="#deleteImage"/>
 				
-		  </resource>
+			</resource>
+			
+			
+		</resource>	
+		
 	</resources>
-	
 	
 	<!--************************************-->
 	<!--             ALL METHODS            -->
@@ -205,40 +198,17 @@
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of images">
 			<para role="shortdesc">Retrieves IDs, names, and links for all available images.</para>
 			<para>This operation lists all images visible by the account.</para>
-			<para>To filter the list of images returned in the response body, you can specify the following optional URI parameters:</para>
-			<para><code>server=serverRef&#038;</code></para>
-			<para>Filters the list of images by server. Specify the server reference by ID or by full URL.</para>
-			<para><code>name=imageName&#038;</code></para>
-			<para>Filters the list of images by image name.</para>
-			<para><code>status=imageStatus&#038;</code></para>
-			<para>Filters the list of images by status. In-flight images have a status of SAVING and the 
-				conditional progress element contains a value from 0 to 100, which indicates the percentage 
-				completion. Other possible values for the status attribute include ACTIVE, DELETED, ERROR, 
-				SAVING, and UNKNOWN. Images with an ACTIVE status are available for use.</para>
-			<para><code>changes-since=dateTime&#038;</code></para>
-			<para>Filters the list of images to those that have changed since the changes-since time. See (insert link here)</para>
-			<para>marker=markerID&#038;</para>
-			<para>The ID of the last item in the previous list. See (insert link here)</para>
-			<para><code>limit=int</code></para>
-			<para>Sets the page size. See (insert link here)</para>
-			<para><code>type={BASE|SNAPSHOT}</code></para>
-			<para>Filters base Rackspace images or any custom server images that you have created.</para>
 			<para>This operation does not require a request body.</para>
 			<para>The optional minDisk and minRam attributes set the minimum disk and RAM required to create a server with the image.</para>
 			<para>This operation returns a response body. The image_type field in the response indicates whether the image 
 				is built-in <code>(base)</code> or custom <code>(snapshot)</code>.</para>
 		</wadl:doc>
 		
-		<!-- In Cat's WADL, the request section looks more like this (below, commented out) where it points to a section in the common.ent file.  -->
-		<!--<request>
-			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
-		</request>-->
-		
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<!--<xsdxt:code href="../common/samples/server-create-req.json"/>-->
-				</wadl:doc><!--&serverCreateReqParameters;--> 
+				</wadl:doc>&imagesListQueryParameters; 
 			</representation>
 			
 			<representation mediaType="application/xml" element="csapi:element">
@@ -255,7 +225,7 @@
 				</wadl:doc> <!--&serverListRspParameters;--> 
 			</representation>
 		</response>&commonFaults;
-			
+		
 	</method>
 		
 	<!--****************************************-->
@@ -264,7 +234,7 @@
 		
 	<method name="GET" id="retrieveListImagesWithDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of images with details">
-			<para role="shortdesc">Retrieves details of the specified image..????</para>
+			<para role="shortdesc">Retrieves all details for all available images.</para>
 			<para>Specify the image ID as id in the URI.</para>
 			<para>This operation does not require a request body.</para>
 			<para>This operation returns details of the specified image in the response body. 
@@ -275,7 +245,7 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<!--<xsdxt:code href="../common/samples/server-create-req.json"/>-->
-				</wadl:doc><!--&serverCreateReqParameters; -->
+				</wadl:doc>&imagesListQueryParameters;
 			</representation>
 		</request>
 		
@@ -341,215 +311,5 @@
 			</representation>
 		</response>&commonFaults;
 	</method>
-		
-	
-	
-	<!--Metadata Methods-->
-	
-	<!--********************-->
-	<!--Set Metadata method-->
-	<!--********************-->
-	
-	<method name="POST" id="setMetadata">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set metadata">
-			<para role="shortdesc">Sets metadata for the specified server or image.</para>
-			<para>Sets metadata for the specified server or image.</para>
-			<para>Specify the server or image ID as id in the URI.</para>
-			<para>In the request body, specify the <code>metadata</code> element followed by attributes.</para>
-			<para>The following table describes the attributes that you can set in the request body:</para>
-			<para>(Add table here)</para>
-			<para>Existing metadata items are replaced with the ones provided in the request regardless of 
-				the names of the original metadata items.</para>
-			<para>If you exceed the maximum number of metadata items, the call throws an overLimit (413) fault.</para>
-			<para>You can query the maximum number of key-value pairs that can be supplied for each server through the 
-				<code>maxServerMeta</code> absolute limit. You can query the maximum number of key-value pairs for 
-				an image through the <code>maxImageMeta</code> absolute limit. See</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.json"/>-->
-					<!-- <wadl:doc xmlns="http://docbook.org/ns/docbook">
-						<para>Anything special about response goes here.</para>
-				</wadl:doc> -->
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
-	
-	<!--*****************************-->
-	<!--Retrieve Metadata method-->
-	<!--*****************************-->
-	<method name="GET" id="retrieveMetadata">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve metadata">
-			<para role="shortdesc">Retrieves metadata associated with a server or image.</para>
-			<para>Retrieves all metadata associated with a server or image.</para>
-			<para>Specify the server or image ID as id in the URI.</para>
-			<para>This operation does not require a request body.</para>
-			<para>This operation returns a response body.</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.json"/>-->
-					<!-- <wadl:doc xmlns="http://docbook.org/ns/docbook">
-						<para>Anything special about response goes here.</para>
-				</wadl:doc> -->
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
-	
-	
-	<!--**********************-->
-	<!--Update Metadata method-->
-	<!--**********************-->
-	
-	<method name="POST" id="updateMetadata">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update metadata">
-			<para role="shortdesc">Updates metadata items for the specified server or image.</para>
-			<para>Normal Response Code: 200</para>
-			<para>Updates metadata items for a specified server or image, or adds the specified 
-				metadata if there is no current metadata associated with the server or image.</para>
-			<para>Specify the server or image ID as id in the URI.</para>
-			<para>In the request body, specify the metadata element followed by attributes.</para>
-			<para>The following table describes the attributes that you can set in the request body:</para>
-			<para>(insert table here)</para>
-			<para>Updates replace existing metadata items with the same key. Items that are not explicitly 
-				mentioned in the request are not modified.</para>
-			<para>If you exceed the maximum number of metadata items in the request, the call throws 
-				an overLimit (413) fault. You can query the maximum number of key-value pairs that 
-				can be supplied for each server through the <code>maxServerMeta</code> absolute limit. You can 
-				query the maximum number of key-value pairs for an image through the <code>maxImageMeta</code> 
-				absolute limit. See (insert link here)</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.json"/>-->
-					<!-- <wadl:doc xmlns="http://docbook.org/ns/docbook">
-						<para>Anything special about response goes here.</para>
-				</wadl:doc> -->
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
-	
-	<!--******************************-->
-	<!--Retrieve Metadata Item method-->
-	<!--******************************-->
-	
-	<method name="GET" id="getMetadataItem">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve metadata item">
-			<para role="shortdesc">Retrieves a metadata item associated with a server or image.</para>
-			<para>Retrieves a single metadata item by key.</para>
-			<para>Specify the server or image ID as id and the key as key in the URI.</para>
-			<para>This operation does not require a request body.</para>
-			<para>This operation returns a response body.</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.json"/>-->
-					<!-- <wadl:doc xmlns="http://docbook.org/ns/docbook">
-						<para>Anything special about response goes here.</para>
-				</wadl:doc> -->
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
-	
-	<!--***************************-->
-	<!--Set Metadata Item method-->
-	<!--***************************-->
-	
-	<method name="POST" id="setMetadataItem">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set metadata item">
-			<para role="shortdesc">Sets a metadata item for a specified server or image.</para>
-			<para>Sets a metadata item by its key.</para>
-			<para>Specify the server or image ID as <code>id</code> in the URI.</para>
-			<para>Specify the server or image ID as id and the metadata key as key in the URI.</para>
-			<para>You must also specify the metadata element followed by the key and value pair 
-				in the request body. The key specified in the request body must match the key 
-				specified in the URI request.</para>
-			<para>The following table describes the attributes that you can set in the request body:</para>
-			<para>(insert table here)</para>
-			<para>If you exceed the maximum number of metadata items in the request, the call throws an 
-				overLimit (413) fault. You can query the maximum number of key-value pairs that can be 
-				supplied for each server through the maxServerMeta absolute limit. You can query the 
-				maximum number of key-value pairs for an image through the maxImageMeta absolute limit. 
-				See (insert link here)</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.json"/>-->
-					<!-- <wadl:doc xmlns="http://docbook.org/ns/docbook">
-						<para>Anything special about response goes here.</para>
-				</wadl:doc> -->
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
-	
-	<!--***************************-->
-	<!--Delete Metadata Item method-->
-	<!--***************************-->
-	
-	<method name="DELETE" id="deleteMetadataItem">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Delete metadata item">
-			<para role="shortdesc">Deletes a metadata item for the specified server or image.</para>
-			<para>Deletes a metadata item.</para>
-			<para>Specify the server or image ID as id and the key as key in the URI.</para>
-			<para>The operation does not require a request body.</para>
-			<para>The operation does not return a response body.</para>
-			<para>Successful deletion returns a 204 response code.</para>
-		</wadl:doc>
-		<response status="204">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.json"/>-->
-					<!-- <wadl:doc xmlns="http://docbook.org/ns/docbook">
-						<para>Anything special about response goes here.</para>
-				</wadl:doc> -->
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/metadata-resp.xml"/>-->
-				</wadl:doc>
-			</representation>
-		</response>
-	</method>
-	
+
 </application>
