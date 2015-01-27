@@ -23,13 +23,6 @@
 		<!--Limits-->
 		<!--******-->
 				<resource id="Limits" path="{limits}">
-					<param name="limits" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
-						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-							<para>Some LIMITS words here.</para>
-							<para>Some LIMITS words here.</para>
-						</wadl:doc>
-					</param>
-					
 					<method href="#retrieveListRateLimits"/>
 					<method href="#retrieveListAbsoluteLimits"/>
 				</resource>
@@ -38,12 +31,6 @@
 		<!--Flavors-->
 		<!--*******-->
 					<resource id="Flavors" path="{flavors}">	
-						<param name="flavors" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
-							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-								<para>Some FLAVORS words here.</para>
-							</wadl:doc>
-						</param>
-						
 						<method href="#retrieveListFlavors"/>
 						<method href="#retrieveFlavorDetails"/>
 					</resource>
@@ -52,11 +39,6 @@
 		<!-- Images -->
 		<!--********-->
 		<resource id="Images" path="images">
-			<param name="images" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<para>Image stuff here.</para>
-				</wadl:doc>
-			</param>
 			<method href="#retrieveListImages"/>
 			<resource id="ImagesDet" path="detail">
 				<method href="#retrieveListImagesWithDetails"/>
@@ -64,9 +46,9 @@
 			
 			
 			<resource id="Image_id" path="{image_id}">
-				<param name="image_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:string">
+				<param name="image_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						<para>Image stuff here.</para>
+						<para>The UUID for the image.</para>
 					</wadl:doc>
 				</param>
 				<method href="#retrieveImageDetails"/>
