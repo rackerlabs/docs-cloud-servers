@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (C) 2012 OpenStack LLC., All Rights Reserved -->
+<!DOCTYPE application [<!ENTITY % common  SYSTEM "../common/common.ent">
+%common;]>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+	xmlns:db="http://docbook.org/ns/docbook" xmlns:common="http://docs.openstack.org/common/api/v1.0"
+	xmlns:csapi="http://docs.openstack.org/compute/api/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<resources>
+		<resource id="Flavors" path="flavors">
+			<resource id="FlavorID" path="{flavor_id}">
+				<method href="#showExtraSpecs"/>
+			</resource>
+		</resource>
+	</resources>
+
+	<!-- Flavor Extra Specs operations -->
+	<method name="GET" id="showExtraSpecs">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show flavor extra Specs">
+			<para role="shortdesc">Retrieve the extra specs for a specified flavor.</para>
+			<para>This operation shows extra specifications for the flavor, such as identifying the policy class.</para>
+			<para>In the URI, specify the flavor ID.</para>
+		</wadl:doc>
+
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/flavors-xspecs-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.json"/>
+				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/flavors-xspecs-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+</application>

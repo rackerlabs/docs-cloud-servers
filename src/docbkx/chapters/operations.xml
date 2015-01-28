@@ -418,16 +418,16 @@
         </section>
     </section>
 
-    <!--<section xml:id="api_extensions">
-        <!-\-\- this section comes from these WADLs: extensions.wadl -\->
+    <section xml:id="api_extensions">
+        <!--- this section comes from these WADLs: extensions.wadl -->
         <title>Extensions</title>
         <para>This section describes the API operations for server extensions.</para>
-        <!-\-\- this section comes from these WADLs: extensions.wadl -\->
+        <!--- this section comes from these WADLs: extensions.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <!-\- create multiple subnets -\->
-            <!-\-<wadl:resource href="../../wadl/subnets.wadl#Subnets">
-                <wadl:method href="bulkCreateSubnet"/>
-            </wadl:resource>-\->
+            <!-- show flavor extra specs -->
+            <wadl:resource href="../../wadl/extensions.wadl#FlavorID">
+                <wadl:method href="showExtraSpecs"/>
+            </wadl:resource>
         </wadl:resources>
-    </section>-->
+    </section>
 </chapter>
