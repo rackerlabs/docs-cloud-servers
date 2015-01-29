@@ -9,14 +9,33 @@
 	<resources>
 		<resource id="Flavors" path="flavors">
 			<resource id="FlavorID" path="{flavor_id}">
+				<param name="flavor_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="string">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The flavor id. </para>
+					</wadl:doc>
+				</param>
 				<method href="#showExtraSpecs"/>
+			</resource>
+		</resource>
+		<resource id="ScheduledImages" path="servers">
+			<resource id="ServerID" path="{server_id}">
+				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The UUID for the server. </para>
+					</wadl:doc>
+				</param>
+				<resource id="RaxSchedImage" path="rax-si-scheduled-image">
+					<method href="#enableSchedImages"/>
+					<method href="#showSchedImages"/>
+					<method href="#disableSchedImages"/>
+				</resource>
 			</resource>
 		</resource>
 	</resources>
 
 	<!-- Flavor Extra Specs operations -->
 	<method name="GET" id="showExtraSpecs">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show flavor extra Specs">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show flavor extra specs">
 			<para role="shortdesc">Retrieve the extra specs for a specified flavor.</para>
 			<para>This operation shows extra specifications for the flavor, such as identifying the policy class.</para>
 			<para>In the URI, specify the flavor ID.</para>
@@ -36,4 +55,176 @@
 				</wadl:doc>
 			</representation>
 		</response> &commonFaults; </method>
+
+	<!-- Scheduled Images operations -->
+	<method name="POST" id="enableSchedImages">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Enable scheduled Images">
+			<para role="shortdesc">Enable scheduled images for the specified server.</para>
+			<para>This operation enables scheduled images on a server, by creating a image_schedule resource. When your
+				images are created, they are named according to one of the following schemes: <itemizedlist>
+					<listitem>
+						<para><code>daily-{server-name}-{10-digit-number}</code></para>
+					</listitem>
+					<listitem>
+						<para><code>weekly-{server-name}-{10-digit-number}</code></para>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<para>Image names are limited to 255 characters. The <code>{server-name}</code> may be truncated, if necessary,
+				for the scheduled snapshot image name to meet this limit.</para>
+			<para>If you want to change from daily to weekly scheduled images, simply post a new request containing the day
+				of week and the retention value you desire. Likewise, if you want to switch from weekly to daily scheduled
+				images, simply post a new request containing only a retention value. </para>
+			<para>In the URI, specify the server ID.</para>
+			<para>In the request body, for both daily and weekly requests, specify <code>retention</code> specifies the
+				number of scheduled images created by the scheduled images service to keep for a server. The retention value
+				must be a positive integer from 1 to 65,535 (the system limit).</para>
+			<para>In the request body, for weekly requests, specify <code>day_of_week</code>, which indicates the day for
+				image creation.</para>
+			<note>
+				<para> Regarding Retention: <itemizedlist>
+						<listitem>
+							<para>Excess scheduled image removal will be done at the time the scheduled images service
+								successfully adds a new snapshot to your account.</para>
+						</listitem>
+						<listitem>
+							<para>The way the scheduled images service recognizes that an image is eligible for removal is by
+								locating the following user metadata on the image: <code>org.openstack__1__created-by:
+									scheduled-images-service</code>. To save an scheduled image so that it is not eligible
+								for retention culling, simply remove this metadata element. We do not recommend adding the above
+								metadata element to an image manually. </para>
+						</listitem>
+						<listitem>
+							<para> If a retention value has already been specified for a server, it is overridden. </para>
+						</listitem>
+					</itemizedlist>
+				</para>
+			</note>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" 
+					title="Enable scheduled images (daily): JSON request">
+					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.json"/>
+				</wadl:doc>&xtenSchedImagesParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
+					title="Enable scheduled images (daily): XML request">
+					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.xml"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" 
+					title="Enable scheduled images (weekly): JSON request">
+					<xsdxt:code href="../common/samples/sched-images-wkly-enable-req.json"/>
+				</wadl:doc></representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" 
+					title="Enable scheduled images (weekly): XML request">
+					<xsdxt:code href="../common/samples/sched-images-wkly-enable-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Enable scheduled images (daily): JSON response">
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp.json"/>
+				</wadl:doc>&xtenSchedImagesParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Enable scheduled images (dailly): XML response">
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Enable scheduled images (weekly): JSON response">
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.json"/>
+				</wadl:doc></representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Enable scheduled images (weekly): XML response">
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; 
+	</method>
+
+	<method name="GET" id="showSchedImages">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled Images">
+			<para role="shortdesc">Show scheduled images for the specified server.</para>
+			<para>This operation returns the retention value if the server has scheduled images enabled. For weekly images,
+				the response also includes the scheduled day of the week for the image. If the server has scheduled images
+				disabled, an HTTP 404 is returned. </para>
+			<para>In the URI, specify the server ID.</para>
+		</wadl:doc>
+
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Show scheduled images (daily - success): JSON response">
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp.json"/>
+				</wadl:doc>&xtenSchedImagesParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Show scheduled images (daily - success): XML response">
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-dly-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Show scheduled images (weekly - success): JSON response">
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.json"/>
+				</wadl:doc></representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+					title="Show scheduled images (weekly - success): XML response">
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled images (not found): JSON response">
+					<xsdxt:code href="../common/samples/sched-images-404-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-404-rsp.json"/>
+				</wadl:doc>&xtenSchedImagesErrorParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled images (not found): XML response">
+					<xsdxt:code href="../common/samples/sched-images-404-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/sched-images-404-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="DELETE" id="disableSchedImages">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Disable scheduled Images">
+			<para role="shortdesc">Disable scheduled images for the specified server.</para>
+			<para>This operation disables scheduled images by deleting the image_schedule resource that indicates the
+				scheduled image service should create snapshots of this server. Thus scheduled images will no longer be
+				created.</para>
+		</wadl:doc>
+
+		<response status="202">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/sched-images-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/sched-images-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
 </application>

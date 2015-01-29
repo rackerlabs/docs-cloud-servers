@@ -27,28 +27,19 @@
             </note>
             <!--- this section comes from these WADLs: servers.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <!-- create server -->
+                <!-- create, list server -->
                 <wadl:resource href="../../wadl/servers.wadl#Servers">
                     <wadl:method href="createServer"/>
-                </wadl:resource>
-                <!-- list server -->
-                <wadl:resource href="../../wadl/servers.wadl#Servers">
                     <wadl:method href="listServers"/>
                 </wadl:resource>
                 <!-- list server details-->
                 <wadl:resource href="../../wadl/servers.wadl#ServersDet">
                     <wadl:method href="listServersDetails"/>
                 </wadl:resource>
-                <!-- get server details-->
+                <!-- get server details, update and delete server-->
                 <wadl:resource href="../../wadl/servers.wadl#Server_id">
                     <wadl:method href="getServer"/>
-                </wadl:resource>
-                <!-- update server-->
-                <wadl:resource href="../../wadl/servers.wadl#Server_id">
                     <wadl:method href="updateServer"/>
-                </wadl:resource>
-                <!-- delete server -->
-                <wadl:resource href="../../wadl/servers.wadl#Server_id">
                     <wadl:method href="deleteServer"/>
                 </wadl:resource>
             </wadl:resources>
@@ -155,40 +146,16 @@
                 </note></para>
             <!--- this section comes from these WADLs: servers.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <!-- change password-->
+                <!-- change password, reboot, rebuild, resize, confirm resize, revert, rescue, unrescue, create image -->
                 <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="changePassword"/>
-                </wadl:resource>
-                <!-- reboot server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="rebootServer"/>
-                </wadl:resource>
-                <!-- rebuild server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="rebuildServer"/>
-                </wadl:resource>
-                <!-- resize server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="resizeServer"/>
-                </wadl:resource>
-                <!-- confirm server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="confirmResizeServer"/>
-                </wadl:resource>
-                <!-- revert server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="revertResizeServer"/>
-                </wadl:resource>
-                <!-- rescue server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="rescueServer"/>
-                </wadl:resource>
-                <!-- unrescue server-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="unrescueServer"/>
-                </wadl:resource>
-                <!-- create image-->
-                <wadl:resource href="../../wadl/servers.wadl#Actions">
                     <wadl:method href="createImage"/>
                 </wadl:resource>
             </wadl:resources>
@@ -206,28 +173,16 @@
                 applications to use. </para>
             <!--- this section comes from these WADLs: servers.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <!-- show server metadata -->
+                <!-- show, create, and update server metadata -->
                 <wadl:resource href="../../wadl/servers.wadl#Metadata">
                     <wadl:method href="listMetadata"/>
-                </wadl:resource>
-                <!-- create server metadata-->
-                <wadl:resource href="../../wadl/servers.wadl#Metadata">
                     <wadl:method href="setMetadata"/>
-                </wadl:resource>
-                <!-- update server metadata details-->
-                <wadl:resource href="../../wadl/servers.wadl#Metadata">
                     <wadl:method href="updateMetadata"/>
                 </wadl:resource>
-                <!-- show server metadata item-->
+                <!-- show, create, and delete server metadata item-->
                 <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
                     <wadl:method href="showMetadataItem"/>
-                </wadl:resource>
-                <!-- create server metadata item-->
-                <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
                     <wadl:method href="setMetadataItem"/>
-                </wadl:resource>
-                <!-- delete server metadata item-->
-                <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
                     <wadl:method href="deleteMetadataItem"/>
                 </wadl:resource>
             </wadl:resources>
@@ -318,21 +273,14 @@
             <title>Limits</title>
             <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
                 system.</para>
-            <para>The system recognizes the following types of limits: 
-                <itemizedlist xml:id="limit_list">
+            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
                     <listitem>
-                        <para><emphasis role="italic">rate
-                            limits</emphasis>. Control the
-                            frequency at which the user can issue
-                            specific API requests. See (INSERT LINK
-                            HERE).</para>
+                        <para><emphasis role="italic">rate limits</emphasis>. Control the frequency at which the user can
+                            issue specific API requests. See (INSERT LINK HERE).</para>
                     </listitem>
                     <listitem>
-                        <para><emphasis role="italic">absolute
-                            limits</emphasis>. Control the total
-                            number of specific objects that the user
-                            can process simultaneously. See (INSERT
-                            LINK HERE). </para>
+                        <para><emphasis role="italic">absolute limits</emphasis>. Control the total number of specific
+                            objects that the user can process simultaneously. See (INSERT LINK HERE). </para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -388,7 +336,7 @@
             <para>With standard servers, the entire disk (O/S and data) is captured in the image. With Compute, Memory, and
                 IO servers, only the system disk is captured in the image. The data disks should be backed up using Cloud
                 Backup or Cloud Block Storage to ensure availability in case you need to rebuild or restore a server.</para>
-            
+
             <!--- this section comes from these WADLs: supporting.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
 
@@ -396,38 +344,114 @@
                 <wadl:resource href="../../wadl/supporting.wadl#Images">
                     <wadl:method href="retrieveListImages"/>
                 </wadl:resource>
-                
+
                 <!-- retrieve list images with details -->
                 <wadl:resource href="../../wadl/supporting.wadl#ImagesDet">
                     <wadl:method href="retrieveListImagesWithDetails"/>
                 </wadl:resource>
-                
+
                 <!-- retrieve image details -->
-                
+
                 <wadl:resource href="../../wadl/supporting.wadl#Image_id">
                     <wadl:method href="retrieveImageDetails"/>
                 </wadl:resource>
-                
-                
+
+
                 <!-- delete image -->
                 <wadl:resource href="../../wadl/supporting.wadl#Image_id">
                     <wadl:method href="deleteImage"/>
                 </wadl:resource>
             </wadl:resources>
-            
+
         </section>
     </section>
 
     <section xml:id="api_extensions">
-        <!--- this section comes from these WADLs: extensions.wadl -->
         <title>Extensions</title>
         <para>This section describes the API operations for server extensions.</para>
-        <!--- this section comes from these WADLs: extensions.wadl -->
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <!-- show flavor extra specs -->
-            <wadl:resource href="../../wadl/extensions.wadl#FlavorID">
-                <wadl:method href="showExtraSpecs"/>
-            </wadl:resource>
-        </wadl:resources>
+        <section xml:id="ext_flavor_extra_spec">
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <title>Flavor extra specs extension</title>
+            <!--- EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show flavor extra specs -->
+                <wadl:resource href="../../wadl/extensions.wadl#FlavorID">
+                    <wadl:method href="showExtraSpecs"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_scheduled_images">
+            <title>Scheduled images extension</title>
+            <para>Rather than manually capturing images, use this extension to schedule automatic images according to a
+                schedule that you define.</para>
+            <para>You may schedule daily or weekly images of your server automatically, but you cannot schedule both daily
+                and weekly images for a server. When you schedule an image, a new resource is created at
+                /servers/{serverId}/rax-si-image-schedule. This resource, which contains the retention value and an optional
+                day of the week specification, indicates that this server will be monitored by the scheduled images
+                service.</para>
+            <para>If you do not include a day of the week specification in your scheduled images request, the server's image
+                will be created daily.</para>
+            <para>If you include a day of the week specification in your scheduled images request, the server's image will be
+                created weekly on the day you indicate. Specify the optional day of the week using a string value from the
+                following enumeration: <code>SUNDAY</code>, <code>MONDAY</code>, <code>TUESDAY</code>,
+                <code>WEDNESDAY</code>, <code>THURSDAY</code>, <code>FRIDAY</code>, <code>SATURDAY</code>.</para>
+            <para>The scheduled images request for both daily and weekly images requires a retention value, a positive
+                integer, which indicates the number of images created by the scheduled images service that will be retained
+                in your cloud storage account. The scheduled images service will remove scheduled images in excess of that
+                value, keeping the most recently created scheduled images (and all manually created images) of that server.
+                You may configure each server's retention value independently.</para>
+            <para>Keep in mind:<itemizedlist>
+                    <listitem>
+                        <para>Smaller snapshots tend to finish more quickly.</para>
+                    </listitem>
+                    <listitem>
+                        <para>A very large snapshot may take so long to finish that it may block the next day's scheduled
+                            snapshot from occurring.</para>
+                    </listitem>
+                    <listitem>
+                        <para>If you have a large amount of data to save, you may wish to explore other backup
+                            options.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>The namespace for the scheduled images extended element is:</para>
+            <para><code>xmlns:RAX-SI="http://docs.openstack.org/servers/api/ext/scheduled_images/v1.0</code></para>
+            <important>
+                <para> The scheduled images service is a "best effort service". Images are scheduled so that they will not
+                    interfere with each other or with on-demand snapshots. You may not specify a particular time at which
+                    your server snapshot will be taken, nor can we guarantee what time your scheduled image will become
+                    active, as the time that an image becomes active depends upon the current network traffic load, and other
+                    factors. We do guarantee that all users will receive the same best-effort service. </para>
+                <para>For weekly images, you specify the day of the week (determined by UTC) when you'd like your server
+                    image created. As with daily scheduled images, we create a schedule for you and promise to satisfy it on
+                    a best-effort basis. There's no guarantee that your server's schedule will stay the same from week to
+                    week: we reserve the right to modify the time your image is made so that we can balance the the number of
+                    image creations in flight throughout the cloud and throughout the day. Additionally, as some days of the
+                    week are much more popular than others for scheduling images, in rare circumstances we may create your
+                    weekly scheduled image in a window beginning 12:00 UTC the day before the day of the week you specify and
+                    ending at 12:00 UTC the day after the day of the week you specify. This is the time your image is
+                    scheduled to be created. The time it will be available for you to use (that is, when its status is
+                        <code>ACTIVE</code>) depends on factors such as the size of the image and overall network congestion
+                    in the cloud.</para>
+            </important>
+            <!--- SCHEDULED IMAGES - this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- enable, show, and disable scheduled images -->
+                <wadl:resource href="../../wadl/extensions.wadl#RaxSchedImage">
+                    <wadl:method href="enableSchedImages"/>
+                    <wadl:method href="showSchedImages"/>
+                    <wadl:method href="disableSchedImages"/>
+                </wadl:resource>
+            </wadl:resources>
+            <section xml:id="schedimage_get_server_details">
+                <title>Changes to Server Detail Response</title>
+                <para>A &GET; request against the <command>/servers/detail</command>, or
+                        <command>/servers/</command><parameter>id</parameter>, resource returns the
+                        <literal>RAX-SI:schedule_images</literal> extended element. See the response examples in
+                    <olink
+                        condition="dev" targetdoc="cs-devguide" targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                        >"GET_listServersDetails_servers_detail_api_servers_basic"</olink>.</para>
+            </section>
+        </section>
     </section>
 </chapter>

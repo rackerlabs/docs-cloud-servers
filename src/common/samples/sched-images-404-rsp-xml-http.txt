@@ -1,0 +1,7 @@
+    Status Code: 404 Not Found
+    Content-Length: 187
+    Content-Type: application/xml; charset=UTF-8
+    Date: Thu, 29 Jan 2015 22:28:05 GMT
+    Server: Jetty(8.0.y.z-SNAPSHOT)
+    Via: 1.1 Repose (Repose/2.12)
+    x-compute-request-id: req-da88512f-1e4f-4b10-88e4-1f8728583249

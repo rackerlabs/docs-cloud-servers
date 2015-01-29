@@ -51,6 +51,9 @@
       "RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId": "d12f4c3ef88ff2ca471f6b1a57d108c15db4a3478af762da6ae022b7",
       "OS-EXT-STS:task_state": null,
       "OS-EXT-STS:vm_state": "active",
+      "RAX-SI:image_schedule": {
+          "retention": 3
+      }, 
       "flavor": {
         "id": "2",
         "links": [
