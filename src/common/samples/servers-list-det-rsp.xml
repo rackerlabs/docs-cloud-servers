@@ -22,5 +22,8 @@
         </addresses>
         <atom:link href= "https://dfw.servers.api.rackspacecloud.com/v2/123456/servers/5bccf43e-35fa-4d65-9390-2b2d6b23ec89" rel="self"/>
         <atom:link href= "https://dfw.servers.api.rackspacecloud.com/123456/servers/5bccf43e-35fa-4d65-9390-2b2d6b23ec89" rel="bookmark"/>
+        <RAX-SI:image_schedule>
+            <retention>3</retention>
+        </RAX-SI:image_schedule>
     </server>
 </servers>

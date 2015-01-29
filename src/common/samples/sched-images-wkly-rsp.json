@@ -1,0 +1,6 @@
+{
+  "image_schedule": {
+    "day_of_week": "SATURDAY",
+    "retention": 5
+  }
+}

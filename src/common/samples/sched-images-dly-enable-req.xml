@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<image_schedule xmlns="http://docs.openstack.org/servers/api/ext/scheduled_images/v1.0">
+    <retention>7</retention>
+</image_schedule>
