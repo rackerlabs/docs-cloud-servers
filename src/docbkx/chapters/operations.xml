@@ -365,8 +365,8 @@
         <title>Extensions</title>
         <para>This section describes the API operations for server extensions.</para>
         <section xml:id="ext_flavor_extra_spec">
-            <!--- this section comes from these WADLs: extensions.wadl -->
             <title>Flavor extra specs extension</title>
+            <para>This operation shows extra specifications for the flavor, such as identifying the policy class.</para>
             <!--- EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <!-- show flavor extra specs -->
@@ -442,11 +442,197 @@
                 <title>Changes to Server Detail Response</title>
                 <para>A &GET; request against the <command>/servers/detail</command>, or
                         <command>/servers/</command><parameter>id</parameter>, resource returns the
-                        <literal>RAX-SI:schedule_images</literal> extended element. See the response examples in
-                    <olink
-                        condition="dev" targetdoc="cs-devguide" targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                        <literal>RAX-SI:schedule_images</literal> extended element. See the response examples in <olink
+                        condition="dev" targetdoc="cs-devguide"
+                        targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
                         >"GET_listServersDetails_servers_detail_api_servers_basic"</olink>.</para>
             </section>
         </section>
+        <section xml:id="ext_used_limits">
+            <title>Used limits extension</title>
+            <para>This extension is described in <olink targetdoc="cs-devguide" targetptr="Limits">“Limits”</olink>.</para>
+        </section>
+        <section xml:id="ext_rescue">
+            <title>Rescue server extension</title>
+            <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
+                    targetptr="POST_rescueServer_servers__server_id__actions_api_servers_actions"
+                    >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>
+        </section>
+        <section xml:id="ext_disk_config">
+            <title>Disk Config extension</title>
+            <para>The disk configuration extension adds a <literal>OS-DCF:diskConfig</literal> attribute to images and
+                servers. This attribute controls how the disk is partitioned when servers are created, rebuilt, or resized. A
+                server inherits the <literal>OS-DCF:diskConfig</literal> value from the image used to create it, and an image
+                inherits the <literal>OS-DCF:diskConfig</literal> value of the server from which it was created. To override
+                the inherited setting, you can include the <literal>OS-DCF:diskConfig</literal> attribute in the request body
+                of a server create, rebuild, or resize request. Valid <literal>OS-DCF:diskConfig</literal> values are:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><literal>AUTO</literal>. The server is built with a single partition the size of the target flavor
+                        disk. The file system is automatically adjusted to fit the entire partition. This keeps things simple
+                        and automated. <literal>AUTO</literal> is valid only for images and servers with a single partition
+                        that use the EXT3 file system. This is the default setting for applicable Rackspace base images.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para><literal>MANUAL</literal>. The server is built using whatever partition scheme and file system is
+                        in the source image. If the target flavor disk is larger, the remaining disk space is left
+                        unpartitioned. This enables images to have non-EXT3 file systems, multiple partitions, and so on, and
+                        enables you to manage the disk configuration.</para>
+                </listitem>
+            </itemizedlist>
+            <note>
+                <para>Although Rackspace Windows images are configured with a <literal>OS-DCF:diskConfig</literal> value of
+                        <literal>MANUAL</literal>, the NTFS file system expands to the entire partition on only the first
+                    boot.</para>
+            </note>
+            <para>Resizing down requires the server to have a <literal>OS-DCF:diskConfig</literal> value of
+                    <literal>AUTO</literal>.</para>
+            <para>The namespace for this extended attribute is:
+                    <code>xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"</code></para>
+            <section xml:id="ext_disk_config_get_details">
+                <title>Changes to get details operations for servers and images</title>
+                <para>With the disk config extension, submitting a &GET; request for <command>/servers/detail</command>,
+                        <command>/servers/{server_id}</command>, <command>/images/detail</command>, or
+                        <command>/images/{image_id}</command> returns the <literal>OS-DCF:diskConfig</literal> extended
+                    attribute in the response body.</para>
+                <para>See the response examples for the following operations:<itemizedlist>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                                    >"GET_listServersDetails_servers_detail_api_servers_basic"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_getServer_servers__server_id__api_servers_basic"
+                                    >"GET_getServer_servers__server_id__api_servers_basic"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_retrieveListImagesWithDetails_images_detail_Images"
+                                    >"GET_retrieveListImagesWithDetails_images_detail_Images"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_retrieveImageDetails_images__image_id__Images"
+                                    >"GET_retrieveImageDetails_images__image_id__Images"</olink></para>
+                        </listitem>
+                    </itemizedlist></para>
+            </section>
+            <section xml:id="ext_disk_config_create_server">
+                <title>Changes to create server</title>
+                <para>This section shows the create server operation with the <literal>OS-DCF:diskConfig</literal>
+                    attribute.</para>
+                <!--- DISK CONFIG - this section comes from these WADLs: extensions.wadl -->
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <!-- create server with disk config-->
+                    <wadl:resource href="../../wadl/extensions.wadl#Servers">
+                        <wadl:method href="createServerDiskConfig"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>
+            <section xml:id="ext_disk_config_svr_actions">
+                <title>Changes to rebuild and resize server actions</title>
+                <para>You can use the disk config extension when submitting a &POST; <command>/servers/action</command> to
+                    resize or rebuild a server by including the <literal>OS-DCF:diskConfig</literal> extended attribute in
+                    the request body.</para>
+                <para>In the linked examples, the <literal>OS-DCF:diskConfig</literal> attribute is set to MANUAL, which
+                    allows unused disk space to be used for other partitions after the server is rebuilt or resized. If you
+                    do not set the <literal>OS-DCF:diskConfig</literal> attribute is not set during the rebuild or resize,
+                    the original value of the attribute is retained. </para>
+                <para>See the request examples for the following operations:<itemizedlist>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="POST_rebuildServer_servers__server_id__actions_api_servers_actions"
+                                    >"POST_rebuildServer_servers__server_id__actions_api_servers_actions"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="POST_resizeServer_servers__server_id__actions_api_servers_actions"
+                                    >"POST_resizeServer_servers__server_id__actions_api_servers_actions"</olink></para>
+                        </listitem>
+                    </itemizedlist></para>
+            </section>
+        </section>
+        <!--        <section xml:id="ext_config_drive">
+            <title>Config drive extension</title>
+<!-\-            <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
+                    targetptr="POST_rescueServer_servers__server_id__actions_api_servers_actions"
+                    >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>-\->
+            <para> Config-drive is a read-only configuration drive that is attached to server instances on boot. It is given
+                the label "config-2", and it shows up as a CDROM drive on the instance. It is especially useful in
+                conjunction with cloud-init (a server bootstrapping application) and for passing large files to be used by
+                your server.</para>
+            <para>To use the config drive, once it is attached to a server, you need to mount it. Mounting instructions vary
+                by operating system. For some Linux operating systems, for example, you might issue the following two
+                instructions:</para>
+            <programlisting>
+           # mkdir -p /mnt/config
+           # mount /dev/disk/by-label/config-2 /mnt/config
+       </programlisting>
+            <para> When a config-drive is created, it is configured by data contained in one or both of the following
+                arguments: </para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">user-data</emphasis>
+                    </term>
+                    <listitem>
+                        <para>contained in openstack/latest/user_data</para>
+                        <note>
+                            <para>If the content of the user_data file is not purely text, convert it by using base64
+                                encoding to allow for proper transfer and storage. If your user_data needs to be encoded and
+                                isn't, you'll get an <errorcode>400</errorcode>
+                                <errortext>Userdata content cannot be decoded</errortext> message. </para>
+                        </note>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">personality</emphasis>
+                    </term>
+                    <listitem>
+                        <para>located in openstack/content/0000 with the path listed in the openstack/latest/meta_data.json
+                            file</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <para> The following list shows files present in the config drive if both user-data and personality arguments are
+                passed during server creation: <itemizedlist>
+                    <listitem>
+                        <para>ec2/2009-04-04/meta-data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>ec2/2009-04-04/user-data</para>
+                    </listitem>
+                    <listitem>
+                        <para>ec2/latest/meta-data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>ec2/latest/user-data</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/2012-08-10/meta_data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/2012-08-10/user_data</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/content</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/content/0000</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/content/0001</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/latest/meta_data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/latest/user_data</para>
+                    </listitem>
+                </itemizedlist></para>
+        </section>-->
     </section>
 </chapter>

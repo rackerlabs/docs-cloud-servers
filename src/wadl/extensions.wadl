@@ -31,6 +31,9 @@
 				</resource>
 			</resource>
 		</resource>
+		<resource id="Servers" path="servers">
+			<method href="#createServerDiskConfig"/>
+		</resource>
 	</resources>
 
 	<!-- Flavor Extra Specs operations -->
@@ -91,8 +94,8 @@
 							<para>The way the scheduled images service recognizes that an image is eligible for removal is by
 								locating the following user metadata on the image: <code>org.openstack__1__created-by:
 									scheduled-images-service</code>. To save an scheduled image so that it is not eligible
-								for retention culling, simply remove this metadata element. We do not recommend adding the above
-								metadata element to an image manually. </para>
+								for retention culling, simply remove this metadata element. We do not recommend adding the
+								above metadata element to an image manually. </para>
 						</listitem>
 						<listitem>
 							<para> If a retention value has already been specified for a server, it is overridden. </para>
@@ -103,7 +106,7 @@
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
 					title="Enable scheduled images (daily): JSON request">
 					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
@@ -114,12 +117,13 @@
 				</wadl:doc>
 			</representation>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
 					title="Enable scheduled images (weekly): JSON request">
 					<xsdxt:code href="../common/samples/sched-images-wkly-enable-req.json"/>
-				</wadl:doc></representation>
+				</wadl:doc>
+			</representation>
 			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
 					title="Enable scheduled images (weekly): XML request">
 					<xsdxt:code href="../common/samples/sched-images-wkly-enable-req.xml"/>
 				</wadl:doc>
@@ -128,33 +132,33 @@
 		<response status="200">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Enable scheduled images (daily): JSON response">
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Enable scheduled images (dailly): XML response">
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp.xml"/>
 				</wadl:doc>
 			</representation>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Enable scheduled images (weekly): JSON response">
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.json"/>
-				</wadl:doc></representation>
+				</wadl:doc>
+			</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Enable scheduled images (weekly): XML response">
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.xml"/>
 				</wadl:doc>
 			</representation>
-		</response> &commonFaults; 
-	</method>
+		</response> &commonFaults; </method>
 
 	<method name="GET" id="showSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled Images">
@@ -168,38 +172,41 @@
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Show scheduled images (daily - success): JSON response">
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Show scheduled images (daily - success): XML response">
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp.xml"/>
 				</wadl:doc>
 			</representation>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Show scheduled images (weekly - success): JSON response">
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.json"/>
-				</wadl:doc></representation>
+				</wadl:doc>
+			</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Show scheduled images (weekly - success): XML response">
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.xml"/>
 				</wadl:doc>
 			</representation>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled images (not found): JSON response">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+					title="Show scheduled images (not found): JSON response">
 					<xsdxt:code href="../common/samples/sched-images-404-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-404-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesErrorParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled images (not found): XML response">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+					title="Show scheduled images (not found): XML response">
 					<xsdxt:code href="../common/samples/sched-images-404-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-404-rsp.xml"/>
 				</wadl:doc>
@@ -227,4 +234,47 @@
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
+
+	<!-- Disk Config operations -->
+	<method name="GET" id="createServerDiskConfig">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create server with disk config">
+			<para role="shortdesc">Create server with disk config</para>
+			<para>When you create a server from an image with the <literal>OS-DCF:diskConfig</literal> value set to
+					<literal>AUTO</literal>, the server is built with a single partition that is expanded to the disk size of
+				the flavor selected. When you set the <literal>OS-DCF:diskConfig</literal> attribute to
+					<literal>MANUAL</literal>, the server is built by using the partition scheme and file system that is in
+				the source image.  If the target flavor disk is larger, remaining disk space is left unpartitioned. A server
+				inherits the <literal>OS-DCF:diskConfig</literal> attribute from the image from which it is created. However,
+				you can override the <literal>OS-DCF:diskConfig</literal> value when you create a server, as follows: </para>
+			<para>In these examples, the server is created with <literal>OS-DCF:diskConfig</literal> set to
+					<literal>MANUAL</literal>, regardless of the value of the image's <literal>OS-DCF:diskConfig</literal>
+				attribute. Images also inherit the <literal>OS-DCF:diskConfig</literal> value from a server. So, if an image
+				is created from the server, it also has a <literal>OS-DCF:diskConfig</literal> value of
+					<literal>MANUAL</literal>.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.json"/>
+				</wadl:doc>&serverCreateReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request accepted.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp.json"/>
+				</wadl:doc>&serverCreateRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
 </application>

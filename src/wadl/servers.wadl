@@ -96,7 +96,7 @@
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/server-create-req.json"/>
-				</wadl:doc>&serverCreateReqParameters; </representation>
+				</wadl:doc>&serverCreateReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/server-create-req.xml"/>
@@ -183,7 +183,7 @@
 			</representation>
 		</response> &commonFaults; </method>
 
-	<method name="POST" id="getServer">
+	<method name="GET" id="getServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve server details">
 			<para role="shortdesc">Retrieves detailed information for a specified server.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
@@ -342,8 +342,18 @@
 			</representation>
 		</request>
 		<response status="202">
-			<doc title="Success">Request succeeded.</doc>
-		</response>&commonFaults; </method>
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
 
 	<method name="POST" id="rebootServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Reboot specified server">
@@ -369,7 +379,17 @@
 			</representation>
 		</request>
 		<response status="202">
-			<doc title="Success">Request succeeded.</doc>
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
 		</response>&commonFaults;</method>
 
 	<method name="POST" id="rebuildServer">
@@ -449,7 +469,6 @@
 		</wadl:doc>
 
 		<request>
-			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/servers-actions-resize-req.json"/>
@@ -459,7 +478,20 @@
 					<xsdxt:code href="../common/samples/servers-actions-resize-req.xml"/>
 				</wadl:doc>
 			</representation>
-		</request> &commonFaults; </method>
+		</request>
+		<response status="202">
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
 
 	<method name="POST" id="confirmResizeServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Confirm server resize for specified server">
@@ -488,9 +520,19 @@
 				</wadl:doc>
 			</representation>
 		</request>
-		<response status="204">
-			<doc title="Success">Request succeeded.</doc>
-		</response>&commonFaults; </method>
+		<response status="202">
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
 
 	<method name="POST" id="revertResizeServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Revert server resize for specified server">
@@ -519,8 +561,18 @@
 			</representation>
 		</request>
 		<response status="202">
-			<doc title="Success">Request succeeded.</doc>
-		</response>&commonFaults; </method>
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
 
 	<method name="POST" id="rescueServer">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Rescue specified server">
@@ -559,17 +611,20 @@
 			<para>For a full list of possible server status values, see <xref linkend="Server_stati"/></para>
 			<note><para>The SSH server key will be different on the rescue image than on the original server.</para></note>.
 				<para>Specify the target server ID in the URI.</para>
+			<para>After you resolve any problems and reboot the rescued server, you can unrescue the server (see
+				<xref linkend="POST_unrescueServer_servers__server_id__actions_api_servers_actions"/>). The unrescue
+				operation restores the repaired image to running state with its original password.</para>
 			<para>In the request body, specify the <literal>rescue</literal> action.</para>
 		</wadl:doc>
 
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-rescue-req.json"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-req.json"/>
 				</wadl:doc> &serverActionRescueReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-rescue-req.xml"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-req.xml"/>
 				</wadl:doc>
 			</representation>
 		</request>
@@ -577,19 +632,19 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp-json-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp.json"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp.json"/>
 				</wadl:doc> &serverActionRescueRspParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actons-rescue-rsp.xml"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp.xml"/>
 				</wadl:doc>
 			</representation>
-		</response> &commonFaults; &commonFaults; </method>
+		</response> &commonFaults;</method>
 
 	<method name="POST" id="unrescueServer">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Revert server action  for specified server">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Unrescue specified server">
 			<para role="shortdesc">Takes the specified server out of rescue mode.</para>
 			<para>After you resolve any problems and reboot a rescued server, you can unrescue the server. Specify the
 					<literal>unrescue</literal> action in the request body. When you unrescue the server, the repaired image
@@ -605,14 +660,27 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-unrescue-req.json"/>
+					<xsdxt:code href="../common/samples/servers-actions-unrescue-req.json"/>
 				</wadl:doc> &serverActionUnrescueReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-unrescue-req.xml"/>
+					<xsdxt:code href="../common/samples/servers-actions-unrescue-req.xml"/>
 				</wadl:doc>
 			</representation>
-		</request> &commonFaults; </method>
+		</request>
+		<response status="202">
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
 
 	<method name="POST" id="createImage">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create image of specified server">
@@ -637,17 +705,28 @@
 		</wadl:doc>
 
 		<request>
-			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-createImage-req.json"/>
+					<xsdxt:code href="../common/samples/servers-actions-createImage-req.json"/>
 				</wadl:doc> &serverActionCreateImageReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actons-createImage-req.xml"/>
+					<xsdxt:code href="../common/samples/servers-actions-createImage-req.xml"/>
 				</wadl:doc>
 			</representation>
-		</request> &commonFaults; </method>
+		</request> &commonFaults; <response status="202">
+			<doc title="Successful">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
 
 	<!-- Metadata operations -->
 	<method name="GET" id="listMetadata">
@@ -678,7 +757,7 @@
 			<important><para>Existing metadata items are replaced with the ones provided in the request regardless of the
 					names of the original metadata items.</para></important>
 			<para>If you exceed the maximum number of metadata items in the request, the call throws an <literal>overLimit
-				(413)</literal> fault. To find the maximum number of key-value pairs that can be supplied for each
+					(413)</literal> fault. To find the maximum number of key-value pairs that can be supplied for each
 				server, use the maxServerMeta absolute limit query
 				<!--found in Section 1.9.3, “Get Limits” inserthere-->.</para>
 			<para>In the URI, specify the target server ID.</para>
@@ -777,10 +856,10 @@
 	<method name="PUT" id="setMetadataItem">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata item">
 			<para role="shortdesc">Create or replace metadata item by key for a specified server</para>
-			<para></para>
+			<para/>
 			<para>In the URI, specify the target server ID and the target metadata key.</para>
-			<para>In the request body, specify the <literal>meta</literal> element, followed by the metadata key, for
-				example <literal>version</literal>, with the new value for that key.</para>
+			<para>In the request body, specify the <literal>meta</literal> element, followed by the metadata key, for example
+					<literal>version</literal>, with the new value for that key.</para>
 			<note><para>The key specified in the request body must match the key specified in the URI request.</para></note>
 		</wadl:doc>
 		<request>
