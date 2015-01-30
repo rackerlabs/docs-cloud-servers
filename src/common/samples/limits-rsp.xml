@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<limits xmlns:lim="http://docs.openstack.org/common/api/v1.0"
+    xmlns="http://docs.openstack.org/common/api/v1.0">
+    <rates>
+        <rate regex="/v[^/]/(\d+)/(rax-networks)/?.*"
+            uri="/rax-networks">
+            <limit next-available="2012-09-10T20:14:17.997Z"
+                unit="DAY" remaining="0" value="0" verb="POST"/>
+            <limit next-available="2012-09-10T20:14:17.997Z"
+                unit="MINUTE" remaining="0" value="0" verb="GET"/>
+        </rate>
+        <rate regex="/v[^/]/(\d+)/(servers)/?.*" uri="/servers">
+            <limit next-available="2012-09-10T20:14:17.997Z"
+                unit="DAY" remaining="1000" value="1000" verb="POST"/>
+        </rate>
+        <rate regex="/v[^/]/(\d+)/?.*" uri="*">
+            <limit next-available="2012-09-10T20:14:17.997Z"
+                unit="MINUTE" remaining="100" value="100" verb="ALL"/>
+        </rate>
+    </rates>
+    <absolute
+        xmlns:os-used-limits="http://docs.openstack.org/compute/ext/used_limits/api/v1.1"
+        xmlns:atom="http://www.w3.org/2005/Atom">
+        <limit name="maxServerMeta" value="20"/>
+        <limit name="maxTotalInstances" value="100"/>
+        <limit name="maxPersonality" value="6"/>
+        <limit name="totalPrivateNetworksUsed" value="0"/>
+        <limit name="maxImageMeta" value="20"/>
+        <limit name="maxPersonalitySize" value="10240"/>
+        <limit name="totalVolumesUsed" value="0"/>
+        <limit name="maxTotalPrivateNetworks" value="0"/>
+        <limit name="maxTotalKeypairs" value="100"/>
+        <limit name="totalCoresUsed" value="9"/>
+        <limit name="maxTotalVolumes" value="0"/>
+        <limit name="totalRAMUsed" value="16896"/>
+        <limit name="totalInstancesUsed" value="3"/>
+        <limit name="totalVolumeGigabytesUsed" value="0"/>
+        <limit name="maxTotalCores" value="-1"/>
+        <limit name="totalSecurityGroupsUsed" value="0"/>
+        <limit name="maxTotalFloatingIps" value="5"/>
+        <limit name="totalKeyPairsUsed" value="0"/>
+        <limit name="maxTotalVolumeGigabytes" value="-1"/>
+        <limit name="maxTotalRAMSize" value="66560"/>
+    </absolute>
+</limits>

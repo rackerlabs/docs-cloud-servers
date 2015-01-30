@@ -289,14 +289,9 @@
             <!--- this section comes from these WADLs: supporting.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
 
-                <!-- retrieve list of rate limits -->
+                <!-- retrieve list of rate and absolute limits -->
                 <wadl:resource href="../../wadl/supporting.wadl#Limits">
-                    <wadl:method href="retrieveListRateLimits"/>
-                </wadl:resource>
-
-
-                <wadl:resource href="../../wadl/supporting.wadl#Limits">
-                    <wadl:method href="retrieveListAbsoluteLimits"/>
+                    <wadl:method href="retrieveListRateAbsoluteLimits"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
