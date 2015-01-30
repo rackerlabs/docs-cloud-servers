@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<images xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1" 
+    xmlns:OS-EXT-IMG-SIZE="http://docs.openstack.org/compute/ext/image_size/api/v1.1" 
+    xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://docs.openstack.org/compute/api/v1.1">
+    <image status="ACTIVE" updated="2014-03-26T14:05:59Z" name="Ubuntu 13.10 (Saucy Salamander) (PVHVM)" 
+        created="2014-03-25T17:00:15Z" minDisk="20" progress="100" minRam="512" id="6110edfe-8589-4bb1-aa27-385f12242627" 
+        OS-EXT-IMG-SIZE:size="689810519" OS-DCF:diskConfig="MANUAL">
+        <metadata>
+            <meta key="vm_mode">hvm</meta>
+            <meta key="os_distro">ubuntu</meta>
+            <meta key="com.rackspace__1__visible_core">1</meta>
+            <meta key="com.rackspace__1__release_id">1006</meta>
+            <meta key="com.rackspace__1__options">0</meta>
+            <meta key="image_type">base</meta>
+            <meta key="cache_in_nova">True</meta>
+            <meta key="com.rackspace__1__source">kickstart</meta>
+            <meta key="org.openstack__1__os_distro">com.ubuntu</meta>
+            <meta key="com.rackspace__1__release_build_date">2014-03-25_11-38-40</meta>
+            <meta key="os_type">linux</meta>
+            <meta key="auto_disk_config">disabled</meta>
+            <meta key="com.rackspace__1__release_version">3</meta>
+            <meta key="com.rackspace__1__platform_target">PublicCloud</meta>
+            <meta key="com.rackspace__1__visible_rackconnect">1</meta>
+            <meta key="com.rackspace__1__build_rackconnect">1</meta>
+            <meta key="com.rackspace__1__visible_managed">1</meta>
+            <meta key="com.rackspace__1__build_core">1</meta>
+            <meta key="org.openstack__1__os_version">13.10</meta>
+            <meta key="org.openstack__1__architecture">x64</meta>
+            <meta key="com.rackspace__1__build_managed">1</meta>
+        </metadata>
+        <atom:link href="https://dfw.servers.api.rackspacecloud.com/v2/661145/images/6110edfe-8589-4bb1-aa27-385f12242627" 
+            rel="self"/>
+        <atom:link href="https://dfw.servers.api.rackspacecloud.com/661145/images/6110edfe-8589-4bb1-aa27-385f12242627" 
+            rel="bookmark"/>
+        <atom:link href="https://dfw.servers.api.rackspacecloud.com/661145/images/6110edfe-8589-4bb1-aa27-385f12242627" 
+            type="application/vnd.openstack.image" rel="alternate"/>
+    </image>
+</images>

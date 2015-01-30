@@ -22,15 +22,14 @@
 		<!--******-->
 		<!--Limits-->
 		<!--******-->
-				<resource id="Limits" path="{limits}">
-					<method href="#retrieveListRateLimits"/>
-					<method href="#retrieveListAbsoluteLimits"/>
+				<resource id="Limits" path="limits">
+					<method href="#retrieveListRateAbsoluteLimits"/>
 				</resource>
 					
 		<!--*******-->
 		<!--Flavors-->
 		<!--*******-->
-					<resource id="Flavors" path="{flavors}">	
+					<resource id="Flavors" path="flavors">	
 						<method href="#retrieveListFlavors"/>
 						<method href="#retrieveFlavorDetails"/>
 					</resource>
@@ -69,12 +68,12 @@
 	<!--Limits Methods-->
 	
 	<!--************************************-->
-	<!--Retrieve list of rate limits method -->
+	<!--Retrieve list of rate and absolute limits method -->
 	<!--************************************-->
 	
-	<method name="GET" id="retrieveListRateLimits">
-	<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of rate limits">
-		<para role="shortdesc">Retrieves the current rate linits and absolute limits for your account.</para>
+	<method name="GET" id="retrieveListRateAbsoluteLimits">
+	<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of rate and absolute limits">
+		<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
 		<para>Applications can programmatically determine current account limits by using this API operation.</para>
 		<para>This operation does not require a request body.</para>
 		<para>This operation returns a response body.</para>
@@ -83,35 +82,12 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
-				</wadl:doc> <!--&serverListRspParameters;--> 
+					<xsdxt:code href="../common/samples/limits-rsp.json"/>
+					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
+				</wadl:doc>  
 			</representation>
 		</response>&commonFaults;
 	</method>
-	
-	<!--************************************-->
-	<!--Retrieve list of absolute limits method -->
-	<!--************************************-->
-	
-	<method name="GET" id="retrieveListAbsoluteLimits">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of absolute limits">
-			<para role="shortdesc">Retrieves the current rate linits and absolute limits for your account.</para>
-			<para>Applications can programmatically determine current account limits by using this API operation.</para>
-			<para>This operation does not require a request body.</para>
-			<para>This operation returns a response body.</para>
-		</wadl:doc>
-		<response status="200">
-			<doc title="Success">Request succeeded.</doc>
-			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
-				</wadl:doc> <!--&serverListRspParameters;--> 
-			</representation>
-		</response>&commonFaults;
-	</method>
-	
-	
-	
 	
 	
 	<!--Flavors Methods-->
@@ -143,8 +119,9 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
-				</wadl:doc> <!--&serverListRspParameters;--> 
+					<xsdxt:code href="../common/samples/flavor-list-rsp.json"/>
+					<xsdxt:code href="../common/samples/flavor-list-rsp.xml"/>
+				</wadl:doc> &flavorsListQueryParameters; 
 			</representation>
 		</response>&commonFaults;
 	</method>
@@ -168,8 +145,9 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
-				</wadl:doc> <!--&serverListRspParameters;--> 
+					<xsdxt:code href="../common/samples/flavor-detail-rsp.json"/>
+					<xsdxt:code href="../common/samples/flavor-detail-rsp.xml"/>
+				</wadl:doc> &flavorsListQueryParameters; 
 			</representation>
 		</response>&commonFaults;
 	</method>
@@ -199,7 +177,7 @@
 			
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
-					<!--<xsdxt:code href="../common/samples/server-create-req.xml"/>-->
+					<!--<xsdxt:code href="../common/samples/NEED EXAMPLE HERE.xml"/>-->
 				</wadl:doc>
 			</representation>
 		</request>
@@ -208,7 +186,8 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
+					<xsdxt:code href="../common/samples/images-list-rsp.json"/>
+					<xsdxt:code href="../common/samples/images-list-rsp.xml"/>
 				</wadl:doc> <!--&serverListRspParameters;--> 
 			</representation>
 		</response>&commonFaults;
@@ -240,8 +219,9 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
-				</wadl:doc> <!--&serverListRspParameters;--> 
+					<!--<xsdxt:code href="../common/samples/NEED TO FIND THESE.JSON"/>-->
+					<!--<xsdxt:code href="../common/samples/NEED TO FIND THESE.xml"/>-->
+				</wadl:doc>  
 			</representation>
 		</response>&commonFaults;
 	</method>
@@ -270,8 +250,8 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
-				</wadl:doc> <!--&serverListRspParameters;--> 
+					<!--<xsdxt:code href="../common/samples/NEED EX HERE.json"/>-->
+				</wadl:doc>  
 			</representation>
 		</response>&commonFaults;
 	</method>
@@ -296,7 +276,7 @@
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-resp.json"/>-->
+					
 				</wadl:doc> <!--&serverListRspParameters;--> 
 			</representation>
 		</response>&commonFaults;

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flavor xmlns:OS-FLV-EXT-DATA="http://docs.openstack.org/compute/ext/flavor_extra_data/api/v1.1" 
+    xmlns:OS-FLV-WITH-EXT-SPECS="http://docs.openstack.org/compute/ext/flavor_with_extra_specs/api/v2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://docs.openstack.org/compute/api/v1.1" disk="0" 
+    vcpus="8" ram="15360" name="15 GB Compute v1" id="compute1-15" swap="" rxtx_factor="1250.0" OS-FLV-EXT-DATA:ephemeral="0">
+    <atom:link href="https://dfw.servers.api.rackspacecloud.com/v2/820712/flavors/compute1-15" rel="self"/>
+    <atom:link href="https://dfw.servers.api.rackspacecloud.com/820712/flavors/compute1-15" rel="bookmark"/>
+    <OS-FLV-WITH-EXT-SPECS:extra_specs>
+        <policy_class>compute_flavor</policy_class>
+        <class>compute1</class>
+        <disk_io_index>-1</disk_io_index>
+        <number_of_data_disks>0</number_of_data_disks>
+    </OS-FLV-WITH-EXT-SPECS:extra_specs>
+</flavor>
+
+
