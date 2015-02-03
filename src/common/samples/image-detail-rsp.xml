@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<image
+    xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns="http://docs.openstack.org/compute/api/v1.1" status="ACTIVE"
+    updated="2013-04-19T16:59:32Z"
+    name="Ubuntu 11.10 (Oneiric Oncelot)"
+    created="2012-02-28T19:38:57Z" minDisk="10" progress="100"
+    minRam="256" id="3afe97b2-26dc-49c5-a2cc-a2fc8d80c001"
+    OS-DCF:diskConfig="AUTO">
+    <metadata>
+        <meta key="os_distro">ubuntu</meta>
+        <meta key="com.rackspace__1__visible_core">1</meta>
+        <meta key="com.rackspace__1__build_rackconnect">1</meta>
+        <meta key="auto_disk_config">True</meta>
+        <meta key="com.rackspace__1__options">0</meta>
+        <meta key="image_type">base</meta>
+        <meta key="org.openstack__1__os_version">11.10</meta>
+        <meta key="org.openstack__1__os_distro">org.ubuntu</meta>
+        <meta key="rax_managed">false</meta>
+        <meta key="os_version">11.10</meta>
+        <meta key="com.rackspace__1__release_version">1</meta>
+        <meta key="rax_options">0</meta>
+        <meta key="com.rackspace__1__visible_rackconnect">1</meta>
+        <meta key="com.rackspace__1__release_id">1002</meta>
+        <meta key="com.rackspace__1__visible_managed">1</meta>
+        <meta key="com.rackspace__1__build_core">1</meta>
+        <meta key="arch">x86-64</meta>
+        <meta key="os_type">linux</meta>
+        <meta key="org.openstack__1__architecture">x64</meta>
+        <meta key="com.rackspace__1__build_managed">1</meta>
+    </metadata>
+    <atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/v2/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001"
+        rel="self"/>
+    <atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001"
+        rel="bookmark"/>
+    <atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001"
+        type="application/vnd.openstack.image" rel="alternate"/>
+</image>
