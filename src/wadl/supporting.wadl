@@ -83,9 +83,14 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/limits-rsp.json"/>
-					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
-				</wadl:doc>  
+				</wadl:doc>
 			</representation>
+					<representation mediaType="application/xml">
+						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						
+					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
+						</wadl:doc>
+					</representation>
 		</response>&commonFaults;
 	</method>
 	
@@ -120,6 +125,10 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/flavor-list-rsp.json"/>
+				</wadl:doc>
+			</representation>
+					<representation mediaType="application/xml">
+						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/flavor-list-rsp.xml"/>
 				</wadl:doc> &flavorsListQueryParameters; 
 			</representation>
@@ -146,9 +155,13 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/flavor-detail-rsp.json"/>
-					<xsdxt:code href="../common/samples/flavor-detail-rsp.xml"/>
-				</wadl:doc> &flavorsListQueryParameters; 
+				</wadl:doc>
 			</representation>
+					<representation mediaType="application/xml">
+						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+							<xsdxt:code href="../common/samples/flavor-detail-rsp.xml"/>
+						</wadl:doc>&flavorsListQueryParameters; 
+					</representation>
 		</response>&commonFaults;
 	</method>
 	
@@ -187,6 +200,10 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/images-list-rsp.json"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/images-list-rsp.xml"/>
 				</wadl:doc> <!--&serverListRspParameters;--> 
 			</representation>
@@ -219,8 +236,12 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/NEED TO FIND THESE.JSON"/>-->
-					<!--<xsdxt:code href="../common/samples/NEED TO FIND THESE.xml"/>-->
+					<!--<xsdxt:code href="../common/samples/NEED EXAMPLE.JSON"/>-->
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/NEED EXAMPLE.xml"/>-->
 				</wadl:doc>  
 			</representation>
 		</response>&commonFaults;
@@ -250,7 +271,12 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/NEED EX HERE.json"/>-->
+					<xsdxt:code href="../common/samples/image-detail-rsp.JSON"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/image-detail-rsp.xml"/>
 				</wadl:doc>  
 			</representation>
 		</response>&commonFaults;
