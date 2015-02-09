@@ -379,6 +379,8 @@
             <title>Scheduled images extension</title>
             <para>Rather than manually capturing images, use this extension to schedule automatic images according to a
                 schedule that you define.</para>
+            <para>The namespace for the scheduled images extended element is:</para>
+            <para><code>xmlns:RAX-SI="http://docs.openstack.org/servers/api/ext/scheduled_images/v1.0</code></para>
             <para>You may schedule daily or weekly images of your server automatically, but you cannot schedule both daily
                 and weekly images for a server. When you schedule an image, a new resource is created at
                 /servers/{serverId}/rax-si-image-schedule. This resource, which contains the retention value and an optional
@@ -409,8 +411,6 @@
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>The namespace for the scheduled images extended element is:</para>
-            <para><code>xmlns:RAX-SI="http://docs.openstack.org/servers/api/ext/scheduled_images/v1.0</code></para>
             <important>
                 <para> The scheduled images service is a "best effort service". Images are scheduled so that they will not
                     interfere with each other or with on-demand snapshots. You may not specify a particular time at which
@@ -458,14 +458,450 @@
                     targetptr="POST_rescueServer_servers__server_id__actions_api_servers_actions"
                     >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>
         </section>
+        <section xml:id="ext_extended_status">
+            <title>Extended status extension</title>
+            <para>The extended status extension displays the power state, virtual machine (VM) state, and task state for
+                servers in API operations: <olink targetdoc="cs-devguide"
+                    targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                    >“GET_listServersDetails_servers_detail_api_servers_basic”</olink> and <olink targetdoc="cs-devguide"
+                    targetptr="GET_getServer_servers__server_id__api_servers_basic"
+                    >“GET_getServer_servers__server_id__api_servers_basic”</olink> .</para>
+            <para>The namespace for this extended attribute is:
+                <code>xmlns:OS-EXT-STS="http://docs.openstack.org/compute/ext/extended_status/api/v1.1"</code></para>
+            <para>The following API operation response parameters contain the state information: <note>
+                    <para>The API does not regulate the VM and task status values so it is possible that these status values
+                        can be added, removed, or renamed. </para>
+                </note>
+                <variablelist>
+                    <varlistentry>
+                        <term><emphasis role="bold">OS-EXT-STS:power_state</emphasis></term>
+                        <listitem>
+                            <para>The power status.</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para><literal>0</literal> means the instance is powered down.</para>
+                                </listitem>
+                                <listitem>
+                                    <para><literal>1</literal> means the instance is powered up.</para>
+                                </listitem>
+                                <listitem>
+                                    <para><literal>4</literal> means the instance is shut off.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><emphasis role="bold">OS-EXT-STS:vm_state</emphasis></term>
+                        <listitem>
+                            <para>The virtual machine (VM) status.</para>
+                            <para>Possible values include:</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>active</para>
+                                </listitem>
+                                <listitem>
+                                    <para>build</para>
+                                </listitem>
+                                <listitem>
+                                    <para>deleted</para>
+                                </listitem>
+                                <listitem>
+                                    <para>error</para>
+                                </listitem>
+                                <listitem>
+                                    <para>paused</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rescued</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resized</para>
+                                </listitem>
+                                <listitem>
+                                    <para>soft_deleted</para>
+                                </listitem>
+                                <listitem>
+                                    <para>stopped</para>
+                                </listitem>
+                                <listitem>
+                                    <para>suspended</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><emphasis role="bold">OS-EXT-STS:task_state</emphasis></term>
+                        <listitem>
+                            <para>The task status.</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>block_device_mapping</para>
+                                </listitem>
+                                <listitem>
+                                    <para>deleting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>image_snapshot</para>
+                                </listitem>
+                                <listitem>
+                                    <para>image_pending_upload</para>
+                                </listitem>
+                                <listitem>
+                                    <para>image_uploading</para>
+                                </listitem>
+                                <listitem>
+                                    <para>migrating</para>
+                                </listitem>
+                                <listitem>
+                                    <para>networking</para>
+                                </listitem>
+                                <listitem>
+                                    <para>pausing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>powering_off</para>
+                                </listitem>
+                                <listitem>
+                                    <para>powering_on</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebooting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebooting_hard</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebuilding</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebuild_block_device_mapping</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebuild_spawning</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rescuing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_confirming</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_finish</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_migrated</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_migrating</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_prep</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_reverting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resuming</para>
+                                </listitem>
+                                <listitem>
+                                    <para>scheduling</para>
+                                </listitem>
+                                <listitem>
+                                    <para>spawning</para>
+                                </listitem>
+                                <listitem>
+                                    <para>starting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>stopping</para>
+                                </listitem>
+                                <listitem>
+                                    <para>suspending</para>
+                                </listitem>
+                                <listitem>
+                                    <para>unpausing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>unrescuing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>updating_password</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </para>
+            <para>The following table shows the server statuses (API operation response parameter <literal>status</literal>)
+                that correspond with the VM and tasks statuses:</para>
+            <para>
+                <table rules="all" width="60%">
+                    <caption>Server Statuses and Corresponding VM and Task Statuses</caption>
+                    <col width="33%"/>
+                    <col width="33%"/>
+                    <col width="33%"/>
+                    <thead>
+                        <tr>
+                            <th>Server status</th>
+                            <th>OS-EXT-STS:vm_state</th>
+                            <th>OS-EXT-STS:task_state</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ACTIVE</td>
+                            <td>active</td>
+                            <td>
+                                <footnote xml:id="task_states">
+                                    <para>Possible task statuses include the following:</para>
+
+                                    <itemizedlist>
+                                        <listitem>
+                                            <para>block_device_mapping</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>deleting</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>image_snapshot. Indicates that a create image action has been initiated and
+                                                that the hypervisor is creating the snapshot. Any operations that would
+                                                modify data on the server's virtual hard disk should be avoided during this
+                                                time. </para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>image_pending_upload. Indicates that the hypervisor has completed taking a
+                                                snapshot of the server. At this point, the hypervisor is packaging the
+                                                snapshot and preparing it for upload to the image store. </para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>image_uploading. Indicates that the hypervisor is currently uploading a
+                                                packaged snapshot of the server to the image store.</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>migrating</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>networking</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>pausing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>powering_off</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>powering_on</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebooting</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebooting_hard</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebuilding</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebuild_block_device_mapping</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebuild_spawning</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rescuing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_confirming</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_finish</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_migrated</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_migrating</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_prep</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_reverting</para>
+                                        </listitem>
+
+                                        <listitem>
+                                            <para>resuming</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>scheduling</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>spawning</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>starting</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>stopping</para>
+                                        </listitem>
+
+                                        <listitem>
+                                            <para>suspending</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>unpausing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>unrescuing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>updating_password</para>
+                                        </listitem>
+                                    </itemizedlist>
+                                </footnote>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HARD_REBOOT</td>
+                            <td>active</td>
+                            <td>rebooting_hard</td>
+                        </tr>
+                        <tr>
+                            <td>MIGRATING </td>
+                            <td>active</td>
+                            <td>migrating</td>
+                        </tr>
+                        <tr>
+                            <td>PASSWORD </td>
+                            <td>active</td>
+                            <td>updating_password</td>
+                        </tr>
+                        <tr>
+                            <td>REBOOT </td>
+                            <td>active</td>
+                            <td>rebooting</td>
+                        </tr>
+                        <tr>
+                            <td>REBUILD </td>
+                            <td>active </td>
+                            <td>rebuilding</td>
+                        </tr>
+                        <tr>
+                            <td>REBUILD </td>
+                            <td>active</td>
+                            <td>rebuild_block_device_mapping</td>
+                        </tr>
+                        <tr>
+                            <td>REBUILD</td>
+                            <td>active</td>
+                            <td>rebuild_spawning</td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_prep </td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_migrating </td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_migrated </td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_finish </td>
+                        </tr>
+                        <tr>
+                            <td>BUILD </td>
+                            <td>building</td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DELETED </td>
+                            <td>deleted </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ERROR </td>
+                            <td>error </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PAUSED</td>
+                            <td>paused </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RESCUE </td>
+                            <td>rescued </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VERIFY_RESIZE</td>
+                            <td>resized</td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>REVERT_RESIZE</td>
+                            <td>resized </td>
+                            <td>resize_reverting </td>
+                        </tr>
+                        <tr>
+                            <td>DELETED</td>
+                            <td>soft_deleted </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SHUTOFF </td>
+                            <td>stopped </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SUSPENDED </td>
+                            <td>suspended</td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </para>
+            <para>For information about server status values, see <olink targetdoc="cs-devguide" targetptr="Server_stati"
+                >“Possible values for server status”</olink>.</para>
+        </section>
         <section xml:id="ext_disk_config">
             <title>Disk Config extension</title>
             <para>The disk configuration extension adds a <literal>OS-DCF:diskConfig</literal> attribute to images and
-                servers. This attribute controls how the disk is partitioned when servers are created, rebuilt, or resized. A
-                server inherits the <literal>OS-DCF:diskConfig</literal> value from the image used to create it, and an image
-                inherits the <literal>OS-DCF:diskConfig</literal> value of the server from which it was created. To override
-                the inherited setting, you can include the <literal>OS-DCF:diskConfig</literal> attribute in the request body
-                of a server create, rebuild, or resize request. Valid <literal>OS-DCF:diskConfig</literal> values are:</para>
+                servers. This attribute controls how the disk is partitioned when servers are created, rebuilt, or
+                resized.</para>
+            <para>The namespace for diskConfig extended attribute is:</para>
+            <para><code>xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"</code></para>
+            <para>A server inherits the <literal>OS-DCF:diskConfig</literal> value from the image used to create it, and an
+                image inherits the <literal>OS-DCF:diskConfig</literal> value of the server from which it was created. To
+                override the inherited setting, you can include the <literal>OS-DCF:diskConfig</literal> attribute in the
+                request body of a server create, rebuild, or resize request. Valid <literal>OS-DCF:diskConfig</literal>
+                values are:</para>
             <itemizedlist>
                 <listitem>
                     <para><literal>AUTO</literal>. The server is built with a single partition the size of the target flavor
@@ -488,8 +924,6 @@
             </note>
             <para>Resizing down requires the server to have a <literal>OS-DCF:diskConfig</literal> value of
                     <literal>AUTO</literal>.</para>
-            <para>The namespace for this extended attribute is:
-                    <code>xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"</code></para>
             <section xml:id="ext_disk_config_get_details">
                 <title>Changes to get details operations for servers and images</title>
                 <para>With the disk config extension, submitting a &GET; request for <command>/servers/detail</command>,

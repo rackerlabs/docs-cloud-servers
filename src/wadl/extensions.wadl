@@ -44,6 +44,18 @@
 			<para>In the URI, specify the flavor ID.</para>
 		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json"> 
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -108,11 +120,13 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
 					title="Enable scheduled images (daily): JSON request">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
 					title="Enable scheduled images (daily): XML request">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -168,7 +182,19 @@
 				disabled, an HTTP 404 is returned. </para>
 			<para>In the URI, specify the server ID.</para>
 		</wadl:doc>
-
+		<request>
+			<representation mediaType="application/json"> 
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -221,6 +247,18 @@
 				created.</para>
 		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json"> 
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -255,10 +293,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.json"/>
 				</wadl:doc>&serverCreateReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.xml"/>
 				</wadl:doc>
 			</representation>
