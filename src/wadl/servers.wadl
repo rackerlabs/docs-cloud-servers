@@ -95,10 +95,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-create-req.json"/>
 				</wadl:doc>&serverCreateReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/server-create-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -127,11 +129,22 @@
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List servers">
 			<para role="shortdesc">Retrieve list of all servers (only IDs, names, and links).</para>
 			<para>Servers contain a status attribute that indicates the current server state. You can filter on the server
-				status when you complete a list servers request. The server status is returned in the response body. For a
-				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
+				status when you complete a list servers request. The server status is returned in the response body.</para>
+			<para>For a full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
+			<para>For more information on the extended status extension (<literal>OS-EXT-STS:power_state</literal>,
+					<literal>OS-EXT-STS:vm_state</literal>, and <literal>OS-EXT-STS:task_state</literal>see
+				<xref linkend="ext_extended_status"/>.</para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>&serverListQueryParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
 		</request>
 
 		<response status="200 203 300">
@@ -157,14 +170,24 @@
 				full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
 			<itemizedlist>
-				<listitem><para>Config Drive <!--inserthere--></para></listitem>
-				<listitem><para>Scheduled Images <!--inserthere--></para></listitem>
-				<listitem><para>Extended Status <!--inserthere--></para></listitem>
+				<listitem><para>Config Drive: <!--<xref linkend="ext_config_drive"/>--></para></listitem>
+				<listitem><para>Scheduled Images: <xref linkend="ext_scheduled_images"/></para></listitem>
+				<listitem><para>Extended Status (<literal>OS-EXT-STS:power_state</literal>,
+					<literal>OS-EXT-STS:vm_state</literal>, and <literal>OS-EXT-STS:task_state</literal>):
+					<xref linkend="ext_extended_status"/></para></listitem>
 			</itemizedlist>
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json"> &serverListQueryParameters; </representation>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>&serverListQueryParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -188,14 +211,25 @@
 			<para role="shortdesc">Retrieves detailed information for a specified server.</para>
 			<para>The following extensions provide additional information when viewing server details:</para>
 			<itemizedlist>
-				<listitem><para>Config Drive <!--inserthere--></para></listitem>
-				<listitem><para>Scheduled Images <!--inserthere--></para></listitem>
-				<listitem><para>Extended Status <!--inserthere--></para></listitem>
+				<listitem><para>Config Drive: <!--<xref linkend="ext_config_drive"/>--></para></listitem>
+				<listitem><para>Scheduled Images: <xref linkend="ext_scheduled_images"/></para></listitem>
+				<listitem><para>Extended Status (<literal>OS-EXT-STS:power_state</literal>,
+							<literal>OS-EXT-STS:vm_state</literal>, and <literal>OS-EXT-STS:task_state</literal>):
+						<xref linkend="ext_extended_status"/></para></listitem>
 			</itemizedlist>
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json"/>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -227,10 +261,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-update-req.json"/>
 				</wadl:doc>&serverUpdateReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/server-update-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -258,6 +294,18 @@
 				body.</para>
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -280,6 +328,18 @@
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -304,6 +364,18 @@
 					<literal>private </literal>).</para>
 		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -333,10 +405,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-chgpwd-req.json"/>
 				</wadl:doc> &serverActionChangePwdReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-chgpwd-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -370,10 +444,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-reboot-req.json"/>
 				</wadl:doc> &serverActionRebootReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-reboot-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -409,10 +485,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-action-rebuild-req.json"/>
 				</wadl:doc> &serverActionRebuildReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-action-rebuild-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -471,10 +549,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-resize-req.json"/>
 				</wadl:doc> &serverActionResizeReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-resize-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -512,10 +592,12 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-confresize-req.json"/>
 				</wadl:doc> &serverActionConfResizeReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-confresize-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -552,10 +634,12 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rvrtresize-req.json"/>
 				</wadl:doc> &serverActionRvrtResizeReqParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rvrtresize-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -620,10 +704,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rescue-req.json"/>
 				</wadl:doc> &serverActionRescueReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rescue-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -660,10 +746,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-unrescue-req.json"/>
 				</wadl:doc> &serverActionUnrescueReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-unrescue-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -707,10 +795,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-createImage-req.json"/>
 				</wadl:doc> &serverActionCreateImageReqParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:servers">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-createImage-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -735,6 +825,18 @@
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -767,10 +869,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-set-req.json"/>
 				</wadl:doc>&metaListRspParameters; </representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-set-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -808,10 +912,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-update-req.json"/>
 				</wadl:doc>&metaListRspParameters;</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-update-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -838,6 +944,18 @@
 			<para>In the URI, specify the target server ID and the target metadata key.</para>
 		</wadl:doc>
 
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="200 203 300">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -865,10 +983,12 @@
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/metaitem-set-req.json"/>
 				</wadl:doc>&metaItemListRspParameters;</representation>
 			<representation mediaType="application/xml">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/metaitem-set-req.xml"/>
 				</wadl:doc>
 			</representation>
@@ -896,6 +1016,19 @@
 				body.</para>
 			<para>In the URI, specify the target server ID and the target metadata key.</para>
 		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
