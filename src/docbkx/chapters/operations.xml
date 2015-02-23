@@ -467,7 +467,7 @@
                     targetptr="GET_getServer_servers__server_id__api_servers_basic"
                     >“GET_getServer_servers__server_id__api_servers_basic”</olink> .</para>
             <para>The namespace for this extended attribute is:
-                <code>xmlns:OS-EXT-STS="http://docs.openstack.org/compute/ext/extended_status/api/v1.1"</code></para>
+                    <code>xmlns:OS-EXT-STS="http://docs.openstack.org/compute/ext/extended_status/api/v1.1"</code></para>
             <para>The following API operation response parameters contain the state information: <note>
                     <para>The API does not regulate the VM and task status values so it is possible that these status values
                         can be added, removed, or renamed. </para>
@@ -888,7 +888,7 @@
                 </table>
             </para>
             <para>For information about server status values, see <olink targetdoc="cs-devguide" targetptr="Server_stati"
-                >“Possible values for server status”</olink>.</para>
+                    >“Possible values for server status”</olink>.</para>
         </section>
         <section xml:id="ext_disk_config">
             <title>Disk Config extension</title>
@@ -988,11 +988,11 @@
                     </itemizedlist></para>
             </section>
         </section>
-        <!--        <section xml:id="ext_config_drive">
+        <section xml:id="ext_config_drive">
             <title>Config drive extension</title>
-<!-\-            <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
+            <!--            <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
                     targetptr="POST_rescueServer_servers__server_id__actions_api_servers_actions"
-                    >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>-\->
+                    >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>-->
             <para> Config-drive is a read-only configuration drive that is attached to server instances on boot. It is given
                 the label "config-2", and it shows up as a CDROM drive on the instance. It is especially useful in
                 conjunction with cloud-init (a server bootstrapping application) and for passing large files to be used by
@@ -1067,6 +1067,6 @@
                         <para>openstack/latest/user_data</para>
                     </listitem>
                 </itemizedlist></para>
-        </section>-->
+        </section>
     </section>
 </chapter>
