@@ -2,7 +2,6 @@
     "rebuild" :{
         "name" : "new-server-test",
         "imageRef" : "d42f821e-c2d1-4796-9f07-af5ed7912d0e",
-        "flavorRef" : "2",
         "OS-DCF:diskConfig" : "AUTO",
         "adminPass" : "diane123",
         "metadata" : {
