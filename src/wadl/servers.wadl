@@ -62,6 +62,19 @@
 						<method href="#deleteMetadataItem"/>
 					</resource>
 				</resource>
+				<resource id="VolumeAttach" path="os-volume_attachments">
+					<method href="#createVolumeAttachment"/>
+					<method href="#listVolumeAttachments"/>
+					<resource id="VolumeAttachmentId" path="{attachment_id}">
+						<param xmlns="http://wadl.dev.java.net/2009/02" name="attachment_id" style="template" type="xsd:UUID">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Volume attachment ID">
+								<para>The volume attachment ID.</para>
+							</wadl:doc>
+						</param>
+						<method href="#showVolumeAttachmentDetails"/>
+						<method href="#deleteVolumeAttachment"/>
+					</resource>
+				</resource>
 			</resource>
 		</resource>
 	</resources>
@@ -173,8 +186,8 @@
 				<listitem><para>Config Drive: <!--<xref linkend="ext_config_drive"/>--></para></listitem>
 				<listitem><para>Scheduled Images: <xref linkend="ext_scheduled_images"/></para></listitem>
 				<listitem><para>Extended Status (<literal>OS-EXT-STS:power_state</literal>,
-					<literal>OS-EXT-STS:vm_state</literal>, and <literal>OS-EXT-STS:task_state</literal>):
-					<xref linkend="ext_extended_status"/></para></listitem>
+							<literal>OS-EXT-STS:vm_state</literal>, and <literal>OS-EXT-STS:task_state</literal>):
+						<xref linkend="ext_extended_status"/></para></listitem>
 			</itemizedlist>
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
@@ -974,7 +987,6 @@
 	<method name="PUT" id="setMetadataItem">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata item">
 			<para role="shortdesc">Create or replace metadata item by key for a specified server</para>
-			<para/>
 			<para>In the URI, specify the target server ID and the target metadata key.</para>
 			<para>In the request body, specify the <literal>meta</literal> element, followed by the metadata key, for example
 					<literal>version</literal>, with the new value for that key.</para>
@@ -1042,4 +1054,148 @@
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
+
+	<!-- Volume attachment operations -->
+	<method name="PUT" id="createVolumeAttachment">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Attach voume to server">
+			<para role="shortdesc">Attaches volume to a specified server</para>
+			<para>You can attach one or more volumes in a single request.</para>
+			<para> For information about creating volumes, see
+				<link xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html">
+            <citetitle>Rackspace Cloud Block Storage Developer Guide</citetitle></link>.
+			</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-create-req.json"/>
+				</wadl:doc>&attachVolumeReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-create-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/vol-attach-create-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-create-rsp.json"/>
+				</wadl:doc>&attachVolumeRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/vol-attach-create-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-create-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<method name="GET" id="listVolumeAttachments">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List server metadata">
+			<para role="shortdesc">Retrieve list of all attached volumes for a specified server.</para>
+			<para>In the URI, specify the target server ID.</para>
+			<para> For information about creating volumes, see
+				<link xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html">
+            <citetitle>Rackspace Cloud Block Storage Developer Guide</citetitle></link>.
+			</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200 203 300">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/vol-attach-list-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-list-rsp.json"/>
+				</wadl:doc> &attachVolumeListRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/vol-attach-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-list-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+
+	<method name="PUT" id="showVolumeAttachmentDetails">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Show volume attachment details">
+			<para role="shortdesc">Retrieve volume details for the specified server ID and volume attachment ID</para>
+			<para>In the URI, specify the target server ID and the target attached volume ID to see details for that
+				volume.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc></representation>
+			<representation mediaType="application/xml">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/vol-attach-details-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-details-rsp.json"/>
+				</wadl:doc>&attachVolumeRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/vol-attach-details-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/vol-attach-details-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<method name="DELETE" id="deleteVolumeAttachment">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete volume attachment from server">
+			<para role="shortdesc">Deletes the specified volume attachment from the specified server.</para>
+			<para>If the operation succeeds, it returns an <errorcode>HTTP 202</errorcode> status code with no response
+				body.</para>
+			<para>In the URI, specify the target server ID and the target attached volume ID.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/vol-attach-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/vol-attach-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
 </application>

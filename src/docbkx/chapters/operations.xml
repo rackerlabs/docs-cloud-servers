@@ -19,7 +19,7 @@
         <title>Servers</title>
         <para>This section describes the API operations for servers.</para>
         <section xml:id="api_servers_basic">
-            <title>Basic Server Operations</title>
+            <title>Basic server operations</title>
             <para>This section describes the basic API operations for servers: create, read, update, and delete.</para>
             <note>
                 <para>For the full list of server status values, see <olink targetdoc="cs-devguide" targetptr="Server_stati"
@@ -123,7 +123,7 @@
             </section>
         </section>
         <section xml:id="api_servers_addresses">
-            <title>Server Address Operations</title>
+            <title>Server address operations</title>
             <para>This section describes the API operations for server addresses.</para>
             <!--- this section comes from these WADLs: servers.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -138,7 +138,7 @@
             </wadl:resources>
         </section>
         <section xml:id="api_servers_actions">
-            <title>Server Actions Operations</title>
+            <title>Server actions operations</title>
             <para>This section describes the API operations for server actions.</para>
             <para><note>
                     <para>The base URI is the same for all server actions. The request body identifies which action to
@@ -161,7 +161,7 @@
             </wadl:resources>
         </section>
         <section xml:id="api_servers_metadata">
-            <title>Server Metadata Operations</title>
+            <title>Server metadata operations</title>
             <para>This section describes the metadata API operations for servers.</para>
             <note>
                 <para>You can also add metadata to images<!--, see inserthere-->.</para>
@@ -263,13 +263,34 @@
                 </warning>
             </section>
         </section>
+        <section xml:id="api_servers_volume_attach">
+            <title>Server volume attachment operations</title>
+            <para>This section describes the volume attachment API operations for servers.</para>
+            <para>For information about creating and managing volumes, see
+                <link xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html"><citetitle>Rackspace Cloud 
+                    Block Storage Developer Guide</citetitle></link>.</para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- create, and list volume attachments -->
+                <wadl:resource href="../../wadl/servers.wadl#VolumeAttach">
+                    <wadl:method href="createVolumeAttachment"/>
+                    <wadl:method href="listVolumeAttachments"/>
+                </wadl:resource>
+                <!-- list details and delete server metadata item-->
+                <wadl:resource href="../../wadl/servers.wadl#VolumeAttachmentId">
+                    <wadl:method href="showVolumeAttachmentDetails"/>
+                    <wadl:method href="deleteVolumeAttachment"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+
     </section>
 
     <section xml:id="api_supporting">
         <title>Supporting Operations</title>
         <para>This section describes the API operations for supporting functions of servers.</para>
 
-        <section xml:id="Limits">
+<!--        <section xml:id="Limits">
             <title>Limits</title>
             <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
                 system.</para>
@@ -286,15 +307,15 @@
             </para>
             <para>To query the limits programmatically, see (INSERT LINK HERE).</para>
 
-            <!--- this section comes from these WADLs: supporting.wadl -->
+            <!-\-\- this section comes from these WADLs: supporting.wadl -\->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
 
-                <!-- retrieve list of rate and absolute limits -->
+                <!-\- retrieve list of rate and absolute limits -\->
                 <wadl:resource href="../../wadl/supporting.wadl#Limits">
                     <wadl:method href="retrieveListRateAbsoluteLimits"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
+        </section>-->
 
         <section xml:id="Flavors">
             <title>Flavors</title>
@@ -448,10 +469,37 @@
                         >"GET_listServersDetails_servers_detail_api_servers_basic"</olink>.</para>
             </section>
         </section>
-        <section xml:id="ext_used_limits">
+        <!--<section xml:id="ext_used_limits">
             <title>Used limits extension</title>
             <para>This extension is described in <olink targetdoc="cs-devguide" targetptr="Limits">“Limits”</olink>.</para>
+        </section>-->
+        
+        <section xml:id="Limits">
+            <title>Limits</title>
+            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
+                system.</para>
+            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
+                <listitem>
+                    <para><emphasis role="italic">rate limits</emphasis>. Identifies the frequency at which the user can
+                        issue specific API requests. <!--See insertlinkhere-->.</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="italic">absolute limits</emphasis>. Identifies the total number of specific
+                        objects that the user can process simultaneously. <!--See insertlinkhere-->. </para>
+                </listitem>
+            </itemizedlist>
+            </para>
+            <para>To query the limits programmatically<!--, see insertlinkhere-->.</para>
+            
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">            
+                <!-- retrieve list of rate and absolute limits -->
+                <wadl:resource href="../../wadl/extensions.wadl#Limits">
+                    <wadl:method href="listRateAbsoluteLimits"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
+        
         <section xml:id="ext_rescue">
             <title>Rescue server extension</title>
             <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"

@@ -34,6 +34,9 @@
 		<resource id="Servers" path="servers">
 			<method href="#createServerDiskConfig"/>
 		</resource>
+		<resource id="Limits" path="limits">
+			<method href="#listRateAbsoluteLimits"/>
+		</resource>
 	</resources>
 
 	<!-- Flavor Extra Specs operations -->
@@ -173,7 +176,6 @@
 				</wadl:doc>
 			</representation>
 		</response> &commonFaults; </method>
-
 	<method name="GET" id="showSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled Images">
 			<para role="shortdesc">Show scheduled images for the specified server.</para>
@@ -238,7 +240,6 @@
 				</wadl:doc>
 			</representation>
 		</response> &commonFaults; </method>
-
 	<method name="DELETE" id="disableSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Disable scheduled Images">
 			<para role="shortdesc">Disable scheduled images for the specified server.</para>
@@ -317,4 +318,28 @@
 				</wadl:doc>
 			</representation>
 		</response> &commonFaults; </method>
+
+	<!-- Used Limits operations -->
+	<method name="GET" id="listRateAbsoluteLimits">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of rate and absolute limits">
+			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
+			<para>Applications can programmatically determine current account limits by using this API operation.</para>
+		</wadl:doc>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/limits-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/limits-rsp.json"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/limits-rsp-xml-http.txt"/>					
+					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;
+	</method>
+	
 </application>

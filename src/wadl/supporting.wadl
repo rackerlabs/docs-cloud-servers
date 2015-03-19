@@ -22,9 +22,9 @@
 		<!--******-->
 		<!--Limits-->
 		<!--******-->
-				<resource id="Limits" path="limits">
+<!--				<resource id="Limits" path="limits">
 					<method href="#retrieveListRateAbsoluteLimits"/>
-				</resource>
+				</resource>-->
 					
 		<!--*******-->
 		<!--Flavors-->
@@ -71,7 +71,7 @@
 	<!--Retrieve list of rate and absolute limits method -->
 	<!--************************************-->
 	
-	<method name="GET" id="retrieveListRateAbsoluteLimits">
+	<!--<method name="GET" id="retrieveListRateAbsoluteLimits">
 	<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of rate and absolute limits">
 		<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
 		<para>Applications can programmatically determine current account limits by using this API operation.</para>
@@ -91,8 +91,7 @@
 						</wadl:doc>
 					</representation>
 		</response>&commonFaults;
-	</method>
-	
+	</method>-->
 	
 	<!--Flavors Methods-->
 	
