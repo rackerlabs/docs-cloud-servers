@@ -200,6 +200,7 @@
 			</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/images-list-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/images-list-rsp.xml"/>
 				</wadl:doc> <!--&serverListRspParameters;--> 
 			</representation>
