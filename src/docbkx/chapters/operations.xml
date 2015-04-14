@@ -290,7 +290,7 @@
         <title>Supporting Operations</title>
         <para>This section describes the API operations for supporting functions of servers.</para>
 
-<!--        <section xml:id="Limits">
+        <!--        <section xml:id="Limits">
             <title>Limits</title>
             <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
                 system.</para>
@@ -469,37 +469,31 @@
                         >"GET_listServersDetails_servers_detail_api_servers_basic"</olink>.</para>
             </section>
         </section>
-        <!--<section xml:id="ext_used_limits">
-            <title>Used limits extension</title>
-            <para>This extension is described in <olink targetdoc="cs-devguide" targetptr="Limits">“Limits”</olink>.</para>
-        </section>-->
-        
-        <section xml:id="Limits">
+        <section xml:id="ext_limits">
             <title>Limits</title>
             <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
                 system.</para>
             <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
-                <listitem>
-                    <para><emphasis role="italic">rate limits</emphasis>. Identifies the frequency at which the user can
-                        issue specific API requests. <!--See insertlinkhere-->.</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="italic">absolute limits</emphasis>. Identifies the total number of specific
-                        objects that the user can process simultaneously. <!--See insertlinkhere-->. </para>
-                </listitem>
-            </itemizedlist>
+                    <listitem>
+                        <para><emphasis role="italic">rate limits</emphasis>. Identifies the frequency at which the user can
+                            issue specific API requests. <!--See insertlinkhere-->.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">absolute limits</emphasis>. Identifies the total number of specific
+                            objects that the user can process simultaneously. <!--See insertlinkhere-->. </para>
+                    </listitem>
+                </itemizedlist>
             </para>
             <para>To query the limits programmatically<!--, see insertlinkhere-->.</para>
-            
+
             <!--- this section comes from these WADLs: extensions.wadl -->
-            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">            
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <!-- retrieve list of rate and absolute limits -->
                 <wadl:resource href="../../wadl/extensions.wadl#Limits">
                     <wadl:method href="listRateAbsoluteLimits"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
-        
         <section xml:id="ext_rescue">
             <title>Rescue server extension</title>
             <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
@@ -1115,6 +1109,72 @@
                         <para>openstack/latest/user_data</para>
                     </listitem>
                 </itemizedlist></para>
+        </section>
+        <section xml:id="ext_keypairs">
+            <title>Key pairs</title>
+            <para>Users create a key pair, or choose an existing key pair, and associate that key pair when building a
+                server. This grants a user the ability to authenticate via key-based authentication instead of password-based
+                authentication. </para>
+
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- retrieve list of rate and absolute limits -->
+                <wadl:resource href="../../wadl/extensions.wadl#Keypairs">
+                    <wadl:method href="createKeyPair"/>
+                    <wadl:method href="importKeyPair"/>
+                    <wadl:method href="listKeyPairs"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#KeypairName">
+                    <wadl:method href="deleteKeyPair"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_network">
+            <title>Networks</title>
+            <para>This section describes the nova-network API operations for networks.</para>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#Networks">
+                    <wadl:method href="listNetworks"/>
+                    <wadl:method href="createNetwork"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#NetworkID">
+                    <wadl:method href="showNetwork"/>
+                    <wadl:method href="deleteNetwork"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_virtual_interface">
+            <title>Virtual interface extension</title>
+            <para>Use the virtual interface extension to create a virtual interface to a specified network and attach that
+                network to an existing server instance. You can attach either an isolated network that you have created or a
+                Rackspace network.</para>
+            <para>A virtual interface works in the same way as the network interface card (NIC) inside your laptop. Like a
+                NIC, a virtual interface is the medium through which you can attach a network to your server. You create a
+                virtual interface for a specified network, and the network, which is composed of logical switches, is
+                attached to your server instance through the virtual interface.</para>
+            <note>
+                <para>You can create a maximum of one virtual interface per instance per network. </para>
+            </note>
+            <para>You can also use the virtual interface extension to perform the following actions:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>List the virtual interfaces for a server instance.</para>
+                </listitem>
+                <listitem>
+                    <para>Delete a virtual interface and detach it from a server instance.</para>
+                </listitem>
+            </itemizedlist>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#Interfaces">
+                    <wadl:method href="listInterfaces"/>
+                    <wadl:method href="createInterface"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#InterfaceID">
+                    <wadl:method href="deleteInterface"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
     </section>
 </chapter>

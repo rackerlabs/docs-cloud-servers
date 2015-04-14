@@ -126,9 +126,7 @@
 					<xsdxt:code href="../common/samples/server-create-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-create-rsp.json"/>
 				</wadl:doc>&serverCreateRspParameters;
-				<!--<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<para>Anything special about response goes here.</para>
-				</wadl:doc>-->
+				<!--<wadl:doc xmlns="http://docbook.org/ns/docbook"><para>Anything special about response goes here.</para></wadl:doc>-->
 			</representation>
 			<representation mediaType="application/xml" element="csapi:element">
 				<wadl:doc xml:lang="en">

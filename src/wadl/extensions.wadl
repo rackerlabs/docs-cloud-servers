@@ -37,6 +37,51 @@
 		<resource id="Limits" path="limits">
 			<method href="#listRateAbsoluteLimits"/>
 		</resource>
+		<resource id="Keypairs" path="os-keypairs">
+			<method href="#createKeyPair"/>
+			<method href="#importKeyPair"/>
+			<method href="#listKeyPairs"/>
+			<resource id="KeypairName" path="{keypair_name}">
+				<param name="keypair_name" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="string">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The name of the key pair to be deleted. </para>
+					</wadl:doc>
+				</param>
+				<method href="#deleteKeyPair"/>
+			</resource>
+		</resource>
+		<resource id="Networks" path="os-networksv2">
+			<method href="#listNetworks"/>
+			<method href="#createNetwork"/>
+			<resource id="NetworkID" path="{id}">
+				<param name="id" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Image ID">
+						<p>The network ID.</p>
+					</wadl:doc>
+				</param>
+				<method href="#showNetwork"/>
+				<method href="#deleteNetwork"/>
+			</resource>
+		</resource>
+		<resource id="VirtualInterfaces" path="servers">
+			<resource id="Interfaces" path="{server_id}/os-virtual-interfacesv2">
+				<param name="server_id" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Server ID">
+						<p>The UUID for the server.</p>
+					</wadl:doc>
+				</param>
+				<method href="#listInterfaces"/>
+				<method href="#createInterface"/>
+				<resource id="InterfaceID" path="{interface_id}">
+					<param name="interface_id" style="template" type="csapi:UUID">
+						<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Interface ID">
+							<p>The interface ID.</p>
+						</wadl:doc>
+					</param>
+					<method href="#deleteInterface"/>
+				</resource>
+			</resource>
+		</resource>
 	</resources>
 
 	<!-- Flavor Extra Specs operations -->
@@ -48,7 +93,7 @@
 		</wadl:doc>
 
 		<request>
-			<representation mediaType="application/json"> 
+			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
@@ -185,7 +230,7 @@
 			<para>In the URI, specify the server ID.</para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json"> 
+			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
@@ -196,7 +241,7 @@
 				</wadl:doc>
 			</representation>
 		</request>
-		
+
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -249,7 +294,7 @@
 		</wadl:doc>
 
 		<request>
-			<representation mediaType="application/json"> 
+			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
@@ -335,11 +380,374 @@
 			</representation>
 			<representation mediaType="application/xml">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/limits-rsp-xml-http.txt"/>					
+					<xsdxt:code href="../common/samples/limits-rsp-xml-http.txt"/>
 					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
 				</wadl:doc>
 			</representation>
-		</response>&commonFaults;
-	</method>
-	
+		</response>&commonFaults; </method>
+
+	<!-- Key Pair operations -->
+	<method name="POST" id="createKeyPair">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create a server key pair">
+			<para role="shortdesc">Creates a server key pair</para>
+			<para>Creates a key pair, with the name specified in the request body, to associate with a new server
+				instance.</para>
+			<important>
+				<title>Key Pair Naming Rules</title>
+				<para> The key name must be unique and may not exceed 255 characters. It can contain the following
+					characters: <itemizedlist>
+						<listitem>
+							<para>alphanumeric</para>
+						</listitem>
+						<listitem>
+							<para>spaces</para>
+						</listitem>
+						<listitem>
+							<para>dashes</para>
+						</listitem>
+						<listitem>
+							<para>underscores</para>
+						</listitem>
+					</itemizedlist>
+				</para>
+			</important>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-create-req.json"/>
+				</wadl:doc>&xtenKeyPairCreateReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-create-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request accepted.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/keypair-create-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-create-rsp.json"/>
+				</wadl:doc>&xtenKeyPairCreateRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/keypair-create-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-create-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+	<method name="POST" id="importKeyPair">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Import a server key pair">
+			<para role="shortdesc">Import a server key pair</para>
+			<para>Imports, or uploads, a key pair, with the name and public key specified in the request body, to associate
+				with a new server instance.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-upload-req.json"/>
+				</wadl:doc>&xtenKeyPairImportReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-upload-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request accepted.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/keypair-upload-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-upload-rsp.json"/>
+				</wadl:doc>&xtenKeyPairCreateRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/keypair-upload-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-upload-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+	<method name="GET" id="listKeyPairs">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of key pairs">
+			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
+			<para>This operation retrieves a list of server key pairs.</para>
+		</wadl:doc>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/keypair-list-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-list-rsp.json"/>
+				</wadl:doc>&xtenKeyPairListRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/keypair-list-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/keypair-list-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+	<method name="DELETE" id="deleteKeyPair">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete key pair">
+			<para role="shortdesc">Deletes the specified key pair.</para>
+			<para>This operation deletes the specified key pair. A return code of 202 indicates success.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/keypair-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/keypair-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<!--Nova Networks Operations-->
+	<method name="GET" id="listNetworks">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List networks">
+			<para role="shortdesc">Lists the networks configured for the specified tenant ID.</para>
+			<para>This operation lists the networks configured for the tenant ID specified in the request URI.</para>
+			<note>
+				<para>To list the networks that are associated with servers, see
+					<link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
+					in the <citetitle>Next Generation Cloud Servers Developer Guide</citetitle>.</para>
+			</note>
+		</wadl:doc>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/network-list-rsp-json-http.txt"/>
+						<xsdxt:code href="../common/samples/network-list-rsp.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenNetworksListRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/network-list-rsp-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/network-list-rsp.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+	<method name="POST" id="createNetwork">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create network">
+			<para role="shortdesc">Creates a network for the specified tenant ID.</para>
+			<para>This operation creates a network for the tenant ID specified in the request URI.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/req-json-http.txt"/>
+						<xsdxt:code href="../common/samples/network-create-req.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenCreateNetworksReqParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/network-create-req.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/network-create-rsp-json-http.txt"/>
+						<xsdxt:code href="../common/samples/network-create-rsp.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenNetworksRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/network-create-rsp-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/network-create-rsp.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+	<method name="GET" id="showNetwork">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show network">
+			<para role="shortdesc">Shows information for the specified network.</para>
+			<para>This operation shows information for the network specified in the request URI.</para>
+		</wadl:doc>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/network-show-rsp-json-http.txt"/>
+						<xsdxt:code href="../common/samples/network-show-rsp.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenNetworksRspParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/network-show-rsp-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/network-show-rsp.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+	<method name="DELETE" id="deleteNetwork">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete network">
+			<para role="shortdesc">Deletes the specified network.</para>
+			<para>This operation deletes the network specified in the request URI.</para>
+			<note>
+				<para>You can delete an isolated network only if it is not attached to any server. To detach a network from a
+					server, delete the virtual interface for the network from the server instance.
+					<!--See inserthere-->.</para>
+			</note>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/network-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/network-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
+	<!--Nova Virtual Interfaces Operations-->
+	<method name="GET" id="listInterfaces">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of virtual interfaces">
+			<para role="shortdesc">Retrieves list of the virtual interfaces configured for a server instance.</para>
+			<para>This operation lists the virtual interfaces configured for a server instance.</para>
+		</wadl:doc>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/virtual-interfaces-rsp-json-http.txt"/>
+						<xsdxt:code href="../common/samples/virtual-interfaces-rsp.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenVirtualInterfaceParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/virtual-interfaces-rsp-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/virtual-interfaces-rsp.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+	<method name="POST" id="createInterface">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create virtual interface and attach to server">
+			<para role="shortdesc">Creates a virtual interface for a network and attaches it to a server.</para>
+			<para>This operation creates a virtual interface for a network and attaches the network to a server
+				instance.</para>
+			<note>
+				<para>You can create a maximum of one virtual interface per instance per network.</para>
+			</note>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/req-json-http.txt"/>
+						<xsdxt:code href="../common/samples/virtual-interface-create-req.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenVirtualInterfaceCreateParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/virtual-interface-create-req.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/virtual-interface-create-rsp-json-http.txt"/>
+						<xsdxt:code href="../common/samples/virtual-interface-create-rsp.json"/>
+					</xsdxt:sample>
+				</wadl:doc>&xtenVirtualInterfaceParameters; </representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:sample>
+						<xsdxt:code href="../common/samples/virtual-interface-create-rsp-xml-http.txt"/>
+						<xsdxt:code href="../common/samples/virtual-interface-create-rsp.xml"/>
+					</xsdxt:sample>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+	<method name="DELETE" id="deleteInterface">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete virtual interface">
+			<para role="shortdesc">Deletes a virtual interface from a server instance.</para>
+			<para>This operation deletes the specified virtual interface from the specified server instance.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/virtual-interface-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/virtual-interface-delete-rsp-xml-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
+
 </application>
