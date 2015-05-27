@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xmlns:raxm="http://docs.rackspace.com/api/metadata"
+    xml:id="api_operations_neutron">
+    <title>API operations</title>
+    <para>The Rackspace Cloud Servers API v2 serves the following functions: <itemizedlist>
+            <listitem>
+                <para>stuff.</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+
+    <section xml:id="api_servers">
+        <title>Servers</title>
+        <para>This section describes the API operations for servers.</para>
+        <section xml:id="api_servers_basic">
+            <title>Basic server operations</title>
+            <para>This section describes the basic API operations for servers: create, read, update, and delete.</para>
+            <note>
+                <para>For the full list of server status values, see <olink targetdoc="cs-devguide" targetptr="Server_stati"
+                        >“Possible values for server status”</olink>.</para>
+            </note>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- create, list server -->
+                <wadl:resource href="../../wadl/servers.wadl#Servers">
+                    <wadl:method href="createServer"/>
+                    <wadl:method href="listServers"/>
+                </wadl:resource>
+                <!-- list server details-->
+                <wadl:resource href="../../wadl/servers.wadl#ServersDet">
+                    <wadl:method href="listServersDetails"/>
+                </wadl:resource>
+                <!-- get server details, update and delete server-->
+                <wadl:resource href="../../wadl/servers.wadl#Server_id">
+                    <wadl:method href="getServer"/>
+                    <wadl:method href="updateServer"/>
+                    <wadl:method href="deleteServer"/>
+                </wadl:resource>
+            </wadl:resources>
+            <section xml:id="Server_stati">
+                <title>Possible values for server status</title>
+                <para>The server status can contain the following values:</para>
+                <itemizedlist xml:id="server_status_list">
+                    <listitem>
+                        <para><code>ACTIVE</code>. The server is active.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>BUILDING</code>. The server has not finished the original build process.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>DELETED</code>. The server is permanently deleted.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>ERROR</code>. The server is in error.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>HARD_REBOOT</code>. The server is hard rebooting. This is equivalent to pulling the power
+                            plug on a physical server, plugging it back in, and rebooting it.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>PASSWORD</code>. The password is being reset on the server.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>PAUSED</code>. In a paused state, the state of the server is stored in RAM. A paused
+                            server continues to run in frozen state.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>REBOOT</code>. The server is in a soft reboot state. A reboot command was passed to the
+                            operating system.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>REBUILD</code>. The server is currently being rebuilt from an image.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>RESCUED</code>. The server is in rescue mode. A rescue image is running with the original
+                            server image attached.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>RESIZED</code>. Server is performing the differential copy of data that changed during
+                            its initial copy. Server is down for this stage.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>REVERT_RESIZE</code>. The resize or migration of a server failed for some reason. The
+                            destination server is being cleaned up and the original source server is restarting.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>SHUTOFF</code>. The virtual machine (VM) was powered down by the user, but not through
+                            the Rackspace Cloud Servers API. For example, the user issued a <code>shutdown -h</code> command
+                            from within the server instance. If the Rackspace Cloud Servers service manager detects that the
+                            VM was powered down, it transitions the server instance to the SHUTOFF status. If you use the API
+                            to restart the instance, the instance might be deleted first, depending on the value in the
+                                <parameter>shutdown_terminate</parameter> database field on the Instance model.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>SOFT_DELETED</code>. The server is marked as deleted but the disk images are still
+                            available to restore.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>STOPPED</code>. The server is powered off and the disk image still persists.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>SUSPENDED</code>. The server is suspended, either by request or necessity. This status
+                            appears for only the following hypervisors: XenServer/XCP, KVM, and ESXi. Administrative users
+                            may suspend an instance if it is infrequently used or to perform system maintenance. When you
+                            suspend an instance, its VM state is stored on disk, all memory is written to disk, and the
+                            virtual machine is stopped. Suspending an instance is similar to placing a device in hibernation;
+                            memory and vCPUs become available to create other instances.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>UNKNOWN</code>. The state of the server is unknown. Contact Rackspace support.</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>VERIFY_RESIZE</code>. System is awaiting confirmation that the server is operational
+                            after a move or resize.</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+        </section>
+        <section xml:id="api_servers_addresses">
+            <title>Server address operations</title>
+            <para>This section describes the API operations for server addresses.</para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- list server addresses-->
+                <wadl:resource href="../../wadl/servers.wadl#IPs">
+                    <wadl:method href="listServerAddresses"/>
+                </wadl:resource>
+                <!-- list server addresses by network type-->
+                <wadl:resource href="../../wadl/servers.wadl#Network_label">
+                    <wadl:method href="listServerAddressesbyNetwork"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="api_servers_actions">
+            <title>Server actions operations</title>
+            <para>This section describes the API operations for server actions.</para>
+            <para><note>
+                    <para>The base URI is the same for all server actions. The request body identifies which action to
+                        take.</para>
+                </note></para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- change password, reboot, rebuild, resize, confirm resize, revert, rescue, unrescue, create image -->
+                <wadl:resource href="../../wadl/servers.wadl#Actions">
+                    <wadl:method href="changePassword"/>
+                    <wadl:method href="rebootServer"/>
+                    <wadl:method href="rebuildServer"/>
+                    <wadl:method href="resizeServer"/>
+                    <wadl:method href="confirmResizeServer"/>
+                    <wadl:method href="revertResizeServer"/>
+                    <wadl:method href="rescueServer"/>
+                    <wadl:method href="unrescueServer"/>
+                    <wadl:method href="createImage"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="api_servers_metadata">
+            <title>Server metadata operations</title>
+            <para>This section describes the metadata API operations for servers.</para>
+            <note>
+                <para>You can also add metadata to images<!--, see inserthere-->.</para>
+            </note>
+            <para> Metadata provides additional information about your provisioned resources. It follows the format of
+                '"metadata key":"metadata value"' (for example, <literal>"Label" : "Web"</literal>). Metadata API operations
+                allow you to add, delete, and manipulate metadata for servers and images. Metadata can be configured by the
+                provider or by the user to provide extra functionality or labeling, or to provide information for 3rd party
+                applications to use. </para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show, create, and update server metadata -->
+                <wadl:resource href="../../wadl/servers.wadl#Metadata">
+                    <wadl:method href="listMetadata"/>
+                    <wadl:method href="setMetadata"/>
+                    <wadl:method href="updateMetadata"/>
+                </wadl:resource>
+                <!-- show, create, and delete server metadata item-->
+                <wadl:resource href="../../wadl/servers.wadl#MetadataKey">
+                    <wadl:method href="showMetadataItem"/>
+                    <wadl:method href="setMetadataItem"/>
+                    <wadl:method href="deleteMetadataItem"/>
+                </wadl:resource>
+            </wadl:resources>
+            <section xml:id="Image_metadata">
+                <title>Using auto_disk_config image metadata key</title>
+                <para> When added as metadata to an image, the metadata auto_disk_config key determines how the cloud
+                    server's root disk partition is handled when the server is started or resized. It has the following
+                    possible values: </para>
+                <variablelist>
+                    <varlistentry>
+                        <term>TRUE</term>
+                        <listitem>
+                            <para> The root partition is expanded to encompass all of the available virtual disk.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>FALSE</term>
+                        <listitem>
+                            <para> The root partition remains the same size as the original image, currently 20 KB. Extra
+                                virtual disk is seen as unformatted free space by the OS.</para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>DISABLED (preferred setting for Windows and Free-BSD images)</term>
+                        <listitem>
+                            <para> In this case, the action taken is the same as for the value FALSE. In addition, this
+                                action cannot be overridden by use of the
+                                <!--<link linkend="diskconfig_attribute">Disk Configuration</link> inserthere-->
+                                Extension.</para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+                <para> The image metadata auto_disk_config key is related to, and can actually control, the available
+                    <!--<link linkend="diskconfig_attribute">Disk Configuration</link> inserthere--> Extension v2 API
+                    attribute: <parameter>OS-DCF:diskConfig</parameter>. It does this in two ways.</para>
+                <orderedlist>
+                    <listitem>
+                        <para>The image metadata auto_disk_config value sets the default value of
+                                <parameter>OS-DCF:diskConfig</parameter>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>When the image’s auto_disk_config value is DISABLED, automatic disk configuration cannot be
+                            enabled when the server is booted or rebuilt.</para>
+                    </listitem>
+                </orderedlist>
+                <para> The following table shows the effect of setting the image metadata auto_disk_config key on the server
+                    attribute <parameter>OS-DCF:diskConfig</parameter> and whether the image-specified value may be
+                    overridden when starting or resizing a server.</para>
+                <informaltable rules="all" width="85%">
+                    <thead>
+                        <tr>
+                            <td colspan="1">auto_disk_config</td>
+                            <td colspan="2">Resulting OS-DCF:diskConfig value</td>
+                            <td colspan="3">User Selectable at Start or Resize?</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">TRUE</td>
+                            <td colspan="2">AUTO</td>
+                            <td colspan="3">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">FALSE</td>
+                            <td colspan="2">MANUAL</td>
+                            <td colspan="3">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">DISABLED</td>
+                            <td colspan="2">MANUAL</td>
+                            <td colspan="3">No</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <warning>
+                    <para> We do not advise changing auto_disk_config during resizes, even when allowed, since it can have
+                        unintended consequences.</para>
+                </warning>
+            </section>
+        </section>
+        <section xml:id="api_servers_volume_attach">
+            <title>Server volume attachment operations</title>
+            <para>This section describes the volume attachment API operations for servers.</para>
+            <para>For information about creating and managing volumes, see
+                <link xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html"><citetitle>Rackspace Cloud 
+                    Block Storage Developer Guide</citetitle></link>.</para>
+            <!--- this section comes from these WADLs: servers.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- create, and list volume attachments -->
+                <wadl:resource href="../../wadl/servers.wadl#VolumeAttach">
+                    <wadl:method href="createVolumeAttachment"/>
+                    <wadl:method href="listVolumeAttachments"/>
+                </wadl:resource>
+                <!-- list details and delete server metadata item-->
+                <wadl:resource href="../../wadl/servers.wadl#VolumeAttachmentId">
+                    <wadl:method href="showVolumeAttachmentDetails"/>
+                    <wadl:method href="deleteVolumeAttachment"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+
+    </section>
+
+    <section xml:id="api_supporting">
+        <title>Supporting Operations</title>
+        <para>This section describes the API operations for supporting functions of servers.</para>
+
+        <!--        <section xml:id="Limits">
+            <title>Limits</title>
+            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
+                system.</para>
+            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
+                    <listitem>
+                        <para><emphasis role="italic">rate limits</emphasis>. Control the frequency at which the user can
+                            issue specific API requests. See (INSERT LINK HERE).</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">absolute limits</emphasis>. Control the total number of specific
+                            objects that the user can process simultaneously. See (INSERT LINK HERE). </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>To query the limits programmatically, see (INSERT LINK HERE).</para>
+
+            <!-\-\- this section comes from these WADLs: supporting.wadl -\->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+                <!-\- retrieve list of rate and absolute limits -\->
+                <wadl:resource href="../../wadl/supporting.wadl#Limits">
+                    <wadl:method href="retrieveListRateAbsoluteLimits"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>-->
+
+        <section xml:id="Flavors">
+            <title>Flavors</title>
+            <para>A flavor is a resource configuration for a server. Each flavor is a unique combination of disk, memory,
+                vCPUs, and network bandwidth.</para>
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+                <!-- retrieve list flavors -->
+                <wadl:resource href="../../wadl/supporting.wadl#Flavors">
+                    <wadl:method href="retrieveListFlavors"/>
+                </wadl:resource>
+
+
+                <!-- retrieve flavor details -->
+                <wadl:resource href="../../wadl/supporting.wadl#Flavors">
+                    <wadl:method href="retrieveFlavorDetails"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+
+        <section xml:id="Images">
+            <title>Images</title>
+            <para>An image is a collection of files for a specific operating system (OS) that you use to create or rebuild a
+                server. Rackspace provides prebuilt images.</para>
+            <para>You can also create custom images from servers that you have launched, by using server action (INSERT LINK
+                HERE). You can use custom images for data backups or as "gold" images for provisioning additional
+                servers.</para>
+            <para><important>
+                    <para>In addition to creating images manually, you can also schedule images of your server automatically.
+                        See (INSERT LINK HERE) for more information about this extension, including enabling and disabling
+                        scheduled images and showing scheduled images.</para>
+                </important></para>
+            <para>With standard servers, the entire disk (O/S and data) is captured in the image. With Compute, Memory, and
+                IO servers, only the system disk is captured in the image. The data disks should be backed up using Cloud
+                Backup or Cloud Block Storage to ensure availability in case you need to rebuild or restore a server.</para>
+
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+                <!-- retrieve list images -->
+                <wadl:resource href="../../wadl/supporting.wadl#Images">
+                    <wadl:method href="retrieveListImages"/>
+                </wadl:resource>
+
+                <!-- retrieve list images with details -->
+                <wadl:resource href="../../wadl/supporting.wadl#ImagesDet">
+                    <wadl:method href="retrieveListImagesWithDetails"/>
+                </wadl:resource>
+
+                <!-- retrieve image details -->
+
+                <wadl:resource href="../../wadl/supporting.wadl#Image_id">
+                    <wadl:method href="retrieveImageDetails"/>
+                </wadl:resource>
+
+
+                <!-- delete image -->
+                <wadl:resource href="../../wadl/supporting.wadl#Image_id">
+                    <wadl:method href="deleteImage"/>
+                </wadl:resource>
+            </wadl:resources>
+
+        </section>
+    </section>
+
+    <section xml:id="api_extensions">
+        <title>Extensions</title>
+        <para>This section describes the API operations for server extensions.</para>
+        <section xml:id="ext_flavor_extra_spec">
+            <title>Flavor extra specs extension</title>
+            <para>This operation shows extra specifications for the flavor, such as identifying the policy class.</para>
+            <!--- EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show flavor extra specs -->
+                <wadl:resource href="../../wadl/extensions.wadl#FlavorID">
+                    <wadl:method href="showExtraSpecs"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_scheduled_images">
+            <title>Scheduled images extension</title>
+            <para>Rather than manually capturing images, use this extension to schedule automatic images according to a
+                schedule that you define.</para>
+            <para>The namespace for the scheduled images extended element is:</para>
+            <para><code>xmlns:RAX-SI="http://docs.openstack.org/servers/api/ext/scheduled_images/v1.0</code></para>
+            <para>You may schedule daily or weekly images of your server automatically, but you cannot schedule both daily
+                and weekly images for a server. When you schedule an image, a new resource is created at
+                /servers/{serverId}/rax-si-image-schedule. This resource, which contains the retention value and an optional
+                day of the week specification, indicates that this server will be monitored by the scheduled images
+                service.</para>
+            <para>If you do not include a day of the week specification in your scheduled images request, the server's image
+                will be created daily.</para>
+            <para>If you include a day of the week specification in your scheduled images request, the server's image will be
+                created weekly on the day you indicate. Specify the optional day of the week using a string value from the
+                following enumeration: <code>SUNDAY</code>, <code>MONDAY</code>, <code>TUESDAY</code>,
+                <code>WEDNESDAY</code>, <code>THURSDAY</code>, <code>FRIDAY</code>, <code>SATURDAY</code>.</para>
+            <para>The scheduled images request for both daily and weekly images requires a retention value, a positive
+                integer, which indicates the number of images created by the scheduled images service that will be retained
+                in your cloud storage account. The scheduled images service will remove scheduled images in excess of that
+                value, keeping the most recently created scheduled images (and all manually created images) of that server.
+                You may configure each server's retention value independently.</para>
+            <para>Keep in mind:<itemizedlist>
+                    <listitem>
+                        <para>Smaller snapshots tend to finish more quickly.</para>
+                    </listitem>
+                    <listitem>
+                        <para>A very large snapshot may take so long to finish that it may block the next day's scheduled
+                            snapshot from occurring.</para>
+                    </listitem>
+                    <listitem>
+                        <para>If you have a large amount of data to save, you may wish to explore other backup
+                            options.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <important>
+                <para> The scheduled images service is a "best effort service". Images are scheduled so that they will not
+                    interfere with each other or with on-demand snapshots. You may not specify a particular time at which
+                    your server snapshot will be taken, nor can we guarantee what time your scheduled image will become
+                    active, as the time that an image becomes active depends upon the current network traffic load, and other
+                    factors. We do guarantee that all users will receive the same best-effort service. </para>
+                <para>For weekly images, you specify the day of the week (determined by UTC) when you'd like your server
+                    image created. As with daily scheduled images, we create a schedule for you and promise to satisfy it on
+                    a best-effort basis. There's no guarantee that your server's schedule will stay the same from week to
+                    week: we reserve the right to modify the time your image is made so that we can balance the the number of
+                    image creations in flight throughout the cloud and throughout the day. Additionally, as some days of the
+                    week are much more popular than others for scheduling images, in rare circumstances we may create your
+                    weekly scheduled image in a window beginning 12:00 UTC the day before the day of the week you specify and
+                    ending at 12:00 UTC the day after the day of the week you specify. This is the time your image is
+                    scheduled to be created. The time it will be available for you to use (that is, when its status is
+                        <code>ACTIVE</code>) depends on factors such as the size of the image and overall network congestion
+                    in the cloud.</para>
+            </important>
+            <!--- SCHEDULED IMAGES - this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- enable, show, and disable scheduled images -->
+                <wadl:resource href="../../wadl/extensions.wadl#RaxSchedImage">
+                    <wadl:method href="enableSchedImages"/>
+                    <wadl:method href="showSchedImages"/>
+                    <wadl:method href="disableSchedImages"/>
+                </wadl:resource>
+            </wadl:resources>
+            <section xml:id="schedimage_get_server_details">
+                <title>Changes to Server Detail Response</title>
+                <para>A &GET; request against the <command>/servers/detail</command>, or
+                        <command>/servers/</command><parameter>id</parameter>, resource returns the
+                        <literal>RAX-SI:schedule_images</literal> extended element. See the response examples in <olink
+                        condition="dev" targetdoc="cs-devguide"
+                        targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                        >"GET_listServersDetails_servers_detail_api_servers_basic"</olink>.</para>
+            </section>
+        </section>
+        <section xml:id="ext_limits">
+            <title>Limits</title>
+            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
+                system.</para>
+            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
+                    <listitem>
+                        <para><emphasis role="italic">rate limits</emphasis>. Identifies the frequency at which the user can
+                            issue specific API requests. <!--See insertlinkhere-->.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">absolute limits</emphasis>. Identifies the total number of specific
+                            objects that the user can process simultaneously. <!--See insertlinkhere-->. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>To query the limits programmatically<!--, see insertlinkhere-->.</para>
+
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- retrieve list of rate and absolute limits -->
+                <wadl:resource href="../../wadl/extensions.wadl#Limits">
+                    <wadl:method href="listRateAbsoluteLimits"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_rescue">
+            <title>Rescue server extension</title>
+            <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
+                    targetptr="POST_rescueServer_servers__server_id__actions_api_servers_actions"
+                    >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>
+        </section>
+        <section xml:id="ext_extended_status">
+            <title>Extended status extension</title>
+            <para>The extended status extension displays the power state, virtual machine (VM) state, and task state for
+                servers in API operations: <olink targetdoc="cs-devguide"
+                    targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                    >“GET_listServersDetails_servers_detail_api_servers_basic”</olink> and <olink targetdoc="cs-devguide"
+                    targetptr="GET_getServer_servers__server_id__api_servers_basic"
+                    >“GET_getServer_servers__server_id__api_servers_basic”</olink> .</para>
+            <para>The namespace for this extended attribute is:
+                    <code>xmlns:OS-EXT-STS="http://docs.openstack.org/compute/ext/extended_status/api/v1.1"</code></para>
+            <para>The following API operation response parameters contain the state information: <note>
+                    <para>The API does not regulate the VM and task status values so it is possible that these status values
+                        can be added, removed, or renamed. </para>
+                </note>
+                <variablelist>
+                    <varlistentry>
+                        <term><emphasis role="bold">OS-EXT-STS:power_state</emphasis></term>
+                        <listitem>
+                            <para>The power status.</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para><literal>0</literal> means the instance is powered down.</para>
+                                </listitem>
+                                <listitem>
+                                    <para><literal>1</literal> means the instance is powered up.</para>
+                                </listitem>
+                                <listitem>
+                                    <para><literal>4</literal> means the instance is shut off.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><emphasis role="bold">OS-EXT-STS:vm_state</emphasis></term>
+                        <listitem>
+                            <para>The virtual machine (VM) status.</para>
+                            <para>Possible values include:</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>active</para>
+                                </listitem>
+                                <listitem>
+                                    <para>build</para>
+                                </listitem>
+                                <listitem>
+                                    <para>deleted</para>
+                                </listitem>
+                                <listitem>
+                                    <para>error</para>
+                                </listitem>
+                                <listitem>
+                                    <para>paused</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rescued</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resized</para>
+                                </listitem>
+                                <listitem>
+                                    <para>soft_deleted</para>
+                                </listitem>
+                                <listitem>
+                                    <para>stopped</para>
+                                </listitem>
+                                <listitem>
+                                    <para>suspended</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><emphasis role="bold">OS-EXT-STS:task_state</emphasis></term>
+                        <listitem>
+                            <para>The task status.</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>block_device_mapping</para>
+                                </listitem>
+                                <listitem>
+                                    <para>deleting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>image_snapshot</para>
+                                </listitem>
+                                <listitem>
+                                    <para>image_pending_upload</para>
+                                </listitem>
+                                <listitem>
+                                    <para>image_uploading</para>
+                                </listitem>
+                                <listitem>
+                                    <para>migrating</para>
+                                </listitem>
+                                <listitem>
+                                    <para>networking</para>
+                                </listitem>
+                                <listitem>
+                                    <para>pausing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>powering_off</para>
+                                </listitem>
+                                <listitem>
+                                    <para>powering_on</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebooting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebooting_hard</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebuilding</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebuild_block_device_mapping</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rebuild_spawning</para>
+                                </listitem>
+                                <listitem>
+                                    <para>rescuing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_confirming</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_finish</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_migrated</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_migrating</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_prep</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resize_reverting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>resuming</para>
+                                </listitem>
+                                <listitem>
+                                    <para>scheduling</para>
+                                </listitem>
+                                <listitem>
+                                    <para>spawning</para>
+                                </listitem>
+                                <listitem>
+                                    <para>starting</para>
+                                </listitem>
+                                <listitem>
+                                    <para>stopping</para>
+                                </listitem>
+                                <listitem>
+                                    <para>suspending</para>
+                                </listitem>
+                                <listitem>
+                                    <para>unpausing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>unrescuing</para>
+                                </listitem>
+                                <listitem>
+                                    <para>updating_password</para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </para>
+            <para>The following table shows the server statuses (API operation response parameter <literal>status</literal>)
+                that correspond with the VM and tasks statuses:</para>
+            <para>
+                <table rules="all" width="60%">
+                    <caption>Server Statuses and Corresponding VM and Task Statuses</caption>
+                    <col width="33%"/>
+                    <col width="33%"/>
+                    <col width="33%"/>
+                    <thead>
+                        <tr>
+                            <th>Server status</th>
+                            <th>OS-EXT-STS:vm_state</th>
+                            <th>OS-EXT-STS:task_state</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ACTIVE</td>
+                            <td>active</td>
+                            <td>
+                                <footnote xml:id="task_states">
+                                    <para>Possible task statuses include the following:</para>
+
+                                    <itemizedlist>
+                                        <listitem>
+                                            <para>block_device_mapping</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>deleting</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>image_snapshot. Indicates that a create image action has been initiated and
+                                                that the hypervisor is creating the snapshot. Any operations that would
+                                                modify data on the server's virtual hard disk should be avoided during this
+                                                time. </para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>image_pending_upload. Indicates that the hypervisor has completed taking a
+                                                snapshot of the server. At this point, the hypervisor is packaging the
+                                                snapshot and preparing it for upload to the image store. </para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>image_uploading. Indicates that the hypervisor is currently uploading a
+                                                packaged snapshot of the server to the image store.</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>migrating</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>networking</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>pausing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>powering_off</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>powering_on</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebooting</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebooting_hard</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebuilding</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebuild_block_device_mapping</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rebuild_spawning</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>rescuing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_confirming</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_finish</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_migrated</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_migrating</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_prep</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>resize_reverting</para>
+                                        </listitem>
+
+                                        <listitem>
+                                            <para>resuming</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>scheduling</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>spawning</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>starting</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>stopping</para>
+                                        </listitem>
+
+                                        <listitem>
+                                            <para>suspending</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>unpausing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>unrescuing</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>updating_password</para>
+                                        </listitem>
+                                    </itemizedlist>
+                                </footnote>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HARD_REBOOT</td>
+                            <td>active</td>
+                            <td>rebooting_hard</td>
+                        </tr>
+                        <tr>
+                            <td>MIGRATING </td>
+                            <td>active</td>
+                            <td>migrating</td>
+                        </tr>
+                        <tr>
+                            <td>PASSWORD </td>
+                            <td>active</td>
+                            <td>updating_password</td>
+                        </tr>
+                        <tr>
+                            <td>REBOOT </td>
+                            <td>active</td>
+                            <td>rebooting</td>
+                        </tr>
+                        <tr>
+                            <td>REBUILD </td>
+                            <td>active </td>
+                            <td>rebuilding</td>
+                        </tr>
+                        <tr>
+                            <td>REBUILD </td>
+                            <td>active</td>
+                            <td>rebuild_block_device_mapping</td>
+                        </tr>
+                        <tr>
+                            <td>REBUILD</td>
+                            <td>active</td>
+                            <td>rebuild_spawning</td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_prep </td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_migrating </td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_migrated </td>
+                        </tr>
+                        <tr>
+                            <td>RESIZE </td>
+                            <td>active </td>
+                            <td>resize_finish </td>
+                        </tr>
+                        <tr>
+                            <td>BUILD </td>
+                            <td>building</td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DELETED </td>
+                            <td>deleted </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ERROR </td>
+                            <td>error </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PAUSED</td>
+                            <td>paused </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RESCUE </td>
+                            <td>rescued </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VERIFY_RESIZE</td>
+                            <td>resized</td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>REVERT_RESIZE</td>
+                            <td>resized </td>
+                            <td>resize_reverting </td>
+                        </tr>
+                        <tr>
+                            <td>DELETED</td>
+                            <td>soft_deleted </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SHUTOFF </td>
+                            <td>stopped </td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SUSPENDED </td>
+                            <td>suspended</td>
+                            <td>
+                                <footnoteref linkend="task_states"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </para>
+            <para>For information about server status values, see <olink targetdoc="cs-devguide" targetptr="Server_stati"
+                    >“Possible values for server status”</olink>.</para>
+        </section>
+        <section xml:id="ext_disk_config">
+            <title>Disk Config extension</title>
+            <para>The disk configuration extension adds a <literal>OS-DCF:diskConfig</literal> attribute to images and
+                servers. This attribute controls how the disk is partitioned when servers are created, rebuilt, or
+                resized.</para>
+            <para>The namespace for diskConfig extended attribute is:</para>
+            <para><code>xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"</code></para>
+            <para>A server inherits the <literal>OS-DCF:diskConfig</literal> value from the image used to create it, and an
+                image inherits the <literal>OS-DCF:diskConfig</literal> value of the server from which it was created. To
+                override the inherited setting, you can include the <literal>OS-DCF:diskConfig</literal> attribute in the
+                request body of a server create, rebuild, or resize request. Valid <literal>OS-DCF:diskConfig</literal>
+                values are:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><literal>AUTO</literal>. The server is built with a single partition the size of the target flavor
+                        disk. The file system is automatically adjusted to fit the entire partition. This keeps things simple
+                        and automated. <literal>AUTO</literal> is valid only for images and servers with a single partition
+                        that use the EXT3 file system. This is the default setting for applicable Rackspace base images.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para><literal>MANUAL</literal>. The server is built using whatever partition scheme and file system is
+                        in the source image. If the target flavor disk is larger, the remaining disk space is left
+                        unpartitioned. This enables images to have non-EXT3 file systems, multiple partitions, and so on, and
+                        enables you to manage the disk configuration.</para>
+                </listitem>
+            </itemizedlist>
+            <note>
+                <para>Although Rackspace Windows images are configured with a <literal>OS-DCF:diskConfig</literal> value of
+                        <literal>MANUAL</literal>, the NTFS file system expands to the entire partition on only the first
+                    boot.</para>
+            </note>
+            <para>Resizing down requires the server to have a <literal>OS-DCF:diskConfig</literal> value of
+                    <literal>AUTO</literal>.</para>
+            <section xml:id="ext_disk_config_get_details">
+                <title>Changes to get details operations for servers and images</title>
+                <para>With the disk config extension, submitting a &GET; request for <command>/servers/detail</command>,
+                        <command>/servers/{server_id}</command>, <command>/images/detail</command>, or
+                        <command>/images/{image_id}</command> returns the <literal>OS-DCF:diskConfig</literal> extended
+                    attribute in the response body.</para>
+                <para>See the response examples for the following operations:<itemizedlist>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
+                                    >"GET_listServersDetails_servers_detail_api_servers_basic"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_getServer_servers__server_id__api_servers_basic"
+                                    >"GET_getServer_servers__server_id__api_servers_basic"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_retrieveListImagesWithDetails_images_detail_Images"
+                                    >"GET_retrieveListImagesWithDetails_images_detail_Images"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="GET_retrieveImageDetails_images__image_id__Images"
+                                    >"GET_retrieveImageDetails_images__image_id__Images"</olink></para>
+                        </listitem>
+                    </itemizedlist></para>
+            </section>
+            <section xml:id="ext_disk_config_create_server">
+                <title>Changes to create server</title>
+                <para>This section shows the create server operation with the <literal>OS-DCF:diskConfig</literal>
+                    attribute.</para>
+                <!--- DISK CONFIG - this section comes from these WADLs: extensions.wadl -->
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <!-- create server with disk config-->
+                    <wadl:resource href="../../wadl/extensions.wadl#Servers">
+                        <wadl:method href="createServerDiskConfig"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>
+            <section xml:id="ext_disk_config_svr_actions">
+                <title>Changes to rebuild and resize server actions</title>
+                <para>You can use the disk config extension when submitting a &POST; <command>/servers/action</command> to
+                    resize or rebuild a server by including the <literal>OS-DCF:diskConfig</literal> extended attribute in
+                    the request body.</para>
+                <para>In the linked examples, the <literal>OS-DCF:diskConfig</literal> attribute is set to MANUAL, which
+                    allows unused disk space to be used for other partitions after the server is rebuilt or resized. If you
+                    do not set the <literal>OS-DCF:diskConfig</literal> attribute is not set during the rebuild or resize,
+                    the original value of the attribute is retained. </para>
+                <para>See the request examples for the following operations:<itemizedlist>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="POST_rebuildServer_servers__server_id__actions_api_servers_actions"
+                                    >"POST_rebuildServer_servers__server_id__actions_api_servers_actions"</olink></para>
+                        </listitem>
+                        <listitem>
+                            <para><olink condition="dev" targetdoc="cs-devguide"
+                                    targetptr="POST_resizeServer_servers__server_id__actions_api_servers_actions"
+                                    >"POST_resizeServer_servers__server_id__actions_api_servers_actions"</olink></para>
+                        </listitem>
+                    </itemizedlist></para>
+            </section>
+        </section>
+        <section xml:id="ext_config_drive">
+            <title>Config drive extension</title>
+            <!--            <para>This extension is described in <olink condition="dev" targetdoc="cs-devguide"
+                    targetptr="POST_rescueServer_servers__server_id__actions_api_servers_actions"
+                    >"POST_rescueServer_servers__server_id__actions_api_servers_actions"</olink>.</para>-->
+            <para> Config-drive is a read-only configuration drive that is attached to server instances on boot. It is given
+                the label "config-2", and it shows up as a CDROM drive on the instance. It is especially useful in
+                conjunction with cloud-init (a server bootstrapping application) and for passing large files to be used by
+                your server.</para>
+            <para>To use the config drive, once it is attached to a server, you need to mount it. Mounting instructions vary
+                by operating system. For some Linux operating systems, for example, you might issue the following two
+                instructions:</para>
+            <programlisting>
+           # mkdir -p /mnt/config
+           # mount /dev/disk/by-label/config-2 /mnt/config
+       </programlisting>
+            <para> When a config-drive is created, it is configured by data contained in one or both of the following
+                arguments: </para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">user-data</emphasis>
+                    </term>
+                    <listitem>
+                        <para>contained in openstack/latest/user_data</para>
+                        <note>
+                            <para>If the content of the user_data file is not purely text, convert it by using base64
+                                encoding to allow for proper transfer and storage. If your user_data needs to be encoded and
+                                isn't, you'll get an <errorcode>400</errorcode>
+                                <errortext>Userdata content cannot be decoded</errortext> message. </para>
+                        </note>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <emphasis role="bold">personality</emphasis>
+                    </term>
+                    <listitem>
+                        <para>located in openstack/content/0000 with the path listed in the openstack/latest/meta_data.json
+                            file</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <para> The following list shows files present in the config drive if both user-data and personality arguments are
+                passed during server creation: <itemizedlist>
+                    <listitem>
+                        <para>ec2/2009-04-04/meta-data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>ec2/2009-04-04/user-data</para>
+                    </listitem>
+                    <listitem>
+                        <para>ec2/latest/meta-data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>ec2/latest/user-data</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/2012-08-10/meta_data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/2012-08-10/user_data</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/content</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/content/0000</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/content/0001</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/latest/meta_data.json</para>
+                    </listitem>
+                    <listitem>
+                        <para>openstack/latest/user_data</para>
+                    </listitem>
+                </itemizedlist></para>
+        </section>
+        <section xml:id="ext_keypairs">
+            <title>Key pairs</title>
+            <para>Users create a key pair, or choose an existing key pair, and associate that key pair when building a
+                server. This grants a user the ability to authenticate via key-based authentication instead of password-based
+                authentication. </para>
+
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- retrieve list of rate and absolute limits -->
+                <wadl:resource href="../../wadl/extensions.wadl#Keypairs">
+                    <wadl:method href="createKeyPair"/>
+                    <wadl:method href="importKeyPair"/>
+                    <wadl:method href="listKeyPairs"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#KeypairName">
+                    <wadl:method href="deleteKeyPair"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_network">
+            <title>Networks</title>
+            <para>This section describes the nova-network API operations for networks.</para>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#Networks">
+                    <wadl:method href="listNetworks"/>
+                    <wadl:method href="createNetwork"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#NetworkID">
+                    <wadl:method href="showNetwork"/>
+                    <wadl:method href="deleteNetwork"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_virtual_interface">
+            <title>Virtual interface extension</title>
+            <para>Use the virtual interface extension to create a virtual interface to a specified network and attach that
+                network to an existing server instance. You can attach either an isolated network that you have created or a
+                Rackspace network.</para>
+            <para>A virtual interface works in the same way as the network interface card (NIC) inside your laptop. Like a
+                NIC, a virtual interface is the medium through which you can attach a network to your server. You create a
+                virtual interface for a specified network, and the network, which is composed of logical switches, is
+                attached to your server instance through the virtual interface.</para>
+            <note>
+                <para>You can create a maximum of one virtual interface per instance per network. </para>
+            </note>
+            <para>You can also use the virtual interface extension to perform the following actions:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>List the virtual interfaces for a server instance.</para>
+                </listitem>
+                <listitem>
+                    <para>Delete a virtual interface and detach it from a server instance.</para>
+                </listitem>
+            </itemizedlist>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#Interfaces">
+                    <wadl:method href="listInterfaces"/>
+                    <wadl:method href="createInterface"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#InterfaceID">
+                    <wadl:method href="deleteInterface"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+    </section>
+</chapter>

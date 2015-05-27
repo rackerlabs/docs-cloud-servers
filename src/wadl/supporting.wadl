@@ -121,6 +121,7 @@
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>The following example shows only a few flavors in the list for brevity.</para>
 					<xsdxt:code href="../common/samples/flavor-list-rsp.json"/>
 				</wadl:doc>
 			</representation>
