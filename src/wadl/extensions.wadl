@@ -124,11 +124,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -137,12 +132,6 @@
 					<xsdxt:code href="../common/samples/flavors-xspecs-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.json"/>
 				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/flavors-xspecs-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<!-- Consoles operations -->
@@ -343,23 +332,10 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
-					title="Enable scheduled images (daily): XML request">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/sched-images-dly-enable-req.xml"/>
-				</wadl:doc>
-			</representation>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
 					title="Enable scheduled images (weekly): JSON request">
 					<xsdxt:code href="../common/samples/sched-images-wkly-enable-req.json"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
-					title="Enable scheduled images (weekly): XML request">
-					<xsdxt:code href="../common/samples/sched-images-wkly-enable-req.xml"/>
 				</wadl:doc>
 			</representation>
 		</request>
@@ -371,13 +347,6 @@
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-					title="Enable scheduled images (dailly): XML response">
-					<xsdxt:code href="../common/samples/sched-images-dly-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/sched-images-dly-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Enable scheduled images (weekly): JSON response">
@@ -385,14 +354,8 @@
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.json"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-					title="Enable scheduled images (weekly): XML response">
-					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
+	
 	<method name="GET" id="showSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled Images">
 			<para role="shortdesc">Show scheduled images for the specified server.</para>
@@ -407,11 +370,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="200 203">
@@ -422,25 +380,11 @@
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-dly-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-					title="Show scheduled images (daily - success): XML response">
-					<xsdxt:code href="../common/samples/sched-images-dly-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/sched-images-dly-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 					title="Show scheduled images (weekly - success): JSON response">
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.json"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-					title="Show scheduled images (weekly - success): XML response">
-					<xsdxt:code href="../common/samples/sched-images-wkly-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/sched-images-wkly-rsp.xml"/>
 				</wadl:doc>
 			</representation>
 			<representation mediaType="application/json">
@@ -449,14 +393,8 @@
 					<xsdxt:code href="../common/samples/sched-images-404-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/sched-images-404-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesErrorParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-					title="Show scheduled images (not found): XML response">
-					<xsdxt:code href="../common/samples/sched-images-404-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/sched-images-404-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
+	
 	<method name="DELETE" id="disableSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Disable scheduled Images">
 			<para role="shortdesc">Disable scheduled images for the specified server.</para>
@@ -471,22 +409,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/sched-images-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/sched-images-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
@@ -590,12 +518,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/keypair-create-req.json"/>
 				</wadl:doc>&xtenKeyPairCreateReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/keypair-create-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200">
 			<doc title="Success">Request accepted.</doc>
@@ -604,13 +526,8 @@
 					<xsdxt:code href="../common/samples/keypair-create-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/keypair-create-rsp.json"/>
 				</wadl:doc>&xtenKeyPairCreateRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/keypair-create-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/keypair-create-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
+	
 	<method name="POST" id="importKeyPair">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Import a server key pair">
 			<para role="shortdesc">Import a server key pair</para>
@@ -623,12 +540,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/keypair-upload-req.json"/>
 				</wadl:doc>&xtenKeyPairImportReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/keypair-upload-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200">
 			<doc title="Success">Request accepted.</doc>
@@ -637,13 +548,8 @@
 					<xsdxt:code href="../common/samples/keypair-upload-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/keypair-upload-rsp.json"/>
 				</wadl:doc>&xtenKeyPairCreateRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/keypair-upload-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/keypair-upload-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
+	
 	<method name="GET" id="listKeyPairs">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of key pairs">
 			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
@@ -656,13 +562,8 @@
 					<xsdxt:code href="../common/samples/keypair-list-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/keypair-list-rsp.json"/>
 				</wadl:doc>&xtenKeyPairListRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/keypair-list-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/keypair-list-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
+	
 	<method name="DELETE" id="deleteKeyPair">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete key pair">
 			<para role="shortdesc">Deletes the specified key pair.</para>
@@ -675,22 +576,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/keypair-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/keypair-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
@@ -715,15 +606,8 @@
 						<xsdxt:code href="../common/samples/network-list-rsp.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksListRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/network-list-rsp-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/network-list-rsp.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
+	
 	<method name="POST" id="createNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create network">
 			<para role="shortdesc">Creates a network for the specified tenant ID.</para>
@@ -737,14 +621,6 @@
 						<xsdxt:code href="../common/samples/network-create-req.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenCreateNetworksReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/network-create-req.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200">
 			<doc title="Success">Request succeeded.</doc>
@@ -755,15 +631,8 @@
 						<xsdxt:code href="../common/samples/network-create-rsp.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/network-create-rsp-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/network-create-rsp.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
+	
 	<method name="GET" id="showNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show network">
 			<para role="shortdesc">Shows information for the specified network.</para>
@@ -778,15 +647,8 @@
 						<xsdxt:code href="../common/samples/network-show-rsp.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/network-show-rsp-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/network-show-rsp.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
+	
 	<method name="DELETE" id="deleteNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete network">
 			<para role="shortdesc">Deletes the specified network.</para>
@@ -803,22 +665,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/network-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/network-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
@@ -838,15 +690,8 @@
 						<xsdxt:code href="../common/samples/virtual-interfaces-rsp.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenVirtualInterfaceParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/virtual-interfaces-rsp-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/virtual-interfaces-rsp.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
+	
 	<method name="POST" id="createInterface">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create virtual interface and attach to server">
 			<para role="shortdesc">Creates a virtual interface for a network and attaches it to a server.</para>
@@ -864,14 +709,6 @@
 						<xsdxt:code href="../common/samples/virtual-interface-create-req.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenVirtualInterfaceCreateParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/virtual-interface-create-req.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200">
 			<doc title="Success">Request succeeded.</doc>
@@ -882,15 +719,8 @@
 						<xsdxt:code href="../common/samples/virtual-interface-create-rsp.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenVirtualInterfaceParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:sample>
-						<xsdxt:code href="../common/samples/virtual-interface-create-rsp-xml-http.txt"/>
-						<xsdxt:code href="../common/samples/virtual-interface-create-rsp.xml"/>
-					</xsdxt:sample>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
+	
 	<method name="DELETE" id="deleteInterface">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete virtual interface">
 			<para role="shortdesc">Deletes a virtual interface from a server instance.</para>
@@ -902,22 +732,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/virtual-interface-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/virtual-interface-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
