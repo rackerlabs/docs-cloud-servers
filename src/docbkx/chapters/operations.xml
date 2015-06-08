@@ -1176,5 +1176,31 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="ext_consoles">
+            <title>Console extension</title>
+            <para>Use the console extension to get a URL to allow a console connection to your server.</para>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#ActionC">
+                    <wadl:method href="getConsole"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_volumes">
+            <title>Volumes extension</title>
+            <para>Use the volumes extension to manage volumes for your server.</para>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#Volumes">
+                    <wadl:method href="listVolumes"/>
+                    <wadl:method href="listVolumesDetails"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#DetailV">
+                    <wadl:method href="createVolume"/>
+                    <wadl:method href="showVolume"/>
+                    <wadl:method href="deleteVolume"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
     </section>
 </chapter>

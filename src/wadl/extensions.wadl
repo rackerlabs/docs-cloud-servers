@@ -82,6 +82,32 @@
 				</resource>
 			</resource>
 		</resource>
+		<resource id="Console" path="servers">
+			<resource id="ServerIDC" path="servers">
+				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The UUID for the server. </para>
+					</wadl:doc>
+				</param>
+				<resource id="ActionC" path="action">
+					<method href="#getConsole"/>
+				</resource>
+			</resource>
+		</resource>
+		<resource id="Volumes" path="os-volumes">
+			<method href="#listVolumes"/>
+			<method href="#listVolumesDetails"/>
+			<resource id="DetailV" path="detail">
+				<param name="volume_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The UUID for the volume. </para>
+					</wadl:doc>
+				</param>
+				<method href="#createVolume"/>
+				<method href="#showVolume"/>
+				<method href="#deleteVolume"/>
+			</resource>
+		</resource>
 	</resources>
 
 	<!-- Flavor Extra Specs operations -->
@@ -118,6 +144,152 @@
 				</wadl:doc>
 			</representation>
 		</response> &commonFaults; </method>
+
+	<!-- Consoles operations -->
+	<method name="POST" id="getConsole">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Get console">
+			<para role="shortdesc">Retrieve console output for a specified server.</para>
+			<para>This operation returns a URL which you use in a browser to open a console connection to your server.</para>
+			<para>In the URI, specify the server ID.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/console-req.json"/>
+				</wadl:doc>&xtenConsoleReqParameters;</representation>
+		</request>
+		<!--<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/console-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/console-rsp.json"/>
+				</wadl:doc> &xtenConsoleRspParameters;</representation>
+		</response> &commonFaults; -->
+	</method>
+
+	<!-- Volumes operations -->
+	<method name="POST" id="listVolumes">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of volumes">
+			<para role="shortdesc">Retrieve list of volumes for your account.</para>
+			<para>Retrieves the list of volumes for your account.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<!--<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/volume-list-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/volume-list-rsp.json"/>
+				</wadl:doc> &xtenVolumeListRspParameters;</representation>
+		</response> &commonFaults; -->
+	</method>
+
+	<method name="POST" id="listVolumesDetails">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of volumes with details">
+			<para role="shortdesc">Retrieve list of volumes with details.</para>
+			<para>Retrieves the list of volumes with details for your account.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<!--<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/volume-list-details-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/volume-list-details-rsp.json"/>
+				</wadl:doc> &xtenVolumeListDetailsRspParameters;</representation>
+		</response> &commonFaults; -->
+	</method>
+
+	<method name="POST" id="createVolume">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create volume">
+			<para role="shortdesc">Create volume.</para>
+			<para>Create a new volume.</para>
+			<para>In the URI, specify the volume ID.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<!--<xsdxt:code href="../common/samples/volume-create-req.json"/>-->
+				</wadl:doc>
+				<!--&xtenVolumeCreateReqParameters;-->
+			</representation>
+		</request>
+		<!--<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/volume-create-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/volume-create-rsp.json"/>
+				</wadl:doc> &xtenVolumeCreateRspParameters;</representation>
+		</response> &commonFaults; -->
+	</method>
+
+	<method name="POST" id="showVolume">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show volume details">
+			<para role="shortdesc">Show volume details.</para>
+			<para>Show volume details.</para>
+			<para>In the URI, specify the volume ID.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<!--<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/volume-create-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/volume-create-rsp.json"/>
+				</wadl:doc> &xtenVolumeCreateRspParameters;</representation>
+		</response> &commonFaults; -->
+	</method>
+
+	<method name="POST" id="deleteVolume">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete volume">
+			<para role="shortdesc">Delete volume.</para>
+			<para>Delete volume.</para>
+			<para>In the URI, specify the volume ID.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<!--<response status="202">
+			<doc title="Delete Successful">Delete request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/volume-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; -->
+	</method>
 
 	<!-- Scheduled Images operations -->
 	<method name="POST" id="enableSchedImages">

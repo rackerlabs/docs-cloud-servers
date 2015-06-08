@@ -673,9 +673,6 @@
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Rescue specified server">
 			<para role="shortdesc">Enter rescue mode to reboot a virtual machine (VM) in rescue mode so that you can access
 				the VM with a new root password and fix any file system and configuration errors.</para>
-			<note>
-				<para>This operation is not available for OnMetal servers.</para>
-			</note>
 			<para>Enter rescue mode to debug system issues that prevent you from booting a server to a usable state.</para>
 			<para>When you place a server in rescue mode, the following events occur: </para>
 			<orderedlist>
@@ -747,9 +744,6 @@
 					<literal>unrescue</literal> action in the request body. When you unrescue the server, the repaired image
 				is restored to its running state with your original password.</para>
 			<para>You can exit rescue mode at any time.</para>
-			<note>
-				<para>This operation is not available for OnMetal servers.</para>
-			</note>
 			<para>Specify the target server ID in the URI.</para>
 			<para>In the request body, specify the <literal>unrescue</literal> action.</para>
 		</wadl:doc>
