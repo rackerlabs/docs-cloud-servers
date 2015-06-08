@@ -111,12 +111,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-create-req.json"/>
 				</wadl:doc>&serverCreateReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/server-create-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="202">
@@ -127,12 +121,6 @@
 					<xsdxt:code href="../common/samples/server-create-rsp.json"/>
 				</wadl:doc>&serverCreateRspParameters;
 				<!--<wadl:doc xmlns="http://docbook.org/ns/docbook"><para>Anything special about response goes here.</para></wadl:doc>-->
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/server-create-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/server-create-rsp.xml"/>
-				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
 
@@ -151,11 +139,6 @@
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>&serverListQueryParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="200 203 300">
@@ -165,12 +148,6 @@
 					<xsdxt:code href="../common/samples/servers-list-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-list-rsp.json"/>
 				</wadl:doc> &serverListRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-list-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-list-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="GET" id="listServersDetails">
@@ -194,11 +171,6 @@
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>&serverListQueryParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -208,13 +180,6 @@
 					<xsdxt:code href="../common/samples/servers-list-det-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-list-det-rsp.json"/>
 				</wadl:doc>&serverListDetRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<para>The following example show only one server in the list for brevity.</para>
-					<xsdxt:code href="../common/samples/servers-list-det-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-list-det-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="GET" id="getServer">
@@ -236,11 +201,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -249,12 +209,6 @@
 					<xsdxt:code href="../common/samples/server-det-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-det-rsp.json"/>
 				</wadl:doc>&serverDetRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/server-det-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/server-det-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="PUT" id="updateServer">
@@ -275,12 +229,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-update-req.json"/>
 				</wadl:doc>&serverUpdateReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/server-update-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="200">
@@ -290,12 +238,6 @@
 					<xsdxt:code href="../common/samples/server-update-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/server-update-rsp.json"/>
 				</wadl:doc>&serverDetRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/server-update-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/server-update-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteServer">
@@ -311,22 +253,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/server-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/server-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
@@ -345,11 +277,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -358,12 +285,6 @@
 					<xsdxt:code href="../common/samples/servers-list-addresses-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-list-addresses-rsp.json"/>
 				</wadl:doc> &serverIPListRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-list-addresses-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-list-addresses-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="GET" id="listServerAddressesbyNetwork">
@@ -381,11 +302,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -394,12 +310,6 @@
 					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp.json"/>
 				</wadl:doc> &serverIPListByNetRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-list-net-addresses-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<!-- Server Actions operations -->
@@ -419,23 +329,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-chgpwd-req.json"/>
 				</wadl:doc> &serverActionChangePwdReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-chgpwd-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -458,23 +357,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-reboot-req.json"/>
 				</wadl:doc> &serverActionRebootReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-reboot-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -499,12 +387,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-action-rebuild-req.json"/>
 				</wadl:doc> &serverActionRebuildReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-action-rebuild-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Success">Request succeeded.</doc>
@@ -513,12 +395,6 @@
 					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp.json"/>
 				</wadl:doc> &serverCreateRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-action-rebuild-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="POST" id="resizeServer">
@@ -563,23 +439,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-resize-req.json"/>
 				</wadl:doc> &serverActionResizeReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-resize-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -606,23 +471,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-confresize-req.json"/>
 				</wadl:doc> &serverActionConfResizeReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-confresize-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -648,23 +502,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rvrtresize-req.json"/>
 				</wadl:doc> &serverActionRvrtResizeReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-rvrtresize-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -707,6 +550,14 @@
 				<xref linkend="POST_unrescueServer_servers__server_id__actions_api_servers_actions"/>). The unrescue
 				operation restores the repaired image to running state with its original password.</para>
 			<para>In the request body, specify the <literal>rescue</literal> action.</para>
+			<note>
+				<para>If you use <literal>{"rescue": "none"}</literal> in the request body, the API will attempt to build the
+					rescue mode server from whatever the image_base_image_ref field is set to in Nova DB (the original image
+					used to build the server, normally).</para>
+				<para> If, instead, you use <literal>{"rescue": {"rescue_image_ref": "&lt;imageID&gt;"}}</literal>, the API
+					uses the specified image for the rescue mode instance. This is extremely useful if the image originally
+					used to build the server is now either non-functional or has been deleted.</para>
+			</note>
 		</wadl:doc>
 
 		<request>
@@ -715,26 +566,22 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rescue-req.json"/>
 				</wadl:doc> &serverActionRescueReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-rescue-req.xml"/>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+					title="Rescue specified server with image: JSON request">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/servers-actions-rescue-specimg-req.json"/>
 				</wadl:doc>
 			</representation>
 		</request>
 		<response status="202">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+					title="Rescue specified server (same for both requests): JSON request">
 					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp.json"/>
 				</wadl:doc> &serverActionRescueRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-rescue-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults;</method>
 
 	<method name="POST" id="unrescueServer">
@@ -754,23 +601,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-unrescue-req.json"/>
 				</wadl:doc> &serverActionUnrescueReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-unrescue-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -803,22 +639,11 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/servers-actions-createImage-req.json"/>
 				</wadl:doc> &serverActionCreateImageReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/servers-actions-createImage-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request> &commonFaults; <response status="202">
 			<doc title="Successful">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/servers-actions-noresponse-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults;</method>
@@ -836,11 +661,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -849,12 +669,6 @@
 					<xsdxt:code href="../common/samples/meta-list-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-list-rsp.json"/>
 				</wadl:doc> &metaListRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/meta-list-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/meta-list-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="PUT" id="setMetadata">
@@ -877,12 +691,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-set-req.json"/>
 				</wadl:doc>&metaListRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/meta-set-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="200">
@@ -892,12 +700,6 @@
 					<xsdxt:code href="../common/samples/meta-set-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-set-rsp.json"/>
 				</wadl:doc>&metaListRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/meta-set-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/meta-set-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="POST" id="updateMetadata">
@@ -920,12 +722,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-update-req.json"/>
 				</wadl:doc>&metaListRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/meta-update-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="200">
@@ -935,12 +731,6 @@
 					<xsdxt:code href="../common/samples/meta-update-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/meta-update-rsp.json"/>
 				</wadl:doc>&metaListRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/meta-update-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/meta-update-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="showMetadataItem">
@@ -955,11 +745,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203 300">
 			<doc title="Success">Request succeeded.</doc>
@@ -968,12 +753,6 @@
 					<xsdxt:code href="../common/samples/metaitem-update-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/metaitem-update-rsp.json"/>
 				</wadl:doc> &metaItemListRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/metaitem-update-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/metaitem-update-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="PUT" id="setMetadataItem">
@@ -990,12 +769,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/metaitem-set-req.json"/>
 				</wadl:doc>&metaItemListRspParameters;</representation>
-			<representation mediaType="application/xml">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/metaitem-set-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="200">
@@ -1005,12 +778,6 @@
 					<xsdxt:code href="../common/samples/metaitem-set-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/metaitem-set-rsp.json"/>
 				</wadl:doc>&metaListRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/metaitem-set-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/metaitem-set-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteMetadataItem">
@@ -1027,22 +794,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/metaitem-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/metaitem-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
@@ -1063,12 +820,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/vol-attach-create-req.json"/>
 				</wadl:doc>&attachVolumeReqParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/vol-attach-create-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 
 		<response status="202">
@@ -1078,12 +829,6 @@
 					<xsdxt:code href="../common/samples/vol-attach-create-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/vol-attach-create-rsp.json"/>
 				</wadl:doc>&attachVolumeRspParameters; </representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/vol-attach-create-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/vol-attach-create-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="listVolumeAttachments">
@@ -1102,11 +847,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="200 203 300">
 			<doc title="Success">Request succeeded.</doc>
@@ -1115,12 +855,6 @@
 					<xsdxt:code href="../common/samples/vol-attach-list-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/vol-attach-list-rsp.json"/>
 				</wadl:doc> &attachVolumeListRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/vol-attach-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/vol-attach-list-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<method name="PUT" id="showVolumeAttachmentDetails">
@@ -1133,10 +867,6 @@
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
-				</wadl:doc></representation>
-			<representation mediaType="application/xml">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</request>
@@ -1148,12 +878,6 @@
 					<xsdxt:code href="../common/samples/vol-attach-details-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/vol-attach-details-rsp.json"/>
 				</wadl:doc>&attachVolumeRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/vol-attach-details-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/vol-attach-details-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteVolumeAttachment">
@@ -1170,22 +894,12 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/vol-attach-delete-rsp-json-http.txt"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/vol-attach-delete-rsp-xml-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
