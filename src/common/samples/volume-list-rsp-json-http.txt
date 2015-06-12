@@ -1,0 +1,6 @@
+    Status Code: 200 OK
+    Connection: keep-alive
+    Content-Length: 435
+    Content-Type: application/json
+    Date: Wed, 10 Jun 2015 16:48:59 GMT
+    X-Compute-Request-Id: req-292d0b03-6a35-4397-ac14-86081a7136c9

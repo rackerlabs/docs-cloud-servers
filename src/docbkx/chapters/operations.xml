@@ -1193,10 +1193,9 @@
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../wadl/extensions.wadl#Volumes">
                     <wadl:method href="listVolumes"/>
-                    <wadl:method href="listVolumesDetails"/>
-                </wadl:resource>
-                <wadl:resource href="../../wadl/extensions.wadl#DetailV">
                     <wadl:method href="createVolume"/>
+                </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#VolumeID">                    
                     <wadl:method href="showVolume"/>
                     <wadl:method href="deleteVolume"/>
                 </wadl:resource>

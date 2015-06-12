@@ -2,38 +2,25 @@
 <!-- (C) 2012 OpenStack LLC., All Rights Reserved -->
 <!DOCTYPE application [<!ENTITY % common  SYSTEM "../common/common.ent">
 %common;]>
-<application xmlns="http://wadl.dev.java.net/2009/02" 
-	xmlns:wadl="http://wadl.dev.java.net/2009/02"
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
-	xmlns:db="http://docbook.org/ns/docbook" 
-	xmlns:common="http://docs.openstack.org/common/api/v1.0"
-	xmlns:csapi="http://docs.openstack.org/compute/api/v2" 
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+	xmlns:db="http://docbook.org/ns/docbook" xmlns:common="http://docs.openstack.org/common/api/v1.0"
+	xmlns:csapi="http://docs.openstack.org/compute/api/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<resources>
-		
-		
+
+
 		<!-- *******************************************-->
-        <!--           ALL  RESOURCES                   -->
+		<!--           ALL  RESOURCES                   -->
 		<!-- *******************************************-->
-		
-				
-				
-		<!--******-->
-		<!--Limits-->
-		<!--******-->
-<!--				<resource id="Limits" path="limits">
-					<method href="#retrieveListRateAbsoluteLimits"/>
-				</resource>-->
-					
+
 		<!--*******-->
 		<!--Flavors-->
 		<!--*******-->
-					<resource id="Flavors" path="flavors">	
-						<method href="#retrieveListFlavors"/>
-						<method href="#retrieveFlavorDetails"/>
-					</resource>
-						
+		<resource id="Flavors" path="flavors">
+			<method href="#retrieveListFlavors"/>
+			<method href="#retrieveFlavorDetails"/>
+		</resource>
+
 		<!--********-->
 		<!-- Images -->
 		<!--********-->
@@ -42,8 +29,6 @@
 			<resource id="ImagesDet" path="detail">
 				<method href="#retrieveListImagesWithDetails"/>
 			</resource>
-			
-			
 			<resource id="Image_id" path="{image_id}">
 				<param name="image_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
@@ -52,71 +37,46 @@
 				</param>
 				<method href="#retrieveImageDetails"/>
 				<method href="#deleteImage"/>
-				
 			</resource>
-			
-			
-		</resource>	
-		
+		</resource>
 	</resources>
-	
+
 	<!--************************************-->
 	<!--             ALL METHODS            -->
 	<!--************************************-->
-	
-	
-	<!--Limits Methods-->
-	
-	<!--************************************-->
-	<!--Retrieve list of rate and absolute limits method -->
-	<!--************************************-->
-	
-	<!--<method name="GET" id="retrieveListRateAbsoluteLimits">
-	<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of rate and absolute limits">
-		<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
-		<para>Applications can programmatically determine current account limits by using this API operation.</para>
-		<para>This operation returns a response body.</para>
-	</wadl:doc>
-		<response status="200">
-			<doc title="Success">Request succeeded.</doc>
-			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/limits-rsp.json"/>
-				</wadl:doc>
-			</representation>
-					<representation mediaType="application/xml">
-						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						
-					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
-						</wadl:doc>
-					</representation>
-		</response>&commonFaults;
-	</method>-->
-	
+
 	<!--Flavors Methods-->
-	
+
 	<!--****************************-->
 	<!--Retrieve list of flavors method-->
 	<!--****************************-->
-	
+
 	<method name="GET" id="retrieveListFlavors">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve of list flavors">
 			<para role="shortdesc">Retrieves IDs, names, and links for all available flavors.</para>
 			<para>This operation lists information for all available flavors.</para>
-			<para>To filter the list of flavors returned in the response body, you can specify the following optional URI parameters:</para>
+			<para>To filter the list of flavors returned in the response body, you can specify the following optional URI
+				parameters:</para>
 			<para><code>minDisk=minDiskInGB</code></para>
 			<para>Filters the list of flavors to those with the specified minimum number of gigabytes of disk storage.</para>
 			<para><code>minRam=minRamInMB</code></para>
 			<para>Filters the list of flavors to those with the specified minimum amount of RAM in megabytes.</para>
 			<para><code>marker=markerID</code></para>
-			
 			<!-- This link actually works, but it needs to go somewhere else. Not quite sure where it goes right now. -->
 			<!--<para>The ID of the last item in the previous list. See <link linkend="section_pagination">Section 1.3, Paginated Collections"</link>/>.</para>-->
-			
 			<para><code>limit=int</code></para>
-			<para>Sets the page size. See <link linkend="section_pagination">Section 1.3, Paginated Collections"</link>/></para>
-			<para>This operation does not require a request body.</para>
+			<para>Sets the page size. See
+				<link linkend="section_pagination">Section 1.3, Paginated Collections"</link>/></para>
 		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -125,29 +85,28 @@
 					<xsdxt:code href="../common/samples/flavor-list-rsp.json"/>
 				</wadl:doc>
 			</representation>
-					<representation mediaType="application/xml">
-						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/flavor-list-rsp.xml"/>
-				</wadl:doc> &flavorsListQueryParameters; 
-			</representation>
-		</response>&commonFaults;
-	</method>
-	
-	
+		</response>&commonFaults; </method>
+
+
 	<!--*************************-->
 	<!--Get Flavor Details method-->
 	<!--*************************-->
-	
+
 	<method name="GET" id="retrieveFlavorDetails">
-	<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve flavor details">
-		<para role="shortdesc">Retrieves details of the specified flavor.</para>
-		<para>Specify the flavor ID as id in the URI.</para>
-		<para>This operation does not require a request body.</para>
-		<para>This operation returns details of the specified flavor in the response body.</para>
-	</wadl:doc>
-		
-		<!--Does not require a request body.-->
-		
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve flavor details">
+			<para role="shortdesc">Retrieves details of the specified flavor.</para>
+			<para>Specify the flavor ID as id in the URI.</para>
+			<para>This operation returns details of the specified flavor in the response body.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -155,15 +114,9 @@
 					<xsdxt:code href="../common/samples/flavor-detail-rsp.json"/>
 				</wadl:doc>
 			</representation>
-					<representation mediaType="application/xml">
-						<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-							<xsdxt:code href="../common/samples/flavor-detail-rsp.xml"/>
-						</wadl:doc>&flavorsListQueryParameters; 
-					</representation>
-		</response>&commonFaults;
-	</method>
-	
-	
+		</response>&commonFaults; </method>
+
+
 	<!--Images Methods-->
 
 	<!--***************************-->
@@ -173,62 +126,48 @@
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of images">
 			<para role="shortdesc">Retrieves IDs, names, and links for all available images.</para>
 			<para>This operation lists all images visible by the account.</para>
-			<para>The optional minDisk and minRam attributes set the minimum disk and RAM required to create a server with the image.</para>
-			<para>This operation returns a response body. The image_type field in the response indicates whether the image 
-				is built-in <code>(base)</code> or custom <code>(snapshot)</code>.</para>
+			<para>The optional minDisk and minRam attributes set the minimum disk and RAM required to create a server with
+				the image.</para>
+			<para>The image_type field in the response indicates whether the image is built-in <code>(base)</code> or custom
+					<code>(snapshot)</code>.</para>
 		</wadl:doc>
-		
+
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
-				</wadl:doc>&imagesListQueryParameters; 
-			</representation>
-			
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-				</wadl:doc>
-			</representation>
+				</wadl:doc>&imagesListQueryParameters; </representation>
 		</request>
-		
+
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/images-list-rsp.json"/>
-				</wadl:doc><!--&imagesListRspParameters;-->  <!--I need to check if this is in the common ent-->
+				</wadl:doc>
+				<!--&imagesListRspParameters;-->
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/images-list-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/images-list-rsp.xml"/>
-				</wadl:doc> <!--&serverListRspParameters;--> 
-			</representation>
-		</response>&commonFaults;
-		
-	</method>
-		
+		</response>&commonFaults; </method>
+
 	<!--****************************************-->
 	<!--Retrieve list of images with details method-->
 	<!--****************************************-->
-		
+
 	<method name="GET" id="retrieveListImagesWithDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of images with details">
 			<para role="shortdesc">Retrieves all details for all available images.</para>
 			<para>Specify the image ID as id in the URI.</para>
-			<para>This operation returns details of the specified image in the response body. 
-				The image_type field in the response indicates whether the image is built-in <code>(base)</code>or custom <code>(snapshot)</code>.</para>
+			<para>This operation returns details of the specified image in the response body. The image_type field in the
+				response indicates whether the image is built-in <code>(base)</code>or custom <code>(snapshot)</code>.</para>
 		</wadl:doc>
-		
+
 		<request>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<!--<xsdxt:code href="../common/samples/images-list-det-rsp.json"/>-->
-				</wadl:doc>&imagesListQueryParameters;
-			</representation>
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>&imagesListQueryParameters; </representation>
 		</request>
-		
+
 		<response status="200">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -236,33 +175,33 @@
 					<xsdxt:code href="../common/samples/images-list-det-rsp.json"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/images-list-det-rsp.xml"/>
-				</wadl:doc>  
-			</representation>
-		</response>&commonFaults;
-	</method>
-		
-		
-		
+		</response>&commonFaults; </method>
+
+
+
 	<!--*****************************-->
 	<!--Retrieve image details method-->
 	<!--*****************************-->
-	
+
 	<method name="GET" id="retrieveImageDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve image details">
 			<para role="shortdesc">Retrieves details of a specified image.</para>
 			<para>Specify the image ID as id in the URI.</para>
-			<para>This operation returns details of the specified image in the response body.
-				The image_type field in the response indicates whether the image is built-in
-				<code>(base)</code> or custom <code>(snapshot)</code>.</para>
-			<para><note><para>The response body does not include the serverId field. To retrieve the serverId field, get details for all images. 
-				See (insert link here) </para></note></para>
+			<para>This operation returns details of the specified image in the response body. The image_type field in the
+				response indicates whether the image is built-in <code>(base)</code> or custom
+				<code>(snapshot)</code>.</para>
+			<para><note><para>The response body does not include the serverId field. To retrieve the serverId field, get
+						details for all images. <!--See (insert link here)--> </para></note></para>
 		</wadl:doc>
-		
-		<!--Does not require a request body.-->
-		
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
@@ -270,38 +209,33 @@
 					<xsdxt:code href="../common/samples/image-detail-rsp.JSON"/>
 				</wadl:doc>
 			</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xml:lang="en">
-					<xsdxt:code href="../common/samples/image-detail-rsp.xml"/>
-				</wadl:doc>  
-			</representation>
-		</response>&commonFaults;
-	</method>
-		
+		</response>&commonFaults; </method>
+
 	<!--********************-->
 	<!--Delete image method-->
 	<!--********************-->
-	
+
 	<method name="DELETE" id="deleteImage">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Delete image">
 			<para role="shortdesc">Deletes the specified image.</para>
 			<!--<para>(Need a table here about Status Transition)</para>-->
-			<para>This operation deletes the specified image from the system.</para>
-			<para>Specify the image ID as id in the URI.</para>
-			<para>Images are immediately removed.</para>
+			<para>This operation deletes the specified image from the system. Images are immediately removed.</para>
 			<para>Specify the image ID as id in the URI.</para>
 		</wadl:doc>
-		
-		<!--Does not require a request body.-->
-		
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					
-				</wadl:doc> <!--&serverListRspParameters;--> 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"> </wadl:doc>
 			</representation>
-		</response>&commonFaults;
-	</method>
+		</response>&commonFaults; </method>
 
 </application>
