@@ -34,7 +34,7 @@ _build/html
 On OS/X you can run:
 
 ```
-open _build/html/index.html
+open _build/html/cloud-servers/dev-guide/index.html
 ```
 
 To pop open the doc index and preview.
