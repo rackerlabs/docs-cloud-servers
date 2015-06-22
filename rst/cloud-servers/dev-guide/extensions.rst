@@ -30,10 +30,7 @@ Extended Responses and Actions
 Use extensions to define new data types, parameters, actions, headers,
 states, and resources.
 
-In XML, you can define additional elements and attributes. Define these
-elements in the namespace for the extension.
-
-In JSON, you must use the alias. The volumes element in the example is defined in the ``RS-CBS`` namespace.
+You must use the alias. The volumes element in the example is defined in the ``RS-CBS`` namespace.
 
 Actions work in exactly the same manner as illustrated in the example.
 Extended headers are always prefixed with ``X-`` followed by the alias
@@ -161,5 +158,3 @@ image can be in the ``RS-PIE:PrepareShare`` state.
             "href" : "https://cbs.api.rackspacecloud.com/12934/volumes/19"
         }
     }
-
-

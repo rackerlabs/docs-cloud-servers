@@ -91,155 +91,32 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="request-response-types">
 <h1>Request/Response Types<a class="headerlink" href="#request-response-types" title="Permalink to this headline">#</a></h1>
-<p>API v2 supports JSON request and response formats.</p>
+<p>API v2 supports JSON data serialization request and response format.</p>
 <p>You specify the request format in the <code class="docutils literal"><span class="pre">Content-Type</span></code> header in the
 request. This header is required for operations that have a request
 body. The syntax for the <code class="docutils literal"><span class="pre">Content-Type</span></code> header is:</p>
 <div class="code highlight-python"><div class="highlight"><pre>Content-Type: application/format
 </pre></div>
 </div>
-<p>Where <em>``format``</em> is either <code class="docutils literal"><span class="pre">json</span></code> or <code class="docutils literal"><span class="pre">xml</span></code>.</p>
+<p>Where <em>format</em> is <code class="docutils literal"><span class="pre">json</span></code>.</p>
 <p>You specify the response format by using one of the following methods:</p>
 <ul>
 <li><p class="first"><code class="docutils literal"><span class="pre">Accept</span></code> header. The syntax for the <code class="docutils literal"><span class="pre">Accept</span></code> header is:</p>
 <div class="highlight-python"><div class="highlight"><pre>Accept: application/format
 </pre></div>
 </div>
-<p>Where <em>``format``</em> is either <code class="docutils literal"><span class="pre">json</span></code> or <code class="docutils literal"><span class="pre">xml</span></code>.</p>
+<p>Where <em>format</em> is <code class="docutils literal"><span class="pre">json</span></code>.</p>
 <p>Default is <code class="docutils literal"><span class="pre">json</span></code>.</p>
 </li>
-<li><p class="first">Query extension. Add an <code class="docutils literal"><span class="pre">.xml</span></code> or <code class="docutils literal"><span class="pre">.json</span></code> extension to the
-request URI. For example, the <code class="docutils literal"><span class="pre">.xml</span></code> extension in the following URI
-request specifies that the response body is returned in XML format:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="mo">010101</span><span class="o">/</span><span class="n">servers</span><span class="o">.</span><span class="n">xml</span>
+<li><p class="first">Query extension. Add the <code class="docutils literal"><span class="pre">.json</span></code> extension to the
+request URI. For example, the <code class="docutils literal"><span class="pre">.json</span></code> extension in the following URI
+request specifies that the response body is returned in JSON format:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="mo">010101</span><span class="o">/</span><span class="n">servers</span><span class="o">.</span><span class="n">json</span>
 </pre></div>
 </div>
 </li>
 </ul>
 <p>If you do not specify a response format, JSON is the default.</p>
-<p>If you specify conflicting formats in the <code class="docutils literal"><span class="pre">Accept</span></code> header and the
-query extension, the format specified in the query extension takes
-precedence. For example, if the query extension is <code class="docutils literal"><span class="pre">.xml</span></code> and the
-<code class="docutils literal"><span class="pre">Accept</span></code> header specifies <code class="docutils literal"><span class="pre">application/json</span></code>, the response is
-returned in XML format.</p>
-<p>You can serialize a response in a different format from the request
-format. These examples show a request
-body in JSON format and a response body in XML format.</p>
-<p><strong>Example: Request with Headers: JSON</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>POST /v2/010101/servers HTTP/1.1
-Host: dfw.servers.api.rackspacecloud.com
-Content-Type: application/json
-Accept: application/xml
-X-Auth-Token: eaaafd18-0fed-4b3a-81b4-663c99ec1cbb
-</pre></div>
-</div>
-<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;server&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;api-test-server-1&quot;</span><span class="p">,</span>
-        <span class="s">&quot;imageRef&quot;</span> <span class="p">:</span> <span class="s">&quot;3afe97b2-26dc-49c5-a2cc-a2fc8d80c001&quot;</span><span class="p">,</span>
-        <span class="s">&quot;flavorRef&quot;</span> <span class="p">:</span> <span class="s">&quot;2&quot;</span><span class="p">,</span>
-        <span class="s">&quot;config_drive&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-        <span class="s">&quot;key_name&quot;</span><span class="p">:</span><span class="s">&quot;name_of_keypair&quot;</span><span class="p">,</span>
-        <span class="s">&quot;OS-DCF:diskConfig&quot;</span> <span class="p">:</span> <span class="s">&quot;AUTO&quot;</span><span class="p">,</span>
-        <span class="s">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
-            <span class="s">&quot;My Server Name&quot;</span> <span class="p">:</span> <span class="s">&quot;API Test Server 1&quot;</span>
-        <span class="p">},</span>
-        <span class="s">&quot;personality&quot;</span> <span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s">&quot;path&quot;</span> <span class="p">:</span> <span class="s">&quot;/etc/banner.txt&quot;</span><span class="p">,</span>
-                <span class="s">&quot;contents&quot;</span> <span class="p">:</span> <span class="s">&quot;ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA==&quot;</span>
-            <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                 <span class="s">&quot;uuid&quot;</span><span class="p">:</span> <span class="s">&quot;4ebd35cf-bfe7-4d93-b0d8-eb468ce2245a&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                 <span class="s">&quot;uuid&quot;</span><span class="p">:</span> <span class="s">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                 <span class="s">&quot;uuid&quot;</span><span class="p">:</span> <span class="s">&quot;11111111-1111-1111-1111-111111111111&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;server&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;new-server-test&quot;</span><span class="p">,</span>
-        <span class="s">&quot;imageRef&quot;</span> <span class="p">:</span> <span class="s">&quot;http://servers.api.openstack.org/1234/images/52415800-8b69-11e0-9b19-734f6f006e54&quot;</span><span class="p">,</span>
-        <span class="s">&quot;flavorRef&quot;</span> <span class="p">:</span> <span class="s">&quot;52415800-8b69-11e0-9b19-734f1195ff37&quot;</span><span class="p">,</span>
-        <span class="s">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
-            <span class="s">&quot;My Server Name&quot;</span> <span class="p">:</span> <span class="s">&quot;Apache1&quot;</span>
-        <span class="p">},</span>
-        <span class="s">&quot;personality&quot;</span> <span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s">&quot;path&quot;</span> <span class="p">:</span> <span class="s">&quot;/etc/banner.txt&quot;</span><span class="p">,</span>
-                <span class="s">&quot;contents&quot;</span> <span class="p">:</span> <span class="s">&quot;ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA==&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Example:&nbsp;JSON Request with XML Query Extension for the Response</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>POST /v2/010101/servers.xml HTTP/1.1
-Host: dfw.servers.api.rackspacecloud.com
-Content-Type: application/json
-X-Auth-Token: eaaafd18-0fed-4b3a-81b4-663c99ec1cbb
-</pre></div>
-</div>
-<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;server&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;api-test-server-1&quot;</span><span class="p">,</span>
-        <span class="s">&quot;imageRef&quot;</span> <span class="p">:</span> <span class="s">&quot;3afe97b2-26dc-49c5-a2cc-a2fc8d80c001&quot;</span><span class="p">,</span>
-        <span class="s">&quot;flavorRef&quot;</span> <span class="p">:</span> <span class="s">&quot;2&quot;</span><span class="p">,</span>
-        <span class="s">&quot;config_drive&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-        <span class="s">&quot;key_name&quot;</span><span class="p">:</span><span class="s">&quot;name_of_keypair&quot;</span><span class="p">,</span>
-        <span class="s">&quot;OS-DCF:diskConfig&quot;</span> <span class="p">:</span> <span class="s">&quot;AUTO&quot;</span><span class="p">,</span>
-        <span class="s">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
-            <span class="s">&quot;My Server Name&quot;</span> <span class="p">:</span> <span class="s">&quot;API Test Server 1&quot;</span>
-        <span class="p">},</span>
-        <span class="s">&quot;personality&quot;</span> <span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s">&quot;path&quot;</span> <span class="p">:</span> <span class="s">&quot;/etc/banner.txt&quot;</span><span class="p">,</span>
-                <span class="s">&quot;contents&quot;</span> <span class="p">:</span> <span class="s">&quot;ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA==&quot;</span>
-            <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="s">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                 <span class="s">&quot;uuid&quot;</span><span class="p">:</span> <span class="s">&quot;4ebd35cf-bfe7-4d93-b0d8-eb468ce2245a&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                 <span class="s">&quot;uuid&quot;</span><span class="p">:</span> <span class="s">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                 <span class="s">&quot;uuid&quot;</span><span class="p">:</span> <span class="s">&quot;11111111-1111-1111-1111-111111111111&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;server&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;new-server-test&quot;</span><span class="p">,</span>
-        <span class="s">&quot;imageRef&quot;</span> <span class="p">:</span> <span class="s">&quot;http://servers.api.openstack.org/1234/images/52415800-8b69-11e0-9b19-734f6f006e54&quot;</span><span class="p">,</span>
-        <span class="s">&quot;flavorRef&quot;</span> <span class="p">:</span> <span class="s">&quot;52415800-8b69-11e0-9b19-734f1195ff37&quot;</span><span class="p">,</span>
-        <span class="s">&quot;metadata&quot;</span> <span class="p">:</span> <span class="p">{</span>
-            <span class="s">&quot;My Server Name&quot;</span> <span class="p">:</span> <span class="s">&quot;Apache1&quot;</span>
-        <span class="p">},</span>
-        <span class="s">&quot;personality&quot;</span> <span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s">&quot;path&quot;</span> <span class="p">:</span> <span class="s">&quot;/etc/banner.txt&quot;</span><span class="p">,</span>
-                <span class="s">&quot;contents&quot;</span> <span class="p">:</span> <span class="s">&quot;ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA==&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
 </div>
 
 
