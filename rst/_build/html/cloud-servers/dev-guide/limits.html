@@ -123,27 +123,25 @@ effect after the root URI path. For example, the regular expression
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
-<col width="41%" />
-<col width="30%" />
+<col width="58%" />
+<col width="12%" />
 <col width="14%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Verb</td>
-<td>URI</td>
-<td>Value</td>
-<td>Unit</td>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Verb</th>
+<th class="head">URI</th>
+<th class="head">Value</th>
+<th class="head">Unit</th>
 </tr>
+</thead>
+<tbody valign="top">
 <tr class="row-even"><td><strong>GET</strong></td>
 <td>*</td>
 <td>1000</td>
 <td>minute</td>
 </tr>
 <tr class="row-odd"><td><strong>GET</strong></td>
-<td><dl class="first last docutils">
-<dt>servers{id}</dt>
-<dd>os-virtual-interfacesv2</dd>
-</dl>
-</td>
+<td>/servers/{id}/os-virtual-interfacesv2</td>
 <td>25</td>
 <td>minute</td>
 </tr>
@@ -153,21 +151,17 @@ effect after the root URI path. For example, the regular expression
 <td>minute</td>
 </tr>
 <tr class="row-odd"><td><strong>POST</strong></td>
-<td>os-networksv2</td>
+<td>/os-networksv2</td>
 <td>100</td>
 <td>day</td>
 </tr>
 <tr class="row-even"><td><strong>POST</strong></td>
-<td>servers</td>
+<td>/servers</td>
 <td>1000</td>
 <td>day</td>
 </tr>
 <tr class="row-odd"><td><strong>POST</strong></td>
-<td><dl class="first last docutils">
-<dt>servers{id}</dt>
-<dd>os-virtual-interfacesv2</dd>
-</dl>
-</td>
+<td>/servers/{id}/os-virtual-interfacesv2</td>
 <td>4</td>
 <td>minute</td>
 </tr>
