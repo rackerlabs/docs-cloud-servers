@@ -14,6 +14,7 @@ Virtual Cloud Server Flavors
 Virtual Cloud Server Flavors are divided into the following classes:
 
 **Standard**
+
     These flavors, which are being phased out and should not be used for
     new servers, have the following characteristics:
 
@@ -27,6 +28,7 @@ Virtual Cloud Server Flavors are divided into the following classes:
        drives.
 
 **General Purpose v1**
+
     These flavors, formerly Performance 1, have the following
     characteristics:
 
