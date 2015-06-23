@@ -2,8 +2,8 @@
 How cURL Commands Work
 ======================
 
-cURL is a command-line tool that you can use to interact with *REST*
-interfaces. cURL lets you to transmit and receive *HTTP* requests and
+cURL is a command-line tool that you can use to interact with REST
+interfaces. cURL lets you to transmit and receive HTTP requests and
 responses from the command line or a shell script, which enables you to
 work with the API directly. It is available for Linux distributions, Mac
 OS X, and Windows. For information about cURL, see http://curl.haxx.se/.
@@ -92,5 +92,3 @@ and use simplejson.tool. For information about simplejson.tool, see
 `simplejson — JSON encoder and decoder <http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html>`__.
 
 If you do not want to pretty-print JSON output, omit this code.
-
-
