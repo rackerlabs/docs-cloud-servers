@@ -29,11 +29,9 @@ Keep in mind:
 
 * Smaller snapshots tend to finish more quickly.
 
-* A very large snapshot may take so long to finish that it may block the next
-   day's scheduled snapshot from occurring.
+* A very large snapshot may take so long to finish that it may block the next day's scheduled snapshot from occurring.
 
-* If you have a large amount of data to save, you may wish to explore other
-   backup options.
+* If you have a large amount of data to save, you may wish to explore other backup options.
 
 .. important::
    The scheduled images service is a "best effort service". Images are
