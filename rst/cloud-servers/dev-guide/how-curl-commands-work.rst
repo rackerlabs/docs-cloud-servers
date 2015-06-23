@@ -43,7 +43,7 @@ Common headers in Rackspace API requests are as follows:
 -  ``Content-Type``. Required for operations with a request body.
 
    Specifies the format of the request body. Following is the syntax for
-   the header where *``format``* is ``json``.
+   the header where ``format`` is ``json``.
 
    .. code::
 
@@ -57,7 +57,7 @@ Common headers in Rackspace API requests are as follows:
 -  ``Accept``. Optional.
 
    Specifies the format of the response body. Following is the syntax
-   for the header where *``format``* is ``json`` (the default)
+   for the header where ``format`` is ``json`` (the default)
 
    .. code::
 
