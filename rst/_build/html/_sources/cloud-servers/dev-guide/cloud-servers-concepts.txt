@@ -66,4 +66,3 @@ ServiceNet
    can configure your account resources to use a ServiceNet IP address so that
    traffic over the internal network is not billed. When you list networks
    through Cloud Networks, ServiceNet is labeled as private.
-
