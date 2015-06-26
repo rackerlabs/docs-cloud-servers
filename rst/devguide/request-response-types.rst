@@ -12,7 +12,7 @@ body. The syntax for the ``Content-Type`` header is:
 
     Content-Type: application/format
 
-Where *format* is ``json``.
+Where ``format`` is ``json``.
 
 You specify the response format by using one of the following methods:
 
@@ -20,7 +20,7 @@ You specify the response format by using one of the following methods:
 
        Accept: application/format
 
-   Where *format* is ``json``.
+   Where ``format`` is ``json``.
 
    Default is ``json``.
 

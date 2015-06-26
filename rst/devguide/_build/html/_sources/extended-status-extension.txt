@@ -23,8 +23,9 @@ servers` and `get server` calls (http://api.rackspace.com/#compute_servers).
 Currently, the possible values for the VM, task, and power status fields
 are:
 
- **``OS-EXT-STS:vm_state``**
-    The virtual machine (VM) status. Possible values are:
+ ``OS-EXT-STS:vm_state``
+
+The virtual machine (VM) status. Possible values are:
 
     -  active
 
@@ -46,8 +47,9 @@ are:
 
     -  suspended
 
- **``OS-EXT-STS:task_state``**
-    The task status. Possible values are:
+ ``OS-EXT-STS:task_state``
+
+ The task status. Possible values are:
 
     -  block\_device\_mapping
 
@@ -111,8 +113,9 @@ are:
 
     -  updating\_password
 
- **``OS-EXT-STS:power_state``**
-    The power status. Possible values are:
+ ``OS-EXT-STS:power_state``
+
+ The power status. Possible values are:
 
     -  ``0``. The instance is powered down.
 
@@ -247,4 +250,3 @@ The namespace for this extended attribute is:
 .. code::
 
    xmlns:OS-EXT-STS="http://docs.openstack.org/compute/ext/extended_status/api/v1.1"
-

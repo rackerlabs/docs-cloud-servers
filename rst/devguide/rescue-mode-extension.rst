@@ -21,7 +21,7 @@ When you place a server in rescue mode, the following events occur:
       the original server.
 
 To place a server in rescue mode, issue the request body in a **POST**
-request to **/servers/**\ *``id``*\ **/action**. When you put a server
+request to **/servers/**\id\ **/action**. When you put a server
 into rescue mode, you cannot use it until its status goes from
 ``ACTIVE`` to ``RESCUE``. This does not happen immediately.
 
@@ -38,7 +38,7 @@ server in rescue mode:
 
     {
     "rescue" : null
-    } 
+    }
 
 After you place a server in rescue mode, the following response is
 returned:
@@ -47,7 +47,7 @@ returned:
 
     {
         "adminPass" : "Qy7gCeHeYaT7"
-    } 
+    }
 
 The following  example shows how to unrescue a server that is in
 rescue mode:
@@ -57,4 +57,3 @@ rescue mode:
     {
     "unrescue" : null
     }
-
