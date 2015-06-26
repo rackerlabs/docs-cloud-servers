@@ -36,7 +36,7 @@ The regular expression boundary matcher ``^`` for the rate limit takes
 effect after the root URI path. For example, the regular expression
 ``^/servers`` would match the resources portion of the following URI::
 
-    https://dfw.servers.api.rackspacecloud.com/v2/010101/***servers***
+    https://dfw.servers.api.rackspacecloud.com/v2/010101/servers
 
 The following table lists the default rate limits:
 
@@ -114,76 +114,74 @@ limits for your account. (http://api.rackspace.com/#compute_limits)
     {
         "limits": {
             "absolute": {
-                "maxImageMeta": 20, 
-                "maxPersonality": 6, 
-                "maxPersonalitySize": 10240, 
-                "maxServerMeta": 20, 
-                "maxTotalCores": -1, 
-                "maxTotalFloatingIps": 5, 
-                "maxTotalInstances": 100, 
-                "maxTotalKeypairs": 100, 
-                "maxTotalPrivateNetworks": 0, 
-                "maxTotalRAMSize": 66560, 
-                "maxTotalVolumeGigabytes": -1, 
-                "maxTotalVolumes": 0, 
-                "totalCoresUsed": 9, 
-                "totalInstancesUsed": 3, 
-                "totalKeyPairsUsed": 0, 
-                "totalPrivateNetworksUsed": 0, 
-                "totalRAMUsed": 16896, 
-                "totalSecurityGroupsUsed": 0, 
-                "totalVolumeGigabytesUsed": 0, 
+                "maxImageMeta": 20,
+                "maxPersonality": 6,
+                "maxPersonalitySize": 10240,
+                "maxServerMeta": 20,
+                "maxTotalCores": -1,
+                "maxTotalFloatingIps": 5,
+                "maxTotalInstances": 100,
+                "maxTotalKeypairs": 100,
+                "maxTotalPrivateNetworks": 0,
+                "maxTotalRAMSize": 66560,
+                "maxTotalVolumeGigabytes": -1,
+                "maxTotalVolumes": 0,
+                "totalCoresUsed": 9,
+                "totalInstancesUsed": 3,
+                "totalKeyPairsUsed": 0,
+                "totalPrivateNetworksUsed": 0,
+                "totalRAMUsed": 16896,
+                "totalSecurityGroupsUsed": 0,
+                "totalVolumeGigabytesUsed": 0,
                 "totalVolumesUsed": 0
-            }, 
+            },
             "rate": [
                 {
                     "limit": [
                         {
-                            "next-available": "2012-09-10T20:11:45.146Z", 
-                            "remaining": 0, 
-                            "unit": "DAY", 
-                            "value": 0, 
+                            "next-available": "2012-09-10T20:11:45.146Z",
+                            "remaining": 0,
+                            "unit": "DAY",
+                            "value": 0,
                             "verb": "POST"
-                        }, 
+                        },
                         {
-                            "next-available": "2012-09-10T20:11:45.146Z", 
-                            "remaining": 0, 
-                            "unit": "MINUTE", 
-                            "value": 0, 
+                            "next-available": "2012-09-10T20:11:45.146Z",
+                            "remaining": 0,
+                            "unit": "MINUTE",
+                            "value": 0,
                             "verb": "GET"
                         }
-                    ], 
-                    "regex": "/v[^/]/(\\d+)/(rax-networks)/?.*", 
+                    ],
+                    "regex": "/v[^/]/(\\d+)/(rax-networks)/?.*",
                     "uri": "/rax-networks"
-                }, 
+                },
                 {
                     "limit": [
                         {
-                            "next-available": "2012-09-10T20:11:45.146Z", 
-                            "remaining": 1000, 
-                            "unit": "DAY", 
-                            "value": 1000, 
+                            "next-available": "2012-09-10T20:11:45.146Z",
+                            "remaining": 1000,
+                            "unit": "DAY",
+                            "value": 1000,
                             "verb": "POST"
                         }
-                    ], 
-                    "regex": "/v[^/]/(\\d+)/(servers)/?.*", 
+                    ],
+                    "regex": "/v[^/]/(\\d+)/(servers)/?.*",
                     "uri": "/servers"
-                }, 
+                },
                 {
                     "limit": [
                         {
-                            "next-available": "2012-09-10T20:11:45.146Z", 
-                            "remaining": 100, 
-                            "unit": "MINUTE", 
-                            "value": 100, 
+                            "next-available": "2012-09-10T20:11:45.146Z",
+                            "remaining": 100,
+                            "unit": "MINUTE",
+                            "value": 100,
                             "verb": "ALL"
                         }
-                    ], 
-                    "regex": "/v[^/]/(\\d+)/?.*", 
+                    ],
+                    "regex": "/v[^/]/(\\d+)/?.*",
                     "uri": "*"
                 }
             ]
         }
     }
-
-
