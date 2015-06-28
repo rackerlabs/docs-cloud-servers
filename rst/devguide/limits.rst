@@ -83,21 +83,21 @@ Specify absolute limits as name/value pairs.
 The following ``max`` limits show the maximum amount of a resource that
 can be used:
 
-maxImageMeta: 40 The maximum number of metadata key value pairs associated with a particular image.
++ maxImageMeta: 40 The maximum number of metadata key value pairs associated with a particular image.
 
-maxPersonality: 5 The maximum number of file path/content pairs that can be supplied on server build and rebuild.
++ maxPersonality: 5 The maximum number of file path/content pairs that can be supplied on server build and rebuild.
 
-maxPersonalitySize: 1000 The maximum size, in bytes, for each personality file.
++ maxPersonalitySize: 1000 The maximum size, in bytes, for each personality file.
 
-maxServerMeta: 40 The maximum number of metadata key value pairs associated with a particular server.
++ maxServerMeta: 40 The maximum number of metadata key value pairs associated with a particular server.
 
-maxTotalCores: -1 This limit is disabled, so no limits exist on the total number of cores.
++ maxTotalCores: -1 This limit is disabled, so no limits exist on the total number of cores.
 
-maxTotalInstances: 100 The maximum number of Cloud Servers at any one time.
++ maxTotalInstances: 100 The maximum number of Cloud Servers at any one time.
 
-maxTotalPrivateNetworks: The maximum number of isolated networks that you can create. Set to 0 when Cloud Networks is disabled, 10 when Cloud Networks enabled.
++ maxTotalPrivateNetworks: The maximum number of isolated networks that you can create. Set to 0 when Cloud Networks is disabled, 10 when Cloud Networks enabled.
 
-maxTotalRAMSize: 131072 The maximum total amount of RAM (MB) of all Cloud Servers at any one time.
++ maxTotalRAMSize: 131072 The maximum total amount of RAM (MB) of all Cloud Servers at any one time.
 
 .. _get-limits:
 
