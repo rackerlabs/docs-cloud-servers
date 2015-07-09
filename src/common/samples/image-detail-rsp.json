@@ -1,48 +1,48 @@
 {
-    "image": {
-        "OS-DCF:diskConfig": "AUTO", 
-        "created": "2012-02-28T19:38:57Z", 
-        "id": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", 
-        "links": [
-            {
-                "href": "https://dfw.servers.api.rackspacecloud.com/v2/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", 
-                "rel": "self"
-            }, 
-            {
-                "href": "https://dfw.servers.api.rackspacecloud.com/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", 
-                "rel": "bookmark"
-            }, 
-            {
-                "href": "https://dfw.servers.api.rackspacecloud.com/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", 
-                "rel": "alternate", 
-                "type": "application/vnd.openstack.image"
-            }
-        ], 
-        "metadata": {
-            "arch": "x86-64", 
-            "auto_disk_config": "True", 
-            "com.rackspace__1__build_core": "1", 
-            "com.rackspace__1__build_managed": "0", 
-            "com.rackspace__1__build_rackconnect": "0", 
-            "com.rackspace__1__options": "0", 
-            "com.rackspace__1__visible_core": "1", 
-            "com.rackspace__1__visible_managed": "0", 
-            "com.rackspace__1__visible_rackconnect": "0", 
-            "image_type": "base", 
-            "org.openstack__1__architecture": "x64", 
-            "org.openstack__1__os_distro": "org.ubuntu", 
-            "org.openstack__1__os_version": "11.10", 
-            "os_distro": "ubuntu", 
-            "os_type": "linux", 
-            "os_version": "11.10", 
-            "rax_managed": "false", 
-            "rax_options": "0"
-        }, 
-        "minDisk": 10, 
-        "minRam": 256, 
-        "name": "Ubuntu 11.10", 
-        "progress": 100, 
-        "status": "ACTIVE", 
-        "updated": "2012-02-28T19:39:05Z"
+  "image": {
+    "status": "ACTIVE",
+    "updated": "2013-06-07T17:00:39Z",
+    "links": [
+      {
+        "href": "https://dfw.servers.api.rackspacecloud.com/v2/820712/images/e3d37ab2-8dc0-4000-b773-b15aad79ad0a",
+        "rel": "self"
+      },
+      {
+        "href": "https://dfw.servers.api.rackspacecloud.com/820712/images/e3d37ab2-8dc0-4000-b773-b15aad79ad0a",
+        "rel": "bookmark"
+      },
+      {
+        "href": "https://dfw.servers.api.rackspacecloud.com/images/e3d37ab2-8dc0-4000-b773-b15aad79ad0a",
+        "type": "application/vnd.openstack.image",
+        "rel": "alternate"
+      }
+    ],
+    "OS-DCF:diskConfig": "MANUAL",
+    "id": "e3d37ab2-8dc0-4000-b773-b15aad79ad0a",
+    "OS-EXT-IMG-SIZE:size": 5562828800,
+    "name": "voweb1-firstimage",
+    "created": "2013-06-07T16:38:49Z",
+    "minDisk": 40,
+    "server": {
+      "id": "f879f81a-5455-4e57-a0aa-3773e21c2259",
+      "links": [
+        {
+          "href": "https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/f879f81a-5455-4e57-a0aa-3773e21c2259",
+          "rel": "self"
+        },
+        {
+          "href": "https://dfw.servers.api.rackspacecloud.com/820712/servers/f879f81a-5455-4e57-a0aa-3773e21c2259",
+          "rel": "bookmark"
+        }
+      ]
+    },
+    "progress": 100,
+    "minRam": 1024,
+    "metadata": {
+      "image_type": "snapshot",
+      "instance_type_rxtx_factor": "3",
+      "auto_disk_config": "False",
+      "os_type": "windows"
     }
+  }
 }

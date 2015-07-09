@@ -97,12 +97,13 @@
 				begin to use it.</para>
 			<important><para>OnMetal servers must be created using an ssh key pair. Thus you should ignore the administrator
 					password returned by a Create Server operation because it does not allow access to the OnMetal server.
-					<!--See inserthere for more information about key pairs.--></para></important>
+					<!--See insertlinkhere for more information about key pairs.--></para></important>
 			<para>The following extensions allow you to use other options when creating a new server:</para>
 			<itemizedlist>
-				<listitem><para>Config Drive <!--inserthere--></para></listitem>
+				<listitem><para>Config drive <!--inserthere--></para></listitem>
 				<listitem><para>Boot from volume <!--inserthere--></para></listitem>
 				<listitem><para>Networks <!--inserthere--> for nova and for neutron</para></listitem>
+				<listitem><para>Key pairs <!--inserthere--></para></listitem>
 			</itemizedlist>
 		</wadl:doc>
 		<request>
@@ -163,6 +164,7 @@
 				<listitem><para>Extended Status (<literal>OS-EXT-STS:power_state</literal>,
 							<literal>OS-EXT-STS:vm_state</literal>, and <literal>OS-EXT-STS:task_state</literal>):
 						<xref linkend="ext_extended_status"/></para></listitem>
+				<listitem><para>Block Device Mapping: <!--insertlinkhere--></para></listitem>
 			</itemizedlist>
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
@@ -558,6 +560,7 @@
 					uses the specified image for the rescue mode instance. This is extremely useful if the image originally
 					used to build the server is now either non-functional or has been deleted.</para>
 			</note>
+			<para>The following extension provides additional rescue with image functionality. <!--<insertlinkhere>--></para>
 		</wadl:doc>
 
 		<request>

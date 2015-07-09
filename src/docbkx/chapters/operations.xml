@@ -144,6 +144,7 @@
                     <para>The base URI is the same for all server actions. The request body identifies which action to
                         take.</para>
                 </note></para>
+            <para>This functionality is provided by the server actions extension.<!-- insertlinkhere--></para>
             <!--- this section comes from these WADLs: servers.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <!-- change password, reboot, rebuild, resize, confirm resize, revert, rescue, unrescue, create image -->
@@ -164,7 +165,7 @@
             <title>Server metadata operations</title>
             <para>This section describes the metadata API operations for servers.</para>
             <note>
-                <para>You can also add metadata to images<!--, see inserthere-->.</para>
+                <para>You can also add metadata to images<!--, see insertlinkhere-->.</para>
             </note>
             <para> Metadata provides additional information about your provisioned resources. It follows the format of
                 '"metadata key":"metadata value"' (for example, <literal>"Label" : "Web"</literal>). Metadata API operations
@@ -210,13 +211,13 @@
                         <listitem>
                             <para> In this case, the action taken is the same as for the value FALSE. In addition, this
                                 action cannot be overridden by use of the
-                                <!--<link linkend="diskconfig_attribute">Disk Configuration</link> inserthere-->
+                                <!--<link linkend="diskconfig_attribute">Disk Configuration</link> insertlinkhere-->
                                 Extension.</para>
                         </listitem>
                     </varlistentry>
                 </variablelist>
                 <para> The image metadata auto_disk_config key is related to, and can actually control, the available
-                    <!--<link linkend="diskconfig_attribute">Disk Configuration</link> inserthere--> Extension v2 API
+                    <!--<link linkend="diskconfig_attribute">Disk Configuration</link> insertlinkhere--> Extension v2 API
                     attribute: <parameter>OS-DCF:diskConfig</parameter>. It does this in two ways.</para>
                 <orderedlist>
                     <listitem>
@@ -283,71 +284,38 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
-
     </section>
 
     <section xml:id="api_supporting">
         <title>Supporting Operations</title>
-        <para>This section describes the API operations for supporting functions of servers.</para>
-
-        <!--        <section xml:id="Limits">
-            <title>Limits</title>
-            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
-                system.</para>
-            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
-                    <listitem>
-                        <para><emphasis role="italic">rate limits</emphasis>. Control the frequency at which the user can
-                            issue specific API requests. See (INSERT LINK HERE).</para>
-                    </listitem>
-                    <listitem>
-                        <para><emphasis role="italic">absolute limits</emphasis>. Control the total number of specific
-                            objects that the user can process simultaneously. See (INSERT LINK HERE). </para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>To query the limits programmatically, see (INSERT LINK HERE).</para>
-
-            <!-\-\- this section comes from these WADLs: supporting.wadl -\->
-            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-
-                <!-\- retrieve list of rate and absolute limits -\->
-                <wadl:resource href="../../wadl/supporting.wadl#Limits">
-                    <wadl:method href="retrieveListRateAbsoluteLimits"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>-->
-
+        <para>This section describes the API operations for supporting functions for servers.</para>
         <section xml:id="Flavors">
             <title>Flavors</title>
             <para>A flavor is a resource configuration for a server. Each flavor is a unique combination of disk, memory,
                 vCPUs, and network bandwidth.</para>
             <!--- this section comes from these WADLs: supporting.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-
                 <!-- retrieve list flavors -->
                 <wadl:resource href="../../wadl/supporting.wadl#Flavors">
-                    <wadl:method href="retrieveListFlavors"/>
+                    <wadl:method href="listFlavors"/>
                 </wadl:resource>
-
-
                 <!-- retrieve flavor details -->
-                <wadl:resource href="../../wadl/supporting.wadl#Flavors">
-                    <wadl:method href="retrieveFlavorDetails"/>
+                <wadl:resource href="../../wadl/supporting.wadl#Flavor_id">
+                    <wadl:method href="showFlavorDetails"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
-
         <section xml:id="Images">
             <title>Images</title>
             <para>An image is a collection of files for a specific operating system (OS) that you use to create or rebuild a
                 server. Rackspace provides prebuilt images.</para>
-            <para>You can also create custom images from servers that you have launched, by using server action (INSERT LINK
-                HERE). You can use custom images for data backups or as "gold" images for provisioning additional
-                servers.</para>
+            <para>You can also create custom images from servers that you have
+                launched<!--, by using server action insertlnkhere-->. You can use custom images for data backups or as
+                "gold" images for provisioning additional servers.</para>
             <para><important>
                     <para>In addition to creating images manually, you can also schedule images of your server automatically.
-                        See (INSERT LINK HERE) for more information about this extension, including enabling and disabling
-                        scheduled images and showing scheduled images.</para>
+                        <!--See insertlinkhere for more information about this extension, including enabling and disabling
+                        scheduled images and showing scheduled images.--></para>
                 </important></para>
             <para>With standard servers, the entire disk (O/S and data) is captured in the image. With Compute, Memory, and
                 IO servers, only the system disk is captured in the image. The data disks should be backed up using Cloud
@@ -355,47 +323,51 @@
 
             <!--- this section comes from these WADLs: supporting.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-
                 <!-- retrieve list images -->
                 <wadl:resource href="../../wadl/supporting.wadl#Images">
-                    <wadl:method href="retrieveListImages"/>
+                    <wadl:method href="listImages"/>
                 </wadl:resource>
-
                 <!-- retrieve list images with details -->
                 <wadl:resource href="../../wadl/supporting.wadl#ImagesDet">
-                    <wadl:method href="retrieveListImagesWithDetails"/>
+                    <wadl:method href="listImagesWithDetails"/>
                 </wadl:resource>
-
-                <!-- retrieve image details -->
-
+                <!-- retrieve image details and delete image-->
                 <wadl:resource href="../../wadl/supporting.wadl#Image_id">
-                    <wadl:method href="retrieveImageDetails"/>
-                </wadl:resource>
-
-
-                <!-- delete image -->
-                <wadl:resource href="../../wadl/supporting.wadl#Image_id">
+                    <wadl:method href="showImageDetails"/>
                     <wadl:method href="deleteImage"/>
                 </wadl:resource>
             </wadl:resources>
+        </section>
+        <section xml:id="Limits">
+            <title>Limits</title>
+            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
+                system.</para>
+            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
+                    <listitem>
+                        <para><emphasis role="italic">rate limits</emphasis>. Control the frequency at which the user can
+                            issue specific API requests<!--See insertlinkhere-->.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="italic">absolute limits</emphasis>. Control the total number of specific
+                            objects that the user can process simultaneously<!--See insertlinkhere-->. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
 
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+
+                <!-- retrieve list of rate and absolute limits -->
+                <wadl:resource href="../../wadl/supporting.wadl#Limits">
+                    <wadl:method href="listRateAbsoluteLimits"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
     </section>
 
     <section xml:id="api_extensions">
         <title>Extensions</title>
         <para>This section describes the API operations for server extensions.</para>
-        <section xml:id="ext_flavor_extra_spec">
-            <title>Flavor extra specs extension</title>
-            <para>This operation shows extra specifications for the flavor, such as identifying the policy class.</para>
-            <!--- EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
-            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <!-- show flavor extra specs -->
-                <wadl:resource href="../../wadl/extensions.wadl#FlavorID">
-                    <wadl:method href="showExtraSpecs"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
         <section xml:id="ext_scheduled_images">
             <title>Scheduled images extension</title>
             <para>Rather than manually capturing images, use this extension to schedule automatic images according to a
@@ -468,31 +440,6 @@
                         targetptr="GET_listServersDetails_servers_detail_api_servers_basic"
                         >"GET_listServersDetails_servers_detail_api_servers_basic"</olink>.</para>
             </section>
-        </section>
-        <section xml:id="ext_limits">
-            <title>Limits</title>
-            <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
-                system.</para>
-            <para>The system recognizes the following types of limits: <itemizedlist xml:id="limit_list">
-                    <listitem>
-                        <para><emphasis role="italic">rate limits</emphasis>. Identifies the frequency at which the user can
-                            issue specific API requests. <!--See insertlinkhere-->.</para>
-                    </listitem>
-                    <listitem>
-                        <para><emphasis role="italic">absolute limits</emphasis>. Identifies the total number of specific
-                            objects that the user can process simultaneously. <!--See insertlinkhere-->. </para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>To query the limits programmatically<!--, see insertlinkhere-->.</para>
-
-            <!--- this section comes from these WADLs: extensions.wadl -->
-            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <!-- retrieve list of rate and absolute limits -->
-                <wadl:resource href="../../wadl/extensions.wadl#Limits">
-                    <wadl:method href="listRateAbsoluteLimits"/>
-                </wadl:resource>
-            </wadl:resources>
         </section>
         <section xml:id="ext_rescue">
             <title>Rescue server extension</title>
@@ -985,13 +932,13 @@
                         </listitem>
                         <listitem>
                             <para><olink condition="dev" targetdoc="cs-devguide"
-                                    targetptr="GET_retrieveListImagesWithDetails_images_detail_Images"
-                                    >"GET_retrieveListImagesWithDetails_images_detail_Images"</olink></para>
+                                    targetptr="GET_listImagesWithDetails_images_detail_Images"
+                                    >"GET_listImagesWithDetails_images_detail_Images"</olink></para>
                         </listitem>
                         <listitem>
                             <para><olink condition="dev" targetdoc="cs-devguide"
-                                    targetptr="GET_retrieveImageDetails_images__image_id__Images"
-                                    >"GET_retrieveImageDetails_images__image_id__Images"</olink></para>
+                                    targetptr="GET_showImageDetails_images__image_id__Images"
+                                    >"GET_showImageDetails_images__image_id__Images"</olink></para>
                         </listitem>
                     </itemizedlist></para>
             </section>
@@ -1178,7 +1125,7 @@
         </section>
         <section xml:id="ext_consoles">
             <title>Console extension</title>
-            <para>Use the console extension to get a URL to allow a console connection to your server.</para>
+            <para>Use the console extension to get a URL to allow a java client connection to your server.</para>
             <!--- this section comes from these WADLs: extensions.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../wadl/extensions.wadl#ActionC">
@@ -1195,11 +1142,100 @@
                     <wadl:method href="listVolumes"/>
                     <wadl:method href="createVolume"/>
                 </wadl:resource>
-                <wadl:resource href="../../wadl/extensions.wadl#VolumeID">                    
+                <wadl:resource href="../../wadl/extensions.wadl#VolumeID">
                     <wadl:method href="showVolume"/>
                     <wadl:method href="deleteVolume"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="ext_image-size">
+            <title>Image size extension</title>
+            <para>This extension adds the image size parameter (<literal>OS-EXT-IMG-SIZE</literal>) to image
+                    <literal>GET</literal> operations. For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Images-d1e4435.html">List Images</link>
+                and
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Image_Details-d1e4848.html">Get Image Details</link>.</para>
+        </section>
+        <section xml:id="ext_flavor-extra">
+            <title>Flavor extra data extension</title>
+            <para>This extension adds extra data including <literal>rxtx_factor</literal>,
+                    <literal>OS-FLV-EXT-DATA:ephemeral</literal>, and <literal>swap</literal> to flavor GET operations. For
+                examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Flavor_Details-d1e4317.html">Get Flavor Details</link>.</para>
+        </section>
+        <section xml:id="ext-flavor-with-extra-spec">
+            <title>Flavor with extra specs extension</title>
+            <para>This operation shows extra specifications for the flavor, such as identifying the policy class, in the
+                flavor operations..</para>
+            <!--- EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- list flavor extra specs -->
+                <wadl:resource href="../../wadl/extensions.wadl#FlavorID">
+                    <wadl:method href="showExtraSpecs"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_flavor_OS_extra_spec">
+            <title>Flavor with OS extra specs extension</title>
+            <para>This operation shows extra specifications for the flavor, using the additional os-extra_specs URI request
+                parameter.</para>
+            <!--- OS EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show flavor extra specs -->
+                <wadl:resource href="../../wadl/extensions.wadl#Extraspec">
+                    <wadl:method href="listFlavorsExtraSpecsFlavors"/>
+                    <wadl:resource href="../../wadl/extensions.wadl#KeyID">
+                        <wadl:method href="getFlavorsExtraSpecsFlavorDetail"/>
+                    </wadl:resource>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="ext_flavor-rxtx">
+            <title>Flavor rxtx attribute extension</title>
+            <para>This extension adds <literal>rxtx_factor</literal>, which describes configured bandwidth cap values, to
+                flavor GET operations. For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Flavor_Details-d1e4317.html">Get Flavor Details</link>.</para>
+        </section>
+        <section xml:id="ext_rescue-image">
+            <title>Rescue server with image extension</title>
+            <para>This extension allows you to specify an image when rescuing a server. For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/rescue_mode_extension.html">Rescue Mode Extension</link>.</para>
+        </section>
+        <section xml:id="ext_used-limits">
+            <title>Used limits extension</title>
+            <para>This extension expands the limits operation to show the project usage, including RAM and instance quotas
+                usage. For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/GET_listRateAbsoluteLimits_limits_Limits.html">Retrieve list of rate and absolute limits</link>.</para>
+        </section>
+        <section xml:id="ext_public_ip">
+            <title>RAX Public IP Zone ID extension</title>
+            <para>This extension adds <literal>RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId</literal> to server detail operation responses.
+                For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link> 
+                and
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html">Get Server Details</link> 
+                .</para>
+        </section>
+        <section xml:id="ext_block_device_map">
+            <title>RAX Public IP Zone ID extension</title>
+            <para>This extension adds <literal>block_device_mapping_v2</literal> to server detail operation responses.
+                For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link> 
+                and
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html">Get Server Details</link> 
+                .</para>
+        </section>
+        <!--<section xml:id="ext-flavor-swap">
+            <title>Flavor swap extension</title>
+            <para>This operation lists flavors with a swap value, which is the amount of swap disk space, in gigabytes,
+                allocated to a server. </para>
+            <!-\-\- OS EXTRA SPECS - this section comes from these WADLs: extensions.wadl -\->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-\- show flavor extra specs -\->
+                <wadl:resource href="../../wadl/extensions.wadl#FlavorSwap">
+                    <wadl:method href="listFlavorsWithSwap"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>-->
     </section>
 </chapter>

@@ -1,26 +1,12 @@
 {
     "limits": {
         "absolute": {
-            "maxImageMeta": 20, 
-            "maxPersonality": 6, 
-            "maxPersonalitySize": 10240, 
-            "maxServerMeta": 20, 
-            "maxTotalCores": -1, 
-            "maxTotalFloatingIps": 5, 
-            "maxTotalInstances": 100, 
-            "maxTotalKeypairs": 100, 
-            "maxTotalPrivateNetworks": 0, 
-            "maxTotalRAMSize": 66560, 
-            "maxTotalVolumeGigabytes": -1, 
-            "maxTotalVolumes": 0, 
-            "totalCoresUsed": 9, 
-            "totalInstancesUsed": 3, 
-            "totalKeyPairsUsed": 0, 
-            "totalPrivateNetworksUsed": 0, 
-            "totalRAMUsed": 16896, 
-            "totalSecurityGroupsUsed": 0, 
-            "totalVolumeGigabytesUsed": 0, 
-            "totalVolumesUsed": 0
+            "totalSnapshotsUsed": 0,
+            "maxTotalVolumeGigabytes": 1000,
+            "totalGigabytesUsed": 0,
+            "maxTotalSnapshots": 10,
+            "totalVolumesUsed": 0,
+            "maxTotalVolumes": 10
         }, 
         "rate": [
             {
@@ -42,32 +28,6 @@
                 ], 
                 "regex": "/v[^/]/(\\d+)/(rax-networks)/?.*", 
                 "uri": "/rax-networks"
-            }, 
-            {
-                "limit": [
-                    {
-                        "next-available": "2012-09-10T20:11:45.146Z", 
-                        "remaining": 1000, 
-                        "unit": "DAY", 
-                        "value": 1000, 
-                        "verb": "POST"
-                    }
-                ], 
-                "regex": "/v[^/]/(\\d+)/(servers)/?.*", 
-                "uri": "/servers"
-            }, 
-            {
-                "limit": [
-                    {
-                        "next-available": "2012-09-10T20:11:45.146Z", 
-                        "remaining": 100, 
-                        "unit": "MINUTE", 
-                        "value": 100, 
-                        "verb": "ALL"
-                    }
-                ], 
-                "regex": "/v[^/]/(\\d+)/?.*", 
-                "uri": "*"
             }
         ]
     }

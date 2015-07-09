@@ -15,6 +15,21 @@
 					</wadl:doc>
 				</param>
 				<method href="#showExtraSpecs"/>
+				<!--apparently not really supported-->
+				<!--<resource id="FlavorSwap" path="os-flavor-swap">
+					<method href="#listFlavorsWithSwap"/>
+				</resource>-->
+				<resource id="Extraspec" path="os-extra_specs">
+					<method href="#listFlavorsExtraSpecsFlavors"/>
+					<resource id="KeyID" path="{key_id}">
+						<param name="key_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="string">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+								<para>The flavor key. </para>
+							</wadl:doc>
+						</param>
+						<method href="#getFlavorsExtraSpecsFlavorDetail"/>
+					</resource>
+				</resource>
 			</resource>
 		</resource>
 		<resource id="ScheduledImages" path="servers">
@@ -33,9 +48,6 @@
 		</resource>
 		<resource id="Servers" path="servers">
 			<method href="#createServerDiskConfig"/>
-		</resource>
-		<resource id="Limits" path="limits">
-			<method href="#listRateAbsoluteLimits"/>
 		</resource>
 		<resource id="Keypairs" path="os-keypairs">
 			<method href="#createKeyPair"/>
@@ -83,7 +95,7 @@
 			</resource>
 		</resource>
 		<resource id="Console" path="servers">
-			<resource id="ServerIDC" path="servers">
+			<resource id="ServerIDC" path="{server_id}">
 				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 						<para>The UUID for the server. </para>
@@ -107,13 +119,29 @@
 				<method href="#deleteVolume"/>
 			</resource>
 		</resource>
+		<resource id="IPAssociationServers" path="servers">
+			<resource id="ipaServerID" path="{serverID}/ip_associations">
+				<method href="#listAssociatedIPs"/>
+				<resource id="IPAddressID" path="{IPAddressID}">
+					<param name="id" style="template" type="csapi:UUID">
+						<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Image ID">
+							<p>The Associated IP address ID, which is not the actual IP address.</p>
+						</wadl:doc>
+					</param>
+					<method href="#createAssociatedIP"/>
+					<method href="#showAssociatedIP"/>
+					<method href="#deleteAssociatedIP"/>
+				</resource>
+			</resource>
+		</resource>
 	</resources>
 
-	<!-- Flavor Extra Specs operations -->
+	<!-- Flavor with Extra Specs operations -->
 	<method name="GET" id="showExtraSpecs">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show flavor extra specs">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show flavor with extra specs">
 			<para role="shortdesc">Retrieve the extra specs for a specified flavor.</para>
-			<para>This operation shows extra specifications for the flavor, such as identifying the policy class.</para>
+			<para>This operation shows extra specifications for the flavor, such as identifying the policy class, in the
+				flavor operations.</para>
 			<para>In the URI, specify the flavor ID.</para>
 		</wadl:doc>
 
@@ -133,12 +161,66 @@
 				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
 		</response> &commonFaults; </method>
 
+	<!-- Flavor OS Extra Specs operations -->
+	<method name="GET" id="listFlavorsExtraSpecsFlavors">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List extra specs for flavors">
+			<para role="shortdesc">Retrieves flavor extra specs.</para>
+			<para>This operation shows extra specifications for flavors.</para>
+			<para>In the URI, specify the flavor ID.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/flavors-list-osxspecs-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/flavors-list-osxspecs-rsp.json"/>
+				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
+		</response> &commonFaults; </method>
+
+	<method name="GET" id="getFlavorsExtraSpecsFlavorDetail">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Get details for specified flavor extra spec">
+			<para role="shortdesc">Gets details of specified flavor extra spec.</para>
+			<para>This operation shows extra specifications for flavors.</para>
+			<para>In the URI, specify the key ID, or name, of the flavor extra spec.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/flavors-get-osxspec-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/flavors-get-osxspec-rsp.json"/>
+				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
+		</response> &commonFaults; </method>
+
 	<!-- Consoles operations -->
 	<method name="POST" id="getConsole">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Get console">
 			<para role="shortdesc">Retrieve console output for a specified server.</para>
-			<para>This operation returns a URL which you use in a browser to open a console connection to your server.</para>
+			<para>This operation returns a URL which you use with a java client to open a console connection to your
+				server.</para>
 			<para>In the URI, specify the server ID.</para>
+			<para>To use the URL returned from this operation, you should download and install a VNC Viewer like
+				<link xlink:href="https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html">Real VNC</link> or
+				<link xlink:href="http://www.tightvnc.com/download.php">Tight VNC</link>. Then, from the directory where you
+				saved the Vnc Viewer, run the following command (using the installed jar and the URL from the operation
+				response body):</para>
+			<programlisting>java -jar VncViewer.jar URL {returnedURL}</programlisting>
 		</wadl:doc>
 
 		<request>
@@ -148,15 +230,14 @@
 					<xsdxt:code href="../common/samples/console-req.json"/>
 				</wadl:doc>&xtenConsoleReqParameters;</representation>
 		</request>
-		<!--<response status="200 203">
+		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/console-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/console-rsp.json"/>
 				</wadl:doc> &xtenConsoleRspParameters;</representation>
-		</response> &commonFaults; -->
-	</method>
+		</response> &commonFaults; </method>
 
 	<!-- Volumes operations -->
 	<method name="POST" id="listVolumes">
@@ -179,8 +260,7 @@
 					<xsdxt:code href="../common/samples/volume-list-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/volume-list-rsp.json"/>
 				</wadl:doc> &xtenVolumeListRspParameters;</representation>
-		</response> &commonFaults; 
-	</method>
+		</response> &commonFaults; </method>
 
 	<method name="POST" id="createVolume">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create volume">
@@ -202,8 +282,7 @@
 					<xsdxt:code href="../common/samples/volume-create-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/volume-create-rsp.json"/>
 				</wadl:doc> &xtenVolumeCreateRspParameters;</representation>
-		</response> &commonFaults; 
-	</method>
+		</response> &commonFaults; </method>
 
 	<method name="POST" id="showVolume">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show volume details">
@@ -226,8 +305,7 @@
 					<xsdxt:code href="../common/samples/volume-create-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/volume-create-rsp.json"/>
 				</wadl:doc> &xtenVolumeCreateRspParameters;</representation>
-		</response> &commonFaults; 
-	</method>
+		</response> &commonFaults; </method>
 
 	<method name="POST" id="deleteVolume">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete volume">
@@ -250,8 +328,7 @@
 					<xsdxt:code href="../common/samples/volume-delete-rsp-json-http.txt"/>
 				</wadl:doc>
 			</representation>
-		</response>&commonFaults; 
-	</method>
+		</response>&commonFaults; </method>
 
 	<!-- Scheduled Images operations -->
 	<method name="POST" id="enableSchedImages">
@@ -328,7 +405,7 @@
 				</wadl:doc>
 			</representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="GET" id="showSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show scheduled Images">
 			<para role="shortdesc">Show scheduled images for the specified server.</para>
@@ -367,7 +444,7 @@
 					<xsdxt:code href="../common/samples/sched-images-404-rsp.json"/>
 				</wadl:doc>&xtenSchedImagesErrorParameters;</representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="DELETE" id="disableSchedImages">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Disable scheduled Images">
 			<para role="shortdesc">Disable scheduled images for the specified server.</para>
@@ -437,28 +514,6 @@
 			</representation>
 		</response> &commonFaults; </method>
 
-	<!-- Used Limits operations -->
-	<method name="GET" id="listRateAbsoluteLimits">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of rate and absolute limits">
-			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
-			<para>Applications can programmatically determine current account limits by using this API operation.</para>
-		</wadl:doc>
-		<response status="200">
-			<doc title="Success">Request succeeded.</doc>
-			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/limits-rsp-json-http.txt"/>
-					<xsdxt:code href="../common/samples/limits-rsp.json"/>
-				</wadl:doc>
-			</representation>
-			<representation mediaType="application/xml">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/limits-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/limits-rsp.xml"/>
-				</wadl:doc>
-			</representation>
-		</response>&commonFaults; </method>
-
 	<!-- Key Pair operations -->
 	<method name="POST" id="createKeyPair">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create a server key pair">
@@ -500,7 +555,7 @@
 					<xsdxt:code href="../common/samples/keypair-create-rsp.json"/>
 				</wadl:doc>&xtenKeyPairCreateRspParameters;</representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="POST" id="importKeyPair">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Import a server key pair">
 			<para role="shortdesc">Import a server key pair</para>
@@ -522,7 +577,7 @@
 					<xsdxt:code href="../common/samples/keypair-upload-rsp.json"/>
 				</wadl:doc>&xtenKeyPairCreateRspParameters;</representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="GET" id="listKeyPairs">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of key pairs">
 			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
@@ -536,7 +591,7 @@
 					<xsdxt:code href="../common/samples/keypair-list-rsp.json"/>
 				</wadl:doc>&xtenKeyPairListRspParameters; </representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="DELETE" id="deleteKeyPair">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete key pair">
 			<para role="shortdesc">Deletes the specified key pair.</para>
@@ -580,7 +635,7 @@
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksListRspParameters; </representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="POST" id="createNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create network">
 			<para role="shortdesc">Creates a network for the specified tenant ID.</para>
@@ -605,7 +660,7 @@
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksRspParameters; </representation>
 		</response>&commonFaults; </method>
-	
+
 	<method name="GET" id="showNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show network">
 			<para role="shortdesc">Shows information for the specified network.</para>
@@ -621,7 +676,7 @@
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksRspParameters; </representation>
 		</response>&commonFaults; </method>
-	
+
 	<method name="DELETE" id="deleteNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete network">
 			<para role="shortdesc">Deletes the specified network.</para>
@@ -629,7 +684,7 @@
 			<note>
 				<para>You can delete an isolated network only if it is not attached to any server. To detach a network from a
 					server, delete the virtual interface for the network from the server instance.
-					<!--See inserthere-->.</para>
+					<!--See insertlinkhere-->.</para>
 			</note>
 		</wadl:doc>
 		<request>
@@ -664,7 +719,7 @@
 					</xsdxt:sample>
 				</wadl:doc>&xtenVirtualInterfaceParameters; </representation>
 		</response>&commonFaults; </method>
-	
+
 	<method name="POST" id="createInterface">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create virtual interface and attach to server">
 			<para role="shortdesc">Creates a virtual interface for a network and attaches it to a server.</para>
@@ -693,7 +748,7 @@
 					</xsdxt:sample>
 				</wadl:doc>&xtenVirtualInterfaceParameters; </representation>
 		</response>&commonFaults; </method>
-	
+
 	<method name="DELETE" id="deleteInterface">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete virtual interface">
 			<para role="shortdesc">Deletes a virtual interface from a server instance.</para>
@@ -715,4 +770,99 @@
 			</representation>
 		</response>&commonFaults; </method>
 
+	<!--Associated IP Operations-->
+	<!--List Associated IPs-->
+	<method name="GET" id="listAssociatedIPs">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+			title="Retrieve list of IP addresses associated with a server">
+			<para role="shortdesc">Retrieves list of associated IPs for specified server.</para>
+			<para>This operation retrieves a list of all IP addresses associated to the specified server.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<!--<xsdxt:code href="../common/samples/req-json-http.txt"/>-->
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/associatedip-get-resp.json"/>
+				</wadl:doc>&xtenAssociatedIPListRspParameters; </representation>
+		</response> &commonFaults;</method>
+
+	<!--Create Associated IP-->
+	<method name="POST" id="createAssociatedIP">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create associated IP address">
+			<para role="shortdesc">Creates a associated IP on a specified network.</para>
+			<para>This operation creates an associated IP address for the specified server and already existing IP address
+				ID.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/associatedip-create-req.json"/>
+				</wadl:doc>&xtenAssociatedIPCreateReqParameters; </representation>
+		</request>
+		<response status="201">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/associatedip-create-resp.json"/>
+				</wadl:doc>&xtenAssociatedIPCreateRspParameters;</representation>
+		</response> &commonFaults; </method>
+
+	<!--Show Associated IP-->
+	<method name="GET" id="showAssociatedIP">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show associated IP address">
+			<para role="shortdesc">Retrieves information for a specified associated IP.</para>
+			<para>This operation retrieves information for an associated IP address, using the associated IP address
+				ID.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/associatedIP-show-resp.json"/>
+				</wadl:doc>&xtenAssociatedIPCreateRspParameters;</representation>
+		</response> &commonFaults;</method>
+
+	<!--Remove Associated IP-->
+	<method name="DELETE" id="deleteAssociatedIP">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete associated IP address">
+			<para role="shortdesc">Deletes a specified associated IP address.</para>
+			<para>This operation deletes the specified associated IP address, using the associated IP address ID.</para>
+		</wadl:doc>
+		<response status="204">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code href="../common/samples/associatedIP-delete-resp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults;</method>
+
+	<!-- Flavor Swap operations -->
+	<!--<method name="GET" id="listFlavorsWithSwap">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve flavors with swap">
+			<para role="shortdesc">Retrieve the extra specs for a specified flavor.</para>
+			<para>This operation Lists the flavor specs including swap value for the specified flavor. The swap value is the
+				amount of swap disk space, in gigabytes, allocated to a server.</para>
+			<para>In the URI, specify the flavor ID.</para>
+		</wadl:doc>
+		
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/flavors-xspecs-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.json"/>
+				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
+		</response> &commonFaults; </method>-->
+	
 </application>

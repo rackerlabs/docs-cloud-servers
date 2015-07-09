@@ -1,0 +1,8 @@
+{
+  "extra_specs": {
+    "policy_class": "general_flavor",
+    "class": "general1",
+    "disk_io_index": "40",
+    "number_of_data_disks": "0"
+  }
+}
