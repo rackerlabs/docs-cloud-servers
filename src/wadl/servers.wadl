@@ -677,7 +677,8 @@
 	<method name="PUT" id="setMetadata">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata">
 			<para role="shortdesc">Create or replace metadata items for a specified server</para>
-			<para>You can add one or more new metadata items in a single request.</para>
+			<para>You can add or update one or more new metadata items in a single request.</para>
+			<para>If metadata items in the request body do not exist, they are created.  If they do exist, they are replaced.</para>
 			<important><para>Existing metadata items are replaced with the ones provided in the request regardless of the
 					names of the original metadata items.</para></important>
 			<para>If you exceed the maximum number of metadata items in the request, the call throws an <literal>overLimit

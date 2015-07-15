@@ -299,6 +299,10 @@
                 <wadl:resource href="../../wadl/supporting.wadl#Flavors">
                     <wadl:method href="listFlavors"/>
                 </wadl:resource>
+                <!-- retrieve list flavors with details -->
+                <wadl:resource href="../../wadl/supporting.wadl#FlavorsDet">
+                    <wadl:method href="listFlavorsWithDetails"/>
+                </wadl:resource>
                 <!-- retrieve flavor details -->
                 <wadl:resource href="../../wadl/supporting.wadl#Flavor_id">
                     <wadl:method href="showFlavorDetails"/>
@@ -338,6 +342,27 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="ImagesMetadata">
+            <title>Images Metadata</title>
+            <para>Image metadata is a collection of information about an image.</para>
+            <para>Some metadata is provided with Rackspace images or set by default when you create an image. You can also
+                add custom metadata elements, and modify or delete metadata elements that you added.</para>
+
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- retrieve list image metadata -->
+                <wadl:resource href="../../wadl/supporting.wadl#ImageMeta">
+                    <wadl:method href="showImageMetadata"/>
+                    <wadl:method href="setImageMetadata"/>
+                </wadl:resource>
+                <!-- retrieve image details and delete image metadata-->
+                <wadl:resource href="../../wadl/supporting.wadl#ImageMetaKey">
+                    <wadl:method href="showImageMetadataItem"/>
+                    <wadl:method href="setImageMetadataItem"/>
+                    <wadl:method href="deleteImageMetadataItem"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
         <section xml:id="Limits">
             <title>Limits</title>
             <para>Accounts are configured with thresholds, or limits, that manage capacity and prevent abuse of the
@@ -360,6 +385,23 @@
                 <!-- retrieve list of rate and absolute limits -->
                 <wadl:resource href="../../wadl/supporting.wadl#Limits">
                     <wadl:method href="listRateAbsoluteLimits"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="Extensions">
+            <title>Extensions</title>
+            <para>Extensions provide new or modified functionality, and Rackspace has implemented several extensions. You can
+                list available extensions and get details for a specific extension. </para>
+
+            <!--- this section comes from these WADLs: supporting.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- retrieve list of extensions -->
+                <wadl:resource href="../../wadl/supporting.wadl#Extensions">
+                    <wadl:method href="listExtensions"/>
+                </wadl:resource>
+                <!-- retrieve extension details -->
+                <wadl:resource href="../../wadl/supporting.wadl#Alias">
+                    <wadl:method href="getExtension"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
@@ -1209,22 +1251,38 @@
         </section>
         <section xml:id="ext_public_ip">
             <title>RAX Public IP Zone ID extension</title>
-            <para>This extension adds <literal>RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId</literal> to server detail operation responses.
-                For examples, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link> 
+            <para>This extension adds <literal>RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId</literal> to server detail operation
+                responses. For examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
                 and
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html">Get Server Details</link> 
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html">Get Server Details</link>
                 .</para>
         </section>
         <section xml:id="ext_block_device_map">
-            <title>RAX Public IP Zone ID extension</title>
-            <para>This extension adds <literal>block_device_mapping_v2</literal> to server detail operation responses.
-                For examples, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link> 
+            <title>Block device mapping extension</title>
+            <para>This extension adds <literal>block_device_mapping_v2</literal> to server detail operation responses. For
+                examples, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
                 and
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html">Get Server Details</link> 
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Get_Server_Details-d1e2623.html">Get Server Details</link>
                 .</para>
         </section>
+        <section xml:id="ext_quota_sets">
+            <title>Quota sets extension</title>
+            <para>This operation shows current quotas for a tenant. For example, look at quotas to see how many instances
+                (based on how much available memory) that you can scale up or down. </para>
+            <para>The instances and ram settings define how many instances you can build and what flavors you can use. For
+                example, if the <literal>ram</literal> quota is 131072, you can only build 1 instance of 120 GB performance
+                flavor size, because building a second 120 GB performance flavor would exhaust the ram quota.</para>
+            <!--- This section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show quotas -->
+                <wadl:resource href="../../wadl/extensions.wadl#TenantID">
+                    <wadl:method href="showQuotas"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+
         <!--<section xml:id="ext-flavor-swap">
             <title>Flavor swap extension</title>
             <para>This operation lists flavors with a swap value, which is the amount of swap disk space, in gigabytes,

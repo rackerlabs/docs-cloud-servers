@@ -1,0 +1,7 @@
+    HTTP/1.1 204 No Content
+    Date: Wed, 15 Jul 2015 17:05:13 GMT
+    Via: 1.1 Repose (Repose/6.2.1.2)
+    Date: Wed, 15 Jul 2015 17:05:13 GMT
+    Content-Type: application/json
+    X-Compute-Request-Id: req-b34ee94e-1760-4f75-8073-978f75d68c3d
+    Server: Jetty(9.2.z-SNAPSHOT)

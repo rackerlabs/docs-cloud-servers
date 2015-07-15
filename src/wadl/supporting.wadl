@@ -9,6 +9,9 @@
 	<resources>
 		<resource id="Flavors" path="flavors">
 			<method href="#listFlavors"/>
+			<resource id="FlavorsDet" path="detail">
+				<method href="#listFlavorsWithDetails"/>
+			</resource>
 			<resource id="Flavor_id" path="{flavor_id}">
 				<param name="flavor_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
@@ -20,6 +23,15 @@
 		</resource>
 		<resource id="Limits" path="limits">
 			<method href="#listRateAbsoluteLimits"/>
+		</resource>
+		<resource id="Extensions" path="extentions">
+			<method href="#listExtensions"/>
+			<resource id="Alias" path="{alias}">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>The alias, which is a name for a pointer to a resource. For example, a named extension.</para>
+				</wadl:doc>
+				<method href="#getExtension"/>
+			</resource>
 		</resource>
 		<resource id="Images" path="images">
 			<method href="#listImages"/>
@@ -34,6 +46,20 @@
 				</param>
 				<method href="#showImageDetails"/>
 				<method href="#deleteImage"/>
+				<resource id="ImageMeta" path="metadata">
+					<method href="#showImageMetadata"/>
+					<method href="#setImageMetadata"/>
+					<resource id="ImageMetaKey" path="{key}">
+						<param name="image_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+								<para>The key of the image metadata item.</para>
+							</wadl:doc>
+						</param>
+						<method href="#showImageMetadataItem"/>
+						<method href="#setImageMetadataItem"/>
+						<method href="#deleteImageMetadataItem"/>
+					</resource>
+				</resource>
 			</resource>
 		</resource>
 	</resources>
@@ -64,6 +90,50 @@
 				</wadl:doc>&limitsListRspParameters; </representation>
 		</response>&commonFaults; </method>
 
+	<!-- Extensions operations -->
+	<method name="GET" id="listExtensions">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of extensions">
+			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
+			<para/>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>The following example shows only a few extensions in the list for brevity.</para>
+					<xsdxt:code href="../common/samples/list-extensions-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/list-extensions-rsp.json"/>
+				</wadl:doc>&extensionsListRspParameters;</representation>
+		</response>&commonFaults; </method>
+
+	<method name="GET" id="getExtension">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve extension details">
+			<para role="shortdesc">Retrieves the extension details.</para>
+			<para/>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/get-extension-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/get-extension-rsp.json"/>
+				</wadl:doc>&extensionShowRspParameters;</representation>
+		</response>&commonFaults; </method>
+
 	<!--Flavors Methods-->
 	<method name="GET" id="listFlavors">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve of list flavors">
@@ -88,11 +158,34 @@
 				</wadl:doc>&flavorsListRspParameters;</representation>
 		</response>&commonFaults; </method>
 
+	<method name="GET" id="listFlavorsWithDetails">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of flavors with details">
+			<para role="shortdesc">Retrieves all details for all available flavors.</para>
+			<para>This operation returns details of all flavors in the response body.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>&flavorsListQueryParameters; </representation>
+		</request>
+
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<para>The following example shows only a few images in the list for brevity.</para>
+					<xsdxt:code href="../common/samples/flavors-list-det-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/flavors-list-det-rsp.json"/>
+				</wadl:doc>&flavorsListDetailsRspParameters; </representation>
+		</response>&commonFaults; </method>
+
 	<method name="GET" id="showFlavorDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve flavor details">
 			<para role="shortdesc">Retrieves details of the specified flavor.</para>
 			<para>This operation returns details of the specified flavor in the response body.</para>
-			<para>Specify the flavor ID as id in the URI.</para>
+			<para>Specify the flavor ID in the URI.</para>
 			<para>The following extensions provide additional information when viewing flavor details:</para>
 			<itemizedlist>
 				<listitem><para>Flavor Extra Data <!--insertlinkhere--></para></listitem>
@@ -116,8 +209,7 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/flavor-detail-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/flavor-detail-rsp.json"/>
-				</wadl:doc>&flavorDetailRspParameters;
-			</representation>
+				</wadl:doc>&flavorDetailRspParameters; </representation>
 		</response>&commonFaults; </method>
 
 	<!--Images Methods-->
@@ -145,15 +237,13 @@
 					<para>The following example shows only a few images in the list for brevity.</para>
 					<xsdxt:code href="../common/samples/images-list-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/images-list-rsp.json"/>
-				</wadl:doc>&imagesListRspParameters;	
-			</representation>
+				</wadl:doc>&imagesListRspParameters; </representation>
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="listImagesWithDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of images with details">
 			<para role="shortdesc">Retrieves all details for all available images.</para>
-			<para>This operation returns details of the specified image in the response body. The image_type field in the
-				response indicates whether the image is built-in <code>(base)</code>or custom <code>(snapshot)</code>.</para>
+			<para>This operation returns details of all images in the response body.</para>
 		</wadl:doc>
 
 		<request>
@@ -170,14 +260,13 @@
 					<para>The following example shows only a few images in the list for brevity.</para>
 					<xsdxt:code href="../common/samples/images-list-det-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/images-list-det-rsp.json"/>
-				</wadl:doc>&imagesListDetailsRspParameters;
-			</representation>
+				</wadl:doc>&imagesListDetailsRspParameters; </representation>
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="showImageDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve image details">
 			<para role="shortdesc">Retrieves details of a specified image.</para>
-			<para>Specify the image ID as id in the URI.</para>
+			<para>Specify the image ID in the URI.</para>
 			<para>This operation returns details of the specified image in the response body. The image_type field in the
 				response indicates whether the image is built-in <code>(base)</code> or custom
 				<code>(snapshot)</code>.</para>
@@ -200,15 +289,14 @@
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/image-detail-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/image-detail-rsp.JSON"/>
-				</wadl:doc>&imageDetailsRspParameters;
-			</representation>
+				</wadl:doc>&imageDetailsRspParameters; </representation>
 		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteImage">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Delete image">
 			<para role="shortdesc">Deletes the specified image.</para>
 			<para>This operation deletes the specified image from the system. Images are immediately removed.</para>
-			<para>Specify the image ID as id in the URI.</para>
+			<para>Specify the image ID in the URI.</para>
 		</wadl:doc>
 
 		<request>
@@ -222,10 +310,135 @@
 		<response status="204">
 			<doc title="Delete Successful">Delete request succeeded.</doc>
 			<representation mediaType="application/json">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"> 
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/image-delete-rsp-json-http.txt"/>
 				</wadl:doc>
 			</representation>
 		</response>&commonFaults; </method>
 
+	<!--Images Metadata Methods-->
+	<method name="GET" id="showImageMetadata">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve image metadata for specified image">
+			<para role="shortdesc">Retrieves image metadata for the specified image.</para>
+			<para>This operation shows all metadata for an image.</para>
+			<para>Specify the image ID in the URI.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/imagesmeta-show-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/imagesmeta-show-rsp.json"/>
+				</wadl:doc>&imagesmetaRspParameters; </representation>
+		</response>&commonFaults; </method>
+
+	<method name="POST" id="setImageMetadata">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set image metadata for specified image">
+			<para role="shortdesc">Sets image metadata for the specified image.</para>
+			<para>This operation sets metadata for an image that you previously created.</para>
+			<para>If your request includes keys that do not exist, they will be added. If it includes existing metadata keys,
+				those entries will be changed to match the keys in the request body.</para>
+			<para>Specify the image ID in the URI.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/imagesmeta-set-req.json"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/imagesmeta-set-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/imagesmeta-set-rsp.json"/>
+				</wadl:doc>&imagesmetaRspParameters; </representation>
+		</response>&commonFaults; </method>
+
+	<method name="GET" id="showImageMetadataItem">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en"
+			title="Retrieve image metadata item for specified image">
+			<para role="shortdesc">Retrieves an image metadata item for the specified image.</para>
+			<para>This operation shows a metadata item for an image.</para>
+			<para>Specify the image ID and metadata key in the URI.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/imagesmetaitem-show-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/imagesmetaitem-show-rsp.json"/>
+				</wadl:doc>&imagesmetaItemRspParameters; </representation>
+		</response>&commonFaults; </method>
+
+	<method name="PUT" id="setImageMetadataItem">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set image metadata item for specified image">
+			<para role="shortdesc">Sets an image metadata item for the specified image.</para>
+			<para>This operation sets metadata for an image that you previously created.</para>
+			<para>If your request includes keys that do not exist, they will be added. If it includes existing metadata keys,
+				those entries will be changed to match the keys in the request body.</para>
+			<para>Specify the image ID and metadata key in the URI.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/imagesmetaitem-set-req.json"/>
+				</wadl:doc>&imagesmetaItemReqParameters;</representation>
+		</request>
+
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/imagesmetaitem-set-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/imagesmetaitem-set-rsp.json"/>
+				</wadl:doc>&imagesmetaItemRspParameters;</representation>
+		</response>&commonFaults; </method>
+
+	<method name="DELETE" id="deleteImageMetadataItem">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Delete image metadata item for specified image">
+			<para>This operation deletes a metadata for an image.</para>
+			<para>Specify the image ID and metadata key in the URI.</para>
+		</wadl:doc>
+
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+
+		<response status="204">
+			<doc title="Success">No Content.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/imagesmetaitem-delete-rsp-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</response>&commonFaults; </method>
 </application>

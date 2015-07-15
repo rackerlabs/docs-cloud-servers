@@ -48,6 +48,7 @@
 		</resource>
 		<resource id="Servers" path="servers">
 			<method href="#createServerDiskConfig"/>
+			<!--<method href="#createServerWithHints"/>-->
 		</resource>
 		<resource id="Keypairs" path="os-keypairs">
 			<method href="#createKeyPair"/>
@@ -132,6 +133,16 @@
 					<method href="#showAssociatedIP"/>
 					<method href="#deleteAssociatedIP"/>
 				</resource>
+			</resource>
+		</resource>
+		<resource id="Quotas" path="os-quota-sets">
+			<resource id="TenantID" path="{tenant_id}">
+				<param name="tenant_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="string">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The tenant id.</para>
+					</wadl:doc>
+				</param>
+				<method href="#showQuotas"/>
 			</resource>
 		</resource>
 	</resources>
@@ -514,6 +525,42 @@
 			</representation>
 		</response> &commonFaults; </method>
 
+	<!-- Scheduler Hints operations -->
+<!--	<method name="GET" id="createServerWithHints">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create server with scheduler hints">
+			<para role="shortdesc">Create server with scheduler hints</para>
+			<para>When you create a server from an image with the <literal>os:scheduler_hints</literal> in the request body,
+				you provide instructions to the scheduler on where to build the new server, relative to an existing server.
+			</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.json"/>
+				</wadl:doc>&serverCreateReqParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:element">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
+					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.xml"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="202">
+			<doc title="Success">Request accepted.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp.json"/>
+				</wadl:doc>&serverCreateRspParameters;</representation>
+			<representation mediaType="application/xml" element="csapi:servers">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp-xml-http.txt"/>
+					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp.xml"/>
+				</wadl:doc>
+			</representation>
+		</response> &commonFaults; </method>
+	-->
 	<!-- Key Pair operations -->
 	<method name="POST" id="createKeyPair">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create a server key pair">
@@ -840,6 +887,32 @@
 			</representation>
 		</response>&commonFaults;</method>
 
+	<!-- Quota Sets operations -->
+	<method name="POST" id="showQuotas">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve quotas">
+			<para role="shortdesc">Retrieve quotas for specified tenant.</para>
+			<para>This operation shows current quotas for a tenant.</para>
+			<para>In the URI, specify the tenant ID.</para>
+		</wadl:doc>
+		
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/quota-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/quota-rsp.json"/>
+				</wadl:doc> &xtenQuotasShowRspParameters;</representation>
+		</response> &commonFaults; </method>
+	
+
+
 	<!-- Flavor Swap operations -->
 	<!--<method name="GET" id="listFlavorsWithSwap">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve flavors with swap">
@@ -864,5 +937,5 @@
 					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.json"/>
 				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
 		</response> &commonFaults; </method>-->
-	
+
 </application>
