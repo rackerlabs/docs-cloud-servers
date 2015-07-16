@@ -126,8 +126,8 @@
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="listServers">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List servers">
-			<para role="shortdesc">Retrieve list of all servers (only IDs, names, and links).</para>
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrives a list of servers">
+			<para role="shortdesc">Retrieves list of all servers (only IDs, names, and links).</para>
 			<para>Servers contain a status attribute that indicates the current server state. You can filter on the server
 				status when you complete a list servers request. The server status is returned in the response body.</para>
 			<para>For a full list of possible server status values, see <xref linkend="Server_stati"/>.</para>
@@ -267,8 +267,8 @@
 
 	<!-- Server Addresses operations -->
 	<method name="GET" id="listServerAddresses">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of server addresses">
-			<para role="shortdesc">Retrieve list of all server and network addresses associated with the specified
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieves list of server addresses">
+			<para role="shortdesc">Retrieves a list of all server and network addresses associated with the specified
 				server.</para>
 			<para>In the URI, specify the target server ID.</para>
 		</wadl:doc>
@@ -291,9 +291,9 @@
 
 	<method name="GET" id="listServerAddressesbyNetwork">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-			title="Retrieve list of network addresses for server and network">
-			<para role="shortdesc">Retrieve list of all server and network addresses associated with the specified server and
-				network.</para>
+			title="Retrieves list of network addresses for server and network">
+			<para role="shortdesc">Retrieves a list of all server and network addresses associated with the specified server
+				and network.</para>
 			<para>In the URI, specify the target server ID and target network type (<literal>public</literal> or
 					<literal>private </literal>).</para>
 		</wadl:doc>
@@ -676,9 +676,10 @@
 
 	<method name="PUT" id="setMetadata">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata">
-			<para role="shortdesc">Create or replace metadata items for a specified server</para>
+			<para role="shortdesc">Creates or replaces metadata items for a specified server</para>
 			<para>You can add or update one or more new metadata items in a single request.</para>
-			<para>If metadata items in the request body do not exist, they are created.  If they do exist, they are replaced.</para>
+			<para>If metadata items in the request body do not exist, they are created. If they do exist, they are
+				replaced.</para>
 			<important><para>Existing metadata items are replaced with the ones provided in the request regardless of the
 					names of the original metadata items.</para></important>
 			<para>If you exceed the maximum number of metadata items in the request, the call throws an <literal>overLimit
@@ -707,8 +708,8 @@
 		</response>&commonFaults; </method>
 
 	<method name="POST" id="updateMetadata">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Update server metadata">
-			<para role="shortdesc">Update metadata items by key for a specified server</para>
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Updates server metadata">
+			<para role="shortdesc">Updates metadata items by key for a specified server</para>
 			<para>You can update one or more metadata items that you previously added in a single request, but you should
 				avoid changing metadata items that you did not add. The operation replaces existing metadata items with the
 				same key. Items that are not explicitly mentioned in the request are not modified. </para>
@@ -739,7 +740,7 @@
 
 	<method name="GET" id="showMetadataItem">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show server metadata item details">
-			<para role="shortdesc">Retrieve metadata item by key for a specified server.</para>
+			<para role="shortdesc">Retrieves a metadata item by key for a specified server.</para>
 			<para>In the URI, specify the target server ID and the target metadata key.</para>
 		</wadl:doc>
 
@@ -761,7 +762,7 @@
 
 	<method name="PUT" id="setMetadataItem">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Set server metadata item">
-			<para role="shortdesc">Create or replace metadata item by key for a specified server</para>
+			<para role="shortdesc">Creates or replaces metadata item by key for a specified server</para>
 			<para>In the URI, specify the target server ID and the target metadata key.</para>
 			<para>In the request body, specify the <literal>meta</literal> element, followed by the metadata key, for example
 					<literal>version</literal>, with the new value for that key.</para>
@@ -837,7 +838,7 @@
 
 	<method name="GET" id="listVolumeAttachments">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List server metadata">
-			<para role="shortdesc">Retrieve list of all attached volumes for a specified server.</para>
+			<para role="shortdesc">Retrieves list of all attached volumes for a specified server.</para>
 			<para>In the URI, specify the target server ID.</para>
 			<para> For information about creating volumes, see
 				<link xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html">
@@ -863,7 +864,7 @@
 
 	<method name="PUT" id="showVolumeAttachmentDetails">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Show volume attachment details">
-			<para role="shortdesc">Retrieve volume details for the specified server ID and volume attachment ID</para>
+			<para role="shortdesc">Retrieves volume details for the specified server ID and volume attachment ID</para>
 			<para>In the URI, specify the target server ID and the target attached volume ID to see details for that
 				volume.</para>
 		</wadl:doc>

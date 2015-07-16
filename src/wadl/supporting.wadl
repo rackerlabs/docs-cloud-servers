@@ -421,6 +421,7 @@
 
 	<method name="DELETE" id="deleteImageMetadataItem">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Delete image metadata item for specified image">
+			<para role="shortdesc">Deletes an image metadata item for the specified image.</para>
 			<para>This operation deletes a metadata for an image.</para>
 			<para>Specify the image ID and metadata key in the URI.</para>
 		</wadl:doc>

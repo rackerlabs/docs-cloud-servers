@@ -251,7 +251,7 @@
 		</response> &commonFaults; </method>
 
 	<!-- Volumes operations -->
-	<method name="POST" id="listVolumes">
+	<method name="GET" id="listVolumes">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of volumes">
 			<para role="shortdesc">Retrieve list of volumes for your account.</para>
 			<para>Retrieves the list of volumes for your account.</para>
@@ -295,8 +295,8 @@
 				</wadl:doc> &xtenVolumeCreateRspParameters;</representation>
 		</response> &commonFaults; </method>
 
-	<method name="POST" id="showVolume">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show volume details">
+	<method name="GET" id="showVolume">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve volume details">
 			<para role="shortdesc">Show volume details.</para>
 			<para>Show volume details.</para>
 			<para>In the URI, specify the volume ID.</para>
@@ -314,11 +314,11 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/volume-create-rsp-json-http.txt"/>
-					<xsdxt:code href="../common/samples/volume-create-rsp.json"/>
+					<xsdxt:code href="../common/samples/volume-show-rsp.json"/>
 				</wadl:doc> &xtenVolumeCreateRspParameters;</representation>
 		</response> &commonFaults; </method>
 
-	<method name="POST" id="deleteVolume">
+	<method name="DELETE" id="deleteVolume">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete volume">
 			<para role="shortdesc">Delete volume.</para>
 			<para>Delete volume.</para>
@@ -663,8 +663,8 @@
 
 	<!--Nova Networks Operations-->
 	<method name="GET" id="listNetworks">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List networks">
-			<para role="shortdesc">Lists the networks configured for the specified tenant ID.</para>
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of networks">
+			<para role="shortdesc">Retrieves list of the networks configured for the specified tenant ID.</para>
 			<para>This operation lists the networks configured for the tenant ID specified in the request URI.</para>
 			<note>
 				<para>To list the networks that are associated with servers, see
@@ -818,7 +818,6 @@
 		</response>&commonFaults; </method>
 
 	<!--Associated IP Operations-->
-	<!--List Associated IPs-->
 	<method name="GET" id="listAssociatedIPs">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
 			title="Retrieve list of IP addresses associated with a server">
@@ -839,7 +838,6 @@
 				</wadl:doc>&xtenAssociatedIPListRspParameters; </representation>
 		</response> &commonFaults;</method>
 
-	<!--Create Associated IP-->
 	<method name="POST" id="createAssociatedIP">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create associated IP address">
 			<para role="shortdesc">Creates a associated IP on a specified network.</para>
@@ -859,7 +857,6 @@
 				</wadl:doc>&xtenAssociatedIPCreateRspParameters;</representation>
 		</response> &commonFaults; </method>
 
-	<!--Show Associated IP-->
 	<method name="GET" id="showAssociatedIP">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show associated IP address">
 			<para role="shortdesc">Retrieves information for a specified associated IP.</para>
@@ -888,7 +885,7 @@
 		</response>&commonFaults;</method>
 
 	<!-- Quota Sets operations -->
-	<method name="POST" id="showQuotas">
+	<method name="GET" id="showQuotas">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve quotas">
 			<para role="shortdesc">Retrieve quotas for specified tenant.</para>
 			<para>This operation shows current quotas for a tenant.</para>
