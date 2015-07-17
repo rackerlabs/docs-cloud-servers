@@ -931,8 +931,8 @@
             <para>A server inherits the <literal>OS-DCF:diskConfig</literal> value from the image used to create it, and an
                 image inherits the <literal>OS-DCF:diskConfig</literal> value of the server from which it was created. To
                 override the inherited setting, you can include the <literal>OS-DCF:diskConfig</literal> attribute in the
-                request body of a server create, rebuild, or resize request. Valid <literal>OS-DCF:diskConfig</literal>
-                values are:</para>
+                request body of a server create, rebuild, or resize request.</para>
+            <para>Valid <literal>OS-DCF:diskConfig</literal> values are:</para>
             <itemizedlist>
                 <listitem>
                     <para><literal>AUTO</literal>. The server is built with a single partition the size of the target flavor
@@ -1100,26 +1100,27 @@
                 </itemizedlist></para>
         </section>
         <section xml:id="ext_keypairs">
-            <title>Key pairs</title>
+            <title>Key pairs extension</title>
             <para>Users create a key pair, or choose an existing key pair, and associate that key pair when building a
                 server. This grants a user the ability to authenticate via key-based authentication instead of password-based
                 authentication. </para>
 
             <!--- this section comes from these WADLs: extensions.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <!-- retrieve list of rate and absolute limits -->
+                <!-- create, import, and list key pairs -->
                 <wadl:resource href="../../wadl/extensions.wadl#Keypairs">
                     <wadl:method href="createKeyPair"/>
                     <wadl:method href="importKeyPair"/>
                     <wadl:method href="listKeyPairs"/>
                 </wadl:resource>
+                <!-- delete a key pair -->
                 <wadl:resource href="../../wadl/extensions.wadl#KeypairName">
                     <wadl:method href="deleteKeyPair"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
         <section xml:id="ext_network">
-            <title>Networks</title>
+            <title>Network extension</title>
             <para>This section describes the nova-network API operations for networks.</para>
             <!--- this section comes from these WADLs: extensions.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -1208,7 +1209,7 @@
         <section xml:id="ext-flavor-with-extra-spec">
             <title>Flavor with extra specs extension</title>
             <para>This operation shows extra specifications for the flavor, such as identifying the policy class, in the
-                flavor operations..</para>
+                flavor operations.</para>
             <!--- EXTRA SPECS - this section comes from these WADLs: extensions.wadl -->
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <!-- list flavor extra specs -->
