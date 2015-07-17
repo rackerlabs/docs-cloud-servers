@@ -503,12 +503,6 @@
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
 					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.json"/>
 				</wadl:doc>&serverCreateReqParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:element">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en">
-					<xsdxt:code href="../common/samples/req-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/disk-cfg-create-svr-req.xml"/>
-				</wadl:doc>
-			</representation>
 		</request>
 		<response status="202">
 			<doc title="Success">Request accepted.</doc>
@@ -517,16 +511,10 @@
 					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp.json"/>
 				</wadl:doc>&serverCreateRspParameters;</representation>
-			<representation mediaType="application/xml" element="csapi:servers">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp-xml-http.txt"/>
-					<xsdxt:code href="../common/samples/disk-cfg-create-svr-rsp.xml"/>
-				</wadl:doc>
-			</representation>
 		</response> &commonFaults; </method>
 
 	<!-- Scheduler Hints operations -->
-<!--	<method name="GET" id="createServerWithHints">
+	<!--	<method name="GET" id="createServerWithHints">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create server with scheduler hints">
 			<para role="shortdesc">Create server with scheduler hints</para>
 			<para>When you create a server from an image with the <literal>os:scheduler_hints</literal> in the request body,
@@ -891,7 +879,7 @@
 			<para>This operation shows current quotas for a tenant.</para>
 			<para>In the URI, specify the tenant ID.</para>
 		</wadl:doc>
-		
+
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
@@ -907,7 +895,7 @@
 					<xsdxt:code href="../common/samples/quota-rsp.json"/>
 				</wadl:doc> &xtenQuotasShowRspParameters;</representation>
 		</response> &commonFaults; </method>
-	
+
 
 
 	<!-- Flavor Swap operations -->

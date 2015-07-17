@@ -27,9 +27,11 @@
 		<resource id="Extensions" path="extentions">
 			<method href="#listExtensions"/>
 			<resource id="Alias" path="{alias}">
-				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-					<para>The alias, which is a name for a pointer to a resource. For example, a named extension.</para>
-				</wadl:doc>
+				<param name="alias" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The alias, which is a name for a pointer to a resource. For example, a named extension.</para>
+					</wadl:doc>
+				</param>
 				<method href="#getExtension"/>
 			</resource>
 		</resource>
@@ -50,7 +52,7 @@
 					<method href="#showImageMetadata"/>
 					<method href="#setImageMetadata"/>
 					<resource id="ImageMetaKey" path="{key}">
-						<param name="image_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+						<param name="key" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 								<para>The key of the image metadata item.</para>
 							</wadl:doc>

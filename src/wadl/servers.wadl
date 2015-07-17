@@ -782,7 +782,7 @@
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/metaitem-set-rsp-json-http.txt"/>
 					<xsdxt:code href="../common/samples/metaitem-set-rsp.json"/>
-				</wadl:doc>&metaListRspParameters;</representation>
+				</wadl:doc>&metaItemListRspParameters;</representation>
 		</response>&commonFaults; </method>
 
 	<method name="DELETE" id="deleteMetadataItem">
