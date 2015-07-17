@@ -288,7 +288,7 @@
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<xsdxt:code href="../common/samples/image-detail-rsp-json-http.txt"/>
-					<xsdxt:code href="../common/samples/image-detail-rsp.JSON"/>
+					<xsdxt:code href="../common/samples/image-detail-rsp.json"/>
 				</wadl:doc>&imageDetailsRspParameters; </representation>
 		</response>&commonFaults; </method>
 
