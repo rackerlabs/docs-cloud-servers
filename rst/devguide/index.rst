@@ -36,21 +36,29 @@ API v2 supports JSON request and response formats.
    flavors
    service-access-endpoints
 
+API Operations
+--------------
+
+.. toctree::
+   :maxdepth: 2
+
+   api-operations/index
+   
 Rackspace Extensions
 --------------------
 
 .. toctree::
    :maxdepth: 2
 
-   rackspace-extensions
-   disk-configuration-extension
-   extended-status-extension
-   rescue-mode-extension
-   used-limits-extension
-   scheduled-images-extension
-   flavors-extra-specs-extension
-   instance-actions-extension
-   config-drive-extension
-   launch-an-instance-from-a-volume
-   network-extension
+   ext-rackspace-extensions
+   ext-disk-configuration
+   ext-extended-status
+   ext-rescue-mode
+   ext-used-limits
+   ext-scheduled-images
+   ext-flavors-extra-specs
+   ext-instance-actions
+   ext-config-drive
+   ext-boot-from-volume
+   ext-network
 

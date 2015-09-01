@@ -1,0 +1,143 @@
+
+.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
+
+Create virtual interface and attach to server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code::
+
+    POST /servers/{server_id}/os-virtual-interfacesv2
+
+Creates a virtual interface for a network and attaches it to a server.
+
+This operation creates a virtual interface for a network and attaches the network to a server 				instance.
+
+.. note::
+   You can create a maximum of one virtual interface per instance per network.
+   
+   
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200                       |Success                  |Request succeeded.       |
++--------------------------+-------------------------+-------------------------+
+|400                       |Error                    |A general error has      |
+|                          |                         |occured.                 |
++--------------------------+-------------------------+-------------------------+
+|401                       |Unauthorized             |Unauthorized.            |
++--------------------------+-------------------------+-------------------------+
+|403                       |Forbidden                |Forbidden.               |
++--------------------------+-------------------------+-------------------------+
+|405                       |Bad Method               |Bad method.              |
++--------------------------+-------------------------+-------------------------+
+|409                       |Conflicting Reqest       |Conflicting request.     |
++--------------------------+-------------------------+-------------------------+
+|413                       |Over Limit               |The number of items      |
+|                          |                         |returned is above the    |
+|                          |                         |allowed limit.           |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The requested service is |
+|                          |                         |unavailable.             |
++--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+""""""""""""""""
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{server_id}               |Uuid                     |The UUID for the server. |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+This table shows the body parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|virtual_interface         |Object                   |A container with virtual |
+|                          |                         |interface information.   |
++--------------------------+-------------------------+-------------------------+
+|network_id                |Uuid                     |The interface network ID.|
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+**Example Create virtual interface and attach to server: JSON request**
+
+
+.. code::
+
+    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+    Content-Type: application/json
+    Accept: application/json
+
+
+Response
+""""""""""""""""
+
+
+This table shows the body parameters for the response:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|virtual_interfaces        |Array                    |The array of virtual     |
+|                          |                         |interfaces.              |
++--------------------------+-------------------------+-------------------------+
+|id                        |String                   |The virtual interface ID.|
++--------------------------+-------------------------+-------------------------+
+|ip_addresses              |Array                    |The array of interface   |
+|                          |                         |IP address details.      |
++--------------------------+-------------------------+-------------------------+
+|address                   |String                   |The interface IP address.|
++--------------------------+-------------------------+-------------------------+
+|network_id                |Uuid                     |The interface network ID.|
++--------------------------+-------------------------+-------------------------+
+|network_label             |String                   |The interface network    |
+|                          |                         |label.                   |
++--------------------------+-------------------------+-------------------------+
+|mac_address               |String                   |The Media Access Control |
+|                          |                         |(MAC) address for the    |
+|                          |                         |virtual interface. A MAC |
+|                          |                         |address is a unique      |
+|                          |                         |identifier assigned to   |
+|                          |                         |network interfaces for   |
+|                          |                         |communications on the    |
+|                          |                         |physical network segment.|
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+**Example Create virtual interface and attach to server: JSON response**
+
+
+.. code::
+
+        Status Code: 200 OK
+        Content-Length: 247
+        Content-Type: application/json
+        Date: Wed, 08 Apr 2015 18:03:16 GMT, Wed, 08 Apr 2015 18:03:23 GMT
+        Server: Jetty(9.2.z-SNAPSHOT)
+        Via: 1.1 Repose (Repose/6.2.1.2)
+        X-Compute-Request-Id: req-f28cbcae-fe5e-4318-908a-dd6a9cb23122
+
+

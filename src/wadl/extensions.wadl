@@ -32,6 +32,9 @@
 				</resource>
 			</resource>
 		</resource>
+		<resource id="UsedLimits" path="limits">
+			<method href="#listUsedLimits"/>
+		</resource>
 		<resource id="ScheduledImages" path="servers">
 			<resource id="ServerID" path="{server_id}">
 				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
@@ -49,6 +52,58 @@
 		<resource id="Servers" path="servers">
 			<method href="#createServerDiskConfig"/>
 			<!--<method href="#createServerWithHints"/>-->
+			<method href="#createVolumeandServer"/>
+			<resource id="Interfaces" path="{server_id}/os-virtual-interfacesv2">
+				<param name="server_id" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Server ID">
+						<p>The UUID for the server.</p>
+					</wadl:doc>
+				</param>
+				<method href="#listInterfaces"/>
+				<method href="#createInterface"/>
+				<resource id="InterfaceID" path="{interface_id}">
+					<param name="interface_id" style="template" type="csapi:UUID">
+						<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Interface ID">
+							<p>The interface ID.</p>
+						</wadl:doc>
+					</param>
+					<method href="#deleteInterface"/>
+				</resource>
+			</resource>
+			<resource id="ServerIDC" path="{server_id}">
+				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+						<para>The UUID for the server. </para>
+					</wadl:doc>
+				</param>
+				<resource id="ActionC" path="action">
+					<method href="#getConsole"/>
+				</resource>
+				<resource id="ActionA" path="os-instance-actions">
+					<method href="#getInstActions"/>
+					<resource id="ActionAID" path="{request-id}">
+						<param name="request_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
+							<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+								<para>The server action request id. </para>
+							</wadl:doc>
+						</param>
+						<method href="#getInstActionsAction"/>
+					</resource>
+				</resource>
+				<resource id="ipaServerID" path="ip_associations">
+					<method href="#listAssociatedIPs"/>
+					<resource id="IPAddressID" path="{IPAddressID}">
+						<param name="id" style="template" type="csapi:UUID">
+							<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Image ID">
+								<p>The Associated IP address ID, which is not the actual IP address.</p>
+							</wadl:doc>
+						</param>
+						<method href="#createAssociatedIP"/>
+						<method href="#showAssociatedIP"/>
+						<method href="#deleteAssociatedIP"/>
+					</resource>
+				</resource>
+			</resource>
 		</resource>
 		<resource id="Keypairs" path="os-keypairs">
 			<method href="#createKeyPair"/>
@@ -76,37 +131,6 @@
 				<method href="#deleteNetwork"/>
 			</resource>
 		</resource>
-		<resource id="VirtualInterfaces" path="servers">
-			<resource id="Interfaces" path="{server_id}/os-virtual-interfacesv2">
-				<param name="server_id" style="template" type="csapi:UUID">
-					<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Server ID">
-						<p>The UUID for the server.</p>
-					</wadl:doc>
-				</param>
-				<method href="#listInterfaces"/>
-				<method href="#createInterface"/>
-				<resource id="InterfaceID" path="{interface_id}">
-					<param name="interface_id" style="template" type="csapi:UUID">
-						<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Interface ID">
-							<p>The interface ID.</p>
-						</wadl:doc>
-					</param>
-					<method href="#deleteInterface"/>
-				</resource>
-			</resource>
-		</resource>
-		<resource id="Console" path="servers">
-			<resource id="ServerIDC" path="{server_id}">
-				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
-					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						<para>The UUID for the server. </para>
-					</wadl:doc>
-				</param>
-				<resource id="ActionC" path="action">
-					<method href="#getConsole"/>
-				</resource>
-			</resource>
-		</resource>
 		<resource id="Volumes" path="os-volumes">
 			<method href="#listVolumes"/>
 			<method href="#createVolume"/>
@@ -118,21 +142,6 @@
 				</param>
 				<method href="#showVolume"/>
 				<method href="#deleteVolume"/>
-			</resource>
-		</resource>
-		<resource id="IPAssociationServers" path="servers">
-			<resource id="ipaServerID" path="{serverID}/ip_associations">
-				<method href="#listAssociatedIPs"/>
-				<resource id="IPAddressID" path="{IPAddressID}">
-					<param name="id" style="template" type="csapi:UUID">
-						<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Image ID">
-							<p>The Associated IP address ID, which is not the actual IP address.</p>
-						</wadl:doc>
-					</param>
-					<method href="#createAssociatedIP"/>
-					<method href="#showAssociatedIP"/>
-					<method href="#deleteAssociatedIP"/>
-				</resource>
 			</resource>
 		</resource>
 		<resource id="Quotas" path="os-quota-sets">
@@ -219,6 +228,59 @@
 				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
 		</response> &commonFaults; </method>
 
+	<!-- Limits operations -->
+	<method name="GET" id="listUsedLimits">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of limits including used limits">
+			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account including used
+				limits.</para>
+			<para>This extension expands the limits operation to show the project usage, including RAM and instance quotas
+				usage.</para>
+			<para>In the following example, the <literal>totalRAMUsed</literal> value is an extended attribute.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<!--<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc>-->
+			</representation>
+		</request>
+		<response status="200">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<xsdxt:code href="../common/samples/used-limits-rsp.json"/>
+				</wadl:doc>&limitsListRspParameters; </representation>
+		</response>&commonFaults; </method>
+
+	<!-- Create Volume and Server at same time -->
+	<method name="POST" id="createVolumeandServer">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create bootable volume and server">
+			<para role="shortdesc">Creates a bootable volume and boots a server in one step</para>
+			<para>The full URL to the newly created server is returned through the <code>Location</code> header and is
+				available as a <code>self</code> and <code>bookmark</code> link in the server representation.</para>
+			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
+				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
+				retrieve the details of the server <!--(see inserthere)-->. Once the build is complete, the server's
+				<parameter>status</parameter> is <code>ACTIVE</code>.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/server-create-boot-vol-req.json"/>
+				</wadl:doc>&serverCreateReqParameters;</representation>
+		</request>
+		
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<!--<xsdxt:code href="../common/samples/server-create-boot-vol-rsp-json-http.txt"/>-->
+					<xsdxt:code href="../common/samples/server-create-boot-vol-rsp.json"/>
+				</wadl:doc>&serverCreateRspParameters;
+			</representation>
+		</response>&commonFaults; </method>
+	
 	<!-- Consoles operations -->
 	<method name="POST" id="getConsole">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Get console">
@@ -250,6 +312,49 @@
 				</wadl:doc> &xtenConsoleRspParameters;</representation>
 		</response> &commonFaults; </method>
 
+	<!-- Instance actions operations -->
+	<method name="GET" id="getInstActions">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of server actions">
+			<para role="shortdesc">Retrieve list of server actions.</para>
+			<para>This operation returns a list of available server actions.</para>
+		</wadl:doc>
+		
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc></representation>
+		</request>
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<!--<xsdxt:code href="../common/samples/InstActions-rsp-json-http.txt"/>-->
+					<xsdxt:code href="../common/samples/InstActions-rsp.json"/>
+				</wadl:doc> &xtenInstActionsRspParameters;</representation>
+		</response> &commonFaults; </method>
+	
+	<method name="GET" id="getInstActionsAction">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve log details for a specified server action">
+			<para role="shortdesc">Retrieve log details for a specified server action.</para>
+			<para>This operation returns the log details for a specified server action.</para>
+		</wadl:doc>
+		
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+				</wadl:doc></representation>
+		</request>
+		<response status="200 203">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+					<!--<xsdxt:code href="../common/samples/InstActionsAction-rsp-json-http.txt"/>-->
+					<xsdxt:code href="../common/samples/InstActionsAction-rsp.json"/> 
+				</wadl:doc> &xtenInstActionsActionRspParameters;</representation>
+		</response> &commonFaults; </method>
+	
 	<!-- Volumes operations -->
 	<method name="GET" id="listVolumes">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of volumes">
@@ -490,12 +595,13 @@
 					<literal>MANUAL</literal>, the server is built by using the partition scheme and file system that is in
 				the source image.  If the target flavor disk is larger, remaining disk space is left unpartitioned. A server
 				inherits the <literal>OS-DCF:diskConfig</literal> attribute from the image from which it is created. However,
-				you can override the <literal>OS-DCF:diskConfig</literal> value when you create a server, as follows: </para>
-			<para>In these examples, the server is created with <literal>OS-DCF:diskConfig</literal> set to
-					<literal>MANUAL</literal>, regardless of the value of the image's <literal>OS-DCF:diskConfig</literal>
-				attribute. Images also inherit the <literal>OS-DCF:diskConfig</literal> value from a server. So, if an image
-				is created from the server, it also has a <literal>OS-DCF:diskConfig</literal> value of
-					<literal>MANUAL</literal>.</para>
+				you can override the <literal>OS-DCF:diskConfig</literal> value when you create a server. <!--For more
+				information, see <xref linkend="Metadata_Autodisk-d1e5089"/>  insertlinkhere-->.</para>
+			<para>In this example, the server is created with <literal>OS-DCF:diskConfig</literal> set to
+					<literal>MANUAL</literal>.This request's success depends on the image's auto_disk_config metadata value.
+				An image created from a server will have appropriate auto_disk_config metadata written to it. So, if the
+				create server command succeeds, an image created from the server will have
+					<literal>auto_disk_config</literal> = <literal>False</literal> on it.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
@@ -896,8 +1002,6 @@
 				</wadl:doc> &xtenQuotasShowRspParameters;</representation>
 		</response> &commonFaults; </method>
 
-
-
 	<!-- Flavor Swap operations -->
 	<!--<method name="GET" id="listFlavorsWithSwap">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve flavors with swap">
@@ -922,5 +1026,7 @@
 					<xsdxt:code href="../common/samples/flavors-xspecs-rsp.json"/>
 				</wadl:doc> &xtenExtraFlavorSpecsRspParameters;</representation>
 		</response> &commonFaults; </method>-->
+
+
 
 </application>

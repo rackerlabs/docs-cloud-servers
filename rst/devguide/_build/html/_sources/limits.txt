@@ -101,87 +101,16 @@ can be used:
 
 .. _get-limits:
 
-Get Limits
-~~~~~~~~~~
+Get Limits API operation
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can do a **GET**/limits call on a Cloud Servers endpoint to discover the
-limits for your account. (http://api.rackspace.com/#compute_limits)
+You can do a **GET** on the /limits resource on a Cloud Servers endpoint to discover the
+limits for your account. 
 
-**Example: Image Reference in Create Server Request: JSON Request**
+Click the following link to see an example of this operation.
 
-.. code::
+.. toctree::
+    :maxdepth: 2
 
-    {
-        "limits": {
-            "absolute": {
-                "maxImageMeta": 20,
-                "maxPersonality": 6,
-                "maxPersonalitySize": 10240,
-                "maxServerMeta": 20,
-                "maxTotalCores": -1,
-                "maxTotalFloatingIps": 5,
-                "maxTotalInstances": 100,
-                "maxTotalKeypairs": 100,
-                "maxTotalPrivateNetworks": 0,
-                "maxTotalRAMSize": 66560,
-                "maxTotalVolumeGigabytes": -1,
-                "maxTotalVolumes": 0,
-                "totalCoresUsed": 9,
-                "totalInstancesUsed": 3,
-                "totalKeyPairsUsed": 0,
-                "totalPrivateNetworksUsed": 0,
-                "totalRAMUsed": 16896,
-                "totalSecurityGroupsUsed": 0,
-                "totalVolumeGigabytesUsed": 0,
-                "totalVolumesUsed": 0
-            },
-            "rate": [
-                {
-                    "limit": [
-                        {
-                            "next-available": "2012-09-10T20:11:45.146Z",
-                            "remaining": 0,
-                            "unit": "DAY",
-                            "value": 0,
-                            "verb": "POST"
-                        },
-                        {
-                            "next-available": "2012-09-10T20:11:45.146Z",
-                            "remaining": 0,
-                            "unit": "MINUTE",
-                            "value": 0,
-                            "verb": "GET"
-                        }
-                    ],
-                    "regex": "/v[^/]/(\\d+)/(rax-networks)/?.*",
-                    "uri": "/rax-networks"
-                },
-                {
-                    "limit": [
-                        {
-                            "next-available": "2012-09-10T20:11:45.146Z",
-                            "remaining": 1000,
-                            "unit": "DAY",
-                            "value": 1000,
-                            "verb": "POST"
-                        }
-                    ],
-                    "regex": "/v[^/]/(\\d+)/(servers)/?.*",
-                    "uri": "/servers"
-                },
-                {
-                    "limit": [
-                        {
-                            "next-available": "2012-09-10T20:11:45.146Z",
-                            "remaining": 100,
-                            "unit": "MINUTE",
-                            "value": 100,
-                            "verb": "ALL"
-                        }
-                    ],
-                    "regex": "/v[^/]/(\\d+)/?.*",
-                    "uri": "*"
-                }
-            ]
-        }
-    }
+	Get limits <api-operations/supporting/get-retrieve-list-of-rate-and-absolute-limits-limits>
+

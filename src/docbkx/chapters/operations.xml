@@ -1119,6 +1119,24 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="ext_svractions">
+            <title>Server Actions extension</title>
+            <para>The server actions extension allows you to view a log of events and actions taken on a server. First list
+                the actions taken on a server, and then you can show details of a specific action by referencing the
+                    <literal>request_id</literal>.</para>
+
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- list actions log entries -->
+                <wadl:resource href="../../wadl/extensions.wadl#ActionA">
+                    <wadl:method href="getInstActions"/>
+                </wadl:resource>
+                <!-- get detaisl for an action log entry -->
+                <wadl:resource href="../../wadl/extensions.wadl#ActionAID">
+                    <wadl:method href="getInstActionsAction"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
         <section xml:id="ext_network">
             <title>Network extension</title>
             <para>This section describes the nova-network API operations for networks.</para>
@@ -1191,6 +1209,16 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        <section xml:id="ext_boot_from_volume">
+            <title>Boot from volume extension</title>
+            <para>Use the boot from volume extension to create a bootable volume and a server in one step.</para>
+            <!--- this section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../wadl/extensions.wadl#Servers">
+                    <wadl:method href="createVolumeandServer"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
         <section xml:id="ext_image-size">
             <title>Image size extension</title>
             <para>This extension adds the image size parameter (<literal>OS-EXT-IMG-SIZE</literal>) to image
@@ -1247,8 +1275,14 @@
         <section xml:id="ext_used-limits">
             <title>Used limits extension</title>
             <para>This extension expands the limits operation to show the project usage, including RAM and instance quotas
-                usage. For examples, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/GET_listRateAbsoluteLimits_limits_Limits.html">Retrieve list of rate and absolute limits</link>.</para>
+                usage.</para>
+            <!--- This section comes from these WADLs: extensions.wadl -->
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <!-- show quotas -->
+                <wadl:resource href="../../wadl/extensions.wadl#UsedLimits">
+                    <wadl:method href="listUsedLimits"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
         <section xml:id="ext_public_ip">
             <title>RAX Public IP Zone ID extension</title>

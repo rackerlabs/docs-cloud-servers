@@ -1,2 +1,8 @@
-target/
 .DS_Store
+
+# Build directories
+target/
+_build/
+
+# Editor files
+.bak

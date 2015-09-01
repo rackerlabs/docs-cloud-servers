@@ -1,0 +1,11 @@
+src/wadl/servers.wadl:
+    title: Rackspace Cloud Servers Developer Guide - API v2
+    output_directory: rst/devguide/api-operations/servers
+
+src/wadl/supporting.wadl:
+    title: Rackspace Cloud Servers Developer Guide - API v2
+    output_directory: rst/devguide/api-operations/supporting
+
+src/wadl/extensions.wadl:
+    title: Rackspace Cloud Servers Developer Guide - API v2
+    output_directory: rst/devguide/api-operations/extensions

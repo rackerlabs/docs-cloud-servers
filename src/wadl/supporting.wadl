@@ -24,7 +24,7 @@
 		<resource id="Limits" path="limits">
 			<method href="#listRateAbsoluteLimits"/>
 		</resource>
-		<resource id="Extensions" path="extentions">
+		<resource id="Extensions" path="extensions">
 			<method href="#listExtensions"/>
 			<resource id="Alias" path="{alias}">
 				<param name="alias" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
@@ -95,7 +95,7 @@
 	<!-- Extensions operations -->
 	<method name="GET" id="listExtensions">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve list of extensions">
-			<para role="shortdesc">Retrieves the current rate limits and absolute limits for your account.</para>
+			<para role="shortdesc">Retrieves the list of available extensions.</para>
 			<para/>
 		</wadl:doc>
 		<request>
@@ -116,9 +116,9 @@
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="getExtension">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve extension details">
-			<para role="shortdesc">Retrieves the extension details.</para>
-			<para/>
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Retrieve details for the specified extension">
+			<para role="shortdesc">Retrieves a specified extension's details.</para>
+			<para>An unavailable extension issues an <literal>itemNotFound (404)</literal> response.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">

@@ -1,0 +1,141 @@
+
+.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
+
+Retrieve of list flavors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code::
+
+    GET /flavors
+
+Retrieves IDs, names, and links for all available flavors.
+
+This operation lists information for all available flavors.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200 203                   |Success                  |Request succeeded.       |
++--------------------------+-------------------------+-------------------------+
+|400                       |Error                    |A general error has      |
+|                          |                         |occured.                 |
++--------------------------+-------------------------+-------------------------+
+|401                       |Unauthorized             |Unauthorized.            |
++--------------------------+-------------------------+-------------------------+
+|403                       |Forbidden                |Forbidden.               |
++--------------------------+-------------------------+-------------------------+
+|405                       |Bad Method               |Bad method.              |
++--------------------------+-------------------------+-------------------------+
+|409                       |Conflicting Reqest       |Conflicting request.     |
++--------------------------+-------------------------+-------------------------+
+|413                       |Over Limit               |The number of items      |
+|                          |                         |returned is above the    |
+|                          |                         |allowed limit.           |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The requested service is |
+|                          |                         |unavailable.             |
++--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+""""""""""""""""
+
+
+
+
+This table shows the query parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|minDisk                   |Int *(Optional)*         |Filters the list of      |
+|                          |                         |flavors to those with    |
+|                          |                         |the specified minimum    |
+|                          |                         |number of gigabytes of   |
+|                          |                         |disk storage.            |
++--------------------------+-------------------------+-------------------------+
+|minRam                    |Int *(Optional)*         |Filters the list of      |
+|                          |                         |flavors to those with    |
+|                          |                         |the specified minimum    |
+|                          |                         |amount of RAM in         |
+|                          |                         |megabytes.               |
++--------------------------+-------------------------+-------------------------+
+|marker                    |String *(Optional)*      |The ID of the last item  |
+|                          |                         |in the previous list.    |
++--------------------------+-------------------------+-------------------------+
+|limit                     |Int *(Optional)*         |Sets the page size.      |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+This operation does not accept a request body.
+
+
+
+
+**Example Retrieve of list flavors: JSON request**
+
+
+.. code::
+
+    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+    Content-Type: application/json
+    Accept: application/json
+
+
+Response
+""""""""""""""""
+
+
+This table shows the body parameters for the response:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|flavors                   |Array                    |The array of flavors.    |
++--------------------------+-------------------------+-------------------------+
+|id                        |String                   |The flavor ID.           |
++--------------------------+-------------------------+-------------------------+
+|links                     |String                   |The array of flavor      |
+|                          |                         |links for self and       |
+|                          |                         |bookmark.                |
++--------------------------+-------------------------+-------------------------+
+|href                      |Uuid                     |The URL for the flavor   |
+|                          |                         |and the associated       |
+|                          |                         |``rel``.                 |
++--------------------------+-------------------------+-------------------------+
+|rel                       |Uuid                     |The descriptive field    |
+|                          |                         |for the associated       |
+|                          |                         |``href``, which is       |
+|                          |                         |either ``self`` or       |
+|                          |                         |``bookmark``.            |
++--------------------------+-------------------------+-------------------------+
+|name                      |String                   |The flavor name.         |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+**Example Retrieve of list flavors: JSON response**
+
+
+.. code::
+
+        Status Code: 200 OK
+        Content-Length: 9132
+        Content-Type: application/json
+        Date: Wed, 08 Jul 2015 21:33:49 GMT, Wed, 08 Jul 2015 21:33:49 GMT
+        Server: Jetty(9.2.z-SNAPSHOT)
+        Via: 1.1 Repose (Repose/6.2.1.2)
+        X-Compute-Request-Id: req-dbb15502-9620-450b-a05e-63e291595a89
+
+
