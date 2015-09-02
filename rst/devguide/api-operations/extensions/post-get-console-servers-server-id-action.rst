@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-get-console-servers-server-id-action:
+
 Get console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -41,15 +43,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -86,13 +91,35 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "os-getVNCConsole": 
+           {
+               "type": "xvpvnc"
+           }
+   }
+
+
+
+
+A container for console request.
+
+A key pair with the type of vnc console, containing the value ``"xvpvnc"``.
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -118,17 +145,39 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Get console: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 143
-        Content-Type: application/json
-        Date: Tue, 30 Jun 2015 17:38:17 GMT, Tue, 30 Jun 2015 17:38:19 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-910673e3-3b1c-45ce-9f87-6c2eea304692
+       Status Code: 200 OK
+       Content-Length: 143
+       Content-Type: application/json
+       Date: Tue, 30 Jun 2015 17:38:17 GMT, Tue, 30 Jun 2015 17:38:19 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-910673e3-3b1c-45ce-9f87-6c2eea304692
+
+
+.. code::
+
+   {
+     "console": {
+       "url": "https://dfw.servers.console.rackspacecloud.com:443/console?token=b40c6057-4bcb-4ee7-a359-dcecc752b379",
+       "type": "xvpvnc"
+     }
+   }
+
+
+
+
+A container for console response.
+
+The URL for the console for the specified server. Open this URL in a browser to open a VNC console to the server.
+
+The type of VNC console to the server, for example ``"xvpvnc"``.
+
 
 

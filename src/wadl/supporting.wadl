@@ -272,9 +272,9 @@
 			<para>This operation returns details of the specified image in the response body. The image_type field in the
 				response indicates whether the image is built-in <code>(base)</code> or custom
 				<code>(snapshot)</code>.</para>
-			<para><note><para>The response body does not include the serverId field. To retrieve the serverId field, get
+			<note><para>The response body does not include the serverId field. To retrieve the serverId field, get
 						details for all images. <!--See (insertlinkhere)-->
-					</para></note></para>
+					</para></note>
 		</wadl:doc>
 
 		<request>

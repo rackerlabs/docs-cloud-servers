@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-list-server-metadata-servers-server-id-metadata:
+
 List server metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -69,13 +74,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -100,17 +111,39 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example List server metadata: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 120
-        Content-Type: application/json
-        Date: Mon, 19 Jan 2015 19:22:30 GMT
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        x-compute-request-id: req-206e007a-9dfe-4ac4-b819-d64a74244506
+       Status Code: 200 OK
+       Content-Length: 120
+       Content-Type: application/json
+       Date: Mon, 19 Jan 2015 19:22:30 GMT
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-206e007a-9dfe-4ac4-b819-d64a74244506
+
+
+.. code::
+
+   {
+       "metadata": {
+           "Label" : "Web",
+           "Version" : "2.1"
+       }
+   }   
+
+
+
+
+Container for a metadata keypair for the specified server.
+
+This container holds one or more keypairs using format of 			 "metadata key" : "metadata value".
+
+Keypairs edcribing the metadata using format of "keyname" : "keyvalue".
+
 
 

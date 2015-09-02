@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-flavor-details-flavors-flavor-id:
+
 Retrieve flavor details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -49,15 +51,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -81,13 +86,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -151,17 +162,89 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve flavor details: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 528
-        Content-Type: application/json
-        Date: Wed, 08 Jul 2015 21:38:05 GMT, Wed, 08 Jul 2015 21:38:06 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-3c0027db-484f-4f36-81b7-0b35b556bc78
+       Status Code: 200 OK
+       Content-Length: 528
+       Content-Type: application/json
+       Date: Wed, 08 Jul 2015 21:38:05 GMT, Wed, 08 Jul 2015 21:38:06 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-3c0027db-484f-4f36-81b7-0b35b556bc78
+
+
+.. code::
+
+   {
+       "flavor": {
+           "OS-FLV-EXT-DATA:ephemeral": 0,
+           "OS-FLV-WITH-EXT-SPECS:extra_specs": {
+               "class": "compute1",
+               "disk_io_index": "-1",
+               "number_of_data_disks": "0",
+               "policy_class": "compute_flavor"
+           },
+           "disk": 0,
+           "id": "compute1-15",
+           "links": [
+               {
+                   "href": "https://dfw.servers.api.rackspacecloud.com/v2/820712/flavors/compute1-15",
+                   "rel": "self"
+               },
+               {
+                   "href": "https://dfw.servers.api.rackspacecloud.com/820712/flavors/compute1-15",
+                   "rel": "bookmark"
+               }
+           ],
+           "name": "15 GB Compute v1",
+           "ram": 15360,
+           "rxtx_factor": 1250.0,
+           "swap": "",
+           "vcpus": 8
+       }
+   }
+
+
+
+
+The container of flavor attributes.
+
+The container of flavor extra specifications.
+
+The class for the flavor.
+
+The policy class for the flavor.
+
+The io index for the disk.
+
+The policy class for the flavor.
+
+The flavor name.
+
+The array of flavor links for self and bookmark.
+
+The URL for the flavor and the associated ``rel``.
+
+The descriptive field for the associated ``href``, which is either ``self`` or ``bookmark``.
+
+The amount of RAM.
+
+The number of virtual CPUs.
+
+The amount of swap space
+
+The rxtx factor, which describes configured bandwidth cap values.
+
+The number of ephemeral disks.
+
+The disk size.
+
+The flavor id.
+
 
 

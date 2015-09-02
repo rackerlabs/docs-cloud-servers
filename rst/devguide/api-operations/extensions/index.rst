@@ -19,6 +19,7 @@ This section describes the API operations that extend the server API.
 
 	[NETWORKS] List networks <get-retrieve-list-of-networks-os-networksv2>
 	[NETWORKS] Create network <post-create-network-os-networksv2>
+	[NETWORKS] Create server with network<post-create-server-with-network-servers>
 	[NETWORKS] Show network details <get-show-network-os-networksv2-id>
 	[NETWORKS] Delete network <delete-delete-network-os-networksv2-id>
 
@@ -27,11 +28,13 @@ This section describes the API operations that extend the server API.
 	[VIRT INT] Delete virtual interface <delete-delete-virtual-interface-servers-server-id-os-virtual-interfacesv2-interface-id>
 
 	[CONSOLE] Retrieve console output for server <post-get-console-servers-server-id-action>
-
+	                                              
 	[VOLUMES] List volumes <get-retrieve-list-of-volumes-os-volumes>
 	[VOLUMES] Create volume <post-create-volume-os-volumes>
 	[VOLUMES] Show volume details <get-retrieve-volume-details-os-volumes-id>
 	[VOLUMES] Delete volume <delete-delete-volume-os-volumes-id>
+	
+	[BOOT FROM VOLUME] Create bootable volume and server <post-create-bootable-volume-and-server-servers>
 
 	[FLV EXTRA SPEC] Show extra specs for flavor <get-show-flavor-with-extra-specs-flavors-flavor-id>
 	
@@ -41,3 +44,6 @@ This section describes the API operations that extend the server API.
 	[QUOTAS] List quotas for a tenant <get-retrieve-quotas-os-quota-sets-tenant-id>
 	
 	[USED LIMITS] List limits including used <get-retrieve-list-of-limits-including-used-limits-limits>
+	
+	[SERVER ACTIONS] List server actions <get-retrieve-list-of-server-actions-servers-server-id-os-instance-actions>
+    [SERVER ACTIONS] List details for specified server action <get-retrieve-log-details-for-a-specified-server-action-servers-server-id-os-instance-actions-request-id>

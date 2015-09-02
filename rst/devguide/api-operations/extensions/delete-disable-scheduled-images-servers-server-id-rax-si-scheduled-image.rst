@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Disable scheduled images
+.. _delete-disable-scheduled-images-servers-server-id-rax-si-scheduled-image:
+
+Disable scheduled Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -64,14 +69,17 @@ This operation does not accept a request body.
 
 
 
-**Example Disable scheduled images: JSON request**
+**Example Disable scheduled Images: JSON request**
 
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
@@ -81,17 +89,24 @@ Response
 
 
 
-**Example Disable scheduled images: JSON response**
+
+
+
+
+
+**Example Disable scheduled Images: JSON response**
 
 
 .. code::
 
-        Status Code: 202 Accepted
-        Content-Length: 0
-        Content-Type: text/html;charset=UTF-8
-        Date: Thu, 29 Jan 2015 18:51:38 GMT
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        x-compute-request-id: req-2e8174d0-414d-4609-863c-f538ca1cae83
+       Status Code: 202 Accepted
+       Content-Length: 0
+       Content-Type: text/html;charset=UTF-8
+       Date: Thu, 29 Jan 2015 18:51:38 GMT
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-2e8174d0-414d-4609-863c-f538ca1cae83
+
+
 
 

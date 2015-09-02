@@ -1,20 +1,31 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _post-create-bootable-volume-and-server-servers:
+.. _post-create-server-with-network-servers:
 
-Create bootable volume and server
+Create server with network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /servers
 
-Creates a bootable volume and boots a server in one step
+Provisions a server asynchronously with a network.
 
-The full URL to the newly created server is returned through the ``Location`` header and is 				available as a ``self`` and ``bookmark`` link in the server representation.
+You must specify the networks that you want to attach to your server. If you do not specify any networks, 				ServiceNet and PublicNet are attached by default.
 
 The progress of the server build depends on factors including location of the requested image, network i/o, 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to 				retrieve the details of the server. Once the build is complete, the server's ``status`` is ``ACTIVE``.
+
+You can optionally provision the server instance with specified isolated networks. However, if you specify 				an isolated network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these 				networks to your server. The UUID for ServiceNet is ``11111111-1111-1111-1111-111111111111``, 				and the UUID for PublicNet is ``00000000-0000-0000-0000-000000000000``. Omit these UUIDs from 				the request to detach from these networks.
+
+.. note::
+   Rack Connect and Managed Operations Service Level customers will receive an error if they opt out of 					attaching to PublicNet or ServiceNet.
+   
+   
+
+To attach a network to an existing server, you must create a virtual interface.
+
+For complete information about this API operation, see the Create server operation.
 
 
 
@@ -213,7 +224,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Create bootable volume and server: JSON request**
+**Example Create server with network: JSON request**
 
 
 .. code::
@@ -225,33 +236,36 @@ This table shows the body parameters for the request:
 
 .. code::
 
-   { 
-       "server":{ 
-           "name":"BFVServer5",
-           "imageRef":"",
-           "block_device_mapping_v2":[ 
-               { 
-                   "boot_index":"0",
-                   "uuid":"bb02b1a3-bc77-4d17-ab5b-421d89850fca",
-                   "volume_size":"100",
-                   "source_type":"image",
-                   "destination_type":"volume",
-                   "delete_on_termination":false
+   {
+       "server" : {
+           "name" : "api-test-server-1",
+           "imageRef" : "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
+           "flavorRef" : "2",
+           "config_drive": true,
+           "key_name":"name_of_keypair",
+           "OS-DCF:diskConfig" : "AUTO",
+           "metadata" : {
+               "My Server Name" : "API Test Server 1"
+           },
+           "personality" : [
+               {
+                   "path" : "/etc/banner.txt",
+                   "contents" : "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBp dCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5k IGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVs c2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4g QnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRo ZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlv dSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vy c2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6 b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
                }
            ],
-           "flavorRef":"compute1-15",
-           "max_count":1,
-           "min_count":1,
-           "networks":[ 
-               { 
-                   "uuid":"00000000-0000-0000-0000-000000000000"
-               },
-               { 
-                   "uuid":"11111111-1111-1111-1111-111111111111"
-               }
+           "networks": [
+               {
+                    "uuid": "f212726e-6321-4210-9bae-a13f5a33f83f"
+               }, 
+               {
+                    "uuid": "00000000-0000-0000-0000-000000000000"
+               }, 
+               {
+                    "uuid": "11111111-1111-1111-1111-111111111111"
+               } 
            ]
        }
-     }
+   }
 
 
 
@@ -363,27 +377,39 @@ This table shows the body parameters for the response:
 
 
 
-**Example Create bootable volume and server: JSON response**
+**Example Create server with network: JSON response**
 
 
 .. code::
 
-   { 
-      "server":{ 
-         "OS-DCF:diskConfig":"MANUAL",
-         "id":"42f9607f-41c4-48e5-8206-2732aee9456b",
-         "links":[ 
-            { 
-               "href":"https://iad.servers.api.rackspacecloud.com/v2/596067/servers/42f9607f-41c4-48e5-8206-2732aee9456b",
-               "rel":"self"
-            },
-            { 
-               "href":"https://iad.servers.api.rackspacecloud.com/596067/servers/42f9607f-41c4-48e5-8206-2732aee9456b",
-               "rel":"bookmark"
-            }
-         ],
-         "adminPass":"pass"
-      }
+       Status Code: 202 Accepted
+       Content-Length: 380
+       Content-Type: application/json
+       Date: Thu, 04 Dec 2014 18:47:30 GMT
+       Location: https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/4b963871-f591-4b7d-b05f-7c0286e3c50f
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-b8b54344-41a9-4d6a-a92f-60f3dcab4b1f
+
+
+.. code::
+
+   {
+       "server": {
+           "OS-DCF:diskConfig": "AUTO", 
+           "adminPass": "LMoheHauXt8w", 
+           "id": "ef08aa7a-b5e4-4bb8-86df-5ac56230f841", 
+           "links": [
+               {
+                   "href": "https://dfw.servers.api.rackspacecloud.com/v2/010101/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841", 
+                   "rel": "self"
+               }, 
+               {
+                   "href": "https://dfw.servers.api.rackspacecloud.com/010101/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841", 
+                   "rel": "bookmark"
+               }
+           ]
+       }
    }
 
 

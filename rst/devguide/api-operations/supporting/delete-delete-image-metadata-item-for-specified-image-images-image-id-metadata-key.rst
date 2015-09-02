@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _delete-delete-image-metadata-item-for-specified-image-images-image-id-metadata-key:
+
 Delete image metadata item for specified image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,15 +41,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -74,13 +79,21 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
+
+
 
 
 
@@ -91,12 +104,14 @@ Response
 
 .. code::
 
-        HTTP/1.1 204 No Content
-        Date: Wed, 15 Jul 2015 17:05:13 GMT
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        Date: Wed, 15 Jul 2015 17:05:13 GMT
-        Content-Type: application/json
-        X-Compute-Request-Id: req-b34ee94e-1760-4f75-8073-978f75d68c3d
-        Server: Jetty(9.2.z-SNAPSHOT)
+       HTTP/1.1 204 No Content
+       Date: Wed, 15 Jul 2015 17:05:13 GMT
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       Date: Wed, 15 Jul 2015 17:05:13 GMT
+       Content-Type: application/json
+       X-Compute-Request-Id: req-b34ee94e-1760-4f75-8073-978f75d68c3d
+       Server: Jetty(9.2.z-SNAPSHOT)
+
+
 
 

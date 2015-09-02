@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-volume-os-volumes:
+
 Create volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,17 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
 
 
 
@@ -91,13 +95,43 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "volume": {
+           "display_name": "vol-001",
+           "display_description": "Another volume.",
+           "size": 100,
+           "volume_type": "SATA"
+       }
+   }
+
+
+
+
+A container for volume creation response.
+
+The name assigned to the volume.
+
+The description for the volume.
+
+The type of volume, either ``SATA`` or ``SSD``. Alternaltely, you can use the UUID volume id for the volume instead of the name. The default is ``SATA``. 
+
+The size of the volume in gibibytes (GiB). The valid range for ``SATA`` is 75-1024. The valid range for ``SSD`` is 50-1024.
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -164,18 +198,72 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Create volume: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 310
-        Content-Type: application/json
-        Date: Thu, 16 Jul 2015 16:10:58 GMT, Thu, 16 Jul 2015 16:10:59 GMT
-        Location: http://dfw.servers.api.rackspacecloud.com/v2/123456/os-volumes/6c101c70-343f-2971-89fd-c334f1825df4
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-44633234-9922-4490-9d55-683919790289
+       Status Code: 200 OK
+       Content-Length: 310
+       Content-Type: application/json
+       Date: Thu, 16 Jul 2015 16:10:58 GMT, Thu, 16 Jul 2015 16:10:59 GMT
+       Location: http://dfw.servers.api.rackspacecloud.com/v2/123456/os-volumes/6c101c70-343f-2971-89fd-c334f1825df4
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-44633234-9922-4490-9d55-683919790289
+
+
+.. code::
+
+   {
+     "volume": {
+       "status": "creating",
+       "display_name": "vol-001",
+       "attachments": [],
+       "availability_zone": "nova",
+       "bootable": "false",
+       "encrypted": false,
+       "created_at": "2015-06-10T16:14:13.414451",
+       "display_description": "Another volume.",
+       "volume_type": "SATA",
+       "snapshot_id": null,
+       "source_volid": null,
+       "metadata": {},
+       "id": "f7b5e147-ac9a-4fca-bbd4-7d6363739b0e",
+       "size": 100
+     }
+   }
+
+
+
+
+A container for volume creation response.
+
+The state of the volume. This will be ``available`` when volume is created and ready for use.
+
+The name assigned to the volume.
+
+An array of volume attachments.
+
+This parameter is no longer used and is always set to ``nova``.
+
+The date and time of volume creation.
+
+The description for the volume.
+
+The image_id use for the volume. If no image was specified, this will be ``null``.
+
+The type of volume, either ``SATA`` or ``SSD``. Alternaltely, you can use the UUID volume id for the volume instead of the name. The default is ``SATA``. 
+
+The snapshot from which to create a volume, if any.
+
+Any metadata for the volume.
+
+The volume id.
+
+The size of the volume in gibibytes (GiB). The valid range for ``SATA`` is 75-1024. The valid range for ``SSD`` is 50-1024.
+
 
 

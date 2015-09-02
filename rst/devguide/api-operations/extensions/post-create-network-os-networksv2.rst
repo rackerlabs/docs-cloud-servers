@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-network-os-networksv2:
+
 Create network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,17 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
 
 
 
@@ -80,13 +84,38 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "network": 
+           {
+               "cidr": "192.168.0.0/24", 
+               "label": "superprivate"
+           }
+   }
+
+
+
+
+A container of network details.
+
+The IP block from which to allocate the network. For example, 172.16.0.0/24 or 2001:DB8::/64. For more information about CIDR notation, see ` Using CIDR Notation in Cloud Networks <http://www.rackspace.com/knowledge_center/article/using-cidr-notation>`__ in the Knowledge Center.
+
+The name of the new network. For example, my_new_network.
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -113,17 +142,42 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Create network: JSON response**
 
 
 .. code::
 
-         Status Code: 200 OK
-         Content-Length: 110
-         Content-Type: application/json
-         Date: Mon, 13 Apr 2015 19:04:21 GMT, Mon, 13 Apr 2015 19:04:24 GMT
-         Server: Jetty(9.2.z-SNAPSHOT)
-         Via: 1.1 Repose (Repose/6.2.1.2)
-         X-Compute-Request-Id: req-175c37e9-60a7-42de-9922-5bf95644dad2
+        Status Code: 200 OK
+        Content-Length: 110
+        Content-Type: application/json
+        Date: Mon, 13 Apr 2015 19:04:21 GMT, Mon, 13 Apr 2015 19:04:24 GMT
+        Server: Jetty(9.2.z-SNAPSHOT)
+        Via: 1.1 Repose (Repose/6.2.1.2)
+        X-Compute-Request-Id: req-175c37e9-60a7-42de-9922-5bf95644dad2
+
+
+.. code::
+
+   {
+       "network": {
+           "cidr": "192.168.0.0/24", 
+           "id": "1ff4489e-db0e-45a6-8c9f-4616c6ef5db1", 
+           "label": "superprivate"
+       }
+   }
+
+
+
+
+A container of network details.
+
+The CIDR for an isolated network.
+
+The network ID.
+
+The name of the network. ServiceNet is labeled as private and PublicNet is labeled as public in the network list.
+
 
 

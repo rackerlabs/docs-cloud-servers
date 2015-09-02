@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-resize-specified-server-servers-server-id-actions:
+
 Resize specified server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -62,15 +64,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -140,13 +145,45 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "resize" : {
+           "flavorRef" : "3",
+           "OS-DCF:diskConfig" : "manual"
+       }
+   }
+
+
+
+
+Specification of the resize action for the specified server.
+
+The flavorRef for the new server.
+
+The disk configuration value.
+
+Valid values are: AUTO:The server is built with a single partition which is the size of the target flavor disk. The file system is automatically adjusted to fit the entire partition. This keeps things simple and automated. AUTO is valid only for images and servers with a single partition that use the EXT3 file system. This is the default setting for applicable Rackspace base images.
+
+MANUAL:The server is built using the partition scheme and file system of the source image. If the target flavor disk is larger, the remaining disk space is left unpartitioned. This enables images to have non-EXT3 file systems, multiple partitions, and so on, and it enables you to manage the disk configuration.
+
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
+
+
 
 
 
@@ -157,12 +194,14 @@ Response
 
 .. code::
 
-    Status Code: 202 No Content
-    Content-Length: 0
-    Content-Type: application/json
-    Date: Thu, 04 Dec 2014 21:45:47 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    Via: 1.1 Repose (Repose/2.12)
-    x-compute-request-id
+   Status Code: 202 No Content
+   Content-Length: 0
+   Content-Type: application/json
+   Date: Thu, 04 Dec 2014 21:45:47 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   Via: 1.1 Repose (Repose/2.12)
+   x-compute-request-id
+
+
 
 

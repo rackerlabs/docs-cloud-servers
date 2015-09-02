@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-list-of-server-actions-servers-server-id-os-instance-actions:
+
 Retrieve list of server actions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -69,13 +74,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -111,32 +122,54 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve list of server actions: JSON response**
 
 
 .. code::
 
-    {
-        "instanceActions": [
-            {
-                "action": "reboot",
-                "instance_uuid": "86cf2416-aaa7-4579-a4d7-0bfe42bfa8ff",
-                "message": null,
-                "project_id": "453265",
-                "request_id": "req-7b6f6a5e-daf7-483e-aea5-a11993d1d357",
-                "start_time": "2013-08-15T21:40:42.000000",
-                "user_id": "35746"
-            },
-            {
-                "action": "create",
-                "instance_uuid": "86cf2416-aaa7-4579-a4d7-0bfe42bfa8ff",
-                "message": null,
-                "project_id": "453265",
-                "request_id": "req-920c6627-c8c9-4d02-9d3d-81917e5586df",
-                "start_time": "2013-07-12T21:35:37.000000",
-                "user_id": "35746"
-            }
-        ]
-    }
+   {
+       "instanceActions": [
+           {
+               "action": "reboot",
+               "instance_uuid": "86cf2416-aaa7-4579-a4d7-0bfe42bfa8ff",
+               "message": null,
+               "project_id": "453265",
+               "request_id": "req-7b6f6a5e-daf7-483e-aea5-a11993d1d357",
+               "start_time": "2013-08-15T21:40:42.000000",
+               "user_id": "35746"
+           },
+           {
+               "action": "create",
+               "instance_uuid": "86cf2416-aaa7-4579-a4d7-0bfe42bfa8ff",
+               "message": null,
+               "project_id": "453265",
+               "request_id": "req-920c6627-c8c9-4d02-9d3d-81917e5586df",
+               "start_time": "2013-07-12T21:35:37.000000",
+               "user_id": "35746"
+           }
+       ]
+   }
+
+
+
+
+An array of instance action containers of action log entries for a server.
+
+The type of action taken.
+
+The server UUID where the action took place.
+
+The action log message, if any.
+
+The project id.
+
+The action request id.
+
+The date and time that the actin began.
+
+The id of the user who requested the action.
+
 
 

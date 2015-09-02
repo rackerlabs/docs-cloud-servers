@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Retrieve list of ip addresses associated with a server
+.. _get-retrieve-list-of-ip-addresses-associated-with-a-server-servers-server-id-ip-associations:
+
+Retrieve list of IP addresses associated with a server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -68,6 +73,9 @@ Response
 """"""""""""""""
 
 
+
+
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -87,23 +95,35 @@ This table shows the body parameters for the response:
 
 
 
-**Example Retrieve list of ip addresses associated with a server: JSON response**
+
+
+**Example Retrieve list of IP addresses associated with a server: JSON response**
 
 
 .. code::
 
-    {
-        "ip_associations": 
-        [
-            {
-                "id": "1", 
-                "address": "10.1.1.1"
-            }, 
-            {
-                "id": "2", 
-                "address": "10.1.1.2"
-            }
-        ]
-    }
+   {
+       "ip_associations": 
+       [
+           {
+               "id": "1", 
+               "address": "10.1.1.1"
+           }, 
+           {
+               "id": "2", 
+               "address": "10.1.1.2"
+           }
+       ]
+   }
+
+
+
+
+The array of IP associations.
+
+The ID of the associated IP address.
+
+The associatied IP address.
+
 
 

@@ -295,7 +295,7 @@
 			<para role="shortdesc">Retrieves a list of all server and network addresses associated with the specified server
 				and network.</para>
 			<para>In the URI, specify the target server ID and target network type (<literal>public</literal> or
-					<literal>private </literal>).</para>
+					<literal>private</literal>).</para>
 		</wadl:doc>
 
 		<request>

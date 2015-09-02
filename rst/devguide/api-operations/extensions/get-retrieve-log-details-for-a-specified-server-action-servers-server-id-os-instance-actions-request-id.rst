@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-log-details-for-a-specified-server-action-servers-server-id-os-instance-actions-request-id:
+
 Retrieve log details for a specified server action
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -72,13 +77,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -114,21 +125,43 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve log details for a specified server action: JSON response**
 
 
 .. code::
 
-    {
-         "instanceAction": {
-            "action": "create",
-            "instance_uuid": "86cf2416-aaa7-4579-a4d7-0bfe42bfa8ff",
-            "message": null,
-            "project_id": "453265",
-            "request_id": "req-920c6627-c8c9-4d02-9d3d-81917e5586df",
-            "start_time": "2013-07-12T21:35:37.000000",
-            "user_id": "35746"
-         }
-    }
+   {
+        "instanceAction": {
+           "action": "create",
+           "instance_uuid": "86cf2416-aaa7-4579-a4d7-0bfe42bfa8ff",
+           "message": null,
+           "project_id": "453265",
+           "request_id": "req-920c6627-c8c9-4d02-9d3d-81917e5586df",
+           "start_time": "2013-07-12T21:35:37.000000",
+           "user_id": "35746"
+        }
+   }
+
+
+
+
+An container of instance action log entry data for a specific server and action.
+
+The type of action taken.
+
+The server UUID where the action took place.
+
+The action log message, if any.
+
+The project id.
+
+The action request id.
+
+The date and time that the actin began.
+
+The id of the user who requested the action.
+
 
 

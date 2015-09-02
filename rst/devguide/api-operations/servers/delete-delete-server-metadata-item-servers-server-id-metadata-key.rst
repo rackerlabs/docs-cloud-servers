@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _delete-delete-server-metadata-item-servers-server-id-metadata-key:
+
 Delete server metadata item
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,15 +41,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -77,13 +82,21 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
+
+
 
 
 
@@ -94,12 +107,14 @@ Response
 
 .. code::
 
-        Status Code: 204 OK
-        Content-Length: 120
-        Content-Type: application/json
-        Date: Mon, 19 Jan 2015 23:19:30 GMT
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        x-compute-request-id: req-406a007a-9dfe-4ac4-b819-d64a74244506
+       Status Code: 204 OK
+       Content-Length: 120
+       Content-Type: application/json
+       Date: Mon, 19 Jan 2015 23:19:30 GMT
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-406a007a-9dfe-4ac4-b819-d64a74244506
+
+
 
 

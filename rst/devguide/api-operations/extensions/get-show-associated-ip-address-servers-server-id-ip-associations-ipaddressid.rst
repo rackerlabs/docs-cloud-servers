@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Show associated ip address
+.. _get-show-associated-ip-address-servers-server-id-ip-associations-ipaddressid:
+
+Show associated IP address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -72,6 +77,9 @@ Response
 """"""""""""""""
 
 
+
+
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -91,17 +99,29 @@ This table shows the body parameters for the response:
 
 
 
-**Example Show associated ip address: JSON response**
+
+
+**Example Show associated IP address: JSON response**
 
 
 .. code::
 
-    {
-        "ip_association": 
-        {
-            "id": "1", 
-            "address": "10.1.1.1"
-        }
-    }
+   {
+       "ip_association": 
+       {
+           "id": "1", 
+           "address": "10.1.1.1"
+       }
+   }
+
+
+
+
+The container of associated IP details.
+
+The ID of the associated IP address.
+
+The associatied IP address.
+
 
 

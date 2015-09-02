@@ -35,7 +35,11 @@
 		<resource id="UsedLimits" path="limits">
 			<method href="#listUsedLimits"/>
 		</resource>
-		<resource id="ScheduledImages" path="servers">
+		<resource id="Servers" path="servers">
+			<method href="#createServerDiskConfig"/>
+			<!--<method href="#createServerWithHints"/>-->
+			<method href="#createVolumeandServer"/>
+			<method href="#createServerWithNetwork"/>
 			<resource id="ServerID" path="{server_id}">
 				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
 					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
@@ -47,35 +51,18 @@
 					<method href="#showSchedImages"/>
 					<method href="#disableSchedImages"/>
 				</resource>
-			</resource>
-		</resource>
-		<resource id="Servers" path="servers">
-			<method href="#createServerDiskConfig"/>
-			<!--<method href="#createServerWithHints"/>-->
-			<method href="#createVolumeandServer"/>
-			<resource id="Interfaces" path="{server_id}/os-virtual-interfacesv2">
-				<param name="server_id" style="template" type="csapi:UUID">
-					<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Server ID">
-						<p>The UUID for the server.</p>
-					</wadl:doc>
-				</param>
-				<method href="#listInterfaces"/>
-				<method href="#createInterface"/>
-				<resource id="InterfaceID" path="{interface_id}">
-					<param name="interface_id" style="template" type="csapi:UUID">
-						<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Interface ID">
-							<p>The interface ID.</p>
-						</wadl:doc>
-					</param>
-					<method href="#deleteInterface"/>
+				<resource id="Interfaces" path="os-virtual-interfacesv2">
+					<method href="#listInterfaces"/>
+					<method href="#createInterface"/>
+					<resource id="InterfaceID" path="{interface_id}">
+						<param name="interface_id" style="template" type="csapi:UUID">
+							<wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Interface ID">
+								<p>The interface ID.</p>
+							</wadl:doc>
+						</param>
+						<method href="#deleteInterface"/>
+					</resource>
 				</resource>
-			</resource>
-			<resource id="ServerIDC" path="{server_id}">
-				<param name="server_id" xmlns="http://wadl.dev.java.net/2009/02" style="template" type="csapi:UUID">
-					<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-						<para>The UUID for the server. </para>
-					</wadl:doc>
-				</param>
 				<resource id="ActionC" path="action">
 					<method href="#getConsole"/>
 				</resource>
@@ -261,7 +248,7 @@
 			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
 				retrieve the details of the server <!--(see inserthere)-->. Once the build is complete, the server's
-				<parameter>status</parameter> is <code>ACTIVE</code>.</para>
+					<parameter>status</parameter> is <code>ACTIVE</code>.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
@@ -270,17 +257,16 @@
 					<xsdxt:code href="../common/samples/server-create-boot-vol-req.json"/>
 				</wadl:doc>&serverCreateReqParameters;</representation>
 		</request>
-		
+
 		<response status="202">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<!--<xsdxt:code href="../common/samples/server-create-boot-vol-rsp-json-http.txt"/>-->
 					<xsdxt:code href="../common/samples/server-create-boot-vol-rsp.json"/>
-				</wadl:doc>&serverCreateRspParameters;
-			</representation>
+				</wadl:doc>&serverCreateRspParameters; </representation>
 		</response>&commonFaults; </method>
-	
+
 	<!-- Consoles operations -->
 	<method name="POST" id="getConsole">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Get console">
@@ -318,12 +304,13 @@
 			<para role="shortdesc">Retrieve list of server actions.</para>
 			<para>This operation returns a list of available server actions.</para>
 		</wadl:doc>
-		
+
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
-				</wadl:doc></representation>
+				</wadl:doc>
+			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
@@ -333,28 +320,30 @@
 					<xsdxt:code href="../common/samples/InstActions-rsp.json"/>
 				</wadl:doc> &xtenInstActionsRspParameters;</representation>
 		</response> &commonFaults; </method>
-	
+
 	<method name="GET" id="getInstActionsAction">
-		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve log details for a specified server action">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+			title="Retrieve log details for a specified server action">
 			<para role="shortdesc">Retrieve log details for a specified server action.</para>
 			<para>This operation returns the log details for a specified server action.</para>
 		</wadl:doc>
-		
+
 		<request>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="en">
 					<xsdxt:code href="../common/samples/req-json-http.txt"/>
-				</wadl:doc></representation>
+				</wadl:doc>
+			</representation>
 		</request>
 		<response status="200 203">
 			<doc title="Success">Request succeeded.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
 					<!--<xsdxt:code href="../common/samples/InstActionsAction-rsp-json-http.txt"/>-->
-					<xsdxt:code href="../common/samples/InstActionsAction-rsp.json"/> 
+					<xsdxt:code href="../common/samples/InstActionsAction-rsp.json"/>
 				</wadl:doc> &xtenInstActionsActionRspParameters;</representation>
 		</response> &commonFaults; </method>
-	
+
 	<!-- Volumes operations -->
 	<method name="GET" id="listVolumes">
 		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of volumes">
@@ -595,7 +584,8 @@
 					<literal>MANUAL</literal>, the server is built by using the partition scheme and file system that is in
 				the source image.  If the target flavor disk is larger, remaining disk space is left unpartitioned. A server
 				inherits the <literal>OS-DCF:diskConfig</literal> attribute from the image from which it is created. However,
-				you can override the <literal>OS-DCF:diskConfig</literal> value when you create a server. <!--For more
+				you can override the <literal>OS-DCF:diskConfig</literal> value when you create a server.
+				<!--For more
 				information, see <xref linkend="Metadata_Autodisk-d1e5089"/>  insertlinkhere-->.</para>
 			<para>In this example, the server is created with <literal>OS-DCF:diskConfig</literal> set to
 					<literal>MANUAL</literal>.This request's success depends on the image's auto_disk_config metadata value.
@@ -800,6 +790,43 @@
 						<xsdxt:code href="../common/samples/network-create-rsp.json"/>
 					</xsdxt:sample>
 				</wadl:doc>&xtenNetworksRspParameters; </representation>
+		</response>&commonFaults; </method>
+
+	<method name="POST" id="createServerWithNetwork">
+		<wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="en" title="Create server with network">
+			<para role="shortdesc">Provisions a server asynchronously with a network.</para>
+			<para>You must specify the networks that you want to attach to your server. If you do not specify any networks,
+				ServiceNet and PublicNet are attached by default.</para>
+			<para>The progress of the server build depends on factors including location of the requested image, network i/o,
+				host load, and the selected flavor. You can check the progress of the build request by issuing a call to
+				retrieve the details of the server <!--(see inserthere)-->. Once the build is complete, the server's
+					<parameter>status</parameter> is <code>ACTIVE</code>.</para>
+			<para>You can optionally provision the server instance with specified isolated networks. However, if you specify
+				an isolated network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these
+				networks to your server. The UUID for ServiceNet is <literal>11111111-1111-1111-1111-111111111111</literal>,
+				and the UUID for PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. Omit these UUIDs from
+				the request to detach from these networks.</para>
+			<note><para>Rack Connect and Managed Operations Service Level customers will receive an error if they opt out of
+					attaching to PublicNet or ServiceNet.</para></note>
+			<para>To attach a network to an existing server, you must create a virtual interface<!--insertlinkhere-->.</para>
+			<para>For complete information about this API operation, see the Create server operation<!--insertlinkhere-->.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/req-json-http.txt"/>
+					<xsdxt:code href="../common/samples/server-create-with-net-req.json"/>
+				</wadl:doc>&serverCreateReqParameters;</representation>
+		</request>
+
+		<response status="202">
+			<doc title="Success">Request succeeded.</doc>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="en">
+					<xsdxt:code href="../common/samples/server-create-rsp-json-http.txt"/>
+					<xsdxt:code href="../common/samples/server-create-with-net-rsp.json"/>
+				</wadl:doc>&serverCreateRspParameters;
+			</representation>
 		</response>&commonFaults; </method>
 
 	<method name="GET" id="showNetwork">

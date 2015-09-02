@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieves-list-of-server-addresses-servers-server-id-ips:
+
 Retrieves list of server addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -69,13 +74,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -101,17 +112,55 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieves list of server addresses: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 191
-        Content-Type: application/json
-        Date: Fri, 12 Dec 2014 16:37:29 GMT
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        X-Compute-Request-Id: req-624fa036-8f73-4ca9-aa22-428df756c578
+       Status Code: 200 OK
+       Content-Length: 191
+       Content-Type: application/json
+       Date: Fri, 12 Dec 2014 16:37:29 GMT
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       X-Compute-Request-Id: req-624fa036-8f73-4ca9-aa22-428df756c578
+
+
+.. code::
+
+   {
+     "addresses": {
+       "public": [
+         {
+           "version": 6,
+           "addr": "2001:4800:7817:0104:7e32:e3ee:ff04:930f"
+         },
+         {
+           "version": 4,
+           "addr": "23.253.107.140"
+         }
+       ],
+       "private": [
+         {
+           "version": 4,
+           "addr": "10.208.196.170"
+         }
+       ]
+     }
+   }
+
+
+
+
+A container for one or more server details to be updated.
+
+An array of ``private`` or ``public`` network address containers.
+
+The IP address.
+
+The IP address version, either ``4`` or ``6``.
+
 
 

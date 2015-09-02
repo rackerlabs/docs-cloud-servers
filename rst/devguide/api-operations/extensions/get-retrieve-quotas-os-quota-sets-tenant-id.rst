@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-quotas-os-quota-sets-tenant-id:
+
 Retrieve quotas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,15 +41,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -71,13 +76,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -100,17 +111,59 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve quotas: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 513
-        Content-Type: application/json
-        Date: Fri, 10 Jul 2015 17:33:12 GMT, Fri, 10 Jul 2015 17:33:12 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-01fb912a-5a59-4ac1-80d6-368c2a2e0df8
+       Status Code: 200 OK
+       Content-Length: 513
+       Content-Type: application/json
+       Date: Fri, 10 Jul 2015 17:33:12 GMT, Fri, 10 Jul 2015 17:33:12 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-01fb912a-5a59-4ac1-80d6-368c2a2e0df8
+
+
+.. code::
+
+   {
+     "quota_set": {
+       "injected_file_content_bytes": 1000,
+       "metadata_items": 40,
+       "ram": 131072,
+       "security_group_rules": -1,
+       "onmetal-memory-v1-ram": 131072,
+       "onmetal-compute-v1-instances": 100,
+       "onmetal-compute-v1-ram": 131072,
+       "networks": 10,
+       "floating_ips": -1,
+       "key_pairs": 100,
+       "id": "1234567",
+       "instances": 100,
+       "onmetal-memory-v1-instances": 100,
+       "injected_files": 5,
+       "onmetal-io-v1-instances": 100,
+       "cores": -1,
+       "onmetal-io-v1-ram": 131072,
+       "fixed_ips": -1,
+       "injected_file_path_bytes": 255,
+       "security_groups": -1
+     }
+   }
+
+
+
+
+The container of quota-sets.
+
+The quota for ram.
+
+The quota for instances.
+
+The quota for metadata-items.
+
 
 

@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Delete associated ip address
+.. _delete-delete-associated-ip-address-servers-server-id-ip-associations-ipaddressid:
+
+Delete associated IP address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -75,13 +80,20 @@ Response
 
 
 
-**Example Delete associated ip address: JSON response**
+
+
+
+
+
+**Example Delete associated IP address: JSON response**
 
 
 .. code::
 
-    Content-Type: application/json
-    Accept: application/json
-    status: 204
+   Content-Type: application/json
+   Accept: application/json
+   status: 204
+
+
 
 

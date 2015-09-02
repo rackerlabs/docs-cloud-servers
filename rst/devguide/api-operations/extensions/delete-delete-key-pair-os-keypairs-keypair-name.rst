@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _delete-delete-key-pair-os-keypairs-keypair-name:
+
 Delete key pair
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -70,13 +75,21 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
+
+
 
 
 
@@ -87,12 +100,14 @@ Response
 
 .. code::
 
-        Status Code: 202 Accepted
-        Content-Length: 0
-        Content-Type: text/html; charset=UTF-8
-        Date: Thu, 02 Apr 2015 18:06:52 GMT, Thu, 02 Apr 2015 18:06:52 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-6b1bbebc-5b70-4775-9b1d-0e69db552b31
+       Status Code: 202 Accepted
+       Content-Length: 0
+       Content-Type: text/html; charset=UTF-8
+       Date: Thu, 02 Apr 2015 18:06:52 GMT, Thu, 02 Apr 2015 18:06:52 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-6b1bbebc-5b70-4775-9b1d-0e69db552b31
+
+
 
 

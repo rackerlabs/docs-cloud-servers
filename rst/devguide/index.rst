@@ -61,4 +61,5 @@ Rackspace Extensions
    ext-config-drive
    ext-boot-from-volume
    ext-network
+   ext-virtual-interface
 

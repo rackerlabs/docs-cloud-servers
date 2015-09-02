@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-show-network-os-networksv2-id:
+
 Show network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -66,6 +71,9 @@ This operation does not accept a request body.
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -92,17 +100,42 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Show network: JSON response**
 
 
 .. code::
 
-         Status Code: 200 OK
-         Content-Length: 114
-         Content-Type: application/json
-         Date: Mon, 13 Apr 2015 20:50:28 GMT, Mon, 13 Apr 2015 20:50:28 GMT
-         Server: Jetty(9.2.z-SNAPSHOT)
-         Via: 1.1 Repose (Repose/6.2.1.2)
-         X-Compute-Request-Id: req-bc7ab5c9-4a70-4a19-9189-e8f8884e8ae9
+        Status Code: 200 OK
+        Content-Length: 114
+        Content-Type: application/json
+        Date: Mon, 13 Apr 2015 20:50:28 GMT, Mon, 13 Apr 2015 20:50:28 GMT
+        Server: Jetty(9.2.z-SNAPSHOT)
+        Via: 1.1 Repose (Repose/6.2.1.2)
+        X-Compute-Request-Id: req-bc7ab5c9-4a70-4a19-9189-e8f8884e8ae9
+
+
+.. code::
+
+   {
+       "network": {
+           "cidr": "192.168.0.0/24", 
+           "id": "f212726e-6321-4210-9bae-a13f5a33f83f", 
+           "label": "superprivate_xml"
+       }
+   }
+
+
+
+
+A container of network details.
+
+The CIDR for an isolated network.
+
+The network ID.
+
+The name of the network. ServiceNet is labeled as private and PublicNet is labeled as public in the network list.
+
 
 

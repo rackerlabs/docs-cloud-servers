@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _put-attach-voume-to-server-servers-server-id-os-volume-attachments:
+
 Attach voume to server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,15 +41,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -89,13 +94,37 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "volumeAttachment":{
+           "device":null,
+           "volumeId":"4ab50df6-7480-45df-8604-b1ee39fe857c"
+       }
+   }
+
+
+
+
+The container for the volume attachment specifications.
+
+The name of the device, such as /dev/xvdb. Specify ``null`` for auto-assignment.
+
+The ID of the volume that you want to attach to the server instance.
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -129,17 +158,45 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Attach voume to server: JSON response**
 
 
 .. code::
 
-        Status Code: 202 OK
-        Content-Length: 120
-        Content-Type: application/json
-        Date: Mon, 19 Jan 2015 19:22:30 GMT
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        x-compute-request-id: req-206e007a-9dfe-4ac4-b819-d64a74244506
+       Status Code: 202 OK
+       Content-Length: 120
+       Content-Type: application/json
+       Date: Mon, 19 Jan 2015 19:22:30 GMT
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-206e007a-9dfe-4ac4-b819-d64a74244506
+
+
+.. code::
+
+   {
+       "volumeAttachment":{
+           "device":"/dev/xvdb",
+           "serverId":"76ddf257-2771-4097-aab8-b07b52110376",
+           "id":"4ab50df6-7480-45df-8604-b1ee39fe857c",
+           "volumeId":"4ab50df6-7480-45df-8604-b1ee39fe857c"
+       }
+   }
+
+
+
+
+The container for the volume attachment specifications.
+
+The name of the device, such as /dev/xvdb. Specify ``null`` for auto-assignment.
+
+The ID of the volume that you attached to the server instance.
+
+The ID of the server instance to which you attached the volume.
+
+The ID of the volume that you attached to the server instance.
+
 
 

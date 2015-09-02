@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-list-of-rate-and-absolute-limits-limits:
+
 Retrieve list of rate and absolute limits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,17 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
 
 
 
@@ -62,13 +66,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -127,17 +137,92 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve list of rate and absolute limits: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 3010
-        Content-Type: application/json
-        Date: Wed, 18 Mar 2015 20:23:18 GMT, Wed, 18 Mar 2015 20:23:19 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-48d05db0-dd97-4aef-87f2-11177ab8c262
+       Status Code: 200 OK
+       Content-Length: 3010
+       Content-Type: application/json
+       Date: Wed, 18 Mar 2015 20:23:18 GMT, Wed, 18 Mar 2015 20:23:19 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-48d05db0-dd97-4aef-87f2-11177ab8c262
+
+
+.. code::
+
+   {
+       "limits": {
+           "absolute": {
+               "totalSnapshotsUsed": 0,
+               "maxTotalVolumeGigabytes": 1000,
+               "totalGigabytesUsed": 0,
+               "maxTotalSnapshots": 10,
+               "totalVolumesUsed": 0,
+               "maxTotalVolumes": 10
+           }, 
+           "rate": [
+               {
+                   "limit": [
+                       {
+                           "next-available": "2012-09-10T20:11:45.146Z", 
+                           "remaining": 0, 
+                           "unit": "DAY", 
+                           "value": 0, 
+                           "verb": "POST"
+                       }, 
+                       {
+                           "next-available": "2012-09-10T20:11:45.146Z", 
+                           "remaining": 0, 
+                           "unit": "MINUTE", 
+                           "value": 0, 
+                           "verb": "GET"
+                       }
+                   ], 
+                   "regex": "/v[^/]/(\\d+)/(rax-networks)/?.*", 
+                   "uri": "/rax-networks"
+               }
+           ]
+       }
+   }
+   
+
+
+
+
+The container of limits attributes.
+
+The container of absolute limits attributes.
+
+The maximum amount of RAM allowed.
+
+The total amount of RAM used.
+
+The maximum allowed server metadata items.
+
+The maximum allowed image metadata items.
+
+The maximum number of personality files.
+
+The size of the personality files.
+
+The array of rate objects.
+
+The array of rate limit objects.
+
+The next available rate limit date and time.
+
+The HTTP operation.
+
+The max allowed time in units.
+
+The time remaining for the rate limit in units.
+
+The type of unit for the rate limit. For example, ``DAY`` or ``MINUTE``.
+
 
 

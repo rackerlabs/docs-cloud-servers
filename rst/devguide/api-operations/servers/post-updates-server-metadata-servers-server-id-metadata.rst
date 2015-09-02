@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-updates-server-metadata-servers-server-id-metadata:
+
 Updates server metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -43,15 +45,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -92,13 +97,36 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "metadata": {
+           "Label" : "Web2"
+       }
+   }
+
+
+
+
+Container for a metadata keypair for the specified server.
+
+This container holds one or more keypairs using format of 			 "metadata key" : "metadata value".
+
+Keypairs edcribing the metadata using format of "keyname" : "keyvalue".
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -123,17 +151,39 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Updates server metadata: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 32
-        Content-Type: application/json
-        Date: Mon, 19 Jan 2015 20:29:25 GMT
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        x-compute-request-id: req-c342acf1-cd7e-4c88-84cc-dcbca523fc08
+       Status Code: 200 OK
+       Content-Length: 32
+       Content-Type: application/json
+       Date: Mon, 19 Jan 2015 20:29:25 GMT
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-c342acf1-cd7e-4c88-84cc-dcbca523fc08
+
+
+.. code::
+
+   {
+       "metadata" : {
+           "Label" : "Web2",
+           "Version" : "2.1"
+       }
+   }
+
+
+
+
+Container for a metadata keypair for the specified server.
+
+This container holds one or more keypairs using format of 			 "metadata key" : "metadata value".
+
+Keypairs edcribing the metadata using format of "keyname" : "keyvalue".
+
 
 

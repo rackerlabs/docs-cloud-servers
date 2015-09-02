@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-list-of-limits-including-used-limits-limits:
+
 Retrieve list of limits including used limits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,15 +41,17 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
 
 
 
@@ -61,6 +65,9 @@ This operation does not accept a request body.
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -119,77 +126,113 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve list of limits including used limits: JSON response**
 
 
 .. code::
 
-    {
-      "limits": {
-         "rate": [
-           {
-             "uri": "*",
-                 "regex": ".*",
-                 "limit": [
-                   {
-                     "value": 10,
-                     "verb": "POST",
-                     "remaining": 2,
-                     "unit": "MINUTE",
-                     "next-available": "2011-12-15T22:42:45Z"
-                   },
-                   {
-                     "value": 10,
-                     "verb": "PUT",
-                     "remaining": 2,
-                     "unit": "MINUTE",
-                     "next-available": "2011-12-15T22:42:45Z"
-                   },
-                   {
-                     "value": 100,
-                     "verb": "DELETE",
-                     "remaining": 100,
-                     "unit": "MINUTE",
-                     "next-available": "2011-12-15T22:42:45Z"
-                   }
-                 ]
-           },
-           {
-             "uri": "*changes-since*",
-             "regex": "changes-since",
-             "limit": [
-               {
-                 "value": 3,
-                 "verb": "GET",
-                 "remaining": 3,
-                 "unit": "MINUTE",
-                 "next-available": "2011-12-15T22:42:45Z"
-               }
-             ]
-           },
-           {
-             "uri": "*/servers",
-             "regex": "^/servers",
-             "limit": [
-               {
-                 "verb": "POST",
-                 "value": 25,
-                 "remaining": 24,
-                 "unit": "DAY",
-                 "next-available": "2011-12-15T22:42:45Z"
-               }
-             ]
-           }
-         ],
-         "absolute": {
-             "maxTotalRAMSize": 51200,
-             "totalRAMUsed": 1024,
-             "maxServerMeta": 5,
-             "maxImageMeta": 5,
-             "maxPersonality": 5,
-             "maxPersonalitySize": 10240
-         }
-       }
-    }
+   {
+     "limits": {
+        "rate": [
+          {
+            "uri": "*",
+                "regex": ".*",
+                "limit": [
+                  {
+                    "value": 10,
+                    "verb": "POST",
+                    "remaining": 2,
+                    "unit": "MINUTE",
+                    "next-available": "2011-12-15T22:42:45Z"
+                  },
+                  {
+                    "value": 10,
+                    "verb": "PUT",
+                    "remaining": 2,
+                    "unit": "MINUTE",
+                    "next-available": "2011-12-15T22:42:45Z"
+                  },
+                  {
+                    "value": 100,
+                    "verb": "DELETE",
+                    "remaining": 100,
+                    "unit": "MINUTE",
+                    "next-available": "2011-12-15T22:42:45Z"
+                  }
+                ]
+          },
+          {
+            "uri": "*changes-since*",
+            "regex": "changes-since",
+            "limit": [
+              {
+                "value": 3,
+                "verb": "GET",
+                "remaining": 3,
+                "unit": "MINUTE",
+                "next-available": "2011-12-15T22:42:45Z"
+              }
+            ]
+          },
+          {
+            "uri": "*/servers",
+            "regex": "^/servers",
+            "limit": [
+              {
+                "verb": "POST",
+                "value": 25,
+                "remaining": 24,
+                "unit": "DAY",
+                "next-available": "2011-12-15T22:42:45Z"
+              }
+            ]
+          }
+        ],
+        "absolute": {
+            "maxTotalRAMSize": 51200,
+            "totalRAMUsed": 1024,
+            "maxServerMeta": 5,
+            "maxImageMeta": 5,
+            "maxPersonality": 5,
+            "maxPersonalitySize": 10240
+        }
+      }
+   }
+
+
+
+
+The container of limits attributes.
+
+The container of absolute limits attributes.
+
+The maximum amount of RAM allowed.
+
+The total amount of RAM used.
+
+The maximum allowed server metadata items.
+
+The maximum allowed image metadata items.
+
+The maximum number of personality files.
+
+The size of the personality files.
+
+The array of rate objects.
+
+The array of rate limit objects.
+
+The next available rate limit date and time.
+
+The HTTP operation.
+
+The max allowed time in units.
+
+The time remaining for the rate limit in units.
+
+The type of unit for the rate limit. For example, ``DAY`` or ``MINUTE``.
+
 
 

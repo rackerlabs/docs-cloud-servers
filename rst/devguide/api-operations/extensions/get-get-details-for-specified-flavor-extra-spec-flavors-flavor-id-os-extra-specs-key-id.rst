@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-get-details-for-specified-flavor-extra-spec-flavors-flavor-id-os-extra-specs-key-id:
+
 Get details for specified flavor extra spec
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,15 +41,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -73,13 +78,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -107,17 +118,40 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Get details for specified flavor extra spec: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 23
-        Content-Type: application/json
-        Date: Wed, 08 Jul 2015 16:03:05 GMT, Wed, 08 Jul 2015 16:03:06 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-7d127037-39af-4459-9f90-26b750a5cb45
+       Status Code: 200 OK
+       Content-Length: 23
+       Content-Type: application/json
+       Date: Wed, 08 Jul 2015 16:03:05 GMT, Wed, 08 Jul 2015 16:03:06 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-7d127037-39af-4459-9f90-26b750a5cb45
+
+
+.. code::
+
+   {
+     "disk_io_index": "40"
+   }
+
+
+
+
+The container for flavor extra specification details.
+
+The class for the flavor.
+
+The policy class for the flavor.
+
+The io index for the disk.
+
+The policy class for the flavor.
+
 
 

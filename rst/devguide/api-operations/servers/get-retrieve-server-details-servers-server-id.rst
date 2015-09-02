@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-server-details-servers-server-id:
+
 Retrieve server details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -46,15 +48,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -78,13 +83,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -218,18 +229,154 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve server details: JSON response**
 
 
 .. code::
 
-        Status Code: 200 Accepted
-        Content-Length: 380
-        Content-Type: application/json
-        Date: Thu, 04 Dec 2014 18:47:30 GMT
-        Location: https://dfw.servers.api.rackspacecloud.com/v2/123456/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841
-        Server: Jetty(8.0.y.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/2.12)
-        x-compute-request-id: req-b8b54344-41a9-4d6a-c29e-60f3dcab4b1f
+       Status Code: 200 Accepted
+       Content-Length: 380
+       Content-Type: application/json
+       Date: Thu, 04 Dec 2014 18:47:30 GMT
+       Location: https://dfw.servers.api.rackspacecloud.com/v2/123456/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841
+       Server: Jetty(8.0.y.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/2.12)
+       x-compute-request-id: req-b8b54344-41a9-4d6a-c29e-60f3dcab4b1f
+
+
+.. code::
+
+   {
+       "server": {
+           "OS-DCF:diskConfig": "AUTO",
+           "OS-EXT-STS:power_state": 1,
+           "OS-EXT-STS:task_state": null,
+           "OS-EXT-STS:vm_state": "active",
+           "accessIPv4": "198.101.241.238",
+           "accessIPv6": "2001:4800:780e:0510:d87b:9cbc:ff04:513a",
+           "addresses": {
+               "private": [
+                   {
+                       "addr": "10.180.3.171",
+                       "version": 4
+                   }
+               ],
+               "public": [
+                   {
+                       "addr": "198.101.241.238",
+                       "version": 4
+                   },
+                   {
+                       "addr": "2001:4800:780e:0510:d87b:9cbc:ff04:513a",
+                       "version": 6
+                   }
+               ]
+           },
+           "created": "2012-08-16T18:41:43Z",
+           "flavor": {
+               "id": "2",
+               "links": [
+                   {
+                       "href": "https://dfw.servers.api.rackspacecloud.com/010101/flavors/2",
+                       "rel": "bookmark"
+                   }
+               ]
+           },
+           "hostId": "33ccb6c82f3625748b6f2338f54d8e9df07cc583251e001355569056",
+           "id": "ef08aa7a-b5e4-4bb8-86df-5ac56230f841",
+           "image": {
+               "id": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
+               "links": [
+                   {
+                       "href": "https://dfw.servers.api.rackspacecloud.com/010101/images/3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
+                       "rel": "bookmark"
+                   }
+               ]
+           },
+           "links": [
+               {
+                   "href": "https://dfw.servers.api.rackspacecloud.com/v2/010101/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841",
+                   "rel": "self"
+               },
+               {
+                   "href": "https://dfw.servers.api.rackspacecloud.com/010101/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841",
+                   "rel": "bookmark"
+               }
+           ],
+           "metadata": {
+               "My Server Name": "API Test Server 2"
+           },
+           "name": "api-test-server 2",
+           "progress": 100,
+           "status": "ACTIVE",
+           "tenant_id": "010101",
+           "updated": "2012-08-16T18:50:38Z",
+           "user_id": "170454"
+       }
+   }
+
+
+
+
+A container of server details.
+
+The public IP version 4 access address.
+
+The public IP version 6 access address.
+
+An array of addresses for public, private, and isolated networks attached to the server.
+
+The IP address of the network.
+
+The version of the IP address of the network.
+
+The ID of the server.
+
+The time stamp indicating the creation date of the server.
+
+The flavor ID. 
+
+The image ID. 
+
+The host ID. The compute provisioning algorithm has an anti-affinity property that attempts to 		 spread customer VMs across hosts. Under certain situations, VMs from the same customer might be placed on 		 the same host. hostId represents the host your server runs on and can be used to determine this scenario if 		 it is relevant to your application.
+
+HostId is unique only for an account and is not globally unique.
+
+An array of the self and bookmark links to the server.
+
+The URL for the server and the associated ``rel``.
+
+The descriptive field for the associated ``href``, which is either ``self`` 		 or ``bookmark``.
+
+Any metadata key and value pairs.
+
+The server name.
+
+The build completion progress, as a percentage. Value ranges from ``0`` to ``100``.
+
+The status of the server. For a full list of possible status values, 		 see.
+
+The tenant ID.
+
+The time stamp of the last update.
+
+The user ID.
+
+Extended attribute: The disk configuration value.
+
+Valid values are ``AUTO`` and ``MANUAL``.
+
+Extended attribute: The image schedule reference is included only if scheduled images has been enabled for this 		 server.
+
+Extended attribute. Shows the extended statuses for the server, including the VM, task, and power states.
+
+Extended attribute. Enables booting the server from a volume when additional parameters are given. If specified, 		 the volume status must be ``available``, and the volume attach_status must be ``detached``.
+
+Moves to the next metadata item.
+
+Moves to the previous metadata item.
+
 
 

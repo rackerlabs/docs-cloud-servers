@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-reboot-specified-server-servers-server-id-actions:
+
 Reboot specified server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -43,15 +45,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -97,13 +102,43 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "reboot" : 
+       {
+           "type" : "HARD"
+       }
+   }
+
+
+
+
+Specification of the reboot action for the specified server.
+
+The type of reboot. Valid reboot types are:
+
+SOFTThe operating system is signaled to restart, which allows for a graceful shutdown and 								restart of all processes.
+
+HARDPower cycles your server, which performs an immediate shutdown and restart.
+
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
+
+
 
 
 
@@ -114,12 +149,14 @@ Response
 
 .. code::
 
-    Status Code: 202 No Content
-    Content-Length: 0
-    Content-Type: application/json
-    Date: Thu, 04 Dec 2014 21:45:47 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    Via: 1.1 Repose (Repose/2.12)
-    x-compute-request-id
+   Status Code: 202 No Content
+   Content-Length: 0
+   Content-Type: application/json
+   Date: Thu, 04 Dec 2014 21:45:47 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   Via: 1.1 Repose (Repose/2.12)
+   x-compute-request-id
+
+
 
 

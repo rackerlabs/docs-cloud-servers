@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-details-for-the-specified-extension-extensions-alias:
+
 Retrieve details for the specified extension
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,15 +39,18 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -72,13 +77,19 @@ This operation does not accept a request body.
 
 .. code::
 
-    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
-    Content-Type: application/json
-    Accept: application/json
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -112,17 +123,51 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve details for the specified extension: JSON response**
 
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 257
-        Content-Type: application/json
-        Date: Fri, 10 Jul 2015 19:56:53 GMT, Fri, 10 Jul 2015 19:56:54 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.1.2)
-        X-Compute-Request-Id: req-d612f98f-d446-493c-a1ba-6869828f8a80
+       Status Code: 200 OK
+       Content-Length: 257
+       Content-Type: application/json
+       Date: Fri, 10 Jul 2015 19:56:53 GMT, Fri, 10 Jul 2015 19:56:54 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-d612f98f-d446-493c-a1ba-6869828f8a80
+
+
+.. code::
+
+   {
+     "extension": {
+       "updated": "2011-08-17T00:00:00Z",
+       "name": "VirtualInterfaces",
+       "links": [],
+       "namespace": "http://docs.openstack.org/compute/ext/virtual_interfacesv2/api/v1.1",
+       "alias": "os-virtual-interfacesv2",
+       "description": "Virtual interface support."
+     }
+   }
+
+
+
+
+The container of extensions attributes.
+
+The most recent update date for the extension.
+
+The name of the extension.
+
+The array of links for the extension.
+
+The namespace of the extension.
+
+The alias, or short name, of the extension.
+
+The description of the extension.
+
 
 

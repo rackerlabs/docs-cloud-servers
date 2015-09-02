@@ -1146,6 +1146,9 @@
                     <wadl:method href="listNetworks"/>
                     <wadl:method href="createNetwork"/>
                 </wadl:resource>
+                <wadl:resource href="../../wadl/extensions.wadl#Servers">
+                    <wadl:method href="createServerWithNetwork"/>
+                </wadl:resource>
                 <wadl:resource href="../../wadl/extensions.wadl#NetworkID">
                     <wadl:method href="showNetwork"/>
                     <wadl:method href="deleteNetwork"/>
