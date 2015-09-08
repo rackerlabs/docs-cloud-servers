@@ -108,12 +108,6 @@ This table shows the body parameters for the request:
 
 
 
-A container for console request.
-
-A key pair with the type of vnc console, containing the value ``"xvpvnc"``.
-
-
-
 
 Response
 """"""""""""""""
@@ -170,14 +164,6 @@ This table shows the body parameters for the response:
      }
    }
 
-
-
-
-A container for console response.
-
-The URL for the console for the specified server. Open this URL in a browser to open a VNC console to the server.
-
-The type of VNC console to the server, for example ``"xvpvnc"``.
 
 
 

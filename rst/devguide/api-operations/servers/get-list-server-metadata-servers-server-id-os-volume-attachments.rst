@@ -151,15 +151,3 @@ This table shows the body parameters for the response:
 
 
 
-The array of attached volumes.
-
-The name of the device, such as /dev/xvdb.
-
-The ID of the volume attached to the server instance.
-
-The ID of the server instance to which the volume is attached.
-
-The ID of the volume attached to the server instance.
-
-
-

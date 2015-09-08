@@ -204,35 +204,3 @@ This table shows the body parameters for the response:
 
 
 
-The container of limits attributes.
-
-The container of absolute limits attributes.
-
-The maximum amount of RAM allowed.
-
-The total amount of RAM used.
-
-The maximum allowed server metadata items.
-
-The maximum allowed image metadata items.
-
-The maximum number of personality files.
-
-The size of the personality files.
-
-The array of rate objects.
-
-The array of rate limit objects.
-
-The next available rate limit date and time.
-
-The HTTP operation.
-
-The max allowed time in units.
-
-The time remaining for the rate limit in units.
-
-The type of unit for the rate limit. For example, ``DAY`` or ``MINUTE``.
-
-
-

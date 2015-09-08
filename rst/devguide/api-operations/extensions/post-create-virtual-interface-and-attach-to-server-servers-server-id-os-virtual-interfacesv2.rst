@@ -106,12 +106,6 @@ This table shows the body parameters for the request:
 
 
 
-A container with virtual interface information.
-
-The interface network ID.
-
-
-
 
 Response
 """"""""""""""""
@@ -188,22 +182,6 @@ This table shows the body parameters for the response:
       ]
    }
 
-
-
-
-The array of virtual interfaces.
-
-The virtual interface ID.
-
-The array of interface IP address details.
-
-The interface IP address.
-
-The interface network ID.
-
-The interface network label.
-
-The Media Access Control (MAC) address for the virtual interface. A MAC address is a unique identifier assigned to network interfaces for communications on the physical network segment.
 
 
 

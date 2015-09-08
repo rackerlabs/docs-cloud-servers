@@ -147,21 +147,3 @@ This table shows the body parameters for the response:
 
 
 
-An container of instance action log entry data for a specific server and action.
-
-The type of action taken.
-
-The server UUID where the action took place.
-
-The action log message, if any.
-
-The project id.
-
-The action request id.
-
-The date and time that the actin began.
-
-The id of the user who requested the action.
-
-
-

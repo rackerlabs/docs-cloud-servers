@@ -151,7 +151,3 @@ This table shows the body parameters for the response:
 
 
 
-The container of metadata for images.
-
-
-

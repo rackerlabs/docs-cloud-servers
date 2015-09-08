@@ -171,19 +171,3 @@ The following example shows only a few extensions in the list for brevity.
 
 
 
-The array of extensions.
-
-The most recent update date for the extension.
-
-The name of the extension.
-
-The array of links for the extension.
-
-The namespace of the extension.
-
-The alias, or short name, of the extension.
-
-The description of the extension.
-
-
-

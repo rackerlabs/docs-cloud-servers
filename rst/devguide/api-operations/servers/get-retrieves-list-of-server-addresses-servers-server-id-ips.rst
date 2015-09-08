@@ -154,13 +154,3 @@ This table shows the body parameters for the response:
 
 
 
-A container for one or more server details to be updated.
-
-An array of ``private`` or ``public`` network address containers.
-
-The IP address.
-
-The IP address version, either ``4`` or ``6``.
-
-
-

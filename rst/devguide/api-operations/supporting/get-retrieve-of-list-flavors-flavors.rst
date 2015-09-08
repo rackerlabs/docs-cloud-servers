@@ -97,16 +97,6 @@ This operation does not accept a request body.
 
 
 
-Filters the list of flavors to those with the specified minimum number of gigabytes of disk storage.
-
-Filters the list of flavors to those with the specified minimum amount of RAM in megabytes.
-
-The ID of the last item in the previous list. 
-
-Sets the page size.
-
-
-
 
 Response
 """"""""""""""""
@@ -270,20 +260,6 @@ The following example shows only a few flavors in the list for brevity.
        ]
    }
 
-
-
-
-The array of flavors.
-
-The flavor ID.
-
-The array of flavor links for self and bookmark.
-
-The URL for the flavor and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self`` or ``bookmark``.
-
-The flavor name.
 
 
 

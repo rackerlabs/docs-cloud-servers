@@ -146,15 +146,3 @@ This table shows the body parameters for the response:
 
 
 
-The container for flavor extra specification details.
-
-The class for the flavor.
-
-The policy class for the flavor.
-
-The io index for the disk.
-
-The policy class for the flavor.
-
-
-

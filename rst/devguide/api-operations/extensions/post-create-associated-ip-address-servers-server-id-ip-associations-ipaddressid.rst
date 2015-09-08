@@ -107,18 +107,6 @@ This table shows the body parameters for the request:
 
 
 
-The container for shared IP request parasmeters.
-
-The ID of the network.
-
-The subnet IP version, which is ``4`` or ``6``.
-
-The array of port objects, containing port IDs for the shared IP.
-
-The array of device objects, containing device IDs for the shared IP.
-
-
-
 
 Response
 """"""""""""""""
@@ -157,14 +145,6 @@ This table shows the body parameters for the response:
      "key":"value" 
    }
 
-
-
-
-The container of associated IP details.
-
-The ID of the associated IP address.
-
-The associatied IP address.
 
 
 

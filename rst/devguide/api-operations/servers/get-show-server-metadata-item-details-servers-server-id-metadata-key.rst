@@ -144,11 +144,3 @@ This table shows the body parameters for the response:
 
 
 
-Container for a metadata keypair for the specified server.
-
-This container holds a single keypair using format of 			 "metadata key" : "metadata value".
-
-Keypair describing the metadata using format of "keyname" : "keyvalue".
-
-
-

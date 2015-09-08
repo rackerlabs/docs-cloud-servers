@@ -108,10 +108,6 @@ This table shows the body parameters for the request:
 
 
 
-The container of metadata for images. Within this container, there may be one or more metadata key pairs.
-
-
-
 
 Response
 """"""""""""""""
@@ -160,10 +156,6 @@ This table shows the body parameters for the response:
      }
    }
 
-
-
-
-The container of metadata for images. Within this container, there may be one or more metadata key pairs.
 
 
 

@@ -119,18 +119,6 @@ This table shows the body parameters for the request:
 
 
 
-Specification of the reboot action for the specified server.
-
-The type of reboot. Valid reboot types are:
-
-SOFTThe operating system is signaled to restart, which allows for a graceful shutdown and 								restart of all processes.
-
-HARDPower cycles your server, which performs an immediate shutdown and restart.
-
-
-
-
-
 
 Response
 """"""""""""""""

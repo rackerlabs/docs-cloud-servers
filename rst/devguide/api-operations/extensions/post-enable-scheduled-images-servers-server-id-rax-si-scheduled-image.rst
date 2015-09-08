@@ -141,16 +141,6 @@ This table shows the body parameters for the request:
 
 
 
-The container for the image schedule.
-
-The number of days that an Image should be retained.
-
-The chosen day of the week for the image creation.
-
-The allowed values for this field are: ``SUNDAY``, ``MONDAY``, ``TUESDAY``, ``WEDNESDAY``, ``THURSDAY``, ``FRIDAY``, and ``SATURDAY``.
-
-
-
 
 **Example Enable scheduled images (weekly): JSON request**
 
@@ -227,16 +217,6 @@ This table shows the body parameters for the response:
      }
    }
 
-
-
-
-The container for the image schedule.
-
-The number of days that an Image should be retained.
-
-The chosen day of the week for the image creation.
-
-The allowed values for this field are: ``SUNDAY``, ``MONDAY``, ``TUESDAY``, ``WEDNESDAY``, ``THURSDAY``, ``FRIDAY``, and ``SATURDAY``.
 
 
 

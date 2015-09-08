@@ -155,19 +155,3 @@ This table shows the body parameters for the response:
 
 
 
-The container of extensions attributes.
-
-The most recent update date for the extension.
-
-The name of the extension.
-
-The array of links for the extension.
-
-The namespace of the extension.
-
-The alias, or short name, of the extension.
-
-The description of the extension.
-
-
-

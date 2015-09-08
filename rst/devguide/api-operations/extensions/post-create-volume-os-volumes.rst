@@ -114,18 +114,6 @@ This table shows the body parameters for the request:
 
 
 
-A container for volume creation response.
-
-The name assigned to the volume.
-
-The description for the volume.
-
-The type of volume, either ``SATA`` or ``SSD``. Alternaltely, you can use the UUID volume id for the volume instead of the name. The default is ``SATA``. 
-
-The size of the volume in gibibytes (GiB). The valid range for ``SATA`` is 75-1024. The valid range for ``SSD`` is 50-1024.
-
-
-
 
 Response
 """"""""""""""""
@@ -236,34 +224,6 @@ This table shows the body parameters for the response:
      }
    }
 
-
-
-
-A container for volume creation response.
-
-The state of the volume. This will be ``available`` when volume is created and ready for use.
-
-The name assigned to the volume.
-
-An array of volume attachments.
-
-This parameter is no longer used and is always set to ``nova``.
-
-The date and time of volume creation.
-
-The description for the volume.
-
-The image_id use for the volume. If no image was specified, this will be ``null``.
-
-The type of volume, either ``SATA`` or ``SSD``. Alternaltely, you can use the UUID volume id for the volume instead of the name. The default is ``SATA``. 
-
-The snapshot from which to create a volume, if any.
-
-Any metadata for the volume.
-
-The volume id.
-
-The size of the volume in gibibytes (GiB). The valid range for ``SATA`` is 75-1024. The valid range for ``SSD`` is 50-1024.
 
 
 

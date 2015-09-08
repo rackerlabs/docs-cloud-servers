@@ -256,66 +256,6 @@ This table shows the body parameters for the request:
 
 
 
-The server name.
-
-The image reference for the desired image for your server instance.
-
-The container of bootable volume details.
-
-The index of the bootable volume.
-
-The id of the bootable volume.
-
-The source type for the bootable volume.
-
-The destination type for the bootable volume.
-
-Flag to indicate whether the bootable volume should be deleted after server creation.
-
-The flavor reference for the desired flavor for your server instance.
-
-Enables metadata injection in a server through a configuration drive.
-
-To enable a configuration drive, specify ``true``. Otherwise, specify ``false``.
-
-The name of the key pair used to authenticate by using key-based authentication instead of password-based authentication.
-
-The disk configuration value. The image auto_disk_config metadata key set will affect the value you can choose to set the server ``OS-DCF:diskConfig``. 
-
-If an image has ``auto_disk_config`` value of ``disabled``, you cannot create a server from that image when specifying ``OS-DCF:diskConfig`` value of ``AUTO``.
-
-Valid values are: AUTO:The server is built with a single partition which is the size of the target flavor disk. The file system is automatically adjusted to fit the entire partition. This keeps things simple and automated. AUTO is valid only for images and servers with a single partition that use the EXT3 file system. This is the default setting for applicable Rackspace base images.
-
-MANUAL:The server is built using the partition scheme and file system of the source image. If the target flavor disk is larger, the remaining disk space is left unpartitioned. This enables images to have non-EXT3 file systems, multiple partitions, and so on, and it enables you to manage the disk configuration.
-
-
-
-Metadata key and value pairs. The maximum size of each metadata key and value is 255 bytes each.
-
-The array of personality files for the server.
-
-Data used with config_drive for configuring a server. 
-
-The path of the personality file.
-
-The contents od the personality file.
-
-The array of networks attached to the server.
-
-By default, the server instance is provisioned with all isolated networks for the tenant. You can specify multiple NICs on the server.
-
-Optionally, you can create one or more NICs on the server.
-
-To provision the server instance with a NIC for a ``Nova-network`` network, specify the UUID in the ``uuid`` attribute in a ``networks`` object.
-
-To provision the server instance with a NIC for a ``Neutron`` network, specify the UUID in the ``port`` attribute in a ``networks`` object.
-
-The UUID of the ``Nova-network`` network attached to the server.
-
-The UUID of the ``Neutron`` port attached to the server.
-
-
-
 
 Response
 """"""""""""""""
@@ -386,24 +326,6 @@ This table shows the body parameters for the response:
       }
    }
 
-
-
-
-The container for server data.
-
-The ID of the server.
-
-An array of the self and bookmark links to the server.
-
-The URL for the server and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self`` or ``bookmark``.
-
-The password assigned to provide login access to the server.
-
-The disk configuration value. 
-
-Valid values are ``AUTO`` and ``MANUAL``.
 
 
 

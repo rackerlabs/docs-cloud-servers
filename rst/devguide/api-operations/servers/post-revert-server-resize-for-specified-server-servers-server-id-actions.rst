@@ -106,10 +106,6 @@ This table shows the body parameters for the request:
 
 
 
-Specification of the revertResize action for the specified server.
-
-
-
 
 Response
 """"""""""""""""

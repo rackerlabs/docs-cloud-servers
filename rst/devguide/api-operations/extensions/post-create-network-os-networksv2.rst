@@ -102,14 +102,6 @@ This table shows the body parameters for the request:
 
 
 
-A container of network details.
-
-The IP block from which to allocate the network. For example, 172.16.0.0/24 or 2001:DB8::/64. For more information about CIDR notation, see ` Using CIDR Notation in Cloud Networks <http://www.rackspace.com/knowledge_center/article/using-cidr-notation>`__ in the Knowledge Center.
-
-The name of the new network. For example, my_new_network.
-
-
-
 
 Response
 """"""""""""""""
@@ -168,16 +160,6 @@ This table shows the body parameters for the response:
        }
    }
 
-
-
-
-A container of network details.
-
-The CIDR for an isolated network.
-
-The network ID.
-
-The name of the network. ServiceNet is labeled as private and PublicNet is labeled as public in the network list.
 
 
 

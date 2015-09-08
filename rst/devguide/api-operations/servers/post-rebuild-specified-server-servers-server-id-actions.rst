@@ -174,32 +174,6 @@ This table shows the body parameters for the request:
 
 
 
-Specification of the rebuild action for the specified server.
-
-The new name for the server.
-
-The image ID. 
-
-The IP version 4 address.
-
-The IP version 6 address.
-
-The password assigned to provide login access to the server.
-
-A metadata key and value pair.
-
-The file path and file contents.
-
-The disk configuration value.
-
-Valid values are: AUTO:The server is built with a single partition which is the size of the target flavor disk. The file system is automatically adjusted to fit the entire partition. This keeps things simple and automated. AUTO is valid only for images and servers with a single partition that use the EXT3 file system. This is the default setting for applicable Rackspace base images.
-
-MANUAL:The server is built using the partition scheme and file system of the source image. If the target flavor disk is larger, the remaining disk space is left unpartitioned. This enables images to have non-EXT3 file systems, multiple partitions, and so on, and it enables you to manage the disk configuration.
-
-
-
-
-
 
 Response
 """"""""""""""""
@@ -331,24 +305,6 @@ This table shows the body parameters for the response:
        }
    }
 
-
-
-
-The container for server data.
-
-The ID of the server.
-
-An array of the self and bookmark links to the server.
-
-The URL for the server and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self`` or ``bookmark``.
-
-The password assigned to provide login access to the server.
-
-The disk configuration value. 
-
-Valid values are ``AUTO`` and ``MANUAL``.
 
 
 

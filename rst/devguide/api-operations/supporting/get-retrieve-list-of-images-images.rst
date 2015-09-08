@@ -125,22 +125,6 @@ This operation does not accept a request body.
 
 
 
-Filters the list of images by server. Specify the server reference by ID or by full URL.
-
-Filters the list of images by image name.
-
-Filters the list of images by status. In-flight images have a status of SAVING and the conditional progress element contains a value from 0 to 100, which indicates the percentage completion. Other possible values for the status attribute include ACTIVE, DELETED, ERROR, SAVING, and UNKNOWN. Images with an ACTIVE status are available for use.
-
-Filters the list of images to those that have changed since the changes-since time.
-
-The ID of the last item in the previous list.
-
-Sets the page size.
-
-Filters Rackspace base images or any custom server images that you have created.
-
-
-
 
 Response
 """"""""""""""""
@@ -263,22 +247,6 @@ The following example shows only a few images in the list for brevity.
      ]
    }
 
-
-
-
-The array of images.
-
-The image ID.
-
-The array of image links for self and bookmark.
-
-The URL for the image and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self``, ``bookmark``, or ``alternate``.
-
-The alternate image type.
-
-The image name.
 
 
 

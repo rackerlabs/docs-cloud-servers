@@ -129,13 +129,3 @@ This table shows the body parameters for the response:
 
 
 
-A container of network details.
-
-The CIDR for an isolated network.
-
-The network ID.
-
-The name of the network. ServiceNet is labeled as private and PublicNet is labeled as public in the network list.
-
-
-

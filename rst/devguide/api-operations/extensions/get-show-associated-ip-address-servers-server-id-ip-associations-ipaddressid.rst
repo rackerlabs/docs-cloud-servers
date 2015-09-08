@@ -117,11 +117,3 @@ This table shows the body parameters for the response:
 
 
 
-The container of associated IP details.
-
-The ID of the associated IP address.
-
-The associatied IP address.
-
-
-

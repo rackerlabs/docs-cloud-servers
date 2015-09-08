@@ -119,11 +119,3 @@ This table shows the body parameters for the response:
 
 
 
-The array of IP associations.
-
-The ID of the associated IP address.
-
-The associatied IP address.
-
-
-

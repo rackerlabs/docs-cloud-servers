@@ -133,10 +133,6 @@ This table shows the body parameters for the request:
 
 
 
-Specification of the rescue action for the specified server.
-
-
-
 
 **Example Rescue specified server with image: JSON request**
 
@@ -203,10 +199,6 @@ This table shows the body parameters for the response:
      "adminPass": "m7UKdGiKFpqM"
    }
 
-
-
-
-The new adminstrator password.
 
 
 

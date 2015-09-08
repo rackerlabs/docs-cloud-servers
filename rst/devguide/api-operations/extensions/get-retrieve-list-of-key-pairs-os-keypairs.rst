@@ -126,15 +126,3 @@ This table shows the body parameters for the response:
 
 
 
-An array of key pairs.
-
-A container of key pair details.
-
-A short sequence of bytes used to authenticate, or look up, a longer public key.
-
-The name of the key pair.
-
-The public ssh key value.
-
-
-

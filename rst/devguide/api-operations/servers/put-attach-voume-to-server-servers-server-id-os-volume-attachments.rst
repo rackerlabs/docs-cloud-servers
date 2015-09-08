@@ -111,14 +111,6 @@ This table shows the body parameters for the request:
 
 
 
-The container for the volume attachment specifications.
-
-The name of the device, such as /dev/xvdb. Specify ``null`` for auto-assignment.
-
-The ID of the volume that you want to attach to the server instance.
-
-
-
 
 Response
 """"""""""""""""
@@ -185,18 +177,6 @@ This table shows the body parameters for the response:
        }
    }
 
-
-
-
-The container for the volume attachment specifications.
-
-The name of the device, such as /dev/xvdb. Specify ``null`` for auto-assignment.
-
-The ID of the volume that you attached to the server instance.
-
-The ID of the server instance to which you attached the volume.
-
-The ID of the volume that you attached to the server instance.
 
 
 

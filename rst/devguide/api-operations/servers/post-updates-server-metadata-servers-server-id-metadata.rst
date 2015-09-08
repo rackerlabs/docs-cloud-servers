@@ -113,14 +113,6 @@ This table shows the body parameters for the request:
 
 
 
-Container for a metadata keypair for the specified server.
-
-This container holds one or more keypairs using format of 			 "metadata key" : "metadata value".
-
-Keypairs edcribing the metadata using format of "keyname" : "keyvalue".
-
-
-
 
 Response
 """"""""""""""""
@@ -176,14 +168,6 @@ This table shows the body parameters for the response:
        }
    }
 
-
-
-
-Container for a metadata keypair for the specified server.
-
-This container holds one or more keypairs using format of 			 "metadata key" : "metadata value".
-
-Keypairs edcribing the metadata using format of "keyname" : "keyvalue".
 
 
 

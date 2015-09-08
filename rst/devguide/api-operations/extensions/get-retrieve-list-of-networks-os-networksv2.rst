@@ -137,13 +137,3 @@ This table shows the body parameters for the response:
 
 
 
-An array of networks.
-
-The CIDR for an isolated network. This parameter is not included for PublicNet and ServiceNet.
-
-The network ID.
-
-The name of the network. ServiceNet is labeled as private, and PublicNet is labeled as public in the network list.
-
-
-

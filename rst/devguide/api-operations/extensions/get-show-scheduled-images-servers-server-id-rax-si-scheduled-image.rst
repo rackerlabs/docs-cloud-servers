@@ -146,16 +146,6 @@ This table shows the body parameters for the response:
 
 
 
-The container for the image schedule.
-
-The number of days that an Image should be retained.
-
-The chosen day of the week for the image creation.
-
-The allowed values for this field are: ``SUNDAY``, ``MONDAY``, ``TUESDAY``, ``WEDNESDAY``, ``THURSDAY``, ``FRIDAY``, and ``SATURDAY``.
-
-
-
 
 **Example Show scheduled images (weekly - success): JSON response**
 
@@ -207,14 +197,6 @@ The allowed values for this field are: ``SUNDAY``, ``MONDAY``, ``TUESDAY``, ``WE
      }
    }
 
-
-
-
-The container for the show image schedule error.
-
-The error message.
-
-The error code, most likely ``404``.
 
 
 

@@ -212,39 +212,3 @@ This table shows the body parameters for the response:
 
 
 
-The container of flavor attributes.
-
-The container of flavor extra specifications.
-
-The class for the flavor.
-
-The policy class for the flavor.
-
-The io index for the disk.
-
-The policy class for the flavor.
-
-The flavor name.
-
-The array of flavor links for self and bookmark.
-
-The URL for the flavor and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self`` or ``bookmark``.
-
-The amount of RAM.
-
-The number of virtual CPUs.
-
-The amount of swap space
-
-The rxtx factor, which describes configured bandwidth cap values.
-
-The number of ephemeral disks.
-
-The disk size.
-
-The flavor id.
-
-
-

@@ -118,14 +118,6 @@ This table shows the body parameters for the request:
 
 
 
-Specification of the changePassword action for the specified server
-
-The new adminstrator password.
-
-Though Rackspace does not enforce complexity requirements for the password, the operating system might. 			 If the password is not complex enough, the server might enter an ERROR state.
-
-
-
 
 Response
 """"""""""""""""

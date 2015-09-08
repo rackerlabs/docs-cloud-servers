@@ -148,16 +148,6 @@ This table shows the body parameters for the request:
 
 
 
-Specification of the createImage action for the specified server.
-
-The name of the new image.
-
-The container of the metadata for the new image.
-
-A metadata keypair, specifying ImageType or ImageVersion, for example.
-
-
-
 
 Response
 """"""""""""""""

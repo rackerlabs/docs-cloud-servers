@@ -129,24 +129,6 @@ This operation does not accept a request body.
 
 
 
-A time/date stamp for when the server last changed status.
-
-The image reference for the desired image for your server instance.
-
-The flavor reference for the desired flavor for your server instance.
-
-The name of the server, which can be queried with regular expressions. Notice that ?name=bob returns both "bob" and "bobbin". If you need to match only "bob", use a regular expression matching the syntax of the underlying database server implemented for Cloud Servers (such as MySQL or PostgreSQL).
-
-The UUID of the server at which you want to set a marker.
-
-The integer value used to limit the number of values which will be returned.
-
-The status of the server. For example, you can filter on "ACTIVE". For a full list of possible status values, see 
-
-The name of the host.
-
-
-
 
 Response
 """"""""""""""""
@@ -254,22 +236,6 @@ This table shows the body parameters for the response:
      ]
    }
 
-
-
-
-The ID of the server.
-
-An array of the self and bookmark links to the server.
-
-The URL for the server and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self`` 		 or ``bookmark``.
-
-The server name.
-
-Moves to the next metadata item.
-
-Moves to the previous metadata item.
 
 
 

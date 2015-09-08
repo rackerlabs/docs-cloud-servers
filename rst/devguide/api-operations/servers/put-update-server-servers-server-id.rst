@@ -116,16 +116,6 @@ This table shows the body parameters for the request:
 
 
 
-A container for one or more server details to be updated.
-
-The server name.
-
-The public IP version 4 access address.
-
-The public IP version 6 access address.
-
-
-
 
 Response
 """"""""""""""""
@@ -349,66 +339,6 @@ This table shows the body parameters for the response:
      }
    }
 
-
-
-
-A container of server details.
-
-The public IP version 4 access address.
-
-The public IP version 6 access address.
-
-An array of addresses for public, private, and isolated networks attached to the server.
-
-The IP address of the network.
-
-The version of the IP address of the network.
-
-The ID of the server.
-
-The time stamp indicating the creation date of the server.
-
-The flavor ID. 
-
-The image ID. 
-
-The host ID. The compute provisioning algorithm has an anti-affinity property that attempts to 		 spread customer VMs across hosts. Under certain situations, VMs from the same customer might be placed on 		 the same host. hostId represents the host your server runs on and can be used to determine this scenario if 		 it is relevant to your application.
-
-HostId is unique only for an account and is not globally unique.
-
-An array of the self and bookmark links to the server.
-
-The URL for the server and the associated ``rel``.
-
-The descriptive field for the associated ``href``, which is either ``self`` 		 or ``bookmark``.
-
-Any metadata key and value pairs.
-
-The server name.
-
-The build completion progress, as a percentage. Value ranges from ``0`` to ``100``.
-
-The status of the server. For a full list of possible status values, 		 see.
-
-The tenant ID.
-
-The time stamp of the last update.
-
-The user ID.
-
-Extended attribute: The disk configuration value.
-
-Valid values are ``AUTO`` and ``MANUAL``.
-
-Extended attribute: The image schedule reference is included only if scheduled images has been enabled for this 		 server.
-
-Extended attribute. Shows the extended statuses for the server, including the VM, task, and power states.
-
-Extended attribute. Enables booting the server from a volume when additional parameters are given. If specified, 		 the volume status must be ``available``, and the volume attach_status must be ``detached``.
-
-Moves to the next metadata item.
-
-Moves to the previous metadata item.
 
 
 

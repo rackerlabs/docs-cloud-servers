@@ -96,14 +96,6 @@ This table shows the body parameters for the request:
 
 
 
-The container for the key pair request.
-
-The name to associate with the key pair.
-
-The public ssh key value.
-
-
-
 
 Response
 """"""""""""""""
@@ -166,20 +158,6 @@ This table shows the body parameters for the response:
        } 
    }
 
-
-
-
-The container for the key pair details.
-
-A short sequence of bytes used to authenticate, or look up, a longer public key.
-
-The name of the key pair.
-
-The private ssh key value.
-
-The public ssh key value.
-
-The ID of the user.
 
 
 
