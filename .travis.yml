@@ -1,0 +1,16 @@
+language: python
+python:
+- '3.4'
+sudo: false
+install:
+- pip install -e git+https://github.com/deconst/preparer-sphinx.git#egg=deconstrst
+script:
+- script/cibuild
+env:
+  global:
+  - secure: FRRULE+dn8D34X24H3Fvu4fmiN1ifSKNfi5yAPPkoZ5tMiXeX8EPM0+bqFDatUsv9cOCjWiTzRFHhhlwnqUozzDOIGkPipqD2yJFsBMzGWOQtD3W7yG5x02++qF9MbNK3c1U7Z0ze3g8TTTrZPDMW/cQf4k0vfHkiglI6mBmQNw=
+  - secure: PKeFMokcVAzKDnmgSg2wKpBnzcS6UHg9tPclpfDBDyeC8nYDK61gBcSZ7o1YaHYHMIQDHp+B5hpt/UG6xhQF9b2kvWRZqJwxRCugVoczTM0WOVeiLvUzUdzOrgDe/5n9RktsMB9cYy/FegHH6+8SJ0nnWz3RwKMfCApNzz2rF3Q=
+  - secure: VPBG85OQpqZE7CPKhOUn/g40zqLvaeLe+AmJOUt+bnc4OJJrOkV/+MIqxK8FESx6QD+KgqCgw4tW8yXv8CbddLuzIB0bXEE0HmtXWskxyjJNphySdf2j4qBtI8Im7EhVXV8JcGf5O/aFAx5bJCqnDDCtylinOi7qyAxqqe/e+gw=
+notifications:
+  slack:
+    secure: LFr76i4X55ALYy+yIpDJpC0wHTWfkzPaWspfo5loiD4wfZCECYeI3+ATDBXq3+EP5Xv4LBjEJIBCLfPauvn80g41MWC2bENg7es6GD2bOLw5JQpAKnr5BfcLYmbyMZGbpaRZ0RUQHOxDrEy6vMpMyWhZo8MC7EkQHHqfzHhTOR0=
