@@ -7,7 +7,7 @@ functionality or enhanced functionality for existing operations. You can list
 available extensions and get details for a specific extension.
 
 Extended Responses and Actions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Use extensions to define new data types, parameters, actions, headers,
 states, and resources.
@@ -22,9 +22,27 @@ states, and resources.
 
 
 Extensions API operations
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Using API operations, users and applications can programmatically determine which extensions 
 are available, either by listing them or getting details for a specific extension.
 
 For examples of these operations, see :ref:`Extension operations <api-operations-sup-extension>`.
+
+Extensions
+----------
+.. toctree::
+   :maxdepth: 2
+
+   ext-rackspace-extensions
+   ext-disk-configuration
+   ext-extended-status
+   ext-rescue-mode
+   ext-used-limits
+   ext-scheduled-images
+   ext-flavors-extra-specs
+   ext-server-actions
+   ext-config-drive
+   ext-boot-from-volume
+   ext-network
+   ext-virtual-interface

@@ -1,7 +1,7 @@
 .. _api-operations-ext-console:
 
 Console operations
-------------------
+~~~~~~~~~~~~~~~~~~
 
 .. contents::
    :depth: 1

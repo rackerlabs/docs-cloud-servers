@@ -1,7 +1,7 @@
 .. _api-operations-ext-boot-from-volume:
 
 Boot from volume operations
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. contents::
    :depth: 1

@@ -1,7 +1,7 @@
 .. _api-operations-ext-disk-config:
 
 Disk config operations
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. contents::
    :depth: 1
