@@ -1,3 +1,5 @@
+.. _flavors-extra-specs-extension:
+
 =============================
 Flavors Extra Specs Extension
 =============================
@@ -7,6 +9,8 @@ on flavors, providing additional information about the flavor such as identifyin
 
 Changes to Get flavor details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For an example of this operation, see :ref:`Flavor extra spec operations <api-operations-ext-flavor-extra-spec>`.
 
 A **GET** request on the **/flavors/{id}** resource returns the ``OS-FLV-WITH-EXT-SPECS:extra_specs`` 
 extended attribute.
@@ -44,3 +48,4 @@ extended attribute.
        "id":"performance1-8"
      }
    }
+   

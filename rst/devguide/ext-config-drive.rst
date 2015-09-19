@@ -34,7 +34,8 @@ both of the following arguments:
    Located in openstack/content/0000 with the path listed in the
    openstack/latest/meta_data.json file.
 
-The following list shows files present in the config drive if both user-data and personality arguments are passed during server creation:
+The following list shows files present in the config drive if both user-data and 
+personality arguments are passed during server creation:
 
 * ec2/2009-04-04/meta-data.json
 

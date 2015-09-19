@@ -23,13 +23,8 @@ states, and resources.
 
 Extensions API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Using API operations, users and applications can programmatically determine which extensions 
 are available, either by listing them or getting details for a specific extension.
 
-Click the following links to see examples of these operations.
-
-.. toctree::
-    :maxdepth: 2
-    
-    List extensions <api-operations/supporting/get-retrieve-list-of-extensions-extensions>
-    Get details for specified extension <api-operations/supporting/get-retrieve-details-for-the-specified-extension-extensions-alias>
+For examples of these operations, see :ref:`Extension operations <api-operations-sup-extension>`.

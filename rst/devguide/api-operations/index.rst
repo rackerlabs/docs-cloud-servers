@@ -1,37 +1,57 @@
-.. API Operations
+.. _api-operations-index:
 
 ==============
 API Operations
 ==============
 
-The Rackspace Cloud Servers API v2 allows you to manage your servers and the supporting 
-functions like flavors.  It also provides several extensions for added or improved functionality.
+The Rackspace Cloud Servers API v2 contains operations in the following categories:
 
 Server operations
 -----------------
 
-.. toctree::
-    :maxdepth: 2
+- Basic (such as list, create, delete, and so on)
 
-    Servers <servers/index>
+- Specialized (such as key pairs, volume attachment, disk config, and so on)
 
 Supporting operations
 ---------------------
 
-.. toctree::
-    :maxdepth: 2
+- Flavors
 
-    Supporting <supporting/index>
-    
-Extension operations
---------------------
+- Images
 
-.. toctree::
-    :maxdepth: 2
+- Limits
 
-    Extensions <extensions/index>
-    
+- Extensions
 
-.. toctree::
-    :maxdepth: 99
-    :hidden:
+- Console
+
+- Quotas
+
+.. toctree:: 
+   :caption: API Reference
+   :maxdepth: 2
+
+   svr-basic-operations.rst
+   ext-key-pair-operations.rst
+   ext-volumes-operations.rst
+   ext-bfv-operations.rst
+   ext-disk-config-operations.rst
+   ext-networks-operations.rst
+   ext-virtual-interface-operations.rst
+   svr-server-addresses-operations.rst
+   ext-server-actions-operations.rst
+   svr-server-actions-operations.rst
+   svr-server-meta-operations.rst
+   sup-flavors-operations.rst
+   ext-flavor-extra-specs-operations.rst
+   ext-flavor-os-specs-operations.rst
+   sup-images-operations.rst
+   sup-image-metadata-operations.rst
+   ext-sched-images-operations.rst
+   sup-limits-operations.rst
+   ext-used-limits-operations.rst
+   sup-extension-operations.rst
+   ext-console-operations.rst
+   ext-quotas-operations.rst
+

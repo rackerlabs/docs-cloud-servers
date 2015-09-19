@@ -127,9 +127,4 @@ attribute is set to. Images also inherit the ``OS-DCF:diskConfig`` value
 from a server. So, if an image is created from the server, it also has a
 ``OS-DCF:diskConfig`` value of ``MANUAL``.
 
-Click the following link to see an example of this operation.
-
-.. toctree::
-    :maxdepth: 2
-
-	Create server with Disk Config <api-operations/extensions/get-create-server-with-disk-config-servers>
+For an example of this operation, see :ref:`api-operations-ext-disk-config`.

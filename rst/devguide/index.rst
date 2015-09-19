@@ -57,7 +57,7 @@ Rackspace Extensions
    ext-used-limits
    ext-scheduled-images
    ext-flavors-extra-specs
-   ext-instance-actions
+   ext-server-actions
    ext-config-drive
    ext-boot-from-volume
    ext-network

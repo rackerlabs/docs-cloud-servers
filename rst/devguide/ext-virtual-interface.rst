@@ -1,3 +1,5 @@
+.. _virtual-interfaces-extension:
+
 ============================
 Virtual Interfaces extension
 ============================
@@ -23,18 +25,14 @@ You can use the virtual interface extension to:
    you delete a virtual interface, the associated network is detached
    from the server instance.
 
-   If you want to delete an isolated network, the network cannot be
+..note:: If you want to delete an isolated network, the network cannot be
    attached to any server. Delete the virtual interface for the isolated
    network, and then you can delete the network.
 
 API operations for virtual interfaces extension 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the following links to see examples of these operations.
+For examples of these operations, see :ref:`api-operations-virtual-interfaces` .
 
-.. toctree::
-    :maxdepth: 2
 
-	List virtual interfaces <api-operations/extensions/get-retrieve-list-of-virtual-interfaces-servers-server-id-os-virtual-interfacesv2>
-	Create virtual interface <api-operations/extensions/post-create-virtual-interface-and-attach-to-server-servers-server-id-os-virtual-interfacesv2>
-	Delete virtual interface <api-operations/extensions/delete-delete-virtual-interface-servers-server-id-os-virtual-interfacesv2-interface-id>
+

@@ -1,3 +1,5 @@
+.. _networks-extension:
+
 =================
 Network extension
 =================
@@ -62,13 +64,4 @@ You can use the Cloud Networks virtual interface extension to:
 API operations for networks extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the following links to see examples of these operations.
-
-.. toctree::
-    :maxdepth: 2
-
-	List networks <api-operations/extensions/get-retrieve-list-of-networks-os-networksv2>
-	Create network <api-operations/extensions/post-create-network-os-networksv2>
-	Create server with network <api-operations/extensions/post-create-server-with-network-servers>
-	Show network details <api-operations/extensions/get-show-network-os-networksv2-id>
-	Delete network <api-operations/extensions/delete-delete-network-os-networksv2-id>
+For examples of these operations, see :ref:`api-operations-networks`.

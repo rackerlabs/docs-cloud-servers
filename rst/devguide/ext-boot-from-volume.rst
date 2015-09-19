@@ -194,11 +194,4 @@ when you send the correct request body.
    image with the uuid bb02b1a3-bc77-4d17-ab5b-421d89850fca, and thus the
    block_device_mapping_v2 attribute source_type is set to image.
    
-Click the following link to see an example of this operation.
-
-.. toctree::
-    :maxdepth: 2
-
-	Create bootable volume and server in one step <api-operations/extensions/post-create-bootable-volume-and-server-servers>
-
-
+For an example of this operation, see :ref:`api-operations-ext-boot-from-volume`.

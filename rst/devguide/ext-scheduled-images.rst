@@ -1,3 +1,5 @@
+.. _scheduled-images-extension:
+
 ==========================
 Scheduled Images Extension
 ==========================
@@ -64,11 +66,4 @@ The namespace for this extended element is::
 API operations for scheduling images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the following links to see an examples of these operations.
-
-.. toctree::
-    :maxdepth: 2
-
-	Enable scheduled images for server <api-operations/extensions/post-enable-scheduled-images-servers-server-id-rax-si-scheduled-image>
-    Show scheduled images for server <api-operations/extensions/get-show-scheduled-images-servers-server-id-rax-si-scheduled-image>
-    Disable scheduled images for server <api-operations/extensions/delete-disable-scheduled-images-servers-server-id-rax-si-scheduled-image>
+For examples of these operations, see :ref:`Scheduled images operations <api-operations-ext-scheduled-images>`.

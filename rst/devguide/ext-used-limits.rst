@@ -1,3 +1,5 @@
+.. _used-limits-extension:
+
 =====================
 Used Limits Extension
 =====================
@@ -13,9 +15,4 @@ show how much capacity is currently being used.
 Changes to List of rate and absolute limits to include used limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the following link to see an example of this operation.
-
-.. toctree::
-    :maxdepth: 2
-    
-    List limits including used <api-operations/extensions/get-retrieve-list-of-limits-including-used-limits-limits>
+For an example of this operation, see :ref:`api-operations-used-limits`.

@@ -107,10 +107,5 @@ Get Limits API operation
 You can do a **GET** on the /limits resource on a Cloud Servers endpoint to discover the
 limits for your account. 
 
-Click the following link to see an example of this operation.
-
-.. toctree::
-    :maxdepth: 2
-
-	Get limits <api-operations/supporting/get-retrieve-list-of-rate-and-absolute-limits-limits>
+For an example of this operation, see :ref:`Limits operations <api-operations-used-limits>`. 
 
