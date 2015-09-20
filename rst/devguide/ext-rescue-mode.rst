@@ -8,6 +8,6 @@ Rescue mode creates a new Cloud Server with the file system for the specified Cl
 mounted to fix file system and configuration errors.  You can also unrescue a server, when you are ready.
 
 Rescue and unrescue server action operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------
 
-For examples of these operations, see :ref:`api-operations-svr-server-actions`.
+For examples of these operations, see :ref:`Rescue mode operations <api-operations-svr-basic>`.

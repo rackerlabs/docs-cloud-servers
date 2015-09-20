@@ -10,9 +10,8 @@ Attach voume to server
 
     PUT /servers/{server_id}/os-volume_attachments
 
-Attaches volume to a specified server
-
-You can attach one or more volumes in a single request.
+This operation attaches volume to a specified server. You can attach one or more volumes 
+in a single request.
 
 For information about creating volumes, see `Rackspace Cloud Block Storage Developer Guide <http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html>`__.
 

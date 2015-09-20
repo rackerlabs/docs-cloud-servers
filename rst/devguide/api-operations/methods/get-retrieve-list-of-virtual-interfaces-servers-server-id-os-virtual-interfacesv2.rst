@@ -5,12 +5,9 @@
 
 Retrieve list of virtual interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. code::
 
     GET /servers/{server_id}/os-virtual-interfacesv2
-
-Retrieves list of the virtual interfaces configured for a server instance.
 
 This operation lists the virtual interfaces configured for a server instance.
 
@@ -50,8 +47,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -61,48 +56,39 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
 +----------------------------------------------+--------------+----------------+
 |Name                                          |Type          |Description     |
 +==============================================+==============+================+
-|parameters.\ **virtual_interfaces**           |Array         |The array of    |
+|**virtual_interfaces**                        |Array         |The array of    |
 |                                              |              |virtual         |
 |                                              |              |interfaces.     |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.\ **id**        |String        |The virtual     |
+|virtual_interfaces\**id**                     |String        |The virtual     |
 |                                              |              |interface ID.   |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.\               |Array         |The array of    |
-|**ip_addresses**                              |              |interface IP    |
+|virtual_interfaces\**ip_addresses**           |Array         |The array of    |
+|                                              |              |interface IP    |
 |                                              |              |address details.|
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.ip_\            |String        |The interface   |
-|**address**es.\ **address**                   |              |IP address.     |
+|virtual_interfaces\ip_addresses\**address**   |String        |The interface   |
+|                                              |              |IP address.     |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.ip_addresses.\  |Uuid          |The interface   |
-|**network_id**                                |              |network ID.     |
+|virtual_interfaces\ip_addresses\**network_id**|Uuid          |The interface   |
+|                                              |              |network ID.     |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.ip_addresses.\  |String        |The interface   |
-|**network_label**                             |              |network label.  |
+|virtual_interfaces\ip_addresses\              |String        |The interface   |
+|   **network_label**                          |              |network label.  |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.\               |String        |The Media       |
-|**mac_address**                               |              |Access Control  |
+|virtual_interfaces\**mac_address**            |String        |The Media       |
+|                                              |              |Access Control  |
 |                                              |              |(MAC) address   |
 |                                              |              |for the virtual |
 |                                              |              |interface. A    |
@@ -116,10 +102,6 @@ This table shows the body parameters for the response:
 |                                              |              |on the physical |
 |                                              |              |network segment.|
 +----------------------------------------------+--------------+----------------+
-
-
-
-
 
 
 

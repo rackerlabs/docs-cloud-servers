@@ -30,9 +30,9 @@ You can use the virtual interface extension to:
    network, and then you can delete the network.
 
 API operations for virtual interfaces extension 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------
 
-For examples of these operations, see :ref:`api-operations-virtual-interfaces` .
+For examples of these operations, see :ref:`Virtual interface operations <api-operations-networks>` .
 
 
 

@@ -10,12 +10,9 @@ Retrieve image metadata item for specified image
 
     GET /images/{image_id}/metadata/{key}
 
-Retrieves an image metadata item for the specified image.
-
 This operation shows a metadata item for an image.
 
 Specify the image ID and metadata key in the URI.
-
 
 
 This table shows the possible response codes for this operation:
@@ -51,9 +48,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -66,12 +60,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Retrieve image metadata item for specified image: JSON request**
@@ -83,33 +72,20 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **meta**     |Object                   |The container of         |
+|**meta**                  |Object                   |The container of         |
 |                          |                         |metadata for images.     |
 |                          |                         |Within this container,   |
 |                          |                         |there may be one or more |
 |                          |                         |metadata key pairs.      |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Retrieve image metadata item for specified image: JSON response**
@@ -133,7 +109,5 @@ This table shows the body parameters for the response:
        "label": "Updated"
      }
    }
-
-
 
 

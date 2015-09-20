@@ -60,11 +60,6 @@ have access to an active Rackspace Cloud Servers account and you should also be 
 
 -  JSON data serialization format
 
-Something Weird inserted here
------------------------------
-
-does it even show up?
-
 Pricing and Service Level
 -------------------------
 

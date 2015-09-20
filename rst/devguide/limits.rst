@@ -107,5 +107,5 @@ Get Limits API operation
 You can do a **GET** on the /limits resource on a Cloud Servers endpoint to discover the
 limits for your account. 
 
-For an example of this operation, see :ref:`Limits operations <api-operations-used-limits>`. 
+For an example of this operation, see :ref:`Limits operations <api-operations-svr-misc>`. 
 

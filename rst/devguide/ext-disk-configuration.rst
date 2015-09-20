@@ -1,3 +1,5 @@
+.. _disk-configuration-extension:
+
 ============================
 Disk Configuration Extension
 ============================
@@ -45,7 +47,7 @@ The namespace for this extended attribute is:
     xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
 
 Changes to Get Server/Image Details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
 A **GET** request on the **/servers/detail**,
 **/servers/{id}**, **/images/detail**, or **/images/{id}**
@@ -53,7 +55,7 @@ resource returns the ``OS-DCF:diskConfig`` extended attribute. See the
 following sections.
 
 Changes to Rebuild Server
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 You can set the ``OS-DCF:diskConfig`` attribute when you rebuild a
 server. In the following examples, the ``OS-DCF:diskConfig`` attribute
@@ -87,7 +89,7 @@ the rebuild, the original value of the attribute is retained.
     }
 
 Changes to Resize Server
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 You can set the ``OS-DCF:diskConfig`` attribute when you resize a
 server, which enables you to change the value of the attribute when you
@@ -108,7 +110,7 @@ the original value of the attribute is retained.
     }
 
 Changes to Create Server
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 When you create a server from an image with the ``OS-DCF:diskConfig``
 value set to ``AUTO``, the server is built with a single partition that
@@ -127,4 +129,4 @@ attribute is set to. Images also inherit the ``OS-DCF:diskConfig`` value
 from a server. So, if an image is created from the server, it also has a
 ``OS-DCF:diskConfig`` value of ``MANUAL``.
 
-For an example of this operation, see :ref:`api-operations-ext-disk-config`.
+For an example of this operation, see :ref:`Create server with disk config operation <api-operations-svr-basic>`.

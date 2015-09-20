@@ -1,3 +1,5 @@
+.. _boot-from-volume-extension:
+
 ================================
 Boot from volume
 ================================
@@ -21,7 +23,7 @@ supported for these two flavor classes.
 Standard and OnMetal servers may not be booted from volume.
 
 Create volume from image and boot instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 You can create a volume from an existing image, volume, or snapshot. This procedure shows 
 you how to create a bootable volume from an image, and use the volume to boot an instance, 
@@ -120,7 +122,7 @@ value of an image's UUID in order to be bootable. If it is not bootable, it
 will show an empty string.
 
 The following example shows the nova command for booting a server from an
-existing volume:
+existing volume and creates a Compute1 15GB server named BVFServer:
 
 .. code::
 
@@ -132,9 +134,8 @@ existing volume:
    Type and size can be left blank, delete on terminate can be expressed as
    True or 1 and False or 0.
 
-This command creates a Compute1 15GB server named BVFServer.
-
-The following example shows a cURL command for booting a server from an existing volume:
+The following example shows a cURL command for booting a server from an existing volume
+and creates a General Purpose v1 1GB server named BVFServer5:
 
 .. code::
 
@@ -147,8 +148,6 @@ The following example shows a cURL command for booting a server from an existing
       "networks":[{"uuid":"00000000-0000-0000-0000-000000000000"},{"uuid":"11111111-1111-1111-1111-111111111111"}]}}' \
       | python -m json.tool
 
-
-This command creates a General Purpose v1 1GB server named BVFServer5.
 
 Here is the JSON request body for the same request, if you don't use the nova client:
 
@@ -183,7 +182,7 @@ Here is the JSON request body for the same request, if you don't use the nova cl
    }
 
 API operations for creating or using bootable volumes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------
 
 The POST /servers operation creates a bootable volume and boots a server in one step 
 when you send the correct request body.
@@ -194,4 +193,4 @@ when you send the correct request body.
    image with the uuid bb02b1a3-bc77-4d17-ab5b-421d89850fca, and thus the
    block_device_mapping_v2 attribute source_type is set to image.
    
-For an example of this operation, see :ref:`api-operations-ext-boot-from-volume`.
+For an example of this operation, see :ref:`Boot from volume operation <api-operations-svr-basic>`.

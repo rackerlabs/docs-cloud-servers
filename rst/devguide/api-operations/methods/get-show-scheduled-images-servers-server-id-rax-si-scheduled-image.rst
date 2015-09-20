@@ -10,9 +10,10 @@ Show scheduled Images
 
     GET /servers/{server_id}/rax-si-scheduled-image
 
-Show scheduled images for the specified server.
-
-This operation returns the retention value if the server has scheduled images enabled. For weekly images, 				the response also includes the scheduled day of the week for the image. If the server has scheduled images 				disabled, an HTTP 404 is returned. 
+This operation returns the retention value, if the server has scheduled images enabled.
+ 
+For weekly images, the response also includes the scheduled day of the week for the image. 
+If the server has scheduled images disabled, an HTTP 404 is returned. 
 
 In the URI, specify the server ID.
 

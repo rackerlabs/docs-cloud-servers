@@ -10,15 +10,20 @@ Get console
 
     POST /servers/{server_id}/action
 
-Retrieve console output for a specified server.
-
-This operation returns a URL which you use with a java client to open a console connection to your 				server.
+This operation returns a URL which you use with a java client to open a console connection 
+to your server.
 
 In the URI, specify the server ID.
 
-To use the URL returned from this operation, you should download and install a VNC Viewer like `Real VNC <https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html>`__ or `Tight VNC <http://www.tightvnc.com/download.php>`__. Then, from the directory where you 				saved the Vnc Viewer, run the following command (using the installed jar and the URL from the operation 				response body):
+To use the URL returned from this operation, you should download and install a VNC Viewer 
+like `Real VNC <https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html>`__ 
+or `Tight VNC <http://www.tightvnc.com/download.php>`__. Then, from the directory where 
+you saved the Vnc Viewer, run the following command (using the installed jar and the URL 
+from the operation response body):
 
-java -jar VncViewer.jar URL {returnedURL}
+.. code::
+
+   java -jar VncViewer.jar URL {returnedURL}
 
 This table shows the possible response codes for this operation:
 

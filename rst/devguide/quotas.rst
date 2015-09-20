@@ -15,3 +15,4 @@ Default Quotas
 | 128 GB     | 100 instances                |
 +------------+------------------------------+
 
+For an example of this operation, see :ref:`Quotas operations <api-operations-svr-misc>`.

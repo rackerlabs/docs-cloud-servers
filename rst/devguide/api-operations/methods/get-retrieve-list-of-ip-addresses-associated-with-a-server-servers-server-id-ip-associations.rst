@@ -10,11 +10,7 @@ Retrieve list of IP addresses associated with a server
 
     GET /servers/{server_id}/ip_associations
 
-Retrieves list of associated IPs for specified server.
-
 This operation retrieves a list of all IP addresses associated to the specified server.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -49,9 +45,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -60,41 +53,25 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
 +------------------------------+-----------------------+-----------------------+
 |Name                          |Type                   |Description            |
 +==============================+=======================+=======================+
-|parameters.\                  |Array                  |The array of IP        |
-|**ip_associations**           |                       |associations.          |
+|**ip_associations**           |Array                  |The array of IP        |
+|                              |                       |associations.          |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ip_associations.\  |Uuid                   |The ID of the          |
-|**id**                        |                       |associated IP address. |
+|ip_associations\**id**        |Uuid                   |The ID of the          |
+|                              |                       |associated IP address. |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ip_associations.\  |Uuid                   |The associatied IP     |
-|**address**                   |                       |address.               |
+|ip_associations\**address**   |Uuid                   |The associatied IP     |
+|                              |                       |address.               |
 +------------------------------+-----------------------+-----------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of IP addresses associated with a server: JSON response**
@@ -115,7 +92,5 @@ This table shows the body parameters for the response:
            }
        ]
    }
-
-
 
 

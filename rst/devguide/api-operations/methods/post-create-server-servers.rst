@@ -10,29 +10,33 @@ Create server
 
     POST /servers
 
-Provisions a server asynchronously.
+This operation provisions a server asynchronously.
 
-The full URL to the newly created server is returned through the ``Location`` header and is 				available as a ``self`` and ``bookmark`` link in the server representation.
+The full URL to the newly created server is returned through the ``Location`` header and is 
+available as a ``self`` and ``bookmark`` link in the server representation.
 
-The progress of the server build depends on factors including location of the requested image, network i/o, 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to 				retrieve the details of the server. Once the build is complete, the server's ``status`` is ``ACTIVE``.
+The progress of the server build depends on factors including location of the requested image, 
+network i/o, host load, and the selected flavor. You can check the progress of the build 
+request by issuing a call to retrieve the details of the server. Once the build is complete, 
+the server's ``status`` is ``ACTIVE``.
 
-For OnMetal server builds, even after the ``status`` is ACTIVE, wait a few additional 				moments for the network configuration to complete. Once the new OnMetal server pings successfully, you can 				begin to use it.
+For OnMetal server builds, even after the ``status`` is ACTIVE, wait a few additional moments 
+for the network configuration to complete. Once the new OnMetal server pings successfully, 
+you can begin to use it.
 
 .. important::
-   OnMetal servers must be created using an ssh key pair. Thus you should ignore the administrator 					password returned by a Create Server operation because it does not allow access to the OnMetal server.
+   OnMetal servers must be created using an ssh key pair. Thus you should ignore the 
+   administrator password returned by a Create Server operation because it does not allow 
+   access to the OnMetal server.
    
    
 
 The following extensions allow you to use other options when creating a new server:
 
-
-
 *  Config drive
 *  Boot from volume
 *  Networks for nova and for neutron
 *  Key pairs
-
-
 
 
 This table shows the possible response codes for this operation:
@@ -67,12 +71,6 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
-
-
-
-
-
-
 
 
 This table shows the body parameters for the request:

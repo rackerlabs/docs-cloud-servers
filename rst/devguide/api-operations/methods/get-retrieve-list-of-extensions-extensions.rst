@@ -10,10 +10,7 @@ Retrieve list of extensions
 
     GET /extensions
 
-Retrieves the list of available extensions.
-
-
-
+This operation retrieves the list of available extensions.
 
 
 This table shows the possible response codes for this operation:
@@ -50,19 +47,10 @@ Request
 """"""""""""""""
 
 
-
-
-
-
-
-
 This operation does not accept a request body.
 
 
-
-
 **Example Retrieve list of extensions: JSON request**
-
 
 .. code::
 
@@ -71,14 +59,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -86,33 +68,27 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\              |Array                    |The array of extensions. |
-|**extensions**            |                         |                         |
+|**extensions**            |Array                    |The array of extensions. |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extensions.\   |Date                     |The most recent update   |
-|**updated**               |                         |date for the extension.  |
+|extensions\**updated**    |Date                     |The most recent update   |
+|                          |                         |date for the extension.  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extensions.\   |String                   |The name of the          |
-|**name**                  |                         |extension.               |
+|extensions\ **name**      |String                   |The name of the          |
+|                          |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extensions.\   |Array                    |The array of links for   |
-|**links**                 |                         |the extension.           |
+|extensions\**links**      |Array                    |The array of links for   |
+|                          |                         |the extension.           |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extensions.\   |String                   |The namespace of the     |
-|**namespace**             |                         |extension.               |
+|extensions\**namespace**  |String                   |The namespace of the     |
+|                          |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extensions.\   |String                   |The alias, or short      |
-|**alias**                 |                         |name, of the extension.  |
+|extensions\**alias**      |String                   |The alias, or short      |
+|                          |                         |name, of the extension.  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extensions.\   |String                   |The description of the   |
-|**description**           |                         |extension.               |
+|extensions\**description**|String                   |The description of the   |
+|                          |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
-
 
 **Example Retrieve list of extensions: JSON response**
 

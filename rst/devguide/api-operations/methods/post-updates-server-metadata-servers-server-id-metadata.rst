@@ -10,16 +10,21 @@ Updates server metadata
 
     POST /servers/{server_id}/metadata
 
-Updates metadata items by key for a specified server
+This operation updates metadata items by key for a specified server.
 
-You can update one or more metadata items that you previously added in a single request, but you should 				avoid changing metadata items that you did not add. The operation replaces existing metadata items with the 				same key. Items that are not explicitly mentioned in the request are not modified. 
+You can update one or more metadata items that you previously added in a single request, 
+but you should avoid changing metadata items that you did not add. The operation replaces 
+existing metadata items with the same key. Items that are not explicitly mentioned in the 
+request are not modified. 
 
-If you exceed the maximum number of metadata items in the request, the call throws an ``overLimit 					(413)`` fault. To find the maximum number of key-value pairs that can be supplied for each 				server, use the maxServerMeta absolute limit query.
+If you exceed the maximum number of metadata items in the request, the call throws an 
+``overLimit (413)`` fault. To find the maximum number of key-value pairs that can be supplied 
+for each server, use the maxServerMeta absolute limit query.
 
 In the URI, specify the target server ID.
 
-In the request body, specify the ``metadata`` element, followed by the metadata key, for 				example ``version``, with the new value for that key.
-
+In the request body, specify the ``metadata`` element, followed by the metadata key, for 
+example ``version``, with the new value for that key.
 
 
 This table shows the possible response codes for this operation:

@@ -10,9 +10,9 @@ Delete server
 
     DELETE /servers/{server_id}
 
-Deletes the specified server.
+This operation deletes the specified server.
 
-If the operation succeeds, it returns an ``HTTP 202`` status code with no response 				body.
+If the operation succeeds, it returns an ``HTTP 202`` status code with no response 	body.
 
 In the URI, specify the target server ID.
 
@@ -52,8 +52,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,12 +61,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Delete server: JSON request**
@@ -82,18 +75,8 @@ This operation does not accept a request body.
 
 
 
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Delete server: JSON response**
@@ -108,7 +91,4 @@ Response
    Server: Jetty(8.0.y.z-SNAPSHOT)
    Via: 1.1 Repose (Repose/2.12)
    x-compute-request-id
-
-
-
 

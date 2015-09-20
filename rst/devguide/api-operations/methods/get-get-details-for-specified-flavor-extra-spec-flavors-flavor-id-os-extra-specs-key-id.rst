@@ -10,13 +10,9 @@ Get details for specified flavor extra spec
 
     GET /flavors/{flavor_id}/os-extra_specs/{key_id}
 
-Gets details of specified flavor extra spec.
-
 This operation shows extra specifications for flavors.
 
 In the URI, specify the key ID, or name, of the flavor extra spec.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -51,9 +47,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -65,12 +58,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Get details for specified flavor extra spec: JSON request**
@@ -84,13 +72,8 @@ This operation does not accept a request body.
 
 
 
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -98,27 +81,21 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\              |Object                   |The container for flavor |
-|**extra_specs**           |                         |extra specification      |
+|**extra_specs**           |Object                   |The container for flavor |
+|                          |                         |extra specification      |
 |                          |                         |details.                 |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extra_specs.\  |String                   |The class for the flavor.|
-|**class**                 |                         |                         |
+|extra_specs\**class**     |String                   |The class for the flavor.|
 +--------------------------+-------------------------+-------------------------+
-|parameters.extra_specs.\  |String                   |The policy class for the |
-|**policy_class**          |                         |flavor.                  |
+|extra_specs\              |String                   |The policy class for the |
+|   **policy_class**       |                         |flavor.                  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extra_specs.\  |String                   |The io index for the     |
-|**disk_io_index**         |                         |disk.                    |
+|extra_specs\              |String                   |The io index for the     |
+|   **disk_io_index**      |                         |disk.                    |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extra_specs.\  |String                   |The policy class for the |
-|**number_of_data_disks**  |                         |flavor.                  |
+|extra_specs\              |String                   |The policy class for the |
+|  **number_of_data_disks**|                         |flavor.                  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Get details for specified flavor extra spec: JSON response**

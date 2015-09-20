@@ -10,7 +10,6 @@ Retrieve quotas
 
     GET /os-quota-sets/{tenant_id}
 
-Retrieve quotas for specified tenant.
 
 This operation shows current quotas for a tenant.
 
@@ -52,8 +51,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,16 +60,9 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Retrieve quotas: JSON request**
-
 
 .. code::
 
@@ -81,14 +71,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -96,23 +80,17 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |Name                       |Type                     |Description             |
 +===========================+=========================+========================+
-|parameters.ip_associations |Object                   |The container of quota- |
+|**quota-set**              |Object                   |The container of quota- |
 |                           |                         |sets.                   |
 +---------------------------+-------------------------+------------------------+
-|pa\ **ram**eters.quota-    |Int                      |The quota for ram.      |
-|set.\ **ram**              |                         |                        |
+|quota-set\**ram**          |Int                      |The quota for ram.      |
 +---------------------------+-------------------------+------------------------+
-|parameters.quota-set.\     |Uuid                     |The quota for instances.|
-|**instances**              |                         |                        |
+|parameters\quota-set\      |Uuid                     |The quota for instances.|
+|   **instances**           |                         |                        |
 +---------------------------+-------------------------+------------------------+
-|parameters.quota-set.\     |Uuid                     |The quota for metadata- |
-|**metadata-items**         |                         |items.                  |
+|parameters\quota-set\      |Uuid                     |The quota for metadata- |
+|   **metadata-items**      |                         |items.                  |
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Retrieve quotas: JSON response**
@@ -155,7 +133,3 @@ This table shows the body parameters for the response:
        "security_groups": -1
      }
    }
-
-
-
-

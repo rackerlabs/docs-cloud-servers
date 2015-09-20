@@ -1,20 +1,30 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-create-server-with-disk-config-servers:
+.. _post-create-server-with-disk-config-servers:
 
 Create server with disk config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /servers
+    POST /servers
 
-Create server with disk config
+This operation creates a server using disk config.
 
-When you create a server from an image with the ``OS-DCF:diskConfig`` value set to ``AUTO``, the server is built with a single partition that is expanded to the disk size of 				the flavor selected. When you set the ``OS-DCF:diskConfig`` attribute to ``MANUAL``, the server is built by using the partition scheme and file system that is in 				the source image.  If the target flavor disk is larger, remaining disk space is left unpartitioned. A server 				inherits the ``OS-DCF:diskConfig`` attribute from the image from which it is created. However, 				you can override the ``OS-DCF:diskConfig`` value when you create a server..
+When you create a server from an image with the ``OS-DCF:diskConfig`` value set to ``AUTO``, 
+the server is built with a single partition that is expanded to the disk size of the flavor 
+selected. When you set the ``OS-DCF:diskConfig`` attribute to ``MANUAL``, the server is 
+built by using the partition scheme and file system that is in the source image.  If the 
+target flavor disk is larger, remaining disk space is left unpartitioned. A server inherits 
+the ``OS-DCF:diskConfig`` attribute from the image from which it is created. However, you 
+can override the ``OS-DCF:diskConfig`` value when you create a server.
 
-In this example, the server is created with ``OS-DCF:diskConfig`` set to ``MANUAL``.This request's success depends on the image's auto_disk_config metadata value. 				An image created from a server will have appropriate auto_disk_config metadata written to it. So, if the 				create server command succeeds, an image created from the server will have ``auto_disk_config`` = ``False`` on it.
+In this example, the server is created with ``OS-DCF:diskConfig`` set to ``MANUAL``.This 
+request's success depends on the image's auto_disk_config metadata value. An image created 
+from a server will have appropriate auto_disk_config metadata written to it. So, if the 
+create server command succeeds, an image created from the server will have 
+``auto_disk_config`` = ``False`` on it.
 
 
 
@@ -50,12 +60,6 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
-
-
-
-
-
-
 
 
 This table shows the body parameters for the request:

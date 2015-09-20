@@ -13,6 +13,6 @@ see :doc:`limits`. The used limits extension adds attributes to the response bod
 show how much capacity is currently being used.
 
 Changes to List of rate and absolute limits to include used limits
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------
 
-For an example of this operation, see :ref:`api-operations-used-limits`.
+For an example of this operation, see :ref:`Used limits operations <api-operations-svr-misc>`.

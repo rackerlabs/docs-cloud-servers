@@ -10,8 +10,6 @@ Retrieve list of images with details
 
     GET /images/detail
 
-Retrieves all details for all available images.
-
 This operation returns details of all images in the response body.
 
 
@@ -48,11 +46,6 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
-
-
-
-
-
 
 This table shows the query parameters for the request:
 
@@ -102,11 +95,7 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Retrieve list of images with details: JSON request**
@@ -119,14 +108,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -134,76 +117,70 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |Name                       |Type                     |Description             |
 +===========================+=========================+========================+
-|parameters.\ **images**    |Array                    |The array of images.    |
+|**images**                 |Array                    |The array of images.    |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |String                   |The image status, like  |
-|**status**                 |                         |``ACTIVE``.             |
+|images\**status**          |String                   |The image status, like  |
+|                           |                         |``ACTIVE``.             |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Date                     |The date and time that  |
-|**updated**                |                         |the image was last      |
+|images\**updated**         |Date                     |The date and time that  |
+|                           |                         |the image was last      |
 |                           |                         |updated.                |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |String                   |The array of image      |
-|**links**                  |                         |links for self and      |
+|images\**links**           |String                   |The array of image      |
+|                           |                         |links for self and      |
 |                           |                         |bookmark.               |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.links.\  |Uuid                     |The URL for the image   |
-|**href**                   |                         |and the associated      |
+|images\links\**href**      |Uuid                     |The URL for the image   |
+|                           |                         |and the associated      |
 |                           |                         |``rel``.                |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.links.\  |Uuid                     |The descriptive field   |
-|**rel**                    |                         |for the associated      |
+|images\links\**rel**       |Uuid                     |The descriptive field   |
+|                           |                         |for the associated      |
 |                           |                         |``href``, which is      |
 |                           |                         |either ``self``,        |
 |                           |                         |``bookmark``, or        |
 |                           |                         |``alternate``.          |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.links.\  |Uuid                     |The alternate image     |
-|**type**                   |                         |type.                   |
+|images\links\**type**      |Uuid                     |The alternate image     |
+|                           |                         |type.                   |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\ **OS-  |String                   |The disk configuration  |
-|DCF:diskConfig**           |                         |value. Valid values are |
+|images\**OS-               |String                   |The disk configuration  |
+|   **DCF:diskConfig**      |                         |value. Valid values are |
 |                           |                         |``AUTO`` and ``MANUAL``.|
 +---------------------------+-------------------------+------------------------+
-|parameters.images.ID       |Uuid                     |The image ID.           |
+|images\ID                  |Uuid                     |The image ID.           |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Date                     |The date and time that  |
-|**updated**                |                         |the image was last      |
+|images\**updated**         |Date                     |The date and time that  |
+|                           |                         |the image was last      |
 |                           |                         |updated.                |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\ **OS-  |String                   |The image size.         |
-|EXT-IMG-SIZE:size**        |                         |                        |
+|images\**OS-EXT-IMG-**     |String                   |The image size.         |
+|   **SIZE:size**           |                         |                        |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |String                   |The image name.         |
-|**name**                   |                         |                        |
+|images\**name**            |String                   |The image name.         |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Date                     |The date and time that  |
-|**created**                |                         |the image was created.  |
+|images\**created**         |Date                     |The date and time that  |
+|                           |                         |the image was created.  |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Int                      |The minimum number of   |
-|**minDisk**                |                         |gigabytes of disk       |
+|images\**minDisk**         |Int                      |The minimum number of   |
+|                           |                         |gigabytes of disk       |
 |                           |                         |storage.                |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Int                      |The completion          |
-|**progress**               |                         |percentage for an       |
+|images\**progress**        |Int                      |The completion          |
+|                           |                         |percentage for an       |
 |                           |                         |image. ``100``          |
 |                           |                         |indicates the image     |
 |                           |                         |build is completed.     |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Int                      |The specified minimum   |
-|**minRam**                 |                         |amount of RAM in        |
+|images\**minRam**          |Int                      |The specified minimum   |
+|                           |                         |amount of RAM in        |
 |                           |                         |megabytes.              |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |Array                    |Array of metadata key   |
-|**metadata**               |                         |pairs containing        |
+|images\**metadata**        |Array                    |Array of metadata key   |
+|                           |                         |pairs containing        |
 |                           |                         |information about the   |
 |                           |                         |image.                  |
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of images with details: JSON response**
@@ -303,7 +280,5 @@ The following example shows only a few images in the list for brevity.
        }
      ]
    }
-
-
 
 

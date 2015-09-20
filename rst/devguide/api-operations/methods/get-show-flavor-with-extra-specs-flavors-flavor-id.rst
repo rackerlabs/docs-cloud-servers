@@ -10,9 +10,8 @@ Show flavor with extra specs
 
     GET /flavors/{flavor_id}
 
-Retrieve the extra specs for a specified flavor.
-
-This operation shows extra specifications for the flavor, such as identifying the policy class, in the 				flavor operations.
+This operation shows extra specifications for the flavor, such as identifying the policy 
+class, in the flavor operations.
 
 In the URI, specify the flavor ID.
 

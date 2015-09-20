@@ -10,11 +10,15 @@ Create bootable volume and server
 
     POST /servers
 
-Creates a bootable volume and boots a server in one step
+This operation creates a bootable volume and boots a server in one step.
 
-The full URL to the newly created server is returned through the ``Location`` header and is 				available as a ``self`` and ``bookmark`` link in the server representation.
+The full URL to the newly created server is returned through the ``Location`` header and is 
+available as a ``self`` and ``bookmark`` link in the server representation.
 
-The progress of the server build depends on factors including location of the requested image, network i/o, 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to 				retrieve the details of the server. Once the build is complete, the server's ``status`` is ``ACTIVE``.
+The progress of the server build depends on factors including location of the requested image, 
+network i/o, host load, and the selected flavor. You can check the progress of the build 
+request by issuing a call to retrieve the details of the server. Once the build is complete, 
+the server's ``status`` is ``ACTIVE``.
 
 
 
@@ -50,11 +54,6 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
-
-
-
-
-
 
 
 

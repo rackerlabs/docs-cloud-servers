@@ -6,15 +6,11 @@
 Delete virtual interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code::
+.. code:: 
 
     DELETE /servers/{server_id}/os-virtual-interfacesv2/{interface_id}
 
-Deletes a virtual interface from a server instance.
-
 This operation deletes the specified virtual interface from the specified server instance.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -50,8 +46,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,12 +57,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Delete virtual interface: JSON request**
@@ -81,19 +70,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Delete virtual interface: JSON response**
@@ -108,7 +86,5 @@ Response
        Server: Jetty(9.2.z-SNAPSHOT)
        Via: 1.1 Repose (Repose/6.2.1.2)
        X-Compute-Request-Id: req-12a961ef-4cf3-419e-9ea5-b7afeb184691
-
-
 
 

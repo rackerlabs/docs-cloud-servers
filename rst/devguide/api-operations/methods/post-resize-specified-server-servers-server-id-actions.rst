@@ -10,9 +10,13 @@ Resize specified server
 
     POST /servers/{server_id}/actions
 
-Resize the specified server.
+This operation converts an existing Standard server to a different flavor, which scales 
+the server up or down. 
 
-This operation converts an existing Standard server to a different flavor, which scales the server up or 				down. The original server is saved for a period of time to allow roll back if a problem occurs. You should 				test and explicitly confirm all resizes. When you do so, the original server is removed. All resizes are 				automatically confirmed after 24 hours if you do not explicitly confirm or revert the resize. 
+The original server is saved for a period of time to allow roll back 
+if a problem occurs. You should test and explicitly confirm all resizes. When you do so, 
+the original server is removed. All resizes are automatically confirmed after 24 hours if 
+you do not explicitly confirm or revert the resize. 
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -20,7 +24,8 @@ This operation converts an existing Standard server to a different flavor, which
    
 
 .. warning::
-   Resize is only available for Standard flavors. If you have a Compute, Memory, or IO flavor server, and 					you need to change the size of your data disk(s), you will need to: 
+   Resize is only available for Standard flavors. If you have a Compute, Memory, or IO 
+   flavor server, and you need to change the size of your data disk(s), you will need to: 
    
    #. Image your system disk.
    #. Back-up your data disk(s), using Cloud Backup or Cloud Block Storage.
@@ -28,11 +33,7 @@ This operation converts an existing Standard server to a different flavor, which
    #. Add your backed-up data to the new data disk(s).
    #. Delete the old server, once you are satisfied with the new server.
    
-   
-   
-   
    For General Purpose servers, use steps 1, 3, and 5 from the preceding list.
-   
    
 
 Specify the target server ID in the URI.

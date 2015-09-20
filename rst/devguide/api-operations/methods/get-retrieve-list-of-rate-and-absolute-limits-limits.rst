@@ -10,7 +10,7 @@ Retrieve list of rate and absolute limits
 
     GET /limits
 
-Retrieves the current rate limits and absolute limits for your account.
+This operation retrieves the current rate limits and absolute limits for your account.
 
 Applications can programmatically determine current account limits by using this API operation.
 
@@ -50,15 +50,7 @@ Request
 """"""""""""""""
 
 
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Retrieve list of rate and absolute limits: JSON request**
@@ -70,15 +62,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -86,61 +71,55 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|parameters.\ **limits**         |Object                |The container of      |
+|**limits**                      |Object                |The container of      |
 |                                |                      |limits attributes.    |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.\ **absolute**|Object                |The container of      |
+|limits\**absolute**             |Object                |The container of      |
 |                                |                      |absolute limits       |
 |                                |                      |attributes.           |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.absolute.\    |Int                   |The maximum amount of |
-|**maxTotalRAMSize**             |                      |RAM allowed.          |
+|limits\absolute\                |Int                   |The maximum amount of |
+|   **maxTotalRAMSize**          |                      |RAM allowed.          |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.absolute.\    |Int                   |The total amount of   |
-|**totalRAMUsed**                |                      |RAM used.             |
+|limits\absolute\                |Int                   |The total amount of   |
+|   **totalRAMUsed**             |                      |RAM used.             |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.absolute.\    |Int                   |The maximum allowed   |
-|**maxServerMeta**               |                      |server metadata items.|
+|limits\absolute\                |Int                   |The maximum allowed   |
+|   **maxServerMeta**            |                      |server metadata items.|
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.absolute.\    |Int                   |The maximum allowed   |
-|**maxImageMeta**                |                      |image metadata items. |
+|limits\absolute\                |Int                   |The maximum allowed   |
+|   **maxImageMeta**             |                      |image metadata items. |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.absolute.\    |Int                   |The maximum number of |
-|**maxPersonality**              |                      |personality files.    |
+|limits\absolute\                |Int                   |The maximum number of |
+|   **maxPersonality**           |                      |personality files.    |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.absolute.\    |Int                   |The size of the       |
-|**maxPersonalitySize**          |                      |personality files.    |
+|limits\absolute\                |Int                   |The size of the       |
+|   **maxPersonalitySize**       |                      |personality files.    |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.\ **rate**    |Array                 |The array of rate     |
+|limits\**rate**                 |Array                 |The array of rate     |
 |                                |                      |objects.              |
 +--------------------------------+----------------------+----------------------+
-|parameters.\ **limit**s.rate.\  |Array                 |The array of rate     |
-|**limit**                       |                      |limit objects.        |
+|limits\rate\**limit**           |Array                 |The array of rate     |
+|                                |                      |limit objects.        |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.rate.limit.\  |Date                  |The next available    |
-|**next-available**              |                      |rate limit date and   |
+|limits\rate\limit\              |Date                  |The next available    |
+|   **next-available**           |                      |rate limit date and   |
 |                                |                      |time.                 |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.rate.limit.\  |String                |The HTTP operation.   |
-|**verb**                        |                      |                      |
+|limits\rate\limit\**verb**      |String                |The HTTP operation.   |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.rate.limit.\  |String                |The max allowed time  |
-|**value**                       |                      |in units.             |
+|limits\rate\limit\**value**     |String                |The max allowed time  |
+|                                |                      |in units.             |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.rate.limit.\  |Date                  |The time remaining    |
-|**remaining**                   |                      |for the rate limit in |
+|limits\rate\limit\**remaining** |Date                  |The time remaining    |
+|                                |                      |for the rate limit in |
 |                                |                      |units.                |
 +--------------------------------+----------------------+----------------------+
-|parameters.limits.rate.limit.\  |Date                  |The type of unit for  |
-|**unit**                        |                      |the rate limit. For   |
+|limits\rate\limit\**unit**      |Date                  |The type of unit for  |
+|                                |                      |the rate limit. For   |
 |                                |                      |example, ``DAY`` or   |
 |                                |                      |``MINUTE``.           |
 +--------------------------------+----------------------+----------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of rate and absolute limits: JSON response**
@@ -155,7 +134,6 @@ This table shows the body parameters for the response:
        Server: Jetty(9.2.z-SNAPSHOT)
        Via: 1.1 Repose (Repose/6.2.1.2)
        X-Compute-Request-Id: req-48d05db0-dd97-4aef-87f2-11177ab8c262
-
 
 .. code::
 
@@ -193,8 +171,5 @@ This table shows the body parameters for the response:
            ]
        }
    }
-   
-
-
 
 

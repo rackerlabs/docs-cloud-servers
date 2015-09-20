@@ -5,14 +5,12 @@
 
 Show associated IP address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. code::
 
     GET /servers/{server_id}/ip_associations/{IPAddressID}
 
-Retrieves information for a specified associated IP.
-
-This operation retrieves information for an associated IP address, using the associated IP address 				ID.
+This operation retrieves information for an associated IP address, using the associated IP 
+address ID.
 
 
 

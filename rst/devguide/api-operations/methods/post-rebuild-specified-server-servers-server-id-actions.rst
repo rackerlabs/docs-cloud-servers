@@ -10,9 +10,13 @@ Rebuild specified server
 
     POST /servers/{server_id}/actions
 
-Rebuild the specified server.
+This operation removes all data on the server and replaces it with the specified 
+image. 
 
-The rebuild operation removes all data on the server and replaces it with the specified image. The serverID 				and all IP addresses remain the same. If you specify name, metadata, accessIPv4, or accessIPv6 in the rebuild 				request, new values replace existing values. Otherwise, these values do not change. You can inject data into 				the file system during the rebuild.
+The serverID and all IP addresses remain the same. If you specify name, metadata, 
+accessIPv4, or accessIPv6 in the rebuild request, new values replace existing values. 
+Otherwise, these values do not change. You can inject data into the file system during the 
+rebuild.
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -21,7 +25,8 @@ The rebuild operation removes all data on the server and replaces it with the sp
 
 Specify the target server ID in the URI.
 
-In the request body, specify the rebuild action followed by various attributes, listed in the following 				parameters section.
+In the request body, specify the rebuild action followed by various attributes, listed in 
+the following parameters section.
 
 
 

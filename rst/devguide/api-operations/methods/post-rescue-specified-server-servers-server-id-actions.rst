@@ -10,12 +10,15 @@ Rescue specified server
 
     POST /servers/{server_id}/actions
 
-Enter rescue mode to reboot a virtual machine (VM) in rescue mode so that you can access 				the VM with a new root password and fix any file system and configuration errors.
+This operation allows you to enter into rescue mode.
 
-Enter rescue mode to debug system issues that prevent you from booting a server to a usable state.
+You might enter rescue mode to reboot a virtual machine (VM) in rescue mode so that you can access 
+the VM with a new root password and fix any file system and configuration errors.
+
+You might also enter rescue mode to debug system issues that prevent you from booting a 
+server to a usable state.
 
 When you place a server in rescue mode, the following events occur: 
-
 
 
 #. The VM is shut down.
@@ -26,7 +29,8 @@ When you place a server in rescue mode, the following events occur:
    Secondary diskImage of the VM that needs to be rescued.
 
 
-When you put a server into rescue mode, you cannot use it until its status goes from ``ACTIVE`` to ``RESCUE``. This does not happen immediately.
+When you put a server into rescue mode, you cannot use it until its status goes from 
+``ACTIVE`` to ``RESCUE``. This does not happen immediately.
 
 For a full list of possible server status values, see 
 
@@ -37,16 +41,19 @@ For a full list of possible server status values, see
 
 .Specify the target server ID in the URI.
 
-After you resolve any problems and reboot the rescued server, you can unrescue the server (see ). The unrescue 				operation restores the repaired image to running state with its original password.
+After you resolve any problems and reboot the rescued server, you can unrescue the server. 
+The unrescue operation restores the repaired image to running state with its original password.
 
 In the request body, specify the ``rescue`` action.
 
 .. note::
-   If you use ``{"rescue": "none"}`` in the request body, the API will attempt to build the 					rescue mode server from whatever the image_base_image_ref field is set to in Nova DB (the original image 					used to build the server, normally).
+   If you use ``{"rescue": "none"}`` in the request body, the API will attempt to build the 
+   rescue mode server from whatever the image_base_image_ref field is set to in Nova DB 
+   (the original image used to build the server, normally).
    
-   If, instead, you use ``{"rescue": {"rescue_image_ref": " < imageID > "}}``, the API 					uses the specified image for the rescue mode instance. This is extremely useful if the image originally 					used to build the server is now either non-functional or has been deleted.
-   
-   
+   If, instead, you use ``{"rescue": {"rescue_image_ref": " < imageID > "}}``, the API uses 
+   the specified image for the rescue mode instance. This is extremely useful if the image 
+   originally used to build the server is now either non-functional or has been deleted.
 
 The following extension provides additional rescue with image functionality. 
 

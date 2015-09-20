@@ -8,9 +8,8 @@ Show associated ip address
 
     GET /servers/{serverID}/ip_associations/{IPAddressID}
 
-Retrieves information for a specified associated IP.
-
-This operation retrieves information for an associated IP address, using the associated IP address 				ID.
+This operation retrieves information for an associated IP address, using the associated IP 
+address ID.
 
 
 

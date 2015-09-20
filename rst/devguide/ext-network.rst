@@ -62,6 +62,6 @@ You can use the Cloud Networks virtual interface extension to:
 *  Delete a network.
 
 API operations for networks extension
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
-For examples of these operations, see :ref:`api-operations-networks`.
+For examples of these operations, see :ref:`Network operations <api-operations-networks>`.

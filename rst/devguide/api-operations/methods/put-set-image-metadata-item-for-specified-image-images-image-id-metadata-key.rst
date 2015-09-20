@@ -10,11 +10,10 @@ Set image metadata item for specified image
 
     PUT /images/{image_id}/metadata/{key}
 
-Sets an image metadata item for the specified image.
-
 This operation sets metadata for an image that you previously created.
 
-If your request includes keys that do not exist, they will be added. If it includes existing metadata keys, 				those entries will be changed to match the keys in the request body.
+If your request includes keys that do not exist, they will be added. If it includes existing 
+metadata keys, those entries will be changed to match the keys in the request body.
 
 Specify the image ID and metadata key in the URI.
 

@@ -10,9 +10,7 @@ Delete volume
 
     DELETE /os-volumes/{id}
 
-Delete volume.
-
-Delete volume.
+This operation deletes the specified volume.
 
 In the URI, specify the volume ID.
 
@@ -52,8 +50,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,13 +59,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete volume: JSON request**
 
@@ -81,19 +71,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Delete volume: JSON response**
@@ -106,7 +85,4 @@ Response
        Content-Length: 0
        Content-Type: text/html; charset=UTF-8
        Date: Wed, 10 Jun 2015 17:13:20 GMT
-
-
-
 

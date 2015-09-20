@@ -1,3 +1,5 @@
+.. _extended-status-extension:
+
 =========================
 Extended Status Extension
 =========================
@@ -187,14 +189,16 @@ Possible task statuses include the following:
 
 	- deleting
 
-	- image_snapshot 
-	Indicates that a create image action has been initiated and that the hypervisor is creating the snapshot. Any operations that would modify data on the server's virtual hard disk should be avoided during this time.
+	- image_snapshot (Indicates that a create image action has been initiated and that the 
+	  hypervisor is creating the snapshot. Any operations that would modify data on the 
+	  server's virtual hard disk should be avoided during this time.)
 
-	- image_pending_upload 
-	Indicates that the hypervisor has completed taking a snapshot of the server. At this point, the hypervisor is packaging the snapshot and preparing it for upload to the image store.
+	- image_pending_upload (Indicates that the hypervisor has completed taking a snapshot 
+	  of the server. At this point, the hypervisor is packaging the snapshot and preparing 
+	  it for upload to the image store.)
 
-	- image_uploading 
-	Indicates that the hypervisor is currently uploading a packaged snapshot of the server to the image store.
+	- image_uploading (Indicates that the hypervisor is currently uploading a packaged 
+	  snapshot of the server to the image store.)
 
 	- migrating
 

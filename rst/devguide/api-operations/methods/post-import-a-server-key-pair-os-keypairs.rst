@@ -10,9 +10,8 @@ Import a server key pair
 
     POST /os-keypairs
 
-Import a server key pair
-
-Imports, or uploads, a key pair, with the name and public key specified in the request body, to associate 				with a new server instance.
+This operation imports, or uploads, a key pair, with the name and public key specified in 
+the request body, to associate with a new server instance.
 
 
 

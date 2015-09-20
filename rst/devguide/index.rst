@@ -8,6 +8,5 @@ Rackspace Cloud Servers API v2
    preface
    general-api-info
    extensions
-   api-reference
    api-operations/index
    

@@ -10,25 +10,20 @@ Create a server key pair
 
     POST /os-keypairs
 
-Creates a server key pair
-
-Creates a key pair, with the name specified in the request body, to associate with a new server 				instance.
+This operation creates a key pair, with the name specified in the request body, to associate 
+with a new server instance.
 
 .. important::
    Key Pair Naming Rules
    
-   The key name must be unique and may not exceed 255 characters. It can contain the following 					characters: 
+   The key name must be unique and may not exceed 255 characters. It can contain the following 
+   characters: 
    
    * alphanumeric
    * spaces
    * dashes
    * underscores
    
-   
-   
-   
-   
-
 
 
 This table shows the possible response codes for this operation:

@@ -10,8 +10,6 @@ Retrieve list of server actions
 
     GET /servers/{server_id}/os-instance-actions
 
-Retrieve list of server actions.
-
 This operation returns a list of available server actions.
 
 
@@ -50,8 +48,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -62,12 +58,7 @@ This table shows the URI parameters for the request:
 
 
 
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve list of server actions: JSON request**
 
@@ -78,15 +69,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -94,41 +78,36 @@ This table shows the body parameters for the response:
 +--------------------------------------+-------------------+-------------------+
 |Name                                  |Type               |Description        |
 +======================================+===================+===================+
-|parameters.\ **instanceActions**      |Array              |An array of        |
+|**instanceActions**                   |Array              |An array of        |
 |                                      |                   |instance action    |
 |                                      |                   |containers of      |
 |                                      |                   |action log entries |
 |                                      |                   |for a server.      |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.\          |String             |The type of action |
-|**action**                            |                   |taken.             |
+|instanceActions\**action**            |String             |The type of action |
+|                                      |                   |taken.             |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.\          |Uuid               |The server UUID    |
-|**instance_uuid**                     |                   |where the action   |
+|instanceActions\**instance_uuid**     |Uuid               |The server UUID    |
+|                                      |                   |where the action   |
 |                                      |                   |took place.        |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.\          |Uuid               |The action log     |
-|**message**                           |                   |message, if any.   |
+|instanceActions\**message**           |Uuid               |The action log     |
+|                                      |                   |message, if any.   |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.\          |Uuid               |The project id.    |
-|**project_id**                        |                   |                   |
+|instanceActions\**project_id**        |Uuid               |The project id.    |
+|                                      |                   |                   |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.\          |Uuid               |The action request |
-|**request_id**                        |                   |id.                |
+|instanceActions\**request_id**        |Uuid               |The action request |
+|                                      |                   |id.                |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.request_id |Datetime           |The date and time  |
+|instanceActions\**start_time**        |Datetime           |The date and time  |
 |                                      |                   |that the actin     |
 |                                      |                   |began.             |
 +--------------------------------------+-------------------+-------------------+
-|parameters.instanceActions.\          |String             |The id of the user |
-|**user_id**                           |                   |who requested the  |
+|instanceActions\**user_id**           |String             |The id of the user |
+|                                      |                   |who requested the  |
 |                                      |                   |action.            |
 +--------------------------------------+-------------------+-------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of server actions: JSON response**
@@ -158,7 +137,4 @@ This table shows the body parameters for the response:
            }
        ]
    }
-
-
-
 

@@ -64,6 +64,6 @@ The namespace for this extended element is::
    xmlns:RAX-SI="http://docs.openstack.org/servers/api/ext/scheduled_images/v1.0"
    
 API operations for scheduling images
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
-For examples of these operations, see :ref:`Scheduled images operations <api-operations-ext-scheduled-images>`.
+For examples of these operations, see :ref:`Scheduled images operations <api-operations-images>`.

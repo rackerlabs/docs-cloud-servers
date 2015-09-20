@@ -10,9 +10,9 @@ Disable scheduled Images
 
     DELETE /servers/{server_id}/rax-si-scheduled-image
 
-Disable scheduled images for the specified server.
-
-This operation disables scheduled images by deleting the image_schedule resource that indicates the 				scheduled image service should create snapshots of this server. Thus scheduled images will no longer be 				created.
+This operation disables scheduled images by deleting the image_schedule resource that 
+indicates the scheduled image service should create snapshots of this server. Thus scheduled 
+images will no longer be created.
 
 
 
@@ -49,9 +49,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -61,12 +58,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Disable scheduled Images: JSON request**
@@ -79,19 +71,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Disable scheduled Images: JSON response**
@@ -106,7 +87,5 @@ Response
        Server: Jetty(8.0.y.z-SNAPSHOT)
        Via: 1.1 Repose (Repose/2.12)
        x-compute-request-id: req-2e8174d0-414d-4609-863c-f538ca1cae83
-
-
 
 

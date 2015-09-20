@@ -1,3 +1,5 @@
+.. _config-drive-extension:
+
 ======================
 Config Drive Extension
 ======================

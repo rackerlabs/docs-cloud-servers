@@ -8,11 +8,8 @@ Delete associated ip address
 
     DELETE /servers/{serverID}/ip_associations/{IPAddressID}
 
-Deletes a specified associated IP address.
-
-This operation deletes the specified associated IP address, using the associated IP address ID.
-
-
+This operation deletes the specified associated IP address, using the associated 
+IP address ID.
 
 This table shows the possible response codes for this operation:
 
@@ -58,20 +55,11 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 Response
 """"""""""""""""
-
-
-
-
 
 **Example Delete associated ip address: JSON response**
 

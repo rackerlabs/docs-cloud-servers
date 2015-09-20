@@ -10,8 +10,6 @@ Delete image
 
     DELETE /images/{image_id}
 
-Deletes the specified image.
-
 This operation deletes the specified image from the system. Images are immediately removed.
 
 Specify the image ID in the URI.
@@ -51,9 +49,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,12 +58,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Delete image: JSON request**
@@ -81,19 +71,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Delete image: JSON response**
