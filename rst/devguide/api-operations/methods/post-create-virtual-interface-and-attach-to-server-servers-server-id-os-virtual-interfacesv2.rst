@@ -10,12 +10,15 @@ Create virtual interface and attach to server
 
     POST /servers/{server_id}/os-virtual-interfacesv2
 
-This operation creates a virtual interface for a network and attaches the network to a 
-server instance.
+Creates a virtual interface for a network and attaches it to a server.
+
+This operation creates a virtual interface for a network and attaches the network to a server 				instance.
 
 .. note::
    You can create a maximum of one virtual interface per instance per network.
    
+   
+
 
 
 This table shows the possible response codes for this operation:
@@ -52,6 +55,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -61,18 +66,23 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This table shows the body parameters for the request:
 
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|**virtual_interface**           |Object                |A container with      |
-|                                |                      |virtual interface     |
+|parameters.\                    |Object                |A container with      |
+|**virtual_interface**           |                      |virtual interface     |
 |                                |                      |information.          |
 +--------------------------------+----------------------+----------------------+
-|virtual_interface\**network_id**|Uuid                  |The interface network |
-|                                |                      |ID.                   |
+|parameters.virtual_interface.\  |Uuid                  |The interface network |
+|**network_id**                  |                      |ID.                   |
 +--------------------------------+----------------------+----------------------+
+
+
 
 
 
@@ -97,8 +107,13 @@ This table shows the body parameters for the request:
 
 
 
+
+
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -106,28 +121,28 @@ This table shows the body parameters for the response:
 +----------------------------------------------+--------------+----------------+
 |Name                                          |Type          |Description     |
 +==============================================+==============+================+
-|**virtual_interfaces**                        |Array         |The array of    |
+|parameters.\ **virtual_interfaces**           |Array         |The array of    |
 |                                              |              |virtual         |
 |                                              |              |interfaces.     |
 +----------------------------------------------+--------------+----------------+
-|virtual_interfaces\**id**                     |String        |The virtual     |
+|parameters.virtual_interfaces.\ **id**        |String        |The virtual     |
 |                                              |              |interface ID.   |
 +----------------------------------------------+--------------+----------------+
-|virtual_interfaces\**ip_addresses**           |Array         |The array of    |
-|                                              |              |interface IP    |
+|parameters.virtual_interfaces.\               |Array         |The array of    |
+|**ip_addresses**                              |              |interface IP    |
 |                                              |              |address details.|
 +----------------------------------------------+--------------+----------------+
-|virtual_interfaces\ip_\addresses\**address**  |String        |The interface   |
-|                                              |              |IP address.     |
+|parameters.virtual_interfaces.ip\             |String        |The interface   |
+|**addresses**.\ **address**                   |              |IP address.     |
 +----------------------------------------------+--------------+----------------+
-|virtual_interfaces\ip_addresses\**network_id**|Uuid          |The interface   |
-|                                              |              |network ID.     |
+|parameters.virtual_interfaces.ip_addresses.\  |Uuid          |The interface   |
+|**network_id**                                |              |network ID.     |
 +----------------------------------------------+--------------+----------------+
-|virtual_interfaces\ip_addresses\              |String        |The interface   |
-|   **network_label**                          |              |network label.  |
+|parameters.virtual_interfaces.ip_addresses.\  |String        |The interface   |
+|**network_label**                             |              |network label.  |
 +----------------------------------------------+--------------+----------------+
-|virtual_interfaces\**mac_address**            |String        |The Media       |
-|                                              |              |Access Control  |
+|parameters.virtual_interfaces.\               |String        |The Media       |
+|**mac_address**                               |              |Access Control  |
 |                                              |              |(MAC) address   |
 |                                              |              |for the virtual |
 |                                              |              |interface. A    |
@@ -141,6 +156,11 @@ This table shows the body parameters for the response:
 |                                              |              |on the physical |
 |                                              |              |network segment.|
 +----------------------------------------------+--------------+----------------+
+
+
+
+
+
 
 
 **Example Create virtual interface and attach to server: JSON response**

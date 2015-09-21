@@ -10,7 +10,7 @@ List server metadata
 
     GET /servers/{server_id}/metadata
 
-This operation retrieves the list of all metadata for a specified server.
+Retrieve list of all metadata for a specified server.
 
 In the URI, specify the target server ID.
 
@@ -49,6 +49,9 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -58,7 +61,12 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example List server metadata: JSON request**
@@ -71,15 +79,22 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
 
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**metadata**              |Object                   |Container for a metadata |
+|parameters.\ **metadata** |Object                   |Container for a metadata |
 |                          |                         |keypair for the          |
 |                          |                         |specified server. This   |
 |                          |                         |container holds one or   |
@@ -87,10 +102,15 @@ This table shows the body parameters for the response:
 |                          |                         |format of "metadata key" |
 |                          |                         |: "metadata value".      |
 +--------------------------+-------------------------+-------------------------+
-|metadata\**keyname**      |Keypair                  |Keypairs edcribing the   |
-|                          |                         |metadata using format of |
+|parameters.metadata.\     |Keypair                  |Keypairs edcribing the   |
+|**keyname**               |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
+
+
+
+
+
 
 
 **Example List server metadata: JSON response**

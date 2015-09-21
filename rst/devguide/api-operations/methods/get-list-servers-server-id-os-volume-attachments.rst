@@ -1,20 +1,22 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-list-servers-server-id-os-volume-attachments:
+.. _get-list-server-metadata-servers-server-id-os-volume-attachments:
 
-List OS volume attachments
+List server metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /servers/{server_id}/os-volume_attachments
 
-This operation retrieves list of all attached volumes for a specified server.
+Retrieves list of all attached volumes for a specified server.
 
 In the URI, specify the target server ID.
 
 For information about creating volumes, see `Rackspace Cloud Block Storage Developer Guide <http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html>`__.
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -50,6 +52,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -59,7 +63,12 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example List server metadata: JSON request**
@@ -72,8 +81,14 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -81,25 +96,30 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|volumeAttachments               |Array                 |The array of attached |
+|parameters.volumeAttachment     |Array                 |The array of attached |
 |                                |                      |volumes.              |
 +--------------------------------+----------------------+----------------------+
-|volumeAttachments\**devices**   |String                |The name of the       |
-|                                |                      |device, such as       |
+|parameters.volumeAttachments.\  |String                |The name of the       |
+|**device**                      |                      |device, such as       |
 |                                |                      |/dev/xvdb.            |
 +--------------------------------+----------------------+----------------------+
-|volumeAttachments\**Id**        |String                |The ID of the volume  |
-|                                |                      |attached to the       |
+|parameters.volumeAttachments.\  |String                |The ID of the volume  |
+|**Id**                          |                      |attached to the       |
 |                                |                      |server instance.      |
 +--------------------------------+----------------------+----------------------+
-|volumeAttachments\**serverId**  |String                |The ID of the server  |
-|                                |                      |instance to which the |
+|parameters.volumeAttachments.\  |String                |The ID of the server  |
+|**serverId**                    |                      |instance to which the |
 |                                |                      |volume is attached.   |
 +--------------------------------+----------------------+----------------------+
-|volumeAttachments\**volumeId**  |String                |The ID of the volume  |
-|                                |                      |attached to the       |
+|parameters.volumeAttachments.\  |String                |The ID of the volume  |
+|**volumeId**                    |                      |attached to the       |
 |                                |                      |server instance.      |
 +--------------------------------+----------------------+----------------------+
+
+
+
+
+
 
 
 **Example List server metadata: JSON response**

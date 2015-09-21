@@ -10,12 +10,11 @@ Set server metadata item
 
     PUT /servers/{server_id}/metadata/{key}
 
-This operation creates or replaces metadata item by key for a specified server.
+Creates or replaces metadata item by key for a specified server
 
 In the URI, specify the target server ID and the target metadata key.
 
-In the request body, specify the ``meta`` element, followed by the metadata key, for 
-example ``version``, with the new value for that key.
+In the request body, specify the ``meta`` element, followed by the metadata key, for example ``version``, with the new value for that key.
 
 .. note::
    The key specified in the request body must match the key specified in the URI request.

@@ -10,10 +10,9 @@ Show volume attachment details
 
     PUT /servers/{server_id}/os-volume_attachments/{attachment_id}
 
-This operation retrieves volume details for the specified server ID and volume attachment ID.
+Retrieves volume details for the specified server ID and volume attachment ID
 
-In the URI, specify the target server ID and the target attached volume ID to see details 
-for that volume.
+In the URI, specify the target server ID and the target attached volume ID to see details for that 				volume.
 
 
 

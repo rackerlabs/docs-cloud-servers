@@ -10,8 +10,10 @@ Create volume
 
     POST /os-volumes
 
+Create volume.
 
-This operation creates a new volume.
+Create a new volume.
+
 
 
 This table shows the possible response codes for this operation:

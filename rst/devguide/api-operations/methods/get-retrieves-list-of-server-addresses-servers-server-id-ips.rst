@@ -10,10 +10,11 @@ Retrieves list of server addresses
 
     GET /servers/{server_id}/ips
 
-This operation retrieves a list of all server and network addresses associated with the 
-specified server.
+Retrieves a list of all server and network addresses associated with the specified 				server.
 
 In the URI, specify the target server ID.
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -49,6 +50,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -58,7 +61,13 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
+
 
 **Example Retrieves list of server addresses: JSON request**
 
@@ -69,29 +78,43 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
+
+
+
+
 Response
 """"""""""""""""
+
+
+
+
 
 This table shows the body parameters for the response:
 
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|**addresses**                   |Object                |A container for one   |
+|parameters.\ **addresses**      |Object                |A container for one   |
 |                                |                      |or more server        |
 |                                |                      |details to be updated.|
 +--------------------------------+----------------------+----------------------+
-|addresses\**nettype**           |Object                |An array of           |
-|                                |                      |``private`` or        |
+|parameters.addresses.\          |Object                |An array of           |
+|**nettype**                     |                      |``private`` or        |
 |                                |                      |``public`` network    |
 |                                |                      |address containers.   |
 +--------------------------------+----------------------+----------------------+
-|addresses\nettype\**addr**      |Object                |The IP address        |
+|parameters.\                    |Object                |The IP address.       |
+|**addr**esses.nettype.\ **addr**|                      |                      |
 +--------------------------------+----------------------+----------------------+
-|addresses\nettype.\**version**  |Object                |The IP address        |
-|                                |                      |version, either ``4`` |
+|parameters.addresses.nettype.\  |Object                |The IP address        |
+|**version**                     |                      |version, either ``4`` |
 |                                |                      |or ``6``.             |
 +--------------------------------+----------------------+----------------------+
+
+
+
+
+
 
 
 **Example Retrieves list of server addresses: JSON response**

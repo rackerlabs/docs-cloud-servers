@@ -10,8 +10,11 @@ Retrieve server details
 
     GET /servers/{server_id}
 
+Retrieves detailed information for a specified server.
 
 The following extensions provide additional information when viewing server details:
+
+
 
 *  Config Drive:
 *  Scheduled Images:
@@ -19,6 +22,7 @@ The following extensions provide additional information when viewing server deta
 
 
 In the URI, specify the target server ID.
+
 
 
 This table shows the possible response codes for this operation:
@@ -54,6 +58,9 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,7 +70,12 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example Retrieve server details: JSON request**
@@ -76,8 +88,14 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -85,40 +103,40 @@ This table shows the body parameters for the response:
 +-------------------------------+-----------------------+----------------------+
 |Name                           |Type                   |Description           |
 +===============================+=======================+======================+
-|**server**                     |Object                 |A container of server |
+|parameters.\ **server**        |Object                 |A container of server |
 |                               |                       |details.              |
 +-------------------------------+-----------------------+----------------------+
-|server\**accessIPv4**          |Ip                     |The public IP version |
-|                               |                       |4 access address.     |
+|parameters.server.\            |Ip                     |The public IP version |
+|**accessIPv4**                 |                       |4 access address.     |
 +-------------------------------+-----------------------+----------------------+
-|server\**accessIPv6**          |Ip                     |The public IP version |
-|                               |                       |6 access address.     |
+|parameters.server.\            |Ip                     |The public IP version |
+|**accessIPv6**                 |                       |6 access address.     |
 +-------------------------------+-----------------------+----------------------+
-|server\**addresses**           |Array                  |An array of addresses |
-|                               |                       |for public, private,  |
+|parameters.server.\            |Array                  |An array of addresses |
+|**addresses**                  |                       |for public, private,  |
 |                               |                       |and isolated networks |
 |                               |                       |attached to the       |
 |                               |                       |server.               |
 +-------------------------------+-----------------------+----------------------+
-|server\addresses\**addr**      |Array                  |The IP address of the |
+|parameters.server.\            |Array                  |The IP address of the |
+|**addr**esses.\ **addr**       |                       |network.              |
++-------------------------------+-----------------------+----------------------+
+|parameters.server.addresses.\  |Array                  |The version of the IP |
+|**version**                    |                       |address of the        |
 |                               |                       |network.              |
 +-------------------------------+-----------------------+----------------------+
-|parameters\server\addresses\   |Array                  |The version of the IP |
-|   **version**                 |                       |address of the        |
-|                               |                       |network.              |
+|parameters.server.\ **id**     |Uuid                   |The ID of the server. |
 +-------------------------------+-----------------------+----------------------+
-|server\**id**                  |Uuid                   |The ID of the server. |
-+-------------------------------+-----------------------+----------------------+
-|server\**created**             |Uuid                   |The time stamp        |
+|parameters.server.\ **created**|Uuid                   |The time stamp        |
 |                               |                       |indicating the        |
 |                               |                       |creation date of the  |
 |                               |                       |server.               |
 +-------------------------------+-----------------------+----------------------+
-|server\**flavor**              |Uuid                   |The flavor ID.        |
+|parameters.server.\ **flavor** |Uuid                   |The flavor ID.        |
 +-------------------------------+-----------------------+----------------------+
-|server\**image**               |Uuid                   |The image ID.         |
+|parameters.server.\ **image**  |Uuid                   |The image ID.         |
 +-------------------------------+-----------------------+----------------------+
-|server\**hostId**              |Uuid                   |The host ID. The      |
+|parameters.server.\ **hostId** |Uuid                   |The host ID. The      |
 |                               |                       |compute provisioning  |
 |                               |                       |algorithm has an anti-|
 |                               |                       |affinity property     |
@@ -141,69 +159,69 @@ This table shows the body parameters for the response:
 |                               |                       |account and is not    |
 |                               |                       |globally unique.      |
 +-------------------------------+-----------------------+----------------------+
-|server\**links**               |Uuid                   |An array of the self  |
+|parameters.server.\ **links**  |Uuid                   |An array of the self  |
 |                               |                       |and bookmark links to |
 |                               |                       |the server.           |
 +-------------------------------+-----------------------+----------------------+
-|server\links\**href**          |Uuid                   |The URL for the       |
-|                               |                       |server and the        |
+|parameters.server.links.\      |Uuid                   |The URL for the       |
+|**href**                       |                       |server and the        |
 |                               |                       |associated ``rel``.   |
 +-------------------------------+-----------------------+----------------------+
-|server\links\**rel**           |Uuid                   |The descriptive field |
-|                               |                       |for the associated    |
+|parameters.server.links.\      |Uuid                   |The descriptive field |
+|**rel**                        |                       |for the associated    |
 |                               |                       |``href``, which is    |
 |                               |                       |either ``self`` or    |
 |                               |                       |``bookmark``.         |
 +-------------------------------+-----------------------+----------------------+
-|server\**metadata**            |String                 |Any metadata key and  |
-|                               |                       |value pairs.          |
+|parameters.server.\            |String                 |Any metadata key and  |
+|**metadata**                   |                       |value pairs.          |
 +-------------------------------+-----------------------+----------------------+
-|server\**name**                |String                 |The server name.      |
+|parameters.server.\ **name**   |String                 |The server name.      |
 +-------------------------------+-----------------------+----------------------+
-|server\**progress**            |String                 |The build completion  |
-|                               |                       |progress, as a        |
+|parameters.server.\            |String                 |The build completion  |
+|**progress**                   |                       |progress, as a        |
 |                               |                       |percentage. Value     |
 |                               |                       |ranges from ``0`` to  |
 |                               |                       |``100``.              |
 +-------------------------------+-----------------------+----------------------+
-|server\**status**              |String                 |The status of the     |
+|parameters.server.\ **status** |String                 |The status of the     |
 |                               |                       |server. For a full    |
 |                               |                       |list of possible      |
 |                               |                       |status values, see.   |
 +-------------------------------+-----------------------+----------------------+
-|server\**tenant_id**           |String                 |The tenant ID.        |
-|                               |                       |                      |
+|parameters.server.\            |String                 |The tenant ID.        |
+|**tenant_id**                  |                       |                      |
 +-------------------------------+-----------------------+----------------------+
-|server\**updated**             |String                 |The time stamp of the |
+|parameters.server.\ **updated**|String                 |The time stamp of the |
 |                               |                       |last update.          |
 +-------------------------------+-----------------------+----------------------+
-|server\**user_id**             |String                 |The user ID.          |
+|parameters.server.\ **user_id**|String                 |The user ID.          |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **OS-DCF:diskConfig** |String                 |Extended attribute:   |
-|                               |                       |The disk              |
+|parameters.server.\ **OS-      |String                 |Extended attribute:   |
+|DCF:diskConfig**               |                       |The disk              |
 |                               |                       |configuration value.  |
 |                               |                       |Valid values are      |
 |                               |                       |``AUTO`` and          |
 |                               |                       |``MANUAL``.           |
 +-------------------------------+-----------------------+----------------------+
-|server\                        |String                 |Extended attribute:   |
-|   **RAX-SI:image_schedule**   |                       |The image schedule    |
+|parameters.server.\ **RAX-     |String                 |Extended attribute:   |
+|SI:image_schedule**            |                       |The image schedule    |
 |                               |                       |reference is included |
 |                               |                       |only if scheduled     |
 |                               |                       |images has been       |
 |                               |                       |enabled for this      |
 |                               |                       |server.               |
 +-------------------------------+-----------------------+----------------------+
-|server\**OS-EXT-STS**          |String                 |Extended attribute.   |
-|                               |                       |Shows the extended    |
+|parameters.server.\ **OS-EXT-  |String                 |Extended attribute.   |
+|STS**                          |                       |Shows the extended    |
 |                               |                       |statuses for the      |
 |                               |                       |server, including the |
 |                               |                       |VM, task, and power   |
 |                               |                       |states.               |
 +-------------------------------+-----------------------+----------------------+
-|server\**RAX-PUBLIC-IP-**      |Uuid                   |Extended attribute.   |
-|   **ZONE-ID:publicIPZoneId**  |                       |Enables booting the   |
-|                               |                       |server from a volume  |
+|parameters.server.\ **RAX-     |Uuid                   |Extended attribute.   |
+|PUBLIC-IP-ZONE-                |                       |Enables booting the   |
+|ID:publicIPZoneId**            |                       |server from a volume  |
 |                               |                       |when additional       |
 |                               |                       |parameters are given. |
 |                               |                       |If specified, the     |
@@ -213,12 +231,17 @@ This table shows the body parameters for the response:
 |                               |                       |attach_status must be |
 |                               |                       |``detached``.         |
 +-------------------------------+-----------------------+----------------------+
-|**next**                       |URI                    |Moves to the next     |
+|parameters.\ **next**          |Anyuri                 |Moves to the next     |
 |                               |                       |metadata item.        |
 +-------------------------------+-----------------------+----------------------+
-|**previous**                   |URI                    |Moves to the previous |
+|parameters.\ **previous**      |Anyuri                 |Moves to the previous |
 |                               |                       |metadata item.        |
 +-------------------------------+-----------------------+----------------------+
+
+
+
+
+
 
 
 **Example Retrieve server details: JSON response**

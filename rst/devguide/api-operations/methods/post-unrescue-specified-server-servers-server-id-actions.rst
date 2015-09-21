@@ -10,11 +10,9 @@ Unrescue specified server
 
     POST /servers/{server_id}/actions
 
-This operation takes the specified server out of rescue mode.
+Takes the specified server out of rescue mode.
 
-After you resolve any problems and reboot a rescued server, you can unrescue the server. 
-Specify the ``unrescue`` action in the request body. When you unrescue the server, the 
-repaired image is restored to its running state with your original password.
+After you resolve any problems and reboot a rescued server, you can unrescue the server. Specify the ``unrescue`` action in the request body. When you unrescue the server, the repaired image 				is restored to its running state with your original password.
 
 You can exit rescue mode at any time.
 

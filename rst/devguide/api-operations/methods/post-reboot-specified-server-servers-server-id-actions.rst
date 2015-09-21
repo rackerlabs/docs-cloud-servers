@@ -10,14 +10,13 @@ Reboot specified server
 
     POST /servers/{server_id}/actions
 
-This operation performs a soft or hard reboot of the specified server. A soft reboot is a 
-graceful shutdown and restart of your server's operating system. A hard reboot power cycles 
-your server, which performs an immediate shutdown and restart.
+Reboot the specified server.
+
+This operation performs a soft or hard reboot of the specified server. A soft reboot is a graceful shutdown 				and restart of your server's operating system. A hard reboot power cycles your server, which performs an 				immediate shutdown and restart.
 
 Specify the target server ID in the URI.
 
-In the request body, specify the action ``reboot``, optionally followed by the ``type`` 
-attribute, with values of either ``HARD`` or ``SOFT``.
+In the request body, specify the action ``reboot``, optionally followed by the ``type`` attribute, either ``HARD`` or ``SOFT``.
 
 If you do not include the type attribute, a soft reboot is performed by default.
 

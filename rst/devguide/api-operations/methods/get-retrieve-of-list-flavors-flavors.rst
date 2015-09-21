@@ -10,6 +10,7 @@ Retrieve of list flavors
 
     GET /flavors
 
+Retrieves IDs, names, and links for all available flavors.
 
 This operation lists information for all available flavors.
 
@@ -49,6 +50,10 @@ Request
 """"""""""""""""
 
 
+
+
+
+
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -73,7 +78,11 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example Retrieve of list flavors: JSON request**
@@ -87,8 +96,13 @@ This operation does not accept a request body.
 
 
 
+
+
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -96,27 +110,33 @@ This table shows the body parameters for the response:
 +----------------------------+------------------------+------------------------+
 |Name                        |Type                    |Description             |
 +============================+========================+========================+
-|**flavors**                 |Array                   |The array of flavors.   |
+|parameters.\ **flavors**    |Array                   |The array of flavors.   |
 +----------------------------+------------------------+------------------------+
-|flavors\**id**              |String                  |The flavor ID.          |
+|parameters.flavors.ID       |String                  |The flavor ID.          |
 +----------------------------+------------------------+------------------------+
-|flavors\**links**           |String                  |The array of flavor     |
-|                            |                        |links for self and      |
+|parameters.flavors.\        |String                  |The array of flavor     |
+|**links**                   |                        |links for self and      |
 |                            |                        |bookmark.               |
 +----------------------------+------------------------+------------------------+
-|flavors\links\**href**      |Uuid                    |The URL for the flavor  |
-|                            |                        |and the associated      |
+|parameters.flavors.links.\  |Uuid                    |The URL for the flavor  |
+|**href**                    |                        |and the associated      |
 |                            |                        |``rel``.                |
 +----------------------------+------------------------+------------------------+
-|flavors\links\**rel**       |Uuid                    |The descriptive field   |
-|                            |                        |for the associated      |
+|parameters.flavors.links.\  |Uuid                    |The descriptive field   |
+|**rel**                     |                        |for the associated      |
 |                            |                        |``href``, which is      |
 |                            |                        |either ``self`` or      |
 |                            |                        |``bookmark``.           |
 +----------------------------+------------------------+------------------------+
-|flavors\**name**            |String                  |The flavor name.        |
-|                            |                        |                        |
+|parameters.flavors.\        |String                  |The flavor name.        |
+|**name**                    |                        |                        |
 +----------------------------+------------------------+------------------------+
+
+
+
+
+
+
 
 **Example Retrieve of list flavors: JSON response**
 
@@ -235,8 +255,12 @@ The following example shows only a few flavors in the list for brevity.
                    }
                ],
                "name": "30GB Standard Instance"
+   
+           
            }
        ]
    }
+
+
 
 

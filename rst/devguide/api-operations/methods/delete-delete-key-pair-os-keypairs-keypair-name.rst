@@ -10,7 +10,9 @@ Delete key pair
 
     DELETE /os-keypairs/{keypair_name}
 
-This operation deletes the specified key pair. A return code of ``HTTP 202`` indicates success.
+Deletes the specified key pair.
+
+This operation deletes the specified key pair. A return code of 202 indicates success.
 
 
 
@@ -48,6 +50,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -57,7 +61,13 @@ This table shows the URI parameters for the request:
 |                          |                         |to be deleted.           |
 +--------------------------+-------------------------+-------------------------+
 
+
+
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example Delete key pair: JSON request**
@@ -70,8 +80,19 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
+
+
+
+
 
 
 **Example Delete key pair: JSON response**

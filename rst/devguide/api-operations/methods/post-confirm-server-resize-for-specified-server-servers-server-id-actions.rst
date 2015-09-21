@@ -10,13 +10,9 @@ Confirm server resize for specified server
 
     POST /servers/{server_id}/actions
 
-This operation confirms the server resize for the specified server.
+Confirm the server resize for the specified server.
 
-During a resize operation, the original server is saved for a period of time to allow roll 
-back if a problem occurs. After you verify that the newly resized server works properly, 
-use this operation to confirm the resize. After you confirm the resize, the original server 
-is removed, and you cannot roll back to that server. All resizes are automatically confirmed 
-after 24 hours, if you do not explicitly confirm, or revert, the resize.
+During a resize operation, the original server is saved for a period of time to allow roll back if a 				problem occurs. After you verify that the newly resized server works properly, use this operation to confirm 				the resize. After you confirm the resize, the original server is removed, and you cannot roll back to that 				server. All resizes are automatically confirmed after 24 hours, if you do not explicitly confirm, or revert, 				the resize.
 
 .. note::
    This operation is not available for OnMetal servers.

@@ -10,13 +10,13 @@ Retrieve list of images
 
     GET /images
 
-This operation lists all images visible by the account, including only IDs, names, and links.
+Retrieves IDs, names, and links for all available images.
 
-The optional minDisk and minRam attributes set the minimum disk and RAM required to create 
-a server with the image.
+This operation lists all images visible by the account.
 
-The image_type field in the response indicates whether the image is built-in ``(base)`` 
-or custom ``(snapshot)``.
+The optional minDisk and minRam attributes set the minimum disk and RAM required to create a server with 				the image.
+
+The image_type field in the response indicates whether the image is built-in ``(base)`` or custom ``(snapshot)``.
 
 
 
@@ -52,6 +52,10 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
+
+
+
+
 
 
 This table shows the query parameters for the request:
@@ -102,7 +106,11 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example Retrieve list of images: JSON request**
@@ -115,38 +123,52 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
 
 This table shows the body parameters for the response:
 
 +---------------------------+-------------------------+------------------------+
 |Name                       |Type                     |Description             |
 +===========================+=========================+========================+
-|**images**                 |Array                    |The array of images.    |
+|parameters.\ **images**    |Array                    |The array of images.    |
 +---------------------------+-------------------------+------------------------+
-|images\**ID**              |Uuid                     |The image ID.           |
+|parameters.images.ID       |Uuid                     |The image ID.           |
 +---------------------------+-------------------------+------------------------+
-|images\**links**           |String                   |The array of image      |
-|                           |                         |links for self and      |
+|parameters.images.\        |String                   |The array of image      |
+|**links**                  |                         |links for self and      |
 |                           |                         |bookmark.               |
 +---------------------------+-------------------------+------------------------+
-|images\links\**href**      |Uuid                     |The URL for the image   |
-|                           |                         |and the associated      |
+|parameters.images.links.\  |Uuid                     |The URL for the image   |
+|**href**                   |                         |and the associated      |
 |                           |                         |``rel``.                |
 +---------------------------+-------------------------+------------------------+
-|images\links\**rel**       |Uuid                     |The descriptive field   |
-|                           |                         |for the associated      |
+|parameters.images.links.\  |Uuid                     |The descriptive field   |
+|**rel**                    |                         |for the associated      |
 |                           |                         |``href``, which is      |
 |                           |                         |either ``self``,        |
 |                           |                         |``bookmark``, or        |
 |                           |                         |``alternate``.          |
 +---------------------------+-------------------------+------------------------+
-|images\links\**type**      |Uuid                     |The alternate image     |
-|                           |                         |type.                   |
+|parameters.images.links.\  |Uuid                     |The alternate image     |
+|**type**                   |                         |type.                   |
 +---------------------------+-------------------------+------------------------+
-|images\**name**            |String                   |The image name.         |
+|parameters.images.\        |String                   |The image name.         |
+|**name**                   |                         |                        |
 +---------------------------+-------------------------+------------------------+
+
+
+
+
+
+
 
 **Example Retrieve list of images: JSON response**
 
@@ -227,4 +249,7 @@ The following example shows only a few images in the list for brevity.
        }
      ]
    }
+
+
+
 

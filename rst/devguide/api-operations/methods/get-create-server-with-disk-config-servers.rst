@@ -1,37 +1,20 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _post-create-server-servers:
+.. _get-create-server-with-disk-config-servers:
 
-Create server
+Create server with disk config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    POST /servers
+    GET /servers
 
-Provisions a server asynchronously.
+Create server with disk config
 
-The full URL to the newly created server is returned through the ``Location`` header and is 				available as a ``self`` and ``bookmark`` link in the server representation.
+When you create a server from an image with the ``OS-DCF:diskConfig`` value set to ``AUTO``, the server is built with a single partition that is expanded to the disk size of 				the flavor selected. When you set the ``OS-DCF:diskConfig`` attribute to ``MANUAL``, the server is built by using the partition scheme and file system that is in 				the source image.  If the target flavor disk is larger, remaining disk space is left unpartitioned. A server 				inherits the ``OS-DCF:diskConfig`` attribute from the image from which it is created. However, 				you can override the ``OS-DCF:diskConfig`` value when you create a server..
 
-The progress of the server build depends on factors including location of the requested image, network i/o, 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to 				retrieve the details of the server. Once the build is complete, the server's ``status`` is ``ACTIVE``.
-
-For OnMetal server builds, even after the ``status`` is ACTIVE, wait a few additional 				moments for the network configuration to complete. Once the new OnMetal server pings successfully, you can 				begin to use it.
-
-.. important::
-   OnMetal servers must be created using an ssh key pair. Thus you should ignore the administrator 					password returned by a Create Server operation because it does not allow access to the OnMetal server.
-   
-   
-
-The following extensions allow you to use other options when creating a new server:
-
-
-
-*  Config drive
-*  Boot from volume
-*  Networks for nova and for neutron
-*  Key pairs
-
+In this example, the server is created with ``OS-DCF:diskConfig`` set to ``MANUAL``.This request's success depends on the image's auto_disk_config metadata value. 				An image created from a server will have appropriate auto_disk_config metadata written to it. So, if the 				create server command succeeds, an image created from the server will have ``auto_disk_config`` = ``False`` on it.
 
 
 
@@ -41,7 +24,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|202                       |Success                  |Request succeeded.       |
+|202                       |Success                  |Request accepted.        |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Error                    |A general error has      |
 |                          |                         |occured.                 |
@@ -255,7 +238,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Create server: JSON request**
+**Example Create server with disk config: JSON request**
 
 
 .. code::
@@ -268,16 +251,25 @@ This table shows the body parameters for the request:
 .. code::
 
    {
-       "server": {
-           "name": "api-test-server-1",
-           "imageRef": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
-           "flavorRef": "2",
+       "server" : {
+           "name" : "api-test-server-1",
+           "imageRef" : "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001",
+           "flavorRef" : "2",
            "config_drive": true,
-           "OS-DCF:diskConfig": "AUTO",
-           "metadata": {
-               "My Server Name": "API Test Server 1"
+           "OS-DCF:diskConfig" : "AUTO",
+           "metadata" : {
+               "My Server Name" : "API Test Server 1"
            },
+           "personality" : [
+               {
+                   "path" : "/etc/banner.txt",
+                   "contents" : "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
+               }
+           ],
            "networks": [
+               {
+                   "uuid": "4ebd35cf-bfe7-4d93-b0d8-eb468ce2245a"
+               },
                {
                    "uuid": "00000000-0000-0000-0000-000000000000"
                },
@@ -338,7 +330,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example Create server: JSON response**
+**Example Create server with disk config: JSON response**
 
 
 .. code::
@@ -346,11 +338,11 @@ This table shows the body parameters for the response:
        Status Code: 202 Accepted
        Content-Length: 380
        Content-Type: application/json
-       Date: Thu, 04 Dec 2014 18:47:30 GMT
-       Location: https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/4b963871-f591-4b7d-b05f-7c0286e3c50f
+       Date: Fri, 30 Jan 2015 18:38:52 GMT
+       Location: https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/b7509240-9ad2-4303-8614-a11a33aeb6f3
        Server: Jetty(8.0.y.z-SNAPSHOT)
        Via: 1.1 Repose (Repose/2.12)
-       x-compute-request-id: req-b8b54344-41a9-4d6a-a92f-60f3dcab4b1f
+       x-compute-request-id: req-186f2212-f4b7-4d0a-bbbb-92bc19797a1d
 
 
 .. code::
@@ -358,18 +350,18 @@ This table shows the body parameters for the response:
    {
      "server": {
        "OS-DCF:diskConfig": "AUTO",
-       "id": "4b963871-f591-4b7d-b05f-7c0286e3c50f",
+       "id": "b7509240-9ad2-4303-8614-a11a33aeb6f3",
        "links": [
          {
-           "href": "https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/4b963871-f591-4b7d-b05f-7c0286e3c50f",
+           "href": "https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/b7509240-9ad2-4303-8614-a11a33aeb6f3",
            "rel": "self"
          },
          {
-           "href": "https://dfw.servers.api.rackspacecloud.com/820712/servers/4b963871-f591-4b7d-b05f-7c0286e3c50f",
+           "href": "https://dfw.servers.api.rackspacecloud.com/820712/servers/b7509240-9ad2-4303-8614-a11a33aeb6f3",
            "rel": "bookmark"
          }
        ],
-       "adminPass": "C3tfz8jQtnKC"
+       "adminPass": "sYr9cptCwsLx"
      }
    }
 

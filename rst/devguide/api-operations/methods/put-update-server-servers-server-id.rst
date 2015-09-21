@@ -10,22 +10,18 @@ Update server
 
     PUT /servers/{server_id}
 
-This operation updates one or more editable attributes for a specified server.
+Updates one or more editable attributes for a specified server.
 
-The attributes that can be edited are: name, accessIPv4, and accessIPv6. You can update 
-any or all of the attributes in a single request.
+The attributes that can be edited are: name, accessIPv4, and accessIPv6. You can update any or all of the 				attributes in a single request.
 
 .. note::
-   If you try to update a server by using the server bookmark link, the response code is 
-   300, unless you use the Accept: application/json;version=1.1 header with the request.
+   If you try to update a server by using the server bookmark link, the response code is 300, unless you 					use the Accept: application/json;version=1.1 header with the request.
    
    
 
 In the URI, specify the target server ID.
 
-In the request body, specify the element ``server``, followed by the attribute, for example 
-``name``, with the new value for that attribute. You can include one or more attributes in 
-the server element.
+In the request body, specify the element ``server``, followed by the attribute, for example ``name``, with the new value for that attribute. You can include one or more attributes in 				the server element.
 
 
 

@@ -10,6 +10,8 @@ Retrieve list of key pairs
 
     GET /os-keypairs
 
+Retrieves the current rate limits and absolute limits for your account.
+
 This operation retrieves a list of server key pairs.
 
 
@@ -48,11 +50,22 @@ Request
 """"""""""""""""
 
 
+
+
+
+
+
+
 This operation does not accept a request body.
+
+
 
 
 Response
 """"""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -60,23 +73,28 @@ This table shows the body parameters for the response:
 +-------------------------------+-----------------------+----------------------+
 |Name                           |Type                   |Description           |
 +===============================+=======================+======================+
-|**keypairs**                   |Array                  |An array of key pairs.|
+|parameters.\ **keypairs**      |Array                  |An array of key pairs.|
 +-------------------------------+-----------------------+----------------------+
-|**keypairs**.keypair           |Object                 |A container of key    |
-|                               |                       |pair details.         |
+|parameters.\                   |Object                 |A container of key    |
+|**keypairs**.keypair           |                       |pair details.         |
 +-------------------------------+-----------------------+----------------------+
-|keypairs.keypair\              |String                 |A short sequence of   |
-|   **fingerprint**             |                       |bytes used to         |
+|parameters.keypairs.keypair.\  |String                 |A short sequence of   |
+|**fingerprint**                |                       |bytes used to         |
 |                               |                       |authenticate, or look |
 |                               |                       |up, a longer public   |
 |                               |                       |key.                  |
 +-------------------------------+-----------------------+----------------------+
-|keypairs.keypair\**name**      |String                 |The name of the key   |
-|                               |                       |pair.                 |
+|parameters.keypairs.keypair.\  |String                 |The name of the key   |
+|**name**                       |                       |pair.                 |
 +-------------------------------+-----------------------+----------------------+
-|keypairs.keypair\              |String                 |The public ssh key    |
-|   **public_key**              |                       |value.                |
+|parameters.keypairs.keypair.\  |String                 |The public ssh key    |
+|**public_key**                 |                       |value.                |
 +-------------------------------+-----------------------+----------------------+
+
+
+
+
+
 
 
 **Example Retrieve list of key pairs: JSON response**
@@ -106,4 +124,8 @@ This table shows the body parameters for the response:
            }
        ] 
     }
+   
+
+
+
 

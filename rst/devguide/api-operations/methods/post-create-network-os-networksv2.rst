@@ -10,6 +10,8 @@ Create network
 
     POST /os-networksv2
 
+Creates a network for the specified tenant ID.
+
 This operation creates a network for the tenant ID specified in the request URI.
 
 

@@ -1,12 +1,16 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Retrieve list of ip addresses associated with a server
+.. _get-retrieve-list-of-ip-addresses-associated-with-a-server-servers-server-id-ip-associations:
+
+Retrieve list of IP addresses associated with a server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /servers/{serverID}/ip_associations
+    GET /servers/{server_id}/ip_associations
+
+Retrieves list of associated IPs for specified server.
 
 This operation retrieves a list of all IP addresses associated to the specified server.
 
@@ -35,54 +39,83 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|500                       |API Fault                |API fault.               |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The requested service is |
 |                          |                         |unavailable.             |
-+--------------------------+-------------------------+-------------------------+
-|500                       |API Fault                |API fault.               |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
 
+
+
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{server_id}               |Uuid                     |The UUID for the server. |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
 This operation does not accept a request body.
+
+
+
 
 Response
 """"""""""""""""
 
+
+
+
+
 This table shows the body parameters for the response:
 
-+---------------------------+-------------------------+-------------------------+
-|Name                       |Type                     |Description              |
-+===========================+=========================+=========================+
-|ip_associations            |Array                    |The array of IP          |
-|                           |                         |associations.            |
-+---------------------------+-------------------------+-------------------------+
-|ip_associations\**id**     |Uuid                     |The ID of the associated |
-|                           |                         |IP address.              |
-+---------------------------+-------------------------+-------------------------+
-|ip_associations\**address**|Uuid                     |The associatied IP       |
-|                           |                         |address.                 |
-+---------------------------+-------------------------+-------------------------+
++------------------------------+-----------------------+-----------------------+
+|Name                          |Type                   |Description            |
++==============================+=======================+=======================+
+|parameters.\                  |Array                  |The array of IP        |
+|**ip_associations**           |                       |associations.          |
++------------------------------+-----------------------+-----------------------+
+|parameters.ip_associations.\  |Uuid                   |The ID of the          |
+|**id**                        |                       |associated IP address. |
++------------------------------+-----------------------+-----------------------+
+|parameters.ip_associations.\  |Uuid                   |The associatied IP     |
+|**address**                   |                       |address.               |
++------------------------------+-----------------------+-----------------------+
 
 
-**Example Retrieve list of ip addresses associated with a server: JSON response**
+
+
+
+
+
+**Example Retrieve list of IP addresses associated with a server: JSON response**
 
 
 .. code::
 
-    {
-        "ip_associations": 
-        [
-            {
-                "id": "1", 
-                "address": "10.1.1.1"
-            }, 
-            {
-                "id": "2", 
-                "address": "10.1.1.2"
-            }
-        ]
-    }
+   {
+       "ip_associations": 
+       [
+           {
+               "id": "1", 
+               "address": "10.1.1.1"
+           }, 
+           {
+               "id": "2", 
+               "address": "10.1.1.2"
+           }
+       ]
+   }
+
+
 
 

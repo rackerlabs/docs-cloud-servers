@@ -10,7 +10,7 @@ Show server metadata item details
 
     GET /servers/{server_id}/metadata/{key}
 
-This operation retrieves a metadata item by key for a specified server.
+Retrieves a metadata item by key for a specified server.
 
 In the URI, specify the target server ID and the target metadata key.
 

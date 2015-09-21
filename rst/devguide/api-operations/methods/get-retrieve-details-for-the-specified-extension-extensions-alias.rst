@@ -10,7 +10,7 @@ Retrieve details for the specified extension
 
     GET /extensions/{alias}
 
-This operation retrieves a specified extension's details.
+Retrieves a specified extension's details.
 
 An unavailable extension issues an ``itemNotFound (404)`` response.
 
@@ -50,6 +50,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -62,7 +64,13 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
+
 
 **Example Retrieve details for the specified extension: JSON request**
 
@@ -74,35 +82,47 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
 
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**extension**             |Object                   |The container of         |
+|parameters.\ **extension**|Object                   |The container of         |
 |                          |                         |extensions attributes.   |
 +--------------------------+-------------------------+-------------------------+
-|extension\**updated**     |Date                     |The most recent update   |
-|                          |                         |date for the extension.  |
+|parameters.extension.\    |Date                     |The most recent update   |
+|**updated**               |                         |date for the extension.  |
 +--------------------------+-------------------------+-------------------------+
-|extension\**name**        |String                   |The name of the          |
-|                          |                         |extension.               |
+|parameters.extension.\    |String                   |The name of the          |
+|**name**                  |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-|extension\**links**       |Array                    |The array of links for   |
-|                          |                         |the extension.           |
+|parameters.extension.\    |Array                    |The array of links for   |
+|**links**                 |                         |the extension.           |
 +--------------------------+-------------------------+-------------------------+
-|extension\**namespace**   |String                   |The namespace of the     |
-|                          |                         |extension.               |
+|parameters.extension.\    |String                   |The namespace of the     |
+|**namespace**             |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-|extension\**alias**       |String                   |The alias, or short      |
-|                          |                         |name, of the extension.  |
+|parameters.extension.\    |String                   |The alias, or short      |
+|**alias**                 |                         |name, of the extension.  |
 +--------------------------+-------------------------+-------------------------+
-|extension\**description** |String                   |The description of the   |
-|                          |                         |extension.               |
+|parameters.extension.\    |String                   |The description of the   |
+|**description**           |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
+
+
+
+
+
 
 
 **Example Retrieve details for the specified extension: JSON response**

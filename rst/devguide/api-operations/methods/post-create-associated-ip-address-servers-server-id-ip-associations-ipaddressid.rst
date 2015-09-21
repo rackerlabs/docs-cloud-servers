@@ -10,8 +10,9 @@ Create associated IP address
 
     POST /servers/{server_id}/ip_associations/{IPAddressID}
 
-This operation creates an associated IP address for the specified server and already existing 
-IP address ID.
+Creates a associated IP on a specified network.
+
+This operation creates an associated IP address for the specified server and already existing IP address 				ID.
 
 
 

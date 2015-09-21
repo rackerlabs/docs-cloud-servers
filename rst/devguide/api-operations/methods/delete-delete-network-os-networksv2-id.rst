@@ -10,10 +10,15 @@ Delete network
 
     DELETE /os-networksv2/{id}
 
+Deletes the specified network.
+
 This operation deletes the network specified in the request URI.
 
 .. note::
    You can delete an isolated network only if it is not attached to any server. To detach a network from a 					server, delete the virtual interface for the network from the server instance..
+   
+   
+
 
 
 This table shows the possible response codes for this operation:
@@ -49,6 +54,9 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -58,7 +66,12 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example Delete network: JSON request**
@@ -71,8 +84,20 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
+
+
+
+
+
 
 **Example Delete network: JSON response**
 
@@ -86,5 +111,7 @@ Response
         Server: Jetty(9.2.z-SNAPSHOT)
         Via: 1.1 Repose (Repose/6.2.1.2)
         X-Compute-Request-Id: req-33b4fead-66a2-420e-b864-bc117d609a85
+
+
 
 

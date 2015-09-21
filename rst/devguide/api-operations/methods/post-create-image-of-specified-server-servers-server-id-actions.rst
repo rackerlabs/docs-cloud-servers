@@ -10,15 +10,11 @@ Create image of specified server
 
     POST /servers/{server_id}/actions
 
-This operation creates a new image for a specified server. 
+Create an image of the specified server.
 
-Once complete, you can use your 
-new image to rebuild or create servers. The full URL to the newly created image is returned 
-through the ``Location`` header. You can retrieve additional attributes for the image 
-including its creation status by issuing a subsequent ``GET`` on that URL.
+This operation creates a new image for a specified server. Once complete, you can use your new image to 				rebuild or create servers. The full URL to the newly created image is returned through the ``Location`` header. You can retrieve additional attributes for the image including its creation 				status by issuing a subsequent ``GET`` on that URL.
 
-Image creation is an asynchronous operation, so coordinating the creation with data quiescence, 
-and so on, is currently not possible. 
+Image creation is an asynchronous operation, so coordinating the creation with data quiescence, and so on, 				is currently not possible. 
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -27,7 +23,7 @@ and so on, is currently not possible.
 
 In addition to creating images manually, you may also schedule images of your server automatically.
 
-In the URI, specify the target server ID.
+Specify the target server ID in the URI.
 
 In the request body, specify the ``createImage`` action, followed by attributes.
 

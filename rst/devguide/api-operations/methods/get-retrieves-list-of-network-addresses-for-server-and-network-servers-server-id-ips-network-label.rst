@@ -10,8 +10,7 @@ Retrieves list of network addresses for server and network
 
     GET /servers/{server_id}/ips/{network_label}
 
-This operation retrieves a list of all server and network addresses associated with the 
-specified server and network.
+Retrieves a list of all server and network addresses associated with the specified server 				and network.
 
 In the URI, specify the target server ID and target network type ( ``public`` or ``private`` ).
 
@@ -51,6 +50,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -64,10 +65,16 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
 
 
+
+
 **Example Retrieves list of network addresses for server and network: JSON request**
+
 
 .. code::
 
@@ -76,24 +83,35 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
 
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**nettype**               |Array                    |An array of ``private``  |
+|parameters.\ **nettype**  |Array                    |An array of ``private``  |
 |                          |                         |or ``public`` network    |
 |                          |                         |address containers.      |
 +--------------------------+-------------------------+-------------------------+
-|nettype\**addr**          |String                   |The IP address.          |
-|                          |                         |                         |
+|parameters.nettype.\      |Object                   |The IP address.          |
+|**addr**                  |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|nettype\**version**       |Int                      |The IP address version,  |
-|                          |                         |either ``4`` or ``6``.   |
+|parameters.nettype.\      |Object                   |The IP address version,  |
+|**version**               |                         |either ``4`` or ``6``.   |
 +--------------------------+-------------------------+-------------------------+
+
+
+
+
 
 
 

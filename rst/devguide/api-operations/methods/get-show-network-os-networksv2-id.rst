@@ -10,6 +10,8 @@ Show network
 
     GET /os-networksv2/{id}
 
+Shows information for the specified network.
+
 This operation shows information for the network specified in the request URI.
 
 

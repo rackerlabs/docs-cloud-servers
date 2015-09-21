@@ -4,13 +4,17 @@
 .. _get-retrieve-list-of-flavors-with-details-flavors-detail:
 
 Retrieve list of flavors with details
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /flavors/detail
 
+Retrieves all details for all available flavors.
+
 This operation returns details of all flavors in the response body.
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -45,6 +49,11 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
+
+
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -68,7 +77,13 @@ This table shows the query parameters for the request:
 |limit                     |Int *(Optional)*         |Sets the page size.      |
 +--------------------------+-------------------------+-------------------------+
 
+
+
+
 This operation does not accept a request body.
+
+
+
 
 **Example Retrieve list of flavors with details: JSON request**
 
@@ -79,70 +94,92 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
+
+
+
+
 Response
 """"""""""""""""
+
+
+
+
 
 This table shows the body parameters for the response:
 
 +----------------------------+------------------------+------------------------+
 |Name                        |Type                    |Description             |
 +============================+========================+========================+
-|flavor                      |Array                   |The container of flavor |
+|parameters.flavor           |Array                   |The container of flavor |
 |                            |                        |attributes.             |
 +----------------------------+------------------------+------------------------+
-|flavors\**OS-FLV-WITH-EXT-**|String                  |The container of flavor |
-|   **SPECS:extra_specs**    |                        |extra specifications.   |
+|parameters.flavors.\ **OS-  |String                  |The container of flavor |
+|FLV-WITH-EXT-               |                        |extra specifications.   |
+|SPECS:extra_specs**         |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\OS-FLV-WITH-EXT-    |String                  |The class for the       |
-|   SPECS:extra_specs\       |                        |flavor.                 |
-|     **class**              |                        |                        |
+|parameters.flavors.OS-FLV-  |String                  |The class for the       |
+|WITH-EXT-                   |                        |flavor.                 |
+|SPECS:extra_specs.\         |                        |                        |
+|**class**                   |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\OS-FLV-WITH-EXT-    |String                  |The policy class for    |
-| WITH-EXT-SPECS:extra_specs\|                        |the flavor.             |
-|   **policy_class**         |                        |                        |
+|parameters.flavors.OS-FLV-  |String                  |The policy class for    |
+|WITH-EXT-                   |                        |the flavor.             |
+|SPECS:extra_specs.\         |                        |                        |
+|**policy_class**            |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\OS-FLV-WITH-EXT-    |String                  |The io index for the    |
-| WITH-EXT-SPECS:extra_specs\|                        |disk.                   |
-|   **disk_io_index**        |                        |                        |
+|parameters.flavors.OS-FLV-  |String                  |The io index for the    |
+|WITH-EXT-                   |                        |disk.                   |
+|SPECS:extra_specs.\         |                        |                        |
+|**disk_io_index**           |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\OS-FLV-WITH-EXT-    |String                  |The policy class for    |
-| WITH-EXT-SPECS:extra_specs\|                        |the flavor.             |
-|   **number_of_data_disks** |                        |                        |
+|parameters.flavors.OS-FLV-  |String                  |The policy class for    |
+|WITH-EXT-                   |                        |the flavor.             |
+|SPECS:extra_specs.\         |                        |                        |
+|**number_of_data_disks**    |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\**name**            |String                  |The flavor name.        |
+|parameters.flavors.\        |String                  |The flavor name.        |
+|**name**                    |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\**links**           |String                  |The array of flavor     |
-|                            |                        |links for self and      |
+|parameters.flavors.\        |String                  |The array of flavor     |
+|**links**                   |                        |links for self and      |
 |                            |                        |bookmark.               |
 +----------------------------+------------------------+------------------------+
-|flavors\links\**href**      |Uuid                    |The URL for the flavor  |
-|                            |                        |and the associated      |
+|parameters.flavors.links.\  |Uuid                    |The URL for the flavor  |
+|**href**                    |                        |and the associated      |
 |                            |                        |``rel``.                |
 +----------------------------+------------------------+------------------------+
-|flavors\links\**rel**       |Uuid                    |The descriptive field   |
-|                            |                        |for the associated      |
+|parameters.flavors.links.\  |Uuid                    |The descriptive field   |
+|**rel**                     |                        |for the associated      |
 |                            |                        |``href``, which is      |
 |                            |                        |either ``self`` or      |
 |                            |                        |``bookmark``.           |
 +----------------------------+------------------------+------------------------+
-|flavors\ **ram**            |String                  |The amount of RAM.      |
+|pa\ **ram**eters.flavors.\  |String                  |The amount of RAM.      |
+|**ram**                     |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\**vcpus**           |String                  |The number of virtual   |
-|                            |                        |CPUs.                   |
+|parameters.flavors.\        |String                  |The number of virtual   |
+|**vcpus**                   |                        |CPUs.                   |
 +----------------------------+------------------------+------------------------+
-|flavors\**swap**            |String                  |The amount of swap space|
+|parameters.flavors.\        |String                  |The amount of swap space|
+|**swap**                    |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\**rxtx-factor**     |String                  |The rxtx factor, which  |
-|                            |                        |describes configured    |
+|parameters.flavors.\ **rxtx-|String                  |The rxtx factor, which  |
+|factor**                    |                        |describes configured    |
 |                            |                        |bandwidth cap values.   |
 +----------------------------+------------------------+------------------------+
-|flavors\**OS-FLV-EXT-**     |String                  |The number of ephemeral |
-|   **DATA:ephemeral**       |                        |disks.                  |
+|parameters.flavors.\ **OS-  |String                  |The number of ephemeral |
+|FLV-EXT-DATA:ephemeral**    |                        |disks.                  |
 +----------------------------+------------------------+------------------------+
-|flavors\**disk**            |String                  |The disk size.          |
+|parameters.flavors.\        |String                  |The disk size.          |
+|**disk**                    |                        |                        |
 +----------------------------+------------------------+------------------------+
-|flavors\**id**              |String                  |The flavor id.          |
+|parameters.flavors.\ **id** |String                  |The flavor id.          |
 +----------------------------+------------------------+------------------------+
+
+
+
+
+
 
 
 **Example Retrieve list of flavors with details: JSON response**
@@ -221,5 +258,7 @@ The following example shows only a few images in the list for brevity.
        }
      ]
    }
+
+
 
 

@@ -10,26 +10,16 @@ Create server with network
 
     POST /servers
 
-This operation provisions a server asynchronously with a network.
+Provisions a server asynchronously with a network.
 
-You must specify the networks that you want to attach to your server. If you do not specify 
-any networks, ServiceNet and PublicNet are attached by default.
+You must specify the networks that you want to attach to your server. If you do not specify any networks, 				ServiceNet and PublicNet are attached by default.
 
-The progress of the server build depends on factors including location of the requested 
-image, network i/o, host load, and the selected flavor. You can check the progress of the 
-build request by issuing a call to retrieve the details of the server. Once the build is 
-complete, the server's ``status`` is ``ACTIVE``.
+The progress of the server build depends on factors including location of the requested image, network i/o, 				host load, and the selected flavor. You can check the progress of the build request by issuing a call to 				retrieve the details of the server. Once the build is complete, the server's ``status`` is ``ACTIVE``.
 
-You can optionally provision the server instance with specified isolated networks. However, 
-if you specify an isolated network, you must explicitly specify the UUIDs for PublicNet and 
-ServiceNet to attach these networks to your server. The UUID for ServiceNet is 
-``11111111-1111-1111-1111-111111111111``, and the UUID for PublicNet is 
-``00000000-0000-0000-0000-000000000000``. Omit these UUIDs from the request to detach from 
-these networks.
+You can optionally provision the server instance with specified isolated networks. However, if you specify 				an isolated network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these 				networks to your server. The UUID for ServiceNet is ``11111111-1111-1111-1111-111111111111``, 				and the UUID for PublicNet is ``00000000-0000-0000-0000-000000000000``. Omit these UUIDs from 				the request to detach from these networks.
 
 .. note::
-   Rack Connect and Managed Operations Service Level customers will receive an error if 
-   they opt out of attaching to PublicNet or ServiceNet.
+   Rack Connect and Managed Operations Service Level customers will receive an error if they opt out of 					attaching to PublicNet or ServiceNet.
    
    
 

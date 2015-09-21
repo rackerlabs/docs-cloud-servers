@@ -5,15 +5,17 @@
 
 Delete server metadata item
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code::
 
     DELETE /servers/{server_id}/metadata/{key}
 
-This operation deletes a metadata item by key from the specified server.
+Deletes a metadata item by key from the specified server.
 
-If the operation succeeds, it returns an ``HTTP 202`` status code with no response body.
+If the operation succeeds, it returns an ``HTTP 202`` status code with no response 				body.
 
 In the URI, specify the target server ID and the target metadata key.
+
 
 
 This table shows the possible response codes for this operation:
@@ -50,6 +52,8 @@ Request
 """"""""""""""""
 
 
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -65,7 +69,12 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
+
+
+
 This operation does not accept a request body.
+
+
 
 
 **Example Delete server metadata item: JSON request**
@@ -78,8 +87,19 @@ This operation does not accept a request body.
    Accept: application/json
 
 
+
+
+
 Response
 """"""""""""""""
+
+
+
+
+
+
+
+
 
 
 **Example Delete server metadata item: JSON response**
@@ -94,5 +114,7 @@ Response
        Server: Jetty(8.0.y.z-SNAPSHOT)
        Via: 1.1 Repose (Repose/2.12)
        x-compute-request-id: req-406a007a-9dfe-4ac4-b819-d64a74244506
+
+
 
 
