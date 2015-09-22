@@ -1,16 +1,15 @@
-.. _api-operations-index:
 
-==============
-API Operations
-==============
+
+.. meta::
+   :description: Rackspace Cloud Images API Reference
+   :keywords: Rackspace, Cloud Images ReST API, API resources, API methods
 
 .. toctree:: 
-   :caption: API Reference
    :maxdepth: 2
 
-   svr-basic-operations.rst
-   svr-flavors-operations.rst
-   svr-images-operations.rst
-   svr-networks-operations.rst
-   svr-misc-operations.rst
+   svr-basic-operations
+   svr-flavors-operations
+   svr-images-operations
+   svr-networks-operations
+   svr-misc-operations
 

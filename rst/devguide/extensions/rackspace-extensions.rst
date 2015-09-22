@@ -2,8 +2,12 @@
 Rackspace Extensions
 ====================
 
-Rackspace provides the following extensions to the OpenStack Compute API
-v2:
+Using API operations, users and applications can programmatically determine which extensions 
+are available, either by listing them or getting details for a specific extension.
+To get the list of currently available extensions, see 
+:ref:`Extension operations <api-operations-svr-misc>`.
+
+At this time, Rackspace provides the following extensions to the Cloud Servers API v2:
 
 -  **Disk configuration extension**. Enables control of how the disk is
    partitioned when a server is created, rebuilt, or resized.

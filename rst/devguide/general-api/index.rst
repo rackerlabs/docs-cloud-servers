@@ -1,3 +1,5 @@
+.. _general-api-index:
+
 =======================
 General API Information
 =======================
@@ -13,16 +15,14 @@ API v2 supports JSON request and response formats.
 .. toctree::
    :maxdepth: 2
 
-   cloud-servers-concepts
    how-curl-commands-work
    authenticate-through-the-rackspace-cloud-identity-service
    request-response-types
    links-and-references
    paginated-collections
    efficient-polling-with-the-changes-since-parameter
-   quotas
    limits
-   extensions
+   quotas
    faults
    role-based-access-control
    flavors
