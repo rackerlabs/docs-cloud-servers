@@ -15,7 +15,8 @@ Deletes the specified network.
 This operation deletes the network specified in the request URI.
 
 .. note::
-   You can delete an isolated network only if it is not attached to any server. To detach a network from a 					server, delete the virtual interface for the network from the server instance..
+   You can delete an isolated network only if it is not attached to any server. To detach 
+   a network from a server, delete the virtual interface for the network from the server instance.
    
    
 

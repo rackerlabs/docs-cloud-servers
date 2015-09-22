@@ -10,11 +10,10 @@ Set image metadata for specified image
 
     POST /images/{image_id}/metadata
 
-Sets image metadata for the specified image.
-
 This operation sets metadata for an image that you previously created.
 
-If your request includes keys that do not exist, they will be added. If it includes existing metadata keys, 				those entries will be changed to match the keys in the request body.
+If your request includes keys that do not exist, they will be added. If it includes 
+existing metadata keys, those entries will be changed to match the keys in the request body.
 
 Specify the image ID in the URI.
 
@@ -109,7 +108,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **metadata** |Object                   |The container of         |
+|**metadata**              |Object                   |The container of         |
 |                          |                         |metadata for images.     |
 +--------------------------+-------------------------+-------------------------+
 

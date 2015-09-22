@@ -10,22 +10,27 @@ Set server metadata
 
     PUT /servers/{server_id}/metadata
 
-Creates or replaces metadata items for a specified server
+This operation creates or replaces metadata items for a specified server
 
 You can add or update one or more new metadata items in a single request.
 
-If metadata items in the request body do not exist, they are created. If they do exist, they are 				replaced.
+If metadata items in the request body do not exist, they are created. If they do exist, 
+they are replaced.
 
 .. important::
-   Existing metadata items are replaced with the ones provided in the request regardless of the 					names of the original metadata items.
+   Existing metadata items are replaced with the ones provided in the request regardless 
+   of the names of the original metadata items.
    
    
 
-If you exceed the maximum number of metadata items in the request, the call throws an ``overLimit 					(413)`` fault. To find the maximum number of key-value pairs that can be supplied for each 				server, use the maxServerMeta absolute limit query.
+If you exceed the maximum number of metadata items in the request, the call throws an 
+``overLimit (413)`` fault. To find the maximum number of key-value pairs that can be 
+supplied for each server, use the maxServerMeta absolute limit query.
 
 In the URI, specify the target server ID.
 
-In the request body, specify the ``metadata`` element, followed by the new metadata key, for 				example ``version``, with the value for that key.
+In the request body, specify the ``metadata`` element, followed by the new metadata key, for
+example ``version``, with the value for that key.
 
 
 
@@ -82,7 +87,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **metadata** |Object                   |Container for a metadata |
+|**metadata**              |Object                   |Container for a metadata |
 |                          |                         |keypair for the          |
 |                          |                         |specified server. This   |
 |                          |                         |container holds one or   |
@@ -90,8 +95,8 @@ This table shows the body parameters for the request:
 |                          |                         |format of "metadata key" |
 |                          |                         |: "metadata value".      |
 +--------------------------+-------------------------+-------------------------+
-|parameters.metadata.\     |Keypair                  |Keypairs edcribing the   |
-|**keyname**               |                         |metadata using format of |
+|metadata.\  **keyname**   |Keypair                  |Keypairs edcribing the   |
+|                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
 
@@ -134,7 +139,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **metadata** |Object                   |Container for a metadata |
+|**metadata**              |Object                   |Container for a metadata |
 |                          |                         |keypair for the          |
 |                          |                         |specified server. This   |
 |                          |                         |container holds one or   |
@@ -142,8 +147,8 @@ This table shows the body parameters for the response:
 |                          |                         |format of "metadata key" |
 |                          |                         |: "metadata value".      |
 +--------------------------+-------------------------+-------------------------+
-|parameters.metadata.\     |Keypair                  |Keypairs edcribing the   |
-|**keyname**               |                         |metadata using format of |
+|metadata.\ **keyname**    |Keypair                  |Keypairs edcribing the   |
+|                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
 

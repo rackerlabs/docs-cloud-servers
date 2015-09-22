@@ -10,9 +10,12 @@ Rebuild specified server
 
     POST /servers/{server_id}/actions
 
-Rebuild the specified server.
+This operation rebuilds the specified server.
 
-The rebuild operation removes all data on the server and replaces it with the specified image. The serverID 				and all IP addresses remain the same. If you specify name, metadata, accessIPv4, or accessIPv6 in the rebuild 				request, new values replace existing values. Otherwise, these values do not change. You can inject data into 				the file system during the rebuild.
+The rebuild operation removes all data on the server and replaces it with the specified image. 
+The serverID and all IP addresses remain the same. If you specify name, metadata, accessIPv4, 
+or accessIPv6 in the rebuild request, new values replace existing values. Otherwise, these 
+values do not change. You can inject data into the file system during the rebuild.
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -21,7 +24,8 @@ The rebuild operation removes all data on the server and replaces it with the sp
 
 Specify the target server ID in the URI.
 
-In the request body, specify the rebuild action followed by various attributes, listed in the following 				parameters section.
+In the request body, specify the rebuild action followed by various attributes, listed in 
+the following parameters section.
 
 
 
@@ -78,33 +82,33 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **rebuild**  |Object *(Required)*      |Specification of the     |
+|**rebuild**               |Object *(Required)*      |Specification of the     |
 |                          |                         |rebuild action for the   |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |Object *(Optional)*      |The new name for the     |
-|**name**                  |                         |server.                  |
+|rebuild.\ **name**        |Object *(Optional)*      |The new name for the     |
+|                          |                         |server.                  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |Object *(Required)*      |The image ID.            |
-|**imageRef**              |                         |                         |
+|rebuild.\ **imageRef**    |Object *(Required)*      |The image ID.            |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |Object *(Optional)*      |The IP version 4 address.|
-|**accessIPv4**            |                         |                         |
+|rebuild.\ **accessIPv4**  |Object *(Optional)*      |The IP version 4 address.|
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |Object *(Optional)*      |The IP version 6 address.|
-|**accessIPv6**            |                         |                         |
+|rebuild.\ **accessIPv6**  |Object *(Optional)*      |The IP version 6 address.|
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |String *(Optional)*      |The password assigned to |
-|**adminPass**             |                         |provide login access to  |
+|rebuild.\ **adminPass**   |String *(Optional)*      |The password assigned to |
+|                          |                         |provide login access to  |
 |                          |                         |the server.              |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |String *(Optional)*      |A metadata key and value |
-|**metadata**              |                         |pair.                    |
+|rebuild.\ **metadata**    |String *(Optional)*      |A metadata key and value |
+|                          |                         |pair.                    |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\      |String *(Optional)*      |The file path and file   |
-|**personality**           |                         |contents.                |
+|rebuild.\ **personality** |String *(Optional)*      |The file path and file   |
+|                          |                         |contents.                |
 +--------------------------+-------------------------+-------------------------+
-|parameters.rebuild.\ **OS-|String *(Optional)*      |The disk configuration   |
+|rebuild.\ **OS-           |String *(Optional)*      |The disk configuration   |
 |DCF:diskConfig**          |                         |value. Valid values are: |
 |                          |                         |AUTO:The server is built |
 |                          |                         |with a single partition  |
@@ -190,30 +194,30 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |Name                       |Type                     |Description             |
 +===========================+=========================+========================+
-|parameters.\ **server**    |Object                   |The container for       |
+|**server**                 |Object                   |The container for       |
 |                           |                         |server data.            |
 +---------------------------+-------------------------+------------------------+
-|parameters.server.\ **id** |Uuid                     |The ID of the server.   |
+|server.\ **id**            |Uuid                     |The ID of the server.   |
 +---------------------------+-------------------------+------------------------+
-|parameters.server.\        |Uuid                     |An array of the self    |
-|**links**                  |                         |and bookmark links to   |
+|server.\ **links**         |Uuid                     |An array of the self    |
+|                           |                         |and bookmark links to   |
 |                           |                         |the server.             |
 +---------------------------+-------------------------+------------------------+
-|parameters.server.links.\  |Uuid                     |The URL for the server  |
-|**href**                   |                         |and the associated      |
+|server.links.\  **href**   |Uuid                     |The URL for the server  |
+|                           |                         |and the associated      |
 |                           |                         |``rel``.                |
 +---------------------------+-------------------------+------------------------+
-|parameters.server.links.\  |Uuid                     |The descriptive field   |
-|**rel**                    |                         |for the associated      |
+|server.links.\ **rel**     |Uuid                     |The descriptive field   |
+|                           |                         |for the associated      |
 |                           |                         |``href``, which is      |
 |                           |                         |either ``self`` or      |
 |                           |                         |``bookmark``.           |
 +---------------------------+-------------------------+------------------------+
-|parameters.server.\        |String                   |The password assigned   |
-|**adminPass**              |                         |to provide login access |
+|server.\  **adminPass**    |String                   |The password assigned   |
+|                           |                         |to provide login access |
 |                           |                         |to the server.          |
 +---------------------------+-------------------------+------------------------+
-|parameters.server.\ **OS-  |String                   |The disk configuration  |
+|server.\ **OS-             |String                   |The disk configuration  |
 |DCF:diskConfig**           |                         |value. Valid values are |
 |                           |                         |``AUTO`` and ``MANUAL``.|
 +---------------------------+-------------------------+------------------------+

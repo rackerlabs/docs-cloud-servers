@@ -10,9 +10,11 @@ Resize specified server
 
     POST /servers/{server_id}/actions
 
-Resize the specified server.
-
-This operation converts an existing Standard server to a different flavor, which scales the server up or 				down. The original server is saved for a period of time to allow roll back if a problem occurs. You should 				test and explicitly confirm all resizes. When you do so, the original server is removed. All resizes are 				automatically confirmed after 24 hours if you do not explicitly confirm or revert the resize. 
+This operation converts an existing Standard server to a different flavor, which scales the 
+server up or down. The original server is saved for a period of time to allow roll back if 
+a problem occurs. You should test and explicitly confirm all resizes. When you do so, the 
+original server is removed. All resizes are automatically confirmed after 24 hours if you 
+do not explicitly confirm or revert the resize. 
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -20,7 +22,8 @@ This operation converts an existing Standard server to a different flavor, which
    
 
 .. warning::
-   Resize is only available for Standard flavors. If you have a Compute, Memory, or IO flavor server, and 					you need to change the size of your data disk(s), you will need to: 
+   Resize is only available for Standard flavors. If you have a Compute, Memory, or IO 
+   flavor server, and you need to change the size of your data disk(s), you will need to: 
    
    #. Image your system disk.
    #. Back-up your data disk(s), using Cloud Backup or Cloud Block Storage.
@@ -94,14 +97,14 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **resize**   |Object *(Required)*      |Specification of the     |
+|**resize**                |Object *(Required)*      |Specification of the     |
 |                          |                         |resize action for the    |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
-|parameters.resize.\       |Object *(Required)*      |The flavorRef for the    |
-|**flavorRef**             |                         |new server.              |
+|resize.\ **flavorRef**    |Object *(Required)*      |The flavorRef for the    |
+|                          |                         |new server.              |
 +--------------------------+-------------------------+-------------------------+
-|parameters.resize.\ **OS- |String *(Optional)*      |The disk configuration   |
+|resize.\ **OS-            |String *(Optional)*      |The disk configuration   |
 |DCF:diskConfig**          |                         |value. Valid values are: |
 |                          |                         |AUTO:The server is built |
 |                          |                         |with a single partition  |

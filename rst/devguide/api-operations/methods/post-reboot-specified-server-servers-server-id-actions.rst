@@ -10,13 +10,14 @@ Reboot specified server
 
     POST /servers/{server_id}/actions
 
-Reboot the specified server.
-
-This operation performs a soft or hard reboot of the specified server. A soft reboot is a graceful shutdown 				and restart of your server's operating system. A hard reboot power cycles your server, which performs an 				immediate shutdown and restart.
+This operation performs a soft or hard reboot of the specified server. A soft reboot is a 
+graceful shutdown and restart of your server's operating system. A hard reboot power cycles 
+your server, which performs an immediate shutdown and restart.
 
 Specify the target server ID in the URI.
 
-In the request body, specify the action ``reboot``, optionally followed by the ``type`` attribute, either ``HARD`` or ``SOFT``.
+In the request body, specify the action ``reboot``, optionally followed by the ``type`` 
+attribute, either ``HARD`` or ``SOFT``.
 
 If you do not include the type attribute, a soft reboot is performed by default.
 
@@ -75,12 +76,12 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **reboot**   |Object *(Required)*      |Specification of the     |
+|**reboot**                |Object *(Required)*      |Specification of the     |
 |                          |                         |reboot action for the    |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
-|parameters.reboot.\       |Object *(Optional)*      |The type of reboot.      |
-|**type**                  |                         |Valid reboot types are:  |
+|reboot.\ **type**         |Object *(Optional)*      |The type of reboot.      |
+|                          |                         |Valid reboot types are:  |
 |                          |                         |SOFTThe operating system |
 |                          |                         |is signaled to restart,  |
 |                          |                         |which allows for a       |

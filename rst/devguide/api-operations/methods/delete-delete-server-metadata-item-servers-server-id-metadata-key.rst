@@ -12,7 +12,7 @@ Delete server metadata item
 
 Deletes a metadata item by key from the specified server.
 
-If the operation succeeds, it returns an ``HTTP 202`` status code with no response 				body.
+If the operation succeeds, it returns an ``HTTP 202`` status code with no response body.
 
 In the URI, specify the target server ID and the target metadata key.
 

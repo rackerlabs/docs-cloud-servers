@@ -10,9 +10,13 @@ Revert server resize for specified server
 
     POST /servers/{server_id}/actions
 
-Revert the server resize for the specified server.
+This operation reverts the server resize for the specified server.
 
-During a resize operation, the original server is saved for a period of time to allow for roll back if a 				problem occurs. If you determine that a problem exists with a newly resized server, use this operation to 				revert the resize and roll back to the original server. All resizes are automatically confirmed after 24 				hours if you do not explicitly confirm or revert the resize. 
+During a resize operation, the original server is saved for a period of time to allow for 
+roll back if a problem occurs. If you determine that a problem exists with a newly resized 
+server, use this operation to revert the resize and roll back to the original server. All 
+resizes are automatically confirmed after 24 hours if you do not explicitly confirm or 
+revert the resize. 
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -78,8 +82,8 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\              |Object *(Required)*      |Specification of the     |
-|**revertResize**          |                         |revertResize action for  |
+|**revertResize**          |Object *(Required)*      |Specification of the     |
+|                          |                         |revertResize action for  |
 |                          |                         |the specified server.    |
 +--------------------------+-------------------------+-------------------------+
 

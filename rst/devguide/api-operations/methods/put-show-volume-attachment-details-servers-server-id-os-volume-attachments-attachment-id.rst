@@ -10,9 +10,9 @@ Show volume attachment details
 
     PUT /servers/{server_id}/os-volume_attachments/{attachment_id}
 
-Retrieves volume details for the specified server ID and volume attachment ID
+This operation retrieves volume details for the specified server ID and volume attachment ID
 
-In the URI, specify the target server ID and the target attached volume ID to see details for that 				volume.
+In the URI, specify the target server ID and the target attached volume ID to see details for that volume.
 
 
 
@@ -96,26 +96,26 @@ This table shows the body parameters for the response:
 +-------------------------------+-----------------------+----------------------+
 |Name                           |Type                   |Description           |
 +===============================+=======================+======================+
-|parameters.\                   |Object                 |The container for the |
-|**volumeAttachment**           |                       |volume attachment     |
+|**volumeAttachment**           |Object                 |The container for the |
+|                               |                       |volume attachment     |
 |                               |                       |specifications.       |
 +-------------------------------+-----------------------+----------------------+
-|parameters.volumeAttachment.\  |String                 |The name of the       |
-|**device**                     |                       |device, such as       |
+|volumeAttachment.\ **device**  |String                 |The name of the       |
+|                               |                       |device, such as       |
 |                               |                       |/dev/xvdb. Specify    |
 |                               |                       |``null`` for auto-    |
 |                               |                       |assignment.           |
 +-------------------------------+-----------------------+----------------------+
-|parameters.volumeAttachment.\  |String                 |The ID of the volume  |
-|**Id**                         |                       |that you attached to  |
+|volumeAttachment.\ **Id**      |String                 |The ID of the volume  |
+|                               |                       |that you attached to  |
 |                               |                       |the server instance.  |
 +-------------------------------+-----------------------+----------------------+
-|parameters.volumeAttachment.\  |String                 |The ID of the server  |
-|**serverId**                   |                       |instance to which you |
+|volumeAttachment.\ **serverId**|String                 |The ID of the server  |
+|                               |                       |instance to which you |
 |                               |                       |attached the volume.  |
 +-------------------------------+-----------------------+----------------------+
-|parameters.volumeAttachment.\  |String                 |The ID of the volume  |
-|**volumeId**                   |                       |that you attached to  |
+|volumeAttachment.\ **volumeId**|String                 |The ID of the volume  |
+|                               |                       |that you attached to  |
 |                               |                       |the server instance.  |
 +-------------------------------+-----------------------+----------------------+
 
