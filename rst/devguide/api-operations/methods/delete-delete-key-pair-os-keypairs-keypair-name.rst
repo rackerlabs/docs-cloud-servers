@@ -10,8 +10,6 @@ Delete key pair
 
     DELETE /os-keypairs/{keypair_name}
 
-Deletes the specified key pair.
-
 This operation deletes the specified key pair. A return code of 202 indicates success.
 
 

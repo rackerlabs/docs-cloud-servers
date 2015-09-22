@@ -100,7 +100,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **meta**     |Object                   |Container for a metadata |
+|**meta**                  |Object                   |Container for a metadata |
 |                          |                         |keypair for the          |
 |                          |                         |specified server. This   |
 |                          |                         |container holds a single |
@@ -108,8 +108,8 @@ This table shows the body parameters for the response:
 |                          |                         |"metadata key" :         |
 |                          |                         |"metadata value".        |
 +--------------------------+-------------------------+-------------------------+
-|parameters.meta.\         |Keypair                  |Keypair describing the   |
-|**keyname**               |                         |metadata using format of |
+|meta.\ **keyname**        |Keypair                  |Keypair describing the   |
+|                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
 

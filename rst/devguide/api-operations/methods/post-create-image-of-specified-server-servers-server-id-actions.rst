@@ -10,11 +10,13 @@ Create image of specified server
 
     POST /servers/{server_id}/actions
 
-Create an image of the specified server.
+This operation creates a new image for a specified server. Once complete, you can use your 
+new image to rebuild or create servers. The full URL to the newly created image is returned 
+through the ``Location`` header. You can retrieve additional attributes for the image including 
+its creation status by issuing a subsequent ``GET`` on that URL.
 
-This operation creates a new image for a specified server. Once complete, you can use your new image to 				rebuild or create servers. The full URL to the newly created image is returned through the ``Location`` header. You can retrieve additional attributes for the image including its creation 				status by issuing a subsequent ``GET`` on that URL.
-
-Image creation is an asynchronous operation, so coordinating the creation with data quiescence, and so on, 				is currently not possible. 
+Image creation is an asynchronous operation, so coordinating the creation with data quiescence, 
+and so on, is currently not possible. 
 
 .. note::
    This operation is not available for OnMetal servers.
@@ -102,18 +104,18 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\              |Object *(Required)*      |Specification of the     |
-|**createImage**           |                         |createImage action for   |
+|**createImage**           |Object *(Required)*      |Specification of the     |
+|                          |                         |createImage action for   |
 |                          |                         |the specified server.    |
 +--------------------------+-------------------------+-------------------------+
-|parameters.\ **name**     |String *(Required)*      |The name of the new      |
+|createImage.\ **name**    |String *(Required)*      |The name of the new      |
 |                          |                         |image.                   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.\ **metadata** |Object *(Required)*      |The container of the     |
+|createImage.\ **metadata**|Object *(Required)*      |The container of the     |
 |                          |                         |metadata for the new     |
 |                          |                         |image.                   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.\ **meta**     |Object *(Required)*      |A metadata keypair,      |
+|createImage.\ **meta**    |Object *(Required)*      |A metadata keypair,      |
 |                          |                         |specifying ImageType or  |
 |                          |                         |ImageVersion, for        |
 |                          |                         |example.                 |

@@ -10,9 +10,8 @@ Enable scheduled Images
 
     POST /servers/{server_id}/rax-si-scheduled-image
 
-Enable scheduled images for the specified server.
-
-This operation enables scheduled images on a server, by creating a image_schedule resource. When your 				images are created, they are named according to one of the following schemes: 
+This operation enables scheduled images on a server, by creating a image_schedule resource. 
+When your images are created, they are named according to one of the following schemes: 
 
 * ``daily-{server-name}-{10-digit-number}``
 * ``weekly-{server-name}-{10-digit-number}``
@@ -20,28 +19,34 @@ This operation enables scheduled images on a server, by creating a image_schedul
 
 
 
-Image names are limited to 255 characters. The ``{server-name}`` may be truncated, if necessary, 				for the scheduled snapshot image name to meet this limit.
+Image names are limited to 255 characters. The ``{server-name}`` may be truncated, if 
+necessary, for the scheduled snapshot image name to meet this limit.
 
-If you want to change from daily to weekly scheduled images, simply post a new request containing the day 				of week and the retention value you desire. Likewise, if you want to switch from weekly to daily scheduled 				images, simply post a new request containing only a retention value. 
+If you want to change from daily to weekly scheduled images, simply post a new request 
+containing the day of week and the retention value you desire. Likewise, if you want to 
+switch from weekly to daily scheduled images, simply post a new request containing only a 
+retention value. 
 
 In the URI, specify the server ID.
 
-In the request body, for both daily and weekly requests, specify ``retention`` specifies the 				number of scheduled images created by the scheduled images service to keep for a server. The retention value 				must be a positive integer from 1 to 65,535 (the system limit).
+In the request body, for both daily and weekly requests, specify ``retention`` specifies 
+the number of scheduled images created by the scheduled images service to keep for a server. 
+The retention value must be a positive integer from 1 to 65,535 (the system limit).
 
-In the request body, for weekly requests, specify ``day_of_week``, which indicates the day for 				image creation.
+In the request body, for weekly requests, specify ``day_of_week``, which indicates the day 
+for image creation.
 
 .. note::
    Regarding Retention: 
-   
-   * Excess scheduled image removal will be done at the time the scheduled images service 								successfully adds a new snapshot to your account.
-   * The way the scheduled images service recognizes that an image is eligible for removal is by 								locating the following user metadata on the image: ``org.openstack__1__created-by: 									scheduled-images-service``. To save an scheduled image so that it is not eligible 								for retention culling, simply remove this metadata element. We do not recommend adding the 								above metadata element to an image manually.
+   * Excess scheduled image removal will be done at the time the scheduled images service 								
+   successfully adds a new snapshot to your account.
+   * The way the scheduled images service recognizes that an image is eligible for removal 
+   is by locating the following user metadata on the image: ``org.openstack__1__created-by: 									
+   scheduled-images-service``. To save an scheduled image so that it is not eligible 								
+   for retention culling, simply remove this metadata element. We do not recommend adding the 								
+   above metadata element to an image manually.
    * If a retention value has already been specified for a server, it is overridden.
    
-   
-   
-   
-   
-
 
 
 This table shows the possible response codes for this operation:
@@ -97,14 +102,14 @@ This table shows the body parameters for the request:
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|parameters.\                 |Object *(Required)*     |The container for the  |
-|**image_schedule**           |                        |image schedule.        |
+|**image_schedule**           |Object *(Required)*     |The container for the  |
+|                             |                        |image schedule.        |
 +-----------------------------+------------------------+-----------------------+
-|parameters.image_schedule.\  |Int *(Required)*        |The number of days     |
+|image_schedule.\             |Int *(Required)*        |The number of days     |
 |**retention**                |                        |that an Image should   |
 |                             |                        |be retained.           |
 +-----------------------------+------------------------+-----------------------+
-|parameters.image_schedule.\  |String *(Optional)*     |The chosen day of the  |
+|image_schedule.\             |String *(Optional)*     |The chosen day of the  |
 |**day_of_week**              |                        |week for the image     |
 |                             |                        |creation. The allowed  |
 |                             |                        |values for this field  |
@@ -171,14 +176,14 @@ This table shows the body parameters for the response:
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|parameters.\                 |Object *(Required)*     |The container for the  |
-|**image_schedule**           |                        |image schedule.        |
+|**image_schedule**           |Object *(Required)*     |The container for the  |
+|                             |                        |image schedule.        |
 +-----------------------------+------------------------+-----------------------+
-|parameters.image_schedule.\  |Int *(Required)*        |The number of days     |
+|image_schedule.\             |Int *(Required)*        |The number of days     |
 |**retention**                |                        |that an Image should   |
 |                             |                        |be retained.           |
 +-----------------------------+------------------------+-----------------------+
-|parameters.image_schedule.\  |String *(Optional)*     |The chosen day of the  |
+|image_schedule.\             |String *(Optional)*     |The chosen day of the  |
 |**day_of_week**              |                        |week for the image     |
 |                             |                        |creation. The allowed  |
 |                             |                        |values for this field  |

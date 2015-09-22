@@ -10,9 +10,8 @@ Import a server key pair
 
     POST /os-keypairs
 
-Import a server key pair
-
-Imports, or uploads, a key pair, with the name and public key specified in the request body, to associate 				with a new server instance.
+This operation imports, or uploads, a key pair, with the name and public key specified in 
+the request body, to associate with a new server instance.
 
 
 
@@ -61,14 +60,14 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **keypair**  |Object *(Required)*      |The container for the    |
+|**keypair**               |Object *(Required)*      |The container for the    |
 |                          |                         |key pair request.        |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String *(Required)*      |The name to associate    |
-|**name**                  |                         |with the key pair.       |
+|keypair.\ **name**        |String *(Required)*      |The name to associate    |
+|                          |                         |with the key pair.       |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String *(Required)*      |The public ssh key value.|
-|**public_key**            |                         |                         |
+|keypair.\ **public_key**  |String *(Required)*      |The public ssh key value.|
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -110,25 +109,25 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **keypair**  |Object                   |The container for the    |
+|**keypair**               |Object                   |The container for the    |
 |                          |                         |key pair details.        |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String                   |A short sequence of      |
-|**fingerprint**           |                         |bytes used to            |
+|keypair.\ **fingerprint** |String                   |A short sequence of      |
+|                          |                         |bytes used to            |
 |                          |                         |authenticate, or look    |
 |                          |                         |up, a longer public key. |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String                   |The name of the key pair.|
-|**name**                  |                         |                         |
+|keypair.\ **name**        |String                   |The name of the key pair.|
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String                   |The private ssh key      |
-|**private_key**           |                         |value.                   |
+|keypair.\ **private_key** |String                   |The private ssh key      |
+|                          |                         |value.                   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String                   |The public ssh key value.|
-|**public_key**            |                         |                         |
+|keypair.\ **public_key**  |String                   |The public ssh key value.|
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.keypair.\      |String                   |The ID of the user.      |
-|**user_id**               |                         |                         |
+|keypair.\   **user_id**   |String                   |The ID of the user.      |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
 

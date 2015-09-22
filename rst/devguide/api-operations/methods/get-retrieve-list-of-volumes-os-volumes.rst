@@ -10,9 +10,7 @@ Retrieve list of volumes
 
     GET /os-volumes
 
-Retrieve list of volumes for your account.
-
-Retrieves the list of volumes for your account.
+This operation retrieves the list of volumes for your account.
 
 
 
@@ -86,40 +84,40 @@ This table shows the body parameters for the response:
 +-------------------------------------+--------------------+-------------------+
 |Name                                 |Type                |Description        |
 +=====================================+====================+===================+
-|parameters.volume                    |Object              |An array of        |
+|volume                               |Object              |An array of        |
 |                                     |                    |volumes.           |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **status**      |String              |The state of the   |
+|volumes.\ **status**                 |String              |The state of the   |
 |                                     |                    |volume. This will  |
 |                                     |                    |be ``available``   |
 |                                     |                    |when volume is     |
 |                                     |                    |created and ready  |
 |                                     |                    |for use.           |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **display_name**|String              |The name assigned  |
+|volumes.\ **display_name**           |String              |The name assigned  |
 |                                     |                    |to the volume.     |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **attachments** |Array               |An array of volume |
+|volumes.\ **attachments**            |Array               |An array of volume |
 |                                     |                    |attachments.       |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.availability_zone |String              |This parameter is  |
+|volumes.availability_zone            |String              |This parameter is  |
 |                                     |                    |no longer used and |
 |                                     |                    |is always set to   |
 |                                     |                    |``nova``.          |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **created_at**  |Date                |The date and time  |
+|volumes.\ **created_at**             |Date                |The date and time  |
 |                                     |                    |of volume creation.|
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\                 |String              |The description    |
-|**display_description**              |                    |for the volume.    |
+|volumes.\ **display_description**    |String              |The description    |
+|                                     |                    |for the volume.    |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **image_id**    |String              |The image_id use   |
+|volumes.\ **image_id**               |String              |The image_id use   |
 |                                     |                    |for the volume. If |
 |                                     |                    |no image was       |
 |                                     |                    |specified, this    |
 |                                     |                    |will be ``null``.  |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **volume_type** |String              |The type of        |
+|volumes.\ **volume_type**            |String              |The type of        |
 |                                     |                    |volume, either     |
 |                                     |                    |``SATA`` or        |
 |                                     |                    |``SSD``.           |
@@ -131,16 +129,16 @@ This table shows the body parameters for the response:
 |                                     |                    |default is         |
 |                                     |                    |``SATA``.          |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **snapshot_id** |Uuid                |The snapshot from  |
+|volumes.\ **snapshot_id**            |Uuid                |The snapshot from  |
 |                                     |                    |which to create a  |
 |                                     |                    |volume, if any.    |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **metadata**    |String              |Any metadata for   |
+|volumes.\ **metadata**               |String              |Any metadata for   |
 |                                     |                    |the volume.        |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **id**          |String              |The volume id.     |
+|volumes.\ **id**                     |String              |The volume id.     |
 +-------------------------------------+--------------------+-------------------+
-|parameters.volumes.\ **size**        |Integer             |The size of the    |
+|volumes.\ **size**                   |Integer             |The size of the    |
 |                                     |                    |volume in          |
 |                                     |                    |gibibytes (GiB).   |
 |                                     |                    |The valid range    |

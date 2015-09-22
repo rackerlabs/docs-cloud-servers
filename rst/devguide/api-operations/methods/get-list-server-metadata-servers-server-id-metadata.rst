@@ -10,7 +10,7 @@ List server metadata
 
     GET /servers/{server_id}/metadata
 
-Retrieve list of all metadata for a specified server.
+This operation retrieves a list of all metadata for a specified server.
 
 In the URI, specify the target server ID.
 
@@ -94,7 +94,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **metadata** |Object                   |Container for a metadata |
+|**metadata**              |Object                   |Container for a metadata |
 |                          |                         |keypair for the          |
 |                          |                         |specified server. This   |
 |                          |                         |container holds one or   |
@@ -102,8 +102,8 @@ This table shows the body parameters for the response:
 |                          |                         |format of "metadata key" |
 |                          |                         |: "metadata value".      |
 +--------------------------+-------------------------+-------------------------+
-|parameters.metadata.\     |Keypair                  |Keypairs edcribing the   |
-|**keyname**               |                         |metadata using format of |
+|metadata.\ **keyname**    |Keypair                  |Keypairs edcribing the   |
+|                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
 

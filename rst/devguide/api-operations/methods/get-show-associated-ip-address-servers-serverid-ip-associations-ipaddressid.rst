@@ -67,18 +67,18 @@ Response
 
 This table shows the body parameters for the response:
 
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**ip_association**        |Array                    |The container of         |
-|                          |                         |associated IP details.   |
-+--------------------------+-------------------------+-------------------------+
-|ip_association\**id**     |Uuid                     |The ID of the associated |
-|                          |                         |IP address.              |
-+--------------------------+-------------------------+-------------------------+
-|ip_association\**address**|Uuid                     |The associatied IP       |
-|                          |                         |address.                 |
-+--------------------------+-------------------------+-------------------------+
++-----------------------------+------------------------+-----------------------+
+|Name                         |Type                    |Description            |
++=============================+========================+=======================+
+|**ip_association**           |Array                   |The container of       |
+|                             |                        |associated IP details. |
++-----------------------------+------------------------+-----------------------+
+|ip_association.\ **id**      |Uuid                    |The ID of the          |
+|                             |                        |associated IP address. |
++-----------------------------+------------------------+-----------------------+
+|ip_association.\ **address** |Uuid                    |The associatied IP     |
+|                             |                        |address.               |
++-----------------------------+------------------------+-----------------------+
 
 
 **Example Show associated ip address: JSON response**

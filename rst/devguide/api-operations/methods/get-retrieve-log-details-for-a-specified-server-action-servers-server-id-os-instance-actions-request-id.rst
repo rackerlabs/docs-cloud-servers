@@ -10,9 +10,7 @@ Retrieve log details for a specified server action
 
     GET /servers/{server_id}/os-instance-actions/{request-id}
 
-Retrieve log details for a specified server action.
-
-This operation returns the log details for a specified server action.
+This operation retrieves the log details for a specified server action.
 
 
 
@@ -97,34 +95,34 @@ This table shows the body parameters for the response:
 +-------------------------------------+--------------------+-------------------+
 |Name                                 |Type                |Description        |
 +=====================================+====================+===================+
-|parameters.\ **instanceAction**      |Object              |An container of    |
+|**instanceAction**                   |Object              |An container of    |
 |                                     |                    |instance action    |
 |                                     |                    |log entry data for |
 |                                     |                    |a specific server  |
 |                                     |                    |and action.        |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.\          |String              |The type of action |
-|**action**                           |                    |taken.             |
+|instanceAction.\ **action**          |String              |The type of action |
+|                                     |                    |taken.             |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.\          |Uuid                |The server UUID    |
-|**instance_uuid**                    |                    |where the action   |
+|instanceAction.\ **instance_uuid**   |Uuid                |The server UUID    |
+|                                     |                    |where the action   |
 |                                     |                    |took place.        |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.\          |Uuid                |The action log     |
-|**message**                          |                    |message, if any.   |
+|instanceAction.\ **message**         |Uuid                |The action log     |
+|                                     |                    |message, if any.   |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.\          |Uuid                |The project id.    |
-|**project_id**                       |                    |                   |
+|instanceAction.\ **project_id**      |Uuid                |The project id.    |
+|                                     |                    |                   |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.\          |Uuid                |The action request |
-|**request_id**                       |                    |id.                |
+|instanceAction.\ **request_id**      |Uuid                |The action request |
+|                                     |                    |id.                |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.request_id |Datetime            |The date and time  |
+|instanceAction.request_id            |Datetime            |The date and time  |
 |                                     |                    |that the actin     |
 |                                     |                    |began.             |
 +-------------------------------------+--------------------+-------------------+
-|parameters.instanceAction.\          |String              |The id of the user |
-|**user_id**                          |                    |who requested the  |
+|instanceAction.\ **user_id**         |String              |The id of the user |
+|                                     |                    |who requested the  |
 |                                     |                    |action.            |
 +-------------------------------------+--------------------+-------------------+
 

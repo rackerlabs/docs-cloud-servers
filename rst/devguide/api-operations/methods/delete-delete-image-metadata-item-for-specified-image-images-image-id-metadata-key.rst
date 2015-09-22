@@ -10,8 +10,6 @@ Delete image metadata item for specified image
 
     DELETE /images/{image_id}/metadata/{key}
 
-Deletes an image metadata item for the specified image.
-
 This operation deletes a metadata for an image.
 
 Specify the image ID and metadata key in the URI.

@@ -10,15 +10,8 @@ Retrieve list of networks
 
     GET /os-networksv2
 
-Retrieves list of the networks configured for the specified tenant ID.
-
-This operation lists the networks configured for the tenant ID specified in the request URI.
-
-.. note::
-   To list the networks that are associated with servers, see `List Servers <http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html>`__ 					in the Next Generation Cloud Servers Developer Guide.
-   
-   
-
+This operation retrieves a list of the networks configured for the tenant ID specified in 
+the request URI.
 
 
 This table shows the possible response codes for this operation:
@@ -78,18 +71,18 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **networks** |Array                    |An array of networks.    |
+|**networks**              |Array                    |An array of networks.    |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |String                   |The CIDR for an isolated |
-|**cidr**                  |                         |network. This parameter  |
+|networks.\ **cidr**       |String                   |The CIDR for an isolated |
+|                          |                         |network. This parameter  |
 |                          |                         |is not included for      |
 |                          |                         |PublicNet and ServiceNet.|
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |String                   |The network ID.          |
-|**id**                    |                         |                         |
+|networks.\ **id**         |String                   |The network ID.          |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |String                   |The name of the network. |
-|**label**                 |                         |ServiceNet is labeled as |
+|networks.\  **label**     |String                   |The name of the network. |
+|                          |                         |ServiceNet is labeled as |
 |                          |                         |private, and PublicNet   |
 |                          |                         |is labeled as public in  |
 |                          |                         |the network list.        |

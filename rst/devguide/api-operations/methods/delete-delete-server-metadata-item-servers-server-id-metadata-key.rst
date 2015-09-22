@@ -10,7 +10,7 @@ Delete server metadata item
 
     DELETE /servers/{server_id}/metadata/{key}
 
-Deletes a metadata item by key from the specified server.
+This operation deletes a metadata item by key from the specified server.
 
 If the operation succeeds, it returns an ``HTTP 202`` status code with no response body.
 

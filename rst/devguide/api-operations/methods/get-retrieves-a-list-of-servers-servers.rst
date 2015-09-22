@@ -1,9 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-retrives-a-list-of-servers-servers:
+.. _get-retrieves-a-list-of-servers-servers:
 
-Retrives a list of servers
+Retrieves a list of servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -12,11 +12,13 @@ Retrives a list of servers
 
 Retrieves list of all servers (only IDs, names, and links).
 
-Servers contain a status attribute that indicates the current server state. You can filter on the server 				status when you complete a list servers request. The server status is returned in the response body.
+Servers contain a status attribute that indicates the current server state. You can filter 
+on the server status when you complete a list servers request. The server status is returned 
+in the response body.
 
-For a full list of possible server status values, see.
-
-For more information on the extended status extension ( ``OS-EXT-STS:power_state``, ``OS-EXT-STS:vm_state``, and ``OS-EXT-STS:task_state`` see.
+For a full list of possible server status values including the extended status extension 
+( ``OS-EXT-STS:power_state``, ``OS-EXT-STS:vm_state``, and ``OS-EXT-STS:task_state``), 
+see :ref:`Extended status extension <extended-status-extension>`.
 
 
 
@@ -117,7 +119,7 @@ This operation does not accept a request body.
 
 
 
-**Example Retrives a list of servers: JSON request**
+**Example Retrieves a list of servers: JSON request**
 
 
 .. code::
@@ -142,29 +144,32 @@ This table shows the body parameters for the response:
 +----------------------------+------------------------+------------------------+
 |Name                        |Type                    |Description             |
 +============================+========================+========================+
-|parameters.servers.\ **id** |Uuid                    |The ID of the server.   |
+|**servers**                 |Uuid                    |The array of server     |
+|                            |                        |data.                   |
 +----------------------------+------------------------+------------------------+
-|parameters.servers.\        |Uuid                    |An array of the self    |
-|**links**                   |                        |and bookmark links to   |
+|servers.\ **id**            |Uuid                    |The ID of the server.   |
++----------------------------+------------------------+------------------------+
+|servers.\  **links**        |Uuid                    |An array of the self    |
+|                            |                        |and bookmark links to   |
 |                            |                        |the server.             |
 +----------------------------+------------------------+------------------------+
-|parameters.servers.links.\  |Uuid                    |The URL for the server  |
-|**href**                    |                        |and the associated      |
+|servers.links.\ **href**    |Uuid                    |The URL for the server  |
+|                            |                        |and the associated      |
 |                            |                        |``rel``.                |
 +----------------------------+------------------------+------------------------+
-|parameters.servers.links.\  |Uuid                    |The descriptive field   |
-|**rel**                     |                        |for the associated      |
+|servers.links.\ **rel**     |Uuid                    |The descriptive field   |
+|                            |                        |for the associated      |
 |                            |                        |``href``, which is      |
 |                            |                        |either ``self`` or      |
 |                            |                        |``bookmark``.           |
 +----------------------------+------------------------+------------------------+
-|parameters.servers.\        |String                  |The server name.        |
-|**name**                    |                        |                        |
+|servers.\ **name**          |String                  |The server name.        |
+|                            |                        |                        |
 +----------------------------+------------------------+------------------------+
-|parameters.\ **next**       |Anyuri                  |Moves to the next       |
+|**next**                    |Anyuri                  |Moves to the next       |
 |                            |                        |metadata item.          |
 +----------------------------+------------------------+------------------------+
-|parameters.\ **previous**   |Anyuri                  |Moves to the previous   |
+|**previous**                |Anyuri                  |Moves to the previous   |
 |                            |                        |metadata item.          |
 +----------------------------+------------------------+------------------------+
 
@@ -174,7 +179,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example Retrives a list of servers: JSON response**
+**Example Retrieves a list of servers: JSON response**
 
 
 .. code::

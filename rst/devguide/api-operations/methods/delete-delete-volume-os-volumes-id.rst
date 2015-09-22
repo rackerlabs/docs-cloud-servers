@@ -10,9 +10,7 @@ Delete volume
 
     DELETE /os-volumes/{id}
 
-Delete volume.
-
-Delete volume.
+This operation deletes a data volume.
 
 In the URI, specify the volume ID.
 

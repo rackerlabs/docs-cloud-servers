@@ -10,8 +10,6 @@ Retrieve image metadata item for specified image
 
     GET /images/{image_id}/metadata/{key}
 
-Retrieves an image metadata item for the specified image.
-
 This operation shows a metadata item for an image.
 
 Specify the image ID and metadata key in the URI.
@@ -99,7 +97,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **meta**     |Object                   |The container of         |
+|**meta**                  |Object                   |The container of         |
 |                          |                         |metadata for images.     |
 |                          |                         |Within this container,   |
 |                          |                         |there may be one or more |

@@ -10,8 +10,6 @@ Delete image
 
     DELETE /images/{image_id}
 
-Deletes the specified image.
-
 This operation deletes the specified image from the system. Images are immediately removed.
 
 Specify the image ID in the URI.

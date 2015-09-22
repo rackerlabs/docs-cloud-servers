@@ -10,8 +10,6 @@ Delete associated IP address
 
     DELETE /servers/{server_id}/ip_associations/{IPAddressID}
 
-Deletes a specified associated IP address.
-
 This operation deletes the specified associated IP address, using the associated IP address ID.
 
 

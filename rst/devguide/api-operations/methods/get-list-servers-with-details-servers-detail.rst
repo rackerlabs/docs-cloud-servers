@@ -10,9 +10,12 @@ List servers with details
 
     GET /servers/detail
 
-Retrieves a detailed list of all servers in the tenant's account.
+This operation retrieves a detailed list of all servers in the tenant's account.
 
-Servers contain a status attribute that indicates the current server state. You can filter on the server 				status when you complete a list servers request. The server status is returned in the response body. For a 				full list of possible server status values, see.
+Servers contain a status attribute that indicates the current server state. You can filter 
+on the server status when you complete a list servers request. The server status is 
+returned in the response body. For a full list of possible server status values, see
+:ref:`Extended Status Extension <extended-status-extension>`.
 
 The following extensions provide additional information when viewing server details:
 
@@ -150,39 +153,39 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|parameters.\ **servers**        |Array                 |An array of servers.  |
+|**servers**                     |Array                 |An array of servers.  |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |Ip                    |The public IP version |
-|**accessIPv4**                  |                      |4 access address.     |
+|servers.\ **accessIPv4**        |Ip                    |The public IP version |
+|                                |                      |4 access address.     |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |Ip                    |The public IP version |
-|**accessIPv6**                  |                      |6 access address.     |
+|servers.\ **accessIPv6**        |Ip                    |The public IP version |
+|                                |                      |6 access address.     |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |Array                 |An array of addresses |
-|**addresses**                   |                      |for public, private,  |
+|servers.\ **addresses**         |Array                 |An array of addresses |
+|                                |                      |for public, private,  |
 |                                |                      |and isolated networks |
 |                                |                      |attached to the       |
 |                                |                      |server.               |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |Array                 |The IP address of the |
-|**addr**esses.\ **addr**        |                      |network.              |
-+--------------------------------+----------------------+----------------------+
-|parameters.servers.addresses.\  |Array                 |The version of the IP |
-|**version**                     |                      |address of the        |
+|servers.addresses.\ **addr**    |Array                 |The IP address of the |
 |                                |                      |network.              |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **id**     |Uuid                  |The ID of the server. |
+|servers.addresses.\ **version** |Array                 |The version of the IP |
+|                                |                      |address of the        |
+|                                |                      |network.              |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **created**|Uuid                  |The time stamp        |
+|servers.\ **id**                |Uuid                  |The ID of the server. |
++--------------------------------+----------------------+----------------------+
+|servers.\ **created**           |Uuid                  |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |server.               |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **flavor** |Uuid                  |The flavor ID..       |
+|servers.\ **flavor**            |Uuid                  |The flavor ID..       |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **image**  |Uuid                  |The image ID..        |
+|servers.\ **image**             |Uuid                  |The image ID..        |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **hostId** |Uuid                  |The host ID. The      |
+|servers.\ **hostId**            |Uuid                  |The host ID. The      |
 |                                |                      |compute provisioning  |
 |                                |                      |algorithm has an anti-|
 |                                |                      |affinity property     |
@@ -205,68 +208,66 @@ This table shows the body parameters for the response:
 |                                |                      |account and is not    |
 |                                |                      |globally unique.      |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **links**  |Uuid                  |An array of the self  |
+|servers.\ **links**             |Uuid                  |An array of the self  |
 |                                |                      |and bookmark links to |
 |                                |                      |the server.           |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.links.\      |Uuid                  |The URL for the       |
-|**href**                        |                      |server and the        |
+|servers.links.\ **href**        |Uuid                  |The URL for the       |
+|                                |                      |server and the        |
 |                                |                      |associated ``rel``.   |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.links.\      |Uuid                  |The descriptive field |
-|**rel**                         |                      |for the associated    |
+|servers.links.\ **rel**         |Uuid                  |The descriptive field |
+|                                |                      |for the associated    |
 |                                |                      |``href``, which is    |
 |                                |                      |either ``self`` or    |
 |                                |                      |``bookmark``.         |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |String                |Any metadata key and  |
-|**metadata**                    |                      |value pairs.          |
+|servers.\ **metadata**          |String                |Any metadata key and  |
+|                                |                      |value pairs.          |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **name**   |String                |The server name.      |
+|servers.\ **name**              |String                |The server name.      |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |String                |The build completion  |
-|**progress**                    |                      |progress, as a        |
+|servers.\ **progress**          |String                |The build completion  |
+|                                |                      |progress, as a        |
 |                                |                      |percentage. Value     |
 |                                |                      |ranges from 0 to 100. |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **status** |String                |The status of the     |
-|                                |                      |server. For a full    |
-|                                |                      |list of possible      |
-|                                |                      |status values, see.   |
+|servers.\ **status**            |String                |The status of the     |
+|                                |                      |server.               |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\            |String                |The tenant ID.        |
-|**tenant_id**                   |                      |                      |
+|servers.\ **tenant_id**         |String                |The tenant ID.        |
+|                                |                      |                      |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **updated**|String                |The time stamp of the |
+|servers.\ **updated**           |String                |The time stamp of the |
 |                                |                      |last update.          |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **user_id**|String                |The user ID.          |
+|servers.\ **user_id**           |String                |The user ID.          |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **OS-      |String                |Extended attribute:   |
-|DCF:diskConfig**                |                      |The disk              |
+|servers.\ **OS-DCF:diskConfig** |String                |Extended attribute:   |
+|                                |                      |The disk              |
 |                                |                      |configuration value.. |
 |                                |                      |Valid values are      |
 |                                |                      |``AUTO`` and          |
 |                                |                      |``MANUAL``.           |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **RAX-     |String                |Extended attribute:   |
+|servers.\ **RAX-                |String                |Extended attribute:   |
 |SI:image_schedule**             |                      |The image schedule    |
 |                                |                      |reference is included |
 |                                |                      |only if scheduled     |
 |                                |                      |images has been       |
 |                                |                      |enabled for this      |
-|                                |                      |server..              |
+|                                |                      |server.               |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **OS-EXT-  |String                |Extended attribute.   |
-|STS**                           |                      |Shows the extended    |
+|servers.\ **OS-EXT-STS**        |String                |Extended attribute.   |
+|                                |                      |Shows the extended    |
 |                                |                      |statuses for the      |
 |                                |                      |server, including the |
 |                                |                      |VM, task, and power   |
-|                                |                      |states..              |
+|                                |                      |states.               |
 +--------------------------------+----------------------+----------------------+
-|parameters.servers.\ **RAX-     |Uuid                  |Extended attribute.   |
-|PUBLIC-IP-ZONE-                 |                      |Enables booting the   |
-|ID:publicIPZoneId**             |                      |server from a volume  |
+|servers.\ **RAX-PUBLIC-IP-      |Uuid                  |Extended attribute.   |
+|ZONE-ID:publicIPZoneId**        |                      |Enables booting the   |
+|                                |                      |server from a volume  |
 |                                |                      |when additional       |
 |                                |                      |parameters are given. |
 |                                |                      |If specified, the     |
@@ -276,10 +277,10 @@ This table shows the body parameters for the response:
 |                                |                      |attach_status must be |
 |                                |                      |``detached``.         |
 +--------------------------------+----------------------+----------------------+
-|parameters.\ **next**           |Anyuri                |Moves to the next     |
+|**next**                        |Anyuri                |Moves to the next     |
 |                                |                      |metadata item.        |
 +--------------------------------+----------------------+----------------------+
-|parameters.\ **previous**       |Anyuri                |Moves to the previous |
+|**previous**                    |Anyuri                |Moves to the previous |
 |                                |                      |metadata item.        |
 +--------------------------------+----------------------+----------------------+
 

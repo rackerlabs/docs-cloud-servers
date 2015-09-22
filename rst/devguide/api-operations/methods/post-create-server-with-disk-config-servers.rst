@@ -67,46 +67,43 @@ This table shows the body parameters for the request:
 +---------------------------------------------+-------------+----------------------+
 |Name                                         |Type         |Description           |
 +=============================================+=============+======================+
-|**server**                                   |String       |The container of      |
-|                                             |*(Required)* |  server parameters.  |
-+---------------------------------------------+-------------+----------------------+
-|server. **name**                             |String       |The server name.      |
+|server.\ **name**                            |String       |The server name.      |
 |                                             |*(Required)* |                      |
 +---------------------------------------------+-------------+----------------------+
-|server. **imageRef**                         |Uuid         |The image reference   |
+|server.\ **imageRef**                        |Uuid         |The image reference   |
 |                                             |*(Required)* |for the desired image |
 |                                             |             |for your server       |
 |                                             |             |instance.             |
 +---------------------------------------------+-------------+----------------------+
-|server. **block_device_mapping_v2**          |Object       |The container of      |
+|server.\ **block_device_mapping_v2**         |Object       |The container of      |
 |                                             |*(Optional)* |bootable volume       |
 |                                             |             |details.              |
 +---------------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.              |Integer      |The index of the      |
-|   **boot_index**                            |*(Optional)* |bootable volume.      |
+|server.block_device_mapping_v2.\             |Integer      |The index of the      |
+|**boot_index**                               |*(Optional)* |bootable volume.      |
 +---------------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2. **uuid**     |Integer      |The id of the         |
-|                                             |*(Optional)* |bootable volume.      |
+|server.block_device_mapping_v2.\             |Integer      |The id of the         |
+|**uuid**                                     |*(Optional)* |bootable volume.      |
 +---------------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.              |String       |The source type for   |
-|   **source_type**                           |*(Optional)* |the bootable volume.  |
+|server.block_device_mapping_v2.\             |String       |The source type for   |
+|**source_type**                              |*(Optional)* |the bootable volume.  |
 +---------------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.              |String       |The destination type  |
-|   **destination_type**                      |*(Optional)* |for the bootable      |
+|server.block_device_mapping_v2.\             |String       |The destination type  |
+|**destination_type**                         |*(Optional)* |for the bootable      |
 |                                             |             |volume.               |
 +---------------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.              |Boolean      |Flag to indicate      |
-|   **delete_on_termination**                 |*(Optional)* |whether the bootable  |
+|server.block_device_mapping_v2.\             |Boolean      |Flag to indicate      |
+|**delete_on_termination**                    |*(Optional)* |whether the bootable  |
 |                                             |             |volume should be      |
 |                                             |             |deleted after server  |
 |                                             |             |creation.             |
 +---------------------------------------------+-------------+----------------------+
-|server. **flavorRef**                        |Uuid         |The flavor reference  |
+|server.\ **flavorRef**                       |Uuid         |The flavor reference  |
 |                                             |*(Required)* |for the desired       |
 |                                             |             |flavor for your       |
 |                                             |             |server instance.      |
 +---------------------------------------------+-------------+----------------------+
-|server. **config_drive**                     |String       |Enables metadata      |
+|server.\ **config_drive**                    |String       |Enables metadata      |
 |                                             |*(Optional)* |injection in a server |
 |                                             |             |through a             |
 |                                             |             |configuration drive.  |
@@ -116,7 +113,7 @@ This table shows the body parameters for the request:
 |                                             |             |Otherwise, specify    |
 |                                             |             |``false``.            |
 +---------------------------------------------+-------------+----------------------+
-|server. **key_name**                         |String       |The name of the key   |
+|server.\ **key_name**                        |String       |The name of the key   |
 |                                             |*(Optional)* |pair used to          |
 |                                             |             |authenticate by using |
 |                                             |             |key-based             |
@@ -124,7 +121,7 @@ This table shows the body parameters for the request:
 |                                             |             |instead of password-  |
 |                                             |             |based authentication. |
 +---------------------------------------------+-------------+----------------------+
-|server. **OS-DCF:diskConfig**                |String       |The disk              |
+|server.\ **OS-DCF:diskConfig**               |String       |The disk              |
 |                                             |*(Optional)* |configuration value.  |
 |                                             |             |The image             |
 |                                             |             |auto_disk_config      |
@@ -180,28 +177,28 @@ This table shows the body parameters for the request:
 |                                             |             |you to manage the     |
 |                                             |             |disk configuration.   |
 +---------------------------------------------+-------------+----------------------+
-|server. **metadata**                         |String       |Metadata key and      |
+|server.\ **metadata**                        |String       |Metadata key and      |
 |                                             |*(Optional)* |value pairs. The      |
 |                                             |             |maximum size of each  |
 |                                             |             |metadata key and      |
 |                                             |             |value is 255 bytes    |
 |                                             |             |each.                 |
 +---------------------------------------------+-------------+----------------------+
-|server. **personality**                      |Array        |The array of          |
+|server.\ **personality**                     |Array        |The array of          |
 |                                             |*(Optional)* |personality files for |
 |                                             |             |the server.           |
 +---------------------------------------------+-------------+----------------------+
-|server. **user_data**                        |String       |Data used with        |
+|server.\ **user_data**                       |String       |Data used with        |
 |                                             |*(Optional)* |config_drive for      |
 |                                             |             |configuring a server. |
 +---------------------------------------------+-------------+----------------------+
-|server.personality. **path**                 |String       |The path of the       |
+|server.personality.\ **path**                |String       |The path of the       |
 |                                             |*(Required)* |personality file.     |
 +---------------------------------------------+-------------+----------------------+
-|server.personality. **contents**             |String       |The contents od the   |
+|server.personality.\ **contents**            |String       |The contents od the   |
 |                                             |*(Required)* |personality file.     |
 +---------------------------------------------+-------------+----------------------+
-|server. **networks**                         |Array        |The array of networks |
+|server.\ **networks**                        |Array        |The array of networks |
 |                                             |*(Required)* |attached to the       |
 |                                             |             |server. By default,   |
 |                                             |             |the server instance   |
@@ -230,12 +227,12 @@ This table shows the body parameters for the request:
 |                                             |             |attribute in a        |
 |                                             |             |``networks`` object.  |
 +---------------------------------------------+-------------+----------------------+
-|server.networks. **uuid**                    |Uuid         |The UUID of the       |
+|server.networks.\ **uuid**                   |Uuid         |The UUID of the       |
 |                                             |*(Optional)* |``Nova-network``      |
 |                                             |             |network attached to   |
 |                                             |             |the server.           |
 +---------------------------------------------+-------------+----------------------+
-|server.networks. **port**                    |Uuid         |The UUID of the       |
+|server.networks.\ **port**                   |Uuid         |The UUID of the       |
 |                                             |*(Optional)* |``Neutron`` port      |
 |                                             |             |attached to the       |
 |                                             |             |server.               |
@@ -290,36 +287,36 @@ Response
 
 This table shows the body parameters for the response:
 
-+-----------------------------+-------------------------+------------------------+
-|Name                         |Type                     |Description             |
-+=============================+=========================+========================+
-|**server**                   |Object                   |The container for       |
-|                             |                         |server data.            |
-+-----------------------------+-------------------------+------------------------+
-|server. **id**               |Uuid                     |The ID of the server.   |
-+-----------------------------+-------------------------+------------------------+
-|server. **links**            |Uuid                     |An array of the self    |
-|                             |                         |and bookmark links to   |
-|                             |                         |the server.             |
-+-----------------------------+-------------------------+------------------------+
-|server.links. **href**       |Uuid                     |The URL for the server  |
-|                             |                         |and the associated      |
-|                             |                         |``rel``.                |
-+-----------------------------+-------------------------+------------------------+
-|server.links. **rel**        |Uuid                     |The descriptive field   |
-|                             |                         |for the associated      |
-|                             |                         |``href``, which is      |
-|                             |                         |either ``self`` or      |
-|                             |                         |``bookmark``.           |
-+-----------------------------+-------------------------+------------------------+
-|server. **adminPass**        |String                   |The password assigned   |
-|                             |                         |to provide login access |
-|                             |                         |to the server.          |
-+-----------------------------+-------------------------+------------------------+
-|server. **OS-DCF:diskConfig**|String                   |The disk configuration  |
-|                             |                         |value. Valid values are |
-|                             |                         |``AUTO`` and ``MANUAL``.|
-+-----------------------------+-------------------------+------------------------+
++---------------------------+-------------------------+------------------------+
+|Name                       |Type                     |Description             |
++===========================+=========================+========================+
+|**server**                 |Object                   |The container for       |
+|                           |                         |server data.            |
++---------------------------+-------------------------+------------------------+
+|server.\ **id**            |Uuid                     |The ID of the server.   |
++---------------------------+-------------------------+------------------------+
+|server.\ **links**         |Uuid                     |An array of the self    |
+|                           |                         |and bookmark links to   |
+|                           |                         |the server.             |
++---------------------------+-------------------------+------------------------+
+|server.links.\ **href**    |Uuid                     |The URL for the server  |
+|                           |                         |and the associated      |
+|                           |                         |``rel``.                |
++---------------------------+-------------------------+------------------------+
+|server.links.\ **rel**     |Uuid                     |The descriptive field   |
+|                           |                         |for the associated      |
+|                           |                         |``href``, which is      |
+|                           |                         |either ``self`` or      |
+|                           |                         |``bookmark``.           |
++---------------------------+-------------------------+------------------------+
+|server.\ **adminPass**     |String                   |The password assigned   |
+|                           |                         |to provide login access |
+|                           |                         |to the server.          |
++---------------------------+-------------------------+------------------------+
+|server.\ **OS-             |String                   |The disk configuration  |
+|DCF:diskConfig**           |                         |value. Valid values are |
+|                           |                         |``AUTO`` and ``MANUAL``.|
++---------------------------+-------------------------+------------------------+
 
 
 **Example Create server with disk config: JSON response**

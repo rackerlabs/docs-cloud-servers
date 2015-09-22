@@ -10,7 +10,7 @@ This section covers the following basic server operations:
 .. BASIC OPS
 
 .. include:: methods/post-create-server-with-disk-config-servers.rst
-.. include:: methods/get-retrives-a-list-of-servers-servers.rst
+.. include:: methods/get-retrieves-a-list-of-servers-servers.rst
 .. include:: methods/get-list-servers-with-details-servers-detail.rst
 .. include:: methods/get-retrieve-server-details-servers-server-id.rst
 .. include:: methods/put-update-server-servers-server-id.rst

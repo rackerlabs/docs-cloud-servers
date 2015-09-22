@@ -10,7 +10,8 @@ Retrieves list of server addresses
 
     GET /servers/{server_id}/ips
 
-Retrieves a list of all server and network addresses associated with the specified 				server.
+This operation retrieves a list of all server and network addresses associated with the 
+specified server.
 
 In the URI, specify the target server ID.
 
@@ -94,20 +95,20 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|parameters.\ **addresses**      |Object                |A container for one   |
+|**addresses**                   |Object                |A container for one   |
 |                                |                      |or more server        |
 |                                |                      |details to be updated.|
 +--------------------------------+----------------------+----------------------+
-|parameters.addresses.\          |Object                |An array of           |
-|**nettype**                     |                      |``private`` or        |
+|addresses.\ **nettype**         |Object                |An array of           |
+|                                |                      |``private`` or        |
 |                                |                      |``public`` network    |
 |                                |                      |address containers.   |
 +--------------------------------+----------------------+----------------------+
-|parameters.\                    |Object                |The IP address.       |
-|**addr**esses.nettype.\ **addr**|                      |                      |
+|addresses.nettype.\ **addr**    |Object                |The IP address.       |
+|                                |                      |                      |
 +--------------------------------+----------------------+----------------------+
-|parameters.addresses.nettype.\  |Object                |The IP address        |
-|**version**                     |                      |version, either ``4`` |
+|addresses.nettype.\ **version** |Object                |The IP address        |
+|                                |                      |version, either ``4`` |
 |                                |                      |or ``6``.             |
 +--------------------------------+----------------------+----------------------+
 

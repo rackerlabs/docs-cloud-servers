@@ -10,7 +10,7 @@ Delete server
 
     DELETE /servers/{server_id}
 
-Deletes the specified server.
+This operation deletes the specified server.
 
 If the operation succeeds, it returns an ``HTTP 202`` status code with no response body.
 

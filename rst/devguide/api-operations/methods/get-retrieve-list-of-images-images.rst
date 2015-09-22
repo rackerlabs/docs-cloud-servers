@@ -10,13 +10,13 @@ Retrieve list of images
 
     GET /images
 
-Retrieves IDs, names, and links for all available images.
+This operation lists IDs, names, and links for all images visible by the account.
 
-This operation lists all images visible by the account.
+The optional minDisk and minRam attributes set the minimum disk and RAM required to create 
+a server with the image.
 
-The optional minDisk and minRam attributes set the minimum disk and RAM required to create a server with 				the image.
-
-The image_type field in the response indicates whether the image is built-in ``(base)`` or custom ``(snapshot)``.
+The image_type field in the response indicates whether the image is built-in ``(base)`` 
+or custom ``(snapshot)``.
 
 
 
@@ -138,30 +138,30 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |Name                       |Type                     |Description             |
 +===========================+=========================+========================+
-|parameters.\ **images**    |Array                    |The array of images.    |
+|**images**                 |Array                    |The array of images.    |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.ID       |Uuid                     |The image ID.           |
+|images.\ **id**            |Uuid                     |The image ID.           |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |String                   |The array of image      |
-|**links**                  |                         |links for self and      |
+|images.\ **links**         |String                   |The array of image      |
+|                           |                         |links for self and      |
 |                           |                         |bookmark.               |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.links.\  |Uuid                     |The URL for the image   |
-|**href**                   |                         |and the associated      |
+|images.links.\ **href**    |Uuid                     |The URL for the image   |
+|                           |                         |and the associated      |
 |                           |                         |``rel``.                |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.links.\  |Uuid                     |The descriptive field   |
-|**rel**                    |                         |for the associated      |
+|images.links.\ **rel**     |Uuid                     |The descriptive field   |
+|                           |                         |for the associated      |
 |                           |                         |``href``, which is      |
 |                           |                         |either ``self``,        |
 |                           |                         |``bookmark``, or        |
 |                           |                         |``alternate``.          |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.links.\  |Uuid                     |The alternate image     |
-|**type**                   |                         |type.                   |
+|images.links.\ **type**    |Uuid                     |The alternate image     |
+|                           |                         |type.                   |
 +---------------------------+-------------------------+------------------------+
-|parameters.images.\        |String                   |The image name.         |
-|**name**                   |                         |                        |
+|images.\  **name**         |String                   |The image name.         |
+|                           |                         |                        |
 +---------------------------+-------------------------+------------------------+
 
 

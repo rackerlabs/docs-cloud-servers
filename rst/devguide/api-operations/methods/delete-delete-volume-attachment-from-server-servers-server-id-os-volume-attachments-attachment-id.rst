@@ -10,7 +10,7 @@ Delete volume attachment from server
 
     DELETE /servers/{server_id}/os-volume_attachments/{attachment_id}
 
-Deletes the specified volume attachment from the specified server.
+This operation deletes the specified volume attachment from the specified server.
 
 If the operation succeeds, it returns an ``HTTP 202`` status code with no response body.
 

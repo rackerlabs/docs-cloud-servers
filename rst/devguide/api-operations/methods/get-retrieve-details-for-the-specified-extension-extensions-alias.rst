@@ -10,7 +10,7 @@ Retrieve details for the specified extension
 
     GET /extensions/{alias}
 
-Retrieves a specified extension's details.
+This operation retrieves a specified extension's details.
 
 An unavailable extension issues an ``itemNotFound (404)`` response.
 
@@ -97,25 +97,25 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **extension**|Object                   |The container of         |
+|**extension**             |Object                   |The container of         |
 |                          |                         |extensions attributes.   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extension.\    |Date                     |The most recent update   |
-|**updated**               |                         |date for the extension.  |
+|extension.\ **updated**   |Date                     |The most recent update   |
+|                          |                         |date for the extension.  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extension.\    |String                   |The name of the          |
-|**name**                  |                         |extension.               |
+|extension.\ **name**      |String                   |The name of the          |
+|                          |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extension.\    |Array                    |The array of links for   |
-|**links**                 |                         |the extension.           |
+|extension.\ **links**     |Array                    |The array of links for   |
+|                          |                         |the extension.           |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extension.\    |String                   |The namespace of the     |
-|**namespace**             |                         |extension.               |
+|extension.\ **namespace** |String                   |The namespace of the     |
+|                          |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extension.\    |String                   |The alias, or short      |
-|**alias**                 |                         |name, of the extension.  |
+|extension.\ **alias**     |String                   |The alias, or short      |
+|                          |                         |name, of the extension.  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.extension.\    |String                   |The description of the   |
+|extension.\               |String                   |The description of the   |
 |**description**           |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
 

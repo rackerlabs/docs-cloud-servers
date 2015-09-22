@@ -59,26 +59,26 @@ This table shows the URI parameters for the request:
 
 This table shows the body parameters for the request:
 
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**ip_address**                |Array *(Required)*       |The container for shared |
-|                          |                         |IP request parasmeters.  |
-+--------------------------+-------------------------+-------------------------+
-|ip_address.**network_id** |Uuid *(Required)*        |The ID of the network.   |
-+--------------------------+-------------------------+-------------------------+
-|ip_address.**version**    |String *(Required)*      |The subnet IP version,   |
-|                          |                         |which is ``4`` or ``6``. |
-+--------------------------+-------------------------+-------------------------+
-|ip_address.**port_ids**   |Array *(Optional)*       |The array of port        |
-|                          |                         |objects, containing port |
-|                          |                         |IDs for the shared IP.   |
-+--------------------------+-------------------------+-------------------------+
-|ip_address.**device_ids** |Array *(Optional)*       |The array of device      |
-|                          |                         |objects, containing      |
-|                          |                         |device IDs for the       |
-|                          |                         |shared IP.               |
-+--------------------------+-------------------------+-------------------------+
++---------------------------+-------------------------+-------------------------+
+|Name                       |Type                     |Description              |
++===========================+=========================+=========================+
+|**ip_address**             |Array *(Required)*       |The container for shared |
+|                           |                         |IP request parasmeters.  |
++---------------------------+-------------------------+-------------------------+
+|ip_address.\ **network_id**|Uuid *(Required)*        |The ID of the network.   |
++---------------------------+-------------------------+-------------------------+
+|ip_address.\ **version**   |String *(Required)*      |The subnet IP version,   |
+|                           |                         |which is ``4`` or ``6``. |
++---------------------------+-------------------------+-------------------------+
+|ip_address.\ **port_ids**  |Array *(Optional)*       |The array of port        |
+|                           |                         |objects, containing port |
+|                           |                         |IDs for the shared IP.   |
++---------------------------+-------------------------+-------------------------+
+|ip_address.\ **device_ids**|Array *(Optional)*       |The array of device      |
+|                           |                         |objects, containing      |
+|                           |                         |device IDs for the       |
+|                           |                         |shared IP.               |
++---------------------------+-------------------------+-------------------------+
 
 
 **Example Create associated ip address: JSON request**
@@ -103,11 +103,11 @@ This table shows the body parameters for the response:
 |**ip_association**        |Array                    |The container of         |
 |                          |                         |associated IP details.   |
 +--------------------------+-------------------------+-------------------------+
-|ip_association.**id**     |Uuid                     |The ID of the associated |
+|ip_association.\ **id**   |Uuid                     |The ID of the associated |
 |                          |                         |IP address.              |
 +--------------------------+-------------------------+-------------------------+
-|ip_association.**address**|Uuid                     |The associatied IP       |
-|                          |                         |address.                 |
+|ip_association.\          |Uuid                     |The associatied IP       |
+|**address**               |                         |address.                 |
 +--------------------------+-------------------------+-------------------------+
 
 

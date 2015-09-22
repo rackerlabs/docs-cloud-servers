@@ -10,8 +10,6 @@ Delete virtual interface
 
     DELETE /servers/{server_id}/os-virtual-interfacesv2/{interface_id}
 
-Deletes a virtual interface from a server instance.
-
 This operation deletes the specified virtual interface from the specified server instance.
 
 

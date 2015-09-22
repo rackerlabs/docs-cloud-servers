@@ -10,8 +10,6 @@ Retrieve list of IP addresses associated with a server
 
     GET /servers/{server_id}/ip_associations
 
-Retrieves list of associated IPs for specified server.
-
 This operation retrieves a list of all IP addresses associated to the specified server.
 
 
@@ -81,13 +79,13 @@ This table shows the body parameters for the response:
 +------------------------------+-----------------------+-----------------------+
 |Name                          |Type                   |Description            |
 +==============================+=======================+=======================+
-|parameters.\                  |Array                  |The array of IP        |
-|**ip_associations**           |                       |associations.          |
+|**ip_associations**           |Array                  |The array of IP        |
+|                              |                       |associations.          |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ip_associations.\  |Uuid                   |The ID of the          |
+|ip_associations.\             |Uuid                   |The ID of the          |
 |**id**                        |                       |associated IP address. |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ip_associations.\  |Uuid                   |The associatied IP     |
+|ip_associations.\             |Uuid                   |The associatied IP     |
 |**address**                   |                       |address.               |
 +------------------------------+-----------------------+-----------------------+
 

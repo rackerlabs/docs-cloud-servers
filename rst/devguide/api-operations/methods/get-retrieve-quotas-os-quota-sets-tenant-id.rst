@@ -10,8 +10,6 @@ Retrieve quotas
 
     GET /os-quota-sets/{tenant_id}
 
-Retrieve quotas for specified tenant.
-
 This operation shows current quotas for a tenant.
 
 In the URI, specify the tenant ID.
@@ -96,16 +94,16 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |Name                       |Type                     |Description             |
 +===========================+=========================+========================+
-|parameters.ip_associations |Object                   |The container of quota- |
+|**quota-set**              |Object                   |The container of quota- |
 |                           |                         |sets.                   |
 +---------------------------+-------------------------+------------------------+
-|pa\ **ram**eters.quota-    |Int                      |The quota for ram.      |
-|set.\ **ram**              |                         |                        |
+|quota-set.\ **ram**        |Int                      |The quota for ram.      |
+|                           |                         |                        |
 +---------------------------+-------------------------+------------------------+
-|parameters.quota-set.\     |Uuid                     |The quota for instances.|
-|**instances**              |                         |                        |
+|quota-set.\ **instances**  |Uuid                     |The quota for instances.|
+|                           |                         |                        |
 +---------------------------+-------------------------+------------------------+
-|parameters.quota-set.\     |Uuid                     |The quota for metadata- |
+|quota-set.\                |Uuid                     |The quota for metadata- |
 |**metadata-items**         |                         |items.                  |
 +---------------------------+-------------------------+------------------------+
 

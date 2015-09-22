@@ -10,13 +10,16 @@ Get console
 
     POST /servers/{server_id}/action
 
-Retrieve console output for a specified server.
-
-This operation returns a URL which you use with a java client to open a console connection to your 				server.
+This operation returns a URL which you use with a java client to open a console connection 
+to your server.
 
 In the URI, specify the server ID.
 
-To use the URL returned from this operation, you should download and install a VNC Viewer like `Real VNC <https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html>`__ or `Tight VNC <http://www.tightvnc.com/download.php>`__. Then, from the directory where you 				saved the Vnc Viewer, run the following command (using the installed jar and the URL from the operation 				response body):
+To use the URL returned from this operation, you should download and install a VNC Viewer 
+like `Real VNC <https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html>`__ 
+or `Tight VNC <http://www.tightvnc.com/download.php>`__. Then, from the directory where you 				
+saved the Vnc Viewer, run the following command (using the installed jar and the URL from 
+the operation response body):
 
 java -jar VncViewer.jar URL {returnedURL}
 
@@ -73,11 +76,11 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **os-        |Object *(Required)*      |A container for console  |
-|getVNCConsole**           |                         |request.                 |
+|**os- getVNCConsole**     |Object *(Required)*      |A container for console  |
+|                          |                         |request.                 |
 +--------------------------+-------------------------+-------------------------+
-|parameters.os-            |String *(Required)*      |A key pair with the type |
-|getVNCConsole.\ **type**  |                         |of vnc console,          |
+|os- getVNCConsole.\       |String *(Required)*      |A key pair with the type |
+|**type**                  |                         |of vnc console,          |
 |                          |                         |containing the value     |
 |                          |                         |``"xvpvnc"``.            |
 +--------------------------+-------------------------+-------------------------+
@@ -121,17 +124,17 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **console**  |Object                   |A container for console  |
+|**console**               |Object                   |A container for console  |
 |                          |                         |response.                |
 +--------------------------+-------------------------+-------------------------+
-|parameters.console.\      |String                   |The URL for the console  |
-|**url**                   |                         |for the specified        |
+|console.\   **url**       |String                   |The URL for the console  |
+|                          |                         |for the specified        |
 |                          |                         |server. Open this URL in |
 |                          |                         |a browser to open a VNC  |
 |                          |                         |console to the server.   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.console.\      |String                   |The type of VNC console  |
-|**type**                  |                         |to the server, for       |
+|console.\ **type**        |String                   |The type of VNC console  |
+|                          |                         |to the server, for       |
 |                          |                         |example ``"xvpvnc"``.    |
 +--------------------------+-------------------------+-------------------------+
 

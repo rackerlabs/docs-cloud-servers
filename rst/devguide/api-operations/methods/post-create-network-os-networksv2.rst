@@ -10,8 +10,6 @@ Create network
 
     POST /os-networksv2
 
-Creates a network for the specified tenant ID.
-
 This operation creates a network for the tenant ID specified in the request URI.
 
 
@@ -61,18 +59,18 @@ This table shows the body parameters for the request:
 +----------------------+-------------+----------------------------------------------------------+
 |Name                  |Type         |Description                                               |
 +======================+=============+==========================================================+
-|parameters.\          |Object       |A container of network details.                           |
-|**network**           |*(Required)* |                                                          |
+|**network**           |Object       |A container of network details.                           |
+|                      |*(Required)* |                                                          |
 +----------------------+-------------+----------------------------------------------------------+
-|parameters.network.\  |Uuid         |The IP block from which to allocate the network. For      |
-|**cidr**              |*(Required)* |example, 172.16.0.0/24 or 2001:DB8::/64. For more         |
+|network.\ **cidr**    |Uuid         |The IP block from which to allocate the network. For      |
+|                      |*(Required)* |example, 172.16.0.0/24 or 2001:DB8::/64. For more         |
 |                      |             |information about CIDR notation, see ` Using CIDR         |
 |                      |             |Notation in Cloud Networks                                |
 |                      |             |<http://www.rackspace.com/knowledge_center/article/using- |
 |                      |             |cidr-notation>`__ in the Knowledge Center.                |
 +----------------------+-------------+----------------------------------------------------------+
-|parameters.network.\  |String       |The name of the new network. For example, my_new_network. |
-|**label**             |*(Required)* |                                                          |
+|network.\  **label**  |String       |The name of the new network. For example, my_new_network. |
+|                      |*(Required)* |                                                          |
 +----------------------+-------------+----------------------------------------------------------+
 
 
@@ -115,17 +113,17 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **network**  |Object                   |A container of network   |
+|**network**               |Object                   |A container of network   |
 |                          |                         |details.                 |
 +--------------------------+-------------------------+-------------------------+
-|parameters.network.\      |String                   |The CIDR for an isolated |
-|**cidr**                  |                         |network.                 |
+|network.\ **cidr**        |String                   |The CIDR for an isolated |
+|                          |                         |network.                 |
 +--------------------------+-------------------------+-------------------------+
-|parameters.network.\      |String                   |The network ID.          |
-|**id**                    |                         |                         |
+|network.\  **id**         |String                   |The network ID.          |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.network.\      |String                   |The name of the network. |
-|**label**                 |                         |ServiceNet is labeled as |
+|network.\ **label**       |String                   |The name of the network. |
+|                          |                         |ServiceNet is labeled as |
 |                          |                         |private and PublicNet is |
 |                          |                         |labeled as public in the |
 |                          |                         |network list.            |

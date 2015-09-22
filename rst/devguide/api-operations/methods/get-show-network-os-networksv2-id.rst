@@ -10,8 +10,6 @@ Show network
 
     GET /os-networksv2/{id}
 
-Shows information for the specified network.
-
 This operation shows information for the network specified in the request URI.
 
 
@@ -81,17 +79,17 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **network**  |Object                   |A container of network   |
+|**network**               |Object                   |A container of network   |
 |                          |                         |details.                 |
 +--------------------------+-------------------------+-------------------------+
-|parameters.network.\      |String                   |The CIDR for an isolated |
-|**cidr**                  |                         |network.                 |
+|network.\ **cidr**        |String                   |The CIDR for an isolated |
+|                          |                         |network.                 |
 +--------------------------+-------------------------+-------------------------+
-|parameters.network.\      |String                   |The network ID.          |
-|**id**                    |                         |                         |
+|network.\  **id**         |String                   |The network ID.          |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.network.\      |String                   |The name of the network. |
-|**label**                 |                         |ServiceNet is labeled as |
+|network.\ **label**       |String                   |The name of the network. |
+|                          |                         |ServiceNet is labeled as |
 |                          |                         |private and PublicNet is |
 |                          |                         |labeled as public in the |
 |                          |                         |network list.            |

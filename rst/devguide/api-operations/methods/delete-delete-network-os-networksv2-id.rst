@@ -10,8 +10,6 @@ Delete network
 
     DELETE /os-networksv2/{id}
 
-Deletes the specified network.
-
 This operation deletes the network specified in the request URI.
 
 .. note::

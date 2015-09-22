@@ -10,9 +10,11 @@ Show scheduled Images
 
     GET /servers/{server_id}/rax-si-scheduled-image
 
-Show scheduled images for the specified server.
+This operation shows scheduled images for the specified server.
 
-This operation returns the retention value if the server has scheduled images enabled. For weekly images, 				the response also includes the scheduled day of the week for the image. If the server has scheduled images 				disabled, an HTTP 404 is returned. 
+This operation returns the retention value if the server has scheduled images enabled. For 
+weekly images, the response also includes the scheduled day of the week for the image. If 
+the server has scheduled images disabled, an ``HTTP 404`` is returned. 
 
 In the URI, specify the server ID.
 
@@ -96,14 +98,14 @@ This table shows the body parameters for the response:
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|parameters.\                 |Object *(Required)*     |The container for the  |
-|**image_schedule**           |                        |image schedule.        |
+|**image_schedule**           |Object *(Required)*     |The container for the  |
+|                             |                        |image schedule.        |
 +-----------------------------+------------------------+-----------------------+
-|parameters.image_schedule.\  |Int *(Required)*        |The number of days     |
+|image_schedule.\             |Int *(Required)*        |The number of days     |
 |**retention**                |                        |that an Image should   |
 |                             |                        |be retained.           |
 +-----------------------------+------------------------+-----------------------+
-|parameters.image_schedule.\  |String *(Optional)*     |The chosen day of the  |
+|image_schedule.\             |String *(Optional)*     |The chosen day of the  |
 |**day_of_week**              |                        |week for the image     |
 |                             |                        |creation. The allowed  |
 |                             |                        |values for this field  |

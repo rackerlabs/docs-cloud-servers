@@ -10,9 +10,7 @@ Create volume
 
     POST /os-volumes
 
-Create volume.
-
-Create a new volume.
+This operation creates a new data volume.
 
 
 
@@ -61,25 +59,25 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **volume**   |Object *(Required)*      |A container for volume   |
+|**volume**                |Object *(Required)*      |A container for volume   |
 |                          |                         |creation response.       |
 +--------------------------+-------------------------+-------------------------+
-|parameters.volume.\       |String *(Optional)*      |The name assigned to the |
-|**display_name**          |                         |volume.                  |
+|volume.\ **display_name** |String *(Optional)*      |The name assigned to the |
+|                          |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.volume.\       |String *(Optional)*      |The description for the  |
+|volume.\                  |String *(Optional)*      |The description for the  |
 |**display_description**   |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.volume.\       |String *(Required)*      |The type of volume,      |
-|**volume_type**           |                         |either ``SATA`` or       |
+|volume.\ **volume_type**  |String *(Required)*      |The type of volume,      |
+|                          |                         |either ``SATA`` or       |
 |                          |                         |``SSD``. Alternaltely,   |
 |                          |                         |you can use the UUID     |
 |                          |                         |volume id for the volume |
 |                          |                         |instead of the name. The |
 |                          |                         |default is ``SATA``.     |
 +--------------------------+-------------------------+-------------------------+
-|parameters.volume.\       |Integer *(Required)*     |The size of the volume   |
-|**size**                  |                         |in gibibytes (GiB). The  |
+|volume.\ **size**         |Integer *(Required)*     |The size of the volume   |
+|                          |                         |in gibibytes (GiB). The  |
 |                          |                         |valid range for ``SATA`` |
 |                          |                         |is 75-1024. The valid    |
 |                          |                         |range for ``SSD`` is 50- |
@@ -127,41 +125,41 @@ This table shows the body parameters for the response:
 +------------------------------------+--------------------+--------------------+
 |Name                                |Type                |Description         |
 +====================================+====================+====================+
-|parameters.\ **volume**             |Object              |A container for     |
+|**volume**                          |Object              |A container for     |
 |                                    |                    |volume creation     |
 |                                    |                    |response.           |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **status**      |String              |The state of the    |
+|volume.\ **status**                 |String              |The state of the    |
 |                                    |                    |volume. This will   |
 |                                    |                    |be ``available``    |
 |                                    |                    |when volume is      |
 |                                    |                    |created and ready   |
 |                                    |                    |for use.            |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **display_name**|String              |The name assigned   |
+|volume.\ **display_name**           |String              |The name assigned   |
 |                                    |                    |to the volume.      |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **attachments** |Array               |An array of volume  |
+|volume.\ **attachments**            |Array               |An array of volume  |
 |                                    |                    |attachments.        |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.availability_zone |String              |This parameter is   |
+|volume.availability_zone            |String              |This parameter is   |
 |                                    |                    |no longer used and  |
 |                                    |                    |is always set to    |
 |                                    |                    |``nova``.           |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **created_at**  |Date                |The date and time   |
+|volume.\ **created_at**             |Date                |The date and time   |
 |                                    |                    |of volume creation. |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\                 |String              |The description for |
-|**display_description**             |                    |the volume.         |
+|volume.\ **display_description**    |String              |The description for |
+|                                    |                    |the volume.         |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **image_id**    |String              |The image_id use    |
+|volume.\ **image_id**               |String              |The image_id use    |
 |                                    |                    |for the volume. If  |
 |                                    |                    |no image was        |
 |                                    |                    |specified, this     |
 |                                    |                    |will be ``null``.   |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **volume_type** |String              |The type of volume, |
+|volume.\ **volume_type**            |String              |The type of volume, |
 |                                    |                    |either ``SATA`` or  |
 |                                    |                    |``SSD``.            |
 |                                    |                    |Alternaltely, you   |
@@ -171,16 +169,16 @@ This table shows the body parameters for the response:
 |                                    |                    |the name. The       |
 |                                    |                    |default is ``SATA``.|
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **snapshot_id** |Uuid                |The snapshot from   |
+|volume.\ **snapshot_id**            |Uuid                |The snapshot from   |
 |                                    |                    |which to create a   |
 |                                    |                    |volume, if any.     |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **metadata**    |String              |Any metadata for    |
+|volume.\ **metadata**               |String              |Any metadata for    |
 |                                    |                    |the volume.         |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **id**          |String              |The volume id.      |
+|volume.\ **id**                     |String              |The volume id.      |
 +------------------------------------+--------------------+--------------------+
-|parameters.volume.\ **size**        |Integer             |The size of the     |
+|volume.\ **size**                   |Integer             |The size of the     |
 |                                    |                    |volume in gibibytes |
 |                                    |                    |(GiB). The valid    |
 |                                    |                    |range for ``SATA``  |

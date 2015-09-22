@@ -10,9 +10,8 @@ Create associated IP address
 
     POST /servers/{server_id}/ip_associations/{IPAddressID}
 
-Creates a associated IP on a specified network.
-
-This operation creates an associated IP address for the specified server and already existing IP address 				ID.
+This operation creates an associated IP address for the specified server and already existing 
+IP address ID.
 
 
 
@@ -73,20 +72,20 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\              |Array *(Required)*       |The container for shared |
+|\              |Array *(Required)*       |The container for shared |
 |**ip_address**            |                         |IP request parasmeters.  |
 +--------------------------+-------------------------+-------------------------+
-|parameters.ip_address.\   |Uuid *(Required)*        |The ID of the network.   |
+|ip_address.\   |Uuid *(Required)*        |The ID of the network.   |
 |**network_id**            |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.ip_address.\   |String *(Required)*      |The subnet IP version,   |
+|ip_address.\   |String *(Required)*      |The subnet IP version,   |
 |**version**               |                         |which is ``4`` or ``6``. |
 +--------------------------+-------------------------+-------------------------+
-|parameters.ip_address.\   |Array *(Optional)*       |The array of port        |
+|ip_address.\   |Array *(Optional)*       |The array of port        |
 |**port_ids**              |                         |objects, containing port |
 |                          |                         |IDs for the shared IP.   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.ip_address.\   |Array *(Optional)*       |The array of device      |
+|ip_address.\   |Array *(Optional)*       |The array of device      |
 |**device_ids**            |                         |objects, containing      |
 |                          |                         |device IDs for the       |
 |                          |                         |shared IP.               |
@@ -121,14 +120,14 @@ This table shows the body parameters for the response:
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|parameters.\                 |Array                   |The container of       |
-|**ip_association**s          |                        |associated IP details. |
+|**ip_association**           |Array                   |The container of       |
+|                             |                        |associated IP details. |
 +-----------------------------+------------------------+-----------------------+
-|parameters.ip_association.\  |Uuid                    |The ID of the          |
-|**id**                       |                        |associated IP address. |
+|ip_association.\ **id**      |Uuid                    |The ID of the          |
+|                             |                        |associated IP address. |
 +-----------------------------+------------------------+-----------------------+
-|parameters.ip_association.\  |Uuid                    |The associatied IP     |
-|**address**                  |                        |address.               |
+|ip_association.\ **address** |Uuid                    |The associatied IP     |
+|                             |                        |address.               |
 +-----------------------------+------------------------+-----------------------+
 
 

@@ -10,7 +10,7 @@ Retrieve list of key pairs
 
     GET /os-keypairs
 
-Retrieves the current rate limits and absolute limits for your account.
+This operation retrieves the current rate limits and absolute limits for your account.
 
 This operation retrieves a list of server key pairs.
 
@@ -73,21 +73,21 @@ This table shows the body parameters for the response:
 +-------------------------------+-----------------------+----------------------+
 |Name                           |Type                   |Description           |
 +===============================+=======================+======================+
-|parameters.\ **keypairs**      |Array                  |An array of key pairs.|
+|**keypairs**                   |Array                  |An array of key pairs.|
 +-------------------------------+-----------------------+----------------------+
-|parameters.\                   |Object                 |A container of key    |
-|**keypairs**.keypair           |                       |pair details.         |
+|keypairs.\ **keypair**         |Object                 |A container of key    |
+|                               |                       |pair details.         |
 +-------------------------------+-----------------------+----------------------+
-|parameters.keypairs.keypair.\  |String                 |A short sequence of   |
+|keypairs.keypair.\             |String                 |A short sequence of   |
 |**fingerprint**                |                       |bytes used to         |
 |                               |                       |authenticate, or look |
 |                               |                       |up, a longer public   |
 |                               |                       |key.                  |
 +-------------------------------+-----------------------+----------------------+
-|parameters.keypairs.keypair.\  |String                 |The name of the key   |
-|**name**                       |                       |pair.                 |
+|keypairs.keypair.\**name**     |String                 |The name of the key   |
+|                               |                       |pair.                 |
 +-------------------------------+-----------------------+----------------------+
-|parameters.keypairs.keypair.\  |String                 |The public ssh key    |
+|keypairs.keypair.\             |String                 |The public ssh key    |
 |**public_key**                 |                       |value.                |
 +-------------------------------+-----------------------+----------------------+
 

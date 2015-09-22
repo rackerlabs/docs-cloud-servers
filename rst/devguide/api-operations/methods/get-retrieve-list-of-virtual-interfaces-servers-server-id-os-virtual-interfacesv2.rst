@@ -10,9 +10,7 @@ Retrieve list of virtual interfaces
 
     GET /servers/{server_id}/os-virtual-interfacesv2
 
-Retrieves list of the virtual interfaces configured for a server instance.
-
-This operation lists the virtual interfaces configured for a server instance.
+This operation retrieves a lists the virtual interfaces configured for a server instance.
 
 
 
@@ -81,28 +79,28 @@ This table shows the body parameters for the response:
 +----------------------------------------------+--------------+----------------+
 |Name                                          |Type          |Description     |
 +==============================================+==============+================+
-|parameters.\ **virtual_interfaces**           |Array         |The array of    |
+|**virtual_interfaces**                        |Array         |The array of    |
 |                                              |              |virtual         |
 |                                              |              |interfaces.     |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.\ **id**        |String        |The virtual     |
+|virtual_interfaces.\ **id**                   |String        |The virtual     |
 |                                              |              |interface ID.   |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.\               |Array         |The array of    |
-|**ip_addresses**                              |              |interface IP    |
+|virtual_interfaces.\ **ip_addresses**         |Array         |The array of    |
+|                                              |              |interface IP    |
 |                                              |              |address details.|
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.ip\             |String        |The interface   |
-|**addresses**.\ **address**                   |              |IP address.     |
+|virtual_interfaces.\ip-addresses.\            |String        |The interface   |
+|**address**                                   |              |IP address.     |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.ip_addresses.\  |Uuid          |The interface   |
+|virtual_interfaces.ip_addresses.\             |Uuid          |The interface   |
 |**network_id**                                |              |network ID.     |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.ip_addresses.\  |String        |The interface   |
+|virtual_interfaces.ip_addresses.\             |String        |The interface   |
 |**network_label**                             |              |network label.  |
 +----------------------------------------------+--------------+----------------+
-|parameters.virtual_interfaces.\               |String        |The Media       |
-|**mac_address**                               |              |Access Control  |
+|virtual_interfaces.\ **mac_address**          |String        |The Media       |
+|                                              |              |Access Control  |
 |                                              |              |(MAC) address   |
 |                                              |              |for the virtual |
 |                                              |              |interface. A    |

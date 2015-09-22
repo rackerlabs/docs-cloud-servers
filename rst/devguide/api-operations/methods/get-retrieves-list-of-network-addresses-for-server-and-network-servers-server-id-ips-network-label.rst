@@ -10,7 +10,8 @@ Retrieves list of network addresses for server and network
 
     GET /servers/{server_id}/ips/{network_label}
 
-Retrieves a list of all server and network addresses associated with the specified server 				and network.
+This operation retrieves a list of all server and network addresses associated with the 
+specified server and network.
 
 In the URI, specify the target server ID and target network type ( ``public`` or ``private`` ).
 
@@ -98,15 +99,15 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **nettype**  |Array                    |An array of ``private``  |
+|**nettype**               |Array                    |An array of ``private``  |
 |                          |                         |or ``public`` network    |
 |                          |                         |address containers.      |
 +--------------------------+-------------------------+-------------------------+
-|parameters.nettype.\      |Object                   |The IP address.          |
-|**addr**                  |                         |                         |
+|nettype.\ **addr**        |Object                   |The IP address.          |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.nettype.\      |Object                   |The IP address version,  |
-|**version**               |                         |either ``4`` or ``6``.   |
+|nettype.\ **version**     |Object                   |The IP address version,  |
+|                          |                         |either ``4`` or ``6``.   |
 +--------------------------+-------------------------+-------------------------+
 
 

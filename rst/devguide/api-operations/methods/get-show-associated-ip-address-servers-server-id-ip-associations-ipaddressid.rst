@@ -10,9 +10,8 @@ Show associated IP address
 
     GET /servers/{server_id}/ip_associations/{IPAddressID}
 
-Retrieves information for a specified associated IP.
-
-This operation retrieves information for an associated IP address, using the associated IP address 				ID.
+This operation retrieves information for an associated IP address, using the associated 
+IP address ID.
 
 
 
@@ -85,14 +84,14 @@ This table shows the body parameters for the response:
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|parameters.\                 |Array                   |The container of       |
-|**ip_association**s          |                        |associated IP details. |
+|**ip_association**           |Array                   |The container of       |
+|                             |                        |associated IP details. |
 +-----------------------------+------------------------+-----------------------+
-|parameters.ip_association.\  |Uuid                    |The ID of the          |
-|**id**                       |                        |associated IP address. |
+|ip_association.\ **id**      |Uuid                    |The ID of the          |
+|                             |                        |associated IP address. |
 +-----------------------------+------------------------+-----------------------+
-|parameters.ip_association.\  |Uuid                    |The associatied IP     |
-|**address**                  |                        |address.               |
+|ip_association.\ **address** |Uuid                    |The associatied IP     |
+|                             |                        |address.               |
 +-----------------------------+------------------------+-----------------------+
 
 
