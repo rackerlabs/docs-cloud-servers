@@ -46,7 +46,7 @@ We welcome feedback, comments, and bug reports. Log into the Rackspace
 customer portal at https://feedback.rackspace.com/.
 
 Intended Audience
------------------
+~~~~~~~~~~~~~~~~~
 
 This guide assists software developers who want to develop applications
 by using next generation Cloud Servers. To use this information, you should
@@ -61,7 +61,7 @@ have access to an active Rackspace Cloud Servers account and you should also be 
 -  JSON data serialization format
 
 Pricing and Service Level
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next generation Cloud Servers is part of the Rackspace Cloud and your
 use through the API is billed according to the pricing schedule at
@@ -69,3 +69,28 @@ http://www.rackspace.com/cloud/public/servers/pricing.
 
 The Service Level Agreement (SLA) for Cloud Servers is available at
 http://www.rackspace.com/cloud/legal/sla/#cloud_servers.
+
+Additional resources
+~~~~~~~~~~~~~~~~~~~~
+
+We welcome feedback, comments, and bug reports. Visit the Rackspace customer portal 
+at https://feedback.rackspace.com/.
+
+Use the links below to learn more about the Rackspace Cloud Servers service and API.
+
+- For general information about Cloud Servers, see the `Cloud Servers FAQ`_ 
+  in the Rackspace Knowledge Center.
+
+- To learn more about the Cloud Servers service and the various ways you can interact 
+  with it (API, SDK, CLI, and Control Panel), see the `Rackspace Cloud Guide to Core Infrastructure Services`_.
+  
+- To learn about using Rackspace Cloud SDKs, see `Software Development Kits & Tools`_. 
+    
+- To get information about other Rackspace Cloud services APIs, see the
+  `Rackspace API Documentation`_.
+
+
+.. _Rackspace Cloud Guide to Core Infrastructure Services: https://developer.rackspace.com/docs/user-guides/infrastructure/
+.. _Cloud Servers FAQ: http://www.rackspace.com/knowledge_center/product-faq/cloud-servers
+.. _Rackspace API Documentation: https://developer.rackspace.com/docs/
+.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/#sdks

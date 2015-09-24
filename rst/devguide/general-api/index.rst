@@ -26,4 +26,5 @@ API v2 supports JSON request and response formats.
    faults
    role-based-access-control
    flavors
+   date-time-format
    service-access-endpoints
