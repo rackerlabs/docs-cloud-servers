@@ -5,6 +5,27 @@ Image operations
    
 This section covers the following image operations: 
 
+Image Operations
+	- List images
+	- List images with details
+	- Show image details
+	- Delete image
+	
+Image Metadata Operations
+	- List image metadata 
+	- Set image metadata 
+	- List image metadata items
+	- Update image metadata item
+	- Delete image metadata item
+	
+Scheduled Images Operations
+	- Enable scheduled images
+	- Show scheduled images
+	- Delete scheduled images
+	
+.. note::
+   To create an image, see :ref:`Server Action Create Image<api-operations-svr-basic>`
+
 .. include:: methods/get-retrieve-list-of-images-images.rst
 .. include:: methods/get-retrieve-list-of-images-with-details-images-detail.rst
 .. include:: methods/get-retrieve-image-details-images-image-id.rst
@@ -12,9 +33,9 @@ This section covers the following image operations:
 
 .. IMAGE METADATA OPS
 
-.. include:: methods/get-retrieve-image-metadata-item-for-specified-image-images-image-id-metadata-key.rst
-.. include:: methods/post-set-image-metadata-for-specified-image-images-image-id-metadata.rst
 .. include:: methods/get-retrieve-image-metadata-for-specified-image-images-image-id-metadata.rst
+.. include:: methods/post-set-image-metadata-for-specified-image-images-image-id-metadata.rst
+.. include:: methods/get-retrieve-image-metadata-item-for-specified-image-images-image-id-metadata-key.rst
 .. include:: methods/put-set-image-metadata-item-for-specified-image-images-image-id-metadata-key.rst
 .. include:: methods/delete-delete-image-metadata-item-for-specified-image-images-image-id-metadata-key.rst
 

@@ -16,11 +16,11 @@ API v2 supports JSON request and response formats.
    :maxdepth: 2
 
    how-curl-commands-work
-   authenticate-through-the-rackspace-cloud-identity-service
+   authentication
    request-response-types
    links-and-references
    paginated-collections
-   efficient-polling-with-the-changes-since-parameter
+   efficient-polling
    limits
    quotas
    faults

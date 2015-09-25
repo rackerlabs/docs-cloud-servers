@@ -5,12 +5,12 @@ Efficient Polling with the Changes-Since Parameter
 You can poll for the status of certain operations by issuing a **GET**
 request on various elements. Rather than re-downloading and re-parsing
 the full status at each polling interval, you can use the
-*``changes-since``* parameter to check for changes since a previous
-request. The *``changes-since``* time is specified as an `ISO
+``changes-since`` parameter to check for changes since a previous
+request. The ``changes-since`` time is specified as an `ISO
 8601 <http://en.wikipedia.org/wiki/ISO_8601>`__ dateTime
 (2011-01-24T17:08Z).
 
-The operations that use the *``changes-since``* filter are:
+The operations that use the ``changes-since`` filter are:
 
 -  **GET** /servers
 

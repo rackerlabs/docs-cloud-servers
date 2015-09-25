@@ -44,7 +44,7 @@ optional and may contain information—for example, a stack trace—to
 assist in tracking down an error. The detail section may or may not be
 appropriate for display to an end user.
 
-The root element of the fault, such as computeFault, may change
+The root element of the fault, such as ``computeFault``, may change
 depending on the type of error. The following table lists possible
 elements with the associated error response codes:
 
@@ -57,7 +57,7 @@ elements with the associated error response codes:
 | computeFault              | 500, 400,             | Yes                     |
 |                           | other codes possible  |                         |
 +---------------------------+-----------------------+-------------------------+
-| Client errors                                                               |
+| **Client errors**                                                           |
 +---------------------------+-----------------------+-------------------------+
 | badRequest                | 400                   | Yes                     |
 +---------------------------+-----------------------+-------------------------+
@@ -79,7 +79,7 @@ elements with the associated error response codes:
 +---------------------------+-----------------------+-------------------------+
 | badMediaType              | 415                   |                         |
 +---------------------------+-----------------------+-------------------------+
-| Server errors             |                       |                         |
+| **Server errors**                                                           |
 +---------------------------+-----------------------+-------------------------+
 | notImplemented            | 501                   |                         |
 +---------------------------+-----------------------+-------------------------+
@@ -103,12 +103,12 @@ elements with the associated error response codes:
 
 
 From an XML schema perspective, all API faults are extensions of the
-base fault type ComputeAPIFault. When working with a system that binds
-XML to actual classes (such as JAXB), one should be capable of using
-ComputeAPIFault as a “catch-all” if there's no interest in
+base fault type ``ComputeAPIFault``. When working with a system that binds
+XML to actual classes (such as JAXB), you can use
+``ComputeAPIFault`` as a “catch-all” if there's no interest in
 distinguishing between individual fault types.
 
-The OverLimit fault is generated when a rate limit threshold is
+The ``OverLimit`` fault is generated when a rate limit threshold is
 exceeded. For convenience, the fault adds a retryAt attribute that
 contains the content of the Retry-After header in XML Schema 1.0
 date/time format.

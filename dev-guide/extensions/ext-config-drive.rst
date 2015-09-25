@@ -5,7 +5,7 @@ Config Drive Extension
 ======================
 
 Config_drive is a read-only configuration drive that is attached to server
-instances on boot. It is given the label "config-2", and it shows up as a CDROM
+instances on boot. It is given the label ``config-2``, and it shows up as a CDROM
 drive on the instance. It is especially useful in conjunction with cloud-init
 (a server bootstrapping application) and for passing large files to be used by
 your server.

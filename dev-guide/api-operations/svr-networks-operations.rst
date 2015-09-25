@@ -3,7 +3,18 @@
 Networks operations
 ~~~~~~~~~~~~~~~~~~~
    
-	This section covers the following networking operations: 
+	This section covers the following networking and virtual interface operations: 
+	
+Network Operations:
+	- List networks
+	- Create network
+	- Create server with network
+	- Delete network
+	
+Virtual Interface Operations:
+	- List virtual interfaces
+	- Create virtual interface
+	- Delete virtual interface
 
 .. NETWORKS OPS
 

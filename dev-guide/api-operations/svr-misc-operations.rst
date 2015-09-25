@@ -3,6 +3,22 @@
 Miscellaneous server operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Limits Operation
+	- List rate and absolute limits
+	
+Used Limits Operation
+	- List used limits
+	
+Console Operation
+	- Get console
+	
+Quota Operation
+	- List quotas
+	
+Extensions Operations
+	- List available extensions
+	- Show extension details
+
 This section covers the following miscellaneous server operations: 
 
 .. LIMITS LIST OPS

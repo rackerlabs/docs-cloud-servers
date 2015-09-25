@@ -10,4 +10,4 @@ mounted to fix file system and configuration errors.  You can also unrescue a se
 Rescue and unrescue server action operations
 --------------------------------------------
 
-For examples of these operations, see :ref:`Rescue mode operations <api-operations-svr-basic>`.
+For examples of these operations, see :ref:`Server Actions Rescue operations <api-operations-svr-basic>`.

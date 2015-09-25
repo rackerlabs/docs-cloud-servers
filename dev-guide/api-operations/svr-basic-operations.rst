@@ -5,10 +5,60 @@ Basic server operations
 
 This section covers the following basic server operations: 
 
-.. include:: methods/post-create-server-servers.rst
+Basic Operations:
+	- Create server
+	- Create server with disk config
+	- List servers
+	- List servers with details
+	- Show server with details
+	- Update server
+	- Delete server
+	
+Key Pairs Operations:
+	- Create key pair
+	- Import key pair
+	- List key pairs
+	- Delete key pair
+	
+Volume Operations:
+	- Attach volume to server
+	- List volumes
+	- Show volume details
+	- Detach volume from server
+	
+Boot from Volume Operation:
+	- Create server by booting from a volume
+	
+Server Action Logs:
+	- List recent server actions
+	- Show server action details
+	
+Server Action Operations:
+	- Change password
+	- Reboot server
+	- Rebuild server
+	- Resize server
+	- Confirm resize
+	- Revert resize
+	- Create image
+	- Rescue server
+	- Unrescue server
+	
+Server Address Operations:
+	- List server addresses
+	- List server addresses with networks
+	
+Server Metadata Operations:
+	- List server metadata items
+	- Set server metadata items
+	- Update server metadata items
+	- List server metadata items for a specific server
+	- Set server metadata item for a specific server
+	- Update server metadata item for a specific server
 
 .. BASIC OPS
 
+.. include:: methods/post-create-server-servers.rst
 .. include:: methods/post-create-server-with-disk-config-servers.rst
 .. include:: methods/get-retrieves-a-list-of-servers-servers.rst
 .. include:: methods/get-list-servers-with-details-servers-detail.rst

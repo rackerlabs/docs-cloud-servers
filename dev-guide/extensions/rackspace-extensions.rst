@@ -11,7 +11,7 @@ At this time, Rackspace provides the following extensions to the Cloud Servers A
 
 -  **Disk configuration extension**. Enables control of how the disk is
    partitioned when a server is created, rebuilt, or resized.
-   See :ref:`Dick configuration extension <disk-configuration-extension>`.
+   See :ref:`Disk configuration extension <disk-configuration-extension>`.
 
 -  **Extended status extension**. Shows extended statuses including the
    VM, task, and power statuses in the response bodies for the list server
@@ -37,9 +37,13 @@ At this time, Rackspace provides the following extensions to the Cloud Servers A
    server images.
    See :ref:`Scheduled images extension <scheduled-images-extension>`.
 
--  **Flavor extra specs**. Allows you to schedule automatic creation of
-   server images.
+-  **Flavor extra specs**. Allows you to list, create, and update the extra-specs or keys 
+   for a flavor.
    See :ref:`Flavor extra specs extension <flavors-extra-specs-extension>`.
+   
+-  **Flavor OS extra specs**. Provides the ``OS-FLV-WITH-EXT-SPECS:extra_specs`` attribute 
+   for flavor listings, using the additional os-extra_specs URI request parameter.
+   See :ref:`Flavor OS extra specs extension <flavors-os-extra-specs-extension>`.
 
 -  **OS server actions**. allows you to view a log of events and
    actions taken on a server.

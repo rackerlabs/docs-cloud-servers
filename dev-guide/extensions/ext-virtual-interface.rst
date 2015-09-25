@@ -25,7 +25,9 @@ You can use the virtual interface extension to:
    you delete a virtual interface, the associated network is detached
    from the server instance.
 
-..note:: If you want to delete an isolated network, the network cannot be
+.. note:: 
+
+   If you want to delete an isolated network, the network cannot be
    attached to any server. Delete the virtual interface for the isolated
    network, and then you can delete the network.
 

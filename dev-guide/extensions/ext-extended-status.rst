@@ -9,7 +9,7 @@ for servers.
 
 The extension displays these statuses in the following fields in the
 response bodies for the `list
-servers` and `get server` calls (http://api.rackspace.com/#compute_servers).
+servers` and `get server` calls (see :ref:`Server Operations<api-operations-svr-basic>`).
 
 **Extended Statuses**
 
@@ -125,7 +125,7 @@ The virtual machine (VM) status. Possible values are:
 
     -  ``4``. The instance is shut off.
 
-The following list shows the server statuses that correspond with the
+The following table shows the server statuses that correspond with the
 VM and tasks statuses:
 
 **Server Statuses and Corresponding VM and Task Statuses**

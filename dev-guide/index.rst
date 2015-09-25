@@ -4,7 +4,7 @@
 Rackspace Cloud Servers API v2
 ==============================
 
-.. toctree::
+.. toctree:: :hidden:
    :maxdepth: 2
 
    preface

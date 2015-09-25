@@ -6,7 +6,7 @@ Scheduled Images Extension
 
 You may schedule daily or weekly images of your server automatically, but you
 cannot schedule both daily and weekly images for a server. When you schedule an
-image, a new resource is created at /servers/{serverId}/rax-si-image-schedule.
+image, a new resource is created at ``/servers/{serverId}/rax-si-image-schedule``.
 This resource, which contains the retention value and an optional day of the
 week specification, indicates that this server will be monitored by the
 scheduled images service.
@@ -17,10 +17,10 @@ request, the server's image will be created daily.
 If you include a day of the week specification in your scheduled images
 request, the server's image will be created weekly on the day you indicate.
 Specify the optional day of the week using a string value from the following
-enumeration: SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY.
+enumeration: ``SUNDAY``, ``MONDAY``, ``TUESDAY``, ``WEDNESDAY``, ``THURSDAY``, ``FRIDAY``, ``SATURDAY``.
 
-The scheduled images request for both daily and weekly images requires a
-retention value, a positive integer, which indicates the number of images
+The scheduled images request (for both daily and weekly images) requires a
+retention value, which is a positive integer that indicates the number of images
 created by the scheduled images service that will be retained in your cloud
 storage account. The scheduled images service will remove scheduled images in
 excess of that value, keeping the most recently created scheduled images (and
@@ -50,7 +50,9 @@ Keep in mind:
    There's no guarantee that your server's schedule will stay the same from
    week to week: we reserve the right to modify the time your image is made so
    that we can balance the the number of image creations in flight throughout
-   the cloud and throughout the day. Additionally, as some days of the week are
+   the cloud and throughout the day. 
+   
+   Additionally, as some days of the week are
    much more popular than others for scheduling images, in rare circumstances
    we may create your weekly scheduled image in a window beginning 12:00 UTC
    the day before the day of the week you specify and ending at 12:00 UTC the

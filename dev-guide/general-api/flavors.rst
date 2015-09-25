@@ -1,3 +1,5 @@
+.. _flavors:
+
 =======
 Flavors
 =======
@@ -135,13 +137,14 @@ There are three configurations within the OnMetal flavor class.
 -  **OnMetal I/O** - recommended for high I/O activity like NoSQL and
    SQL databases.
 
-OnMetal server disk space may not be extended with Cloud Block Storage.
+If you require additional storage beyond what is provided by the local disks on a specific 
+flavor, you can extend all the preceding server flavors with Cloud Block Storage.
 
 Supported Flavors for Cloud Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Rackspace Cloud Servers service currently supports the following
-flavors for next generation Cloud Servers:
+To find the current list of supported flavors, see :ref:`Flavors operations <api-operations-flavors>`.
+This table shows some of the common supported flavors for next generation Cloud Servers:
 
 **Table: Supported Flavors for Next Generation Cloud Servers**
 

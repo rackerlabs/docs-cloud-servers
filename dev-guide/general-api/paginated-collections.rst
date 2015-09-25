@@ -6,20 +6,20 @@ To reduce load on the service, list operations return a maximum number
 of items at a time. The maximum number of items returned is
 1000.
 
-To navigate the collection, you can set the *``limit``* and *``marker``*
+To navigate the collection, you can set the ``limit`` and ``marker``
 parameters in the URI request. For example:
 
 .. code::
 
     ?limit=100&marker=1234
 
-The *``marker``* parameter is the ID of the last item in the previous
+The ``marker`` parameter is the ID of the last item in the previous
 list. Items are sorted by create time in descending order. When a create
 time is not available, the items are sorted by ID. A marker with an ID
 that is not valid returns an itemNotFound (404) fault.
 
-The *``limit``* parameter sets the page size. If the client specifies a
-*``limit``* value that is greater than the supported limit, an overLimit
+The ``limit`` parameter sets the page size. If the client specifies a
+``limit`` value that is greater than the supported limit, an overLimit
 (413) fault might be thrown.
 
 Both parameters are optional.
@@ -27,14 +27,14 @@ Both parameters are optional.
 .. note:: Paginated collections never return itemNotFound (404) faults when the
    collection is empty — clients should expect an empty collection.
 
-For convenience, collections contain atom "next" links and can
-optionally contain "previous" links. The last page in the collection
-will not contain a "next" link.
+For convenience, collections contain atom ``next`` links and can
+optionally contain ``previous`` links. The last page in the collection
+will not contain a ``next`` link.
 
 The following examples show pages in a collection of images.
 
 To get the first page, issue a **GET** request to the following endpoint
-and set the *``limit``* parameter to the page size of a single item::
+and set the ``limit`` parameter to the page size of a single item::
 
     http://dfw.servers.api.rackspacecloud.com/v2/010101/images?limit=1
 
