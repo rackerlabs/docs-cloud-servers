@@ -1,9 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-list-server-metadata-servers-server-id-os-volume-attachments:
+.. _get-list-servers-server-id-os-volume-attachments:
 
-List server metadata
+List server volumes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -72,7 +72,7 @@ This operation does not accept a request body.
 
 
 
-**Example List server metadata: JSON request**
+**Example List server volumes: JSON request**
 
 
 .. code::
@@ -123,7 +123,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example List server metadata: JSON response**
+**Example List server volumes: JSON response**
 
 
 .. code::

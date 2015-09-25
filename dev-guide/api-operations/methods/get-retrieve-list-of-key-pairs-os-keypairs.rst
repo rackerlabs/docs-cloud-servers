@@ -10,10 +10,7 @@ Retrieve list of key pairs
 
     GET /os-keypairs
 
-This operation retrieves the current rate limits and absolute limits for your account.
-
 This operation retrieves a list of server key pairs.
-
 
 
 This table shows the possible response codes for this operation:
@@ -84,7 +81,7 @@ This table shows the body parameters for the response:
 |                               |                       |up, a longer public   |
 |                               |                       |key.                  |
 +-------------------------------+-----------------------+----------------------+
-|keypairs.keypair.\**name**     |String                 |The name of the key   |
+|keypairs.keypair.\ **name**    |String                 |The name of the key   |
 |                               |                       |pair.                 |
 +-------------------------------+-----------------------+----------------------+
 |keypairs.keypair.\             |String                 |The public ssh key    |

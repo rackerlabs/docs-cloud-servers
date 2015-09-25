@@ -140,7 +140,7 @@ This table shows the body parameters for the response:
 |                          |                         |format of "metadata key" |
 |                          |                         |: "metadata value".      |
 +--------------------------+-------------------------+-------------------------+
-|metadata.\**keyname**     |Keypair                  |Keypairs edcribing the   |
+|metadata.\ **keyname**    |Keypair                  |Keypairs edcribing the   |
 |                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+

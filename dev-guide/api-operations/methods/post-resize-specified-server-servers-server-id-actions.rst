@@ -22,8 +22,9 @@ do not explicitly confirm or revert the resize.
    
 
 .. warning::
-   Resize is only available for Standard flavors. If you have a Compute, Memory, or IO 
-   flavor server, and you need to change the size of your data disk(s), you will need to: 
+   Resize is only available for Standard and General Purpose flavors. General Purpose servers 
+   can only be resized to a larger size. If you have a Compute, Memory, or IO flavor server, 
+   and you need to change the size of your data disk(s), you will need to:  
    
    #. Image your system disk.
    #. Back-up your data disk(s), using Cloud Backup or Cloud Block Storage.
@@ -31,10 +32,6 @@ do not explicitly confirm or revert the resize.
    #. Add your backed-up data to the new data disk(s).
    #. Delete the old server, once you are satisfied with the new server.
    
-   
-   
-   
-   For General Purpose servers, use steps 1, 3, and 5 from the preceding list.
    
    
 

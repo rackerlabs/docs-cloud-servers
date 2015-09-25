@@ -21,7 +21,9 @@ or `Tight VNC <http://www.tightvnc.com/download.php>`__. Then, from the director
 saved the Vnc Viewer, run the following command (using the installed jar and the URL from 
 the operation response body):
 
-java -jar VncViewer.jar URL {returnedURL}
+.. code::
+
+   java -jar VncViewer.jar URL {returnedURL}
 
 This table shows the possible response codes for this operation:
 

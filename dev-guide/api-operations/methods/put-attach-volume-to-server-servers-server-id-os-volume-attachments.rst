@@ -1,9 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _put-attach-voume-to-server-servers-server-id-os-volume-attachments:
+.. _put-attach-volume-to-server-servers-server-id-os-volume-attachments:
 
-Attach voume to server
+Attach volume to server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::

@@ -17,12 +17,8 @@ Specify the flavor ID in the URI.
 The following extensions provide additional information when viewing flavor details:
 
 
-
-*  Flavor Extra Data
 *  Flavor with extra specs
 *  Flavor extra specs
-*  Flavor RXTX
-
 
 
 

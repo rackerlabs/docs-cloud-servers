@@ -25,9 +25,9 @@ When you place a server in rescue mode, the following events occur:
 #. The VM is shut down.
 #. A new VM is created with the following images attached:
    
-   Primary imageCleanly running VM based on the image from which the original server was created, 									with a random password. This password is returned to you in a response to issuing the 									rescue mode API call. Use this clean image to boot the server and fix any 									problems.
+   **Primary image** Cleanly running VM based on the image from which the original server was created, 									with a random password. This password is returned to you in a response to issuing the 									rescue mode API call. Use this clean image to boot the server and fix any 									problems.
    
-   Secondary diskImage of the VM that needs to be rescued.
+   **Secondary disk** Image of the VM that needs to be rescued.
 
 
 When you put a server into rescue mode, you cannot use it until its status goes from 
@@ -40,7 +40,7 @@ For a full list of possible server status values, see
    
    
 
-.Specify the target server ID in the URI.
+Specify the target server ID in the URI.
 
 After you resolve any problems and reboot the rescued server, you can unrescue the server. 
 The unrescue operation restores the repaired image to running state with its original password.
