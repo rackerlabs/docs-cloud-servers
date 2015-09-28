@@ -1,8 +1,7 @@
 .. _flavors:
 
-=======
 Flavors
-=======
+-------
 
 The term flavor refers to a server's combination of RAM size, vCPUs, network
 throughput (RXTX factor), and disk space. You build a Linux or Windows server

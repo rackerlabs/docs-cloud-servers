@@ -38,30 +38,30 @@ this option to send a JSON request body to the server.
 ``-H``: Specifies an extra HTTP header in the request. You can specify any
 number of extra headers. Precede each header with the ``-H`` option.
 
-Common headers in Rackspace API requests are as follows:
+   Common headers in Rackspace API requests are as follows:
 
--  ``Content-Type``. Required for operations with a request body.
+   - ``Content-Type``. Required for operations with a request body.
 
-   Specifies the format of the request body. Following is the syntax for
-   the header where ``format`` is ``json``.
+     Specifies the format of the request body. Following is the syntax for
+     the header where ``format`` is ``json``.
 
-   .. code::
+    .. code::
 
        Content-Type: application/format
 
--  ``X-Auth-Token``. Required. Specifies the authentication token.
+   - ``X-Auth-Token``. Required. Specifies the authentication token.
 
--  ``X-Auth-Project-Id``. Optional. Specifies the project ID, which can
-   be your account number or another value.
+   - ``X-Auth-Project-Id``. Optional. Specifies the project ID, which can
+     be your account number or another value.
 
--  ``Accept``. Optional.
+   - ``Accept``. Optional.
 
-   Specifies the format of the response body. Following is the syntax
-   for the header where ``format`` is ``json`` (the default)
+     Specifies the format of the response body. Following is the syntax
+     for the header where ``format`` is ``json`` (the default)
 
-   .. code::
+     .. code::
 
-       Accept: application/format
+        Accept: application/format
 
 ``-i``: Includes the HTTP header in the output.
 
@@ -83,12 +83,12 @@ which is **GET**.
 
     | python -m json.tool
 
-To use :file:`json.tool`, import the json module. For information about
-:file:`json.tool`, see `json — JSON encoder and
-decoder <http://docs.python.org/2/library/json.html>`__.
+    To use :file:`json.tool`, import the json module. For information about
+    :file:`json.tool`, see `json — JSON encoder and
+    decoder <http://docs.python.org/2/library/json.html>`__.
 
-If you run a Python version older than 2.6, import the simplejson module
-and use simplejson.tool. For information about simplejson.tool, see
-`simplejson — JSON encoder and decoder <http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html>`__.
+    If you run a Python version older than 2.6, import the simplejson module
+    and use simplejson.tool. For information about simplejson.tool, see
+    `simplejson — JSON encoder and decoder <http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html>`__.
 
-If you do not want to pretty-print JSON output, omit this code.
+    If you do not want to pretty-print JSON output, omit this code.

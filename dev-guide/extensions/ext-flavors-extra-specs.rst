@@ -14,4 +14,7 @@ A **GET** request on the **/flavors/{id}** resource returns the ``OS-FLV-WITH-EX
 extended attribute.
 
 
-For an example of this operation, see :ref:`Flavor extra spec operations <api-operations-flavors>`.
+For an example, see the following operation:
+
+:ref:`Show flavor with extra specs <get-show-flavor-with-extra-specs-flavors-flavor-id>`
+

@@ -1,8 +1,7 @@
 .. _general-api-index:
 
-=======================
 General API Information
-=======================
+-----------------------
 
 API v2 is defined as a RESTful HTTP service that uses all aspects of the HTTP protocol, 
 including methods, URIs, media types, and response codes. To request next generation 

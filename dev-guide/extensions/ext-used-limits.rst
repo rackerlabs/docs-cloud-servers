@@ -15,4 +15,6 @@ that show how much capacity is currently being used.
 Changes to List of rate and absolute limits to include used limits
 ------------------------------------------------------------------
 
-For an example of this operation, see :ref:`Used limits operations <api-operations-svr-misc>`.
+For an example of this operation, see the following operation:
+
+:ref:`Retrieve list of limits including used limits <get-retrieve-list-of-limits-including-used-limits-limits>`.

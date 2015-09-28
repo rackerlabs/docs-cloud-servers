@@ -3,7 +3,7 @@
 
 .. _get-retrieves-a-list-of-servers-servers:
 
-Retrieves a list of servers
+Retrieve list of servers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -116,7 +116,7 @@ This operation does not accept a request body.
 
 
 
-**Example Retrieves a list of servers: JSON request**
+**Example Retrieves list of servers: JSON request**
 
 
 .. code::
@@ -176,7 +176,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example Retrieves a list of servers: JSON response**
+**Example Retrieves list of servers: JSON response**
 
 
 .. code::

@@ -62,6 +62,15 @@ Request
 
 This operation does not accept a request body.
 
+**Example Retrieve list of limits including used limits: JSON request**
+
+
+.. code::
+
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
 
 
 
@@ -105,7 +114,7 @@ This table shows the body parameters for the response:
 |limits.\ **rate**               |Array                 |The array of rate     |
 |                                |                      |objects.              |
 +--------------------------------+----------------------+----------------------+
-|limits.rate.\**limit**          |Array                 |The array of rate     |
+|limits.rate.\ **limit**         |Array                 |The array of rate     |
 |                                |                      |limit objects.        |
 +--------------------------------+----------------------+----------------------+
 |limits.rate.limit.\             |Date                  |The next available    |

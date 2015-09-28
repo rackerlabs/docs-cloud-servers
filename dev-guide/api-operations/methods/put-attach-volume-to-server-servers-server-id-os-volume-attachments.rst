@@ -91,7 +91,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Attach voume to server: JSON request**
+**Example Attach volume to server: JSON request**
 
 
 .. code::
@@ -155,7 +155,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example Attach voume to server: JSON response**
+**Example Attach volume to server: JSON response**
 
 
 .. code::

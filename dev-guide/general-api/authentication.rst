@@ -1,8 +1,7 @@
 .. _generalapi-auth:
 
-============================
 Get the authentication token
-============================
+----------------------------
 
 To authenticate access to Rackspace Cloud services, you issue an authentication request to 
 the Rackspace Cloud Identity service, which is an implementation of the OpenStack Keystone 

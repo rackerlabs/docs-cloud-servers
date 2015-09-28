@@ -1,9 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-retrieve-of-list-flavors-flavors:
+.. _get-retrieve-list-of-flavors-flavors:
 
-Retrieve of list flavors
+Retrieve list of flavors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -82,7 +82,7 @@ This operation does not accept a request body.
 
 
 
-**Example Retrieve of list flavors: JSON request**
+**Example Retrieve list of flavors: JSON request**
 
 
 .. code::
@@ -135,7 +135,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example Retrieve of list flavors: JSON response**
+**Example Retrieve list of flavors: JSON response**
 
 
 The following example shows only a few flavors in the list for brevity.

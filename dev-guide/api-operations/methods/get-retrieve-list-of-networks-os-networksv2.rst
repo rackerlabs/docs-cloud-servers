@@ -57,6 +57,16 @@ Request
 This operation does not accept a request body.
 
 
+**Example Retrieves list of networks: JSON request**
+
+
+.. code::
+
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
 
 
 Response

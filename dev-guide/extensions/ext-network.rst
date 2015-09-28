@@ -64,4 +64,15 @@ You can use the Cloud Networks virtual interface extension to:
 API operations for networks extension
 -------------------------------------
 
-For examples of these operations, see :ref:`Network operations <api-operations-networks>`.
+For examples of these operations, see the following operations:
+
+:ref:`List networks <get-retrieve-list-of-networks-os-networksv2>`
+
+:ref:`Create network <post-create-network-os-networksv2>`
+
+:ref:`Create server with network <post-create-server-with-network-servers>`
+
+Show network details
+
+:ref:`Delete network <delete-delete-network-os-networksv2-id>`
+

@@ -10,5 +10,8 @@ os-extra_specs URI request parameter.
 API operations for Flavor OS extra specs extension
 --------------------------------------------------
 
-For an example of this operation, see :ref:`Flavor OS extra specs operations <api-operations-flavors>`.
+For example of these operations, see the following operations:
 
+:ref:`List extra specs for flavors <get-list-extra-specs-for-flavors-flavors-flavor-id-os-extra-specs>`
+
+:ref:`Get details for specified flavor extra spec <get-get-details-for-specified-flavor-extra-spec-flavors-flavor-id-os-extra-specs-key-id>`

@@ -1,7 +1,7 @@
 .. _api-operations-svr-basic:
 
-Basic server operations
-~~~~~~~~~~~~~~~~~~~~~~~
+Server operations
+~~~~~~~~~~~~~~~~~
 
 This section covers the following basic server operations: 
 
@@ -77,7 +77,7 @@ Server Metadata Operations:
 
 .. include:: methods/put-attach-volume-to-server-servers-server-id-os-volume-attachments.rst
 .. include:: methods/get-list-servers-server-id-os-volume-attachments.rst
-.. include:: methods/put-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id.rst
+.. include:: methods/get-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id.rst
 .. include:: methods/delete-delete-volume-attachment-from-server-servers-server-id-os-volume-attachments-attachment-id.rst
 
 .. BFV OPS

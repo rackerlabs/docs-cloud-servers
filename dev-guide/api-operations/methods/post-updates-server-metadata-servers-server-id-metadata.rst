@@ -3,7 +3,7 @@
 
 .. _post-updates-server-metadata-servers-server-id-metadata:
 
-Updates server metadata
+Update server metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::

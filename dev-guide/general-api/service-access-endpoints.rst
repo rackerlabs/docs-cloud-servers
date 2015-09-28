@@ -1,6 +1,5 @@
-========================
 Service Access Endpoints
-========================
+------------------------
 
 The Rackspace Cloud Servers service is a regionalized service. The user of the service is 
 therefore responsible for selecting the appropriate regional endpoint to ensure access to 
@@ -26,9 +25,9 @@ a public endpoint because it is accessible from all the servers in the different
    You should copy the base URLs directly from the catalog rather than trying to construct 
    them manually.
 
-Rackspace Cloud Identity returns a service catalog, which includes regional endpoints with 
-your account ID. Your account ID, also known as project ID or tenant ID, refers to your 
-Rackspace account number.
+   Rackspace Cloud Identity returns a service catalog, which includes regional endpoints with 
+   your account ID. Your account ID, also known as project ID or tenant ID, refers to your 
+   Rackspace account number.
 
 .. tip:: 
    If you do not know your account ID or which data center you are working in, you can find 

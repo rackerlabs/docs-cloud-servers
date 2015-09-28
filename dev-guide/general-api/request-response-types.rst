@@ -1,6 +1,5 @@
-======================
 Request/Response Types
-======================
+-----------------------
 
 API v2 supports JSON data serialization request and response format.
 

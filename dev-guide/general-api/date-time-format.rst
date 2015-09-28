@@ -1,7 +1,7 @@
 .. _devguide-common-date-time-format:
 
 Date and time format
-~~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Rackspace Cloud services use an ISO 8601 compliant date format for the
 display and consumption of date and time values.

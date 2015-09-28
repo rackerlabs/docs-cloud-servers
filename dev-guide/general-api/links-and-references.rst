@@ -1,6 +1,5 @@
-====================
 Links and References
-====================
+---------------------
 
 Resources often need to refer to other resources. For example, when you
 create a server, you must specify the image from which to build the

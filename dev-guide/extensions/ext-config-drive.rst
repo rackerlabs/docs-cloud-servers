@@ -14,8 +14,10 @@ To use the config drive, once it is attached to a server, you need to mount it.
 Mounting instructions vary by operating system. For some Linux operating
 systems, for example, you might issue the following two instructions:
 
-           # mkdir -p /mnt/config
-           # mount /dev/disk/by-label/config-2 /mnt/config
+.. code::
+
+   $ mkdir -p /mnt/config
+   $ mount /dev/disk/by-label/config-2 /mnt/config
 
 When a config drive is created, it is configured by data contained in one or
 both of the following arguments:
@@ -23,14 +25,14 @@ both of the following arguments:
 **user_data**
    Contained in openstack/latest/user_data
 
-.. note::
-   If the content of the user_data file is not purely text, convert it by using
-   base64 encoding to allow for proper transfer and storage. If your user_data
-   needs to be encoded and isn't, you'll get an 400 Userdata content cannot be
-   decoded message.
+	.. note::
+	   If the content of the user_data file is not purely text, convert it by using
+	   base64 encoding to allow for proper transfer and storage. If your user_data
+	   needs to be encoded and isn't, you'll get an 400 Userdata content cannot be
+	   decoded message.
 
-   Encoded user-data is a base64 encoded string and adheres to one of a few
-   specs (depending on the Linux distribution): Ubuntu-style and CoreOS-style.
+	   Encoded user-data is a base64 encoded string and adheres to one of a few
+	   specs (depending on the Linux distribution): Ubuntu-style and CoreOS-style.
 
 **personality**
    Located in openstack/content/0000 with the path listed in the

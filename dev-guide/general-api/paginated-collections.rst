@@ -1,6 +1,5 @@
-=====================
 Paginated Collections
-=====================
+-----------------------
 
 To reduce load on the service, list operations return a maximum number
 of items at a time. The maximum number of items returned is

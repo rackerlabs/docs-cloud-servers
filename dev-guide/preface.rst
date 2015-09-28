@@ -1,6 +1,6 @@
-=======
-Preface
-=======
+==============
+About the API
+==============
 
 Next generation Cloud Servers `powered by
 OpenStack <http://www.rackspace.com/cloud/openstack/>`__ is a fast,
@@ -37,38 +37,28 @@ are known collectively as API v2.
    window has not been scheduled, you will not see these metadata keys.
 
    For more information about the server migration see the Knowledge Center
-   article: `*First Generation to Next Generation cloud server migration
-   FAQ* <http://www.rackspace.com/knowledge_center/article/first-generation-to-next-generation-cloud-server-migration-faq>`__
+   article: `First Generation to Next Generation cloud server migration
+   FAQ <http://www.rackspace.com/knowledge_center/article/first-generation-to-next-generation-cloud-server-migration-faq>`__
 
 This document describes the features available with API v2.
 
 We welcome feedback, comments, and bug reports. Log into the Rackspace
 customer portal at https://feedback.rackspace.com/.
 
-Intended Audience
-~~~~~~~~~~~~~~~~~
+Pricing and terms of service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This guide assists software developers who want to develop applications
-by using next generation Cloud Servers. To use this information, you should
-have access to an active Rackspace Cloud Servers account and you should also be familiar with the following concepts:
+Cloud Servers is part of the Rackspace Cloud. The cost for API usage follows the `pricing 
+schedule for the service`_.
 
--  Rackspace Cloud Servers service
+The service level agreement (SLA) for Rackspace Cloud Services is included in the `Rackspace Cloud SLA`_.
 
--  *RESTful* web services
+The terms of service are part of the `Rackspace Cloud Terms of Service`_. Periodically 
+review these terms because they can be updated any time.
 
--  *HTTP*/1.1
-
--  JSON data serialization format
-
-Pricing and Service Level
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Next generation Cloud Servers is part of the Rackspace Cloud and your
-use through the API is billed according to the pricing schedule at
-http://www.rackspace.com/cloud/public/servers/pricing.
-
-The Service Level Agreement (SLA) for Cloud Servers is available at
-http://www.rackspace.com/cloud/legal/sla/#cloud_servers.
+.. _pricing schedule for the service: http://www.rackspace.com/cloud/public/servers/pricing
+.. _Rackspace Cloud SLA: http://www.rackspace.com/information/legal/cloud/sla
+.. _Rackspace Cloud Terms of Service: http://www.rackspace.com/information/legal/cloud/tos
 
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~

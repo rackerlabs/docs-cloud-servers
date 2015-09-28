@@ -8,8 +8,9 @@ Rackspace Cloud Servers API v2
    :maxdepth: 2
 
    preface
+   developer-guide
+   concepts
    general-api/index
-   cloud-servers-concepts
    extensions/index
    api-reference
    api-operations/index

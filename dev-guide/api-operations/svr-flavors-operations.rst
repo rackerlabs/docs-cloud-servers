@@ -17,7 +17,7 @@ OS Extra Spec Operations
 	- List flavor with OS extra specs
 	- Show flavor details with OS extra specs
 	
-.. include:: methods/get-retrieve-of-list-flavors-flavors.rst
+.. include:: methods/get-retrieve-list-of-flavors-flavors.rst
 .. include:: methods/get-retrieve-list-of-flavors-with-details-flavors-detail.rst
 .. include:: methods/get-retrieve-flavor-details-flavors-flavor-id.rst
 

@@ -68,4 +68,12 @@ The namespace for this extended element is::
 API operations for scheduling images
 ------------------------------------
 
-For examples of these operations, see :ref:`Scheduled images operations <api-operations-images>`.
+For examples of these operations, see the following operations:
+
+:ref:`Enable scheduled images <post-enable-scheduled-images-servers-server-id-rax-si-scheduled-image>`
+
+:ref:`Show scheduled images <get-show-scheduled-images-servers-server-id-rax-si-scheduled-image>`
+
+:ref:`Delete scheduled images <delete-disable-scheduled-images-servers-server-id-rax-si-scheduled-image>`
+
+

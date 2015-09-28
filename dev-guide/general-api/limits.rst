@@ -1,8 +1,7 @@
 .. _limits:
 
-======
 Limits
-======
+-------
 
 Accounts are configured with thresholds, or limits, that manage capacity
 and prevent abuse of the system.
@@ -101,4 +100,10 @@ can be used:
 
 + **maxTotalRAMSize**: ``131072`` *The maximum total amount of RAM (MB) of all Cloud Servers at any one time.*
 
+The following ``total`` limits show current usage:
 
++ **totalCoresUsed**: The total number of cores used.
+
++ **totalInstancesUsed**: The total number of Cloud Servers.
+
++ **totalRAMUsed**: The total amount of RAM (GB) used for all Cloud Servers. 

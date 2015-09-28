@@ -197,4 +197,4 @@ when you send the correct request body.
    image with the uuid ``bb02b1a3-bc77-4d17-ab5b-421d89850fca``, and thus the
    block_device_mapping_v2 attribute source_type is set to image.
    
-For an example of this operation, see :ref:`Boot from volume operation <api-operations-svr-basic>`.
+For an example of this operation, see :ref:`Boot from volume operation <post-create-bootable-volume-and-server-servers>`.

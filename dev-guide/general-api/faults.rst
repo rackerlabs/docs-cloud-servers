@@ -1,6 +1,5 @@
-======
 Faults
-======
+-------
 
 The API v2 handles the following types of faults:
 

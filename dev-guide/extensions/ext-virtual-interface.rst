@@ -34,7 +34,10 @@ You can use the virtual interface extension to:
 API operations for virtual interfaces extension 
 -----------------------------------------------
 
-For examples of these operations, see :ref:`Virtual interface operations <api-operations-networks>` .
+For examples of these operations, see the following operations:
 
+:ref:`List virtual interfaces <get-retrieve-list-of-virtual-interfaces-servers-server-id-os-virtual-interfacesv2>` 
 
+:ref:`Create virtual interfaces <post-create-virtual-interface-and-attach-to-server-servers-server-id-os-virtual-interfacesv2>` 
 
+:ref:`Delete virtual interface <delete-delete-virtual-interface-servers-server-id-os-virtual-interfacesv2-interface-id>` 

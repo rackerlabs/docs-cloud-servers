@@ -67,9 +67,6 @@ This table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body.
-
-
 
 
 **Example Set image metadata for specified image: JSON request**

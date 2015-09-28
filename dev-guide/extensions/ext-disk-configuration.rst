@@ -52,7 +52,15 @@ Changes to Get Server/Image Details
 A **GET** request on the **/servers/detail**,
 **/servers/{id}**, **/images/detail**, or **/images/{id}**
 resource returns the ``OS-DCF:diskConfig`` extended attribute. See the
-following sections.
+following operations:
+
+- :ref:`List Servers <get-retrieves-a-list-of-servers-servers>`
+
+- :ref:`Show Server Details <get-retrieve-server-details-servers-server-id>`
+
+- :ref:`List Images <api-operations-images>`
+
+- :ref:`Show Image Details <get-retrieve-image-details-images-image-id>`
 
 Changes to Rebuild Server
 -------------------------
@@ -123,10 +131,10 @@ from the image from which it is created. However, you can override the
 ``OS-DCF:diskConfig`` value when you create a server, as follows:
 
 
-In this example, the server is created with ``OS-DCF:diskConfig`` set to
+In following linked example, the server is created with ``OS-DCF:diskConfig`` set to
 ``MANUAL``, regardless of what value the image ``OS-DCF:diskConfig``
 attribute is set to. Images also inherit the ``OS-DCF:diskConfig`` value
 from a server. So, if an image is created from the server, it also has a
 ``OS-DCF:diskConfig`` value of ``MANUAL``.
 
-For an example of this operation, see :ref:`Create server with disk config operation <api-operations-svr-basic>`.
+For an example of this operation, see :ref:`Create server with disk config operation <post-create-server-with-disk-config-servers>`.

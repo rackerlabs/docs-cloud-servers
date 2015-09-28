@@ -3,7 +3,7 @@
 
 .. _get-retrieves-list-of-network-addresses-for-server-and-network-servers-server-id-ips-network-label:
 
-Retrieves list of network addresses for server and network
+Retrieve list of network addresses for server and network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::

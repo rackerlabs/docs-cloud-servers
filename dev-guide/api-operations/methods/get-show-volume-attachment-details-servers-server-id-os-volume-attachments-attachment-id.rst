@@ -1,14 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _put-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id:
+.. _get-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id:
 
 Show volume attachment details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    PUT /servers/{server_id}/os-volume_attachments/{attachment_id}
+    GET /servers/{server_id}/os-volume_attachments/{attachment_id}
 
 This operation retrieves volume details for the specified server ID and volume attachment ID
 

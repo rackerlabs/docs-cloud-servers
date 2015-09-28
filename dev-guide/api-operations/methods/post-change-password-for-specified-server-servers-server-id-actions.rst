@@ -82,7 +82,7 @@ This table shows the body parameters for the request:
 |                            |                        |changePassword action   |
 |                            |                        |for the specified server|
 +----------------------------+------------------------+------------------------+
-|**changePassword**.aminPass |Object *(Required)*     |The new adminstrator    |
+|**changePassword**.adminPass|Object *(Required)*     |The new adminstrator    |
 |                            |                        |password. Though        |
 |                            |                        |Rackspace does not      |
 |                            |                        |enforce complexity      |
