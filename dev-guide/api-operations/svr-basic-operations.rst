@@ -60,6 +60,7 @@ Server Metadata Operations:
 
 .. include:: methods/post-create-server-servers.rst
 .. include:: methods/post-create-server-with-disk-config-servers.rst
+.. include:: methods/post-create-server-with-sched-hint-servers.rst
 .. include:: methods/get-retrieves-a-list-of-servers-servers.rst
 .. include:: methods/get-list-servers-with-details-servers-detail.rst
 .. include:: methods/get-retrieve-server-details-servers-server-id.rst
