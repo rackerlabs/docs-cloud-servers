@@ -49,17 +49,12 @@ networks to your server:
    server separate from PublicNet, ServiceNet, or both. When you create
    a isolated network, it is associated with your tenant ID.
    
-You can use the Cloud Networks virtual interface extension to:
+   
+.. note:: 
 
-*  List the networks.
-
-*  Create a network.
-
-*  Create a server and attach the network to that server.
-
-*  Show details for a specified network.
-
-*  Delete a network.
+   If you want to delete an isolated network, the network cannot be
+   attached to any server. If there is a virtual interface for the isolated network, delete
+   that first and then you can delete the network.
 
 API operations for networks extension
 -------------------------------------
@@ -72,7 +67,7 @@ For examples of these operations, see the following operations:
 
 :ref:`Create server with network <post-create-server-with-network-servers>`
 
-Show network details
+:ref:`Show network details <get-show-network-os-networksv2-id>`
 
 :ref:`Delete network <delete-delete-network-os-networksv2-id>`
 

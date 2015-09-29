@@ -14,4 +14,4 @@ Default Quotas
 | 128 GB     | 100 instances                |
 +------------+------------------------------+
 
-For an example of this operation, see :ref:`Quotas operations <api-operations-svr-misc>`.
+For an example of this operation, see :ref:`Retrieve quotas <get-retrieve-quotas-os-quota-sets-tenant-id>`.

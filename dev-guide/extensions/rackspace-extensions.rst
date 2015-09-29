@@ -5,7 +5,7 @@ Rackspace Extensions
 Using API operations, users and applications can programmatically determine which extensions 
 are available, either by listing them or getting details for a specific extension.
 To get the list of currently available extensions, see 
-:ref:`Extension operations <api-operations-svr-misc>`.
+:ref:`Retrieve list of extensions <get-retrieve-list-of-extensions-extensions>`.
 
 At this time, Rackspace provides the following extensions to the Cloud Servers API v2:
 

@@ -14,7 +14,7 @@ The system recognizes the following types of limits:
 -  *absolute limits*. Control the total number of specific objects that
    the user can possess simultaneously. See :ref:`absolute-limits`.
 
-To query the limits programmatically, see :ref:`Limits operations <api-operations-svr-misc>`.
+To query the limits programmatically, see :ref:`Retrieve list of rate and absolute limits <get-retrieve-list-of-rate-and-absolute-limits-limits>`.
 
 .. _rate-limits:
 

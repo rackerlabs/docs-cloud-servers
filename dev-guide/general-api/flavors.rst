@@ -142,7 +142,7 @@ flavor, you can extend all the preceding server flavors with Cloud Block Storage
 Supported Flavors for Cloud Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To find the current list of supported flavors, see :ref:`Flavors operations <api-operations-flavors>`.
+To find the current list of supported flavors, see :ref:`Retrieve list of flavors <get-retrieve-list-of-flavors-flavors>`.
 This table shows some of the common supported flavors for next generation Cloud Servers:
 
 **Table: Supported Flavors for Next Generation Cloud Servers**

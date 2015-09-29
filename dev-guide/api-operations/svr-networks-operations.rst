@@ -21,6 +21,7 @@ Virtual Interface Operations:
 .. include:: methods/get-retrieve-list-of-networks-os-networksv2.rst
 .. include:: methods/post-create-network-os-networksv2.rst
 .. include:: methods/post-create-server-with-network-servers.rst
+.. include:: methods/get-show-network-os-networksv2-id.rst
 .. include:: methods/delete-delete-network-os-networksv2-id.rst
 
 .. VIRTUAL INTERFACE OPS

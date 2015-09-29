@@ -3,7 +3,7 @@
 
 .. _get-retrieve-server-details-servers-server-id:
 
-Retrieve server details
+Show server details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::

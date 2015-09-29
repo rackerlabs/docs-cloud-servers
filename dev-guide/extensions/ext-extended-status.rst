@@ -8,8 +8,8 @@ The extended status extension displays the VM, task, and power statuses
 for servers.
 
 The extension displays these statuses in the following fields in the
-response bodies for the `list
-servers` and `get server` calls (see :ref:`Server Operations<api-operations-svr-basic>`).
+response bodies for the :ref:`Retrieve list of servers <get-retrieves-a-list-of-servers-servers>`
+and :ref:`Show server details <get-retrieve-server-details-servers-server-id>` calls.
 
 **Extended Statuses**
 

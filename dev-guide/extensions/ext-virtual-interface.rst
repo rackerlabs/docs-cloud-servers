@@ -15,21 +15,12 @@ instance through the virtual interface.
 You can create a maximum of one virtual interface per instance per
 network.
 
-You can use the virtual interface extension to:
-
-*  List the virtual interfaces for a server instance.
-
-*  Create a virtual interface.
-
-*  Delete a virtual interface for a network from a server instance. When
-   you delete a virtual interface, the associated network is detached
-   from the server instance.
-
 .. note:: 
 
-   If you want to delete an isolated network, the network cannot be
-   attached to any server. Delete the virtual interface for the isolated
-   network, and then you can delete the network.
+   When you delete a virtual interface, the associated network is detached from the server 
+   instance. Also, if you want to delete an isolated network, the network cannot be
+   attached to any server. Delete the virtual interface for the isolated network, and then 
+   you can delete the network.
 
 API operations for virtual interfaces extension 
 -----------------------------------------------
