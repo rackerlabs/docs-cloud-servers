@@ -22,7 +22,8 @@ do not explicitly confirm or revert the resize.
    
 
 .. warning::
-   Resize is only available for Standard and General Purpose (formerly Performance 1) flavors.
+   The following list shows the availability of the resize operation for the flavor classes 
+   and server types:
    
    - Standard servers: can be resized to both smaller and larger sized servers. 
    
