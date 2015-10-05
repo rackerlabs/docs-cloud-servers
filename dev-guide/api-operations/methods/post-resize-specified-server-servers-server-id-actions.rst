@@ -23,8 +23,12 @@ do not explicitly confirm or revert the resize.
 
 .. warning::
    Resize is only available for Standard and General Purpose (formerly Performance 1) flavors.
-   Standard servers can be resized to both smaller and larger sized servers. 
-   General Purpose servers can be resized to only larger sized servers. 
+   
+   - Standard servers: can be resized to both smaller and larger sized servers. 
+   
+   - General Purpose (formerly Performance 1) servers: can be resized to only larger sized servers. 
+   
+   - All other flavors, OnMetal servers, and any server that boots from CBS volume – cannot be resized.
    
    If you have a Compute, Memory, or IO flavor server, and you need to change the size of 
    your data disk(s), you will need to:  
