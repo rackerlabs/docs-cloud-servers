@@ -4,20 +4,20 @@ Miscellaneous server operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Limits Operation
-	- List rate and absolute limits
+	- :ref:`List rate and absolute limits <get-retrieve-list-of-rate-and-absolute-limits-limits>`
 	
 Used Limits Operation
-	- List used limits
+	- :ref:`List used limits <get-retrieve-list-of-limits-including-used-limits-limits>`
 	
 Console Operation
-	- Get console
+	- :ref:`Get console <post-get-console-servers-server-id-action>`
 	
 Quota Operation
-	- List quotas
+	- :ref:`List quotas <get-retrieve-quotas-os-quota-sets-tenant-id>`
 	
 Extensions Operations
-	- List available extensions
-	- Show extension details
+	- :ref:`List available extensions <get-retrieve-list-of-extensions-extensions>`
+	- :ref:`Show extension details <get-retrieve-details-for-the-specified-extension-extensions-alias>`
 
 This section covers the following miscellaneous server operations: 
 

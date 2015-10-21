@@ -6,55 +6,56 @@ Server operations
 This section covers the following basic server operations: 
 
 Basic Operations:
-	- Create server
-	- Create server with disk config
-	- List servers
-	- List servers with details
-	- Show server with details
-	- Update server
-	- Delete server
+	- :ref:`Create server <post-create-server-servers>`
+	- :ref:`Create server with disk config <post-create-server-with-disk-config-servers>`
+	- :ref:`Create server with scheduler hints <post-create-server-with-sched-hint-servers>`
+	- :ref:`List servers <get-retrieves-a-list-of-servers-servers>`
+	- :ref:`List servers with details <get-list-servers-with-details-servers-detail>`
+	- :ref:`Show server with details <get-retrieve-server-details-servers-server-id>`
+	- :ref:`Update server <put-update-server-servers-server-id>`
+	- :ref:`Delete server <delete-delete-server-servers-server-id>`
 	
 Key Pairs Operations:
-	- Create key pair
-	- Import key pair
-	- List key pairs
-	- Delete key pair
-	
+	- :ref:`Create key pair <post-create-a-server-key-pair-os-keypairs>`
+	- :ref:`Import key pair <post-import-a-server-key-pair-os-keypairs>`
+	- :ref:`List key pairs <get-retrieve-list-of-key-pairs-os-keypairs>`
+	- :ref:`Delete key pair <delete-delete-key-pair-os-keypairs-keypair-name>`
+
 Volume Operations:
-	- Attach volume to server
-	- List volumes
-	- Show volume details
-	- Detach volume from server
-	
+	- :ref:`Attach volume to server <put-attach-volume-to-server-servers-server-id-os-volume-attachments>`
+	- :ref:`List volumes <get-list-servers-server-id-os-volume-attachments>`
+	- :ref:`Show volume details <get-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id>`
+	- :ref:`Detach volume from server <delete-delete-volume-attachment-from-server-servers-server-id-os-volume-attachments-attachment-id>`
+
 Boot from Volume Operation:
-	- Create server by booting from a volume
+	- :ref:`Create server by booting from a volume <post-create-bootable-volume-and-server-servers>`
 	
 Server Action Logs:
-	- List recent server actions
-	- Show server action details
+	- :ref:`List recent server actions <get-retrieve-list-of-server-actions-servers-server-id-os-instance-actions>`
+	- :ref:`Show server action details <get-retrieve-log-details-for-a-specified-server-action-servers-server-id-os-instance-actions-request-id>`
 	
 Server Action Operations:
-	- Change password
-	- Reboot server
-	- Rebuild server
-	- Resize server
-	- Confirm resize
-	- Revert resize
-	- Create image
-	- Rescue server
-	- Unrescue server
+	- :ref:`Change password <post-change-password-for-specified-server-servers-server-id-actions>`
+	- :ref:`Reboot server <post-reboot-specified-server-servers-server-id-actions>`
+	- :ref:`Rebuild server <post-rebuild-specified-server-servers-server-id-actions>`
+	- :ref:`Resize server <post-resize-specified-server-servers-server-id-actions>`
+	- :ref:`Confirm resize <post-confirm-server-resize-for-specified-server-servers-server-id-actions>`
+	- :ref:`Revert resize <post-revert-server-resize-for-specified-server-servers-server-id-actions>`
+	- :ref:`Create image <post-create-image-of-specified-server-servers-server-id-actions>`
+	- :ref:`Rescue server <post-rescue-specified-server-servers-server-id-actions>`
+	- :ref:`Unrescue server <post-unrescue-specified-server-servers-server-id-actions>`
 	
 Server Address Operations:
-	- List server addresses
-	- List server addresses with networks
+	- :ref:`List server addresses <get-retrieves-list-of-server-addresses-servers-server-id-ips>`
+	- :ref:`List server addresses with networks <get-retrieves-list-of-network-addresses-for-server-and-network-servers-server-id-ips-network-label>`
 	
 Server Metadata Operations:
-	- List server metadata items
-	- Set server metadata items
-	- Update server metadata items
-	- List server metadata items for a specific server
-	- Set server metadata item for a specific server
-	- Update server metadata item for a specific server
+	- :ref:`List server metadata items <get-list-server-metadata-servers-server-id-metadata>`
+	- :ref:`Set server metadata items <put-set-server-metadata-servers-server-id-metadata>`
+	- :ref:`Update server metadata items <post-updates-server-metadata-servers-server-id-metadata>`
+	- :ref:`List server metadata items for a specific server <get-show-server-metadata-item-details-servers-server-id-metadata-key>`
+	- :ref:`Set server metadata item for a specific server <put-set-server-metadata-item-servers-server-id-metadata-key>`
+	- :ref:`Update server metadata item for a specific server <delete-delete-server-metadata-item-servers-server-id-metadata-key>`
 
 .. BASIC OPS
 
