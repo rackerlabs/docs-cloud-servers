@@ -83,12 +83,12 @@ To find your API key, perform the following steps:
 
    ..  note:: 
         
-        If you authenticated with username and password credentials, and the Identity service 
-        returns a 401 message requesting additional credentials, your account is configured 
-        for :rax-devdocs:`multi-factor authentication <cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops>`. 
+       If you authenticated with username and password credentials, and the Identity service 
+       returns a 401 message requesting additional credentials, your account is configured 
+       for :rax-devdocs:`multi-factor authentication <cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops>`. 
         
-        To complete the authentication process, submit a second POST tokens request with 
-        multi-factor authentication credentials.
+       To complete the authentication process, submit a second POST tokens request with 
+       multi-factor authentication credentials.
 
    Do not include explicit API endpoints in your scripts and applications. Instead, find 
    the endpoint for your service and region.
@@ -187,9 +187,6 @@ To find your API key, perform the following steps:
 
    - Endpoint information includes the public URL, which is the endpoint that
    	 you use to access the service, as well as region, tenant ID, and version information.
-   	 
-   	 .. tip:: To help you decide which regionalized endpoint to use, read about
-   :kc-article:`special considerations<about-regions>` for choosing a data center.
 
    **Tenant ID**. Appears in the ``tenantId`` field in the ``endpoints``
    element. The tenant ID is also known as the account number.
@@ -204,6 +201,9 @@ To find your API key, perform the following steps:
    - The service might show multiple endpoints to enable regional
      choice. Select the appropriate endpoint for the region that you want
      to interact with by examining the ``region`` field.
+     
+     .. tip:: To help you decide which regionalized endpoint to use, read about
+        :kc-article:`special considerations<about-regions>` for choosing a data center.
 
    **Expiration date and time for authentication token**. Appears in the
    ``expires`` field in the ``token`` element.
