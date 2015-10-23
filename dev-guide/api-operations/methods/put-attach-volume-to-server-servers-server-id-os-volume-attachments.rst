@@ -14,8 +14,8 @@ This operation attaches a data volume to a specified server.
 
 You can attach one or more volumes in a single request.
 
-For information about creating volumes, see `Rackspace Cloud Block Storage Developer Guide <http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/index.html>`__.
-
+For information about creating volumes, see 
+:rax-devdocs:`Rackspace Cloud Block Storage Developer Guide <cloud-block-storage/v1/developer-guide/#document-api-reference>`.
 
 
 This table shows the possible response codes for this operation:

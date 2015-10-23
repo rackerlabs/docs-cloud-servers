@@ -2,8 +2,7 @@
 About the API
 ==============
 
-Next generation Cloud Servers `powered by
-OpenStack <http://www.rackspace.com/cloud/openstack/>`__ is a fast,
+Next generation Cloud Servers :rax:`powered by OpenStack <cloud/openstack/>` is a fast,
 reliable, and scalable cloud compute solution without the risk of
 proprietary lock-in. It provides the core features of the OpenStack
 Compute *API* v2 and also deploys certain extensions as permitted by the
@@ -36,51 +35,40 @@ are known collectively as API v2.
    "FG2NG\_self\_migration\_available\_from" key pairs. If your migration
    window has not been scheduled, you will not see these metadata keys.
 
-   For more information about the server migration see the Knowledge Center
-   article: `First Generation to Next Generation cloud server migration
-   FAQ <http://www.rackspace.com/knowledge_center/article/first-generation-to-next-generation-cloud-server-migration-faq>`__
+   For more information about the server migration see the article: 
+   :kc-article:`First Generation to Next Generation cloud server migration <first-generation-to-next-generation-cloud-server-migration-faq>`
 
 This document describes the features available with API v2.
 
-We welcome feedback, comments, and bug reports. Log into the Rackspace
-customer portal at https://feedback.rackspace.com/.
+We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace customer portal <feedback>`.
 
 Pricing and terms of service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Cloud Servers is part of the Rackspace Cloud. The cost for API usage follows the `pricing 
-schedule for the service`_.
+Cloud Servers is part of the Rackspace Cloud. The cost for API usage follows the 
+:rax:`pricing schedule for the service <cloud/servers/pricing>`.
 
-The service level agreement (SLA) for Rackspace Cloud Services is included in the `Rackspace Cloud SLA`_.
+The service level agreement (SLA) for Rackspace Cloud Services is included in the 
+:rax:`Rackspace Cloud SLA <information/legal/cloud/sla>`.
 
-The terms of service are part of the `Rackspace Cloud Terms of Service`_. Periodically 
-review these terms because they can be updated any time.
-
-.. _pricing schedule for the service: http://www.rackspace.com/cloud/public/servers/pricing
-.. _Rackspace Cloud SLA: http://www.rackspace.com/information/legal/cloud/sla
-.. _Rackspace Cloud Terms of Service: http://www.rackspace.com/information/legal/cloud/tos
+The terms of service are part of the :rax:`Rackspace Cloud Terms of Service <information/legal/cloud/tos>`. 
+Periodically review these terms because they can be updated any time.
 
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
-We welcome feedback, comments, and bug reports. Visit the Rackspace customer portal 
-at https://feedback.rackspace.com/.
+We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace customer portal <feedback>`.
 
 Use the links below to learn more about the Rackspace Cloud Servers service and API.
 
-- For general information about Cloud Servers, see the `Cloud Servers FAQ`_ 
-  in the Rackspace Knowledge Center.
+- For general information about Cloud Images, see the :kc-article:`Cloud Servers FAQ <cloud-servers-frequently-asked-questions>` 
+  article.
 
-- To learn more about the Cloud Servers service and the various ways you can interact 
-  with it (API, SDK, CLI, and Control Panel), see the `Rackspace Cloud Guide to Core Infrastructure Services`_.
+- To learn more about the Cloud Images service and the various ways you can interact 
+  with it (API, SDK, CLI, and Control Panel), see the :rax-devdocs:`Rackspace Cloud Guide 
+  to Core Infrastructure Services <user-guides/infrastructure/>`.
   
-- To learn about using Rackspace Cloud SDKs, see `Software Development Kits & Tools`_. 
+- To learn about using Rackspace Cloud SDKs, see :rax-dev:`Software Development Kits & Tools <docs/#sdks>`. 
     
 - To get information about other Rackspace Cloud services APIs, see the
-  `Rackspace API Documentation`_.
-
-
-.. _Rackspace Cloud Guide to Core Infrastructure Services: https://developer.rackspace.com/docs/user-guides/infrastructure/
-.. _Cloud Servers FAQ: http://www.rackspace.com/knowledge_center/product-faq/cloud-servers
-.. _Rackspace API Documentation: https://developer.rackspace.com/docs/
-.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/#sdks
+  :rax-devdocs:`Rackspace API Documentation <>`.

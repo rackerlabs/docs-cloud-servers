@@ -47,13 +47,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +----------------------+-------------+----------------------------------------------------------+
@@ -64,18 +57,12 @@ This table shows the body parameters for the request:
 +----------------------+-------------+----------------------------------------------------------+
 |network.\ **cidr**    |Uuid         |The IP block from which to allocate the network. For      |
 |                      |*(Required)* |example, 172.16.0.0/24 or 2001:DB8::/64. For more         |
-|                      |             |information about CIDR notation, see ` Using CIDR         |
-|                      |             |Notation in Cloud Networks                                |
-|                      |             |<http://www.rackspace.com/knowledge_center/article/using- |
-|                      |             |cidr-notation>`__ in the Knowledge Center.                |
+|                      |             |information about CIDR notation, :kc-article:`Using CIDR  |
+|                      |             |Notation in Cloud Networks<using-cidr-notation>`.         |
 +----------------------+-------------+----------------------------------------------------------+
 |network.\  **label**  |String       |The name of the new network. For example, my_new_network. |
 |                      |*(Required)* |                                                          |
 +----------------------+-------------+----------------------------------------------------------+
-
-
-
-
 
 **Example Create network: JSON request**
 
@@ -99,13 +86,8 @@ This table shows the body parameters for the request:
 
 
 
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
