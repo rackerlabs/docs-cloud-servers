@@ -5,10 +5,8 @@ The Rackspace Cloud Servers service is a regionalized service. The user of the s
 therefore responsible for selecting the appropriate regional endpoint to ensure access to 
 servers, networks, or other Cloud services.
 
-.. tip::
-   To help you decide which regionalized endpoint to use, read about
-   special considerations for choosing a data center at
-   http://www.rackspace.com/knowledge_center/article/about-regions.
+.. tip:: To help you decide which regionalized endpoint to use, read about
+   :kc-article:`special considerations<about-regions>` for choosing a data center.
 
 If you are working with cloud servers that are in one of the Rackspace data centers, using 
 the ``ServiceNet`` endpoint in the same data center has no network costs and provides a 
@@ -29,7 +27,7 @@ a public endpoint because it is accessible from all the servers in the different
    your account ID. Your account ID, also known as project ID or tenant ID, refers to your 
    Rackspace account number.
 
-.. tip:: 
+.. tip::
    If you do not know your account ID or which data center you are working in, you can find 
-   that information in your Cloud Control Panel at `mycloud.rackspace.com. <http://mycloud.rackspace.com>`__
+   that information in your :mycloud:`Cloud Control Panel<>`.
 
