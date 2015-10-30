@@ -1,0 +1,19 @@
+API |contract version| updates, July 9, 2012 
+------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+New authentication endpoint and changes to the service catalog. For detailed 
+information about authentication through the Identity Service v2.0, see the 
+:rax-devdocs:`Cloud Identity Client Developer Guide <cloud-identity/v2/developer-guide/#document-overview>`.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

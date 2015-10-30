@@ -1,0 +1,52 @@
+API |contract version| updates, October 30, 2014 
+---------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+-  With the earlier introduction of OnMetal and two new
+   workload-optimized flavor classes, the name of the Performance flavor
+   classes is looking more and more out of alignment. Additionally,
+   Rackspace's focus has shifted away from performance and towards the
+   Managed Cloud. So, we'd like to rename the Performance flavor class
+   to align with the OnMetal, Compute and Memory naming, to clearly
+   reflect the value we’re delivering to our customers, and to reduce
+   confusion as we grow the Cloud Servers product line.
+
+   The Performance 1 flavor class will become the first version of the
+   General Purpose flavor class, and Performance 2 will return to its
+   conceptual roots as the first version of our I/O flavor class. This
+   should help clear up confusion between the Performance 1 and 2 flavor
+   classes, while also putting Performance 2 on the same footing as the
+   Compute and Memory flavor classes. (General Purpose v1 will behave
+   exactly as Performance 1 does today, with regard to API actions, and
+   I/O v1 will behave the same as Performance 2.)
+
+-  Additionally, we will propose a separate plan to End of Sale the
+   current Standard flavor class. Until that plan is enacted, though,
+   all customers will still see the Standard flavor class.
+
+-  In summary, here are the changes that will happen:
+
+   1. We will add two new flavor classes: General Purpose v1 (like
+      Perfomance 1 but with combined data and system disk) and IO v1
+      (like Performance 2).
+
+   2. We will hide two existing flavors classes (Performance 1 and
+      Performance 2) from Reach, but we'll leave them visible in the
+      API.
+
+   3. We'll launch 2 brand new flavor classes: Compute v1 and Memory v1.
+
+   4. At a future date, we will end-of-sale the Standard, Performance 1
+      and Performance 2 flavor classes.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
