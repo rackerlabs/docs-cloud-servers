@@ -1,0 +1,31 @@
+API |contract version| updates, August 21, 2012 
+--------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+The new extended status extension displays the VM, task, and power statuses for servers.
+
+The extension displays these statuses in the following fields in the
+response bodies for the *List server* and *Get server details* calls:
+
++------------------------------+----------------------------------------------------+
+| Field                        | Description                                        |
++==============================+====================================================+
+| ``OS-EXT-STS:vm_state``      | The virtual machine (VM) status.                   |
++------------------------------+----------------------------------------------------+
+| ``OS-EXT-STS:task_state``    | The task status.                                   |
++------------------------------+----------------------------------------------------+
+| ``OS-EXT-STS:power_state``   | The power status.                                  |
++------------------------------+----------------------------------------------------+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
+
