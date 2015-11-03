@@ -8,12 +8,13 @@ This section covers the following basic server operations:
 Basic Operations:
 	- :ref:`Create server <post-create-server-servers>`
 	- :ref:`Create server with disk config <post-create-server-with-disk-config-servers>`
-	- :ref:`Create server with scheduler hints <post-create-server-with-sched-hint-servers>`
 	- :ref:`List servers <get-retrieves-a-list-of-servers-servers>`
 	- :ref:`List servers with details <get-list-servers-with-details-servers-detail>`
 	- :ref:`Show server with details <get-retrieve-server-details-servers-server-id>`
 	- :ref:`Update server <put-update-server-servers-server-id>`
 	- :ref:`Delete server <delete-delete-server-servers-server-id>`
+	
+.. COMMENT SCHEDHINT	- :ref:`Create server with scheduler hints <post-create-server-with-sched-hint-servers>`
 	
 Key Pairs Operations:
 	- :ref:`Create key pair <post-create-a-server-key-pair-os-keypairs>`
@@ -61,12 +62,13 @@ Server Metadata Operations:
 
 .. include:: methods/post-create-server-servers.rst
 .. include:: methods/post-create-server-with-disk-config-servers.rst
-.. include:: methods/post-create-server-with-sched-hint-servers.rst
 .. include:: methods/get-retrieves-a-list-of-servers-servers.rst
 .. include:: methods/get-list-servers-with-details-servers-detail.rst
 .. include:: methods/get-retrieve-server-details-servers-server-id.rst
 .. include:: methods/put-update-server-servers-server-id.rst
 .. include:: methods/delete-delete-server-servers-server-id.rst
+
+.. COMMENT SCHEDHINT .. include:: methods/post-create-server-with-sched-hint-servers.rst
 
 .. KEY PAIRS OPS
 
