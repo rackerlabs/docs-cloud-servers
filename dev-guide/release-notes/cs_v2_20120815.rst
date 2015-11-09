@@ -4,7 +4,7 @@ API |contract version| updates, August 15, 2012 
 What's new
 ~~~~~~~~~~
 
--  New authentication endpoint.
+- A new authentication endpoint has been added.
 
    To authenticate, you issue a request to the Rackspace Cloud Identity
    Service, which is an implementation of the OpenStack Keystone
@@ -33,16 +33,16 @@ What's new
    |                    | If you use the authentication token to access this     |
    |                    | service, you can view and perform first generation     |
    |                    | Cloud Servers API operations against your first        |
-   |                    | generation Cloud Servers.                              |
+   |                    | generation servers.                                    |
    +--------------------+--------------------------------------------------------+
    | Next generation    | ``cloudServersOpenStack``                              |
    |                    |                                                        |
    |                    | If you use the authentication token to access this     |
    |                    | service, you can view and perform next generation      |
    |                    | Cloud Servers API operations against your next         |
-   |                    | generation Cloud Servers.                              |
+   |                    | generation servers.                                    |
    |                    |                                                        |
-   |                    | Next generation Cloud Servers might show multiple      |
+   |                    | Next generation servers might show multiple            |
    |                    | endpoints to enable regional choice. Select the        |
    |                    | appropriate endpoint for the region that you want to   |
    |                    | interact with by examining the ``region`` field.       |

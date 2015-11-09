@@ -4,37 +4,26 @@ API |contract version| updates, June 13, 2012
 What's new
 ~~~~~~~~~~
 
--  Removal of the 256MB flavor. The 256 MB flavor has been removed
-   from the next generation Cloud Servers. While these small instances
-   were appropriate in certain cases, they often caused performance
-   problems for applications and placed undue stress on underlying host
-   machines. This change reduces the number of application performance
-   issues and improves the overall Cloud Servers experience.
+-  The 256 MB flavor has been removed from the next generation Cloud Servers. While these 
+   small instances were appropriate in certain cases, they often caused performance
+   problems for applications and placed undue stress on underlying host machines. This 
+   change reduces the number of application performance issues and improves the overall 
+   Cloud Servers experience.
+   
+-  Next generation Cloud Servers now implements a single vCPU allocation scheme across all 
+   operating systems. Unlike the earlier vCPU allocation scheme, which was optimized for 
+   burst on Linux and for CPU consistency on Windows, the new scheme favors consistent CPU 
+   performance while retaining some burst potential. The number of vCPUs is reduced for 
+   some flavors and increased for others to simplify Cloud Servers while balancing 
+   predictability and value.
 
--  vCPU allocations for flavors. Historically, Rackspace offered a
-   vCPU allocation scheme that differed between Linux and Windows
-   instances for the same flavor.  Linux had the potential to use more
-   CPU and was optimized for burst at the expense of performance
-   consistency, while Windows was optimized for CPU consistency trading
-   off burst potential.
-
-   The next generation Cloud Servers now implements a single vCPU
-   allocation scheme across all operating systems that favors consistent
-   CPU performance while retaining some burst potential. The number of
-   vCPUs is reduced for some flavors and increased for others to
-   simplify Cloud Servers while balancing predictability and value. 
-
--  Improved instance performance. A customer-reported hardware
-   problem that affected instance performance has been corrected.
-
--  OpenStack ready. Rackspace continuously integrates with OpenStack
-   code, which means that you have nearly immediate access to product
-   enhancements from the OpenStack community.
+-  OpenStack ready. Rackspace continuously integrates with OpenStack code, which means that 
+   you have nearly immediate access to product enhancements from the OpenStack community.
 
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-|no changes|
+Corrected a hardware problem that affected performance.
 
 Known issues
 ~~~~~~~~~~~~
