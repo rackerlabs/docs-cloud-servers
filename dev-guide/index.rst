@@ -16,7 +16,9 @@ Learn how to use the Rackspace Cloud Servers service by using the REST API.
 .. toctree:: :hidden:
    :maxdepth: 2
 
-   overview/index
+   Cloud Servers 2.0 <self>
+   API Status <http://www.rackspacestatus.com/>
+   About the API <overview/index>
    developer-guide
    concepts
    general-api/index
