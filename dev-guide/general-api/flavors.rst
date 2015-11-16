@@ -54,6 +54,7 @@ Virtual Cloud Server Flavors are divided into the following classes:
     -  All storage is located on RAID 10-protected SSD hard disk drives.
 
 **I/O v1**
+
     These flavors, formerly Performance 2, have the following
     characteristics:
 
@@ -73,6 +74,7 @@ Virtual Cloud Server Flavors are divided into the following classes:
     -  All storage is located on RAID 10-protected SSD hard disk drives.
 
 **Compute v1**
+
     These flavors have the following characteristics:
 
     -  Sizes range from 3.75 GB to 60 GB.
@@ -93,6 +95,7 @@ Virtual Cloud Server Flavors are divided into the following classes:
     -  All storage is located on RAID 10-protected SSD hard disk drives.
 
 **Memory v1**
+
     These flavors have the following characteristics:
 
     -  Sizes range from 15 GB to 240 GB.
