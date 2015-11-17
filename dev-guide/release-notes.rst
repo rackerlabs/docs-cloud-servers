@@ -1,8 +1,8 @@
 .. _release-notes:
 
-======================
-**Release Notes**
-======================
+
+Release Notes
+--------------
 
 Learn about new features, enhancements, known issues,
 resolved issues, and other important details about |apiservice| |version| service updates.
