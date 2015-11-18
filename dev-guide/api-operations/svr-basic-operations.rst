@@ -3,7 +3,7 @@
 Server operations
 ~~~~~~~~~~~~~~~~~
 
-This section covers the following basic server operations: 
+This section covers the following basic server operations:
 
 Basic Operations:
 	- :ref:`Create server <post-create-server-servers>`
@@ -13,9 +13,9 @@ Basic Operations:
 	- :ref:`Show server with details <get-retrieve-server-details-servers-server-id>`
 	- :ref:`Update server <put-update-server-servers-server-id>`
 	- :ref:`Delete server <delete-delete-server-servers-server-id>`
-	
+
 .. COMMENT SCHEDHINT	- :ref:`Create server with scheduler hints <post-create-server-with-sched-hint-servers>`
-	
+
 Key Pairs Operations:
 	- :ref:`Create key pair <post-create-a-server-key-pair-os-keypairs>`
 	- :ref:`Import key pair <post-import-a-server-key-pair-os-keypairs>`
@@ -30,11 +30,11 @@ Volume Operations:
 
 Boot from Volume Operation:
 	- :ref:`Create server by booting from a volume <post-create-bootable-volume-and-server-servers>`
-	
+
 Server Action Logs:
 	- :ref:`List recent server actions <get-retrieve-list-of-server-actions-servers-server-id-os-instance-actions>`
 	- :ref:`Show server action details <get-retrieve-log-details-for-a-specified-server-action-servers-server-id-os-instance-actions-request-id>`
-	
+
 Server Action Operations:
 	- :ref:`Change password <post-change-password-for-specified-server-servers-server-id-actions>`
 	- :ref:`Reboot server <post-reboot-specified-server-servers-server-id-actions>`
@@ -45,11 +45,11 @@ Server Action Operations:
 	- :ref:`Create image <post-create-image-of-specified-server-servers-server-id-actions>`
 	- :ref:`Rescue server <post-rescue-specified-server-servers-server-id-actions>`
 	- :ref:`Unrescue server <post-unrescue-specified-server-servers-server-id-actions>`
-	
+
 Server Address Operations:
 	- :ref:`List server addresses <get-retrieves-list-of-server-addresses-servers-server-id-ips>`
 	- :ref:`List server addresses with networks <get-retrieves-list-of-network-addresses-for-server-and-network-servers-server-id-ips-network-label>`
-	
+
 Server Metadata Operations:
 	- :ref:`List server metadata items <get-list-server-metadata-servers-server-id-metadata>`
 	- :ref:`Set server metadata items <put-set-server-metadata-servers-server-id-metadata>`
