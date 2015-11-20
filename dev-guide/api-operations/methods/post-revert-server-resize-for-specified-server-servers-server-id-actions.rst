@@ -8,7 +8,7 @@ Revert server resize for specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation reverts the server resize for the specified server.
 

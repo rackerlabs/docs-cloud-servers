@@ -8,7 +8,7 @@ Reboot specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation performs a soft or hard reboot of the specified server. A soft reboot is a 
 graceful shutdown and restart of your server's operating system. A hard reboot power cycles 
