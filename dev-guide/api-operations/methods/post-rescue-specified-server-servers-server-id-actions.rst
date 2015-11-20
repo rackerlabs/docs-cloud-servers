@@ -8,7 +8,7 @@ Rescue specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation puts a server into rescue mode.
 

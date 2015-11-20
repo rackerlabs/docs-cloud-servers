@@ -8,7 +8,7 @@ Create image of specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation creates a new image for a specified server. Once complete, you can use your 
 new image to rebuild or create servers. The full URL to the newly created image is returned 

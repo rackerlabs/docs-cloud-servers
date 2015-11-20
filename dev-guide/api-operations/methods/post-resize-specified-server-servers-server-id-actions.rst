@@ -8,7 +8,7 @@ Resize specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation converts an existing Standard server to a different flavor, which scales the 
 server up or down. The original server is saved for a period of time to allow roll back if 

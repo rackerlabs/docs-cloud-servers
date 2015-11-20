@@ -8,7 +8,7 @@ Rebuild specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation rebuilds the specified server.
 

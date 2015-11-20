@@ -8,7 +8,7 @@ Unrescue specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation takes the specified server out of rescue mode.
 

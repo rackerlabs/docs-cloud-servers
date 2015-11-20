@@ -8,7 +8,7 @@ Change password for specified server
 
 .. code::
 
-    POST /servers/{server_id}/actions
+    POST /servers/{server_id}/action
 
 This operation changes the admin password, or root password, for the specified server.
 
