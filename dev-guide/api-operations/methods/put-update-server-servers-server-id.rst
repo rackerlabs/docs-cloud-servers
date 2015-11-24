@@ -219,7 +219,9 @@ This table shows the body parameters for the response:
 |server.\ **status**            |String                 |The status of the     |
 |                               |                       |server. For a full    |
 |                               |                       |list of possible      |
-|                               |                       |status values, see.   |
+|                               |                       |status values, see    |
+|                               |                       |:ref:`Server Status   |
+|                               |                       |<server-statuses>`.   |
 +-------------------------------+-----------------------+----------------------+
 |server.\ **tenant_id**         |String                 |The tenant ID.        |
 +-------------------------------+-----------------------+----------------------+
