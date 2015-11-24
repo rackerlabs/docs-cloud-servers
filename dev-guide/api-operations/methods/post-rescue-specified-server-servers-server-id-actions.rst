@@ -33,7 +33,7 @@ When you place a server in rescue mode, the following events occur:
 When you put a server into rescue mode, you cannot use it until its status goes from 
 ``ACTIVE`` to ``RESCUE``. This does not happen immediately.
 
-For a full list of possible server status values, see 
+For a full list of possible server status values, see :ref:`Server Status <server-statuses>`. 
 
 .. note::
    The SSH server key will be different on the rescue image than on the original server.

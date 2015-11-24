@@ -104,6 +104,10 @@ This table shows the query parameters for the request:
 |status                    |Serverstatus *(Optional)*|The status of the        |
 |                          |                         |server. For example, you |
 |                          |                         |can filter on "ACTIVE".  |
+|                          |                         |For a full list of       |
+|                          |                         |possible status values,  |
+|                          |                         |see :ref:`Server Status  |
+|                          |                         |<server-statuses>`.      |
 +--------------------------+-------------------------+-------------------------+
 |host                      |String *(Optional)*      |The name of the host.    |
 +--------------------------+-------------------------+-------------------------+

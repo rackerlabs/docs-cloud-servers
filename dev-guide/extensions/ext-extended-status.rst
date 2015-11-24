@@ -25,9 +25,9 @@ and :ref:`Show server details <get-retrieve-server-details-servers-server-id>` c
 Currently, the possible values for the VM, task, and power status fields
 are:
 
- ``OS-EXT-STS:vm_state``
+.. _vm-statuses:
 
-The virtual machine (VM) status. Possible values are:
+ ``OS-EXT-STS:vm_state`` - The virtual machine (VM) status. Possible values are:
 
     -  active
 
@@ -49,9 +49,9 @@ The virtual machine (VM) status. Possible values are:
 
     -  suspended
 
- ``OS-EXT-STS:task_state``
-
- The task status. Possible values are:
+.. _task-statuses:
+  
+ ``OS-EXT-STS:task_state`` - The task status. Possible values are:
 
     -  block\_device\_mapping
 
@@ -115,15 +115,17 @@ The virtual machine (VM) status. Possible values are:
 
     -  updating\_password
 
- ``OS-EXT-STS:power_state``
+.. _power-statuses:
 
- The power status. Possible values are:
+ ``OS-EXT-STS:power_state`` - The power status. Possible values are:
 
     -  ``0``. The instance is powered down.
 
     -  ``1``. The instance is powered up.
 
     -  ``4``. The instance is shut off.
+
+.. _server-statuses:
 
 The following table shows the server statuses that correspond with the
 VM and tasks statuses:
