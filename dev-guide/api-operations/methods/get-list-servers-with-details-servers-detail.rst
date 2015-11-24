@@ -113,6 +113,10 @@ This table shows the query parameters for the request:
 |status                    |String *(Optional)*      |The status of the        |
 |                          |                         |server. For example, you |
 |                          |                         |can filter on "ACTIVE".  |
+|                          |                         |For a full list of       |
+|                          |                         |possible status values,  |
+|                          |                         |see :ref:`Server Status  |
+|                          |                         |<server-statuses>`.      |
 +--------------------------+-------------------------+-------------------------+
 |host                      |String *(Optional)*      |The name of the host.    |
 +--------------------------+-------------------------+-------------------------+
@@ -230,7 +234,11 @@ This table shows the body parameters for the response:
 |                                |                      |ranges from 0 to 100. |
 +--------------------------------+----------------------+----------------------+
 |servers.\ **status**            |String                |The status of the     |
-|                                |                      |server.               |
+|                                |                      |server. For a full    |
+|                                |                      |list of possible      |
+|                                |                      |status values, see    |
+|                                |                      |:ref:`Server Status   |
+|                                |                      |<server-statuses>`.   |
 +--------------------------------+----------------------+----------------------+
 |servers.\ **tenant_id**         |String                |The tenant ID.        |
 |                                |                      |                      |
