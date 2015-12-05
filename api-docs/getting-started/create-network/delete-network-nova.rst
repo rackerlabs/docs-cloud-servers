@@ -1,0 +1,29 @@
+.. _delete-network-with-nova:
+
+Delete network (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Issue the following command to delete the virtual interface from your server:
+
+   .. code::  
+
+       $ nova virtual-interface-delete <instance_id> <interface_id>
+
+   **Positional arguments:**
+
+   -  ``instance_id``. The ID of the server instance from which you want to detach the 
+      virtual interface.
+
+   -  ``interface_id``. The ID of the virtual interface that you want to delete.
+
+#. Issue the following nova client command to delete the network:
+
+   .. code::  
+
+       $ nova network-delete <id>
+
+   **Positional argument:**
+
+   -  ``id``. The network ID of the network that you want to delete.
+
+**Next topic:**  :ref:`Attach your network to an existing server<attach-network-intro>` 

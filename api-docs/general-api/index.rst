@@ -15,7 +15,7 @@ API v2 supports JSON request and response formats.
    :maxdepth: 2
 
    how-curl-commands-work
-   authentication
+   authenticate-ovw
    request-response-types
    links-and-references
    paginated-collections

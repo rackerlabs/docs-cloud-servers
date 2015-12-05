@@ -79,7 +79,8 @@ release = '2'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples', 'api-operations/methods/*']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods*', 
+'common-gs', 'getting-started/examples']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -129,6 +130,7 @@ extlinks = {
 # Global variables that are replaced by the specified value during the build process.
 
 rst_epilog = """
+.. |service| replace:: Rackspace Cloud Servers
 .. |apiservice| replace:: Rackspace Cloud Servers API
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: 2.0
