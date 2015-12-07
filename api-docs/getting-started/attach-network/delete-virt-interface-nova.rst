@@ -16,4 +16,5 @@ Issue the following command to delete the virtual interface from your server:
 
 -  ``interface_id``. The ID of the virtual interface that you want to delete.
 
- 
+There is no operation response for a successful operation.  You will be returned to the 
+command prompt. 
