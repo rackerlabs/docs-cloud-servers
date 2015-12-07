@@ -11,16 +11,12 @@ Delete network (cURL)
             -X DELETE \
             -H "X-Auth-Token: $AUTH-TOKEN"
 
-   **Arguments:**
+   **Positional arguments:**
 
-   -  ``instance_id``. The ID of the server instance from which you want
-      to detach the virtual interface. You copied this ID in `the
-      section called “Step 2. List Servers” <list_servers2.html>`__.
+   -  ``instance_id``. The ID of the server instance from which you want to detach the 
+      virtual interface.
 
-   -  ``interface_id``. The ID of the virtual interface that you want to
-      delete. You copied this ID in `the section called “Step 5. List
-      Virtual Interfaces for a
-      Server” <list_virt_interfaces_for_server.html>`__.
+   -  ``interface_id``. The ID of the virtual interface that you want to delete.
 
    If the delete operation was successful, the HTTP header shows the 204 status code, as 
    shown in the following output:
@@ -48,9 +44,8 @@ Delete network (cURL)
 
    -  ``id``. The network ID of the network that you want to delete.
 
-   **Output:**
-
-   Successful deletion returns an Accepted (202) response code:
+   Successful deletion returns an Accepted (202) response code, as shown in the following 
+   example:
 
    .. code::  
 
