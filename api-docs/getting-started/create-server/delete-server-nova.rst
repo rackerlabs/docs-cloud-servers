@@ -5,7 +5,9 @@ Delete server (nova client)
 
 To delete your server with the nova client, you need the server name.
 
-Issue the following command, specifying the name of the server that you want to delete:
+Issue the following command, specifying the name of the server that you want to delete.
+
+**Delete a server with nova request**
 
    .. code::  
 

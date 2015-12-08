@@ -3,14 +3,18 @@
 List servers (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following command:
+#. Issue the following command.
+
+   **List servers with nova request**
 
    .. code::  
 
        $ nova list
 
    For each server, the command returns the server ID, name, status, and addresses for any 
-   attached networks, as shown in the following output:
+   attached networks, as shown in the following output.
+   
+   **List servers with nova response**
 
    .. code::  
 

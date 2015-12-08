@@ -3,7 +3,9 @@
 Create a virtual interface (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following nova client command:
+Issue the following nova client command.
+
+**Create a virtual interface with nova request**
 
 .. code::  
 
@@ -16,7 +18,9 @@ Issue the following nova client command:
 -  ``instance_id``. The ID of the server instance to which you want to connect the virtual 
    interface.
 
-The operation returns a response, as shown in the following output:
+The operation returns a response, as shown in the following output.
+
+**Create a virtual interface with nova response**
 
 .. code::
 

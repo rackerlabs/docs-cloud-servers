@@ -3,8 +3,10 @@
 Delete network (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following command to delete the virtual interface from your server:
+#. Issue the following command to delete the virtual interface from your server.
 
+   **Delete virtual interface with nova request**
+   
    .. code::  
 
        $ nova virtual-interface-delete <instance_id> <interface_id>
@@ -19,8 +21,10 @@ Delete network (nova client)
    There is no operation response for a successful operation.  You will be returned to the 
    command prompt. 
 
-#. Issue the following nova client command to delete the network:
+#. Issue the following nova client command to delete the network.
 
+   **Delete network with nova request**
+   
    .. code::  
 
        $ nova network-delete <id>

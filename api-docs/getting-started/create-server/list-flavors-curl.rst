@@ -3,7 +3,9 @@
 List flavors (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following cURL command:
+#. Issue the following cURL command.
+
+   **List flavors with cURL request**
 
    .. code::  
 
@@ -15,6 +17,8 @@ List flavors (cURL)
    The following output shows just the information returned for an 15 GB Compute1 server. 
    For brevity, other flavors in the array were removed. Your listing will return all 
    available flavors.
+   
+   **List flavors with cURL response**
 
    .. code::  
 

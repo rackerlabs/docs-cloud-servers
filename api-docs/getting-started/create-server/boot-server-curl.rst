@@ -3,7 +3,9 @@
 Boot server (cURL)
 ~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following cURL command:
+#. Issue the following cURL command.
+
+   **Boot a server with cURL request**
 
    .. code::  
 
@@ -16,8 +18,10 @@ Boot server (cURL)
           | python -m json.tool
 
    The command returns a list of server properties, including the administrative password, 
-   the server ID, and links, as shown in the following output:
+   the server ID, and links, as shown in the following output.
 
+   **Boot a server with cURL response**
+   
    .. code::  
 
        {

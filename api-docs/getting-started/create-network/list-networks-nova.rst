@@ -3,14 +3,18 @@
 List networks (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following nova client command:
+Issue the following nova client command.
+
+**List networks with nova request**
 
 .. code::  
 
    $ nova network-list 
 
 For each network, the command returns the network ID, label, and CIDR, as shown in the 
-following output:
+following output.
+
+**List networks with nova response**
 
 .. code::  
 

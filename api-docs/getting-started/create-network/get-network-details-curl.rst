@@ -3,7 +3,9 @@
 Get network details (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following cURL command:
+Issue the following cURL command.
+
+**Get network details with cURL request**
 
 .. code::  
 
@@ -18,7 +20,9 @@ Issue the following cURL command:
 
 -  ``id``. The ID of the network for which you want to show information. 
 
-The operation returns the CIDR, network ID, and label, as shown in the following output:
+The operation returns the CIDR, network ID, and label, as shown in the following output.
+
+**Get network details with cURL response**
 
 .. code::  
 

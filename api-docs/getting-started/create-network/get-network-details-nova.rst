@@ -3,7 +3,9 @@
 Get network details (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following nova client command:
+Issue the following nova client command.
+
+**Get network details with nova request**
 
 .. code::  
 
@@ -13,7 +15,9 @@ Issue the following nova client command:
 
 -  ``id``. The ID of the network for which you want to show information.
 
-The command returns the CIDR, network ID, and label, as shown in the following output:
+The command returns the CIDR, network ID, and label, as shown in the following output.
+
+**Get network details with nova response**
 
 .. code::  
 

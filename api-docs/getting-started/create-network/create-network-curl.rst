@@ -3,7 +3,9 @@
 Create network (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following cURL command:
+#. Issue the following cURL command.
+
+   **Create network with cURL request**
 
    .. code::  
 
@@ -18,7 +20,9 @@ Create network (cURL)
 
 
    The operation returns the CIDR, ID, and label for the isolated network, as 
-   shown in the following JSON response:
+   shown in the following JSON response.
+   
+   **Create network with cURL response**
 
    .. code::  
 

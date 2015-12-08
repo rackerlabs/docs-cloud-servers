@@ -3,7 +3,9 @@
 List images (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following cURL command:
+#. Issue the following cURL command.
+
+   **List images with cURL request**
 
    .. code::  
 
@@ -13,6 +15,8 @@ List images (cURL)
    For each image, the command returns the ID, links, metadata, and name. The following 
    output shows the information returned for the Ubuntu 11.10 image. For brevity, other 
    images in the array are not shown.
+   
+   **List images with cURL response**
 
    .. code::  
 

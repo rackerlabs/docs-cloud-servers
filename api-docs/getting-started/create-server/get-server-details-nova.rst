@@ -3,7 +3,9 @@
 Get server details (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following command:
+#. Issue the following command.
+
+**Get server details with nova request**
 
    .. code::  
 
@@ -13,7 +15,9 @@ Get server details (nova client)
    :ref:`Boot server (nova client)<boot-server-with-nova>`.
 
    The command shows information for your server, including its private and public IP 
-   addresses, and status:
+   addresses, and status.
+   
+   **Get server details with nova response**
 
    .. code::  
 

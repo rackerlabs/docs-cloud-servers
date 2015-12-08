@@ -3,7 +3,9 @@
 Delete a virtual interface (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following command to delete the virtual interface from your server:
+Issue the following command to delete the virtual interface from your server.
+
+**Delete a virtual interface with nova request**
 
 .. code::  
 

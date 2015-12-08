@@ -3,7 +3,9 @@
 List virtual interfaces (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following nova client command:
+Issue the following nova client command.
+
+**List virtual interfaces with nova request**
 
 .. code::  
 
@@ -15,7 +17,9 @@ Issue the following nova client command:
    interfaces. 
 
 For any virtual interfaces that are connected to the specified server, the command returns 
-the network ID, MAC address, and IP addresses, as shown in the following output:
+the network ID, MAC address, and IP addresses, as shown in the following output.
+
+**List virtual interfaces with nova response**
 
 .. code::  
 
