@@ -3,7 +3,9 @@
 List networks (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following cURL command:
+Issue the following cURL command.
+
+**List networks with cURL request**
 
 .. code::  
 
@@ -12,6 +14,8 @@ Issue the following cURL command:
 
 For each isolated network, the operation returns the CIDR. Additionally, for isolated 
 networks and Rackspace networks, the operation returns the network ID and label.
+
+**List networks with cURL response**
 
 .. code::  
 

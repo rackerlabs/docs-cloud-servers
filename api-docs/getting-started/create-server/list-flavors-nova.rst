@@ -3,7 +3,9 @@
 List flavors (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following command:
+#. Issue the following command.
+
+   **List flavors with nova request**
 
    .. code::  
 
@@ -12,8 +14,10 @@ List flavors (nova client)
    Optional parameter: ``--extra-specs``, shows details including class, disk I/O, and the
    number of data disks.
 
-   The operation returns details that describes each flavor, as shown the following example:
+   The operation returns details that describes each flavor, as shown the following example.
 
+   **List flavors with nova response**
+   
    .. code::  
 
                                                                       Flavor List

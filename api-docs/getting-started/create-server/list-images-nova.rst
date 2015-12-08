@@ -3,13 +3,17 @@
 List images (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following command:
+#. Issue the following command.
+
+   **List images with nova request**
 
    .. code::  
 
        $ nova image-list
 
-   The operation returns the image ID, name, and status, as shown in the following output:
+   The operation returns the image ID, name, and status, as shown in the following output.
+   
+   **List images with nova response**
 
    .. code::  
 

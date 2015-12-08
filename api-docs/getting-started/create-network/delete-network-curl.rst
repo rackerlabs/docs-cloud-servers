@@ -5,6 +5,8 @@ Delete network (cURL)
 
 #. Issue the following command to detach the virtual interface from the server.
 
+   **Delete virtual interface with cURL request**
+
    .. code::  
 
        $ curl -i https://$API_ENDPOINT/v2/$TENANT_ID/servers/<instance_id>/os-virtual-interfacesv2/<interface_id> \
@@ -19,7 +21,9 @@ Delete network (cURL)
    -  ``interface_id``. The ID of the virtual interface that you want to delete.
 
    If the delete operation was successful, the HTTP header shows the 204 status code, as 
-   shown in the following output:
+   shown in the following output.
+   
+   **Delete virtual interface with cURL response**
 
    .. code::  
 
@@ -30,8 +34,10 @@ Delete network (cURL)
        X-Compute-Request-Id: req-3bdafeb2-d4b1-41c3-ab19-d310f3f270d3
        Server: Jetty(8.0.y.z-SNAPSHOT)
 
-#. Issue the following cURL command to delete the network:
+#. Issue the following cURL command to delete the network.
 
+   **Delete network with cURL request**
+   
    .. code::  
 
        $ curl -i https:///$API_ENDPOINT/v2/$TENANT_ID/os-networksv2/<id> \
@@ -45,7 +51,9 @@ Delete network (cURL)
    -  ``id``. The network ID of the network that you want to delete.
 
    Successful deletion returns an Accepted (202) response code, as shown in the following 
-   example:
+   example.
+   
+   **Delete network with cURL response**
 
    .. code::  
 

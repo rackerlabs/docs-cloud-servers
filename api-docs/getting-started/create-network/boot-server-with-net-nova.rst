@@ -3,11 +3,14 @@
 Boot server with network (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following nova client command:
+Issue the following nova client command.
+
+**Boot a server with network with nova request**
 
 .. code::  
 
    $ nova boot <name> --flavor <flavor> --image <image> --nic net-id=<private-net-uuid> 
+   $ nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2
 
 **Positional arguments:**
 
@@ -31,14 +34,9 @@ addition to PublicNet and ServiceNet, are attached to your server.
 You can specify the optional ``--no-public`` and ``--no-service-net`` parameters to opt out 
 of attaching PublicNet and ServiceNet to your server.
 
-For example, you might issue the following command to attach a NIC to your server. 
-Additionally, PublicNet and ServiceNet are attached to your server.
+The operation returns information about the new server, as shown in the following output.
 
-.. code::  
-
-   $ nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2
-
-The operation returns information about the new server, as shown in the following output:
+**Boot a server with network with nova response**
 
 .. code::  
 

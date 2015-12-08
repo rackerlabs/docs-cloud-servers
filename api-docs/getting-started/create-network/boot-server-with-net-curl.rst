@@ -3,7 +3,9 @@
 Boot server with network (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following cURL command:
+Issue the following cURL command.
+
+**Boot a server with network with cURL request**
 
 .. code::  
 
@@ -19,7 +21,9 @@ Issue the following cURL command:
 In addition to the isolated network, PublicNet and ServiceNet are attached to the server. 
 You must explicitly specify these networks to attach them to your server.
 
-The operation returns information about the new server, as shown in the following output:
+The operation returns information about the new server, as shown in the following output.
+
+**Boot a server with network cURL response**
 
 .. code::  
 

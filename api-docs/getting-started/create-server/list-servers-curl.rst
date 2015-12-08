@@ -3,7 +3,9 @@
 List servers (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Issue the following command:
+#. Issue the following command.
+
+   **List servers with cURL request**
 
    .. code::  
 
@@ -16,7 +18,9 @@ List servers (cURL)
    and private networks.
 
    The following output shows the list servers information, including information for the 
-   Ubuntu server that you just created:
+   Ubuntu server that you just created.
+   
+   **List servers with cURL response**
 
    .. code::  
 

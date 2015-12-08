@@ -5,6 +5,8 @@ Boot server (nova client)
 
 #. Issue the following command. In the command, specify the server name, flavor ID, and 
    image ID. You may optionally include the keypair name.
+   
+   **Boot a server with nova request**
 
    .. code::  
 
@@ -16,6 +18,8 @@ Boot server (nova client)
    The command returns a list of server properties. The status field indicates whether the 
    server is being built or is active. A status of ``BUILD`` indicates that your server is 
    being built.
+
+   **Boot a server with nova response**
 
    .. code::  
 

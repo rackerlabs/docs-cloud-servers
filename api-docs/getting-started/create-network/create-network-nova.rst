@@ -3,9 +3,9 @@
 Create network (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**To create an isolated network with the nova client**
+#. Issue the following command.
 
-#. Issue the following command:
+   **Create network with nova request**
 
    .. code::  
 
@@ -18,8 +18,10 @@ Create network (nova client)
    -  ``cidr``. The IP block from which to allocate, such as
       ``192.168.0.0/24`` or ``2001:DB8::/64``.
 
-   Th operation returns the CIDR, ID, and label for the new network, as shown in the 
-   following output:
+   The operation returns the CIDR, ID, and label for the new network, as shown in the 
+   following output.
+   
+   **Create network with nova response**
 
    .. code::  
 
