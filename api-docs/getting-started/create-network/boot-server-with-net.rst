@@ -1,7 +1,7 @@
 .. _boot-server-with-net:
 
-Boot server with an isolated network
--------------------------------------
+Booting server with an isolated network
+---------------------------------------
 
 To create your new server and attach an isolated network, you need the following information:
 

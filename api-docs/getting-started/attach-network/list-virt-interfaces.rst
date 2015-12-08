@@ -1,7 +1,7 @@
 .. _list-virt-interfaces:
 
-List virtual interfaces for a server
-------------------------------------
+Listing virtual interfaces for a server
+---------------------------------------
 
 To validate that you created and connected the virtual interface to your server, you can 
 list the virtual interfaces for your server. 

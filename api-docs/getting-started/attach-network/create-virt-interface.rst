@@ -1,7 +1,7 @@
 .. _create-virt-interface:
 
-Create a virtual interface
---------------------------
+Creating a virtual interface
+----------------------------
 
 When you create a virtual interface, you specify the following information:
 

@@ -1,7 +1,7 @@
 .. _list-flavors:
 
-List flavors
---------------
+Listing flavors
+----------------
 
 Before you create a server, list flavors so that you can choose one for your new server.
 

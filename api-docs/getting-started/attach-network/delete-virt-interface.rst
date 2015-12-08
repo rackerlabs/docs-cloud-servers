@@ -1,7 +1,7 @@
 .. _delete-virt-interface:
 
-Delete a virtual interface
----------------------------
+Deleting a virtual interface
+-----------------------------
 
 If your server no longer needs the virtual interface, you can delete and detach it from 
 the server.
