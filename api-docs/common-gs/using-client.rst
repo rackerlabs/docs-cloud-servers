@@ -1,7 +1,7 @@
 .. _request-using-nova-client:
 
 Using the nova client
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 The nova client is an open-source Python client provides access to all public |apiservice| 
 methods. To send requests using the client, you have to install the client and set 

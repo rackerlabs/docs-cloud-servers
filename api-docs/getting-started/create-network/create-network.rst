@@ -1,7 +1,7 @@
 .. _create-network:
 
-Create network
---------------
+Creating network
+----------------
 
 Before you create a server, you create an isolated network that you can attach to your new 
 server.

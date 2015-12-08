@@ -1,7 +1,7 @@
 .. _boot-server:
 
-Boot  server 
--------------
+Booting server 
+--------------
 
 To create your new server, you need the following information:
 

@@ -13,10 +13,8 @@ Issue the following command,specifying the ID for the server that you want to de
           -X DELETE \
           -H "X-Auth-Token: $AUTH-TOKEN"
 
-   Where ``id`` is the ID of the server that you want to delete. 
+Where ``id`` is the ID of the server that you want to delete. 
 
-To see the status code that is returned from the request, you use the ``-i`` option on the 
-cURL command. This option shows the HTTP header in the output.
 
 If the delete operation was successful, it returns a ``HTTP 204`` status code, as shown in 
 the following output:

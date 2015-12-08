@@ -1,7 +1,7 @@
 .. _list-servers:
 
-List servers
-------------
+Listing servers
+---------------
 
 To show all the servers in your Cloud account, you can list servers. When you list servers, 
 the addresses for any attached networks are displayed. The networks include any isolated 

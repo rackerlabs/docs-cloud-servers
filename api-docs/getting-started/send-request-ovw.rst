@@ -1,14 +1,14 @@
 .. _send-api-requests:
 
-Sending API requests to |service|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Send API requests 
+~~~~~~~~~~~~~~~~~~
 
 .. contents::
    :local:
    :depth: 1
 
-This Getting Started Guide shows how to send requests by using 
-cURL and the Nova client command line tools.
+This Getting Started Guide shows how to send requests by using cURL and the Nova client 
+command line tools.
 
 To learn about other ways to use Rackspace Cloud API services, see the following resources:
 

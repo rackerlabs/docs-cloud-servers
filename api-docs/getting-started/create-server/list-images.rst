@@ -1,8 +1,8 @@
 .. _list-images:
 
 
-List images
-------------
+Listing images
+----------------
 
 Before you create a server, list images so that you can choose one for your new server.
 

@@ -3,9 +3,9 @@
 Service Access Endpoints
 ------------------------
 
-The Rackspace Cloud Servers service is a regionalized service. The user of the service is 
-therefore responsible for selecting the appropriate regional endpoint to ensure access to 
-servers, networks, or other Cloud services.
+The |apiservice| is a regionalized service. The user of the service is therefore responsible 
+for selecting the appropriate regional endpoint to ensure access to servers, networks, or 
+other Cloud services.
 
 .. tip:: To help you decide which regionalized endpoint to use, read about
    :kc-article:`special considerations<about-regions>` for choosing a data center.
@@ -21,15 +21,42 @@ as ``publicURL``. If you are working with servers in multiple data centers or ha
 environment where you have servers in your data centers and in Rackspace data centers, use 
 a public endpoint because it is accessible from all the servers in the different environments.
 
+.. tip::
+   If you do not know your account ID or which data center you are working in, you can find 
+   that information in your :mycloud:`Cloud Control Panel<>`.
+   
+Use one of the following service access/endpoint to access the Rackspace Cloud Servers service: 
+
++-------------------------+-----------------------------------------------------------+
+| Region                  | Endpoint                                                  |
++=========================+===========================================================+
+| Chicago (ORD)           | https://ord.servers.api.rackspacecloud.com/v2/$TENANT_ID/ |
++-------------------------+-----------------------------------------------------------+
+| Dallas/Ft. Worth (DFW)  | https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/ |
++-------------------------+-----------------------------------------------------------+
+| Northern Virginia (IAD) | https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/ |
++-------------------------+-----------------------------------------------------------+
+| London (LON)            | https://lon.servers.api.rackspacecloud.com/v2/$TENANT_ID/ |
++-------------------------+-----------------------------------------------------------+
+| Sydney (SYD)            | https://syd.servers.api.rackspacecloud.com/v2/$TENANT_ID/ |
++-------------------------+-----------------------------------------------------------+
+| Hong Kong (HKG)         | https://hkg.servers.api.rackspacecloud.com/v2/$TENANT_ID/ |
++-------------------------+-----------------------------------------------------------+
+
+Replace the ``$TENANT_ID`` with your Rackspace Cloud account number. 
+
 .. note::
+   
    You should copy the base URLs directly from the catalog rather than trying to construct 
-   them manually.
+   them manually. You can find the complete URI to access the Cloud Servers API that 
+   includes your account number in the service catalog returned in the 
+   :ref:`authentication response <review-auth-resp>`. Search the catalog for the service 
+   name, ``cloudServersOpenStack``. Then copy the URI from the *publicURL* field included 
+   in the service information. 
 
    Rackspace Cloud Identity returns a service catalog, which includes regional endpoints with 
    your account ID. Your account ID, also known as project ID or tenant ID, refers to your 
    Rackspace account number.
 
-.. tip::
-   If you do not know your account ID or which data center you are working in, you can find 
-   that information in your :mycloud:`Cloud Control Panel<>`.
 
+      

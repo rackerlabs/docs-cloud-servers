@@ -20,17 +20,17 @@ The exercises also help you learn how cURL commands and the Networks extension A
    more about neutron network operations, see 
    :rax-devdocs:`Cloud Networks Developer Guide <cloud-networks/v2/developer-guide>` 
 
-- :ref:`Create network<create-network>`
-- :ref:`List networks<list-networks>`
-- :ref:`Boot server with an isolated network<boot-server-with-net>`
-- :ref:`Get network details<get-network-details>`
-- :ref:`Delete network<delete-server>`
+- :ref:`Creating network<create-network>`
+- :ref:`Listing networks<list-networks>`
+- :ref:`Booting server with an isolated network<boot-server-with-net>`
+- :ref:`Getting network details<get-network-details>`
+- :ref:`Deleting network<delete-server>`
 
 .. toctree::
    :maxdepth: 2
 
-   Create network <create-network/create-network>
-   List flavors <create-network/list-networks>
-   Boot a new server with your cloud network <create-network/boot-server-with-net>
-   Get network details <create-network/get-network-details>
-   Delete your cloud network <create-network/delete-network>
+   Creating network <create-network/create-network>
+   Listing flavors <create-network/list-networks>
+   Booting a new server with your cloud network <create-network/boot-server-with-net>
+   Getting network details <create-network/get-network-details>
+   Deleting your cloud network <create-network/delete-network>

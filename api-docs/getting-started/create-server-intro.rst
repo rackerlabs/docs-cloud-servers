@@ -13,19 +13,19 @@ The exercises also help you learn how cURL commands and the API v2 work.
 
 You can modify these examples to create other types and sizes of servers.
 
-- :ref:`List images<list-images>`
-- :ref:`List flavors<list-flavors>`
-- :ref:`Boot server<boot-server>`
-- :ref:`Get server details<get-server-details>`
-- :ref:`List servers<list-servers>`
-- :ref:`Delete server<delete-server>`
+- :ref:`Listing images<list-images>`
+- :ref:`Listing flavors<list-flavors>`
+- :ref:`Booting server<boot-server>`
+- :ref:`Getting server details<get-server-details>`
+- :ref:`Listing servers<list-servers>`
+- :ref:`Deleting server<delete-server>`
 
 .. toctree::
    :maxdepth: 2
 
-   List images <create-server/list-images>
-   List flavors <create-server/list-flavors>
-   Boot a new server with your cloud network <create-server/boot-server>
-   Get server details <create-server/get-server-details>
-   List servers <create-server/list-servers>
-   Delete your cloud server <create-server/delete-server>
+   Listing images <create-server/list-images>
+   Listing flavors <create-server/list-flavors>
+   Booting a new server with your cloud network <create-server/boot-server>
+   Getting server details <create-server/get-server-details>
+   Listing servers <create-server/list-servers>
+   Deleting your cloud server <create-server/delete-server>

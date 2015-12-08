@@ -14,8 +14,8 @@ API v2 supports JSON request and response formats.
 .. toctree::
    :maxdepth: 2
 
-   how-curl-commands-work
    authenticate-ovw
+   service-access-endpoints
    request-response-types
    links-and-references
    paginated-collections
@@ -26,4 +26,3 @@ API v2 supports JSON request and response formats.
    role-based-access-control
    flavors
    date-time-format
-   service-access-endpoints

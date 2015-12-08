@@ -1,6 +1,6 @@
 .. _delete-server:
 
-Delete server
+Deleting server
 ---------------
 
 When you no longer need your cloud server, delete it.

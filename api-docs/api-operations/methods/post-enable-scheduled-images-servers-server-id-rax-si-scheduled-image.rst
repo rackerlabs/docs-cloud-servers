@@ -37,15 +37,17 @@ In the request body, for weekly requests, specify ``day_of_week``, which indicat
 for image creation.
 
 .. note::
+   
    Regarding Retention: 
-   * Excess scheduled image removal will be done at the time the scheduled images service 								
-   successfully adds a new snapshot to your account.
-   * The way the scheduled images service recognizes that an image is eligible for removal 
-   is by locating the following user metadata on the image: ``org.openstack__1__created-by: 									
-   scheduled-images-service``. To save an scheduled image so that it is not eligible 								
-   for retention culling, simply remove this metadata element. We do not recommend adding the 								
-   above metadata element to an image manually.
-   * If a retention value has already been specified for a server, it is overridden.
+   
+   - Excess scheduled image removal will be done at the time the scheduled images service 
+     successfully adds a new snapshot to your account.
+   - The way the scheduled images service recognizes that an image is eligible for removal 
+     is by locating the following user metadata on the image: ``org.openstack__1__created-by: 									
+     scheduled-images-service``. To save an scheduled image so that it is not eligible 								
+     for retention culling, simply remove this metadata element. We do not recommend adding the 								
+     above metadata element to an image manually.
+   - If a retention value has already been specified for a server, it is overridden.
    
 
 
