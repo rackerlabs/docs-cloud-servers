@@ -17,29 +17,29 @@
 
 - [x] Compare use case (topics) in migrated content to original content on docs.rackspace.com to identify any missing content (Cat let me know there would be some differences based on some repetition on docs.rackspace.com.)
 
-- [Opened issue] Use case H1 topics use imperative, H2 topics use gerund
+- [x] Use case H1 topics use imperative, H2 topics use gerund
 
       ![Use case titles](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-use-case-titles.png) 
 
 
 **Getting Started common content**
 
-- [Opened issue]  Prerequisites include config environment variables (late change)
+- [x]  Prerequisites include config environment variables (late change)
        
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-prereqs.png) 
        
 
-- [x - but with extra section, opened issue]  GS intro topic that follows boiler plate, might have extra content depending on product.
+- [x]  GS intro topic that follows boiler plate, might have extra content depending on product.
 
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-intro.png) 
        
 
-- [Opened issue]  Uses common Get Credentials topic ==> Save your API Key, Save your Account number are heading levels.
+- [x]  Uses common Get Credentials topic ==> Save your API Key, Save your Account number are heading levels.
 
        ![Get Credsl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-getcreds.png) 
 
 
-- [Opened issue]  Send API requests content follows template (some docs have only cURL, some have cURL and CLI)
+- [x]  Send API requests content follows template (some docs have only cURL, some have cURL and CLI)
       
 
 - [x]  Authenticate uses [common content](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-getting-started/authenticate) 
@@ -59,11 +59,11 @@
       
       ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-nav-with-client.png) 
 
-- [Open issue] Service access endpoints topic follows authentication
+- [x] Service access endpoints topic follows authentication
 
-- [Opened issue] Service access endpoints topic has link to auth response in Review Auth response section.
+- [x] Service access endpoints topic has link to auth response in Review Auth response section.
 
-- [Opened issue] How to use cURL topic not included in the General API section (info provided in common auth section)
+- [x] How to use cURL topic not included in the General API section (info provided in common auth section)
 
 
 ##Copy check
