@@ -10,8 +10,7 @@ Issue the following command to detach the virtual interface from the server.
 .. code::  
 
    $ curl -i https://$API_ENDPOINT/v2/$TENANT_ID/servers/<instance_id>/os-virtual-interfacesv2/<interface_id> \
-         -X DELETE \
-         -H "X-Auth-Token: $AUTH-TOKEN"
+         -X DELETE -H "X-Auth-Token: $AUTH-TOKEN"
 
 **Positional arguments:**
 

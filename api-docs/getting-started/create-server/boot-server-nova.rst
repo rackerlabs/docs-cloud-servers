@@ -10,7 +10,8 @@ Boot server (nova client)
 
    .. code::  
 
-       $ nova boot myUbuntuServer --image "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" --flavor 6 --key-name myKey
+       $ nova boot myUbuntuServer --image "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" \
+         --flavor 6 --key-name myKey
 
    For more information about keypairs, see 
    :ref:`Create a server key pair<post-create-a-server-key-pair-os-keypairs>`.

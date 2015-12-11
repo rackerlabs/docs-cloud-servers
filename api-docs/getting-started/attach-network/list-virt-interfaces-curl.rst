@@ -10,8 +10,7 @@ Issue the following cURL command.
 .. code::  
 
    $ curl https://$API_ENDPOINT/v2/$TENANT-ID/servers/<instance_id>/os-virtual-interfacesv2  \
-         -X GET \
-         -H "X-Auth-Token: $token" | python -m json.tool
+         -X GET -H "X-Auth-Token: $token" | python -m json.tool
 
 **Positional argument:**
 
