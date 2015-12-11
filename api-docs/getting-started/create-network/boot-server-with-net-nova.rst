@@ -9,8 +9,12 @@ Issue the following nova client command.
 
 .. code::  
 
-   $ nova boot <name> --flavor <flavor> --image <image> --nic net-id=<private-net-uuid> 
-   $ nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2
+   $ nova boot <name> --flavor <flavor> --image <image> \
+     --nic net-id=<private-net-uuid> 
+     
+   $ nova boot my_server_with_network --flavor 2 \
+     --image d42f821e-c2d1-4796-9f07-af5ed7912d0e \
+     --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2
 
 **Positional arguments:**
 
