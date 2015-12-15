@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.rackspace.cloud.apidocs</groupId>
 	<artifactId>cloud-servers-2x</artifactId>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Cloud Servers v2 API Docs</name>
 
