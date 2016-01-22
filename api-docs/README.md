@@ -1,43 +1,67 @@
-developer.rackspace.com: docs section
-======================================
+# Rackspace Cloud Servers API documentation
 
-This system uses the python sphinx tool for structure & building as part of the
-static build process. Included is a Makefile & make.bat file for cross platform
-building (for development/contribution).
+[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-servers.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-servers)
 
-Layout:
+## Purpose
 
-* **_static**: static assets unique to the documentation; this may include js,
-  css, images, etc.
-* **_templates**: custom html templates
-* **conf.py**: Configuration, no touchy.
-* **index.rst**: Main index / landing page for the docs
-* **make.bat**: windows build script
-* **Makefile**: linux/osx build
+This GitHub repository contains the source files for the following Rackspace Cloud Servers API documentation:
 
-You will need [Sphinx](http://sphinx-doc.org/) installed to build - however to
-contribute, all you need is a basic understanding of the project layout and
-Restructured Text. [Here is an excellent ReST primer](http://sphinx-doc.org/rest.html).
+* [Cloud Servers Developer Guide](https://developer.rackspace.com/docs/cloud-servers/v1/developer-guide/)
 
-Once you're all set up: in order to build run:
+## Contributing
 
-```
-make html
-```
+Contributions are welcome! 
 
-You will see the build output and the static files will be dropped in:
+* To suggest changes or report a problem, submit an [issue](https://github.com/rackerlabs/docs-cloud-servers/issues). 
 
-```
-_build/html
-```
+* To make changes to a project, create your own fork of the repository. Then, submit a [pull 
+request](https://github.com/rackerlabs/docs-cloud-servers/compare?expand=1) to have your changes reviewed 
+and merged into the master branch as appropriate.
 
-On OS/X you can run:
+To contribute content, all you need is an editor and a 
+basic understanding of the project layout and [reStructuredText](http://sphinx-doc.org/rest.html) syntax.
 
-```
-open _build/html/cloud-servers/dev-guide/index.html
-```
+You can use the GitHub editor or any text editor to work with documentation source files. For quick syntax checking, try the 
+[Online restructuredText editor](http://rst.ninjs.org/). 
 
-To pop open the doc index and preview.
+**Note:** If you want to build the project, you need to install the [Sphinx documentation generator](http://www.sphinx-doc.org/en/stable/install.html). 
 
+## Source format
 
+The Rackspace developer documentation is developed and built using the [Python Sphinx documentation generator](http://sphinx-doc.org/). Content is 
+written in [reStructuredText](http://sphinx-doc.org/rest.html), the markup syntax and parser component of 
+[Python Docutils](http://docutils.sourceforge.net/index.html).
 
+The repository includes the documentation source files, 
+Sphinx configuration and build files, as well any required Sphinx 
+extensions and build tools. 
+
+## Structure
+
+Source files for the Sphinx documentation project are in the ``api-docs`` directory. Here are the key files that define 
+the Sphinx project and content architecture for the documentation: 
+
+Content | File
+--- | ---
+Content | File
+--- | ---
+|Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/conf.py) (Typically, this file does not require changes.)
+|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/index.rst)
+|About the API index| [overview/index.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/overview/index.rst)
+|Getting Startted introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/getting-started.rst)
+|Getting Started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/getting-started/index.rst)
+|Developer Guide introduction|[developer-guide.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/developer-guide.rst)
+|Concepts section| [concepts.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/concepts.rst)
+|General API information index|[general-api-info/index.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/general-api/index.rst)
+|API Reference introduction|[api-reference.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/api-reference.rst)
+|API Reference index|[api-operations/index.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/api-operations/index.rst)
+|API operations methods, including code samples|[api-operations/methods](https://github.com/rackerlabs/docs-cloud-servers/tree/master/api-docs/api-operations/methods) 
+|Release notes|[release-notes.rst](https://github.com/rackerlabs/docs-cloud-servers/blob/master/api-docs/release-notes.rst)
+|**make.bat**|Windows build script
+|**Makefile**| Linux and OS X build
+
+### Support and feedback
+
+If you find a problem, open a GitHub [issue](https://github.com/rackerlabs/docs-cloud-servers/issues).
+
+If you need additional assistance, contact us at [devdoc@rackspace.com](mailto:devdoc@rackspace.com).
