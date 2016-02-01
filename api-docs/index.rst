@@ -30,3 +30,4 @@ Learn how to use the |service| service by using the REST API.
    api-reference
    api-operations/index
    release-notes
+   copyright
