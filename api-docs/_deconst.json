@@ -2,4 +2,7 @@
   "contentIDBase": "https://github.com/rackerlabs/docs-cloud-servers/",
   "githubUrl": "https://github.com/rackerlabs/docs-cloud-servers/",
   "githubBranch": "master"
+  "meta": {
+    "preferGithubIssues": false
+  }
 }
