@@ -45,5 +45,4 @@ This document describes the features available with API |contract version|.
    :maxdepth: 3
    
    additional-resources
-   pricing-and-service-level
    api-service-updates
