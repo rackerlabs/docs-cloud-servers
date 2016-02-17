@@ -8,7 +8,7 @@ Disable scheduled Images
 
 .. code::
 
-    DELETE /servers/{server_id}/rax-si-scheduled-image
+    DELETE /servers/{server_id}/rax-si-image-schedule
 
 This operation disables scheduled images by deleting the image_schedule resource that 
 indicates the scheduled image service should create snapshots of this server. Thus 

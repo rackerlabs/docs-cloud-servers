@@ -8,7 +8,7 @@ Enable scheduled Images
 
 .. code::
 
-    POST /servers/{server_id}/rax-si-scheduled-image
+    POST /servers/{server_id}/rax-si-image-schedule
 
 This operation enables scheduled images on a server, by creating a image_schedule resource. 
 When your images are created, they are named according to one of the following schemes: 

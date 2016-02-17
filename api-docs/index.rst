@@ -25,7 +25,7 @@ Learn how to use the |service| service by using the REST API.
    getting-started/index
    developer-guide
    concepts
-   general-api/index
+   general-api-info/index
    extensions/index
    api-reference
    api-operations/index
