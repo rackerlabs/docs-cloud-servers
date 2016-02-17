@@ -8,7 +8,7 @@ Show scheduled Images
 
 .. code::
 
-    GET /servers/{server_id}/rax-si-scheduled-image
+    GET /servers/{server_id}/rax-si-image-schedule
 
 This operation shows scheduled images for the specified server.
 
