@@ -1,14 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _put-attach-volume-to-server-servers-server-id-os-volume-attachments:
+.. _post-attach-volume-to-server-servers-server-id-os-volume-attachments:
 
 Attach volume to server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    PUT /servers/{server_id}/os-volume_attachments
+    POST /servers/{server_id}/os-volume_attachments
 
 This operation attaches a data volume to a specified server.
 
