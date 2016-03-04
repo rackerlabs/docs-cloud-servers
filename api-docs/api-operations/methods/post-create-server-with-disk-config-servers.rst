@@ -20,7 +20,7 @@ target flavor disk is larger, remaining disk space is left unpartitioned. A ser
 the ``OS-DCF:diskConfig`` attribute from the image from which it is created. However, you 
 can override the ``OS-DCF:diskConfig`` value when you create a server.
 
-In this example, the server is created with ``OS-DCF:diskConfig`` set to ``MANUAL``.This 
+In this example, the server is created with ``OS-DCF:diskConfig`` set to ``AUTO``.This 
 request's success depends on the image's auto_disk_config metadata value. An image created 
 from a server will have appropriate auto_disk_config metadata written to it. So, if the 
 create server command succeeds, an image created from the server will have 

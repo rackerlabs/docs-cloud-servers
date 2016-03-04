@@ -5,6 +5,8 @@ Server operations
 
 This section covers the following basic server operations:
 
+.. LINKS TO OPS
+
 Basic Operations:
 	- :ref:`Create server <post-create-server-servers>`
 	- :ref:`Create server with disk config <post-create-server-with-disk-config-servers>`
@@ -23,7 +25,7 @@ Key Pairs Operations:
 	- :ref:`Delete key pair <delete-delete-key-pair-os-keypairs-keypair-name>`
 
 Volume Operations:
-	- :ref:`Attach volume to server <put-attach-volume-to-server-servers-server-id-os-volume-attachments>`
+	- :ref:`Attach volume to server <post-attach-volume-to-server-servers-server-id-os-volume-attachments>`
 	- :ref:`List volumes <get-list-servers-server-id-os-volume-attachments>`
 	- :ref:`Show volume details <get-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id>`
 	- :ref:`Detach volume from server <delete-delete-volume-attachment-from-server-servers-server-id-os-volume-attachments-attachment-id>`
@@ -58,6 +60,8 @@ Server Metadata Operations:
 	- :ref:`Set server metadata item for a specific server <put-set-server-metadata-item-servers-server-id-metadata-key>`
 	- :ref:`Update server metadata item for a specific server <delete-delete-server-metadata-item-servers-server-id-metadata-key>`
 
+.. INCLUDES FOR OP FILES
+
 .. BASIC OPS
 
 .. include:: methods/post-create-server-servers.rst
@@ -79,7 +83,7 @@ Server Metadata Operations:
 
 .. VOLUMES OPS
 
-.. include:: methods/put-attach-volume-to-server-servers-server-id-os-volume-attachments.rst
+.. include:: methods/post-attach-volume-to-server-servers-server-id-os-volume-attachments.rst
 .. include:: methods/get-list-servers-server-id-os-volume-attachments.rst
 .. include:: methods/get-show-volume-attachment-details-servers-server-id-os-volume-attachments-attachment-id.rst
 .. include:: methods/delete-delete-volume-attachment-from-server-servers-server-id-os-volume-attachments-attachment-id.rst
