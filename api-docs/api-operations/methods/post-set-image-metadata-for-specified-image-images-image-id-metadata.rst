@@ -21,12 +21,14 @@ The optional key, ``auto_disk_config``,  determines how a cloud server's root di
 partition is handled when the server is started or resized. It has the following possible 
 user-selectable values:
 
--  ``TRUE``: The root partition is expanded to encompass all of the available virtual disk. 
-    This setting results in an OS_DCF:diskConfig value of ``AUTO`` on a server built with 
-    this image.
--  ``FALSE``: The root partition remains the same size as the original image.  Extra
-    virtual disk is seen as unformatted free space by the operating system. This setting 
-    results in an OS_DCF:diskConfig value of ``MANUAL`` on a server built with this image.
+-  ``TRUE``: 
+    The root partition is expanded to encompass all of the available virtual disk. This 
+    setting results in an OS_DCF:diskConfig value of ``AUTO`` on a server built with this 
+    image.
+-  ``FALSE``: 
+    The root partition remains the same size as the original image.  Extra virtual disk is 
+    seen as unformatted free space by the operating system. This setting results in an 
+    OS_DCF:diskConfig value of ``MANUAL`` on a server built with this image.
  
 The non-user-selectable value ``DISABLED`` results in an OS_DCF:diskConfig value of 
 ``MANUAL`` on a server built with this image.
