@@ -17,6 +17,28 @@ existing metadata keys, those entries will be changed to match the keys in the r
 
 Specify the image ID in the URI.
 
+The optional key, ``auto_disk_config``,  determines how a cloud server's root disk 
+partition is handled when the server is started or resized. It has the following possible 
+user-selectable values:
+
+-  ``TRUE``: The root partition is expanded to encompass all of the available virtual disk. 
+    This setting results in an OS_DCF:diskConfig value of ``AUTO`` on a server built with 
+    this image.
+-  ``FALSE``: The root partition remains the same size as the original image.  Extra
+    virtual disk is seen as unformatted free space by the operating system. This setting 
+    results in an OS_DCF:diskConfig value of ``MANUAL`` on a server built with this image.
+ 
+The non-user-selectable value ``DISABLED`` results in an OS_DCF:diskConfig value of 
+``MANUAL`` on a server built with this image.
+
+The auto_disk_config key is related to, and can actually control, the available 
+:rax-devdocs:`Disk Configuration Extension<cloud-servers/v2/developer-guide/#disk-configuration-extension>` 
+attribute: OS-DCF:diskConfig.
+
+.. warning::
+
+	We do not advise changing auto_disk_config during resizes, even when allowed, since it 
+	can have unintended consequences.
 
 
 This table shows the possible response codes for this operation:

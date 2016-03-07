@@ -24,7 +24,7 @@ In this example, the server is created with ``OS-DCF:diskConfig`` set to ``AUTO`
 request's success depends on the image's auto_disk_config metadata value. An image created 
 from a server will have appropriate auto_disk_config metadata written to it. So, if the 
 create server command succeeds, an image created from the server will have 
-``auto_disk_config`` = ``False`` on it.
+``auto_disk_config`` = ``True`` on it.
 
 
 
