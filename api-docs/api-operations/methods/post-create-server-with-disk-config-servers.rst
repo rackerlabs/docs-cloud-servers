@@ -17,8 +17,9 @@ the server is built with a single partition that is expanded to the disk size of
 selected. When you set the ``OS-DCF:diskConfig`` attribute to ``MANUAL``, the server is 
 built by using the partition scheme and file system that is in the source image.  If the 
 target flavor disk is larger, remaining disk space is left unpartitioned. A server inherits 
-the ``OS-DCF:diskConfig`` attribute from the image from which it is created. However, you 
-can override the ``OS-DCF:diskConfig`` value when you create a server.
+the ``OS-DCF:diskConfig`` attribute from the image from which it is created, based on the 
+image's ``auto-disk-config`` value. However, you may be able to override the server's 
+``OS-DCF:diskConfig`` value when you create the server.
 
 In this example, the server is created with ``OS-DCF:diskConfig`` set to ``AUTO``.This 
 request's success depends on the image's auto_disk_config metadata value. An image created 
