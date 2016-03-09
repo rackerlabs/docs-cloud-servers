@@ -7,7 +7,7 @@ We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspac
 
 Use the links below to learn more about the Rackspace Cloud Servers service and API.
 
-- For general information about Cloud Servers, see the :kc-article:`Cloud Servers FAQ <cloud-servers-frequently-asked-questions>` 
+- For general information about Cloud Servers, see the :how-to:`Cloud Servers FAQ <cloud-servers-frequently-asked-questions>` 
   article.
 
 - To learn more about the Cloud Servers service and the various ways you can interact 

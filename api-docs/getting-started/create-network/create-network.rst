@@ -10,7 +10,7 @@ To create an isolated network, you specify a name for your network and a Classle
 Inter-Domain Routing (CIDR). A CIDR is a range of IP addresses used by a network. 
 A CIDR address looks like a normal IP address except that it ends with a slash followed by 
 a number. The number after the slash represents the number of addresses in the range.
-For more information, see :kc-article:`CIDR Notation<using-cidr-notation>`.
+For more information, see :how-to:`CIDR Notation<using-cidr-notation>`.
 
 **Limitations**
 

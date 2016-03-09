@@ -20,7 +20,7 @@ The simple exercises in this guide help you get started with the |apiservice|.
 
 For each exercise in this guide, you choose one of the following methods to make API calls:
 
--  The :kc-article:`Nova Client<using-python-novaclient-with-the-rackspace-cloud>`.
+-  The :how-to:`Nova Client<using-python-novaclient-with-the-rackspace-cloud>`.
    We recommend that you use the nova client to run simple commands that make API v2 calls. 
    This open-source Python client runs on Linux or Mac OS X systems and is easy to learn 
    and use. You can specify a debug parameter on any nova command to show the underlying API 
@@ -54,7 +54,7 @@ client, the basic steps are the same.
    .. tip:: 
 
       To help you decide which regionalized endpoint to use, see 
-      :kc-article:`special considerations<about-regions>`.
+      :how-to:`special considerations<about-regions>`.
 
 #. **Select your operating system**
 
