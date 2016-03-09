@@ -57,7 +57,7 @@ This table shows the body parameters for the request:
 +----------------------+-------------+----------------------------------------------------------+
 |network.\ **cidr**    |Uuid         |The IP block from which to allocate the network. For      |
 |                      |*(Required)* |example, 172.16.0.0/24 or 2001:DB8::/64. For more         |
-|                      |             |information about CIDR notation, :kc-article:`Using CIDR  |
+|                      |             |information about CIDR notation, :how-to:`Using CIDR  |
 |                      |             |Notation in Cloud Networks<using-cidr-notation>`.         |
 +----------------------+-------------+----------------------------------------------------------+
 |network.\  **label**  |String       |The name of the new network. For example, my_new_network. |

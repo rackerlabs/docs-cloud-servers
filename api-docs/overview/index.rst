@@ -36,7 +36,7 @@ are known collectively as API |contract version|.
    window has not been scheduled, you will not see these metadata keys.
 
    For more information about the server migration see the article: 
-   :kc-article:`First Generation to Next Generation cloud server migration <first-generation-to-next-generation-cloud-server-migration-faq>`
+   :how-to:`First Generation to Next Generation cloud server migration <first-generation-to-next-generation-cloud-server-migration-faq>`
 
 This document describes the features available with API |contract version|.
 
