@@ -121,58 +121,56 @@ flavors with Cloud Block Storage.
 OnMetal Cloud Server Flavors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OnMetal Cloud Server flavors differ significantly from Virtual Cloud
-Server flavors. Virtual Cloud Server flavors are used to create virtual
-servers with a hypervisor to manage multi-tenancy, which means one or
-more virtual instances are located on the same physical server. OnMetal
-Cloud Server flavors are used to rapidly build a server instance on a
-physical server with no hypervisor and no multi-tenancy.
+OnMetal Cloud Server flavors differ significantly from Virtual Cloud Server flavors. 
+Virtual Cloud Server flavors are used to create virtualservers on a hypervisor, which means 
+one or more virtual instances are located on the same physical server. OnMetal Cloud Server 
+flavors are used to rapidly build a server instance on a physical server with no hypervisor 
+and no multi-tenancy.
 
 OnMetal server flavors include the following:
 
 **OnMetal v2 I/O**
-- Two Intel Xeon E5-2660 v3 processors
-- Twenty cores at 2.6 Ghz
-- Memory: 128 GB RAM
-- Storage: Two 240 GB SSD disks
-- Flash: Two 1.6 TB PCIe (providing 10% to 20% iops improvement over OnMetal v1 I/O 
- flavor).
+  - Two Intel Xeon E5-2660 v3 processors
+  - Twenty cores at 2.6 Ghz
+  - Memory: 128 GB RAM
+  - Storage: Two 240 GB SSD disks
+  - Flash: Two 1.6 TB PCIe (providing 10% to 20% iops improvement over OnMetal v1 I/O flavor).
 
 **OnMetal v2 General Purpose Small**
-- One Intel Xeon E5-2620 v3 processor
-- Six cores at 2.4 Ghz
-- Memory: 32 GB RAM
-- Storage: Two 800 GB SSD disks
+  - One Intel Xeon E5-2620 v3 processor
+  - Six cores at 2.4 Ghz
+  - Memory: 32 GB RAM
+  - Storage: Two 800 GB SSD disks
 
 **OnMetal v2 General Purpose Medium**
-- Two Intel Xeon E5-2620 v3 processors
-- Twelve cores at 2.4 Ghz
-- Memory: 64 GB RAM
-- Storage: Two 800 GB SSD disks
+  - Two Intel Xeon E5-2620 v3 processors
+  - Twelve cores at 2.4 Ghz
+  - Memory: 64 GB RAM
+  - Storage: Two 800 GB SSD disks
 
 **OnMetal v2 General Purpose Large**
-- Two Intel Xeon E5-2620 v3 processors
-- Twelve cores at 2.4 Ghz
-- Memory: 128 GB RAM
-- Storage: Two 800 GB SSD disks
+  - Two Intel Xeon E5-2620 v3 processors
+  - Twelve cores at 2.4 Ghz
+  - Memory: 128 GB RAM
+  - Storage: Two 800 GB SSD disks
 
 **OnMetal v1 Compute** 
-- One Intel Xeon E5-2680 v2 processor
-- 1x10 core at 2.8 Ghz
-- Memory: 32 GB RAM
-- Storage: 32 GB SATADOM
+  - One Intel Xeon E5-2680 v2 processor
+  - 1x10 core at 2.8 Ghz
+  - Memory: 32 GB RAM
+  - Storage: 32 GB SATADOM
 
 **OnMetal v1 Memory** 
-- One Intel Xeon E5-2630 v2 processor
-- Six cores at 2.6 Ghz
-- Memory: 32 GB RAM
-- Storage: Two 800 GB SSD disks
+  - One Intel Xeon E5-2630 v2 processor
+  - Six cores at 2.6 Ghz
+  - Memory: 32 GB RAM
+  - Storage: Two 800 GB SSD disks
 
 **OnMetal v1 I/O** 
-- One Intel Xeon E5-2680 v2 processor
-- 2x10 core at 2.8 Ghz
-- Memory: 128 GB RAM
-- Storage: 32 GB SATADOM and two 1.6 TB Seagate Nyto WarpDrives
+  - One Intel Xeon E5-2680 v2 processor
+  - 2x10 core at 2.8 Ghz
+  - Memory: 128 GB RAM
+  - Storage: 32 GB SATADOM and two 1.6 TB Seagate Nyto WarpDrives
 
 
 Use Compute flavors for high CPU activity like network requests, application logic, web 
