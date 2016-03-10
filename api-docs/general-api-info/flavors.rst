@@ -133,26 +133,26 @@ OnMetal server flavors include the following:
   - Two Intel Xeon E5-2660 v3 processors
   - Twenty cores at 2.6 Ghz
   - Memory: 128 GB RAM
-  - Storage: Two 240 GB SSD disks
+  - Storage: Two 240 GB SSD disks (RAID 1 protected)
   - Flash: Two 1.6 TB PCIe (providing 10% to 20% iops improvement over OnMetal v1 I/O flavor).
 
 **OnMetal v2 General Purpose Small**
   - One Intel Xeon E5-2620 v3 processor
   - Six cores at 2.4 Ghz
   - Memory: 32 GB RAM
-  - Storage: Two 800 GB SSD disks
+  - Storage: Two 800 GB SSD disks (RAID 1 protected)
 
 **OnMetal v2 General Purpose Medium**
   - Two Intel Xeon E5-2620 v3 processors
   - Twelve cores at 2.4 Ghz
   - Memory: 64 GB RAM
-  - Storage: Two 800 GB SSD disks
+  - Storage: Two 800 GB SSD disks (RAID 1 protected)
 
 **OnMetal v2 General Purpose Large**
   - Two Intel Xeon E5-2620 v3 processors
   - Twelve cores at 2.4 Ghz
   - Memory: 128 GB RAM
-  - Storage: Two 800 GB SSD disks
+  - Storage: Two 800 GB SSD disks (RAID 1 protected)
 
 **OnMetal v1 Compute** 
   - One Intel Xeon E5-2680 v2 processor
