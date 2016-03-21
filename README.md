@@ -9,7 +9,7 @@ This repository contains the source files that generate the following Cloud Serv
 * [API Reference](https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#api-reference)
 
 When you commit changes to the master branch of this repository, the 
-[TravisCI/CD build job](https://travis-ci.org/rackerlabs/docs-cloud-servers) 
+[Strider CI/CD build job](https://build.developer.rackspace.com/rackerlabs/docs-cloud-servers/)
 builds the documentation. Successful builds are deployed to production.
 
 ### Support and feedback

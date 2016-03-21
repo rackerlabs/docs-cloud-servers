@@ -1,7 +1,7 @@
 .. _create-network-intro:
 
 Create your first network
--------------------------
+-----------------------------
 
 Rackspace first introduced networking services that were based on the OpenStack Nova-Network 
 API and exposed these services via the ``/os-networksv2`` Cloud Servers extension.
@@ -20,17 +20,17 @@ The exercises also help you learn how cURL commands and the Networks extension A
    more about neutron network operations, see 
    :rax-devdocs:`Cloud Networks Developer Guide <cloud-networks/v2/developer-guide>` 
 
-- :ref:`Creating network<create-network>`
-- :ref:`Listing networks<list-networks>`
-- :ref:`Booting server with an isolated network<boot-server-with-net>`
-- :ref:`Getting network details<get-network-details>`
-- :ref:`Deleting network<delete-server>`
+- :ref:`Creating network<creating-network>`
+- :ref:`Listing networks<listing-networks>`
+- :ref:`Booting server with an isolated network<booting-server-with-net>`
+- :ref:`Getting network details<getting-network-details>`
+- :ref:`Deleting network<deleting-server>`
 
 .. toctree::
    :maxdepth: 2
 
-   Creating network <create-network/create-network>
-   Listing flavors <create-network/list-networks>
-   Booting a new server with your cloud network <create-network/boot-server-with-net>
-   Getting network details <create-network/get-network-details>
-   Deleting your cloud network <create-network/delete-network>
+   Creating network <create-network/creating-network>
+   Listing flavors <create-network/listing-networks>
+   Booting a new server with your cloud network <create-network/booting-server-with-net>
+   Getting network details <create-network/getting-network-details>
+   Deleting your cloud network <create-network/deleting-network>
