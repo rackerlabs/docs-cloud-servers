@@ -64,7 +64,7 @@ This table shows the body parameters for the request:
 |network.\  **label**  |String       |The name of the new network. For example, my_new_network. |
 |                      |*(Required)* |                                                          |
 +----------------------+-------------+----------------------------------------------------------+
-https://support.rackspace.com/how-to/using-cidr-notation-in-cloud-networks/
+
 **Example Create network: JSON request**
 
 
