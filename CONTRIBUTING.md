@@ -1,7 +1,7 @@
 # Contributor guidelines
 
 These guidelines provide the general process for maintaining source code that builds the 
-Rackspace Cloud Identity developer documentation. 
+Rackspace Cloud Servers developer documentation. 
 
 - [Project description](#project-description)
 - [Updating and adding content](#updating-and-adding-content)
@@ -82,11 +82,11 @@ After content has been reviewed and approved, the updates can be merged to the m
 triggers the build and deploy process. Typically, new content is available on developer.rackspace.com within a 
 minute or two after it is merged. Larger updates might take a bit longer.
 
-<!-- ## Previewing changes
+## Previewing changes
 
 When you submit a pull request, the Strider build process creates a preview of your changes in a staging 
 environment. After the build process completes, the following message displays in the pull request comments 
-with a link to the content: ``Your content preview is now ready.`` -->
+with a link to the content: ``Your content preview is now ready.``
 
 You can also build the project locally using the [Sphinx documentation generator](http://sphinx-doc.org/). 
 For details, see 
