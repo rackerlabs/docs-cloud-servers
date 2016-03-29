@@ -144,6 +144,7 @@ Information about the environment variables is provided after the examples.
 .. code::
 
      export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
+     export OS_AUTH_SYSTEM=rackspace
      export OS_USERNAME=yourUserName
      export OS_TENANT_ID=yourTenantId
      export OS_REGION_NAME=yourRegionName
@@ -158,6 +159,9 @@ The following table describes the environment variables:
 |                       | service, which the heat client uses for          |
 |                       | authentication.                                  |
 +-----------------------+--------------------------------------------------+
+| OS_AUTH_SYSTEM        | The authentication system required to get your   |
+|                       | credentials.                                     |
++-----------------------+--------------------------------------------------+
 | OS_USERNAME           | Your Rackspace Cloud user name.                  |
 +-----------------------+--------------------------------------------------+
 | OS_TENANT_ID          | Your Rackspace Cloud tenant ID (account number)  |
@@ -166,7 +170,7 @@ The following table describes the environment variables:
 |                       | you want to deploy the Cloud Servers resources.  |
 |                       | For details, see :ref:`service-access-endpoints`.|
 +-----------------------+--------------------------------------------------+
-| OS_PASSWORD           | Your Rackspace Cloud password.                   |
+| OS_PASSWORD           | Your Rackspace API key.                          |
 +-----------------------+--------------------------------------------------+
 
 Be sure to source the file containing the environment variables after editing so that the 
