@@ -3,8 +3,10 @@
 Authenticating by using the nova client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To authenticate using the nova client and get the service catalog, perform teh following 
+To authenticate using the nova client and get the service catalog, perform the following 
 steps:
+
+#. :ref:`Set your environment variables<set-environment-variables>`.
 
 #. Get an authentication token:
 
