@@ -148,7 +148,7 @@ Information about the environment variables is provided after the examples.
      export OS_USERNAME=yourUserName
      export OS_TENANT_ID=yourTenantId
      export OS_REGION_NAME=yourRegionName
-     export OS_PASSWORD=yourPassword
+     export OS_PASSWORD=yourAPIKey
 
 The following table describes the environment variables:
 
