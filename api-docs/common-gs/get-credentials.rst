@@ -1,7 +1,7 @@
-.. _get-credentials:
+.. _user-credentials:
 
 Get your credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Log in to the :mycloud:`Rackspace Cloud Control Panel<>` to get your Rackspace Cloud account 
 username, API key, and account number. You'll need this information to communicate with 
@@ -18,14 +18,14 @@ Then, select **Account Settings** to open the page.
 
 
 Save your API key
-^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 
 - On the Account Settings page, find the API Key in the **Login Details** section.
 - Click  **Show** to see the value and copy it to a text editor of your choice.
 - Click **Hide** to secure the API key value in the browser.
 
 Save your account number
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 
 - On the Account Settings page, scroll down to the **Account Details** section.
 - Copy and save the account number.

@@ -2,32 +2,30 @@
 
 :collapseSections: true
 
-================================================
-Rackspace Cloud Servers API |contract version|
-================================================
+=====================================================
+Rackspace Cloud Servers Admin API |contract version|
+=====================================================
 
 *Last updated:* |today|
 
 Learn how to use the |service| service by using the REST API.
 
-- :ref:`Getting Started Guide <getting-started>`
+- :ref:`Getting Started Guide <getting-started-guide>`
 - :ref:`Developer Guide <developer-guide>`
 - :ref:`API reference <api-reference>`
 - :ref:`Release Notes <release-notes>`
 
-.. toctree:: :hidden:
+.. toctree::  
+   :hidden:
    :maxdepth: 2
 
-   Cloud Servers 2.0 <self>
+   Cloud Servers Admin API 2.0 <https://pages.github.rackspace.com/IX/internal-docs-cloud-servers-1>
    API Status <https://status.rackspace.com/>
    About the API <overview/index>
-   getting-started
    getting-started/index
-   developer-guide
-   concepts
-   general-api-info/index
+   developer-guide/index
    extensions/index
-   api-reference
+   nova-commands/index
    api-operations/index
    release-notes
    copyright

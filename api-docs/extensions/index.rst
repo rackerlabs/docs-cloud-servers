@@ -1,27 +1,16 @@
 .. _extensions-index:
 
-==============
 API extensions
-==============
+-------------------
 
 Rackspace has implemented several Cloud servers extensions, which provide either new 
-functionality or enhanced functionality for existing operations. 
+functionality or enhanced functionality for existing operations, which are documented in
+:rax-devdocs:`Rackspace API Documentation <cloud-servers/v2/developer-guide/#document-extensions>`.
+Some extension, however, responds with details inappropriate for the public 
+documentation, so it is included here.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   rackspace-extensions
-   ext-disk-configuration
-   ext-extended-status
-   ext-rescue-mode
-   ext-used-limits
-   ext-scheduled-images
-   ext-flavors-extra-specs
-   ext-flavors-os-extra-specs
-   ext-server-actions
-   ext-config-drive
-   ext-volumes
-   ext-boot-from-volume
-   ext-network
-   ext-virtual-interface
-.. COMMENT SCHEDHINT ext-sched-hint
+   ext-os-instance-actions
+   ext-services

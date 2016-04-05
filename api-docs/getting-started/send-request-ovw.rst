@@ -3,10 +3,11 @@
 Send API requests 
 ~~~~~~~~~~~~~~~~~~
 
+
 .. contents::
    :local:
    :depth: 1
-
+   
 This Getting Started Guide shows how to send requests by using cURL and the Nova client 
 command line tools.
 
@@ -24,3 +25,5 @@ To learn about other ways to use Rackspace Cloud API services, see the following
 
 .. include:: ../common-gs/how-to-use-curl.rst
 .. include:: ../common-gs/using-client.rst
+.. include:: ../common-gs/using-super-nova-client.rst
+.. include:: ../common-gs/using-keyring.rst

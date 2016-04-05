@@ -53,10 +53,11 @@ master_doc = 'index'
 # builder = 'deconst-serial'
 builder = 'deconst-single'
 
+
 # General information about the project.
-project = 'Rackspace Cloud Servers'
-copyright = '2015, Cat Lookabaugh'
-author = 'Cat Lookabaugh'
+project = 'Rackspace Internal Developer Documentation'
+copyright = '2016, Rackspace'
+
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -79,8 +80,8 @@ release = '2'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples', 'api-operations/methods*', 
-'common-gs', 'getting-started/examples']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods', 
+                    'common-gs', 'getting-started/examples', 'nova-commands/commands*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -128,7 +129,7 @@ extlinks = {
 
 rst_epilog = """
 .. |service| replace:: Rackspace Cloud Servers
-.. |apiservice| replace:: Rackspace Cloud Servers API
+.. |apiservice| replace:: Rackspace Cloud Servers Administration API
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: 2.0
 .. |product name| replace:: Rackspace Cloud Servers
@@ -161,12 +162,12 @@ todo_include_todos = False
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = 'Rackspace Cloud Servers version 2 API Developer Guide'
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+html_theme = 'sphinx_rtd_theme'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = 'Rackspace Cloud Servers'
+html_short_title = 'Rackspace Cloud Servers Administration API 2.0'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -229,7 +230,7 @@ html_static_path = ["_static"]
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'docs-cloud-serversdoc'
+htmlhelp_basename = 'docs-cloud-serversdoc-admin'
 
 # this will change the 'paragraph' character to '#'
 html_add_permalinks = '#'
@@ -251,7 +252,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'docs-cloud-servers.tex', 'Rackspace Cloud Servers API Developer Guide',
+  (master_doc, 'docs-cloud-servers.tex', 'Rackspace Cloud Servers Administration API Developer Guide',
    'cat.lookabaugh', 'manual'),
 ]
 
@@ -281,7 +282,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
+    (master_doc, 'Administration API Guide', 'Rackspace Internal API Developer Documentation',
      'Cat Lookabaugh', 1)
 ]
 
@@ -295,7 +296,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'docs-cloud-lservers', 'Rackspace Cloud Servers API Developer Guide',
+  (master_doc, 'docs-cloud-lservers', 'Rackspace Cloud Servers Administrator API Guide',
    'Cat Lookabaugh', 'docs-cloud-servers','Learn about using the Rackspace Cloud Servers service',
    'Miscellaneous'),
 ]
