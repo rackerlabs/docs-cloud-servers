@@ -2,16 +2,20 @@
    :description: Rackspace Cloud Servers API Reference
    :keywords: Rackspace, Cloud Servers ReST API, API resources, API methods
 
+.. _api-reference:
 
-.. toctree:: 
-   :caption: API Reference
-   :maxdepth: 2
+Admin API reference
+-------------------------
+
+Learn about the available |apiservice| resources and methods and see request and
+response examples.
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
    
-   svr-basic-operations
-   svr-flavors-operations
-   svr-images-operations
-   svr-networks-operations
-   svr-misc-operations
-   
-   
-   
+   os-instance-action-ops
+   reset-server-state-op
+   services-ops
+

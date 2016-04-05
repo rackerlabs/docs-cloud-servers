@@ -3,19 +3,18 @@
 Prerequisites
 ~~~~~~~~~~~~~~~
 
-- Rackspace Cloud account
-- Username and password to access the account
-- API key to access Rackspace Cloud services
-- Account number
+To use the getting started examples, ensure that you have the following information and 
+resources available: 
+
+- :ref:`Admin API credentials <admin-credentials>` 
+- :ref:`User credentials <user-credentials>`
 - :ref:`Command line tool or browser client<send-api-requests>` to communicate with the 
   API service
-- Configure environment variables for 
-  :ref:`cURL<configure-environment-variables>` or 
-  :ref:`nova client<set-environment-variables>`
-  command line tools
+- Configure environment variables for the following tools that you use:
 
-If you don't have one, sign up for a :rax-cart:`Rackspace Cloud account <cloud>`.
-You can find your account number and API key on the Account Settings page in the 
-:mycloud:`Cloud Control Panel<>`.
+  - :ref:`cURL<configure-environment-variables>` 
+  - :ref:`nova client<set-nova-environment-variables>`
+  - :ref:`supernova client<set-supernova-environment-variables>`
 
-.. include:: ../common-gs/get-credentials.rst
+.. include::  ../common-gs/get-admin-credentials.rst
+.. include::  ../common-gs/get-credentials.rst
