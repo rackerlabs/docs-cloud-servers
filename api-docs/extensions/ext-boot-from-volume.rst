@@ -30,7 +30,7 @@ you how to create a bootable volume from an image, and use the volume to boot an
 instead of using an image.
 
 Procedure: To create a bootable image and boot a server
--------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Create a bootable volume from an image.
 
@@ -104,7 +104,7 @@ Procedure: To create a bootable image and boot a server
 You can also create a bootable volume and boot a server in a single step.
 
 Procedure: To create a bootable image and boot a server in a single step
-------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Boot server from bootable volume, without first creating the volume:
 
@@ -190,11 +190,19 @@ API operations for creating or using bootable volumes
 
 The ``POST /servers`` operation creates a bootable volume and boots a server in one step 
 when you send the correct request body.
-
-.. note::
-   The ``block_device_mapping_v2`` attribute uuid could be the ID of Cloud Image or
-   an already prepared volume. In the following example, it's a Cloud Images
-   image with the uuid ``bb02b1a3-bc77-4d17-ab5b-421d89850fca``, and thus the
-   block_device_mapping_v2 attribute source_type is set to image.
    
 For an example of this operation, see :ref:`Boot from volume operation <post-create-bootable-volume-and-server-servers>`.
+
+Block-device-mapping attribute versus block-device attribute
+-------------------------------------------------------------
+
+How do you know when to use the ``block_device_mapping`` (or ``--block-device-mapping``, in 
+nova) attribute rather than the ``block_device_mapping_v2`` (or ``--block-device``, in nova) 
+attribute? 
+
+Use ``block-device-mapping`` attribute, if you already have a bootable volume or plan to 
+create one in a separate step, prior to attempting the boot from volume.  
+
+The ``block_device_mapping_v2`` attribute allows for more flexibility allowing for various 
+source types (image, volume, snapshot, or blank) and destination types (local or volume). 
+This attribute also supports more hypervisors and doesn't require a volume to be set up first. 
