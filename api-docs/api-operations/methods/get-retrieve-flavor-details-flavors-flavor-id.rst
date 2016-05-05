@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-flavor-details-flavors-flavor-id:
 
 Retrieve flavor details
@@ -21,9 +18,7 @@ The following extensions provide additional information when viewing flavor deta
 *  Flavor extra specs
 
 
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -51,12 +46,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -68,11 +59,7 @@ This table shows the URI parameters for the request:
 
 
 
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Retrieve flavor details: JSON request**
@@ -85,14 +72,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -162,11 +143,6 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 
 
-
-
-
-
-
 **Example Retrieve flavor details: JSON response**
 
 
@@ -184,59 +160,32 @@ This table shows the body parameters for the response:
 .. code::
 
    {
-
        "flavor": {
-
            "OS-FLV-EXT-DATA:ephemeral": 0,
-
            "OS-FLV-WITH-EXT-SPECS:extra_specs": {
-
                "class": "compute1",
-
                "disk_io_index": "-1",
-
                "number_of_data_disks": "0",
-
                "policy_class": "compute_flavor"
-
            },
-
            "disk": 0,
-
            "id": "compute1-15",
-
            "links": [
-
                {
-
                    "href": "https://dfw.servers.api.rackspacecloud.com/v2/820712/flavors/compute1-15",
-
                    "rel": "self"
-
                },
-
                {
-
                    "href": "https://dfw.servers.api.rackspacecloud.com/820712/flavors/compute1-15",
-
                    "rel": "bookmark"
-
                }
-
            ],
-
            "name": "15 GB Compute v1",
-
            "ram": 15360,
-
            "rxtx_factor": 1250.0,
-
            "swap": "",
-
            "vcpus": 8
-
        }
-
    }
 
 

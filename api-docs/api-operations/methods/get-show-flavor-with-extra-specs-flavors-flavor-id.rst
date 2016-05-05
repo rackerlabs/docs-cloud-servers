@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-flavor-with-extra-specs-flavors-flavor-id:
 
 Show flavor with extra specs
@@ -16,9 +13,7 @@ class, in the flavor operations.
 In the URI, specify the flavor ID.
 
 
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -50,9 +45,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -62,13 +54,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Show flavor with extra specs: JSON request**
 
@@ -80,15 +66,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -111,11 +90,6 @@ This table shows the body parameters for the response:
 |extra_specs.\             |String                   |The policy class for the |
 |**number_of_data_disks**  |                         |flavor.                  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Show flavor with extra specs: JSON response**

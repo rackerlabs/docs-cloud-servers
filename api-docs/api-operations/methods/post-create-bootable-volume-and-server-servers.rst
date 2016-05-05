@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-bootable-volume-and-server-servers:
 
 Create bootable volume and server
@@ -19,7 +16,6 @@ The progress of the server build depends on factors including location of the re
 network i/o, host load, and the selected flavor. You can check the progress of the build 
 request by issuing a call to retrieve the details of the server. Once the build is complete, 
 the server's ``status`` is ``ACTIVE``.
-
 
 
 This table shows the possible response codes for this operation:
@@ -56,22 +52,16 @@ Request
 """"""""""""""""
 
 
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +---------------------------------------------+-------------+----------------------+
 |Name                                         |Type         |Description           |
 +=============================================+=============+======================+
 |server.\ **name**                            |String       |The server name.      |
-|                                             |*(Required)* |                      |
+|                                             |             |                      |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **imageRef**                        |Uuid         |The image reference   |
-|                                             |*(Required)* |for the desired image |
+|                                             |             |for the desired image |
 |                                             |             |for your server       |
 |                                             |             |instance.             |
 +---------------------------------------------+-------------+----------------------+
@@ -193,13 +183,13 @@ This table shows the body parameters for the request:
 |                                             |             |configuring a server. |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **path**                |String       |The path of the       |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **contents**            |String       |The contents od the   |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **networks**                        |Array        |The array of networks |
-|                                             |*(Required)* |attached to the       |
+|                                             |             |attached to the       |
 |                                             |             |server. By default,   |
 |                                             |             |the server instance   |
 |                                             |             |is provisioned with   |
@@ -237,9 +227,6 @@ This table shows the body parameters for the request:
 |                                             |             |attached to the       |
 |                                             |             |server.               |
 +---------------------------------------------+-------------+----------------------+
-
-
-
 
 
 **Example Create bootable volume and server: JSON request**
@@ -283,15 +270,8 @@ This table shows the body parameters for the request:
      }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -325,11 +305,6 @@ This table shows the body parameters for the response:
 |DCF:diskConfig**           |                         |value. Valid values are |
 |                           |                         |``AUTO`` and ``MANUAL``.|
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Create bootable volume and server: JSON response**

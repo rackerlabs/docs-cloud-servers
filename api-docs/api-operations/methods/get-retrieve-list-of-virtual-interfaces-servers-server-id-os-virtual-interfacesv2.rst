@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-virtual-interfaces-servers-server-id-os-virtual-interfacesv2:
 
 Retrieve list of virtual interfaces
@@ -11,8 +8,6 @@ Retrieve list of virtual interfaces
     GET /servers/{server_id}/os-virtual-interfacesv2
 
 This operation retrieves a lists the virtual interfaces configured for a server instance.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -47,9 +42,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -57,9 +49,6 @@ This table shows the URI parameters for the request:
 +==========================+=========================+=========================+
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 This operation does not accept a request body.
@@ -75,13 +64,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -123,11 +107,6 @@ This table shows the body parameters for the response:
 |                                              |              |on the physical |
 |                                              |              |network segment.|
 +----------------------------------------------+--------------+----------------+
-
-
-
-
-
 
 
 **Example Retrieve list of virtual interfaces: JSON response**

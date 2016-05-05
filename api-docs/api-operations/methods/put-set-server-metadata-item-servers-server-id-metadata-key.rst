@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-set-server-metadata-item-servers-server-id-metadata-key:
 
 Set server metadata item
@@ -19,10 +16,6 @@ example ``version``, with the new value for that key.
 
 .. note::
    The key specified in the request body must match the key specified in the URI request.
-   
-   
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -57,9 +50,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -73,9 +63,6 @@ This table shows the URI parameters for the request:
 |                          |                         |maximum length of 255    |
 |                          |                         |characters.              |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 This table shows the body parameters for the request:
@@ -97,9 +84,6 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 **Example Set server metadata item: JSON request**
 
 
@@ -119,15 +103,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -146,12 +123,6 @@ This table shows the body parameters for the response:
 |                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
-
 
 **Example Set server metadata item: JSON response**
 

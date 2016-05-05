@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-images-images:
 
 Retrieve list of images
@@ -18,10 +15,7 @@ a server with the image.
 The image_type field in the response indicates whether the image is built-in ``(base)`` 
 or custom ``(snapshot)``.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -53,26 +47,21 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|server                    |Object *(Optional)*      |Filters the list of      |
+|server                    |Object                   |Filters the list of      |
 |                          |                         |images by server.        |
 |                          |                         |Specify the server       |
 |                          |                         |reference by ID or by    |
 |                          |                         |full URL.                |
 +--------------------------+-------------------------+-------------------------+
-|name                      |String *(Optional)*      |Filters the list of      |
+|name                      |String                   |Filters the list of      |
 |                          |                         |images by image name.    |
 +--------------------------+-------------------------+-------------------------+
-|status                    |Imagestatus *(Optional)* |Filters the list of      |
+|status                    |Imagestatus              |Filters the list of      |
 |                          |                         |images by status. In-    |
 |                          |                         |flight images have a     |
 |                          |                         |status of SAVING and the |
@@ -89,29 +78,23 @@ This table shows the query parameters for the request:
 |                          |                         |status are available for |
 |                          |                         |use.                     |
 +--------------------------+-------------------------+-------------------------+
-|changes-since             |Datetime *(Optional)*    |Filters the list of      |
+|changes-since             |Datetime                 |Filters the list of      |
 |                          |                         |images to those that     |
 |                          |                         |have changed since the   |
 |                          |                         |changes-since time.      |
 +--------------------------+-------------------------+-------------------------+
-|marker                    |Uuid *(Optional)*        |The ID of the last item  |
+|marker                    |Uuid                     |The ID of the last item  |
 |                          |                         |in the previous list.    |
 +--------------------------+-------------------------+-------------------------+
-|limit                     |Int *(Optional)*         |Sets the page size.      |
+|limit                     |Int                      |Sets the page size.      |
 +--------------------------+-------------------------+-------------------------+
-|type                      |String *(Optional)*      |Filters Rackspace base   |
+|type                      |String                   |Filters Rackspace base   |
 |                          |                         |images or any custom     |
 |                          |                         |server images that you   |
 |                          |                         |have created.            |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve list of images: JSON request**
 
@@ -122,16 +105,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -163,11 +138,6 @@ This table shows the body parameters for the response:
 |images.\  **name**         |String                   |The image name.         |
 |                           |                         |                        |
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of images: JSON response**

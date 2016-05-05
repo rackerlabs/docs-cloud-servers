@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-image-metadata-for-specified-image-images-image-id-metadata:
 
 Retrieve image metadata for specified image
@@ -14,10 +11,7 @@ This operation shows all metadata for an image.
 
 Specify the image ID in the URI.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -45,12 +39,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -60,17 +50,9 @@ This table shows the URI parameters for the request:
 |{image_id}                |Uuid                     |The UUID for the image.  |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Retrieve image metadata for specified image: JSON request**
-
 
 .. code::
 
@@ -78,16 +60,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -97,11 +71,6 @@ This table shows the body parameters for the response:
 |**metadata**              |Object                   |The container of         |
 |                          |                         |metadata for images.     |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Retrieve image metadata for specified image: JSON response**

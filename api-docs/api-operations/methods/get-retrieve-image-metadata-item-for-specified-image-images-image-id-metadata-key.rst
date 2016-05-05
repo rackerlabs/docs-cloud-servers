@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-image-metadata-item-for-specified-image-images-image-id-metadata-key:
 
 Retrieve image metadata item for specified image
@@ -13,8 +10,6 @@ Retrieve image metadata item for specified image
 This operation shows a metadata item for an image.
 
 Specify the image ID and metadata key in the URI.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -49,9 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,13 +55,7 @@ This table shows the URI parameters for the request:
 |                          |                         |metadata item.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Retrieve image metadata item for specified image: JSON request**
@@ -83,13 +69,8 @@ This operation does not accept a request body.
 
 
 
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -103,10 +84,6 @@ This table shows the body parameters for the response:
 |                          |                         |there may be one or more |
 |                          |                         |metadata key pairs.      |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 
 

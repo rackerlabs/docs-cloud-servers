@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-resize-specified-server-servers-server-id-actions:
 
 Resize specified server
@@ -18,8 +15,7 @@ do not explicitly confirm or revert the resize.
 
 .. note::
    This operation is not available for OnMetal servers.
-   
-   
+
 
 .. warning::
    The following list shows the availability of the resize operation for the flavor classes 
@@ -39,18 +35,12 @@ do not explicitly confirm or revert the resize.
    #. Create a new server with the desired size and flavor class, using your image.
    #. Add your backed-up data to the new data disk(s).
    #. Delete the old server, once you are satisfied with the new server.
-   
-   
-   
 
 Specify the target server ID in the URI.
 
 In the request body, specify the ``resize`` action followed by attributes.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -82,9 +72,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -94,19 +81,16 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**resize**                |Object *(Required)*      |Specification of the     |
+|**resize**                |Object                   |Specification of the     |
 |                          |                         |resize action for the    |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
-|resize.\ **flavorRef**    |Object *(Required)*      |The flavorRef for the    |
+|resize.\ **flavorRef**    |Object                   |The flavorRef for the    |
 |                          |                         |new server.              |
 +--------------------------+-------------------------+-------------------------+
 |resize.\ **OS-            |String *(Optional)*      |The disk configuration   |
@@ -145,18 +129,13 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 **Example Resize specified server: JSON request**
-
 
 .. code::
 
    X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
    Content-Type: application/json
    Accept: application/json
-
 
 .. code::
 
@@ -168,20 +147,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Resize specified server: JSON response**
 

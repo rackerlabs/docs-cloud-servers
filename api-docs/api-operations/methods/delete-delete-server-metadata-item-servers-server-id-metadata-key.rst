@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-server-metadata-item-servers-server-id-metadata-key:
 
 Delete server metadata item
@@ -15,8 +12,6 @@ This operation deletes a metadata item by key from the specified server.
 If the operation succeeds, it returns an ``HTTP 202`` status code with no response body.
 
 In the URI, specify the target server ID and the target metadata key.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -47,12 +42,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -68,14 +59,7 @@ This table shows the URI parameters for the request:
 |                          |                         |characters.              |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete server metadata item: JSON request**
 
@@ -86,21 +70,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Delete server metadata item: JSON response**
 

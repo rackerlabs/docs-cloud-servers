@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-change-password-for-specified-server-servers-server-id-actions:
 
 Change password for specified server
@@ -22,8 +19,6 @@ In the URI, specify the target server ID.
 
 In the request body, specify the action ``changePassword``, followed by the ``adminPass`` 
 attribute with the new password.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -58,9 +53,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -70,19 +62,16 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +----------------------------+------------------------+------------------------+
 |Name                        |Type                    |Description             |
 +============================+========================+========================+
-|**changePassword**          |Object *(Required)*     |Specification of the    |
+|**changePassword**          |Object                  |Specification of the    |
 |                            |                        |changePassword action   |
 |                            |                        |for the specified server|
 +----------------------------+------------------------+------------------------+
-|**changePassword**.adminPass|Object *(Required)*     |The new adminstrator    |
+|**changePassword**.adminPass|Object                  |The new adminstrator    |
 |                            |                        |password. Though        |
 |                            |                        |Rackspace does not      |
 |                            |                        |enforce complexity      |
@@ -94,10 +83,6 @@ This table shows the body parameters for the request:
 |                            |                        |might enter an ERROR    |
 |                            |                        |state.                  |
 +----------------------------+------------------------+------------------------+
-
-
-
-
 
 **Example Change password for specified server: JSON request**
 
@@ -119,19 +104,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Change password for specified server: JSON response**
@@ -146,7 +120,5 @@ Response
    Server: Jetty(8.0.y.z-SNAPSHOT)
    Via: 1.1 Repose (Repose/2.12)
    x-compute-request-id
-
-
 
 

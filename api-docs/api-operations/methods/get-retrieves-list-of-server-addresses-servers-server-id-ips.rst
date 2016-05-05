@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieves-list-of-server-addresses-servers-server-id-ips:
 
 Retrieves list of server addresses
@@ -14,8 +11,6 @@ This operation retrieves a list of all server and network addresses associated w
 specified server.
 
 In the URI, specify the target server ID.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -50,9 +45,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -61,14 +53,7 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieves list of server addresses: JSON request**
 
@@ -79,16 +64,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -111,11 +88,6 @@ This table shows the body parameters for the response:
 |                                |                      |version, either ``4`` |
 |                                |                      |or ``6``.             |
 +--------------------------------+----------------------+----------------------+
-
-
-
-
-
 
 
 **Example Retrieves list of server addresses: JSON response**

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-key-pair-os-keypairs-keypair-name:
 
 Delete key pair
@@ -12,10 +9,7 @@ Delete key pair
 
 This operation deletes the specified key pair. A return code of 202 indicates success.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -43,12 +37,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -59,14 +49,7 @@ This table shows the URI parameters for the request:
 |                          |                         |to be deleted.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete key pair: JSON request**
 
@@ -77,24 +60,10 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
 
-
-
-
-
-
-
-
-
-
 **Example Delete key pair: JSON response**
-
 
 .. code::
 

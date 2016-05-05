@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-rate-and-absolute-limits-limits:
 
 Retrieve list of rate and absolute limits
@@ -49,17 +46,7 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve list of rate and absolute limits: JSON request**
 
@@ -71,15 +58,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -138,11 +118,6 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 
 
-
-
-
-
-
 **Example Retrieve list of rate and absolute limits: JSON response**
 
 
@@ -194,7 +169,5 @@ This table shows the body parameters for the response:
        }
    }
    
-
-
 
 

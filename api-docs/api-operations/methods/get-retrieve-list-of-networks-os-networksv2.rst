@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-networks-os-networksv2:
 
 Retrieve list of networks
@@ -47,13 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
 
 
@@ -67,13 +57,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -97,10 +82,6 @@ This table shows the body parameters for the response:
 |                          |                         |is labeled as public in  |
 |                          |                         |the network list.        |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 
 

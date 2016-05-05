@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-enable-scheduled-images-servers-server-id-rax-si-scheduled-image:
 
 Enable scheduled Images
@@ -15,9 +12,6 @@ When your images are created, they are named according to one of the following s
 
 * ``daily-{server-name}-{10-digit-number}``
 * ``weekly-{server-name}-{10-digit-number}``
-
-
-
 
 Image names are limited to 255 characters. The ``{server-name}`` may be truncated, if 
 necessary, for the scheduled snapshot image name to meet this limit.
@@ -84,9 +78,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -96,18 +87,15 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|**image_schedule**           |Object *(Required)*     |The container for the  |
+|**image_schedule**           |Object                  |The container for the  |
 |                             |                        |image schedule.        |
 +-----------------------------+------------------------+-----------------------+
-|image_schedule.\             |Int *(Required)*        |The number of days     |
+|image_schedule.\             |Int                     |The number of days     |
 |**retention**                |                        |that an Image should   |
 |                             |                        |be retained.           |
 +-----------------------------+------------------------+-----------------------+
@@ -123,9 +111,6 @@ This table shows the body parameters for the request:
 |                             |                        |``FRIDAY``, and        |
 |                             |                        |``SATURDAY``.          |
 +-----------------------------+------------------------+-----------------------+
-
-
-
 
 
 **Example Enable scheduled images (daily): JSON request**
@@ -147,9 +132,6 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 **Example Enable scheduled images (weekly): JSON request**
 
 
@@ -162,30 +144,22 @@ This table shows the body parameters for the request:
         }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|**image_schedule**           |Object *(Required)*     |The container for the  |
+|**image_schedule**           |Object                  |The container for the  |
 |                             |                        |image schedule.        |
 +-----------------------------+------------------------+-----------------------+
-|image_schedule.\             |Int *(Required)*        |The number of days     |
+|image_schedule.\             |Int                     |The number of days     |
 |**retention**                |                        |that an Image should   |
 |                             |                        |be retained.           |
 +-----------------------------+------------------------+-----------------------+
-|image_schedule.\             |String *(Optional)*     |The chosen day of the  |
+|image_schedule.\             |String                  |The chosen day of the  |
 |**day_of_week**              |                        |week for the image     |
 |                             |                        |creation. The allowed  |
 |                             |                        |values for this field  |
@@ -197,11 +171,6 @@ This table shows the body parameters for the response:
 |                             |                        |``FRIDAY``, and        |
 |                             |                        |``SATURDAY``.          |
 +-----------------------------+------------------------+-----------------------+
-
-
-
-
-
 
 
 **Example Enable scheduled images (daily): JSON response**
@@ -227,9 +196,6 @@ This table shows the body parameters for the response:
    }
 
 
-
-
-
 **Example Enable scheduled images (weekly): JSON response**
 
 
@@ -252,7 +218,4 @@ This table shows the body parameters for the response:
        "retention": 5
      }
    }
-
-
-
 

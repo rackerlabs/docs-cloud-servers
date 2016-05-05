@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-image-metadata-item-for-specified-image-images-image-id-metadata-key:
 
 Delete image metadata item for specified image
@@ -14,10 +11,7 @@ This operation deletes a metadata for an image.
 
 Specify the image ID and metadata key in the URI.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -45,12 +39,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -64,13 +54,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete image metadata item for specified image: JSON request**
 
@@ -81,22 +65,9 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
-
+s
 **Example Delete image metadata item for specified image: JSON response**
 
 

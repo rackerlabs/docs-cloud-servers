@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-volume-os-volumes:
 
 Create volume
@@ -11,8 +8,6 @@ Create volume
     POST /os-volumes
 
 This operation creates a new data volume.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -47,19 +42,12 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**volume**                |Object *(Required)*      |A container for volume   |
+|**volume**                |Object                   |A container for volume   |
 |                          |                         |creation response.       |
 +--------------------------+-------------------------+-------------------------+
 |volume.\ **display_name** |String *(Optional)*      |The name assigned to the |
@@ -68,7 +56,7 @@ This table shows the body parameters for the request:
 |volume.\                  |String *(Optional)*      |The description for the  |
 |**display_description**   |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|volume.\ **volume_type**  |String *(Required)*      |The type of volume,      |
+|volume.\ **volume_type**  |String                   |The type of volume,      |
 |                          |                         |either ``SATA`` or       |
 |                          |                         |``SSD``. Alternaltely,   |
 |                          |                         |you can use the UUID     |
@@ -76,17 +64,13 @@ This table shows the body parameters for the request:
 |                          |                         |instead of the name. The |
 |                          |                         |default is ``SATA``.     |
 +--------------------------+-------------------------+-------------------------+
-|volume.\ **size**         |Integer *(Required)*     |The size of the volume   |
+|volume.\ **size**         |Integer                  |The size of the volume   |
 |                          |                         |in gibibytes (GiB). The  |
 |                          |                         |valid range for ``SATA`` |
 |                          |                         |is 75-1024. The valid    |
 |                          |                         |range for ``SSD`` is 50- |
 |                          |                         |1024.                    |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Create volume: JSON request**
 
@@ -109,16 +93,8 @@ This table shows the body parameters for the request:
        }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -186,11 +162,6 @@ This table shows the body parameters for the response:
 |                                    |                    |valid range for     |
 |                                    |                    |``SSD`` is 50-1024. |
 +------------------------------------+--------------------+--------------------+
-
-
-
-
-
 
 
 **Example Create volume: JSON response**

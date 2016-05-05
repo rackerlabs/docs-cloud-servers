@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-network-os-networksv2:
 
 Create network
@@ -11,7 +8,6 @@ Create network
     POST /os-networksv2
 
 This operation creates a network for the tenant ID specified in the request URI.
-
 
 
 This table shows the possible response codes for this operation:
@@ -53,16 +49,16 @@ This table shows the body parameters for the request:
 |Name                  |Type         |Description                                               |
 +======================+=============+==========================================================+
 |**network**           |Object       |A container of network details.                           |
-|                      |*(Required)* |                                                          |
+|                      |             |                                                          |
 +----------------------+-------------+----------------------------------------------------------+
 |network.\ **cidr**    |Uuid         |The IP block from which to allocate the network. For      |
-|                      |*(Required)* |example, 172.16.0.0/24 or 2001:DB8::/64. For more         |
+|                      |             |example, 172.16.0.0/24 or 2001:DB8::/64. For more         |
 |                      |             |information about CIDR notation, :how-to:`Using CIDR      |
 |                      |             |Notation in Cloud Networks                                |
 |                      |             |<using-cidr-notation-in-cloud-networks>`.                 |
 +----------------------+-------------+----------------------------------------------------------+
 |network.\  **label**  |String       |The name of the new network. For example, my_new_network. |
-|                      |*(Required)* |                                                          |
+|                      |             |                                                          |
 +----------------------+-------------+----------------------------------------------------------+
 
 **Example Create network: JSON request**
@@ -113,11 +109,6 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
-
-
 **Example Create network: JSON response**
 
 
@@ -141,7 +132,5 @@ This table shows the body parameters for the response:
            "label": "superprivate"
        }
    }
-
-
 
 

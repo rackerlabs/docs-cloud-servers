@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-server-with-sched-hint-servers:
 
 Create server with scheduler hints
@@ -65,17 +63,16 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
 This table shows the body parameters for the request:
 
 +---------------------------------------------+-------------+----------------------+
 |Name                                         |Type         |Description           |
 +=============================================+=============+======================+
 |server.\ **name**                            |String       |The server name.      |
-|                                             |*(Required)* |                      |
+|                                             |             |                      |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **imageRef**                        |Uuid         |The image reference   |
-|                                             |*(Required)* |for the desired image |
+|                                             |             |for the desired image |
 |                                             |             |for your server       |
 |                                             |             |instance.             |
 +---------------------------------------------+-------------+----------------------+
@@ -103,7 +100,7 @@ This table shows the body parameters for the request:
 |                                             |             |creation.             |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **flavorRef**                       |Uuid         |The flavor reference  |
-|                                             |*(Required)* |for the desired       |
+|                                             |             |for the desired       |
 |                                             |             |flavor for your       |
 |                                             |             |server instance.      |
 +---------------------------------------------+-------------+----------------------+
@@ -213,13 +210,13 @@ This table shows the body parameters for the request:
 |                                             |             |configuring a server. |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **path**                |String       |The path of the       |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **contents**            |String       |The contents od the   |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **networks**                        |Array        |The array of networks |
-|                                             |*(Required)* |attached to the       |
+|                                             |             |attached to the       |
 |                                             |             |server. By default,   |
 |                                             |             |the server instance   |
 |                                             |             |is provisioned with   |

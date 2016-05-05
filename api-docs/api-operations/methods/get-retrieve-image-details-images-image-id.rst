@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-image-details-images-image-id:
 
 Retrieve image details
@@ -21,10 +18,6 @@ field in the response indicates whether the image is built-in ``(base)`` or cust
    The response body does not include the serverId field. To retrieve the serverId field, 
    get details for all images. 
    
-   
-
-
-
 This table shows the possible response codes for this operation:
 
 
@@ -58,9 +51,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -70,13 +60,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve image details: JSON request**
 
@@ -87,16 +71,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -166,11 +142,6 @@ This table shows the body parameters for the response:
 |                          |                         |information about the    |
 |                          |                         |image.                   |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Retrieve image details: JSON response**

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-reboot-specified-server-servers-server-id-actions:
 
 Reboot specified server
@@ -21,10 +18,7 @@ attribute, either ``HARD`` or ``SOFT``.
 
 If you do not include the type attribute, a soft reboot is performed by default.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -56,9 +50,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -67,16 +58,12 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**reboot**                |Object *(Required)*      |Specification of the     |
+|**reboot**                |Object                   |Specification of the     |
 |                          |                         |reboot action for the    |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
@@ -93,10 +80,6 @@ This table shows the body parameters for the request:
 |                          |                         |immediate shutdown and   |
 |                          |                         |restart.                 |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Reboot specified server: JSON request**
 
@@ -118,20 +101,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Reboot specified server: JSON response**
 
@@ -145,7 +116,4 @@ Response
    Server: Jetty(8.0.y.z-SNAPSHOT)
    Via: 1.1 Repose (Repose/2.12)
    x-compute-request-id
-
-
-
 

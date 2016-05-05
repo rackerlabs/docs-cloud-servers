@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-server-details-servers-server-id:
 
 Show server details
@@ -15,7 +12,6 @@ Retrieves detailed information for a specified server.
 The following extensions provide additional information when viewing server details:
 
 
-
 *  Config Drive:
 *  Scheduled Images:
 *  Extended Status ( ``OS-EXT-STS:power_state``, ``OS-EXT-STS:vm_state``, and ``OS-EXT-STS:task_state`` ):
@@ -24,9 +20,7 @@ The following extensions provide additional information when viewing server deta
 In the URI, specify the target server ID.
 
 
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,8 +53,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -70,13 +62,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve server details: JSON request**
 
@@ -88,15 +74,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -239,11 +218,6 @@ This table shows the body parameters for the response:
 |**previous**                   |Anyuri                 |Moves to the previous |
 |                               |                       |metadata item.        |
 +-------------------------------+-----------------------+----------------------+
-
-
-
-
-
 
 
 **Example Retrieve server details: JSON response**

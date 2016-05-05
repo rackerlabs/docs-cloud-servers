@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-get-details-for-specified-flavor-extra-spec-flavors-flavor-id-os-extra-specs-key-id:
 
 Get details for specified flavor extra spec
@@ -13,7 +10,6 @@ Get details for specified flavor extra spec
 This operation shows extra specifications for flavors.
 
 In the URI, specify the key ID, or name, of the flavor extra spec.
-
 
 
 This table shows the possible response codes for this operation:
@@ -49,9 +45,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,12 +56,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Get details for specified flavor extra spec: JSON request**
@@ -80,16 +68,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -113,14 +93,7 @@ This table shows the body parameters for the response:
 |**number_of_data_disks**  |                         |flavor.                  |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
 **Example Get details for specified flavor extra spec: JSON response**
-
 
 .. code::
 

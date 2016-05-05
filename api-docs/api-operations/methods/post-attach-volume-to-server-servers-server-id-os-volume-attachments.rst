@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-attach-volume-to-server-servers-server-id-os-volume-attachments:
 
 Attach volume to server
@@ -51,9 +48,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,32 +57,26 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +-------------------------------+-----------------------+----------------------+
 |Name                           |Type                   |Description           |
 +===============================+=======================+======================+
-|**volumeAttachment**           |Object *(Required)*    |The container for the |
+|**volumeAttachment**           |Object                 |The container for the |
 |                               |                       |volume attachment     |
 |                               |                       |specifications.       |
 +-------------------------------+-----------------------+----------------------+
-|volumeAttachment.\ **device**  |String *(Required)*    |The name of the       |
+|volumeAttachment.\ **device**  |String                 |The name of the       |
 |                               |                       |device, such as       |
 |                               |                       |/dev/xvdb. Specify    |
 |                               |                       |``null`` for auto-    |
 |                               |                       |assignment.           |
 +-------------------------------+-----------------------+----------------------+
-|volumeAttachment.\             |Object *(Required)*    |The ID of the volume  |
+|volumeAttachment.\             |Object                 |The ID of the volume  |
 |**volumeId**                   |                       |that you want to      |
 |                               |                       |attach to the server  |
 |                               |                       |instance.             |
 +-------------------------------+-----------------------+----------------------+
-
-
-
 
 
 **Example Attach volume to server: JSON request**
@@ -111,15 +99,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -148,11 +129,6 @@ This table shows the body parameters for the response:
 |**volumeId**                   |                       |that you attached to  |
 |                               |                       |the server instance.  |
 +-------------------------------+-----------------------+----------------------+
-
-
-
-
-
 
 
 **Example Attach volume to server: JSON response**

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-flavors-with-details-flavors-detail:
 
 Retrieve list of flavors with details
@@ -11,8 +8,6 @@ Retrieve list of flavors with details
     GET /flavors/detail
 
 This operation returns details of all flavors in the response body.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -47,41 +42,30 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|minDisk                   |Int *(Optional)*         |Filters the list of      |
+|minDisk                   |Int                      |Filters the list of      |
 |                          |                         |flavors to those with    |
 |                          |                         |the specified minimum    |
 |                          |                         |number of gigabytes of   |
 |                          |                         |disk storage.            |
 +--------------------------+-------------------------+-------------------------+
-|minRam                    |Int *(Optional)*         |Filters the list of      |
+|minRam                    |Int                      |Filters the list of      |
 |                          |                         |flavors to those with    |
 |                          |                         |the specified minimum    |
 |                          |                         |amount of RAM in         |
 |                          |                         |megabytes.               |
 +--------------------------+-------------------------+-------------------------+
-|marker                    |String *(Optional)*      |The ID of the last item  |
+|marker                    |String                   |The ID of the last item  |
 |                          |                         |in the previous list.    |
 +--------------------------+-------------------------+-------------------------+
-|limit                     |Int *(Optional)*         |Sets the page size.      |
+|limit                     |Int                      |Sets the page size.      |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve list of flavors with details: JSON request**
 
@@ -92,16 +76,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -167,12 +143,6 @@ This table shows the body parameters for the response:
 +----------------------------+------------------------+------------------------+
 |flavors.\ **id**            |String                  |The flavor id.          |
 +----------------------------+------------------------+------------------------+
-
-
-
-
-
-
 
 **Example Retrieve list of flavors with details: JSON response**
 

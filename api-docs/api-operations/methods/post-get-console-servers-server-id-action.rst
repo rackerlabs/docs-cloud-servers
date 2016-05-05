@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-get-console-servers-server-id-action:
 
 Get console
@@ -58,9 +55,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -69,27 +63,19 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**os- getVNCConsole**     |Object *(Required)*      |A container for console  |
+|**os- getVNCConsole**     |Object                   |A container for console  |
 |                          |                         |request.                 |
 +--------------------------+-------------------------+-------------------------+
-|os- getVNCConsole.\       |String *(Required)*      |A key pair with the type |
+|os- getVNCConsole.\       |String                   |A key pair with the type |
 |**type**                  |                         |of vnc console,          |
 |                          |                         |containing the value     |
 |                          |                         |``"xvpvnc"``.            |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Get console: JSON request**
 
@@ -110,16 +96,8 @@ This table shows the body parameters for the request:
            }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -139,11 +117,6 @@ This table shows the body parameters for the response:
 |                          |                         |to the server, for       |
 |                          |                         |example ``"xvpvnc"``.    |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Get console: JSON response**

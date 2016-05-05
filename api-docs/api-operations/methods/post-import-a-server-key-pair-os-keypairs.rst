@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-import-a-server-key-pair-os-keypairs:
 
 Import a server key pair
@@ -14,9 +11,7 @@ This operation imports, or uploads, a key pair, with the name and public key spe
 the request body, to associate with a new server instance.
 
 
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -48,34 +43,22 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**keypair**               |Object *(Required)*      |The container for the    |
+|**keypair**               |Object                   |The container for the    |
 |                          |                         |key pair request.        |
 +--------------------------+-------------------------+-------------------------+
-|keypair.\ **name**        |String *(Required)*      |The name to associate    |
+|keypair.\ **name**        |String                   |The name to associate    |
 |                          |                         |with the key pair.       |
 +--------------------------+-------------------------+-------------------------+
-|keypair.\ **public_key**  |String *(Required)*      |The public ssh key value.|
+|keypair.\ **public_key**  |String                   |The public ssh key value.|
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Import a server key pair: JSON request**
-
 
 .. code::
 
@@ -94,15 +77,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -129,11 +105,6 @@ This table shows the body parameters for the response:
 |keypair.\   **user_id**   |String                   |The ID of the user.      |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Import a server key pair: JSON response**

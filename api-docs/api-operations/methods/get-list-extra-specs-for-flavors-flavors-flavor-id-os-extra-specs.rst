@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-extra-specs-for-flavors-flavors-flavor-id-os-extra-specs:
 
 List extra specs for flavors
@@ -14,10 +11,7 @@ This operation shows extra specifications for flavors.
 
 In the URI, specify the flavor ID.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -49,9 +43,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -60,14 +51,7 @@ This table shows the URI parameters for the request:
 |{flavor_id}               |String                   |The flavor id.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example List extra specs for flavors: JSON request**
 
@@ -78,16 +62,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -110,11 +86,6 @@ This table shows the body parameters for the response:
 |extra_specs.\             |String                   |The policy class for the |
 |**number_of_data_disks**  |                         |flavor.                  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example List extra specs for flavors: JSON response**

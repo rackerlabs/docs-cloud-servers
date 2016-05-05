@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-set-image-metadata-item-for-specified-image-images-image-id-metadata-key:
 
 Set image metadata item for specified image
@@ -18,9 +15,7 @@ existing metadata keys, those entries will be changed to match the keys in the r
 Specify the image ID and metadata key in the URI.
 
 
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -52,9 +47,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -65,10 +57,6 @@ This table shows the URI parameters for the request:
 |{key}                     |Uuid                     |The key of the image     |
 |                          |                         |metadata item.           |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 This table shows the body parameters for the request:
 
@@ -81,10 +69,6 @@ This table shows the body parameters for the request:
 |                          |                         |there may be one or more |
 |                          |                         |metadata key pairs.      |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Set image metadata item for specified image: JSON request**
 
@@ -104,16 +88,8 @@ This table shows the body parameters for the request:
      }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -126,11 +102,6 @@ This table shows the body parameters for the response:
 |                          |                         |there may be one or more |
 |                          |                         |metadata key pairs.      |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Set image metadata item for specified image: JSON response**
@@ -154,7 +125,5 @@ This table shows the body parameters for the response:
        "label": "Replaced"
      }
    }
-
-
 
 
