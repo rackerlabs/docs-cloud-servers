@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-update-server-servers-server-id:
 
 Update server
@@ -63,9 +60,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -75,15 +69,12 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**server**                |Object *(Required)*      |A container for one or   |
+|**server**                |Object                   |A container for one or   |
 |                          |                         |more server details to   |
 |                          |                         |be updated.              |
 +--------------------------+-------------------------+-------------------------+
@@ -96,9 +87,6 @@ This table shows the body parameters for the request:
 |server.\ **accessIPv6**   |Ip *(Optional)*          |The public IP version 6  |
 |                          |                         |access address.          |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 **Example Update server: JSON request**
@@ -120,15 +108,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -272,11 +253,6 @@ This table shows the body parameters for the response:
 +-------------------------------+-----------------------+----------------------+
 
 
-
-
-
-
-
 **Example Update server: JSON response**
 
 
@@ -358,7 +334,4 @@ This table shows the body parameters for the response:
        }
      }
    }
-
-
-
 

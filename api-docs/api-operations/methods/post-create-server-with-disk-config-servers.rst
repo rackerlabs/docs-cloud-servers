@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-server-with-disk-config-servers:
 
 Create server with disk config
@@ -26,8 +23,6 @@ request's success depends on the image's auto_disk_config metadata value. An ima
 from a server will have appropriate auto_disk_config metadata written to it. So, if the 
 create server command succeeds, an image created from the server will have 
 ``auto_disk_config`` = ``True`` on it.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -69,10 +64,10 @@ This table shows the body parameters for the request:
 |Name                                         |Type         |Description           |
 +=============================================+=============+======================+
 |server.\ **name**                            |String       |The server name.      |
-|                                             |*(Required)* |                      |
+|                                             |             |                      |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **imageRef**                        |Uuid         |The image reference   |
-|                                             |*(Required)* |for the desired image |
+|                                             |             |for the desired image |
 |                                             |             |for your server       |
 |                                             |             |instance.             |
 +---------------------------------------------+-------------+----------------------+
@@ -100,7 +95,7 @@ This table shows the body parameters for the request:
 |                                             |             |creation.             |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **flavorRef**                       |Uuid         |The flavor reference  |
-|                                             |*(Required)* |for the desired       |
+|                                             |             |for the desired       |
 |                                             |             |flavor for your       |
 |                                             |             |server instance.      |
 +---------------------------------------------+-------------+----------------------+
@@ -194,13 +189,13 @@ This table shows the body parameters for the request:
 |                                             |             |configuring a server. |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **path**                |String       |The path of the       |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **contents**            |String       |The contents od the   |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **networks**                        |Array        |The array of networks |
-|                                             |*(Required)* |attached to the       |
+|                                             |             |attached to the       |
 |                                             |             |server. By default,   |
 |                                             |             |the server instance   |
 |                                             |             |is provisioned with   |

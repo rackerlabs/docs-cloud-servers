@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-quotas-os-quota-sets-tenant-id:
 
 Retrieve quotas
@@ -50,8 +47,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -60,14 +55,7 @@ This table shows the URI parameters for the request:
 |{tenant_id}               |String                   |The tenant id.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve quotas: JSON request**
 
@@ -78,16 +66,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -106,11 +86,6 @@ This table shows the body parameters for the response:
 |quota-set.\                |Uuid                     |The quota for metadata- |
 |**metadata-items**         |                         |items.                  |
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Retrieve quotas: JSON response**

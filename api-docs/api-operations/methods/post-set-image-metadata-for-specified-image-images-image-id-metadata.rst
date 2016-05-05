@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-set-image-metadata-for-specified-image-images-image-id-metadata:
 
 Set image metadata for specified image
@@ -76,9 +73,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -87,14 +81,7 @@ This table shows the URI parameters for the request:
 |{image_id}                |Uuid                     |The UUID for the image.  |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
 **Example Set image metadata for specified image: JSON request**
-
 
 .. code::
 
@@ -113,16 +100,8 @@ This table shows the URI parameters for the request:
        }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -134,13 +113,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
-
-
 **Example Set image metadata for specified image: JSON response**
-
 
 .. code::
 
@@ -167,7 +140,5 @@ This table shows the body parameters for the response:
        "os_type": "linux"
      }
    }
-
-
 
 

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-server-metadata-servers-server-id-metadata:
 
 List server metadata
@@ -13,8 +10,6 @@ List server metadata
 This operation retrieves a list of all metadata for a specified server.
 
 In the URI, specify the target server ID.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -49,9 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -60,13 +52,7 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example List server metadata: JSON request**
@@ -78,15 +64,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -106,11 +85,6 @@ This table shows the body parameters for the response:
 |                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example List server metadata: JSON response**

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-server-actions-servers-server-id-os-instance-actions:
 
 Retrieve list of server actions
@@ -47,9 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -57,10 +51,6 @@ This table shows the URI parameters for the request:
 +==========================+=========================+=========================+
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 This operation does not accept a request body.
 
@@ -75,16 +65,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
+"""""""""""""""
 
 This table shows the body parameters for the response:
 
@@ -121,11 +103,6 @@ This table shows the body parameters for the response:
 |                                      |                   |who requested the  |
 |                                      |                   |action.            |
 +--------------------------------------+-------------------+-------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of server actions: JSON response**

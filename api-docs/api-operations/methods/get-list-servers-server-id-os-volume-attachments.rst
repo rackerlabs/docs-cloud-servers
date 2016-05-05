@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-servers-server-id-os-volume-attachments:
 
 List server volumes
@@ -52,8 +49,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -62,14 +57,7 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example List server volumes: JSON request**
 
@@ -81,15 +69,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -115,11 +96,6 @@ This table shows the body parameters for the response:
 |                                |                      |attached to the       |
 |                                |                      |server instance.      |
 +--------------------------------+----------------------+----------------------+
-
-
-
-
-
 
 
 **Example List server volumes: JSON response**

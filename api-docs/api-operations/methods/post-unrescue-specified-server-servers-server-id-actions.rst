@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-unrescue-specified-server-servers-server-id-actions:
 
 Unrescue specified server
@@ -21,8 +18,6 @@ You can exit rescue mode at any time.
 Specify the target server ID in the URI.
 
 In the request body, specify the ``unrescue`` action.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -57,9 +52,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -68,23 +60,15 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**unrescue**              |Object *(Required)*      |Specification of the     |
+|**unrescue**              |Object                   |Specification of the     |
 |                          |                         |unrescue action for the  |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Unrescue specified server: JSON request**
 
@@ -102,21 +86,8 @@ This table shows the body parameters for the request:
        "unrescue" : null
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Unrescue specified server: JSON response**
 
@@ -130,7 +101,5 @@ Response
    Server: Jetty(8.0.y.z-SNAPSHOT)
    Via: 1.1 Repose (Repose/2.12)
    x-compute-request-id
-
-
 
 

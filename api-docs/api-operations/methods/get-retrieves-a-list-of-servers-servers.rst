@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieves-a-list-of-servers-servers:
 
 Retrieve list of servers
@@ -19,8 +16,6 @@ in the response body.
 For a full list of possible server status values including the extended status extension 
 ( ``OS-EXT-STS:power_state``, ``OS-EXT-STS:vm_state``, and ``OS-EXT-STS:task_state``), 
 see :ref:`Extended status extension <extended-status-extension>`.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -55,29 +50,24 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|changes-since             |Datetime *(Optional)*    |A time/date stamp for    |
+|changes-since             |Datetime                 |A time/date stamp for    |
 |                          |                         |when the server last     |
 |                          |                         |changed status.          |
 +--------------------------+-------------------------+-------------------------+
-|image                     |Uuid *(Optional)*        |The image reference for  |
+|image                     |Uuid                     |The image reference for  |
 |                          |                         |the desired image for    |
 |                          |                         |your server instance.    |
 +--------------------------+-------------------------+-------------------------+
-|flavor                    |Uuid *(Optional)*        |The flavor reference for |
+|flavor                    |Uuid                     |The flavor reference for |
 |                          |                         |the desired flavor for   |
 |                          |                         |your server instance.    |
 +--------------------------+-------------------------+-------------------------+
-|name                      |Regexp *(Optional)*      |The name of the server,  |
+|name                      |Regexp                   |The name of the server,  |
 |                          |                         |which can be queried     |
 |                          |                         |with regular             |
 |                          |                         |expressions. Notice that |
@@ -92,16 +82,16 @@ This table shows the query parameters for the request:
 |                          |                         |Servers (such as MySQL   |
 |                          |                         |or PostgreSQL).          |
 +--------------------------+-------------------------+-------------------------+
-|marker                    |Uuid *(Optional)*        |The UUID of the server   |
+|marker                    |Uuid                     |The UUID of the server   |
 |                          |                         |at which you want to set |
 |                          |                         |a marker.                |
 +--------------------------+-------------------------+-------------------------+
-|limit                     |Int *(Optional)*         |The integer value used   |
+|limit                     |Int                      |The integer value used   |
 |                          |                         |to limit the number of   |
 |                          |                         |values which will be     |
 |                          |                         |returned.                |
 +--------------------------+-------------------------+-------------------------+
-|status                    |Serverstatus *(Optional)*|The status of the        |
+|status                    |Serverstatus             |The status of the        |
 |                          |                         |server. For example, you |
 |                          |                         |can filter on "ACTIVE".  |
 |                          |                         |For a full list of       |
@@ -109,15 +99,11 @@ This table shows the query parameters for the request:
 |                          |                         |see :ref:`Server Status  |
 |                          |                         |<server-statuses>`.      |
 +--------------------------+-------------------------+-------------------------+
-|host                      |String *(Optional)*      |The name of the host.    |
+|host                      |String                   |The name of the host.    |
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Retrieves list of servers: JSON request**
@@ -130,14 +116,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -173,11 +153,6 @@ This table shows the body parameters for the response:
 |**previous**                |Anyuri                  |Moves to the previous   |
 |                            |                        |metadata item.          |
 +----------------------------+------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Retrieves list of servers: JSON response**

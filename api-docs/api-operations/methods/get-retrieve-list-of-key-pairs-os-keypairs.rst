@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-key-pairs-os-keypairs:
 
 Retrieve list of key pairs
@@ -46,23 +43,10 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -87,11 +71,6 @@ This table shows the body parameters for the response:
 |keypairs.keypair.\             |String                 |The public ssh key    |
 |**public_key**                 |                       |value.                |
 +-------------------------------+-----------------------+----------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of key pairs: JSON response**

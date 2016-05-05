@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-revert-server-resize-for-specified-server-servers-server-id-actions:
 
 Revert server resize for specified server
@@ -20,17 +17,12 @@ revert the resize.
 
 .. note::
    This operation is not available for OnMetal servers.
-   
-   
 
 Specify the target server ID in the URI.
 
 In the request body, specify the ``revertResize`` action.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -58,12 +50,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -74,22 +62,15 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**revertResize**          |Object *(Required)*      |Specification of the     |
+|**revertResize**          |Object                   |Specification of the     |
 |                          |                         |revertResize action for  |
 |                          |                         |the specified server.    |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Revert server resize for specified server: JSON request**
 
@@ -108,19 +89,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Revert server resize for specified server: JSON response**
@@ -135,7 +105,5 @@ Response
    Server: Jetty(8.0.y.z-SNAPSHOT)
    Via: 1.1 Repose (Repose/2.12)
    x-compute-request-id
-
-
 
 

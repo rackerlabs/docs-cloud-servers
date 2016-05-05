@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-limits-including-used-limits-limits:
 
 Retrieve list of limits including used limits
@@ -17,7 +14,6 @@ This extension expands the limits operation to show the project usage, including
 instance quotas usage.
 
 In the following example, the ``totalRAMUsed`` value is an extended attribute.
-
 
 
 This table shows the possible response codes for this operation:
@@ -54,12 +50,6 @@ Request
 """"""""""""""""
 
 
-
-
-
-
-
-
 This operation does not accept a request body.
 
 **Example Retrieve list of limits including used limits: JSON request**
@@ -71,15 +61,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -136,10 +119,6 @@ This table shows the body parameters for the response:
 |                                |                      |example, ``DAY`` or   |
 |                                |                      |``MINUTE``.           |
 +--------------------------------+----------------------+----------------------+
-
-
-
-
 
 
 

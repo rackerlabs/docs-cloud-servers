@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-server-with-network-servers:
 
 Create server with network
@@ -31,13 +28,9 @@ these networks.
    Rack Connect and Managed Operations Service Level customers will receive an error if 
    they opt out of attaching to PublicNet or ServiceNet.
    
-   
-
 To attach a network to an existing server, you must create a virtual interface.
 
 For complete information about this API operation, see the Create server operation.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -72,23 +65,16 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +---------------------------------------------+-------------+----------------------+
 |Name                                         |Type         |Description           |
 +=============================================+=============+======================+
 |server.\ **name**                            |String       |The server name.      |
-|                                             |*(Required)* |                      |
+|                                             |             |                      |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **imageRef**                        |Uuid         |The image reference   |
-|                                             |*(Required)* |for the desired image |
+|                                             |             |for the desired image |
 |                                             |             |for your server       |
 |                                             |             |instance.             |
 +---------------------------------------------+-------------+----------------------+
@@ -116,7 +102,7 @@ This table shows the body parameters for the request:
 |                                             |             |creation.             |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **flavorRef**                       |Uuid         |The flavor reference  |
-|                                             |*(Required)* |for the desired       |
+|                                             |             |for the desired       |
 |                                             |             |flavor for your       |
 |                                             |             |server instance.      |
 +---------------------------------------------+-------------+----------------------+
@@ -210,13 +196,13 @@ This table shows the body parameters for the request:
 |                                             |             |configuring a server. |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **path**                |String       |The path of the       |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.personality.\ **contents**            |String       |The contents od the   |
-|                                             |*(Required)* |personality file.     |
+|                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **networks**                        |Array        |The array of networks |
-|                                             |*(Required)* |attached to the       |
+|                                             |             |attached to the       |
 |                                             |             |server. By default,   |
 |                                             |             |the server instance   |
 |                                             |             |is provisioned with   |
@@ -254,10 +240,6 @@ This table shows the body parameters for the request:
 |                                             |             |attached to the       |
 |                                             |             |server.               |
 +---------------------------------------------+-------------+----------------------+
-
-
-
-
 
 **Example Create server with network: JSON request**
 
@@ -303,15 +285,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -345,11 +320,6 @@ This table shows the body parameters for the response:
 |DCF:diskConfig**           |                         |value. Valid values are |
 |                           |                         |``AUTO`` and ``MANUAL``.|
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Create server with network: JSON response**

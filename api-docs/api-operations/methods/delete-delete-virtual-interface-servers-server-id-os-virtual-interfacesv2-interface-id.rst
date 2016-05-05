@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-virtual-interface-servers-server-id-os-virtual-interfacesv2-interface-id:
 
 Delete virtual interface
@@ -47,9 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -60,17 +54,9 @@ This table shows the URI parameters for the request:
 |{interface_id}            |Uuid                     |The interface ID.        |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete virtual interface: JSON request**
-
 
 .. code::
 
@@ -78,21 +64,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Delete virtual interface: JSON response**
 

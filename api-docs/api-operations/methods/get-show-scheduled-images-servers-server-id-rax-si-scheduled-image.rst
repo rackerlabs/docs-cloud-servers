@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-scheduled-images-servers-server-id-rax-si-scheduled-image:
 
 Show scheduled Images
@@ -17,7 +14,6 @@ weekly images, the response also includes the scheduled day of the week for the 
 the server has scheduled images disabled, an ``HTTP 404`` is returned. 
 
 In the URI, specify the server ID.
-
 
 
 This table shows the possible response codes for this operation:
@@ -54,8 +50,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -65,12 +59,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
 
 
 **Example Show scheduled Images: JSON request**
@@ -83,14 +72,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -119,11 +102,6 @@ This table shows the body parameters for the response:
 +-----------------------------+------------------------+-----------------------+
 
 
-
-
-
-
-
 **Example Show scheduled images (daily - success): JSON response**
 
 
@@ -145,10 +123,6 @@ This table shows the body parameters for the response:
        "retention": 7
      }
    }
-
-
-
-
 
 **Example Show scheduled images (weekly - success): JSON response**
 
@@ -172,9 +146,6 @@ This table shows the body parameters for the response:
        "retention": 5
      }
    }
-
-
-
 
 
 **Example Show scheduled images (not found): JSON response**

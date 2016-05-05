@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-disable-scheduled-images-servers-server-id-rax-si-scheduled-image:
 
 Disable scheduled Images
@@ -13,7 +10,6 @@ Disable scheduled Images
 This operation disables scheduled images by deleting the image_schedule resource that 
 indicates the scheduled image service should create snapshots of this server. Thus 
 scheduled images will no longer be created.
-
 
 
 This table shows the possible response codes for this operation:
@@ -50,8 +46,6 @@ Request
 """"""""""""""""
 
 
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -60,14 +54,7 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Disable scheduled Images: JSON request**
 
@@ -79,23 +66,10 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
 
-
-
-
-
-
-
-
-
-
 **Example Disable scheduled Images: JSON response**
-
 
 .. code::
 

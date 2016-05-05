@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-rebuild-specified-server-servers-server-id-actions:
 
 Rebuild specified server
@@ -19,8 +16,6 @@ values do not change. You can inject data into the file system during the rebuil
 
 .. note::
    This operation is not available for OnMetal servers.
-   
-   
 
 Specify the target server ID in the URI.
 
@@ -28,9 +23,7 @@ In the request body, specify the rebuild action followed by various attributes, 
 the following parameters section.
 
 
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -60,10 +53,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -73,23 +63,19 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**rebuild**               |Object *(Required)*      |Specification of the     |
+|**rebuild**               |Object                   |Specification of the     |
 |                          |                         |rebuild action for the   |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
 |rebuild.\ **name**        |Object *(Optional)*      |The new name for the     |
 |                          |                         |server.                  |
 +--------------------------+-------------------------+-------------------------+
-|rebuild.\ **imageRef**    |Object *(Required)*      |The image ID.            |
+|rebuild.\ **imageRef**    |Object                   |The image ID.            |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 |rebuild.\ **accessIPv4**  |Object *(Optional)*      |The IP version 4 address.|
@@ -176,17 +162,10 @@ This table shows the body parameters for the request:
            ]
        }
    }
-   
-
-
-
 
 
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -221,11 +200,6 @@ This table shows the body parameters for the response:
 |DCF:diskConfig**           |                         |value. Valid values are |
 |                           |                         |``AUTO`` and ``MANUAL``.|
 +---------------------------+-------------------------+------------------------+
-
-
-
-
-
 
 
 **Example Rebuild specified server: JSON response**

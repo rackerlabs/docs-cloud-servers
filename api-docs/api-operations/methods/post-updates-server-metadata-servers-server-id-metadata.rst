@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-updates-server-metadata-servers-server-id-metadata:
 
 Update server metadata
@@ -25,7 +22,6 @@ In the URI, specify the target server ID.
 
 In the request body, specify the ``metadata`` element, followed by the metadata key, for 
 example ``version``, with the new value for that key.
-
 
 
 This table shows the possible response codes for this operation:
@@ -59,10 +55,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
+"""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -71,10 +64,6 @@ This table shows the URI parameters for the request:
 +==========================+=========================+=========================+
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 This table shows the body parameters for the request:
 
@@ -94,10 +83,6 @@ This table shows the body parameters for the request:
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Updates server metadata: JSON request**
 
 
@@ -116,16 +101,8 @@ This table shows the body parameters for the request:
        }
    }
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
+"""""""""""""""
 
 This table shows the body parameters for the response:
 
@@ -144,12 +121,6 @@ This table shows the body parameters for the response:
 |                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
-
 
 **Example Updates server metadata: JSON response**
 
@@ -173,7 +144,5 @@ This table shows the body parameters for the response:
            "Version" : "2.1"
        }
    }
-
-
 
 

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-image-of-specified-server-servers-server-id-actions:
 
 Create image of specified server
@@ -19,9 +16,7 @@ Image creation is an asynchronous operation, so coordinating the creation with d
 and so on, is currently not possible. 
 
 .. note::
-   This operation is not available for OnMetal servers.
-   
-   
+   This operation is not available for OnMetal servers. 
 
 In addition to creating images manually, you may also schedule images of your server automatically.
 
@@ -84,9 +79,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -96,33 +88,27 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**createImage**           |Object *(Required)*      |Specification of the     |
+|**createImage**           |Object                   |Specification of the     |
 |                          |                         |createImage action for   |
 |                          |                         |the specified server.    |
 +--------------------------+-------------------------+-------------------------+
-|createImage.\ **name**    |String *(Required)*      |The name of the new      |
+|createImage.\ **name**    |String                   |The name of the new      |
 |                          |                         |image.                   |
 +--------------------------+-------------------------+-------------------------+
-|createImage.\ **metadata**|Object *(Required)*      |The container of the     |
+|createImage.\ **metadata**|Object                   |The container of the     |
 |                          |                         |metadata for the new     |
 |                          |                         |image.                   |
 +--------------------------+-------------------------+-------------------------+
-|createImage.\ **meta**    |Object *(Required)*      |A metadata keypair,      |
+|createImage.\ **meta**    |Object                   |A metadata keypair,      |
 |                          |                         |specifying ImageType or  |
 |                          |                         |ImageVersion, for        |
 |                          |                         |example.                 |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 **Example Create image of specified server: JSON request**
@@ -147,20 +133,8 @@ This table shows the body parameters for the request:
        }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
 
 
 **Example Create image of specified server: JSON response**

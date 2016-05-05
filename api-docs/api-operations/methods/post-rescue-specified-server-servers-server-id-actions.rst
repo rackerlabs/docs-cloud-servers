@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-rescue-specified-server-servers-server-id-actions:
 
 Rescue specified server
@@ -95,9 +92,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -107,22 +101,15 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-| **rescue**               |Object *(Required)*      |Specification of the     |
+| **rescue**               |Object                   |Specification of the     |
 |                          |                         |rescue action for the    |
 |                          |                         |specified server.        |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Rescue specified server: JSON request**
 
@@ -139,10 +126,6 @@ This table shows the body parameters for the request:
    {
        "rescue" : "none"
    }
-
-
-
-
 
 **Example Rescue specified server with image: JSON request**
 
@@ -163,16 +146,8 @@ This table shows the body parameters for the request:
            }
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -182,12 +157,6 @@ This table shows the body parameters for the response:
 | **adminPass**            |Object                   |The new adminstrator     |
 |                          |                         |password.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
-
 
 **Example Rescue specified server (same for both requests): JSON request**
 

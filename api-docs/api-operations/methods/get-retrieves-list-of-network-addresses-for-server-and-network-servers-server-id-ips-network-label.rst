@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieves-list-of-network-addresses-for-server-and-network-servers-server-id-ips-network-label:
 
 Retrieve list of network addresses for server and network
@@ -14,7 +11,6 @@ This operation retrieves a list of all server and network addresses associated w
 specified server and network.
 
 In the URI, specify the target server ID and target network type ( ``public`` or ``private`` ).
-
 
 
 This table shows the possible response codes for this operation:
@@ -48,9 +44,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
+"""""""""""""""
 
 
 This table shows the URI parameters for the request:
@@ -66,13 +60,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieves list of network addresses for server and network: JSON request**
 
@@ -83,16 +71,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -109,11 +89,6 @@ This table shows the body parameters for the response:
 |nettype.\ **version**     |Object                   |The IP address version,  |
 |                          |                         |either ``4`` or ``6``.   |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Retrieves list of network addresses for server and network: JSON response**

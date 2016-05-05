@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-details-for-the-specified-extension-extensions-alias:
 
 Retrieve details for the specified extension
@@ -13,8 +10,6 @@ Retrieve details for the specified extension
 This operation retrieves a specified extension's details.
 
 An unavailable extension issues an ``itemNotFound (404)`` response.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -49,9 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,14 +55,7 @@ This table shows the URI parameters for the request:
 |                          |                         |named extension.         |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve details for the specified extension: JSON request**
 
@@ -82,15 +67,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -118,11 +96,6 @@ This table shows the body parameters for the response:
 |extension.\               |String                   |The description of the   |
 |**description**           |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Retrieve details for the specified extension: JSON response**

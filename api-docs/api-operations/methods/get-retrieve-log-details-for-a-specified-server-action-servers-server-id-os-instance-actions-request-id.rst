@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-log-details-for-a-specified-server-action-servers-server-id-os-instance-actions-request-id:
 
 Retrieve log details for a specified server action
@@ -47,9 +44,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -61,14 +55,7 @@ This table shows the URI parameters for the request:
 |                          |                         |request id.              |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve log details for a specified server action: JSON request**
 
@@ -79,16 +66,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -125,11 +104,6 @@ This table shows the body parameters for the response:
 |                                     |                    |who requested the  |
 |                                     |                    |action.            |
 +-------------------------------------+--------------------+-------------------+
-
-
-
-
-
 
 
 **Example Retrieve log details for a specified server action: JSON response**

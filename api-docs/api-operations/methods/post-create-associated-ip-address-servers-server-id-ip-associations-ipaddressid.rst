@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-associated-ip-address-servers-server-id-ip-associations-ipaddressid:
 
 Create associated IP address
@@ -12,8 +9,6 @@ Create associated IP address
 
 This operation creates an associated IP address for the specified server and already existing 
 IP address ID.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -48,9 +43,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -64,36 +56,29 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|\              |Array *(Required)*       |The container for shared |
-|**ip_address**            |                         |IP request parasmeters.  |
+|\ **ip_address**          |Array                    |The container for shared |
+|                          |                         |IP request parasmeters.  |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\   |Uuid *(Required)*        |The ID of the network.   |
+|ip_address.\              |Uuid                     |The ID of the network.   |
 |**network_id**            |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\   |String *(Required)*      |The subnet IP version,   |
-|**version**               |                         |which is ``4`` or ``6``. |
+|ip_address.\ **version**  |String                   |The subnet IP version,   |
+|                          |                         |which is ``4`` or ``6``. |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\   |Array *(Optional)*       |The array of port        |
-|**port_ids**              |                         |objects, containing port |
+|ip_address.\  **port_ids** Array *(Optional)*       |The array of port        |
+|                          |                         |objects, containing port |
 |                          |                         |IDs for the shared IP.   |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\   |Array *(Optional)*       |The array of device      |
+|ip_address.\              |Array *(Optional)*       |The array of device      |
 |**device_ids**            |                         |objects, containing      |
 |                          |                         |device IDs for the       |
 |                          |                         |shared IP.               |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 **Example Create associated IP address: JSON request**
 
@@ -105,15 +90,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -129,12 +107,6 @@ This table shows the body parameters for the response:
 |ip_association.\ **address** |Uuid                    |The associatied IP     |
 |                             |                        |address.               |
 +-----------------------------+------------------------+-----------------------+
-
-
-
-
-
-
 
 **Example Create associated IP address: JSON response**
 

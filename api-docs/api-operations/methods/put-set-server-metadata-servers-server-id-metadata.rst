@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-set-server-metadata-servers-server-id-metadata:
 
 Set server metadata
@@ -20,7 +17,6 @@ they are replaced.
 .. important::
    Existing metadata items are replaced with the ones provided in the request regardless 
    of the names of the original metadata items.
-   
    
 
 If you exceed the maximum number of metadata items in the request, the call throws an 
@@ -67,9 +63,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -77,9 +70,6 @@ This table shows the URI parameters for the request:
 +==========================+=========================+=========================+
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 This table shows the body parameters for the request:
@@ -99,9 +89,6 @@ This table shows the body parameters for the request:
 |                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 **Example Set server metadata: JSON request**
@@ -130,10 +117,6 @@ This table shows the body parameters for the request:
 Response
 """"""""""""""""
 
-
-
-
-
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -151,11 +134,6 @@ This table shows the body parameters for the response:
 |                          |                         |metadata using format of |
 |                          |                         |"keyname" : "keyvalue".  |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Set server metadata: JSON response**
@@ -180,7 +158,4 @@ This table shows the body parameters for the response:
            "Version" : "2.1"
        }
    }   
-
-
-
 

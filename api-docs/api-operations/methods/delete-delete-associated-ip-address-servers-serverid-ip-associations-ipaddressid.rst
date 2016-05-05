@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-associated-ip-address-servers-server-id-ip-associations-ipaddressid:
 
 Delete associated IP address
@@ -12,10 +9,7 @@ Delete associated IP address
 
 This operation deletes the specified associated IP address, using the associated IP address ID.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -43,12 +37,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |unavailable.             |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
 """"""""""""""""
-
-
-
 
 This table shows the URI parameters for the request:
 
@@ -62,26 +52,10 @@ This table shows the URI parameters for the request:
 |                          |                         |the actual IP address.   |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Delete associated IP address: JSON response**
 

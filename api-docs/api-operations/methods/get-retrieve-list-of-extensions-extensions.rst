@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-extensions-extensions:
 
 Retrieve list of extensions
@@ -12,12 +9,7 @@ Retrieve list of extensions
 
 This operation retrieves the list of available extensions.
 
-
-
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -49,17 +41,7 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve list of extensions: JSON request**
 
@@ -71,15 +53,8 @@ This operation does not accept a request body.
    Accept: application/json
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -107,11 +82,6 @@ This table shows the body parameters for the response:
 |extensions.\              |String                   |The description of the   |
 |**description**           |                         |extension.               |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of extensions: JSON response**

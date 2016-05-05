@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-flavors-flavors:
 
 Retrieve list of flavors
@@ -46,36 +43,28 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
 This table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|minDisk                   |Int *(Optional)*         |Filters the list of      |
+|minDisk                   |Int                      |Filters the list of      |
 |                          |                         |flavors to those with    |
 |                          |                         |the specified minimum    |
 |                          |                         |number of gigabytes of   |
 |                          |                         |disk storage.            |
 +--------------------------+-------------------------+-------------------------+
-|minRam                    |Int *(Optional)*         |Filters the list of      |
+|minRam                    |Int                      |Filters the list of      |
 |                          |                         |flavors to those with    |
 |                          |                         |the specified minimum    |
 |                          |                         |amount of RAM in         |
 |                          |                         |megabytes.               |
 +--------------------------+-------------------------+-------------------------+
-|marker                    |String *(Optional)*      |The ID of the last item  |
+|marker                    |String                   |The ID of the last item  |
 |                          |                         |in the previous list.    |
 +--------------------------+-------------------------+-------------------------+
-|limit                     |Int *(Optional)*         |Sets the page size.      |
+|limit                     |Int                      |Sets the page size.      |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 This operation does not accept a request body.
 

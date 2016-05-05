@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-network-os-networksv2-id:
 
 Delete network
@@ -16,12 +13,7 @@ This operation deletes the network specified in the request URI.
    You can delete an isolated network only if it is not attached to any server. To detach 
    a network from a server, delete the virtual interface for the network from the server instance.
    
-   
-
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -53,9 +45,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -64,14 +53,7 @@ This table shows the URI parameters for the request:
 |{id}                      |Uuid                     |The network ID.          |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete network: JSON request**
 
@@ -82,21 +64,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Delete network: JSON response**
 

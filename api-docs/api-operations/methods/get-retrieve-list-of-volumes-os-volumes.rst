@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-volumes-os-volumes:
 
 Retrieve list of volumes
@@ -47,17 +44,7 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Retrieve list of volumes: JSON request**
 
@@ -68,16 +55,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -147,11 +126,6 @@ This table shows the body parameters for the response:
 |                                     |                    |range for ``SSD``  |
 |                                     |                    |is 50-1024.        |
 +-------------------------------------+--------------------+-------------------+
-
-
-
-
-
 
 
 **Example Retrieve list of volumes: JSON response**

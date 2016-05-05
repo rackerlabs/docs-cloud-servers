@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-a-server-key-pair-os-keypairs:
 
 Create a server key pair
@@ -26,11 +23,6 @@ instance.
    * dashes
    * underscores
    
-   
-   
-   
-   
-
 
 
 This table shows the possible response codes for this operation:
@@ -67,26 +59,17 @@ Request
 """"""""""""""""
 
 
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|\ **keypair**             |Object *(Required)*      |The container for the    |
+|\ **keypair**             |Object                   |The container for the    |
 |                          |                         |key pair request.        |
 +--------------------------+-------------------------+-------------------------+
-|keypair.\ **name**        |String *(Required)*      |The name to associate    |
+|keypair.\ **name**        |String                   |The name to associate    |
 |                          |                         |with the key pair.       |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 **Example Create a server key pair: JSON request**
@@ -107,16 +90,8 @@ This table shows the body parameters for the request:
        } 
    }
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -143,11 +118,6 @@ This table shows the body parameters for the response:
 |keypair.\  **user_id**    |String                   |The ID of the user.      |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
 
 
 **Example Create a server key pair: JSON response**

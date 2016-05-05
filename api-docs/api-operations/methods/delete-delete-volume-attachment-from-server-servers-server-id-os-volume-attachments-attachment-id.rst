@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-volume-attachment-from-server-servers-server-id-os-volume-attachments-attachment-id:
 
 Delete volume attachment from server
@@ -51,9 +48,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -64,14 +58,7 @@ This table shows the URI parameters for the request:
 |{attachment_id}           |Uuid                     |The volume attachment ID.|
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example Delete volume attachment from server: JSON request**
 
@@ -82,21 +69,8 @@ This operation does not accept a request body.
    Content-Type: application/json
    Accept: application/json
 
-
-
-
-
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Delete volume attachment from server: JSON response**
 

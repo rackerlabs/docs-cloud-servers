@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-virtual-interface-and-attach-to-server-servers-server-id-os-virtual-interfacesv2:
 
 Create virtual interface and attach to server
@@ -15,9 +12,6 @@ instance.
 
 .. note::
    You can create a maximum of one virtual interface per instance per network.
-   
-   
-
 
 
 This table shows the possible response codes for this operation:
@@ -53,9 +47,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -63,9 +54,6 @@ This table shows the URI parameters for the request:
 +==========================+=========================+=========================+
 |{server_id}               |Uuid                     |The UUID for the server. |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 This table shows the body parameters for the request:
@@ -80,10 +68,6 @@ This table shows the body parameters for the request:
 |virtual_interface.\             |Uuid                  |The interface network |
 |**network_id**                  |                      |ID.                   |
 +--------------------------------+----------------------+----------------------+
-
-
-
-
 
 **Example Create virtual interface and attach to server: JSON request**
 
@@ -105,15 +89,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -155,11 +132,6 @@ This table shows the body parameters for the response:
 |                                              |              |on the physical |
 |                                              |              |network segment.|
 +----------------------------------------------+--------------+----------------+
-
-
-
-
-
 
 
 **Example Create virtual interface and attach to server: JSON response**
