@@ -47,6 +47,10 @@ Server Action Operations:
 	- :ref:`Create image <post-create-image-of-specified-server-servers-server-id-actions>`
 	- :ref:`Rescue server <post-rescue-specified-server-servers-server-id-actions>`
 	- :ref:`Unrescue server <post-unrescue-specified-server-servers-server-id-actions>`
+	- :ref:`Lock server <post-lock-specified-server-servers-server-id-actions>`
+	- :ref:`Unlock server <post-unlock-specified-server-servers-server-id-actions>`
+	- :ref:`Stop server <post-stop-specified-server-servers-server-id-actions>`
+	- :ref:`Start server <post-start-specified-server-servers-server-id-actions>`
 
 Server Address Operations:
 	- :ref:`List server addresses <get-retrieves-list-of-server-addresses-servers-server-id-ips>`
@@ -108,6 +112,10 @@ Server Metadata Operations:
 .. include:: methods/post-create-image-of-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-rescue-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-unrescue-specified-server-servers-server-id-actions.rst
+.. include:: methods/post-lock-specified-server-servers-server-id-actions.rst
+.. include:: methods/post-unlock-specified-server-servers-server-id-actions.rst
+.. include:: methods/post-start-specified-server-servers-server-id-actions.rst
+.. include:: methods/post-stop-specified-server-servers-server-id-actions.rst
 
 .. SERVER ADDRESS OPS
 
