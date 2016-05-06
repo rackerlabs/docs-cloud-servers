@@ -7,7 +7,7 @@ Unlock specified server
 
     POST /servers/{server_id}/action
 
-This operation unlocks a locked server that you own.
+This operation unlocks a locked server.
 
 .. note::
    
