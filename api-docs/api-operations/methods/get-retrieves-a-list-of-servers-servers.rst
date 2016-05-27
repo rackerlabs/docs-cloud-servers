@@ -1,7 +1,7 @@
 .. _get-retrieves-a-list-of-servers-servers:
 
 Retrieve list of servers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -50,59 +50,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-This table shows the query parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|changes-since             |Datetime                 |A time/date stamp for    |
-|                          |                         |when the server last     |
-|                          |                         |changed status.          |
-+--------------------------+-------------------------+-------------------------+
-|image                     |Uuid                     |The image reference for  |
-|                          |                         |the desired image for    |
-|                          |                         |your server instance.    |
-+--------------------------+-------------------------+-------------------------+
-|flavor                    |Uuid                     |The flavor reference for |
-|                          |                         |the desired flavor for   |
-|                          |                         |your server instance.    |
-+--------------------------+-------------------------+-------------------------+
-|name                      |Regexp                   |The name of the server,  |
-|                          |                         |which can be queried     |
-|                          |                         |with regular             |
-|                          |                         |expressions. Notice that |
-|                          |                         |?name=bob returns both   |
-|                          |                         |"bob" and "bobbin". If   |
-|                          |                         |you need to match only   |
-|                          |                         |"bob", use a regular     |
-|                          |                         |expression matching the  |
-|                          |                         |syntax of the underlying |
-|                          |                         |database server          |
-|                          |                         |implemented for Cloud    |
-|                          |                         |Servers (such as MySQL   |
-|                          |                         |or PostgreSQL).          |
-+--------------------------+-------------------------+-------------------------+
-|marker                    |Uuid                     |The UUID of the server   |
-|                          |                         |at which you want to set |
-|                          |                         |a marker.                |
-+--------------------------+-------------------------+-------------------------+
-|limit                     |Int                      |The integer value used   |
-|                          |                         |to limit the number of   |
-|                          |                         |values which will be     |
-|                          |                         |returned.                |
-+--------------------------+-------------------------+-------------------------+
-|status                    |Serverstatus             |The status of the        |
-|                          |                         |server. For example, you |
-|                          |                         |can filter on "ACTIVE".  |
-|                          |                         |For a full list of       |
-|                          |                         |possible status values,  |
-|                          |                         |see :ref:`Server Status  |
-|                          |                         |<server-statuses>`.      |
-+--------------------------+-------------------------+-------------------------+
-|host                      |String                   |The name of the host.    |
-+--------------------------+-------------------------+-------------------------+
-
-
 This operation does not accept a request body.
 
 
@@ -130,15 +77,15 @@ This table shows the body parameters for the response:
 +----------------------------+------------------------+------------------------+
 |servers.\ **id**            |Uuid                    |The ID of the server.   |
 +----------------------------+------------------------+------------------------+
-|servers.\  **links**        |Uuid                    |An array of the self    |
+|servers.\  **links**        |Array                   |An array of the self    |
 |                            |                        |and bookmark links to   |
 |                            |                        |the server.             |
 +----------------------------+------------------------+------------------------+
-|servers.links.\ **href**    |Uuid                    |The URL for the server  |
+|servers.links.\ **href**    |String                  |The URL for the server  |
 |                            |                        |and the associated      |
 |                            |                        |``rel``.                |
 +----------------------------+------------------------+------------------------+
-|servers.links.\ **rel**     |Uuid                    |The descriptive field   |
+|servers.links.\ **rel**     |String                  |The descriptive field   |
 |                            |                        |for the associated      |
 |                            |                        |``href``, which is      |
 |                            |                        |either ``self`` or      |

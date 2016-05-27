@@ -1,7 +1,7 @@
 .. _get-list-servers-with-details-servers-detail:
 
 List servers with details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -131,7 +131,8 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 |Name                            |Type                  |Description           |
 +================================+======================+======================+
-|**servers**                     |Array                 |An array of servers.  |
+|**servers**                     |Object                |A container of server |
+|                                |                      |details.              |
 +--------------------------------+----------------------+----------------------+
 |servers.\ **accessIPv4**        |Ip                    |The public IP version |
 |                                |                      |4 access address.     |
@@ -139,29 +140,32 @@ This table shows the body parameters for the response:
 |servers.\ **accessIPv6**        |Ip                    |The public IP version |
 |                                |                      |6 access address.     |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **addresses**         |Array                 |An array of addresses |
+|servers.\ **addresses**         |Object                |An object containing  |
+|                                |                      |arrays of addresses   |
 |                                |                      |for public, private,  |
 |                                |                      |and isolated networks |
 |                                |                      |attached to the       |
 |                                |                      |server.               |
 +--------------------------------+----------------------+----------------------+
-|servers.addresses.\ **addr**    |Array                 |The IP address of the |
+|servers.addresses.\ **addr**    |Uuid                  |The IP address of the |
 |                                |                      |network.              |
 +--------------------------------+----------------------+----------------------+
-|servers.addresses.\ **version** |Array                 |The version of the IP |
+|servers.addresses.\ **version** |Integer               |The version of the IP |
 |                                |                      |address of the        |
 |                                |                      |network.              |
 +--------------------------------+----------------------+----------------------+
 |servers.\ **id**                |Uuid                  |The ID of the server. |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **created**           |Uuid                  |The time stamp        |
+|servers.\ **created**           |Datestamp             |The time stamp        |
 |                                |                      |indicating the        |
 |                                |                      |creation date of the  |
 |                                |                      |server.               |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **flavor**            |Uuid                  |The flavor ID..       |
+|servers.\ **flavor**            |Object                |The flavor ID and     |
+|                                |                      |links.                |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **image**             |Uuid                  |The image ID..        |
+|servers.\ **image**             |Object                |The image ID and      |
+|                                |                      |links.                |
 +--------------------------------+----------------------+----------------------+
 |servers.\ **hostId**            |Uuid                  |The host ID. The      |
 |                                |                      |compute provisioning  |
@@ -186,15 +190,15 @@ This table shows the body parameters for the response:
 |                                |                      |account and is not    |
 |                                |                      |globally unique.      |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **links**             |Uuid                  |An array of the self  |
+|servers.\ **links**             |Array                 |An array of the self  |
 |                                |                      |and bookmark links to |
 |                                |                      |the server.           |
 +--------------------------------+----------------------+----------------------+
-|servers.links.\ **href**        |Uuid                  |The URL for the       |
+|servers.links.\ **href**        |String                |The URL for the       |
 |                                |                      |server and the        |
 |                                |                      |associated ``rel``.   |
 +--------------------------------+----------------------+----------------------+
-|servers.links.\ **rel**         |Uuid                  |The descriptive field |
+|servers.links.\ **rel**         |String                |The descriptive field |
 |                                |                      |for the associated    |
 |                                |                      |``href``, which is    |
 |                                |                      |either ``self`` or    |
@@ -205,7 +209,7 @@ This table shows the body parameters for the response:
 +--------------------------------+----------------------+----------------------+
 |servers.\ **name**              |String                |The server name.      |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **progress**          |String                |The build completion  |
+|servers.\ **progress**          |Integer               |The build completion  |
 |                                |                      |progress, as a        |
 |                                |                      |percentage. Value     |
 |                                |                      |ranges from 0 to 100. |
@@ -220,7 +224,7 @@ This table shows the body parameters for the response:
 |servers.\ **tenant_id**         |String                |The tenant ID.        |
 |                                |                      |                      |
 +--------------------------------+----------------------+----------------------+
-|servers.\ **updated**           |String                |The time stamp of the |
+|servers.\ **updated**           |Datestamp             |The time stamp of the |
 |                                |                      |last update.          |
 +--------------------------------+----------------------+----------------------+
 |servers.\ **user_id**           |String                |The user ID.          |
@@ -258,12 +262,6 @@ This table shows the body parameters for the response:
 |                                |                      |the volume            |
 |                                |                      |attach_status must be |
 |                                |                      |``detached``.         |
-+--------------------------------+----------------------+----------------------+
-|**next**                        |Anyuri                |Moves to the next     |
-|                                |                      |metadata item.        |
-+--------------------------------+----------------------+----------------------+
-|**previous**                    |Anyuri                |Moves to the previous |
-|                                |                      |metadata item.        |
 +--------------------------------+----------------------+----------------------+
 
 **Example List servers with details: JSON response**
