@@ -7,7 +7,8 @@ Stop specified server
 
     POST /servers/{server_id}/action
 
-This operation stops a running server, and changes its status to ``SHUTOFF``.
+This operation stops a running server, and changes the server status to ``SHUTOFF``  and 
+changes the clean_shutdown parameter to ``TRUE``.
 
 .. note::
    
@@ -16,6 +17,10 @@ This operation stops a running server, and changes its status to ``SHUTOFF``.
    If the server status is ``LOCKED``, you must have administrator privileges to stop the 
    server.
    
+..warning::
+
+   The owner of the server will continue to be billed even if a server is stopped. To stop 
+   getting billed, delete the server
 
 This table shows the possible response codes for this operation:
 
