@@ -291,7 +291,7 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |server.\ **id**            |Uuid                     |The ID of the server.   |
 +---------------------------+-------------------------+------------------------+
-|server.\ **links**         |Uuid                     |An array of the self    |
+|server.\ **links**         |Array                    |An array of the self    |
 |                           |                         |and bookmark links to   |
 |                           |                         |the server.             |
 +---------------------------+-------------------------+------------------------+

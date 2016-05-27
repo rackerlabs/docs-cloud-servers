@@ -64,7 +64,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|\ **keypair**             |Object                   |The container for the    |
+|**keypair**               |Object                   |The container for the    |
 |                          |                         |key pair request.        |
 +--------------------------+-------------------------+-------------------------+
 |keypair.\ **name**        |String                   |The name to associate    |

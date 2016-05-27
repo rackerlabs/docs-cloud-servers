@@ -91,29 +91,32 @@ This table shows the body parameters for the response:
 |server.\ **accessIPv6**        |Ip                     |The public IP version |
 |                               |                       |6 access address.     |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **addresses**         |Array                  |An array of addresses |
+|server.\ **addresses**         |Object                 |An object containing  |
+|                               |                       |arrays of addresses   |
 |                               |                       |for public, private,  |
 |                               |                       |and isolated networks |
 |                               |                       |attached to the       |
 |                               |                       |server.               |
 +-------------------------------+-----------------------+----------------------+
-|server.addresses.\ **addr**    |Array                  |The IP address of the |
+|server.addresses.\ **addr**    |Uuid                   |The IP address of the |
 |                               |                       |network.              |
 +-------------------------------+-----------------------+----------------------+
-|server.addresses.\ **version** |Array                  |The version of the IP |
+|server.addresses.\ **version** |Integer                |The version of the IP |
 |                               |                       |address of the        |
 |                               |                       |network.              |
 +-------------------------------+-----------------------+----------------------+
 |server.\ **id**                |Uuid                   |The ID of the server. |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **created**           |Uuid                   |The time stamp        |
+|server.\ **created**           |Datestamp              |The time stamp        |
 |                               |                       |indicating the        |
 |                               |                       |creation date of the  |
 |                               |                       |server.               |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **flavor**            |Uuid                   |The flavor ID.        |
+|server.\ **flavor**            |Object                 |The flavor ID and     |
+|                               |                       |links.                |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **image**             |Uuid                   |The image ID.         |
+|server.\ **image**             |Object                 |The image ID and      |
+|                               |                       |links.                |
 +-------------------------------+-----------------------+----------------------+
 |server.\ **hostId**            |Uuid                   |The host ID. The      |
 |                               |                       |compute provisioning  |
@@ -138,15 +141,15 @@ This table shows the body parameters for the response:
 |                               |                       |account and is not    |
 |                               |                       |globally unique.      |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **links**             |Uuid                   |An array of the self  |
+|server.\ **links**             |Array                  |An array of the self  |
 |                               |                       |and bookmark links to |
 |                               |                       |the server.           |
 +-------------------------------+-----------------------+----------------------+
-|server.links.\ **href**        |Uuid                   |The URL for the       |
+|server.links.\ **href**        |String                 |The URL for the       |
 |                               |                       |server and the        |
 |                               |                       |associated ``rel``.   |
 +-------------------------------+-----------------------+----------------------+
-|server.links.\ **rel**         |Uuid                   |The descriptive field |
+|server.links.\ **rel**         |String                 |The descriptive field |
 |                               |                       |for the associated    |
 |                               |                       |``href``, which is    |
 |                               |                       |either ``self`` or    |
@@ -157,7 +160,7 @@ This table shows the body parameters for the response:
 +-------------------------------+-----------------------+----------------------+
 |server.\ **name**              |String                 |The server name.      |
 +-------------------------------+-----------------------+----------------------+
-|server.\  **progress**         |String                 |The build completion  |
+|server.\ **progress**          |Integer                |The build completion  |
 |                               |                       |progress, as a        |
 |                               |                       |percentage. Value     |
 |                               |                       |ranges from ``0`` to  |
@@ -171,9 +174,8 @@ This table shows the body parameters for the response:
 |                               |                       |<server-statuses>`.   |
 +-------------------------------+-----------------------+----------------------+
 |server.\ **tenant_id**         |String                 |The tenant ID.        |
-|                               |                       |                      |
 +-------------------------------+-----------------------+----------------------+
-|server.\ **updated**           |String                 |The time stamp of the |
+|server.\ **updated**           |Datestamp              |The time stamp of the |
 |                               |                       |last update.          |
 +-------------------------------+-----------------------+----------------------+
 |server.\ **user_id**           |String                 |The user ID.          |
@@ -211,12 +213,6 @@ This table shows the body parameters for the response:
 |                               |                       |the volume            |
 |                               |                       |attach_status must be |
 |                               |                       |``detached``.         |
-+-------------------------------+-----------------------+----------------------+
-|**next**                       |Anyuri                 |Moves to the next     |
-|                               |                       |metadata item.        |
-+-------------------------------+-----------------------+----------------------+
-|**previous**                   |Anyuri                 |Moves to the previous |
-|                               |                       |metadata item.        |
 +-------------------------------+-----------------------+----------------------+
 
 

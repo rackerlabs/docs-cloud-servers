@@ -17,7 +17,7 @@ changes the clean_shutdown parameter to ``TRUE``.
    If the server status is ``LOCKED``, you must have administrator privileges to stop the 
    server.
    
-..warning::
+.. warning::
 
    The owner of the server will continue to be billed even if a server is stopped. To stop 
    getting billed, delete the server

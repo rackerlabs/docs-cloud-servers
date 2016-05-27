@@ -191,7 +191,7 @@ This table shows the body parameters for the request:
 |server.personality.\ **path**                |String       |The path of the       |
 |                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
-|server.personality.\ **contents**            |String       |The contents od the   |
+|server.personality.\ **contents**            |String       |The contents of the   |
 |                                             |             |personality file.     |
 +---------------------------------------------+-------------+----------------------+
 |server.\ **networks**                        |Array        |The array of networks |
@@ -291,15 +291,15 @@ This table shows the body parameters for the response:
 +---------------------------+-------------------------+------------------------+
 |server.\ **id**            |Uuid                     |The ID of the server.   |
 +---------------------------+-------------------------+------------------------+
-|server.\ **links**         |Uuid                     |An array of the self    |
+|server.\ **links**         |Array                    |An array of the self    |
 |                           |                         |and bookmark links to   |
 |                           |                         |the server.             |
 +---------------------------+-------------------------+------------------------+
-|server.links.\ **href**    |Uuid                     |The URL for the server  |
+|server.links.\ **href**    |String                   |The URL for the server  |
 |                           |                         |and the associated      |
 |                           |                         |``rel``.                |
 +---------------------------+-------------------------+------------------------+
-|server.links.\ **rel**     |Uuid                     |The descriptive field   |
+|server.links.\ **rel**     |String                   |The descriptive field   |
 |                           |                         |for the associated      |
 |                           |                         |``href``, which is      |
 |                           |                         |either ``self`` or      |
