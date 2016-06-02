@@ -1,7 +1,0 @@
-    Status Code: 202 OK
-    Content-Length: 1444
-    Content-Type: application/xml
-    Date: Thu, 04 Dec 2014 20:00:19 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    Via: 1.1 Repose (Repose/2.12)
-    x-compute-request-id: req-8fff3021-a692-49c7-acde-0c297a113bb6

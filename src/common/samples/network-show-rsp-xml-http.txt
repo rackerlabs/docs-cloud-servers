@@ -1,7 +1,0 @@
-      Status Code: 200 OK
-      Content-Length: 122
-      Content-Type: application/xml
-      Date: Mon, 13 Apr 2015 20:45:54 GMT, Mon, 13 Apr 2015 20:45:54 GMT
-      Server: Jetty(9.2.z-SNAPSHOT)
-      Via: 1.1 Repose (Repose/6.2.1.2)
-      X-Compute-Request-Id: req-039f0091-f0e3-43a2-8f44-8cb70f1431eb
