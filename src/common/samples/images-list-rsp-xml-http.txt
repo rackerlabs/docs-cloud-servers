@@ -1,7 +1,0 @@
-Status 200 OK
-Content-Length 220
-Content-Type application/xml
-Date Fri, 27 Mar 2015 19:24:34 GMT, Fri, 27 Mar 2015 19:24:34 GMT
-Server Jetty(9.2.z-SNAPSHOT)
-Via 1.1 Repose (Repose/6.2.1.2)
-X-Compute-Request-Id req-e65ede6f-e92f-4e55-bbf7-4af65bc465fe 

@@ -1,7 +1,0 @@
-    Status Code: 200 OK
-    Content-Length: 528
-    Content-Type: application/json
-    Date: Wed, 08 Jul 2015 21:38:05 GMT, Wed, 08 Jul 2015 21:38:06 GMT
-    Server: Jetty(9.2.z-SNAPSHOT)
-    Via: 1.1 Repose (Repose/6.2.1.2)
-    X-Compute-Request-Id: req-3c0027db-484f-4f36-81b7-0b35b556bc78

@@ -1,8 +1,0 @@
-{
-  "extra_specs": {
-    "policy_class": "compute_flavor",
-    "class": "compute1",
-    "disk_io_index": "-1",
-    "number_of_data_disks": "0"
-  }
-}

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<server id="8a54a054-501e-4999-a8f0-9b8aae5de1b3" adminPass="mJGz4KSerJy7" OS-DCF:diskConfig="AUTO">
-    <metadata/>
-    <atom:link href= "https://dfw.servers.api.rackspacecloud.com/v2/820712/servers/8a54a054-501e-4999-a8f0-9b8aae5de1b3" rel="self"/>
-    <atom:link href= "https://dfw.servers.api.rackspacecloud.com/820712/servers/8a54a054-501e-4999-a8f0-9b8aae5de1b3" rel="bookmark"/>
-</server>
