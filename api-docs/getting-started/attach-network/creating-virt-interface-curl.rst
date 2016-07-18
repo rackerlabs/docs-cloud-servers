@@ -7,18 +7,18 @@ Issue the following cURL command.
 
 **Create a virtual interface with cURL request**
 
-.. code::  
+.. code::
 
    $ curl https://$API_ENDPOINT/v2/$TENANT-ID/servers/<instance_id>/os-virtual-interfacesv2 \
          -X POST \
          -H "Content-Type: application/json" \
          -H "Accept: application/json" \
-         -H "X-Auth-Token: $AUTH-TOKEN" \
+         -H "X-Auth-Token: $AUTH_TOKEN" \
          -d '{"virtual_interface": {"network_id": "<network_id>"}}'| python -m json.tool
 
 **Positional arguments:**
 
--  ``instance_id``. The ID of the server instance to which you want to connect the virtual 
+-  ``instance_id``. The ID of the server instance to which you want to connect the virtual
    interface.
 
 -  ``network_id``. The ID of the network for which you want to create a virtual interface.
@@ -27,7 +27,7 @@ The operation returns a response as shown in the following example.
 
 **Create a virtual interface with cURL response**
 
-.. code::  
+.. code::
 
    {
       "virtual_interfaces":[
@@ -45,4 +45,4 @@ The operation returns a response as shown in the following example.
       ]
    }
 
-**Next topic:**  :ref:`Listing virtual interfaces for a server<listing-virt-interfaces>` 
+**Next topic:**  :ref:`Listing virtual interfaces for a server<listing-virt-interfaces>`

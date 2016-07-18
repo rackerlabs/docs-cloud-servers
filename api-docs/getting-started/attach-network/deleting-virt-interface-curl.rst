@@ -7,24 +7,24 @@ Issue the following command to detach the virtual interface from the server.
 
 **Delete a virtual interface with cURL request**
 
-.. code::  
+.. code::
 
    $ curl -i https://$API_ENDPOINT/v2/$TENANT_ID/servers/<instance_id>/os-virtual-interfacesv2/<interface_id> \
-         -X DELETE -H "X-Auth-Token: $AUTH-TOKEN"
+         -X DELETE -H "X-Auth-Token: $AUTH_TOKEN"
 
 **Positional arguments:**
 
--  ``instance_id``. The ID of the server instance from which you want to detach the virtual 
+-  ``instance_id``. The ID of the server instance from which you want to detach the virtual
    interface.
 
 -  ``interface_id``. The ID of the virtual interface that you want to delete.
 
-If the delete operation was successful, the HTTP header shows the 204 status code, as 
+If the delete operation was successful, the HTTP header shows the 204 status code, as
 shown in the following output.
 
 **Delete a virtual interface with cURL request**
 
-.. code::  
+.. code::
 
    HTTP/1.1 204 No Content
    Date: Thu, 16 Aug 2012 17:19:53 GMT

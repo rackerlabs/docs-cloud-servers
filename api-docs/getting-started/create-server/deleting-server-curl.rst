@@ -9,21 +9,21 @@ Issue the following command,specifying the ID for the server that you want to de
 
 **Delete a server with cURL request**
 
-.. code::  
+.. code::
 
    $ curl -i https://$API_ENDPOINT/v2/$TENANT_ID/servers/<id> \
           -X DELETE \
-          -H "X-Auth-Token: $AUTH-TOKEN"
+          -H "X-Auth-Token: $AUTH_TOKEN"
 
-Where ``id`` is the ID of the server that you want to delete. 
+Where ``id`` is the ID of the server that you want to delete.
 
 
-If the delete operation was successful, it returns a ``HTTP 204`` status code, as shown in 
+If the delete operation was successful, it returns a ``HTTP 204`` status code, as shown in
 the following output.
 
 **Delete a server with cURL response**
 
-.. code::  
+.. code::
 
    HTTP/1.1 204 No Content
    Date: Thu, 16 Aug 2012 17:19:53 GMT

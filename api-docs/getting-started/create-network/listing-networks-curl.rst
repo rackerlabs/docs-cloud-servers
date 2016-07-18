@@ -7,17 +7,17 @@ Issue the following cURL command.
 
 **List networks with cURL request**
 
-.. code::  
+.. code::
 
    $ curl https://$API_ENDPOINT/v2/$TENANT-ID/os-networksv2 \
-         -X GET -H "X-Auth-Token: $AUTH-TOKEN" | python -m json.tool
+         -X GET -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-For each isolated network, the operation returns the CIDR. Additionally, for isolated 
+For each isolated network, the operation returns the CIDR. Additionally, for isolated
 networks and Rackspace networks, the operation returns the network ID and label.
 
 **List networks with cURL response**
 
-.. code::  
+.. code::
 
    {
       "networks":[
@@ -37,4 +37,4 @@ networks and Rackspace networks, the operation returns the network ID and label.
       ]
    }
 
-**Next topic:**  :ref:`Booting server<booting-server-with-net>` 
+**Next topic:**  :ref:`Booting server<booting-server-with-net>`
