@@ -1,7 +1,7 @@
 .. _booting-server-with-curl:
 
 Booting server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 #. Issue the following cURL command.
 

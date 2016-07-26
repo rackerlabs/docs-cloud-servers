@@ -1,13 +1,13 @@
 .. _creating-network-with-nova:
 
 Creating network (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 #. Issue the following command.
 
    **Create network with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova network-create <network_label> <cidr>
 
@@ -18,12 +18,12 @@ Creating network (nova client)
    -  ``cidr``. The IP block from which to allocate, such as
       ``192.168.0.0/24`` or ``2001:DB8::/64``.
 
-   The operation returns the CIDR, ID, and label for the new network, as shown in the 
-   following output.
-   
+   The operation returns the CIDR, ID, and label for the new network, as shown
+   in the following output.
+
    **Create network with nova response**
 
-   .. code::  
+   .. code::
 
        +----------+--------------------------------------+
        | Property | Value                                |
@@ -38,5 +38,5 @@ Creating network (nova client)
    returned for your network.
 
 
-**Next topic:**  :ref:`Listing networks<listing-networks>` 
+**Next topic:**  :ref:`Listing networks<listing-networks>`
 

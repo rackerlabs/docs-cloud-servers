@@ -1,7 +1,7 @@
 .. _listing-virt-interfaces-with-curl:
 
 Listing virtual interfaces (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Issue the following cURL command.
 
@@ -14,8 +14,8 @@ Issue the following cURL command.
 
 **Positional argument:**
 
--  ``instance_id``. The ID of the server instance for which you want to list virtual
-   interfaces.
+-  ``instance_id``. The ID of the server instance for which you want to list
+   virtual interfaces.
 
 The operation returns a response as shown in the following example.
 

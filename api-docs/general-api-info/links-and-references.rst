@@ -1,5 +1,8 @@
+.. _links-and-references:
+
+====================
 Links and References
----------------------
+====================
 
 Resources often need to refer to other resources. For example, when you
 create a server, you must specify the image from which to build the
@@ -20,7 +23,7 @@ the resource exists in the current endpoint.
             "key_name":"name_of_keypair",
             "OS-DCF:diskConfig" : "AUTO",
             "metadata" : {
-                "My Server Name" : "API Test Server 1" 
+                "My Server Name" : "API Test Server 1"
             },
             "personality" : [
                 {
@@ -31,13 +34,13 @@ the resource exists in the current endpoint.
             "networks": [
                 {
                      "uuid": "4ebd35cf-bfe7-4d93-b0d8-eb468ce2245a"
-                }, 
+                },
                 {
                      "uuid": "00000000-0000-0000-0000-000000000000"
-                }, 
+                },
                 {
                      "uuid": "11111111-1111-1111-1111-111111111111"
-                } 
+                }
             ]
         }
     }
@@ -58,20 +61,20 @@ Request**
             "personality" : [
                 {
                     "path" : "/etc/banner.txt",
-                    "contents" : "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA==" 
+                    "contents" : "ICAgICAgDQoiQSBjbG91ZCBkb2VzIG5vdCBrbm93IHdoeSBpdCBtb3ZlcyBpbiBqdXN0IHN1Y2ggYSBkaXJlY3Rpb24gYW5kIGF0IHN1Y2ggYSBzcGVlZC4uLkl0IGZlZWxzIGFuIGltcHVsc2lvbi4uLnRoaXMgaXMgdGhlIHBsYWNlIHRvIGdvIG5vdy4gQnV0IHRoZSBza3kga25vd3MgdGhlIHJlYXNvbnMgYW5kIHRoZSBwYXR0ZXJucyBiZWhpbmQgYWxsIGNsb3VkcywgYW5kIHlvdSB3aWxsIGtub3csIHRvbywgd2hlbiB5b3UgbGlmdCB5b3Vyc2VsZiBoaWdoIGVub3VnaCB0byBzZWUgYmV5b25kIGhvcml6b25zLiINCg0KLVJpY2hhcmQgQmFjaA=="
                 }
             ],
             "networks": [
                 {
                      "uuid": "4ebd35cf-bfe7-4d93-b0d8-eb468ce2245a"
-                }, 
+                },
                 {
                      "uuid": "00000000-0000-0000-0000-000000000000"
-                }, 
+                },
                 {
                      "uuid": "11111111-1111-1111-1111-111111111111"
-                } 
-            ] 
+                }
+            ]
         }
     }
 

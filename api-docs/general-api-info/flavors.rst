@@ -1,7 +1,8 @@
 .. _flavors:
 
+=======
 Flavors
--------
+=======
 
 The term flavor refers to a server's combination of RAM size, vCPUs, network
 throughput (RXTX factor), and disk space. You build a Linux or Windows server
@@ -121,11 +122,11 @@ flavors with Cloud Block Storage.
 OnMetal Cloud Server Flavors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OnMetal Cloud Server flavors differ significantly from Virtual Cloud Server flavors. 
-Virtual Cloud Server flavors are used to create virtualservers on a hypervisor, which means 
-one or more virtual instances are located on the same physical server. OnMetal Cloud Server 
-flavors are used to rapidly build a server instance on a physical server with no hypervisor 
-and no multi-tenancy.
+OnMetal Cloud Server flavors differ significantly from Virtual Cloud Server
+flavors. Virtual Cloud Server flavors are used to create virtualservers on a
+hypervisor, which means one or more virtual instances are located on the same
+physical server. OnMetal Cloud Server flavors are used to rapidly build a
+server instance on a physical server with no hypervisor and no multi-tenancy.
 
 OnMetal server flavors include the following:
 
@@ -134,7 +135,8 @@ OnMetal server flavors include the following:
   - Twenty cores at 2.6 Ghz
   - Memory: 128 GB RAM
   - Storage: Two 240 GB SSD disks (RAID 1 protected)
-  - Flash: Two 1.6 TB PCIe (providing 10% to 20% iops improvement over OnMetal v1 I/O flavor).
+  - Flash: Two 1.6 TB PCIe (providing 10% to 20% iops improvement over OnMetal
+    v1 I/O flavor).
 
 **OnMetal v2 General Purpose Small**
   - One Intel Xeon E5-2620 v3 processor
@@ -154,43 +156,46 @@ OnMetal server flavors include the following:
   - Memory: 128 GB RAM
   - Storage: Two 800 GB SSD disks (RAID 1 protected)
 
-**OnMetal v1 Compute** 
+**OnMetal v1 Compute**
   - One Intel Xeon E5-2680 v2 processor
   - 1x10 core at 2.8 Ghz
   - Memory: 32 GB RAM
   - Storage: 32 GB SATADOM
 
-**OnMetal v1 Memory** 
+**OnMetal v1 Memory**
   - One Intel Xeon E5-2630 v2 processor
   - Six cores at 2.6 Ghz
   - Memory: 32 GB RAM
   - Storage: Two 800 GB SSD disks
 
-**OnMetal v1 I/O** 
+**OnMetal v1 I/O**
   - One Intel Xeon E5-2680 v2 processor
   - 2x10 core at 2.8 Ghz
   - Memory: 128 GB RAM
   - Storage: 32 GB SATADOM and two 1.6 TB Seagate Nyto WarpDrives
 
 
-Use Compute flavors for high CPU activity like network requests, application logic, web 
-servers, load balancers, and so on.
+Use Compute flavors for high CPU activity like network requests, application
+logic, web servers, load balancers, and so on.
 
-Use Memory flavors for high RAM activity like in-memory SQL configurations, caching, 
-searching indexes, and so on.
+Use Memory flavors for high RAM activity like in-memory SQL configurations,
+caching, searching indexes, and so on.
 
 Use I/O flavors for high I/O activity like NoSQL and SQL databases.
 
 Use General Purpose flavors for everything else.
 
-If you require additional storage beyond what is provided by the local disks on a specific 
-flavor, you can extend all the preceding server flavors with Cloud Block Storage.
+If you require additional storage beyond what is provided by the local disks on
+a specific flavor, you can extend all the preceding server flavors with Cloud
+Block Storage.
 
 Supported Flavors for Cloud Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To find the current list of supported flavors, see :ref:`Retrieve list of flavors <get-retrieve-list-of-flavors-flavors>`.
-This table shows some of the common supported flavors for next generation Cloud Servers:
+To find the current list of supported flavors, see
+:ref:`Retrieve list of flavors <get-retrieve-list-of-flavors-flavors>`.
+This table shows some of the common supported flavors for next generation Cloud
+Servers:
 
 **Table: Supported Flavors for Next Generation Cloud Servers**
 
@@ -257,10 +262,10 @@ This table shows some of the common supported flavors for next generation Cloud 
 | onmetal-memory1         | OnMetal Memory v1                 | 524288      | 32    | 0         | 24    | 10000.0     |
 +-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
 | onmetal-general2-large  | OnMetal General Purpose v2 Large  | 131072      | 800   | 0         | 24    | 10000.0     |
-+-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+ 
++-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
 | onmetal-general2-medium | OnMetal General Purpose v2 Medium | 65536       | 800   | 0         | 24    | 10000.0     |
-+-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+ 
++-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
 | onmetal-general2-small  | OnMetal General Purpose v2 Small  | 32768       | 800   | 0         | 12    | 10000.0     |
 +-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
-| onmetal-io2             | OnMetal I/O v2                    | 131072      | 240   | 3200      | 40    | 10000.0     | 
+| onmetal-io2             | OnMetal I/O v2                    | 131072      | 240   | 3200      | 40    | 10000.0     |
 +-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+

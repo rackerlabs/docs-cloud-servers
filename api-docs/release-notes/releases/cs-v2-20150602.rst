@@ -1,0 +1,24 @@
+.. _cs-v2-20150602:
+
+API |contract version| updates, June 2, 2015
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+XML examples have been removed. The XML serialization format for API request and
+response bodies is no longer supported by OpenStack. To stay consistent with OpenStack
+(and industry trends in general), Rackspace has deprecated the use of XML request and
+response bodies. New code using the Compute API should not use XML, and current programs
+using XML should prepare for the end of XML support. The date when Rackspace will
+remove XML support from the Compute API will be announced soon.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

@@ -1,0 +1,64 @@
+.. _cs-v2-20120815:
+
+API |contract version| updates, August 15, 2012
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+- A new authentication endpoint has been added.
+
+   To authenticate, you issue a request to the Rackspace Cloud Identity
+   Service, which is an implementation of the OpenStack Keystone
+   Identity Service v2.0. Customers with UK-based accounts can now issue
+   a **POST** **/tokens** request to the Rackspace Cloud Identity
+   Service at the https://lon.identity.api.rackspacecloud.com/v2.0
+   endpoint to authenticate access to either the first generation Cloud
+   Servers or next generation Cloud Servers services.
+
+   In response to valid credentials, an authentication request to the
+   Rackspace Cloud Identity Service v2 returns an authentication token
+   and a service catalog.
+
+-  Both first generation and next generation Cloud Servers services
+   now appear in the service catalog.
+
+   In the service catalog, the Cloud Servers services are named as
+   follows:
+
+   +--------------------+--------------------------------------------------------+
+   | Cloud Servers      | Service name in the catalog                            |
+   | generation         |                                                        |
+   +====================+========================================================+
+   | First generation   | ``cloudServers``                                       |
+   |                    |                                                        |
+   |                    | If you use the authentication token to access this     |
+   |                    | service, you can view and perform first generation     |
+   |                    | Cloud Servers API operations against your first        |
+   |                    | generation servers.                                    |
+   +--------------------+--------------------------------------------------------+
+   | Next generation    | ``cloudServersOpenStack``                              |
+   |                    |                                                        |
+   |                    | If you use the authentication token to access this     |
+   |                    | service, you can view and perform next generation      |
+   |                    | Cloud Servers API operations against your next         |
+   |                    | generation servers.                                    |
+   |                    |                                                        |
+   |                    | Next generation servers might show multiple            |
+   |                    | endpoints to enable regional choice. Select the        |
+   |                    | appropriate endpoint for the region that you want to   |
+   |                    | interact with by examining the ``region`` field.       |
+   +--------------------+--------------------------------------------------------+
+
+   For detailed information about authentication through the Identity Service v2.0,
+   see the :rax-devdocs:`Cloud Identity Client Developer Guide <cloud-identity/v2/developer-guide/#document-overview>`.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

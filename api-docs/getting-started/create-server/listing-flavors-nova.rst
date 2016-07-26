@@ -1,24 +1,25 @@
 .. _listing-flavors-with-nova:
 
 Listing flavors (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 #. Issue the following command.
 
    **List flavors with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova flavor-list
 
-   Optional parameter: ``--extra-specs``, shows details including class, disk I/O, and the
-   number of data disks.
+   Optional parameter: ``--extra-specs``, shows details including class, disk
+   I/O, and the number of data disks.
 
-   The operation returns details that describes each flavor, as shown the following example.
+   The operation returns details that describes each flavor, as shown the
+   following example.
 
    **List flavors with nova response**
-   
-   .. code::  
+
+   .. code::
 
                                                                       Flavor List
        +------------------+-------------------------+-----------+------+-----------+------+-------+-------------+-----------+
@@ -60,11 +61,13 @@ Listing flavors (nova client)
        | performance2-60  | 60 GB Performance       | 61440     | 40   | 600       |      | 16    | 5000.0      | N/A       |
        | performance2-90  | 90 GB Performance       | 92160     | 40   | 900       |      | 24    | 7500.0      | N/A       |
        +------------------+-------------------------+-----------+------+-----------+------+-------+-------------+-----------+
-                           
 
-#. Copy the ID of the flavor you want to use from the ``ID`` field in the output.
 
-   In this example, use the flavor ID for the 8GB Standard Instance, which is ``6``.
+#. Copy the ID of the flavor you want to use from the ``ID`` field in the
+   output.
 
-**Next topic:**  :ref:`Booting server<booting-server>` 
+   In this example, use the flavor ID for the 8GB Standard Instance, which is
+   ``6``.
+
+**Next topic:**  :ref:`Booting server<booting-server>`
 

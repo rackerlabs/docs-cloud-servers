@@ -1,0 +1,38 @@
+.. _cs-v2-20140724:
+
+API |contract version| updates, July 24, 2014
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+-  OnMetal servers have been introduced. OnMetal extends Rackspace Cloud Servers to support
+   single-tenant, bare-metal, high-end hardware specialized to deliver outstanding
+   performance for the key workloads typically seen in web applications. These servers can
+   be provisioned within minutes via the Cloud Servers API, similar to any other cloud
+   instance.
+
+   Significant differences between virtual cloud servers and OnMetal
+   cloud servers are as follows:
+
+   -  OnMetal servers are created using special flavors and images.
+
+   -  Private networks are not currently available for OnMetal servers.
+
+   -  OnMetal servers must be created using key pairs, and the admin
+      password provided at creation should be neither used nor modified.
+
+   -  Some server actions, like rebuild, resize, rescue, and so on, are
+      not applicable to OnMetal servers.
+
+-  The tables of images and flavors have been updated.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

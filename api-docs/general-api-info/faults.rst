@@ -1,5 +1,8 @@
+.. _faults:
+
+======
 Faults
--------
+======
 
 The API v2 handles the following types of faults:
 
@@ -16,6 +19,8 @@ HTTP status code, a human-readable message, and optional details about
 the error. Additionally, an asynchronous fault might also contain a time
 stamp that indicates when the fault occurred.
 
+.. _faults-synchronous:
+
 Synchronous Faults
 ~~~~~~~~~~~~~~~~~~
 
@@ -31,7 +36,7 @@ message, and optional details about the error.
         "computeFault" : {
             "code" : 500,
             "message" : "Fault!",
-            "details" : "Error Details..." 
+            "details" : "Error Details..."
         }
     }
 
@@ -96,7 +101,7 @@ elements with the associated error response codes:
         "itemNotFound" : {
             "code" : 404,
             "message" : "Not Found",
-            "details" : "Error Details..." 
+            "details" : "Error Details..."
         }
     }
 
@@ -125,6 +130,7 @@ date/time format.
         }
     }
 
+.. _faults-asynchronous:
 
 Asynchronous Faults
 ~~~~~~~~~~~~~~~~~~~
@@ -210,5 +216,91 @@ indicates when the fault occurred.
             ]
         }
     }
+
+.. _faults-badrequest:
+
+badRequest
+~~~~~~~~~~
+
+The ``badRequest`` fault indicates that the data in the request object is
+invalid. For example, a string was used in a parameter that accepts only an
+integer. The fault wraps validation errors.
+
+**Example: badRequest fault response**
+
+.. code::
+
+    <badRequest xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" code="400">
+        <message>Validation fault</message>
+        <details>The object is not valid</details>
+            <validationErrors>
+                <message>Server ip is invalid. Please specify a valid ip.</message>
+            </validationErrors>
+    </badRequest>
+
+.. _faults-itemnotfound:
+
+itemNotFound
+~~~~~~~~~~~~
+
+The ``itemNotFound`` fault is returned when a requested resource is not found.
+
+**Example: itemNotFound fault response**
+
+.. code::
+
+    <itemNotFound code="404" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <message>Object not Found</message>
+    </itemNotFound>
+
+overLimit
+~~~~~~~~~
+
+The ``overLimit`` fault is returned when you exceed a currently allocated limit.
+
+**Example: overLimit fault response**
+
+.. code::
+
+    <overLimit code="413" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <message>Your account is currently over the limit so your request could not be processed.</message>
+    </overLimit>
+
+.. _faults-serviceunavailable:
+
+serviceUnavailable
+~~~~~~~~~~~~~~~~~~
+
+The ``serviceUnavailable`` fault is returned when the service is unavailable,
+such as when the service is undergoing maintenance. This fault does not
+necessarily  mean that the currently configured load balancers are unable to
+process traffic;  it simply means that the API is currently unable to service
+requests.
+
+**Example: serviceUnavailable fault response**
+
+.. code::
+
+    <serviceUnavailable code="500" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <message>The Load balancing service is currently not available</message>
+    </serviceUnavailable>
+
+.. _faults-unauthorized:
+
+unauthorized
+~~~~~~~~~~~~
+
+The ``unauthorized`` fault is returned when you are not authorized to perform
+an attempted operation.
+
+**Example: unauthorized fault response**
+
+.. code::
+
+    <unauthorized code="404" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <message>You are not authorized to execute this operation.</message>
+    </unauthorized>
+
+
 
 

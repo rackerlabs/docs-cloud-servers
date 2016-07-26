@@ -1,21 +1,22 @@
 .. _listing-images-with-nova:
 
 Listing images (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 #. Issue the following command.
 
    **List images with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova image-list
 
-   The operation returns the image ID, name, and status, as shown in the following output.
-   
+   The operation returns the image ID, name, and status, as shown in the
+   following output.
+
    **List images with nova response**
 
-   .. code::  
+   .. code::
 
        +--------------------------------------+-----------------------------------------------------------------------------+--------+--------+
        | ID                                   | Name                                                                        | Status | Server |
@@ -55,5 +56,5 @@ Listing images (nova client)
    In this example, use the ``ID`` value for the Ubuntu 11.10 image,
    which is ``3afe97b2-26dc-49c50a2cc-a2fc8d80c001``.
 
-**Next topic:** :ref:`Listing flavors<listing-flavors>` 
+**Next topic:** :ref:`Listing flavors<listing-flavors>`
 
