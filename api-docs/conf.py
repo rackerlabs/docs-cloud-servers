@@ -149,11 +149,11 @@ extlinks = {
 # process.
 
 rst_epilog = """
-.. |service| replace:: Rackspace Cloud Servers
-.. |apiservice| replace:: Rackspace Cloud Servers API
+.. |service| replace:: Cloud Servers
+.. |apiservice| replace:: Cloud Servers API
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: v2.0
-.. |product name| replace:: Rackspace Cloud Servers
+.. |product name| replace:: Cloud Servers
 """
 
 
