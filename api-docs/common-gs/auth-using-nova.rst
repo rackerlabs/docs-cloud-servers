@@ -1,24 +1,25 @@
 .. _authenticate-using-nova:
 
 Authenticating by using the nova client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To authenticate using the nova client and get the service catalog, perform the following 
-steps:
+To authenticate using the nova client and get the service catalog, perform the
+following steps:
 
-#. :ref:`Set your environment variables<set-environment-variables>`.
+#. If you haven't already done so, install the Nove client and set the
+   environment variables. See :ref:`install-CLI-client<install-CLI-client>`.
 
 #. Get an authentication token:
 
-   .. code::  
+   .. code::
 
        $ nova credentials
 
-   Successful authentication returns user credentials, including ID, name, roles, and the 
-   authentication token. The token appears in the ``id`` field in the ``Token`` box as 
-   shown in the following example:
+   Successful authentication returns user credentials, including ID, name,
+   roles, and the authentication token. The token appears in the ``id`` field
+   in the ``Token`` box as shown in the following example:
 
-   .. code::  
+   .. code::
 
        +------------------+---------------------------------------------------------------------------------------+
        | User Credentials | Value                                                                                 |
@@ -35,27 +36,28 @@ steps:
        | tenant  | {u'id': u'010101', u'name': u'010101'} |
        +---------+----------------------------------------+
 
-   After you generate a token, the nova client automatically injects the token into any 
-   nova client commands that you issue. However, because the token expires after 24 hours, 
-   you must generate a new token once a day.
+   After you generate a token, the nova client automatically injects the token
+   into any nova client commands that you issue. However, because the token
+   expires after 24 hours, you must generate a new token once a day.
 
 #. Get the service catalog with a list of endpoints:
 
-   .. code::  
+   .. code::
 
        $ nova endpoints
 
-   For each service, the response includes the public URL, which is the endpoint that you 
-   use to access the service, the region, service name, tenant ID, the version ID, and 
-   endpoints that you can use to get version information for the API.
+   For each service, the response includes the public URL, which is the
+   endpoint that you use to access the service, the region, service name,
+   tenant ID, the version ID, and endpoints that you can use to get version
+   information for the API.
 
-   To access the Cloud Networks or next generation Cloud Servers service, use the 
-   ``publicURL`` value for the ``cloudServersOpenStack`` service.
+   To access the Rackspace Cloud Networks or |product name| service, use
+   the ``publicURL`` value for the ``cloudServersOpenStack`` service.
 
-   The following output shows the information returned for the DFW region for the Cloud 
-   Servers service:
+   The following output shows the information returned for the DFW region for
+   the |product name| service:
 
-   .. code::  
+   .. code::
 
        +-----------------------+------------------------------------------------------+
        | cloudServersOpenStack | Value                                                |
@@ -69,8 +71,9 @@ steps:
        | versionList           | https://dfw.servers.api.rackspacecloud.com/          |
        +-----------------------+------------------------------------------------------+
 
-   The ``cloudServersOpenStack`` service might show multiple endpoints to enable regional 
-   choice. Select the appropriate endpoint for the region, based on the ``region`` value.
+   The ``cloudServersOpenStack`` service might show multiple endpoints to
+   enable regional choice. Select the appropriate endpoint for the region,
+   based on the ``region`` value.
 
 
 
@@ -78,4 +81,4 @@ steps:
 
 
 
-    
+

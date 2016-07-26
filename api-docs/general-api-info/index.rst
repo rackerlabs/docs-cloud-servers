@@ -1,28 +1,37 @@
-.. _general-api-index:
+.. _general-api-info:
 
-General API Information
------------------------
+=======================
+General API information
+=======================
 
-API v2 is defined as a RESTful HTTP service that uses all aspects of the HTTP protocol, 
-including methods, URIs, media types, and response codes. To request next generation 
-Cloud Servers services, you must first issue an authentication request to the Rackspace 
-Cloud Identity Service, which is an implementation of the OpenStack Keystone Identity 
-Service v2.0.
+The information in this section is relevant to all operations of the API.
+For details about specific operations, see the
+:ref:`API reference <api-reference>`.
 
-API v2 supports JSON request and response formats.
+The |apiservice| is implemented using a RESTful web
+service interface. Like other Rackspace Cloud services, this service
+shares a common token-based authentication system that allows seamless
+access between products and services.
+
+
+.. note::
+
+    All requests to authenticate and operate the service are performed using
+    HTTPS on TCP port 443. For authentication instructions, see
+    :ref:`Authenticate to the Rackspace Cloud <authenticate-to-cloud>`.
 
 .. toctree::
    :maxdepth: 2
 
-   authenticate-ovw
-   service-access-endpoints
-   request-response-types
+   service-access
+   request-response
    links-and-references
    paginated-collections
    efficient-polling
    limits
    quotas
    faults
-   role-based-access-control
-   flavors
    date-time-format
+   flavors
+   role-based-access-control
+

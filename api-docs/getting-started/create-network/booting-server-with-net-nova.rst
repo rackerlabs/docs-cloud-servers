@@ -1,17 +1,17 @@
 .. _booting-server-net-with-nova:
 
 Booting server with network (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------
 
 Issue the following nova client command.
 
 **Boot a server with network with nova request**
 
-.. code::  
+.. code::
 
    $ nova boot <name> --flavor <flavor> --image <image> \
-     --nic net-id=<private-net-uuid> 
-     
+     --nic net-id=<private-net-uuid>
+
    $ nova boot my_server_with_network --flavor 2 \
      --image d42f821e-c2d1-4796-9f07-af5ed7912d0e \
      --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2
@@ -21,28 +21,29 @@ Issue the following nova client command.
 -  ``name``. The name of the server.
 -  ``flavor``. The flavor of the server.
 -  ``image``. The image of the server.
--  ``--nic net-id=``. Creates a NIC on the server. Specify this option multiple times 
-   to create multiple NICs.
+-  ``--nic net-id=``. Creates a NIC on the server. Specify this option multiple
+   times to create multiple NICs.
 
-If you do not specify any networks on the ``--nic`` parameter, PublicNet and 
+If you do not specify any networks on the ``--nic`` parameter, PublicNet and
 ServiceNet are attached to your server.
 
-.. note:: 
-   
-   ServiceNet is labeled as ``private`` and PublicNet is labeled as ``public`` in 
-   the network list.
+.. note::
 
-If you specify additional networks through the ``—nic`` parameter, these networks, in 
-addition to PublicNet and ServiceNet, are attached to your server.
+   ServiceNet is labeled as ``private`` and PublicNet is labeled as ``public``
+   in the network list.
 
-You can specify the optional ``--no-public`` and ``--no-service-net`` parameters to opt out 
-of attaching PublicNet and ServiceNet to your server.
+If you specify additional networks through the ``—nic`` parameter, these
+networks, in addition to PublicNet and ServiceNet, are attached to your server.
 
-The operation returns information about the new server, as shown in the following output.
+You can specify the optional ``--no-public`` and ``--no-service-net``
+parameters to opt out of attaching PublicNet and ServiceNet to your server.
+
+The operation returns information about the new server, as shown in the
+following output.
 
 **Boot a server with network with nova response**
 
-.. code::  
+.. code::
 
    +-------------------------+--------------------------------------+
    | Property                | Value                                |

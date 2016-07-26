@@ -1,25 +1,25 @@
 .. _getting-server-details-with-nova:
 
 Getting server details (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 #. Issue the following command.
 
 **Get server details with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova show <id>
 
-   Where ``id`` is the server ID that you copied in 
+   Where ``id`` is the server ID that you copied in
    :ref:`Booting server (nova client)<booting-server-with-nova>`.
 
-   The command shows information for your server, including its private and public IP 
-   addresses, and status.
-   
+   The command shows information for your server, including its private and
+   public IP addresses, and status.
+
    **Get server details with nova response**
 
-   .. code::  
+   .. code::
 
        +-------------------------+-----------------------------------------------------------------------------------------------------------------+
        | Property                | Value                                                                                                            |
@@ -46,11 +46,12 @@ Getting server details (nova client)
        | user_id                 | 170454                                                                                                           |
        +-------------------------+------------------------------------------------------------------------------------------------------------------+
 
-2. Run the command until the status of your server is ``ACTIVE``. Typically, servers take 
-   a few minutes to build.
+2. Run the command until the status of your server is ``ACTIVE``. Typically,
+   servers take a few minutes to build.
 
-3. Copy the public IP address that is returned for your server from the ``public network`` 
-   field. You use this address when you log into your server.
+3. Copy the public IP address that is returned for your server from the
+   ``public network`` field. You use this address when you log into your
+   server.
 
-**Next topic:** :ref:`Listing servers<listing-servers>` 
+**Next topic:** :ref:`Listing servers<listing-servers>`
 

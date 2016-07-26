@@ -1,13 +1,13 @@
 .. _getting-network-details-with-nova:
 
 Getting network details (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 Issue the following nova client command.
 
 **Get network details with nova request**
 
-.. code::  
+.. code::
 
    $ nova network <id>
 
@@ -15,11 +15,12 @@ Issue the following nova client command.
 
 -  ``id``. The ID of the network for which you want to show information.
 
-The command returns the CIDR, network ID, and label, as shown in the following output.
+The command returns the CIDR, network ID, and label, as shown in the following
+output.
 
 **Get network details with nova response**
 
-.. code::  
+.. code::
 
    +----------+--------------------------------------+
    | Property | Value                                |
@@ -29,5 +30,5 @@ The command returns the CIDR, network ID, and label, as shown in the following o
    | label    | new_network                          |
    +----------+--------------------------------------+
 
-**Next topic:** :ref:`Deleting network<deleting-network>` 
+**Next topic:** :ref:`Deleting network<deleting-network>`
 

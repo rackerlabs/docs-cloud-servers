@@ -1,28 +1,28 @@
 .. _booting-server-with-nova:
 
 Booting server (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
-#. Issue the following command. In the command, specify the server name, flavor ID, and 
-   image ID. You may optionally include the keypair name.
-   
+#. Issue the following command. In the command, specify the server name, flavor
+   ID, and image ID. You may optionally include the keypair name.
+
    **Boot a server with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova boot myUbuntuServer --image "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" \
          --flavor 6 --key-name myKey
 
-   For more information about keypairs, see 
+   For more information about keypairs, see
    :ref:`Create a server key pair<post-create-a-server-key-pair-os-keypairs>`.
 
-   The command returns a list of server properties. The status field indicates whether the 
-   server is being built or is active. A status of ``BUILD`` indicates that your server is 
-   being built.
+   The command returns a list of server properties. The status field indicates
+   whether the server is being built or is active. A status of ``BUILD``
+   indicates that your server is being built.
 
    **Boot a server with nova response**
 
-   .. code::  
+   .. code::
 
        +-------------------------+--------------------------------------+
        | Property                | Value                                |
@@ -48,10 +48,10 @@ Booting server (nova client)
        | user_id                 | 170454                               |
        +-------------------------+--------------------------------------+
 
-#. Copy the server ID value from the ``id`` field in the output. You use this ID to get 
-   details for your server to determine if it built successfully.
+#. Copy the server ID value from the ``id`` field in the output. You use this
+   ID to get details for your server to determine if it built successfully.
 
-   Copy the administrative password value from the ``adminPass`` field. You use this value 
-   to log into your server.
+   Copy the administrative password value from the ``adminPass`` field. You use
+   this value to log into your server.
 
 **Next topic:** :ref:`Getting server details<getting-server-details>`

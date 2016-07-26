@@ -1,7 +1,7 @@
 .. _listing-networks-with-curl:
 
 Listing networks (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Issue the following cURL command.
 
@@ -12,8 +12,9 @@ Issue the following cURL command.
    $ curl https://$API_ENDPOINT/v2/$TENANT-ID/os-networksv2 \
          -X GET -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-For each isolated network, the operation returns the CIDR. Additionally, for isolated
-networks and Rackspace networks, the operation returns the network ID and label.
+For each isolated network, the operation returns the CIDR. Additionally, for
+isolated networks and Rackspace networks, the operation returns the network ID
+and label.
 
 **List networks with cURL response**
 

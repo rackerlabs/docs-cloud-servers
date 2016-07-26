@@ -1,7 +1,7 @@
 .. _getting-server-details-with-curl:
 
 Getting server details (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 #. Issue the following command.
 
@@ -13,10 +13,10 @@ Getting server details (cURL)
          -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
    Where ``id`` is the server ID that you copied in
-   :ref:`Booting server (nova client)<booting-server-with-nova>`.
+   :ref:`Booting server (cURL)<booting-server-with-curl>`.
 
-   The command shows information for your server, including its private and public IP
-   addresses, and status, as shown in the following output.
+   The command shows information for your server, including its private and
+   public IP addresses, and status, as shown in the following output.
 
    **Get server details with cURL response**
 
@@ -92,10 +92,11 @@ Getting server details (cURL)
       }
 
 
-#. Run the command until the status of your server is ``ACTIVE``. Typically, servers take a few minutes to build.
+#. Run the command until the status of your server is ``ACTIVE``. Typically,
+   servers take a few minutes to build.
 
-#. Copy the ``public`` IP version 4 address from the output. Use this address when you log
-   into your server.
+#. Copy the ``public`` IP version 4 address from the output. Use this address
+   when you log into your server.
 
 **Next topic:** :ref:`Listing servers<listing-servers>`
 

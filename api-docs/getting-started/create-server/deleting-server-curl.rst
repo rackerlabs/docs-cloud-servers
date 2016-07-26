@@ -1,11 +1,12 @@
 .. _deleting-server-with-curl:
 
 Deleting server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 To delete your server with cURL, you need the server ID.
 
-Issue the following command,specifying the ID for the server that you want to delete.
+Issue the following command,specifying the ID for the server that you want to
+delete.
 
 **Delete a server with cURL request**
 
@@ -18,8 +19,8 @@ Issue the following command,specifying the ID for the server that you want to de
 Where ``id`` is the ID of the server that you want to delete.
 
 
-If the delete operation was successful, it returns a ``HTTP 204`` status code, as shown in
-the following output.
+If the delete operation was successful, it returns a ``HTTP 204`` status code,
+as shown in the following output.
 
 **Delete a server with cURL response**
 

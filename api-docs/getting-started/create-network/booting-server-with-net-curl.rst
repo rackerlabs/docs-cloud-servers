@@ -1,7 +1,7 @@
 .. _booting-server-net-with-curl:
 
 Booting server with network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 Issue the following cURL command.
 
@@ -23,10 +23,12 @@ Issue the following cURL command.
             {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
       | python -m json.tool
 
-In addition to the isolated network, PublicNet and ServiceNet are attached to the server.
-You must explicitly specify these networks to attach them to your server.
+In addition to the isolated network, PublicNet and ServiceNet are attached to
+the server. You must explicitly specify these networks to attach them to your
+server.
 
-The operation returns information about the new server, as shown in the following output.
+The operation returns information about the new server, as shown in the
+following output.
 
 **Boot a server with network cURL response**
 
