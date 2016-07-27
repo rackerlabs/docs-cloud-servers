@@ -4,20 +4,19 @@
 Role-based access control (RBAC)
 ================================
 
-Role Based Access Control (RBAC) restricts access to the capabilities of
-Rackspace Cloud services, including the Cloud Servers API, to authorized users
-only. RBAC enables Rackspace Cloud customers to specify which account users of
-their Cloud account have access to which |product name| API service
-capabilities, based on roles defined by Rackspace (see
-:ref:`Roles Available for Cloud Servers <rbac-available-roles>`). The permissions to
-perform certain operations in |product name| API (create, read, update, delete)
-are assigned to specific roles. The account owner user assigns these roles,
-either global (multiproduct) or product-specific (for example, |product name|),
-to account users.
+Role-based access control (RBAC) restricts access to the capabilities of
+Rackspace Cloud services, including the |product name| API, to authorized
+users only. RBAC enables Rackspace Cloud customers to specify
+users have access to which |product name| API
+service capabilities, based on roles defined by Rackspace. The
+permissions to perform certain operations in |product name| API (create,
+read, update, delete) are assigned to specific roles. The account owner user
+assigns these roles, either global (multiproduct) or product-specific (for
+example, |product name|), to account users.
 
 .. _rbac-assign:
 
-Assigning Roles to Account Users
+Assigning roles to account users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner (identity:user-admin) can create account users on the account
@@ -44,8 +43,8 @@ following tasks:
 
 .. _rbac-available-roles:
 
-Roles Available for Cloud Servers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Roles available for |product name|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following table describes the roles that can be used to access the
 |product name| API.
@@ -92,8 +91,8 @@ RBAC-enabled. The following list describes these roles and their permissions.
 
 .. _rbac-resolve-role-conflict:
 
-Resolving Conflicts Between Roles
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Resolving conflicts between RBAC multiproduct and product-specific roles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner can set roles for both multiproduct and |product name|
 scope, and it is important to understand how any potential conflicts between
@@ -124,7 +123,7 @@ roles in the Control Panel are resolved.
      - User can perform admin functions for all of the products.
        The |product name| **observer** role is ignored.
 
-RBAC Permissions Cross-reference to |product name| API Operations
+RBAC permissions cross-reference to |product name| API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 API operations for |product name| may or may not be available to all roles. To

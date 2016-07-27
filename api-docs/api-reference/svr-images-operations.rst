@@ -25,7 +25,7 @@ Scheduled Images Operations
 
 
 .. note::
-   To create an image, see :ref:`Server Action Create Image<api-operations-svr-basic>`
+   To create an image, see :ref:`Server Action Create Image<api-operations-svr-basic>`.
 
 .. include:: methods/get-retrieve-list-of-images-images.rst
 .. include:: methods/get-retrieve-list-of-images-with-details-images-detail.rst

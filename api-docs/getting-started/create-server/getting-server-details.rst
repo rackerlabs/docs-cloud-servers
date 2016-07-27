@@ -1,7 +1,7 @@
 .. _getting-server-details:
 
 Getting server details
-~~~~~~~~~~~~~~~~~~~~~~s
+~~~~~~~~~~~~~~~~~~~~~~
 
 Get details for your server to determine whether it built successfully.
 

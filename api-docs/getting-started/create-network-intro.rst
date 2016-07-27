@@ -21,7 +21,7 @@ API work.
    This version of the network service is now superseded by the current
    networking API, based on OpenStack Neutron, which offers a richer suite of
    networking services. To learn more about neutron network operations, see
-   :rax-devdocs:`Cloud Networks Developer Guide <cloud-networks/v2/developer-guide>`
+   :rax-devdocs:`Cloud Networks Developer Guide <cloud-networks/v2/developer-guide>`.
 
 .. toctree::
    :maxdepth: 2
