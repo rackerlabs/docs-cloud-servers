@@ -1,5 +1,6 @@
+==================================================
 Efficient Polling with the Changes-Since Parameter
----------------------------------------------------
+==================================================
 
 You can poll for the status of certain operations by issuing a **GET**
 request on various elements. Rather than re-downloading and re-parsing

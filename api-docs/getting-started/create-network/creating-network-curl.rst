@@ -1,7 +1,7 @@
 .. _creating-network-with-curl:
 
 Creating network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 #. Issue the following cURL command.
 
@@ -36,7 +36,8 @@ Creating network (cURL)
 
 
 #. Copy the ``id`` value from the output. In this example, the ``id`` value is
-   ``1f84c238-b05a-4374-a0cb-aa6140032cd1``, but use the value returned for your network.
+   ``1f84c238-b05a-4374-a0cb-aa6140032cd1``, but use the value returned for
+   your network.
 
 
 **Next topic:**  :ref:`Listing networks<listing-networks>`

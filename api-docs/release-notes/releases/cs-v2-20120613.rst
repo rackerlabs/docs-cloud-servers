@@ -1,0 +1,33 @@
+.. _cs-v2-20120613:
+
+API |contract version| updates, June 13, 2012
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+-  The 256 MB flavor has been removed from the next generation Cloud Servers. While these
+   small instances were appropriate in certain cases, they often caused performance
+   problems for applications and placed undue stress on underlying host machines. This
+   change reduces the number of application performance issues and improves the overall
+   Cloud Servers experience.
+
+-  Next generation Cloud Servers now implements a single vCPU allocation scheme across all
+   operating systems. Unlike the earlier vCPU allocation scheme, which was optimized for
+   burst on Linux and for CPU consistency on Windows, the new scheme favors consistent CPU
+   performance while retaining some burst potential. The number of vCPUs is reduced for
+   some flavors and increased for others to simplify Cloud Servers while balancing
+   predictability and value.
+
+-  OpenStack ready. Rackspace continuously integrates with OpenStack code, which means that
+   you have nearly immediate access to product enhancements from the OpenStack community.
+
+Resolved issues
+---------------
+
+Corrected a hardware problem that affected performance.
+
+Known issues
+------------
+
+|no changes|

@@ -4,8 +4,8 @@
 API extensions
 ==============
 
-Rackspace has implemented several Cloud servers extensions, which provide either new 
-functionality or enhanced functionality for existing operations. 
+Rackspace has implemented several Cloud servers extensions, which provide
+either new functionality or enhanced functionality for existing operations.
 
 .. toctree::
    :maxdepth: 2
@@ -24,4 +24,4 @@ functionality or enhanced functionality for existing operations.
    ext-boot-from-volume
    ext-network
    ext-virtual-interface
-.. COMMENT SCHEDHINT ext-sched-hint
+.. COMMENT SCHEDHINT	- ext-sched-hint

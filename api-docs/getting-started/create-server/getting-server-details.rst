@@ -1,12 +1,12 @@
 .. _getting-server-details:
 
 Getting server details
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Get details for your server to determine whether it built successfully.
 
-The response for the get server details call shows the following information for your 
-server:
+The response for the get server details call shows the following information
+for your server:
 
 +-----------------------+----------------------------------------------------+
 | Name                  | Description                                        |
@@ -51,17 +51,14 @@ server:
 +-----------------------+----------------------------------------------------+
 
 
-The sections are also organized by example type. To simplify your path through this 
-topic, decide whether you prefer neutron-client or cURL examples.
+The sections are also organized by example type. To simplify your path through
+this topic, decide whether you prefer neutron-client or cURL examples.
 
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Getting server details with nova<getting-server-details-with-nova>`
--  :ref:`Getting server details with cURL<getting-server-details-with-curl>`
-
 .. toctree::
    :maxdepth: 2
-   
+
    getting-server-details-nova
    getting-server-details-curl

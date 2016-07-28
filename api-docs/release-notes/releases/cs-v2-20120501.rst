@@ -1,0 +1,72 @@
+.. _cs-v2-20120501:
+
+API |contract version| release, May 1, 2012
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+- Version 2.0 of the Rackspace Cloud Servers API uses Open Software Foundation (OSF)
+  Universally Unique Identifiers (UUIDs) instead of integers for object IDs for images,
+  servers, and so on. The version 1.0 used integer IDs. For example, an ID in version 1.0
+  might be ``2``, while in the API v2, the ID might be ``52415800-8b69-11e0-9b19-734f6f006e54``.
+
+-  Third-party clients can now access the server directly through a server access IP address.
+
+-  The following Rackspace extensions have been added.
+
+   - Bandwidth stats extension, which shows bandwidth usage statistics for a given audit
+     period
+
+   - Disk configuration extension, which enables control of how the disk is partitioned
+     when a server is created, rebuilt, or resized
+
+   - Rescue mode extension, which creates a new server with the file system for the
+     specified version of Cloud Servers mounted to fix file system and configuration errors
+
+   - Used limits extension, which returns the amount of absolute limit capacity that is
+     currently used
+
+   - Volume attachment extension, which, in conjunction with Cloud Block Storage API
+     operations, enables you to attach a volume to a server instance, list volume
+     attachments for a server instance, get volume details for a volume attachment, and
+     delete a volume attachment
+
+- Image metadata and metadata management operations have been added.
+
+- IPv6 support has been added. When you create a server, an IPv4 address and an IPv6
+  address block are assigned. The IPv4 address and IPv6 address block are used for the
+  public interface (Internet). The IPv4 address is also used for the private interface.
+
+- Authentication now occurs through the Rackspace Cloud Identity Service, which
+  integrates with the Rackspace infrastructure and is a modification of the OpenStack
+  Keystone authentication specification.
+
+- The Rackspace Next Generation Cloud Servers API v2.0 is based on the OpenStack Compute
+  API v2, which differs significantly from the Rackspace First Generation Cloud Servers
+  API v1.0.
+
+- The defaults for rate limits have changed. You can request Rackspace to either raise or
+  lower the limits as needed.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+-  Red Hat images cannot be registered. Red Hat Network (RHN) registration is required for
+   Red Hat.
+
+-  The following version 1 API operations are not yet available in the |contract version|
+   API:
+
+   - Shared IP addresses
+
+   - Backup schedules
+
+   - Resize server down (not supported for Windows Cloud Servers)
+
+   - Add an IP address to a cloud server

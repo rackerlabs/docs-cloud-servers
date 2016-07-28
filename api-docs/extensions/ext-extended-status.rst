@@ -7,9 +7,11 @@ Extended Status Extension
 The extended status extension displays the VM, task, and power statuses
 for servers.
 
-The extension displays these statuses in the following fields in the
-response bodies for the :ref:`Retrieve list of servers <get-retrieves-a-list-of-servers-servers>`
-and :ref:`Show server details <get-retrieve-server-details-servers-server-id>` calls.
+The extension displays these statuses in the following fields in the response
+bodies for the
+:ref:`Retrieve list of servers <get-retrieves-a-list-of-servers-servers>` and
+:ref:`Show server details <get-retrieve-server-details-servers-server-id>`
+calls.
 
 **Extended Statuses**
 
@@ -27,7 +29,7 @@ are:
 
 .. _vm-statuses:
 
- ``OS-EXT-STS:vm_state`` - The virtual machine (VM) status. Possible values are:
+``OS-EXT-STS:vm_state`` - The virtual machine (VM) status. Possible values are:
 
     -  active
 
@@ -50,8 +52,8 @@ are:
     -  suspended
 
 .. _task-statuses:
-  
- ``OS-EXT-STS:task_state`` - The task status. Possible values are:
+
+``OS-EXT-STS:task_state`` - The task status. Possible values are:
 
     -  block\_device\_mapping
 
@@ -117,7 +119,7 @@ are:
 
 .. _power-statuses:
 
- ``OS-EXT-STS:power_state`` - The power status. Possible values are:
+``OS-EXT-STS:power_state`` - The power status. Possible values are:
 
     -  ``0``. The instance is powered down.
 
@@ -127,8 +129,8 @@ are:
 
 .. _server-statuses:
 
-The following table shows the server statuses that correspond with the
-VM and tasks statuses:
+The following table shows the server statuses that correspond with the VM and
+tasks statuses:
 
 **Server Statuses and Corresponding VM and Task Statuses**
 
@@ -191,16 +193,17 @@ Possible task statuses include the following:
 
 	- deleting
 
-	- image_snapshot (Indicates that a create image action has been initiated and that the 
-	  hypervisor is creating the snapshot. Any operations that would modify data on the 
-	  server's virtual hard disk should be avoided during this time.)
+	- image_snapshot (Indicates that a create image action has been initiated
+	  and that the hypervisor is creating the snapshot. Any operations that
+	  would modify data on the server's virtual hard disk should be avoided
+	  during this time.)
 
-	- image_pending_upload (Indicates that the hypervisor has completed taking a snapshot 
-	  of the server. At this point, the hypervisor is packaging the snapshot and preparing 
-	  it for upload to the image store.)
+	- image_pending_upload (Indicates that the hypervisor has completed taking a
+	  snapshot of the server. At this point, the hypervisor is packaging the
+	  snapshot and preparing it for upload to the image store.)
 
-	- image_uploading (Indicates that the hypervisor is currently uploading a packaged 
-	  snapshot of the server to the image store.)
+	- image_uploading (Indicates that the hypervisor is currently uploading a
+	  packaged snapshot of the server to the image store.)
 
 	- migrating
 

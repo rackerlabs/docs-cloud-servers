@@ -1,30 +1,38 @@
-Paginated Collections
------------------------
+.. _paginated-collections:
+
+=====================
+Paginated collections
+=====================
 
 To reduce load on the service, list operations return a maximum number
 of items at a time. The maximum number of items returned is
 1000.
 
-To navigate the collection, you can set the ``limit`` and ``marker``
-parameters in the URI request. For example:
+To reduce load on the service, retrieve operations return a maximum limit of
+100 items at a time. If a request supplies no limit or one that exceeds the
+configured  default limit, the default limit is used instead.
 
-.. code::
+This behavior is called *pagination*. Pagination gives you the ability to limit
+the  size of the returned data and to retrieve a specified subset of a large
+data set.  Pagination has two key concepts: limit and marker.
 
-    ?limit=100&marker=1234
+* *Limit* is the restriction on the maximum number of items for that type that
+  can be returned.
 
-The ``marker`` parameter is the ID of the last item in the previous
-list. Items are sorted by create time in descending order. When a create
-time is not available, the items are sorted by ID. A marker with an ID
-that is not valid returns an itemNotFound (404) fault.
+* *Marker* is a reference to an object's ID and is in the list of paged results
+  for a particular resource. For example, if the resource is a load balancer,
+  the marker is the load balancer ID at which to begin the list of the paged
+  results.
 
-The ``limit`` parameter sets the page size. If the client specifies a
-``limit`` value that is greater than the supported limit, an overLimit
-(413) fault might be thrown.
+To navigate the collection, you can set the ``limit`` and ``marker`` parameters
+in the URI. For example, ``?limit=10&marker=1234`` displays a maximum of 10
+load balancers in the paginated results, beginning with the load balancer whose
+ID is 1234.
 
-Both parameters are optional.
+You can also use the ``offset`` parameter, which is a count of the number
+of objects from where the paginated list is started.
 
-.. note:: Paginated collections never return itemNotFound (404) faults when the
-   collection is empty — clients should expect an empty collection.
+If a marker beyond the end of a list is given, an empty list is returned.
 
 For convenience, collections contain atom ``next`` links and can
 optionally contain ``previous`` links. The last page in the collection
@@ -106,7 +114,7 @@ collections to be embedded in other objects.
         ]
     }
 
-| 
+|
 
 **Example: Images Collection – Last Page: JSON**
 

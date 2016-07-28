@@ -1,0 +1,33 @@
+.. _cs_v2_20141030:
+
+API |contract version| updates, October 30, 2014
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+The Performance flavor class was renamed to align with the OnMetal naming style (Compute,
+Memory, and so on). In summary, the following changes have been made to the flavor
+classes:
+
+- Two new flavor classes have replaced the Performance flavor classes: **General Purpose
+  v1** (like Performance 1 but with combined data and system disk) and **IO v1** (like
+  Performance 2).
+
+- Two existing flavors classes (Performance 1 and Performance 2) have been removed from
+  the Cloud Control Panel, but they are still visible in the API.
+
+- Two new flavor classes have been added: **Compute v1** and **Memory v1**.
+
+- At a future date, the Standard, Performance 1, and Performance 2 flavor classes will be
+  discontinued.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

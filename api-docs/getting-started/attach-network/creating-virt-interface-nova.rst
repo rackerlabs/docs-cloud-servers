@@ -1,22 +1,23 @@
 .. _creating-virt-interface-with-nova:
 
 Creating a virtual interface (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 Issue the following nova client command.
 
 **Create a virtual interface with nova request**
 
-.. code::  
+.. code::
 
    $ nova virtual-interface-create <network_id> <instance_id>
 
 **Positional arguments:**
 
--  ``network_id``. The ID of the network for which you want to create a virtual interface.
-
--  ``instance_id``. The ID of the server instance to which you want to connect the virtual 
+-  ``network_id``. The ID of the network for which you want to create a virtual
    interface.
+
+-  ``instance_id``. The ID of the server instance to which you want to connect
+   the virtual interface.
 
 The operation returns a response, as shown in the following output.
 
@@ -32,4 +33,4 @@ The operation returns a response, as shown in the following output.
    | mac_address  | FE:ED:FA:00:08:93                                                                              |
    +--------------+------------------------------------------------------------------------------------------------+
 
-**Next topic:**  :ref:`Listing virtual interfaces for a server<listing-virt-interfaces>` 
+**Next topic:**  :ref:`Listing virtual interfaces for a server<listing-virt-interfaces>`

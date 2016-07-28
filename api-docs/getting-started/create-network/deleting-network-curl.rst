@@ -1,7 +1,7 @@
 .. _deleting-network-with-curl:
 
 Deleting network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 #. Issue the following command to detach the virtual interface from the server.
 
@@ -15,13 +15,13 @@ Deleting network (cURL)
 
    **Positional arguments:**
 
-   -  ``instance_id``. The ID of the server instance from which you want to detach the
-      virtual interface.
+   -  ``instance_id``. The ID of the server instance from which you want to
+      detach the virtual interface.
 
    -  ``interface_id``. The ID of the virtual interface that you want to delete.
 
-   If the delete operation was successful, the HTTP header shows the 204 status code, as
-   shown in the following output.
+   If the delete operation was successful, the HTTP header shows the 204 status
+   code, as shown in the following output.
 
    **Delete virtual interface with cURL response**
 
@@ -50,8 +50,8 @@ Deleting network (cURL)
 
    -  ``id``. The network ID of the network that you want to delete.
 
-   Successful deletion returns an Accepted (202) response code, as shown in the following
-   example.
+   Successful deletion returns an Accepted (202) response code, as shown in the
+   following example.
 
    **Delete network with cURL response**
 

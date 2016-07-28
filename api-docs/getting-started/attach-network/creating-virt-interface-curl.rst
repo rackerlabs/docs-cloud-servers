@@ -1,7 +1,7 @@
 .. _creating-virt-interface-with-curl:
 
 Creating a virtual interface (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
 Issue the following cURL command.
 
@@ -18,10 +18,11 @@ Issue the following cURL command.
 
 **Positional arguments:**
 
--  ``instance_id``. The ID of the server instance to which you want to connect the virtual
-   interface.
+-  ``instance_id``. The ID of the server instance to which you want to connect
+   the virtual interface.
 
--  ``network_id``. The ID of the network for which you want to create a virtual interface.
+-  ``network_id``. The ID of the network for which you want to create a virtual
+   interface.
 
 The operation returns a response as shown in the following example.
 

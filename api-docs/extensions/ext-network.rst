@@ -16,7 +16,7 @@ If you install the Cloud Networks virtual interface extension, you can
 create a virtual interface to a specified Rackspace or isolated network
 and attach that network to an existing server instance. You can also
 list virtual interfaces for and delete virtual interfaces from a server
-instance. 
+instance.
 
 Cloud Networks enables you to attach one or more of the following
 networks to your server:
@@ -48,26 +48,22 @@ networks to your server:
    Layer 2 network that you create through Cloud Networks. Keeps your
    server separate from PublicNet, ServiceNet, or both. When you create
    a isolated network, it is associated with your tenant ID.
-   
-   
-.. note:: 
+
+
+.. note::
 
    If you want to delete an isolated network, the network cannot be
-   attached to any server. If there is a virtual interface for the isolated network, delete
-   that first and then you can delete the network.
+   attached to any server. If there is a virtual interface for the isolated
+   network, delete that first and then you can delete the network.
 
 API operations for networks extension
 -------------------------------------
 
 For examples of these operations, see the following operations:
 
-:ref:`List networks <get-retrieve-list-of-networks-os-networksv2>`
-
-:ref:`Create network <post-create-network-os-networksv2>`
-
-:ref:`Create server with network <post-create-server-with-network-servers>`
-
-:ref:`Show network details <get-show-network-os-networksv2-id>`
-
-:ref:`Delete network <delete-delete-network-os-networksv2-id>`
+- :ref:`List networks <get-retrieve-list-of-networks-os-networksv2>`
+- :ref:`Create network <post-create-network-os-networksv2>`
+- :ref:`Create server with network <post-create-server-with-network-servers>`
+- :ref:`Show network details <get-show-network-os-networksv2-id>`
+- :ref:`Delete network <delete-delete-network-os-networksv2-id>`
 
