@@ -59,8 +59,7 @@ token ID
     The ``expires`` attribute indicates the date and time that the token will
     expire, unless it is revoked before the expiration. To get a new token,
     submit another authentication request. For more information, see
-    :rax-devdocs:`Authentication tokens
-    <cloud-identity/v2/developer-guide/#authentication-tokens>`.
+    :rax-devdocs:`Manage authentication tokens<cloud-identity>`.
 
 tenant ID
     The tenant ID provides your account number. For most Rackspace Cloud
