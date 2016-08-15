@@ -1,0 +1,26 @@
+.. _cs-v2-20150602:
+
+API |contract version| updates, August 15, 2016
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+Published scheduler hints. Used when creating servers, a scheduler hint allows
+a cloud server to be built near to, or far from, an existing server within a
+specific zone. Use either the ``public-zone-ip:near``or the
+``public-zone-ip:far`` parameter and be sure to use the server`s ``ID`` and not
+the server's ``zone`` when making the request.
+
+See :ref:`Scheduler hint extension <scheduler-hint-extension>` for more
+information.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

@@ -9,7 +9,7 @@ Create server with scheduler hints
 
 This operation creates a server using a scheduler hint.
 
-A Scheduler Hint allows a cloud server to be built near to, or far from, an
+A scheduler hint allows a cloud server to be built near to, or far from, an
 existing server within a specific zone. Use either the ``public-zone-ip:near``
 or the ``public-zone-ip:far`` parameter and be sure to use the server`s ``ID``
 and not the server's ``zone`` when making the request.

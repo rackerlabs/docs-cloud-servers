@@ -24,4 +24,4 @@ either new functionality or enhanced functionality for existing operations.
    ext-boot-from-volume
    ext-network
    ext-virtual-interface
-.. COMMENT SCHEDHINT	- ext-sched-hint
+   ext-sched-hint
