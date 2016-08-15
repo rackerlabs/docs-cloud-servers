@@ -7,7 +7,8 @@ which extensions are available, either by listing them or getting details for a
 specific extension. To get the list of currently available extensions, see
 :ref:`Retrieve list of extensions <get-retrieve-list-of-extensions-extensions>`.
 
-At this time, Rackspace provides the following extensions to the |product name|:
+At this time, Rackspace provides the following extensions to the
+|product name|:
 
 -  **Disk configuration extension**. Enables control of how the disk is
    partitioned when a server is created, rebuilt, or resized.
@@ -64,7 +65,7 @@ At this time, Rackspace provides the following extensions to the |product name|:
    networks. See
    :ref:`Virtual interface extension <virtual-interfaces-extension>`.
 
--  **Scheduler Hints**. Allows you to specify whether you want to build a new server
-   near to, or far fram, an existing server. See
+-  **Scheduler Hints**. Allows you to specify whether you want to build a new
+   server near to, or far fram, an existing server. See
    :ref:`Scheduler hint extension <scheduler-hint-extension>`.
 
