@@ -64,7 +64,7 @@ At this time, Rackspace provides the following extensions to the |product name|:
    networks. See
    :ref:`Virtual interface extension <virtual-interfaces-extension>`.
 
-.. COMMENT SCHEDHINT -  **Scheduler Hints**. Allows you to specify whether you want to build a new server
-.. COMMENT SCHEDHINT    near to, or far fram, an existing server. See
-.. COMMENT SCHEDHINT    :ref:`Scheduler hint extension <scheduler-hint-extension>`.
+-  **Scheduler Hints**. Allows you to specify whether you want to build a new server
+   near to, or far fram, an existing server. See
+   :ref:`Scheduler hint extension <scheduler-hint-extension>`.
 
