@@ -1,0 +1,20 @@
+.. _cs-v2-20150915:
+
+API |contract version| updates, September 15, 2016
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+First generation servers are officially end-of-life and references are removed from this
+document.  The term "Next Generation" is now used only in a historical context.
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

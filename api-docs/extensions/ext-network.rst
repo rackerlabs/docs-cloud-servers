@@ -8,9 +8,9 @@ Cloud Networks lets you create a virtual Layer 2 network, known as an
 isolated network, which gives you greater control and security when you
 deploy web applications.
 
-When you create a next generation Cloud Server, Cloud Networks enables
-you to attach one or more networks to your server. You can attach an
-isolated network that you have created or a Rackspace network.
+When you create a Cloud Server, Cloud Networks enables you to attach one or more networks 
+to your server. You can attach an isolated network that you have created or a Rackspace 
+network.
 
 If you install the Cloud Networks virtual interface extension, you can
 create a virtual interface to a specified Rackspace or isolated network
