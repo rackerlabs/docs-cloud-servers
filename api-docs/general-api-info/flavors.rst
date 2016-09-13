@@ -194,10 +194,9 @@ Supported Flavors for Cloud Servers
 
 To find the current list of supported flavors, see
 :ref:`Retrieve list of flavors <get-retrieve-list-of-flavors-flavors>`.
-This table shows some of the common supported flavors for next generation Cloud
-Servers:
+This table shows some of the common supported flavors for Cloud Servers:
 
-**Table: Supported Flavors for Next Generation Cloud Servers**
+**Table: Supported Flavors for Cloud Servers**
 
 
 +-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
