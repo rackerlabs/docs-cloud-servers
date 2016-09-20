@@ -1,5 +1,8 @@
 .. _authenticate-using-curl:
 
+Authenticating by using cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Follow these steps to authenticate to the Rackspace Cloud by
 :ref:`using cURL <how-curl-commands-work>`.
 
@@ -10,7 +13,7 @@ Follow these steps to authenticate to the Rackspace Cloud by
 .. _send-auth-req-curl:
 
 Send an authentication request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 From a command prompt, send a **POST tokens** request to the Rackspace Cloud
 Identity service.  Include your username and :ref:`API key <get-credentials>`,
@@ -22,7 +25,7 @@ as shown in the following example.
 .. _review-auth-resp:
 
 Review the authentication response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 If your credentials are valid, the Identity service returns an authentication
 response that includes the following information:
@@ -101,7 +104,7 @@ the following error message descriptions to determine next steps.
 .. _configure-environment-variables:
 
 Configure environment variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 To make it easier to include the token ID, tenant ID, endpoint, and other
 values in API requests, use the ``export`` command to create environment

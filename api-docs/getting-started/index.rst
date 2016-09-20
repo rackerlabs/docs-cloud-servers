@@ -14,9 +14,9 @@ and complete basic operations by using the |apiservice|.
    send-request-ovw
    authenticate
    concepts
-   Create your first Server <create-server-intro>
+   Create your first server <create-server-intro>
    Create your first network <create-network-intro>
-   Attach your network to an existing server<attach-network-intro>
+   Attach your network to an existing server <attach-network-intro>
 
 
 To start using the API and run the examples in this section, you need the

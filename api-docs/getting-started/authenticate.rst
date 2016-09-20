@@ -46,5 +46,5 @@ following items:
 - :ref:`Command-line tool or browser client <send-api-requests>` for
   communicating with the API service.
 
-.. include:: ../common-gs/auth-using-curl.rst
 .. include:: ../common-gs/auth-using-nova.rst
+.. include:: ../common-gs/auth-using-curl.rst

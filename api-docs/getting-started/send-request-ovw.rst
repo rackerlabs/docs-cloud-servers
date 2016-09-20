@@ -1,8 +1,8 @@
 .. _send-api-requests:
 
-=================================
-Sending API requests to |service|
-=================================
+==============================
+Send API requests to |service|
+==============================
 
 This Getting Started Guide shows how to send requests by using either of the
 following methods:
