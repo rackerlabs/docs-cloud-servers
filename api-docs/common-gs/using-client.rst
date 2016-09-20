@@ -1,27 +1,22 @@
-.. _install-CLI-client:
+.. _request-using-client:
 
-Install CLI clients
-~~~~~~~~~~~~~~~~~~~
+Install CLI client and |product name| Virtual Interface extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nova CLI
---------
+The nova client is an open-source Python client provides access to all public
+|apiservice| methods.
 
-If you want to run the examples by using cURL instead of using the CLI, skip
-this step and proceed to the next section "Sending API requests to
-|product name|".
+To send requests using the client, you have to install the client and set
+environment variables.
 
-You can use the nova command-line interface (CLI) client with |product name|.
-The  nova client is the CLI for the |product name| service API and its
-extensions.
 
-..  note::
+**Prerequisites for nova clients**
 
-    You can specify the ``--debug`` parameter on any nova command to show
-    the underlying  API request for the command. This is a good way to become
-    familiar with the API requests.
-
-Before installing the nova client, make sure you have the following
-prerequisite packages installed.
+- Linux or Mac OS X
+- Python 2.6 or later
+- **setuptools** package, installed by default on Mac OS X
+- **pip** package
+- Rackspace Cloud account and access to |service|
 
 +--------------------+--------------------------------------------------------+
 | Prerequisite       | Description                                            |
@@ -81,6 +76,11 @@ prerequisite packages installed.
 |                    |        $ yum install python-pip                        |
 |                    |                                                        |
 +--------------------+--------------------------------------------------------+
+
+.. _install-cli-client:
+
+Install the nova client
+-----------------------
 
 To install the nova client, perform the following steps.
 
@@ -166,11 +166,11 @@ list of Openstack commands, see the
 
 .. _install-virtual-int-ext:
 
-The Cloud Networks virtual interface extension
-----------------------------------------------
+Install the Cloud Networks Virtual Interface extension
+------------------------------------------------------
 
 To attach networks to existing servers, rather than just at boot time, you need
-to install the virtual interface extension by using the following command:
+to install the Virtual Interface extension by using the following command:
 
 .. code::
 
@@ -183,5 +183,4 @@ to install the virtual interface extension by using the following command:
 
    .. code::
 
-        $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade
-
+      $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade

@@ -26,7 +26,7 @@ authentication request to get a new one.
      in the Rackspace Cloud Identity API documentation:
 
      - :rax-devdocs:`Authentication token operations
-       <cloud-identity/v2/developer-guide/#document-api-operations/token-operations>`
+       <cloud-identity/v2/api-reference/token-operations/>`
 
        The examples in this API guide show how to authenticate by
        using username and API key credentials, which is a more secure way to
@@ -34,8 +34,17 @@ authentication request to get a new one.
        reference in the Rackspace Cloud Identity API documentation describes
        other types of credentials that you can use for authentication.
 
-     - :rax-devdocs:`Authentication tokens
-       <cloud-identity/v2/developer-guide/#authentication-tokens>`
+     - :rax-devdocs:`Manage authentication tokens
+       <cloud-identity/v2/getting-started/manage-auth-tokens>`
 
-.. include:: ../common-gs/auth-using-curl.rst
+To start using the API and run the examples in this section, you need the
+following items:
+
+- Rackspace Cloud account. If you don't have an account,
+  :rax-cart:`sign up <cloud>` for one.
+
+- :ref:`Command-line tool or browser client <send-api-requests>` for
+  communicating with the API service.
+
 .. include:: ../common-gs/auth-using-nova.rst
+.. include:: ../common-gs/auth-using-curl.rst

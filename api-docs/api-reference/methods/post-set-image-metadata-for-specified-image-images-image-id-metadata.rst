@@ -33,8 +33,8 @@ The non-user-selectable value ``DISABLED`` results in an OS_DCF:diskConfig
 value of ``MANUAL`` on a server built with this image.
 
 The auto_disk_config key is related to, and can actually control, the available
-:rax-devdocs:`Disk Configuration Extension<cloud-servers/v2/developer-guide/#disk-configuration-extension>`
-attribute: OS-DCF:diskConfig.
+:ref:`Disk Configuration Extension<disk-configuration-extension>` attribute:
+``OS-DCF:diskConfig``.
 
 .. warning::
 

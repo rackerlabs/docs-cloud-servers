@@ -1,5 +1,8 @@
 .. _authenticate-using-curl:
 
+Authenticating by using cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Follow these steps to authenticate to the Rackspace Cloud by
 :ref:`using cURL <how-curl-commands-work>`.
 
@@ -10,7 +13,7 @@ Follow these steps to authenticate to the Rackspace Cloud by
 .. _send-auth-req-curl:
 
 Send an authentication request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 From a command prompt, send a **POST tokens** request to the Rackspace Cloud
 Identity service.  Include your username and :ref:`API key <get-credentials>`,
@@ -22,7 +25,7 @@ as shown in the following example.
 .. _review-auth-resp:
 
 Review the authentication response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 If your credentials are valid, the Identity service returns an authentication
 response that includes the following information:
@@ -35,8 +38,8 @@ response that includes the following information:
 
    For detailed information about the authentication response, see the
    :rax-devdocs:`Annotated authentication request and response
-   <cloud-identity/v2/developer-guide/#document-authentication-info/
-   sample-auth-req-response>`
+   <cloud-identity/v2/general-api-info/authentication-info/
+   sample-auth-req-response/#annotated-auth-req-resp>`
    in the Rackspace Cloud API documentation.
 
 In the following example, the ellipsis (...)  represents other service
@@ -60,7 +63,7 @@ token ID
     expire, unless it is revoked before the expiration. To get a new token,
     submit another authentication request. For more information, see
     :rax-devdocs:`Manage authentication tokens
-    <cloud-identity/v2/developer-guide/#manage-authentication-tokens>`.
+    <cloud-identity/v2/getting-started/manage-auth-tokens>`.
 
 tenant ID
     The tenant ID provides your account number. For most Rackspace Cloud
@@ -95,13 +98,13 @@ the following error message descriptions to determine next steps.
 
 ..  note::
        For additional information about authentication errors, see the
-       :rax-devdocs:`Identity API Reference documentation <cloud-identity/v2/
-       developer-guide/#document-api-operations/#authentication-tokens>`.
+       :rax-devdocs:`Identity API Reference documentation
+       <cloud-identity/v2/general-api-info/http-status-codes/>`.
 
 .. _configure-environment-variables:
 
 Configure environment variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 To make it easier to include the token ID, tenant ID, endpoint, and other
 values in API requests, use the ``export`` command to create environment

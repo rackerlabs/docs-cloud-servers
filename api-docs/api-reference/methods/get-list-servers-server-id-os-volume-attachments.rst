@@ -13,7 +13,7 @@ In the URI, specify the target server ID.
 
 For information about creating volumes, see
 :rax-devdocs:`Rackspace Cloud Block Storage Developer
-Guide <cloud-block-storage/v1/developer-guide/#document-api-reference>`.
+Guide <cloud-block-storage/v1/api-reference/>`.
 
 
 This table shows the possible response codes for this operation:
