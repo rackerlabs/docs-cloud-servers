@@ -19,7 +19,6 @@ check the progress of the build request by issuing a call to retrieve the
 details of the server. Once the build is complete, the server's ``status`` is
 ``ACTIVE``.
 
-
 This table shows the possible response codes for this operation:
 
 
