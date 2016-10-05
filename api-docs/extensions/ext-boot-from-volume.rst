@@ -1,8 +1,8 @@
 .. _boot-from-volume-extension:
 
-================================
+================
 Boot from volume
-================================
+================
 
 You can boot General Purpose and IO server instances from a volume instead of
 an image, using the API operation, or nova ``boot`` command, with the
@@ -23,6 +23,11 @@ because the system disk no longer has to reside on the server itself.
 
    Standard and OnMetal servers may not be booted from volume.
 
+The :rax-devdocs:`Cloud Block Storage volumes API reference
+<cloud-block-storage/v1/api-reference/cbs-volumes-operations/>`
+provides useful operations for listing and working with volumes.
+
+
 Create volume from image and boot instance
 ------------------------------------------
 
@@ -31,7 +36,7 @@ procedure shows you how to create a bootable volume from an image, and use the
 volume to boot an instance, instead of using an image.
 
 Procedure: To create a bootable image and boot a server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Create a bootable volume from an image.
 
@@ -108,7 +113,7 @@ Procedure: To create a bootable image and boot a server
 You can also create a bootable volume and boot a server in a single step.
 
 Procedure: To create a bootable image and boot a server in a single step
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Boot server from bootable volume, without first creating the volume:
 
@@ -200,7 +205,7 @@ For an example of this operation, see
 :ref:`Boot from volume operation <post-create-bootable-volume-and-server-servers>`.
 
 Block-device-mapping attribute versus block-device attribute
--------------------------------------------------------------
+------------------------------------------------------------
 
 How do you know when to use the ``block_device_mapping`` (or
 ``--block-device-mapping``, in nova) attribute rather than the
