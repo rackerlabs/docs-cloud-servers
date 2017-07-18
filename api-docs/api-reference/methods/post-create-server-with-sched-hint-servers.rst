@@ -79,20 +79,20 @@ This table shows the body parameters for the request:
 |**block_device_mapping_v2**             |*(Optional)* |bootable volume       |
 |                                        |             |details.              |
 +----------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.\        |Integer      |The index of the      |
+|server.\ block_device_mapping_v2.\      |Integer      |The index of the      |
 |**boot_index**                          |*(Optional)* |bootable volume.      |
 +----------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.\        |Integer      |The id of the         |
+|server.\ block_device_mapping_v2.\      |Integer      |The id of the         |
 |**uuid**                                |*(Optional)* |bootable volume.      |
 +----------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.\        |String       |The source type for   |
+|server.\ block_device_mapping_v2.\      |String       |The source type for   |
 |**source_type**                         |*(Optional)* |the bootable volume.  |
 +----------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.\        |String       |The destination type  |
+|server.\ block_device_mapping_v2.\      |String       |The destination type  |
 |**destination_type**                    |*(Optional)* |for the bootable      |
 |                                        |             |volume.               |
 +----------------------------------------+-------------+----------------------+
-|server.block_device_mapping_v2.\        |Boolean      |Flag to indicate      |
+|server.\ block_device_mapping_v2.\      |Boolean      |Flag to indicate      |
 |**delete_on_termination**               |*(Optional)* |whether the bootable  |
 |                                        |             |volume should be      |
 |                                        |             |deleted after server  |
@@ -106,13 +106,13 @@ This table shows the body parameters for the request:
 |server.\ **os:scheduler_hints**         |Uuid         |The container for     |
 |                                        |*(Optional)* |a scheduler hint.     |
 +----------------------------------------+-------------+----------------------+
-|server.os:scheduler_hints\              |Uuid         |An array of server IDs|
+|server.\ os:scheduler_hints\            |Uuid         |An array of server IDs|
 |**public_ip_zone:near**                 |*(Optional)* |that new server will  |
 |                                        |             |built near. One to    |
 |                                        |             |three server IDs may  |
 |                                        |             |listed.               |
 +----------------------------------------+-------------+----------------------+
-|server.os:scheduler_hints\              |Uuid         |Alternative to        |
+|server.\ os:scheduler_hints\            |Uuid         |Alternative to        |
 |**public_ip_zone:far**                  |*(Optional)* |public_ip_zone:near   |
 |                                        |             |that specifies the new|
 |                                        |             |server should be built|
