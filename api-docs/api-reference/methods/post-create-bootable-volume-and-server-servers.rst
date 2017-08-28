@@ -67,30 +67,30 @@ This table shows the body parameters for the request:
 |                                        |             |instance.             |
 +----------------------------------------+-------------+----------------------+
 |server.\                                |Object       |The container of      |
-|**block_device_mapping_v2**             |*(Optional)* |bootable volume       |
+|**block_device_mapping_v2**             |             |bootable volume       |
 |                                        |             |details.              |
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |Integer      |The index of the      |
-|**boot_index**                          |*(Optional)* |bootable volume.      |
+|**boot_index**                          |             |bootable volume.      |
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |Integer      |The id of the         |
-|**uuid**                                |*(Optional)* |bootable volume.      |
+|**uuid**                                |             |bootable volume.      |
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |String       |The source type for   |
-|**source_type**                         |*(Optional)* |the bootable volume.  |
+|**source_type**                         |             |the bootable volume.  |
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |String       |The destination type  |
-|**destination_type**                    |*(Optional)* |for the bootable      |
+|**destination_type**                    |             |for the bootable      |
 |                                        |             |volume.               |
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |Boolean      |Flag to indicate      |
-|**delete_on_termination**               |*(Optional)* |whether the bootable  |
+|**delete_on_termination**               |             |whether the bootable  |
 |                                        |             |volume should be      |
 |                                        |             |deleted after server  |
 |                                        |             |creation.             |
 +----------------------------------------+-------------+----------------------+
 |server.\ **flavorRef**                  |Uuid         |The flavor reference  |
-|                                        |*(Required)* |for the desired       |
+|                                        |             |for the desired       |
 |                                        |             |flavor for your       |
 |                                        |             |server instance.      |
 +----------------------------------------+-------------+----------------------+
