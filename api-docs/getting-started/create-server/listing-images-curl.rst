@@ -9,7 +9,7 @@ Listing images (cURL)
 
    .. code::
 
-       $ curl -s https://$API_ENDPOINT/v2/$TENANT_ID/images/detail \
+       $ curl -s https://$API_ENDPOINT/v2/$TENANT_ID/images \
               -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
    For each image, the command returns the ID, links, metadata, and name. The
