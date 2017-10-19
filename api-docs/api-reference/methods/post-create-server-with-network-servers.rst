@@ -199,7 +199,7 @@ This table shows the body parameters for the request:
 |server.personality.\ **path**           |String       |The path of the       |
 |                                        |             |personality file.     |
 +----------------------------------------+-------------+----------------------+
-|server.personality.\ **contents**       |String       |The contents od the   |
+|server.personality.\ **contents**       |String       |The contents of the   |
 |                                        |             |personality file.     |
 +----------------------------------------+-------------+----------------------+
 |server.\ **networks**                   |Array        |The array of networks |
