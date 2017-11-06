@@ -18,8 +18,9 @@ Booting server (cURL)
                  "imageRef": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", "flavorRef": "6"}}' \
           | python -m json.tool
 
-   The command returns a list of server properties, including the administrative password,
-   the server ID, and links, as shown in the following output.
+   The command returns a list of server properties, including the
+   administrative password, the server ID, and links, as shown in the following
+   output.
 
    **Boot a server with cURL response**
 
@@ -45,8 +46,8 @@ Booting server (cURL)
 
 #. Copy the server ID value from the ``id`` field in the output.
 
-   Copy the administrative password value from the ``adminPass`` field. You use this value
-   to log into your server.
+   Copy the administrative password value from the ``adminPass`` field. You use
+   this value to log into your server.
 
 
 

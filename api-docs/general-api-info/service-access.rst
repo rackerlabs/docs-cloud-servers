@@ -62,9 +62,9 @@ final slash (/) in the ``publicURL`` field.
    You should copy the base URLs directly from the catalog rather than trying
    to construct them manually. You can find the complete URI to access the
    Cloud Servers API that includes your account number in the service catalog
-   returned in the :ref:`authentication response <review-auth-resp>`. Search the
-   catalog for the service name, ``cloudServersOpenStack``. Then copy the URI
-   from the *publicURL* field included in the service information.
+   returned in the :ref:`authentication response <review-auth-resp>`. Search
+   the catalog for the service name, ``cloudServersOpenStack``. Then copy the
+   URI from the *publicURL* field included in the service information.
 
    Rackspace Cloud Identity returns a service catalog, which includes regional
    endpoints with your account ID. Your account ID, also known as project ID or

@@ -31,7 +31,7 @@ service. You should also be familiar with the following technologies:
 -  *HTTP*/1.1
 -  JSON data serialization format
 
-Use the following links to jump directly to user and reference information for
+Use the following links to go directly to user and reference information for
 the |product name| service REST API:
 
 - :ref:`Getting Started Guide <getting-started-guide>`

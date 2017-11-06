@@ -18,7 +18,8 @@ Deleting network (cURL)
    -  ``instance_id``. The ID of the server instance from which you want to
       detach the virtual interface.
 
-   -  ``interface_id``. The ID of the virtual interface that you want to delete.
+   -  ``interface_id``. The ID of the virtual interface that you want to
+      delete.
 
    If the delete operation was successful, the HTTP header shows the 204 status
    code, as shown in the following output.
