@@ -6,9 +6,9 @@ Limits
 
 All accounts, by default, have a preconfigured set of thresholds, or *limits*,
 to manage capacity and prevent abuse of the system. The system recognizes two
-kinds of limits: *rate limits* and *absolute limits*. Rate limits are thresholds
-that are reset after a certain amount of time passes. Absolute limits are fixed.
-Rate limits are processed via the `Repose service`_.
+kinds of limits: *rate limits* and *absolute limits*. Rate limits are
+thresholds that are reset after a certain amount of time passes. Absolute
+limits are fixed. Rate limits are processed via the `Repose service`_.
 
 .. note::
 

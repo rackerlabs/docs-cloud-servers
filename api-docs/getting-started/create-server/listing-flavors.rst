@@ -6,7 +6,8 @@ Listing flavors
 Before you create a server, list flavors so that you can choose one for your
 new server.
 
-After you choose a flavor, copy its flavor ID to use when you create the server.
+After you choose a flavor, copy its flavor ID to use when you create the
+server.
 
 For more information about flavors and which flavors might be best for you, see
 :ref:`Flavors<flavors>`.
