@@ -1,7 +1,7 @@
 .. _delete-delete-volume-attachment-from-server-servers-server-id-os-volume-attachments-attachment-id:
 
-Delete volume attachment from server
-------------------------------------
+Delete volume attachment from a server
+--------------------------------------
 
 .. code::
 
