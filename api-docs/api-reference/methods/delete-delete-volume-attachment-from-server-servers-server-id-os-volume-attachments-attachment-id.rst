@@ -5,7 +5,7 @@ Delete volume attachment from server
 
 .. code::
 
-    DELETE /servers/{server_id}/os-volume_attachments/{attachment_id}
+    DELETE /servers/{server_id}/os-volume_attachments/{volume_id}
 
 This operation deletes the specified volume attachment from the specified
 server.
@@ -57,7 +57,7 @@ This table shows the URI parameters for the request:
 +=========================+=========================+=========================+
 |{server_id}              |Uuid                     |The UUID for the server. |
 +-------------------------+-------------------------+-------------------------+
-|{attachment_id}          |Uuid                     |The volume attachment ID.|
+|{volume_id}              |Uuid                     |The volume attachment ID.|
 +-------------------------+-------------------------+-------------------------+
 
 This operation does not accept a request body.
