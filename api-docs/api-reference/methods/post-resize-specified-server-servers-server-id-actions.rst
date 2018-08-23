@@ -22,13 +22,10 @@ confirm or revert the resize.
    The following list shows the availability of the resize operation for the
    flavor classes and server types:
 
-   - Standard servers: can be resized to both smaller and larger sized servers.
+   - **Standard flavor Linux servers that use the deprecated paravirtual (PV)
+     virtualization mode**: Can only resize down.
 
-   - General Purpose (formerly Performance 1) servers: can be resized to only
-     larger sized servers.
-
-   - All other flavors, OnMetal servers, and any server that boots from CBS
-     volume – cannot be resized.
+   - **All other flavors**: Can only resize up.
 
    If you have a Compute, Memory, or IO flavor server, and you need to change
    the size of your data disk(s), you will need to:
@@ -165,7 +162,3 @@ Response
    Server: Jetty(8.0.y.z-SNAPSHOT)
    Via: 1.1 Repose (Repose/2.12)
    x-compute-request-id
-
-
-
-
