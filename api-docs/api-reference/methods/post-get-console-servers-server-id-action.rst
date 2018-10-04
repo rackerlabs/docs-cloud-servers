@@ -58,7 +58,7 @@ The following table shows the possible response codes for this operation:
 Request
 ^^^^^^^
 
-This table shows the URI parameters for the request:
+The following table shows the URI parameters for the request:
 
 +--------------------------+------------------------+-------------------------+
 |Name                      |Type                    |Description              |
@@ -66,7 +66,7 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                    |The UUID for the server. |
 +--------------------------+------------------------+-------------------------+
 
-This table shows the body parameters for the request:
+The following table shows the body parameters for the request:
 
 +--------------------------+------------------------+-------------------------+
 |Name                      |Type                    |Description              |
@@ -122,7 +122,7 @@ This table shows the body parameters for the request:
 Response
 ^^^^^^^^
 
-This table shows the body parameters for the response:
+The following table shows the body parameters for the response:
 
 +--------------------------+------------------------+-------------------------+
 |Name                      |Type                    |Description              |
@@ -141,7 +141,7 @@ This table shows the body parameters for the response:
 |                          |                        |example ``"xvpvnc"``.    |
 +--------------------------+------------------------+-------------------------+
 
-**Example Get console: JSON response**
+**Example Get console - java: JSON response**
 
 
 .. code::
@@ -161,6 +161,29 @@ This table shows the body parameters for the response:
      "console": {
        "url": "https://dfw.servers.console.rackspacecloud.com:443/console?token=b40c6057-4bcb-4ee7-a359-dcecc752b379",
        "type": "xvpvnc"
+     }
+   }
+
+**Example Get console - novnc: JSON response**
+
+
+.. code::
+
+       Status Code: 200 OK
+       Content-Length: 143
+       Content-Type: application/json
+       Date: Tue, 30 Jun 2015 17:345:17 GMT, Tue, 30 Jun 2015 17:45:19 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-9235673f2-4a1d-75cc-2a22-5d3fef994122
+
+
+.. code::
+
+   {
+     "console": {
+       "url": "https://dfw.servers.console.rackspacecloud.com:443/console?token=a71d5697-2aca-5ea2-d991-abad292b351",
+       "type": "novnc"
      }
    }
 
