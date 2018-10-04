@@ -7,13 +7,14 @@ Get console
 
     POST /servers/{server_id}/action
 
-This operation returns a URL which you use with a java client to open a console
-connection to your server.
+This operation returns a URL which you use with either a java client or an
+HTML-based novnc console to open a console connection to your server.
 
 In the URI, specify the server ID.
 
-To use the URL returned from this operation, you should download and install a
-VNC Viewer like `Real VNC <https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html>`__
+To use the URL returned from this operation with the java option, you should
+download and install a VNC Viewer like
+`Real VNC <https://www.realvnc.com/products/vnc/documentation/4.0/win/java.html>`__
 or `Tight VNC <http://www.tightvnc.com/download.php>`__. Then, from the
 directory where you saved the Vnc Viewer, run the following command (using the
 installed jar and the URL from the operation response body):
@@ -22,8 +23,10 @@ installed jar and the URL from the operation response body):
 
    java -jar VncViewer.jar URL {returnedURL}
 
-This table shows the possible response codes for this operation:
+To use the URL returned from this operation with the HTML novnc option, open a
+browser and copy the URL to the address bar of the browser.
 
+The following table shows the possible response codes for this operation:
 
 +-------------------------+-------------------------+-------------------------+
 |Response Code            |Name                     |Description              |
@@ -55,7 +58,7 @@ This table shows the possible response codes for this operation:
 Request
 ^^^^^^^
 
-This table shows the URI parameters for the request:
+The following table shows the URI parameters for the request:
 
 +--------------------------+------------------------+-------------------------+
 |Name                      |Type                    |Description              |
@@ -63,7 +66,7 @@ This table shows the URI parameters for the request:
 |{server_id}               |Uuid                    |The UUID for the server. |
 +--------------------------+------------------------+-------------------------+
 
-This table shows the body parameters for the request:
+The following table shows the body parameters for the request:
 
 +--------------------------+------------------------+-------------------------+
 |Name                      |Type                    |Description              |
@@ -74,10 +77,11 @@ This table shows the body parameters for the request:
 |os- getVNCConsole.\       |String                  |A key pair with the type |
 |**type**                  |                        |of vnc console,          |
 |                          |                        |containing the value     |
-|                          |                        |``"xvpvnc"``.            |
+|                          |                        |``"xvpvnc"`` or          |
+|                          |                        |``"novnc"``.             |
 +--------------------------+------------------------+-------------------------+
 
-**Example Get console: JSON request**
+**Example Get console - java: JSON request**
 
 
 .. code::
@@ -96,10 +100,29 @@ This table shows the body parameters for the request:
            }
    }
 
+**Example Get console - novnc: JSON request**
+
+
+.. code::
+
+   X-Auth-Token: f064c46a782c444cb4ba4b6434288f7c
+   Content-Type: application/json
+   Accept: application/json
+
+
+.. code::
+
+   {
+       "os-getVNCConsole":
+           {
+               "type": "novnc"
+           }
+   }
+
 Response
 ^^^^^^^^
 
-This table shows the body parameters for the response:
+The following table shows the body parameters for the response:
 
 +--------------------------+------------------------+-------------------------+
 |Name                      |Type                    |Description              |
@@ -118,7 +141,7 @@ This table shows the body parameters for the response:
 |                          |                        |example ``"xvpvnc"``.    |
 +--------------------------+------------------------+-------------------------+
 
-**Example Get console: JSON response**
+**Example Get console - java: JSON response**
 
 
 .. code::
@@ -141,6 +164,27 @@ This table shows the body parameters for the response:
      }
    }
 
+**Example Get console - novnc: JSON response**
 
+
+.. code::
+
+       Status Code: 200 OK
+       Content-Length: 143
+       Content-Type: application/json
+       Date: Tue, 30 Jun 2015 17:345:17 GMT, Tue, 30 Jun 2015 17:45:19 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.1.2)
+       X-Compute-Request-Id: req-9235673f2-4a1d-75cc-2a22-5d3fef994122
+
+
+.. code::
+
+   {
+     "console": {
+       "url": "https://dfw.servers.console.rackspacecloud.com:443/console?token=a71d5697-2aca-5ea2-d991-abad292b351",
+       "type": "novnc"
+     }
+   }
 
 
