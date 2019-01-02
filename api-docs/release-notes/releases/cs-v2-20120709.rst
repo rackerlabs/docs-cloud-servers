@@ -7,9 +7,9 @@ What's new
 ----------
 
 A new authentication endpoint has been added and changes have been made to the service
-catalog. For detailed information about authentication through the Identity Service v2.0,
+catalog. For detailed information about authentication through the Identity service v2.0,
 see the
-:rax-devdocs:`Cloud Identity API Guide <cloud-identity/v2/getting-started/>`.
+:rax-devdocs:`Rackspace Identity API Guide <cloud-identity/v2/getting-started/>`.
 
 Resolved issues
 ---------------
