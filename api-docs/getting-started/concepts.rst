@@ -7,7 +7,6 @@
 To use Cloud Servers service with or without the Cloud Networks extension, you
 should understand these key concepts:
 
-
 **Server**
    A virtual machine (VM) instance running on a host. To create a server, you
    must specify a name, flavor reference, and image reference.
