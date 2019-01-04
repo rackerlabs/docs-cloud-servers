@@ -32,4 +32,3 @@ For information about the supernova client, which is an unsupported wrapper for
 the nova client that is useful for managing multiple nova environments, see
 `supernova client <https://github.com/major/supernova>`__.
 
-.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/default
