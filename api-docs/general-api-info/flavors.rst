@@ -17,8 +17,7 @@ Virtual Cloud Server Flavors are divided into the following classes:
 
 **Standard**
 
-    These flavors, which are being phased out and should not be used for
-    new servers, have the following characteristics:
+    Rackspace legacy flavors have the following characteristics:
 
     -  Sizes range from 512 MB to 30 GB.
 
@@ -197,7 +196,6 @@ To find the current list of supported flavors, see
 This table shows some of the common supported flavors for Cloud Servers:
 
 **Table: Supported Flavors for Cloud Servers**
-
 
 +-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
 | ID                      | Flavor name                       | Memory (MB) | Disk  | Ephemeral | VCPUs | RXTX factor |
