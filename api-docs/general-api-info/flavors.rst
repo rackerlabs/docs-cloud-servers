@@ -197,7 +197,6 @@ This table shows some of the common supported flavors for Cloud Servers:
 
 **Table: Supported Flavors for Cloud Servers**
 
-
 +-------------------------+-----------------------------------+-------------+-------+-----------+-------+-------------+
 | ID                      | Flavor name                       | Memory (MB) | Disk  | Ephemeral | VCPUs | RXTX factor |
 +=========================+===================================+=============+=======+===========+=======+=============+
