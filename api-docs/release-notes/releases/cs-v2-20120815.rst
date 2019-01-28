@@ -8,16 +8,16 @@ What's new
 
 - A new authentication endpoint has been added.
 
-   To authenticate, you issue a request to the Rackspace Identity
+   To authenticate, you issue a request to the Identity
    Service, which is an implementation of the OpenStack Keystone
    Identity service v2.0. Customers with UK-based accounts can now issue
-   a **POST** **/tokens** request to the Rackspace Identity
+   a **POST** **/tokens** request to the Identity
    service at the https://lon.identity.api.rackspacecloud.com/v2.0
    endpoint to authenticate access to either the first generation Cloud
    Servers or next generation Cloud Servers services.
 
    In response to valid credentials, an authentication request to the
-   Rackspace Identity service v2 returns an authentication token
+   Identity service v2 returns an authentication token
    and a service catalog.
 
 -  Both first generation and next generation Cloud Servers services
@@ -52,7 +52,7 @@ What's new
 
    For detailed information about authentication through the Identity service
    v2.0, see the
-   :rax-devdocs:`Rackspace Identity Client Developer Guide <cloud-identity/v2/getting-started/>`.
+   :rax-devdocs:`Identity Client Developer Guide <cloud-identity/v2/getting-started/>`.
 
 Resolved issues
 ---------------

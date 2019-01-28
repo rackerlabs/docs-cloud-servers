@@ -38,7 +38,7 @@ What's new
   address block are assigned. The IPv4 address and IPv6 address block are used for the
   public interface (Internet). The IPv4 address is also used for the private interface.
 
-- Authentication now occurs through the Rackspace Identity service, which
+- Authentication now occurs through the Identity service, which
   integrates with the Rackspace infrastructure and is a modification of the OpenStack
   Keystone authentication specification.
 
