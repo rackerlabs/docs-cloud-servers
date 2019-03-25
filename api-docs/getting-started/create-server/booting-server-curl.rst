@@ -15,7 +15,8 @@ Booting server (cURL)
               -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-Auth-Project-Id: test-project" \
               -d '{"server": {"name": "Ubuntu 11.10 server",
-                 "imageRef": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", "flavorRef": "6"}}' \
+                 "imageRef": "3afe97b2-26dc-49c5-a2cc-a2fc8d80c001", "flavorRef": "6",
+                 "config-drive": "true"}}' \
           | python -m json.tool
 
    The command returns a list of server properties, including the
