@@ -38,6 +38,7 @@ Server Action Logs:
 
 Server Action Operations:
 	- :ref:`Change password <post-change-password-for-specified-server-servers-server-id-actions>`
+	- :ref:`Reset network <post-reset-network-for-specified-server-servers-server-id-actions>`
 	- :ref:`Reboot server <post-reboot-specified-server-servers-server-id-actions>`
 	- :ref:`Rebuild server <post-rebuild-specified-server-servers-server-id-actions>`
 	- :ref:`Resize server <post-resize-specified-server-servers-server-id-actions>`
@@ -103,6 +104,7 @@ Server Metadata Operations:
 .. SERVER ACTION OPS
 
 .. include:: methods/post-change-password-for-specified-server-servers-server-id-actions.rst
+.. include:: methods/post-reset-network-for-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-reboot-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-rebuild-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-resize-specified-server-servers-server-id-actions.rst
