@@ -32,8 +32,8 @@ both of the following arguments:
 	   content cannot be decoded message.
 
 	   Encoded user-data is a base64 encoded string and adheres to one of a few
-	   specs (depending on the Linux distribution): Ubuntu-style and
-	   CoreOS-style.
+	   specs (depending on the Linux distribution): the Ubuntu operating system
+     style and CoreOS-style.
 
 **personality**
    Located in openstack/content/0000 with the path listed in the
