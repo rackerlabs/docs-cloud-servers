@@ -50,7 +50,7 @@ environment variables.
 |                    |                                                        |
 |                    |        $ sudo easy_install pip                         |
 |                    |                                                        |
-|                    | -  Ubuntu                                              |
+|                    | -  The Ubuntu operating system                         |
 |                    |                                                        |
 |                    |    .. code::                                           |
 |                    |                                                        |

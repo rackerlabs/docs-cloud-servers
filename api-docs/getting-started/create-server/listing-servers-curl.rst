@@ -18,7 +18,7 @@ Listing servers (cURL)
    created and Rackspace public and private networks.
 
    The following output shows the list servers information, including
-   information for the Ubuntu server that you just created.
+   information for the server that you just created.
 
    **List servers with cURL response**
 
