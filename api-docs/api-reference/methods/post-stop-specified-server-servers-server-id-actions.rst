@@ -89,7 +89,7 @@ This table shows the body parameters for the request:
 .. code::
 
    {
-       "os-stop" : "null"
+       "os-stop" : null
    }
 
 

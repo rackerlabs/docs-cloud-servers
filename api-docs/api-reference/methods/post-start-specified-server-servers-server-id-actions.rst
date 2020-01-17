@@ -83,7 +83,7 @@ This table shows the body parameters for the request:
 .. code::
 
    {
-       "os-start" : "null"
+       "os-start" : null
    }
 
 

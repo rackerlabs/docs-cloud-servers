@@ -76,7 +76,7 @@ This table shows the body parameters for the request:
 .. code::
 
    {
-       "lock" : "null"
+       "lock" : null
    }
 
 

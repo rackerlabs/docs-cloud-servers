@@ -80,7 +80,7 @@ This table shows the body parameters for the request:
 .. code::
 
    {
-       "resetNetwork" : "null"
+       "resetNetwork" : null
    }
 
 
