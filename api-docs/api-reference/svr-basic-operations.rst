@@ -1,7 +1,7 @@
 .. _api-operations-svr-basic:
 
 Server operations
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 This section covers the following basic server operations:
 
@@ -44,6 +44,7 @@ Server Action Operations:
 	- :ref:`Resize server <post-resize-specified-server-servers-server-id-actions>`
 	- :ref:`Confirm resize <post-confirm-server-resize-for-specified-server-servers-server-id-actions>`
 	- :ref:`Revert resize <post-revert-server-resize-for-specified-server-servers-server-id-actions>`
+	- :ref:`Migrate <post-migrate-server-server-id-actions>`
 	- :ref:`Create image <post-create-image-of-specified-server-servers-server-id-actions>`
 	- :ref:`Rescue server <post-rescue-specified-server-servers-server-id-actions>`
 	- :ref:`Unrescue server <post-unrescue-specified-server-servers-server-id-actions>`
@@ -110,6 +111,7 @@ Server Metadata Operations:
 .. include:: methods/post-resize-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-confirm-server-resize-for-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-revert-server-resize-for-specified-server-servers-server-id-actions.rst
+.. include:: methods/post-migrate-server-server-id-actions.rst
 .. include:: methods/post-create-image-of-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-rescue-specified-server-servers-server-id-actions.rst
 .. include:: methods/post-unrescue-specified-server-servers-server-id-actions.rst
