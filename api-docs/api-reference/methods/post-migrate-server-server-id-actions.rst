@@ -1,7 +1,7 @@
 .. _post-migrate-server-server-id-actions:
 
 Migrate specified server
------------------------
+------------------------
 
 .. code::
 
