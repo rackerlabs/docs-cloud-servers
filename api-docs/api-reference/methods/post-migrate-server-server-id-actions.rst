@@ -7,7 +7,7 @@ Migrate specified server
 
     POST /servers/{server_id}/action
     
-This operation migrates the server to different hypervisor host within the
+This operation migrates the server to a different hypervisor host within the
 Rackspace Cloud in the same region without changing the server's data and IP
 addresses.
 
