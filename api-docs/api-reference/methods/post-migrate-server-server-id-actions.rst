@@ -6,19 +6,20 @@ Migrate specified server
 .. code::
 
     POST /servers/{server_id}/action
+    
+This operation migrates the server to different hypervisor host within the
+Rackspace Cloud in the same region without changing the server's data and IP
+addresses.
 
-Migrates server to different hypervisor host within the Rackspace Cloud in the
-same region. The server's data and IPs do not change. During a migration, the
-server's status changes to "RESIZING", because the migrate and migration
-operations use the same code. The original server is
-saved for 24 hours to allow rollback. You should test and explicitly
-confirm all migrations. When you do so, the original server is removed. All
-migrations are automatically confirmed after 24 hours if you do not explicitly
-confirm or revert the migration.
+During a migration, the server's status changes to **RESIZING** because the
+migration function uses the resize operation to migrate the server. The original
+server is saved for 24 hours to allow rollback. You should test and explicitly
+confirm all migrations. After you confirm, the original server is removed. If
+you do not explicitly confirm or revert the migration, all migrations are
+automatically confirmed after 24 hours 
 
 .. note::
    This operation is not available for OnMetal servers.
-
 
 Specify the target server ID in the URI.
 
@@ -94,7 +95,7 @@ This table shows the body parameters for the request:
 Response
 ^^^^^^^^
 
-**Example migrate specified server: JSON response**
+**Example Migrate specified server: JSON response**
 
 
 .. code::
