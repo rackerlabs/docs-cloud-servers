@@ -16,7 +16,7 @@ representation.
 The progress of the server build depends on factors including location of the
 requested image, network i/o, host load, and the selected flavor. You can
 check the progress of the build request by issuing a call to retrieve the
-details of the server. Once the build is complete, the server's ``status`` is
+details of the server. After the build completes, the server's ``status`` is
 ``ACTIVE``.
 
 This table shows the possible response codes for this operation:
@@ -78,6 +78,7 @@ This table shows the body parameters for the request:
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |String       |The source type for   |
 |**source_type**                         |             |the bootable volume.  |
+|                                        |             |Must be ``volume``.   |
 +----------------------------------------+-------------+----------------------+
 |server.block_device_mapping_v2.\        |String       |The destination type  |
 |**destination_type**                    |             |for the bootable      |
@@ -116,8 +117,8 @@ This table shows the body parameters for the request:
 |                                        |*(Optional)* |configuration value.  |
 |                                        |             |The image             |
 |                                        |             |auto_disk_config      |
-|                                        |             |metadata key set will |
-|                                        |             |affect the value you  |
+|                                        |             |metadata key set      |
+|                                        |             |affects the value you |
 |                                        |             |can choose to set the |
 |                                        |             |server ``OS-          |
 |                                        |             |DCF:diskConfig``. If  |
