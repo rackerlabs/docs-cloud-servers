@@ -4,7 +4,7 @@
 General API information
 =======================
 
-The information in this section is relevant to all operations of the API.
+The information in this section is relevant to all API operations.
 For details about specific operations, see the
 :ref:`API reference <api-reference>`.
 
