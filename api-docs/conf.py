@@ -16,6 +16,16 @@ import sys
 from datetime import datetime
 from os import path
 
+try:
+    import sphinx_rtd_theme
+except ImportError:
+    sphinx_rtd_theme = None
+
+try:
+    from sphinxcontrib import spelling
+except:
+    spelling = None
+
 # If your extensions are in another directory, add it here. If the directory
 # is relative to the documentation root, use os.path.abspath to make it
 # absolute, like shown here.
@@ -34,8 +44,15 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.viewcode'
+    'sphinx.ext.viewcode',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.todo',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.extlinks'
 ]
+
+if spelling is not None:
+    extensions.append('sphinxcontrib.spelling')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -86,6 +103,9 @@ rst_epilog = """
 .. |contract version| replace:: v2.0
 .. |product name| replace:: Cloud Servers
 """
+
+# Software release.version currently deployed in production.
+release='v2.0'
 
 exclude_patterns = ['build', 'samples', 'api-reference/methods/*',
                     'common-gs', 'getting-started/examples/*',
@@ -301,6 +321,73 @@ coverage_ignore_pyobjects = [
     # Never documented before, and deprecated now.
 
 ]
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+latex_documents = [
+  (master_doc, 'docs-cloud-servers.tex',
+  'Rackspace Cloud Servers API Guide',
+  'Rackspace', 'manual'),
+]
+
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+# latex_logo = None
+
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+# latex_use_parts = False
+
+# If true, show page references after internal links.
+# latex_show_pagerefs = False
+
+# If true, show URL addresses after external links.
+# latex_show_urls = False
+
+# Documents to append as an appendix to all manuals.
+# latex_appendices = []
+
+# If false, no module index is generated.
+# latex_domain_indices = True
+
+
+# -- Options for manual page output ---------------------------------------
+
+# One entry per manual page. List of tuples
+# (source start file, name, description, authors, manual section).
+man_pages = [
+    (master_doc, 'Rackspace Cloud Servers API documentation',
+    'Rackspace developer documentation', 'Rackspace', 1)
+]
+
+# If true, show URL addresses after external links.
+# man_show_urls = False
+
+
+# -- Options for Texinfo output -------------------------------------------
+
+# Grouping the document tree into Texinfo files. List of tuples
+# (source start file, target name, title, author,
+#  dir menu entry, description, category)
+texinfo_documents = [
+  (master_doc, 'docs-cloud-servers',
+   'Rackspace Cloud Servers API Documentation','Rackspace',
+   'docs-cloud-servers', 'Learn about using Rackspace Cloud Servers',
+   'Miscellaneous'),
+]
+
+# Documents to append as an appendix to all manuals.
+# texinfo_appendices = []
+
+# If false, no module index is generated.
+# texinfo_domain_indices = True
+
+# How to display URL addresses: 'footnote', 'no', or 'inline'.
+# texinfo_show_urls = 'footnote'
+
+# If true, do not generate a @detailmenu in the "Top" node's menu.
+# texinfo_no_detailmenu = False
 
 
 # Options for the InterSphinx extension
