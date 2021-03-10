@@ -24,7 +24,7 @@ Issue the following cURL command.
 -  ``network_id``. The ID of the network for which you want to create a virtual
    interface.
 
-The operation returns a response as shown in the following example. 
+The operation returns a response as shown in the following example.
 
 **Create a virtual interface with cURL response**
 
