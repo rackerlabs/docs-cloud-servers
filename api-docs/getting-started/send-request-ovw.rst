@@ -15,8 +15,6 @@ To learn about other ways to use Rackspace Cloud API services, see the
 following resources:
 
 -  If you are developing applications or automation, see
-   :rax-devdocs:`Rackspace SDKs <#sdks>`, the
-   :rax-devdocs:`Rackspace CLI <rack-cli>`, or
    `OpenStack client applications`_.
 
 -  For API development, testing and workflow management in a graphical
